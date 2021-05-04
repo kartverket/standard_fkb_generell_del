@@ -1,0 +1,171 @@
+= Innlegging av FKB-spesifikk informasjon i UML-modellene
+:sectnums:
+:toc: left
+:toc-title: Innholdsfortegnelse
+:figure-caption: Figur
+:table-caption: Tabell
+:doctype: article
+:encoding: utf-8
+:lang: nb
+
+_Utkast 2021-04-06_
+
+== Innledning
+
+Beskrivelse av hvilken informasjon som skal legges inn i FKB 5.0 UML-modellene for henholdsvis forvaltningsspesifikasjonene og for registreringsinstruksene.
+
+(også eksempel/dokumentasjon på bruk av asciidoc)
+
+=== Oppfølgingspunkter
+. Avklare plassering av bilder/skisser på web
+. Bruk av "files" i UML til å linke til bilder/skisser inkl. bildetekst?
+. Skript for å hjelpe oss å legge på (og kontrollere) alle aktuelle tags?
+. Tilpasse dokumentasjonsmaler slik at all aktuell informasjon kommer tydelig fram.
+. Ok å fjerne Påkrevd/Betinget etc. på egenskapsnivå?
+. FKB-C/D er vel i praksis likt og kan kanskje slås sammen?
+
+== FKB-Forvaltningsspesifikasjoner
+FKB-Forvaltningsspesifikasjonene skal være godkjente SOSI Produktspesifikasjoner med minst mulig tillegg.
+
+=== Objekttyper
+
+==== Bruk av notes-felt
+Notesfeltet inneholder definisjon til elementet hentet fra SOSI del 2. Denne informasjonen lar vi som hovedregel stå urørt, men informasjonen tilpasses slik at den passer bruken i FKB om nødvendig.
+
+Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives inn i notes-feltet under SOSI-definisjonen (uten egen/ekstra overskrift).
+
+==== SOSI UML-profil tagged values
+* SOSI_bildeAvModellelement (url til bilde/skisse som beskriver objekttypen)
+
+==== FKB tagged values
+* SOSI_geometri (Flate/Kurve/Punkt) _Brukt i FKB 4.6 bl.a. for å styre geometritype i QMS. Fjernes fra FKB 5.0!_
+
+==== Spesielle regler/retningslinjer for modellering av assosiasjoner
+* Assosiasjoner fra flateobjekter til flateavgrensende objekter?
+* Andre?
+
+=== Egenskaper
+
+==== Bruk av notes-felt
+Notesfeltet inneholder definisjon til elementet hentet fra SOSI del 2. Denne informasjonen lar vi som hovedregel stå urørt, men informasjonen tilpasses slik at den passer bruken i FKB om nødvendig.
+
+Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives inn i notes-feltet under SOSI-definisjonen (uten egen/ekstra overskrift).
+
+==== SOSI UML-profil tagged values
+* SOSI_datatype _bør fjernes?_
+* SOSI_lengde
+* SOSI_navn
+
+==== FKB tagged values
+* FKB_Primærgeometri (true) ? _Kandidat for å merke primærgeometri-egenskap for objekttyper med flere geometrityper?_ 
+
+
+=== Datatyper 
+
+==== Bruk av notes-felt
+Notesfeltet inneholder definisjon til elementet hentet fra SOSI del 2. Denne informasjonen lar vi som hovedregel stå urørt, men informasjonen tilpasses slik at den passer bruken i FKB om nødvendig.
+
+Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives inn i notes-feltet under SOSI-definisjonen (uten egen/ekstra overskrift).
+
+==== SOSI UML-profil tagged values
+* SOSI_navn
+
+==== FKB tagged values
+* SOSI_kompaktifisering (Ja/Nei) _Generelle SOSI retningslinjer holder. Fjernes!?_
+
+=== Kodelister
+Alle kodelister modelleres om tomme elementer i UML, men med link til kodeliste på geonorge.no
+
+==== Bruk av notes-felt
+Notesfeltet inneholder definisjon til elementet hentet fra SOSI del 2. Denne informasjonen lar vi som hovedregel stå urørt.
+
+Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives inn i notes-feltet under SOSI-definisjonen (uten egen/ekstra overskrift).
+
+==== SOSI UML-profil tagged values
+* asDictionary (true)
+* codelist (url til kodeliste på Geonorge)
+
+==== FKB tagged values
+_ikke behov_ ?
+
+== Registreringsinstrukser
+
+Vi starter jobben med å lage UML-modeller for registreringsinstruksene med å ta en kopi av en (mest mulig)
+ferdig UML-modell for forvaltningsspesifikasjonen. Registreringsinstruksene modelleres som realiseringer av forvaltningsspesifikasjonene og dette vises i et realiseringsdiagram. All informasjon som er lagt inn i 
+forvaltningsspesifikasjonene gjelder dermed også registreringsinstuksene (om vi ikke har bevisst endrer eller legger til ekstra informasjon).
+
+UML-modellene for registreringsinstruksene må ikke nødvendigvis være i henhold til standarden SOSI Produktspesifikasjoner. Det innebærer at vi står litt friere til hvordan vi modellerer.
+
+=== Objekttyper
+Ev. objekttyper fra forvaltningsspesifikasjonen som ikke skal inngå i registreringsinstruksen fjernes.
+
+==== Bruk av notes-felt
+Behold innhold fra forvaltningsspesifikasjonene, og legg i tillegg inn ekstra informasjon etter overskriften:
+
+_Retningslinjer for registrering i FKB:_
+
+(all relevant informasjon om registrering som ikke defineres i tagged values angitt under skrives inn her)
+
+
+==== Link til bilder/skisser
+Det er aktuelt med flere bilder/skisser knyttet til objekttypene i registreringsinstruksene.
+
+Bruk "files" i UML med tittel/bildetekst!
+
+==== Ekstra tagged values
+* FKB_høydereferanse (fritekst) _(alle objekttyper)_
+* FKB_grunnrissreferanse (fritekst) _(alle objekttyper)_
+* FKB_A (-/O/P) _(alle objekttyper)_
+* FKB_B (-/O/P) _(alle objekttyper)_
+* FKB_C (-/O/P) _(alle objekttyper)_
+* FKB_D (-/O/P) _(alle objekttyper)_
+* FKB_MINSTESTØRRELSE_A (fritekst) _(bare aktuelt på noen objekttyper)_
+* FKB_MINSTESTØRRELSE_B (fritekst) _(bare aktuelt på noen objekttyper)_
+* FKB_MINSTESTØRRELSE_C (fritekst) _(bare aktuelt på noen objekttyper)_
+* FKB_MINSTESTØRRELSE_D (fritekst) _(bare aktuelt på noen objekttyper)_
+
+
+=== Egenskaper
+
+Hvilke egenskaper fra forvaltningsmodellen som skal inngå i registreringen presiseres i UML-modellen. Følgende endringer kan gjøres:
+
+* Fjerne egenskaper som ikke skal registreres
+* Endre multiplisitet fra opsjonelt til påkrevd
+
+
+==== Bruk av notes-felt
+Behold innhold fra forvaltningsspesifikasjonene, og legg i tillegg inn ekstra informasjon etter overskriften:
+
+_Retningslinjer for registrering i FKB:_
+
+==== Ekstra tagged values
+_Ikke behov_ ?
+
+=== Datatyper 
+
+==== Bruk av notes-felt
+Behold innhold fra forvaltningsspesifikasjonene, og legg i tillegg inn ekstra informasjon etter overskriften:
+
+_Retningslinjer for registrering i FKB:_
+
+==== Ekstra tagged values
+_Ikke behov_ ?
+
+
+=== Kodelister
+
+==== Bruk av notes-felt
+Behold innhold fra forvaltningsspesifikasjonene, og legg i tillegg inn ekstra informasjon etter overskriften:
+
+_Retningslinjer for registrering i FKB:_
+
+==== Link til bilder/skisser
+Bruk "files" i UML med tittel/bildetekst...
+
+==== Ekstra tagged values
+_Ikke behov_?
+
+
+
+
+
