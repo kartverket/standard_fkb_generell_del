@@ -8,24 +8,21 @@
 :encoding: utf-8
 :lang: nb
 
-_Utkast 2021-05-10_
+_Utkast 2021-06-11_
 
 == Innledning
 
 Beskrivelse av hvilken informasjon som skal legges inn i FKB 5.0 UML-modellene for henholdsvis forvaltningsspesifikasjonene og for registreringsinstruksene.
 
-(også eksempel/dokumentasjon på bruk av asciidoc)
-
-*OPPFØLGINGSPUNKTER*
-
-. Avklare plassering av bilder/skisser på web!
-. Bruk av tagged values SOSI_datatype?
-. Bruk av "files" i UML til å linke til bilder/skisser inkl. bildetekst i registreringsinstruksene?
-. Skript for å hjelpe oss å legge på (og kontrollere) alle aktuelle tags?
-. Tilpasse dokumentasjonsmaler slik at all aktuell informasjon kommer tydelig fram.
-
 == FKB-Forvaltningsspesifikasjoner
 FKB-Forvaltningsspesifikasjonene skal være godkjente SOSI Produktspesifikasjoner.
+
+UML-pakkene i SOSI-modellregister skal ha stereotype "ApplicationSchema".
+
+*TODO:* 
+
+* Beskrive krav til tagged values på pakke-nivå?
+* Mal for navn og innhold i diagrammer (utover kravene i SOSI)? 
 
 === Objekttyper
 
@@ -37,12 +34,24 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 ==== SOSI UML-profil tagged values
 * SOSI_bildeAvModellelement (url til bilde/skisse som beskriver objekttypen)
 
+Det anbefales at det defineres ett stk. bilde/bilde som generelt beskriver objektet som legges inn på denne taggen.  
+
+.Eksempel på bruk av SOSI_bildeAvModellelement
+image::figurer/bildeavmodellelement.png[]
+
+*Avklares:* 
+Bruke relativ sti eller absolutt sti til http://skjema.geonorge.no/SOSI/produktspesifikasjon/ et sted?
+
+(flere bilder/skisser legges inn i registreringsinstruks)
+
 ==== FKB tagged values
-(ingen)
+Det skal ikke ligge noen tagged values med prefiks "FKB" på objektene i forvaltningsmodellene. Også ev. andre tagged values som finnes i de gamle modellene og som ikke er definert i dette dokumentet fjernes fra elementene.
+
 
 ==== Spesielle regler/retningslinjer for modellering av assosiasjoner
-* Assosiasjoner fra flateobjekter til flateavgrensende objekter?
-* Andre?
+* Assosiasjoner fra flateobjekter til flateavgrensende objekte gjøres i tråd med beskrivelse i FOU-prosjket "Geometrihåndtering SOSI 5". 
+* Det er åpnet for også andre assosiasjoner i FKB der det er behov for å uttrykke en sammenheng mellom objekter. Unngå mange-til-mange forhold.
+* Bruk gjerne arv til å forenkle assosiasjonene (assosiasjoner mellom supertyper), men ikke union, for å forenkle modellene og visningen av disse i diagrammer.
 
 === Egenskaper
 
@@ -52,12 +61,12 @@ Notesfeltet inneholder definisjon til elementet hentet fra SOSI del 2. Denne inf
 Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives inn i notes-feltet under SOSI-definisjonen (uten egen/ekstra overskrift).
 
 ==== SOSI UML-profil tagged values
-* SOSI_datatype _fjernes??_
+* SOSI_datatype (skal defineres i tråd med datatypen til egenskapen)
 * SOSI_lengde
 * SOSI_navn
 
 ==== FKB tagged values
-(ingen)
+Det skal ikke ligge noen tagged values med prefiks "FKB" på egenskapene i forvaltningsmodellene.
 
 === Datatyper 
 
@@ -70,7 +79,7 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 * SOSI_navn
 
 ==== FKB tagged values
-(ingen)
+Det skal ikke ligge noen tagged values med prefiks "FKB" på datatypene i forvaltningsmodellene.
 
 === Kodelister
 Alle kodelister modelleres om tomme elementer i UML, men med link til kodeliste på geonorge.no
@@ -85,7 +94,7 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 * codelist (url til kodeliste på Geonorge)
 
 ==== FKB tagged values
-(ingen)
+Det skal ikke ligge noen tagged values med prefiks "FKB" på kodelistene i forvaltningsmodellene.
 
 == Registreringsinstrukser
 
@@ -115,7 +124,7 @@ image::figurer/arv_fellesegenskaper.png[]
 . Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. 
 +
 image::figurer/arv_til_abstrakt.png[]
-. De abstrakte objekttypene gis ektrainformasjon med tanke på eksport av dokumentasjon for registreringsinstruksen. Hvilken informasjon som skal ligge på elementene er beskrevet lenger ned...
+. De abstrakte objekttypene gis ekstrainformasjon med tanke på eksport av dokumentasjon for registreringsinstruksen. Hvilken informasjon som skal ligge på elementene er beskrevet lenger ned.
 
 === Endringer som kan utføres i det realiserte applikasjonsskjemaet
 Dette er endringer som man må regne med å gjøre på nytt dersom man gjør endringer i UML-modell for produktspesifikasjonen og man må hente en ny kopi (realisering) inn til registreringsinstruksen.
