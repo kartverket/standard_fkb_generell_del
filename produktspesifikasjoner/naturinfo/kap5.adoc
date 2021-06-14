@@ -1,4 +1,4 @@
-=== FKB-Naturinfo-5.0Utkast
+=== FKB-Naturinfo-5.0
 Definisjon: 
  
 ===== Tagged Values
@@ -241,13 +241,21 @@ Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Gener
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 5: ",title=Realisering av fellesegenskaper fra FKB generell del]
-image::figurer/Realisering av fellesegenskaper fra FKB generell del.png[Realisering av fellesegenskaper fra FKB generell del]
+[caption="Figur 5: ",title=Hoveddiagram Fellesegenskaper]
+image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
+[caption="Figur 6: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 7: ",title=Posisjonskvalitet]
+image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
 Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
+ 
+*Realisering av:* «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper
+ 
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Tagged Values
 [cols="20,80"]
@@ -390,6 +398,10 @@ Definisjon:
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+ 
+*Realisering av:* «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd
+ 
 ===== Tagged Values
 [cols="20,80"]
 |===
@@ -428,6 +440,8 @@ Definisjon:
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+ 
 ===== Tagged Values
 [cols="20,80"]
 |===
@@ -459,6 +473,8 @@ Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ans
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+ 
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Tagged Values
 [cols="20,80"]
@@ -537,6 +553,8 @@ Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
+ 
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Tagged Values
 [cols="20,80"]
@@ -648,6 +666,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Roller
  
 ==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
@@ -659,7 +678,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
 |SOSI_datatype
 |H
@@ -684,7 +703,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -694,29 +713,6 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
  
 |SOSI_navn
 |DATAFANGSTMETODE
- 
-|===
- 
-==== «CodeList» Høydereferanse
-Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|6
- 
-|SOSI_navn
-|HREF
  
 |===
  
@@ -730,7 +726,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
 |SOSI_datatype
 |T
