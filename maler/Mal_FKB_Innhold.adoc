@@ -8,7 +8,7 @@
 :encoding: utf-8
 :lang: nb
 
-_Utkast 2021-06-11_
+_Utkast 2021-06-15_
 
 == Innledning
 
@@ -19,10 +19,9 @@ FKB-Forvaltningsspesifikasjonene skal være godkjente SOSI Produktspesifikasjone
 
 UML-pakkene i SOSI-modellregister skal ha stereotype "ApplicationSchema".
 
-*TODO:* 
-
-* Beskrive krav til tagged values på pakke-nivå?
-* Mal for navn og innhold i diagrammer (utover kravene i SOSI)? 
+ TODO: 
+ Beskrive krav til tagged values på pakke-nivå? 
+ Beskrive Mal for navn og innhold i diagrammer (utover kravene i SOSI)? 
 
 === Objekttyper
 
@@ -34,13 +33,12 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 ==== SOSI UML-profil tagged values
 * SOSI_bildeAvModellelement (url til bilde/skisse som beskriver objekttypen)
 
-Det anbefales at det defineres ett stk. bilde/bilde som generelt beskriver objektet som legges inn på denne taggen.  
+Det anbefales at det defineres ett stk. bilde/bilde som generelt beskriver objektet som legges inn på denne taggen. (Husk å bruke små/store bokstaver riktig!)  
 
 .Eksempel på bruk av SOSI_bildeAvModellelement
 image::figurer/bildeavmodellelement.png[]
 
-*Avklares:* 
-Bruke relativ sti eller absolutt sti til http://skjema.geonorge.no/SOSI/produktspesifikasjon/ et sted?
+Bruk absolutt sti til http://skjema.geonorge.no/SOSI/produktspesifikasjon/
 
 (flere bilder/skisser legges inn i registreringsinstruks)
 
@@ -93,6 +91,9 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 * asDictionary (true)
 * codelist (url til kodeliste på Geonorge)
 
+Bruk URL på formen: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+(dvs. uten "api" eller extension som del av URL)
+
 ==== FKB tagged values
 Det skal ikke ligge noen tagged values med prefiks "FKB" på kodelistene i forvaltningsmodellene.
 
@@ -120,8 +121,8 @@ image::figurer/naturinfo_pakkerealisering.png[]
 +
 .Multiplisitet er endret for flere egenskaper i Fellesegenskaper. 
 image::figurer/arv_fellesegenskaper.png[]
-. Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) _fotogrammetrisk registreringsinstruks_ (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen.
-. Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. 
+. Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) _fotogrammetrisk registreringsinstruks_ (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til pakka (teksten skrives ut i toppen av dokumentasjonen)
+. Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister/datatyper) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.
 +
 image::figurer/arv_til_abstrakt.png[]
 . De abstrakte objekttypene gis ekstrainformasjon med tanke på eksport av dokumentasjon for registreringsinstruksen. Hvilken informasjon som skal ligge på elementene er beskrevet lenger ned.
@@ -136,7 +137,7 @@ Dette er endringer som man må regne med å gjøre på nytt dersom man gjør end
 === Informasjon som legges på de abstrakte objekttypene
 Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen bli pakken med de abstrakte objekttypene i utgangspunktet ikke berørt. Informasjonen beholdes. Det man imidlertid må gjøre i en slik prosess er å oppdatere arve-pilene slik at de peker til oppdaterte objekttyper.
 
-* Egenskapen Tilleggsinformasjon legges til på alle objekttyper. Ekstrainformasjon om registrering av objektet legges inn i notes-feltet for denne egenskapen.
+* Ekstrainformasjon om registrering av objektet legges inn i notes-feltet for elementet (ev. annen informasjon slettes).
 * Legge til link til bilder/skisser med bildetekst knyttet til objekttyper m/egenskaper 
 ** Bruk "files" i UML med tittel/bildetekst!
 * Legg til ekstra tagged values på objekttypene
