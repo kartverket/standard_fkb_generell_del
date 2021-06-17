@@ -53,6 +53,7 @@ for root, dirs, files in os.walk(repo_path, topdown=False):
 # konverteringen kalles via subprocess
 
 #3 adoc to something using ASCIIDOCTORFX binary direkte.
-# Har forespurt AsciidocFX chatroom om mulighet for å kalle AsciidocFX.exe med kall. 
+# https://gitter.im/asciidocfx/AsciidocFX
+# Har forespurt AsciidocFX chatroom om mulighet for å kalle AsciidocFX.exe med argumenter. 
 # C:\_BIN\AsciidocFX_Windows\AsciidocFX>AsciidocFX.exe -i documentation.adoc -o documentation.pdf   
 # konverteringen kan kalles via subprocess
