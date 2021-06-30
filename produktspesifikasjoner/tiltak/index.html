@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>Produktspesifikasjon FKB-Naturinfo 5.0</title>
+<title>Produktspesifikasjon FKB-Tiltak 5.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,9 +436,164 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Produktspesifikasjon FKB-Naturinfo 5.0</h1>
+<h1>Produktspesifikasjon FKB-Tiltak 5.0</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Innholdsfortegnelse</div>
+<ul class="sectlevel1">
+<li><a href="#trueinnledning">1. Innledning</a>
+<ul class="sectlevel2">
+<li><a href="#truebeskrivelse">1.1. Beskrivelse</a></li>
+<li><a href="#truehistorikk">1.2. Historikk</a></li>
+<li><a href="#trueendringslogg">1.3. Endringslogg</a></li>
+</ul>
+</li>
+<li><a href="#truedefinisjoner-og-forkortelser">2. Definisjoner og forkortelser</a>
+<ul class="sectlevel2">
+<li><a href="#truedefinisjoner">2.1. Definisjoner</a></li>
+<li><a href="#trueforkortelser">2.2. Forkortelser</a>
+<ul class="sectlevel3">
+<li><a href="#truenormative-referanser">2.2.1. Normative referanser</a></li>
+<li><a href="#trueandre-forkortelser">2.2.2. Andre forkortelser</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truegenerelt-om-spesifikasjonen">3. Generelt om spesifikasjonen</a>
+<ul class="sectlevel2">
+<li><a href="#trueunik-identifisering">3.1. Unik identifisering</a>
+<ul class="sectlevel3">
+<li><a href="#truefullstendig-navn">3.1.1. Fullstendig navn</a></li>
+<li><a href="#trueversjon">3.1.2. Versjon</a></li>
+</ul>
+</li>
+<li><a href="#truereferansedato">3.2. Referansedato</a></li>
+<li><a href="#trueansvarlig-organisasjon">3.3. Ansvarlig organisasjon</a></li>
+<li><a href="#truespråk">3.4. Språk</a></li>
+<li><a href="#truehovedtema">3.5. Hovedtema</a></li>
+<li><a href="#truetemakategori">3.6. Temakategori</a></li>
+<li><a href="#truesammendrag">3.7. Sammendrag</a></li>
+<li><a href="#trueformål">3.8. Formål</a></li>
+<li><a href="#truerepresentasjonsform">3.9. Representasjonsform</a></li>
+<li><a href="#truedatasettoppløsning">3.10. Datasettoppløsning</a></li>
+<li><a href="#trueutstrekningsinformasjon">3.11. Utstrekningsinformasjon</a></li>
+<li><a href="#trueidentifikasjonsomfang">3.12. Identifikasjonsomfang</a></li>
+<li><a href="#truesupplerende-beskrivelse">3.13. Supplerende beskrivelse</a></li>
+</ul>
+</li>
+<li><a href="#truespesifikasjonsomfang">4. Spesifikasjonsomfang</a>
+<ul class="sectlevel2">
+<li><a href="#truespesifikasjonsomfang-for-hele-spesifikasjonen">4.1. Spesifikasjonsomfang for hele spesifikasjonen</a></li>
+</ul>
+</li>
+<li><a href="#trueinnhold-og-struktur">5. Innhold og struktur</a>
+<ul class="sectlevel2">
+<li><a href="#truefkb-tiltak-5-0-utkast">5.1. FKB-Tiltak-5.0-Utkast</a>
+<ul class="sectlevel4">
+<li><a href="#truetagged-values">Tagged Values</a></li>
+<li><a href="#truefeaturetype-tiltakgenerell">5.1.2. «FeatureType» TiltakGenerell</a></li>
+<li><a href="#truefeaturetype-bygningtiltak">5.1.3. «featureType» BygningTiltak</a></li>
+<li><a href="#truefeaturetype-samferdseltiltak">5.1.4. «featureType» SamferdselTiltak</a></li>
+<li><a href="#truefeaturetype-andretiltak">5.1.5. «featureType» AndreTiltak</a></li>
+<li><a href="#truefeaturetype-bygningknekklinje">5.1.6. «featureType» BygningKnekklinje</a></li>
+<li><a href="#truecodelist-behandlingsstatus">5.1.7. «codeList» Behandlingsstatus</a></li>
+<li><a href="#truecodelist-kartregistrering">5.1.8. «codeList» Kartregistrering</a></li>
+<li><a href="#truecodelist-tiltaksansvarlig">5.1.9. «CodeList» Tiltaksansvarlig</a></li>
+<li><a href="#truecodelist-andretiltaktype">5.1.10. «CodeList» AndretiltakType</a></li>
+<li><a href="#truecodelist-knekklinjetype">5.1.11. «codeList» Knekklinjetype</a></li>
+</ul>
+</li>
+<li><a href="#truegenerelle-elementer">5.2. Generelle elementer</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-fellesegenskaper">5.2.1. «FeatureType» Fellesegenskaper</a></li>
+<li><a href="#truedatatype-identifikasjon">5.2.2. «dataType» Identifikasjon</a></li>
+<li><a href="#truedatatype-posisjonskvalitet">5.2.3. «dataType» Posisjonskvalitet</a></li>
+<li><a href="#truecodelist-synbarhet">5.2.4. «CodeList» Synbarhet</a></li>
+<li><a href="#truecodelist-datafangstmetode">5.2.5. «CodeList» Datafangstmetode</a></li>
+<li><a href="#truecodelist-høydereferanse">5.2.6. «CodeList» Høydereferanse</a></li>
+<li><a href="#truecodelist-medium">5.2.7. «CodeList» Medium</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truereferansesystem">6. Referansesystem</a>
+<ul class="sectlevel2">
+<li><a href="#trueromlig-referansesystem">6.1. Romlig referansesystem</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang">6.1.1. Omfang</a></li>
+<li><a href="#truenavn-på-kilden-til-referansesystemet">6.1.2. Navn på kilden til referansesystemet:</a></li>
+<li><a href="#trueansvarlig-organisasjon-for-referansesystemet">6.1.3. Ansvarlig organisasjon for referansesystemet:</a></li>
+<li><a href="#truelink-til-mer-info-om-referansesystemet">6.1.4. Link til mer info om referansesystemet:</a></li>
+<li><a href="#truekoderom">6.1.5. Koderom:</a></li>
+<li><a href="#trueidentifikasjonskode">6.1.6. Identifikasjonskode:</a></li>
+<li><a href="#truekodeversjon">6.1.7. Kodeversjon</a></li>
+</ul>
+</li>
+<li><a href="#truetemporalt-referansesystem">6.2. Temporalt referansesystem</a>
+<ul class="sectlevel3">
+<li><a href="#truenavn-på-temporalt-referansesystem">6.2.1. Navn på temporalt referansesystem</a></li>
+<li><a href="#trueomfang-2">6.2.2. Omfang</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truekvalitet">7. Kvalitet</a></li>
+<li><a href="#truedatafangst">8. Datafangst</a></li>
+<li><a href="#truedatavedlikehold">9. Datavedlikehold</a>
+<ul class="sectlevel2">
+<li><a href="#truevedlikeholdsinformasjon-kartleggingsprosjekter">9.1. Vedlikeholdsinformasjon Kartleggingsprosjekter</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-3">9.1.1. Omfang</a></li>
+<li><a href="#truevedlikeholdsfrekvens">9.1.2. Vedlikeholdsfrekvens</a></li>
+<li><a href="#truevedlikeholdsbeskrivelse">9.1.3. Vedlikeholdsbeskrivelse</a></li>
+</ul>
+</li>
+<li><a href="#truevedlikeholdsinformasjon-kontinuerlig-ajourhold">9.2. Vedlikeholdsinformasjon Kontinuerlig ajourhold</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-4">9.2.1. Omfang</a></li>
+<li><a href="#truevedlikeholdsfrekvens-2">9.2.2. Vedlikeholdsfrekvens</a></li>
+<li><a href="#truevedlikeholdsbeskrivelse-2">9.2.3. Vedlikeholdsbeskrivelse</a></li>
+</ul>
+</li>
+<li><a href="#truevedlikeholdsinformasjon-meldinger-om-feil-og-mangler">9.3. Vedlikeholdsinformasjon Meldinger om feil og mangler</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-5">9.3.1. Omfang</a></li>
+<li><a href="#truevedlikeholdsfrekvens-3">9.3.2. Vedlikeholdsfrekvens</a></li>
+<li><a href="#truevedlikeholdsbeskrivelse-3">9.3.3. Vedlikeholdsbeskrivelse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truepresentasjon">10. Presentasjon</a>
+<ul class="sectlevel2">
+<li><a href="#trueomfang-6">10.1. Omfang</a></li>
+<li><a href="#truereferanse-til-presentasjonskatalog">10.2. Referanse til presentasjonskatalog</a></li>
+</ul>
+</li>
+<li><a href="#trueleveranse">11. Leveranse</a>
+<ul class="sectlevel2">
+<li><a href="#trueleveransemetode">11.1. Leveransemetode</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-7">11.1.1. Omfang</a></li>
+<li><a href="#trueleveranseformat">11.1.2. Leveranseformat</a></li>
+<li><a href="#trueleveransemedium">11.1.3. Leveransemedium</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truetilleggsinformasjon">12. Tilleggsinformasjon</a></li>
+<li><a href="#truemetadata">13. Metadata</a>
+<ul class="sectlevel2">
+<li><a href="#trueomfang-8">13.1. Omfang</a></li>
+<li><a href="#truemetadataspesifikasjon">13.2. Metadataspesifikasjon</a></li>
+</ul>
+</li>
+<li><a href="#truesosi-format-realisering">Vedlegg A: SOSI-format-realisering</a></li>
+<li><a href="#truegml-realisering">Vedlegg B: GML-realisering</a></li>
+<li><a href="#trueannen-nyttig-informasjon-til-brukere">Vedlegg C: Annen nyttig informasjon til brukere</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -450,34 +605,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-06-14
+Testversjon 2021-06-29
 </td>
 </tr>
 </table>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueinnledning-historikk-og-endringslogg"><a class="anchor" href="#trueinnledning-historikk-og-endringslogg"></a>1. Innledning, historikk og endringslogg</h2>
+<h2 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1. Innledning</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
+<h3 id="truebeskrivelse"><a class="anchor" href="#truebeskrivelse"></a>1.1. Beskrivelse</h3>
 <div class="paragraph">
-<p>FKB-Naturinfo er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del.</p>
+<p>FKB-Tiltak er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie
+produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del.</p>
 </div>
 <div class="paragraph">
-<p>FKB-Naturinfo beskriver naturinformasjon som ikke faller inn under de andre naturressurskapitlene, konkret hekk, innmålte trær og steiner.</p>
+<p>FKB-Tiltak skal inneholde objekter som er registrert gjennom saksbehandling i kommunen og andre offentlige aktører. Ideen er å registrere områder der det er søkt om eller godkjent utbygging. Denne informasjonen viser hvor det skjer endringer i terrenget og kan derfor brukes som metadata for de øvrige FKB-datasettene. I tillegg er målet at dataene i FKB-Tiltak nyttes til å få til en raskere oppdatering av grunnkartet når utbyggingen er ferdigen. For objekttypene BygningTiltak/BygningKnekklinje er målet at dataene fra tiltaksbasen kan brukes til en automatisk overføring til FKB-Bygning når bygningen ferdigstilles.</p>
 </div>
 <div class="paragraph">
-<p>FKB-Naturinfo versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 5.1 og SOSI del 2 Annen naturinformasjon versjon 4.0.</p>
+<p>Objekter som er ferdig bygd og registrert i grunnkartet merkes som kartlagt (KARTREG 2) i tiltaksbasen, men vil normalt ikke bli slettet slik at historikken er tilgjengelig.</p>
 </div>
 <div class="paragraph">
-<p>FKB Generell del finnes her: (link)</p>
+<p>FKB-Tiltak 5.0 baserer seg på generelle konsepter definert i SOSI del 1 5.1 og SOSI del 2 Plan versjon 4.5</p>
 </div>
 <div class="paragraph">
-<p>Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er nå samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Naturinfo 5.0 finnes her:
-(link)</p>
+<p>FKB Generell del finnes her: [link]</p>
 </div>
 </div>
 <div class="sect2">
@@ -494,16 +648,16 @@ Testversjon 2021-06-14
 <p>FKB versjon 3.4 august 2002</p>
 </li>
 <li>
-<p>FKB-Naturinfo versjon 4.0 – 2007-01-01</p>
+<p>FKB-PblTiltak versjon 4.0 – 2007-01-01</p>
 </li>
 <li>
-<p>FKB-Naturinfo versjon 4.01 - 2009-03-10</p>
+<p>FKB-PblTiltak versjon 4.01 - 2009-03-10</p>
 </li>
 <li>
-<p>FKB-Naturinfo versjon 4.02 - 2011-12-01</p>
+<p>FKB-PblTiltak versjon 4.02 - 2011-12-01</p>
 </li>
 <li>
-<p>FKB-Naturinfo versjon 4.6 - 2016-07-01</p>
+<p>FKB-Tiltak versjon 4.6 - 2016-07-01</p>
 </li>
 </ul>
 </div>
@@ -511,7 +665,23 @@ Testversjon 2021-06-14
 <div class="sect2">
 <h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.3. Endringslogg</h3>
 <div class="paragraph">
-<p>Endringer siden FKB-Naturinfo 4.6 - 2016-07-01:</p>
+<p>Det er gjort ganske store endringer i modellering/logikk i FKB-Tiltak i denne revisjonen. Mål for endringene:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beholde enkel og godt etablert dataflyt for Bygninger og samtidig åpne for mer detaljert beskrivelse av bygningenes form</p>
+</li>
+<li>
+<p>Legge grunnlag for mer gjennomgående bruk av tiltak for veganlegg (og ev. andre typer samferdselsanlegg)</p>
+</li>
+<li>
+<p>Beholde fleksibilitet til å legge inn også andre typer tiltak.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Konkrete endringer siden FKB-Tiltak versjon 4.6 - 2016-07-01:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -519,14 +689,22 @@ Testversjon 2021-06-14
 <p>Oppdatert generelle konsepter fra FKB 5.0 generell del</p>
 </li>
 <li>
-<p>Objekttype SteinOmriss utgår som egen objekttype. Objekttype Stein modelleres med heleid flategeometri</p>
+<p>Alle objekttyper modelleres med påkrevd og heleid flategeometri. I tillegg er det lov med en opsjonell punktgeometri (representasjonspunkt). Kurvegeometri har i svært liten grad blitt brukt i tiltaksbasen og er derfor ikke lenger definert som en mulighet.</p>
 </li>
 <li>
-<p>Objekttype Allé utgår fra spesifikasjonen (objekttypen har ikke blitt kartlagt/vedlikehold i de siste versjonene)</p>
+<p>Logikken for inndeling i objekttyper er endret. I tildligere spesifikasjon tok dette utgangspunkt i hvilket lovverk som ligger til grunn for - og status i -  saksbehandlingen (PblSøknad, PblTiltak). Dette er nå endret slik at inndeling i objekttyper skjer med bakgrunn i hva slags type utbygging som skal skje (BygningTiltak, SamferdselTiltak og AnnenTiltak) og en statuskode som håndterer alt fra "søknad mottatt" til "godkjent"/"avvist".</p>
+</li>
+<li>
+<p>Egenskapen saksnummer er endret til saksreferanse. Dette vil fortsatt være den sentrale nøkkelen for kobling mellom objektet i tiltaksbasen og  saksbehandlingssystemet der øvrig informasjon om saken finnes.</p>
+</li>
+<li>
+<p>I tillegg til saksreferanse er det innført egenskapen <em>eksternpeker</em> i form av en URI som kan peke direkte på mer informasjon om saken/utbyggingsprosjektet dersom det finnes en slik ressurs (generell mekanisme innført i FKB 5.0)</p>
+</li>
+<li>
+<p>Mange opsjonelle (og lite brukte) egenskaper knyttet til saksbehandlingsprosessen er fjernet.</p>
 </li>
 </ul>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -746,11 +924,14 @@ Informasjon om fullstendighet må være datert.</p>
 <div id="G" class="paragraph">
 <p><strong>[G]</strong> : Geodatakvalitet</p>
 </div>
-<div class="paragraph">
+<div id="SOSI" class="paragraph">
 <p><strong>[SOSI]</strong> : SOSI (Samordnet Opplegg for Stedfestet Informasjon)</p>
 </div>
-<div class="paragraph">
+<div id="PABG" class="paragraph">
 <p><strong>[PABG]</strong> : Produksjon av basis geodata</p>
+</div>
+<div id="GEO-VEIL" class="paragraph">
+<p><strong>[GEO-VEIL]</strong> : Geovekst veiledingsdokumentasjon</p>
 </div>
 </div>
 <div class="sect3">
@@ -792,12 +973,12 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="trueunik-identifisering"><a class="anchor" href="#trueunik-identifisering"></a>3.1. Unik identifisering</h3>
 <div class="paragraph">
-<p>FKB-Naturinfo</p>
+<p>FKB-Arealbruk</p>
 </div>
 <div class="sect3">
 <h4 id="truefullstendig-navn"><a class="anchor" href="#truefullstendig-navn"></a>3.1.1. Fullstendig navn</h4>
 <div class="paragraph">
-<p>FKB Annen naturinformasjon</p>
+<p>FKB Arealbruk</p>
 </div>
 </div>
 <div class="sect3">
@@ -840,7 +1021,7 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="truesammendrag"><a class="anchor" href="#truesammendrag"></a>3.7. Sammendrag</h3>
 <div class="paragraph">
-<p>Spesifikasjonen beskriver annen naturinformasjon som ikke faller inn under de andre naturressurskapitlene, konkret hekk, innmålte trær og steiner.</p>
+<p>FKB-Arealbruk beskriver fysiske bruk av et geografisk område.</p>
 </div>
 </div>
 <div class="sect2">
@@ -859,9 +1040,6 @@ Informasjon om fullstendighet må være datert.</p>
 <h3 id="truedatasettoppløsning"><a class="anchor" href="#truedatasettoppløsning"></a>3.10. Datasettoppløsning</h3>
 <div class="paragraph">
 <p>FKB er detaljerte data stort sett registrert fotogrammetrisk fra flybilder med en oppløsing mellom 7 og 25 cm. Nøyaktigheten varierer fra +/- 0.10 m til +/- 2 m avhengig av objekttype, områdetype og datafangstmetode. FKB-data egner seg for presentasjon i målestokker fra ca 1:100 til ca 1:20000</p>
-</div>
-<div class="paragraph">
-<p><a href="#PBL-KART">[PBL-KART]</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -911,7 +1089,7 @@ Informasjon om fullstendighet må være datert.</p>
 <h2 id="trueinnhold-og-struktur"><a class="anchor" href="#trueinnhold-og-struktur"></a>5. Innhold og struktur</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truefkb-naturinfo-5-0utkast"><a class="anchor" href="#truefkb-naturinfo-5-0utkast"></a>5.1. FKB-Naturinfo-5.0Utkast</h3>
+<h3 id="truefkb-tiltak-5-0-utkast"><a class="anchor" href="#truefkb-tiltak-5-0-utkast"></a>5.1. FKB-Tiltak-5.0-Utkast</h3>
 <div class="paragraph">
 <p>Definisjon:</p>
 </div>
@@ -924,36 +1102,8 @@ Informasjon om fullstendighet må være datert.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">language</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_kortnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Naturinfo</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_modellstatus</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">utkastOgSkjult</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_versjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">targetNamespace</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://skjema.geonorge.no/SOSI/produktspesfikasjon/FKB-Naturinfo/5.0" class="bare">https://skjema.geonorge.no/SOSI/produktspesfikasjon/FKB-Naturinfo/5.0</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xmlns</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">app</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xsdDocument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Naturinfo-50.xsd</p></td>
 </tr>
 </tbody>
 </table>
@@ -971,39 +1121,29 @@ Informasjon om fullstendighet må være datert.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="figurer/Arv%20av%20fellesegenskaper.png" alt="Arv av fellesegenskaper">
+<img src="figurer/Realisering%20av%20objekttyper.png" alt="Realisering av objekttyper">
 </div>
-<div class="title">Figur 3: Arv av fellesegenskaper</div>
+<div class="title">Figur 3: Realisering av objekttyper</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/Objekttyper%20og%20kodelister.png" alt="Objekttyper og kodelister">
+</div>
+<div class="title">Figur 4: Objekttyper og kodelister</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-hekk"><a class="anchor" href="#truefeaturetype-hekk"></a>5.1.2. «featureType» Hekk</h4>
+<h4 id="truefeaturetype-tiltakgenerell"><a class="anchor" href="#truefeaturetype-tiltakgenerell"></a>5.1.2. «FeatureType» TiltakGenerell</h4>
 <div class="paragraph">
-<p>Definisjon: plantede busker som utgjør en hekk</p>
+<p>Definisjon: abstrakt supertype som inneholder generelle egenskaper som gjelder alle typer tiltak.
+Tiltak registreres generelt s&#229; tidlig som mulig i tiltaksbasen, gjerne allerede fra mottak av s&#248;knad.
+N&#229;r tiltaket er ferdig utbygd skal dette medf&#248;re oppdatering av grunnkartet (&#248;vrige FKB-datasett). Tiltak som er registrert i grunnkartet merkes med kartregistrering "Innm&#229;lt i kartet" (KARTREG 2) i FKB-Tiltak.</p>
 </div>
 <div class="paragraph">
-<p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
+<p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
 </div>
-<div class="sect4">
-<h5 id="truetagged-values-2"><a class="anchor" href="#truetagged-values-2"></a>Tagged Values</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_bildeAvModellelement</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">figurer/objtype_hekk.png</p></td>
-</tr>
-</tbody>
-</table>
-<div class="imageblock">
-<div class="content">
-<img src="figurer/figurer/objtype_hekk.png" alt="figurer/objtype_hekk.png">
-</div>
-<div class="title">Figur 4: SOSI_bildeAvModellelement</div>
-</div>
+<div class="paragraph">
+<p><strong>Realisering av:</strong> «ApplicationSchema» Plan 4.5/EnkeltSaker::«featureType» PblTiltak</p>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper"><a class="anchor" href="#trueegenskaper"></a>Egenskaper</h5>
@@ -1015,11 +1155,11 @@ Informasjon om fullstendighet må være datert.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>senterlinje</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>omrade</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger objektets sentrale del</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Omr&#229;det som tiltaket befinner seg innenfor.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1027,12 +1167,7 @@ Informasjon om fullstendighet må være datert.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_melding: Fant ikke denne i SOSI_db<br>
-SOSI_navn: Kurve<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
 </tr>
 </tbody>
 </table>
@@ -1044,11 +1179,11 @@ SOSI_navn: Kurve<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>treType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aktuell tretype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Representasjonspunkt for tiltaket</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1056,13 +1191,7 @@ SOSI_navn: Kurve<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TreType</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: H<br>
-SOSI_lengde: 2<br>
-SOSI_navn: TRE_TYP<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
 </tr>
 </tbody>
 </table>
@@ -1074,11 +1203,83 @@ SOSI_navn: TRE_TYP<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høydereferanse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>saksreferanse</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">koordinatregistering utført på topp eller bunn av et objekt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saksnummer eller annen type unik referanse til det aktuelle sakssytemet der man kan finne mer informasjon om saken</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>behandlingsstatus</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Behandlingsstatus</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kartregistrering</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kartregistrering</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>behandlingsdato</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Siste dato for oppdatering av saken i saksystemet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1086,29 +1287,64 @@ SOSI_navn: TRE_TYP<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dato</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 6<br>
-SOSI_navn: HREF<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: BEHANDLINGSDATO<br></p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="trueroller"><a class="anchor" href="#trueroller"></a>Roller</h5>
-
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eksternpeker</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Peker til tiltaksobjektet i et annet system. Dette kan f.eks. v&#230;re prosjekteringssystemer e.l. i forbindelse med st&#248;rre samferdselsutbygginger.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subtyper:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» AndreTiltak<br>
+«featureType» SamferdselTiltak<br>
+«featureType» BygningTiltak</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-innmålttre"><a class="anchor" href="#truefeaturetype-innmålttre"></a>5.1.3. «featureType» InnmåltTre</h4>
+<h4 id="truefeaturetype-bygningtiltak"><a class="anchor" href="#truefeaturetype-bygningtiltak"></a>5.1.3. «featureType» BygningTiltak</h4>
 <div class="paragraph">
-<p>Definisjon: markerte enkeltrær</p>
+<p>Definisjon: Tiltak som gjelder Bygning etter plan- og bygningsloven. Kommunene er ansvarlige for saksbehandling etter Pbl og f&#248;ring av BygningTiltak i tiltaksbasen.
+Bygningsnummer (og ev. bygningsendringsnummer) fra Matrikkelen registreres p&#229; tiltaket s&#229; fort bygningen er etablert i Matrikkelen.
+Omr&#229;de-geometrien til tiltaket angir omr&#229;det i grunnriss som bygningen skal bygges innenfor. Dette vil normalt samsvare med byggets planlagte yttervegger.
+Dersom man &#248;nsker &#229; gi informasjon om bygningens planlagte h&#248;yde kan dette gj&#248;res ved &#229; angi (1) h&#248;ydeverdier p&#229; omr&#229;degeometrien og sette h&#248;ydereferanse topp, (2) angi en verdi for maks h&#248;yde over terrengh&#248;yde eller (3) registrere objekter av typen BygningKnekklinje som beskriver planlagt form p&#229; bygget i 2.5D i mer detalj.</p>
 </div>
 <div class="paragraph">
-<p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
+<p><strong>Supertype:</strong> «FeatureType» TiltakGenerell</p>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-2"><a class="anchor" href="#trueegenskaper-2"></a>Egenskaper</h5>
@@ -1120,26 +1356,26 @@ SOSI_navn: HREF<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bygningsnummer</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nummerering av bygninger fra Matrikkelen. Nummeret er unikt og landsdekkende.
+Merknad: For tiltak som omhandler bygninger (tiltakstype nybygg, tilbygg, påbygg, underbygg og ombygging) skal bygningsnummer overføres til tiltaket så fort bygningsnummeret er etablert i Matrikkelen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: *<br>
-SOSI_lengde: <br>
-SOSI_navn: NØ<br>
-SOSI_navn: Punkt<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: H<br>
+SOSI_lengde: 9<br>
+SOSI_navn: BYGGNR<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1151,11 +1387,13 @@ SOSI_navn: Punkt<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>treType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bygningsendringløpenummer</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">aktuell tretype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">løpende nummerering av tilbygg til et hovedbygg.
+Merknad:
+For tiltak som omhandler bygningsendringer (tiltakstype tilbygg, påbygg, underbygg og ombygging) skal bygningsendringløpenummer overføres til tiltaket så fort løpenummeret er etablert i Matrikkelen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1163,13 +1401,43 @@ SOSI_navn: Punkt<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TreType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: H<br>
 SOSI_lengde: 2<br>
-SOSI_navn: TRE_TYP<br></p></td>
+SOSI_navn: BYGN_ENDR_LØPENR<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høydeoverbakken</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">St&#248;rste h&#248;yde p&#229; tiltaket over gjennomsnittlig terrengh&#248;yde angitt i meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 10<br>
+SOSI_navn: HOB<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1185,37 +1453,50 @@ SOSI_navn: TRE_TYP<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">koordinatregistering utført på topp eller bunn av et objekt</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 6<br>
-SOSI_navn: HREF<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== Roller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>beskriver</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="trueroller-2"><a class="anchor" href="#trueroller-2"></a>Roller</h5>
-
-</div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-stein"><a class="anchor" href="#truefeaturetype-stein"></a>5.1.4. «featureType» Stein</h4>
+<h4 id="truefeaturetype-samferdseltiltak"><a class="anchor" href="#truefeaturetype-samferdseltiltak"></a>5.1.4. «featureType» SamferdselTiltak</h4>
 <div class="paragraph">
-<p>Definisjon: markert stein</p>
+<p>Definisjon: Tiltak som gjelder utbygging av infrastruktur for samferdsel.</p>
 </div>
 <div class="paragraph">
-<p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
+<p>Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Supertype:</strong> «FeatureType» TiltakGenerell</p>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-3"><a class="anchor" href="#trueegenskaper-3"></a>Egenskaper</h5>
@@ -1227,11 +1508,11 @@ SOSI_navn: HREF<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>område</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tiltaksansvarlig</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1239,11 +1520,66 @@ SOSI_navn: HREF<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tiltaksansvarlig</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== Roller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn:</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_melding: Fant ikke denne i SOSI_db<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>avgrensning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-andretiltak"><a class="anchor" href="#truefeaturetype-andretiltak"></a>5.1.5. «featureType» AndreTiltak</h4>
+<div class="paragraph">
+<p>Definisjon: andre typer tiltak enn tiltak for bygninger og samferdselsutbygging.</p>
+</div>
+<div class="paragraph">
+<p>Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Supertype:</strong> «FeatureType» TiltakGenerell</p>
+</div>
+<div class="sect4">
+<h5 id="trueegenskaper-4"><a class="anchor" href="#trueegenskaper-4"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tiltaksansvarlig</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tiltaksansvarlig</p></td>
 </tr>
 </tbody>
 </table>
@@ -1255,32 +1591,169 @@ SOSI_navn: HREF<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>andretiltak</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">andre type tiltak enn de som omfattes av plan- og bygningsloven</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Andretiltaktype</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">===== Roller</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>avgrensning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-bygningknekklinje"><a class="anchor" href="#truefeaturetype-bygningknekklinje"></a>5.1.6. «featureType» BygningKnekklinje</h4>
+<div class="paragraph">
+<p>Definisjon: Geometri som beskriver takformen til bygningen i 2.5D. Som minimum b&#248;r toppen av byggets avgrensninger registreres og gjerne ogs&#229; knekklinjer som beskriver takformen inne p&#229; taket (m&#248;nelinjer, taksprang osv.)</p>
+</div>
+<div class="paragraph">
+<p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
+</div>
 <div class="sect4">
-<h5 id="trueroller-3"><a class="anchor" href="#trueroller-3"></a>Roller</h5>
-
+<h5 id="trueegenskaper-5"><a class="anchor" href="#trueegenskaper-5"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>grense</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger overgang mellom ulike fenomener</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kartregistrering</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status for kartregistrering av avgjorte tiltak</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kartregistrering</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>knekklinje</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Knekklinjetype</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-tretype"><a class="anchor" href="#truecodelist-tretype"></a>5.1.5. «CodeList» TreType</h4>
+<h4 id="truecodelist-behandlingsstatus"><a class="anchor" href="#truecodelist-behandlingsstatus"></a>5.1.7. «codeList» Behandlingsstatus</h4>
 <div class="paragraph">
-<p>Definisjon: hovedinndeling av tr&#230;r</p>
+<p>Definisjon: status for sakbehandlingen</p>
+</div>
+<div class="sect4">
+<h5 id="truetagged-values-2"><a class="anchor" href="#truetagged-values-2"></a>Tagged Values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codelist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/behandlingsstatus" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/behandlingsstatus</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BEHANDLINGSSTATUS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-kartregistrering"><a class="anchor" href="#truecodelist-kartregistrering"></a>5.1.8. «codeList» Kartregistrering</h4>
+<div class="paragraph">
+<p>Definisjon: status for kartregistrering av avgjorte tiltak. Når tiltaket er lagt inn i grunnkartet (et av de andre FKB-datasettene) endres verdien til "2 - Innmålt i kartet"</p>
 </div>
 <div class="sect4">
 <h5 id="truetagged-values-3"><a class="anchor" href="#truetagged-values-3"></a>Tagged Values</h5>
@@ -1295,8 +1768,8 @@ SOSI_navn: HREF<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/versjon5/tretype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/versjon5/tretype</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codelist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/kartregistrering" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/kartregistrering</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -1304,11 +1777,122 @@ SOSI_navn: HREF<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TRE_TYP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTREG</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-tiltaksansvarlig"><a class="anchor" href="#truecodelist-tiltaksansvarlig"></a>5.1.9. «CodeList» Tiltaksansvarlig</h4>
+<div class="paragraph">
+<p>Definisjon: hvilket forvaltningsniv&#229;/etat som er ansvarlig for oppf&#248;lging av tiltaket</p>
+</div>
+<div class="sect4">
+<h5 id="truetagged-values-4"><a class="anchor" href="#truetagged-values-4"></a>Tagged Values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltaksansvarlig" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltaksansvarlig</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TILTAKSANSVARLIG</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-andretiltaktype"><a class="anchor" href="#truecodelist-andretiltaktype"></a>5.1.10. «CodeList» AndretiltakType</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truetagged-values-5"><a class="anchor" href="#truetagged-values-5"></a>Tagged Values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/andretiltakstype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/andretiltakstype</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANDRETILTAKTYPE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-knekklinjetype"><a class="anchor" href="#truecodelist-knekklinjetype"></a>5.1.11. «codeList» Knekklinjetype</h4>
+<div class="paragraph">
+<p>Definisjon: Type knekklinje som beskriver takformen i 2.5D</p>
+</div>
+<div class="sect4">
+<h5 id="truetagged-values-6"><a class="anchor" href="#truetagged-values-6"></a>Tagged Values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codelist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/knekklinjetype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/knekklinjetype</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KNEKKLINJETYPE</p></td>
 </tr>
 </tbody>
 </table>
@@ -1357,12 +1941,7 @@ Kopieres direkte inn i de enkelte FKB-datasettene</p>
 <p><strong>Realisering av:</strong> «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt</p>
 </div>
 <div class="sect4">
-<h5 id="truetagged-values-4"><a class="anchor" href="#truetagged-values-4"></a>Tagged Values</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskaper-4"><a class="anchor" href="#trueegenskaper-4"></a>Egenskaper</h5>
+<h5 id="trueegenskaper-6"><a class="anchor" href="#trueegenskaper-6"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1449,7 +2028,7 @@ SOSI_navn: OPPDATERINGSDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
@@ -1470,13 +2049,11 @@ SOSI_navn: DATAFANGSTDATO<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>verifiseringsdato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kvalitet</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.</p>
-<p class="tableblock">Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1484,40 +2061,7 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATO<br>
-SOSI_navn: VERIFISERINGSDATO<br></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>registreringsversjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsversjon</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Posisjonskvalitet</p></td>
 </tr>
 </tbody>
 </table>
@@ -1545,53 +2089,8 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 255<br>
-SOSI_navn: INFORMASJON<br></p></td>
-</tr>
 </tbody>
 </table>
-</div>
-<div class="sect4">
-<h5 id="trueroller-4"><a class="anchor" href="#trueroller-4"></a>Roller</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generalisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» KvalitetPåkrevd<br>
-«FeatureType» KvalitetOpsjonell</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truefeaturetype-kvalitetpåkrevd"><a class="anchor" href="#truefeaturetype-kvalitetpåkrevd"></a>5.2.2. «FeatureType» KvalitetPåkrevd</h4>
-<div class="paragraph">
-<p>Definisjon:</p>
-</div>
-<div class="paragraph">
-<p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisering av:</strong> «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisering av:</strong> «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt</p>
-</div>
-<div class="sect4">
-<h5 id="truetagged-values-5"><a class="anchor" href="#truetagged-values-5"></a>Tagged Values</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskaper-5"><a class="anchor" href="#trueegenskaper-5"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1600,78 +2099,11 @@ SOSI_navn: INFORMASJON<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kvalitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>medium</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
-<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Posisjonskvalitet</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: KVALITET<br></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueroller-5"><a class="anchor" href="#trueroller-5"></a>Roller</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generalisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» Stein<br>
-«featureType» InnmåltTre<br>
-«featureType» Hekk</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truefeaturetype-kvalitetopsjonell"><a class="anchor" href="#truefeaturetype-kvalitetopsjonell"></a>5.2.3. «FeatureType» KvalitetOpsjonell</h4>
-<div class="paragraph">
-<p>Definisjon:</p>
-</div>
-<div class="paragraph">
-<p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
-</div>
-<div class="paragraph">
-<p><strong>Realisering av:</strong> «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt</p>
-</div>
-<div class="sect4">
-<h5 id="truetagged-values-6"><a class="anchor" href="#truetagged-values-6"></a>Tagged Values</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskaper-6"><a class="anchor" href="#trueegenskaper-6"></a>Egenskaper</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>kvalitet</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
-<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1679,18 +2111,27 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
 </tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: KVALITET<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subtyper:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» TiltakGenerell<br>
+«featureType» BygningKnekklinje</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truedatatype-identifikasjon"><a class="anchor" href="#truedatatype-identifikasjon"></a>5.2.4. «dataType» Identifikasjon</h4>
+<h4 id="truedatatype-identifikasjon"><a class="anchor" href="#truedatatype-identifikasjon"></a>5.2.2. «dataType» Identifikasjon</h4>
 <div class="paragraph">
 <p>Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
 </div>
@@ -1816,7 +2257,7 @@ SOSI_navn: VERSJONID<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truedatatype-posisjonskvalitet"><a class="anchor" href="#truedatatype-posisjonskvalitet"></a>5.2.5. «dataType» Posisjonskvalitet</h4>
+<h4 id="truedatatype-posisjonskvalitet"><a class="anchor" href="#truedatatype-posisjonskvalitet"></a>5.2.3. «dataType» Posisjonskvalitet</h4>
 <div class="paragraph">
 <p>Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.</p>
 </div>
@@ -2000,13 +2441,9 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="trueroller-6"><a class="anchor" href="#trueroller-6"></a>Roller</h5>
-
-</div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-synbarhet"><a class="anchor" href="#truecodelist-synbarhet"></a>5.2.6. «CodeList» Synbarhet</h4>
+<h4 id="truecodelist-synbarhet"><a class="anchor" href="#truecodelist-synbarhet"></a>5.2.4. «CodeList» Synbarhet</h4>
 <div class="paragraph">
 <p>Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
@@ -2043,7 +2480,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-datafangstmetode"><a class="anchor" href="#truecodelist-datafangstmetode"></a>5.2.7. «CodeList» Datafangstmetode</h4>
+<h4 id="truecodelist-datafangstmetode"><a class="anchor" href="#truecodelist-datafangstmetode"></a>5.2.5. «CodeList» Datafangstmetode</h4>
 <div class="paragraph">
 <p>Definisjon: metode for datafangst.</p>
 </div>
@@ -2083,9 +2520,9 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-registreringsversjon"><a class="anchor" href="#truecodelist-registreringsversjon"></a>5.2.8. «CodeList» Registreringsversjon</h4>
+<h4 id="truecodelist-høydereferanse"><a class="anchor" href="#truecodelist-høydereferanse"></a>5.2.6. «CodeList» Høydereferanse</h4>
 <div class="paragraph">
-<p>Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
+<p>Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt</p>
 </div>
 <div class="sect4">
 <h5 id="truetagged-values-11"><a class="anchor" href="#truetagged-values-11"></a>Tagged Values</h5>
@@ -2101,7 +2538,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -2109,11 +2546,52 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HREF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-medium"><a class="anchor" href="#truecodelist-medium"></a>5.2.7. «CodeList» Medium</h4>
+<div class="paragraph">
+<p>Definisjon: objektets beliggenhet i forhold til jordoverflaten</p>
+</div>
+<div class="paragraph">
+<p>Eksempel:
+Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
+</div>
+<div class="sect4">
+<h5 id="truetagged-values-12"><a class="anchor" href="#truetagged-values-12"></a>Tagged Values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MEDIUM</p></td>
 </tr>
 </tbody>
 </table>
@@ -2465,7 +2943,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truevedlegg-a-sosi-format-realisering"><a class="anchor" href="#truevedlegg-a-sosi-format-realisering"></a>Vedlegg A - SOSI-format-realisering</h2>
+<h2 id="truesosi-format-realisering"><a class="anchor" href="#truesosi-format-realisering"></a>Vedlegg A: SOSI-format-realisering</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -2482,7 +2960,7 @@ Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SO
 </div>
 </div>
 <div class="sect1">
-<h2 id="truevedlegg-b-gml-realisering"><a class="anchor" href="#truevedlegg-b-gml-realisering"></a>Vedlegg B - GML-realisering</h2>
+<h2 id="truegml-realisering"><a class="anchor" href="#truegml-realisering"></a>Vedlegg B: GML-realisering</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -2499,7 +2977,7 @@ Dersom GML er angitt som leveranseformat i kapittel 11, skal det her angis hvord
 </div>
 </div>
 <div class="sect1">
-<h2 id="truevedlegg-c-annen-nyttig-informasjon-til-brukere"><a class="anchor" href="#truevedlegg-c-annen-nyttig-informasjon-til-brukere"></a>Vedlegg C - Annen nyttig informasjon til brukere</h2>
+<h2 id="trueannen-nyttig-informasjon-til-brukere"><a class="anchor" href="#trueannen-nyttig-informasjon-til-brukere"></a>Vedlegg C: Annen nyttig informasjon til brukere</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -2518,7 +2996,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-28 14:29:26 +0200
+Last updated 2021-06-29 14:33:33 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
