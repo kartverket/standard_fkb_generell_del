@@ -31,20 +31,25 @@ FKB-Vann versjon 5.0 baserer seg p&#229; de generelle konseptene fra SOSI del 1 
 |version
 |5.0
  
+|xmlns
+|app
+ 
 |xsdDocument
 |FKB-Vann50.xsd
  
 |===
-[caption="Figur 1: ",title=Oversiktsdiagram FKB-Vann-5.0]
-image::Oversiktsdiagram FKB-Vann-5.0.png[Oversiktsdiagram FKB-Vann-5.0]
-[caption="Figur 2: ",title=Hoveddiagram - Flateobjekter]
-image::Hoveddiagram - Flateobjekter.png[Hoveddiagram - Flateobjekter]
-[caption="Figur 3: ",title=Hoveddiagram - Flateavgrensninger]
-image::Hoveddiagram - Flateavgrensninger.png[Hoveddiagram - Flateavgrensninger]
-[caption="Figur 4: ",title=Hoveddiagram - Andre objekter]
-image::Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekter]
-[caption="Figur 5: ",title=Pakkerealisering]
-image::Pakkerealisering.png[Pakkerealisering]
+[caption="Figur 1: ",title=Arv av fellesegenskaper]
+image::figurer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
+[caption="Figur 2: ",title=Oversiktsdiagram FKB-Vann-5.0]
+image::figurer/Oversiktsdiagram FKB-Vann-5.0.png[Oversiktsdiagram FKB-Vann-5.0]
+[caption="Figur 3: ",title=Hoveddiagram - Flateobjekter]
+image::figurer/Hoveddiagram - Flateobjekter.png[Hoveddiagram - Flateobjekter]
+[caption="Figur 4: ",title=Hoveddiagram - Flateavgrensninger]
+image::figurer/Hoveddiagram - Flateavgrensninger.png[Hoveddiagram - Flateavgrensninger]
+[caption="Figur 5: ",title=Hoveddiagram - Andre objekter]
+image::figurer/Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekter]
+[caption="Figur 6: ",title=Pakkerealisering]
+image::figurer/Pakkerealisering.png[Pakkerealisering]
  
 ==== «FeatureType» SnøIsbre
 Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø
@@ -145,6 +150,8 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 ==== «FeatureType» VannFiktivGrense
 Definisjon: fiktiv delelinje for vannflater, delelinjetype bestemmes p&#229; egenskapsniv&#229;
  
+*Supertype:* «FeatureType» KvalitetOpsjonell
+ 
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -175,10 +182,31 @@ Definisjon: fiktiv delelinje for vannflater, delelinjetype bestemmes p&#229; ege
 |Kurve
 |===
  
+==== «FeatureType» VeggrøftÅpen
+Definisjon: &#229;pen drenering parallelt med veg
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forl&#248;p som f&#248;lger objektets sentrale del
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Kurve
+|===
+ 
 ==== «FeatureType» Bekk
 Definisjon: mindre vannvei for rennende vann representert ved senterlinje
  
-*Supertype:* «FeatureType» KvalitetOpsjonell
+*Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» ElvBekk
  
@@ -244,6 +272,8 @@ SOSI_navn: VANNBR +
  
 ==== «FeatureType» Elv
 Definisjon: st&#248;rre vannvei for rennende vann representert ved flate
+ 
+*Supertype:* «FeatureType» Fellesegenskaper
  
 ===== Tagged Values
 [cols="20,80"]
@@ -410,7 +440,7 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |===
  
 ==== «FeatureType» Havflate
-Definisjon: havområde som avgrenses av Kystkontur, Kystsperre, HavElvSperre og KystkonturTekniskAnlegg
+Definisjon: havomr&#229;de som avgrenses av Kystkontur, VannFiktivGrense og KystkonturTekniskAnlegg
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -501,7 +531,7 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensning*
+|*avgrrensning*
  
 |Definisjon: 
 |grense mellom land og sjø i henhold til angitt kystreferanse, normalt middel høyvannstand
@@ -664,6 +694,20 @@ SOSI_navn: Flate +
  
 |Type: 
 |Medium
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*regulert*
+ 
+|Definisjon: 
+|angir omInnsj&#248; er oppdemt/regulert
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Boolean
 |===
 ===== Roller
 [cols="20,80"]
@@ -919,6 +963,8 @@ SOSI_navn: HØYDE +
 ==== «FeatureType» Grøft
 Definisjon: rennende vann der forløpet er menneskeskapt
  
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
 ===== Tagged Values
 [cols="20,80"]
 |===
@@ -982,7 +1028,7 @@ SOSI_navn: VANNBR +
 ==== «FeatureType» Kanal
 Definisjon: rennende vann der forløpet er menneskeskapt
  
-*Supertype:* «FeatureType» KvalitetOpsjonell
+*Supertype:* «FeatureType» Fellesegenskaper
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» KanalGrøft
  
@@ -1075,9 +1121,25 @@ SOSI_navn: VANNBR +
 |«FeatureType» KanalKant
 |===
 |===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*fiktivAvgrensning*
+ 
+|Definisjon: 
+|delelinjer mellom tilstøtende vannflater
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» VannFiktivGrense
+|===
  
 ==== «FeatureType» KanalKant
 Definisjon: avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt st&#229;r i kanalen
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
  
 ===== Tagged Values
 [cols="20,80"]
@@ -1153,7 +1215,7 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |===
 === Pakke: Datatyper og kodelister
 Definisjon: datatyper og kodelister
-[caption="Figur 6: ",title=Hoveddiagram for datatyper og kodelister]
+[caption="Figur 7: ",title=Hoveddiagram for datatyper og kodelister]
 image::Hoveddiagram for datatyper og kodelister.png[Hoveddiagram for datatyper og kodelister]
  
 ==== «CodeList» Kystkonstruksjonstype
@@ -1177,7 +1239,7 @@ Definisjon: angivelse av kystkonturens konstruksjon
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystkonstruksjonstype
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:09Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:10Z
  
 Kodelistens navn i registeret: Kystkonstruksjonstype
  
@@ -1256,7 +1318,7 @@ Definisjon: kystkonturens referanseniv&#229;
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystreferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:10Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:11Z
  
 Kodelistens navn i registeret: Kystreferanse
  
@@ -1302,7 +1364,7 @@ Definisjon: grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over l
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannbredde
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:11Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:12Z
  
 Kodelistens navn i registeret: VannBredde
  
@@ -1354,7 +1416,7 @@ Definisjon: inndeling av hjelpelinjer for avgrensning og oppdeling av vannflater
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:11Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:12Z
  
 Kodelistens navn i registeret: VannSperretype
  
@@ -1365,19 +1427,22 @@ Kodelistens navn i registeret: VannSperretype
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
-|ElveElvSperre
+|Elv mot elv sperre
 |hjelpelinje for avgrensning av en elveflate der den renner ut i en annen elv-/kanalflate
 |elveElvSperre
-|InnsjøElvSperre
+|Havdele fiktiv
+|fiktiv delelinje i havflater
+|havlinjeFiktiv
+|Innsjø mot elv sperre
 |hjelpelinje for avgrensning av innsjø mot elv eller kanal
 |innsjøElvSperre
-|ElvelinjeFiktiv
+|Elvelinje fiktiv
 |fiktiv delelinje i elv/kanal
 |elvelinjeFiktiv
-|HavElvSperre
+|Hav mot elv sperre
 |fiktiv linje som definerer grensa mellom sjø og elv, i samme nivå som kystKontur (middel høyvann)
 |havElvSperre
-|InnsjølinjeFiktiv
+|Innsjølinje fiktiv
 |fiktiv delelinje i innsjøer
 |innsjølinjeFiktiv
 |===
@@ -1386,11 +1451,11 @@ Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Gener
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 7: ",title=Hoveddiagram Fellesegenskaper]
+[caption="Figur 8: ",title=Hoveddiagram Fellesegenskaper]
 image::Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 8: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 9: ",title=Realisering av fellesegenskaper fra SOSI generell del]
 image::Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 9: ",title=Posisjonskvalitet]
+[caption="Figur 10: ",title=Posisjonskvalitet]
 image::Posisjonskvalitet.png[Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
@@ -1535,7 +1600,9 @@ SOSI_navn: INFORMASJON +
 |*Subtyper:*
 |«FeatureType» KvalitetOpsjonell +
 «FeatureType» KvalitetPåkrevd +
+«FeatureType» Kanal +
 «FeatureType» SnøIsbre +
+«FeatureType» Elv +
 «FeatureType» Innsjø +
 «FeatureType» Havflate
 |===
@@ -1574,10 +1641,14 @@ SOSI_navn: KVALITET +
 |*Subtyper:*
 |«FeatureType» Innsjøkant +
 «FeatureType» KystkonturTekniskeAnlegg +
+«FeatureType» KanalKant +
+«FeatureType» Bekk +
 «FeatureType» SnøIsbreKant +
 «FeatureType» Flomløpkant +
 «FeatureType» ElvKant +
+«FeatureType» Grøft +
 «FeatureType» Skjær +
+«FeatureType» VeggrøftÅpen +
 «FeatureType» Kystkontur
 |===
  
@@ -1611,8 +1682,7 @@ SOSI_navn: KVALITET +
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«FeatureType» Kanal +
-«FeatureType» Bekk
+|«FeatureType» VannFiktivGrense
 |===
  
 ==== «dataType» Identifikasjon
@@ -1839,7 +1909,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:30Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:33Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -1890,7 +1960,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:31Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:34Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -1951,7 +2021,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:32Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:34Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -2021,7 +2091,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:33Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:35Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -2070,7 +2140,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-07-08T14:35:33Z
+Kodeliste hentet på tidspunkt: 2021-07-15T12:37:36Z
  
 Kodelistens navn i registeret: Medium
  
