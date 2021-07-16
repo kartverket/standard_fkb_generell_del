@@ -51,6 +51,310 @@ image::figurer/Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekter]
 [caption="Figur 6: ",title=Pakkerealisering]
 image::figurer/Pakkerealisering.png[Pakkerealisering]
  
+==== «FeatureType» Bekk
+Definisjon: mindre vannvei for rennende vann representert ved senterlinje
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forl&#248;p som f&#248;lger objektets sentrale del
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Kurve
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vannBredde*
+ 
+|Definisjon: 
+|grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|VannBredde
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Medium
+|===
+ 
+==== «FeatureType» Elv
+Definisjon: st&#248;rre vannvei for rennende vann representert ved flate
+ 
+*Supertype:* «FeatureType» Fellesegenskaper
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|objektets plassering
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Punkt
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vannBredde*
+ 
+|Definisjon: 
+|grov klassifisering av vassdrag etter gjennomsnittelig bredde over lengre strekninger
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|VannBredde
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Medium
+|===
+===== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensning*
+ 
+|Definisjon: 
+|konturlinje mellom land og elveflate
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» ElvKant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*fiktivAvgrensning*
+ 
+|Definisjon:
+|delelinjer mellom tilstøtende vannflater
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» VannFiktivGrense
+|===
+ 
+==== «FeatureType» Grøft
+Definisjon: rennende vann der forl&#248;pet er menneskeskapt
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forl&#248;p som f&#248;lger objektets sentrale del
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Kurve
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vannBredde*
+ 
+|Definisjon: 
+|grov klassifisering av gr&#248;ft etter bredde 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|VannBredde
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Medium
+|===
+ 
+==== «FeatureType» Kanal
+Definisjon: rennende vann der forl&#248;pet er menneskeskapt
+ 
+*Supertype:* «FeatureType» Fellesegenskaper
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|objektets plassering
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Punkt
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Medium
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vannBredde*
+ 
+|Definisjon: 
+|grov klassifisering av vassdrag etter gjennomsnittelig bredde over lengre strekninger
+
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|VannBredde
+|===
+===== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensning*
+ 
+|Definisjon: 
+|avgrensningslinje av kanal, dvs. der vannspeilet normalt står i kanalen.
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» KanalKant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*fiktivAvgrensning*
+ 
+|Definisjon: 
+|delelinjer mellom tilstøtende vannflater
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» VannFiktivGrense
+|===
+ 
+==== «FeatureType» KonnekteringVann
+Definisjon: konnekteringslenke
+ 
+*Supertype:* «FeatureType» KvalitetOpsjonell
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|konnekteringslinje
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Kurve
+|===
+ 
 ==== «FeatureType» SnøIsbre
 Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø
  
@@ -201,195 +505,6 @@ Definisjon: &#229;pen drenering parallelt med veg
  
 |Type: 
 |Kurve
-|===
- 
-==== «FeatureType» Bekk
-Definisjon: mindre vannvei for rennende vann representert ved senterlinje
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» ElvBekk
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;FLATE;
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Kurve
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Kurve + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vannBredde*
- 
-|Definisjon: 
-|grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninge
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|VannBredde
-|Tagged Values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 1 + 
-SOSI_navn: VANNBR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Medium
-|===
- 
-==== «FeatureType» Elv
-Definisjon: st&#248;rre vannvei for rennende vann representert ved flate
- 
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;FLATE;
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|objektets plassering
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vannBredde*
- 
-|Definisjon: 
-|grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninge
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|VannBredde
-|Tagged Values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 1 + 
-SOSI_navn: VANNBR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Medium
-|===
-===== Roller
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*flomAvgrensning*
- 
-|Definisjon: 
-|konturlinje mellom land og elveløp der det bare en sjelden gang er vannføring
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«FeatureType» Flomløpkant
-|===
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Definisjon: 
-|konturlinje mellom land og elveflate
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«FeatureType» ElvKant
-|===
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*fiktivAvgrensning*
- 
-|Definisjon: 
-|delelinjer mellom tilstøtende vannflater
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«FeatureType» VannFiktivGrense
 |===
  
 ==== «FeatureType» ElvKant
@@ -960,181 +1075,6 @@ SOSI_lengde: 8.2 +
 SOSI_navn: HØYDE + 
 |===
  
-==== «FeatureType» Grøft
-Definisjon: rennende vann der forløpet er menneskeskapt
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;FLATE;
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Kurve
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Kurve + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vannBredde*
- 
-|Definisjon: 
-|gir informasjon om hvordan elv/bekk og kanal/grøft grovt er klassifisert etter bredde 
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|VannBredde
-|Tagged Values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 1 + 
-SOSI_navn: VANNBR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Medium
-|===
- 
-==== «FeatureType» Kanal
-Definisjon: rennende vann der forløpet er menneskeskapt
- 
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» KanalGrøft
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;FLATE;
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|objektets plassering
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vannBredde*
- 
-|Definisjon: 
-|gir informasjon om hvordan elv/bekk og kanal/grøft grovt er klassifisert etter bredde 
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|VannBredde
-|Tagged Values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 1 + 
-SOSI_navn: VANNBR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Medium
-|===
-===== Roller
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Definisjon: 
-|avgrensningslinje av kanal, dvs. der vannspeilet normalt står i kanalen.
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«FeatureType» KanalKant
-|===
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*fiktivAvgrensning*
- 
-|Definisjon: 
-|delelinjer mellom tilstøtende vannflater
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«FeatureType» VannFiktivGrense
-|===
- 
 ==== «FeatureType» KanalKant
 Definisjon: avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt st&#229;r i kanalen
  
@@ -1238,7 +1178,7 @@ Definisjon: angivelse av kystkonturens konstruksjon
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystkonstruksjonstype
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:26:55Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:09Z
  
 Kodelistens navn i registeret: Kystkonstruksjonstype
  
@@ -1317,7 +1257,7 @@ Definisjon: kystkonturens referanseniv&#229;
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystreferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:26:56Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:10Z
  
 Kodelistens navn i registeret: Kystreferanse
  
@@ -1363,7 +1303,7 @@ Definisjon: grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over l
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannbredde
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:26:57Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:10Z
  
 Kodelistens navn i registeret: VannBredde
  
@@ -1415,7 +1355,7 @@ Definisjon: inndeling av hjelpelinjer for avgrensning og oppdeling av vannflater
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:26:57Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:11Z
  
 Kodelistens navn i registeret: VannSperretype
  
@@ -1601,9 +1541,9 @@ SOSI_navn: INFORMASJON +
 «FeatureType» KvalitetPåkrevd +
 «FeatureType» Kanal +
 «FeatureType» SnøIsbre +
-«FeatureType» Elv +
 «FeatureType» Innsjø +
-«FeatureType» Havflate
+«FeatureType» Havflate +
+«FeatureType» Elv
 |===
  
 ==== «FeatureType» KvalitetPåkrevd
@@ -1641,14 +1581,14 @@ SOSI_navn: KVALITET +
 |«FeatureType» Innsjøkant +
 «FeatureType» KystkonturTekniskeAnlegg +
 «FeatureType» KanalKant +
-«FeatureType» Bekk +
 «FeatureType» SnøIsbreKant +
 «FeatureType» Flomløpkant +
 «FeatureType» ElvKant +
-«FeatureType» Grøft +
 «FeatureType» Skjær +
 «FeatureType» VeggrøftÅpen +
-«FeatureType» Kystkontur
+«FeatureType» Kystkontur +
+«FeatureType» Bekk +
+«FeatureType» Grøft
 |===
  
 ==== «FeatureType» KvalitetOpsjonell
@@ -1681,7 +1621,8 @@ SOSI_navn: KVALITET +
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«FeatureType» VannFiktivGrense
+|«FeatureType» KonnekteringVann +
+«FeatureType» VannFiktivGrense
 |===
  
 ==== «dataType» Identifikasjon
@@ -1908,7 +1849,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:27:20Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:31Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -1959,7 +1900,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:27:21Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:32Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -2020,7 +1961,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:27:22Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:32Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -2090,7 +2031,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:27:22Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:33Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -2139,7 +2080,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-07-15T14:27:23Z
+Kodeliste hentet på tidspunkt: 2021-07-16T10:49:34Z
  
 Kodelistens navn i registeret: Medium
  
