@@ -643,6 +643,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div style="page-break-after: always;"></div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Utkast 2021-07-23
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -654,7 +666,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>FKB-Ledning er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del <a href="#FKB">[FKB]</a>.</p>
 </div>
 <div class="paragraph">
-<p>FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg og ledningsanlegg tilknyttet bane. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter og som et grunnlag for distribusjon av FKB-data.</p>
+<p>FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter og som et grunnlag for distribusjon av FKB-data.</p>
 </div>
 <div class="paragraph">
 <p>FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del og SOSI del 2 Ledning versjon 4.6.</p>
@@ -739,6 +751,9 @@ forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Jordingsledning og Luftlinje er tatt inn som nye objekttyper.</p>
 </li>
 <li>
 <p>NettverkstasjonAdkomst er tatt ut av produktspesifikasjonen.</p>
@@ -1094,7 +1109,7 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="truesammendrag"><a class="anchor" href="#truesammendrag"></a>3.7. Sammendrag</h3>
 <div class="paragraph">
-<p>Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg og ledningsanlegg tilknyttet bane. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen.</p>
+<p>Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1212,7 +1227,7 @@ Ikke angitt</p>
 <div class="sect2">
 <h3 id="trueapplicationschema-fkb-ledning-5-0-utkast"><a class="anchor" href="#trueapplicationschema-fkb-ledning-5-0-utkast"></a>5.1. «ApplicationSchema» FKB-Ledning-5.0-Utkast</h3>
 <div class="paragraph">
-<p>Definisjon: Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg og ledningsanlegg tilknyttet bane. Det er kun objekter som er synlig i terrenget (ligger over bakkeniv&#229;) som inng&#229;r i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.</p>
+<p>Definisjon: Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avl&#248;psanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkeniv&#229;) som inng&#229;r i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.</p>
 </div>
 <div class="paragraph">
 <p>FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI del 1 versjon 4.5 og SOSI del 2 Ledning versjon 4.6.</p>
@@ -2162,7 +2177,7 @@ SOSI_navn: BELYSNING<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hvordan masta er konstruert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvordan masta er utformet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2302,10 +2317,6 @@ SOSI_navn: VERTIKALAVSTAND<br></p></td>
 <p>Definisjon: ytre avgrensning av mastens fotavtrykk p&#229; bakken</p>
 </div>
 <div class="paragraph">
-<p>Merknad FKB:
-F&#248;rst og fremst aktuelt for fotogrammetrisk kartlegging</p>
-</div>
-<div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» Kopling_kurve</p>
 </div>
 <div class="paragraph">
@@ -2340,8 +2351,7 @@ F&#248;rst og fremst aktuelt for fotogrammetrisk kartlegging</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type mast</p>
-<p class="tableblock">Merknad: Brukes kun der omrisset ikke knyttes opp til en mast. Der mastomrisset "tilhører" ei mast, vil den angi masttypen "selv".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type mast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2657,10 +2667,6 @@ SOSI_navn: NAVHØYDE<br></p></td>
 <p>Definisjon: ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken</p>
 </div>
 <div class="paragraph">
-<p>Merknad FKB:
-F&#248;rst og fremst aktuelt for fotogrammetrisk kartlegging</p>
-</div>
-<div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» Kopling_kurve</p>
 </div>
 <div class="paragraph">
@@ -2850,7 +2856,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:38Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:55Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Fase</p>
@@ -2923,7 +2929,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:39Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:56Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Kumlokkform</p>
@@ -3015,7 +3021,7 @@ Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til an
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:42Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:57Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Ledningsnettverkstype</p>
@@ -3116,7 +3122,7 @@ Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til an
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:44Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:58Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Mastekonstruksjon</p>
@@ -3205,7 +3211,7 @@ NG</p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:44Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:58Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Punktplassering</p>
@@ -3303,7 +3309,7 @@ NG</p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:08:45Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:35:59Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Stasjonsplassering</p>
@@ -4071,7 +4077,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:09:12Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:36:28Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Synbarhet</p>
@@ -4157,7 +4163,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:09:13Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:36:29Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Datafangstmetode</p>
@@ -4260,7 +4266,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:09:14Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:36:30Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Registreringsversjon</p>
@@ -4378,7 +4384,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:09:15Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:36:31Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Høydereferanse</p>
@@ -4460,7 +4466,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-07-23T10:09:16Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-07-23T14:36:31Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Medium</p>
@@ -4718,7 +4724,7 @@ EPSG Geodetic Parameter Dataset, version 10.0, oktober 2020</p>
 <div class="sect3">
 <h4 id="truevedlikeholdsbeskrivelse-2"><a class="anchor" href="#truevedlikeholdsbeskrivelse-2"></a>9.2.3. Vedlikeholdsbeskrivelse</h4>
 <div class="paragraph">
-<p>Det er i regi av Geovekst inngått FDV-avtaler med de fleste kommuner. Her avtalefestes oppgaver og finansiering av et felles kontinuerlig ajourhold av FKB-dataene blant partene i avtalen. Den viktigste parten i avtalene er kommunen da mange av endringene i FKB kan fanges opp gjennom kommunal saksbehandling.    Endrigene oppdateres direkte inn i Sentral FKB eller oversendes til Kartverket på filformat for de som ikke har tilgang til å oppdatere direkte.</p>
+<p>Det er i regi av Geovekst inngått FDV-avtaler med de fleste kommuner. Her avtalefestes oppgaver og finansiering av et felles kontinuerlig ajourhold av FKB-dataene blant partene i avtalen. Endrigene oppdateres direkte inn i Sentral FKB eller oversendes til Kartverket på filformat for de som ikke har tilgang til å oppdatere direkte.</p>
 </div>
 <div class="paragraph">
 <p>Kommuner utenfor Geovekst gjør tilsvarende vedlikehold i egen regi og leverer data i henhold til Norge digitalt avtale.</p>
@@ -4894,6 +4900,9 @@ Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SO
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p><em>Inntil videre foreligger SOSI-format realiseringen som eget dokument</em></p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -4935,7 +4944,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-07-23 10:37:48 +0200
+Last updated 2021-07-23 15:50:05 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
