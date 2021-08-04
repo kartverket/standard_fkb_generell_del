@@ -1,7 +1,8 @@
-=== «ApplicationSchema» FKB Generell del-5.0Utkast
-Definisjon: Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i produktspesifikasjoner.
+
+=== FKB Generell del 5.0
+Generelle klasser med fellesegenskaper som realiseres i de ulike FKB-produktspesifikasjonene.
  
-===== Tagged Values
+===== «ApplicationSchema» FKB Generell del-5.0
 [cols="20,80"]
 |===
 |language
@@ -72,15 +73,6 @@ SOSI_navn: IDENT +
  
 |Definisjon: 
 |tidspunkt for siste endring p&#229; objektet 
-
-Merknad FKB: 
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -89,7 +81,6 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |DateTime
 |Tagged Values: 
 |
-definition: "Date and time at which this version of the spatial object was inserted or changed in the spatial data set."@en + 
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
 |===
@@ -147,6 +138,8 @@ SOSI_navn: VERIFISERINGSDATO +
 |Registreringsversjon
 |Tagged Values: 
 |
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -165,6 +158,11 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
  
 |Type: 
 |CharacterString
+|Tagged Values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: INFORMASJON + 
 |===
 [cols="20,80"]
 |===
@@ -453,7 +451,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-03T08:17:46Z
+Kodeliste hentet på tidspunkt: 2021-08-04T14:47:46Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -504,7 +502,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-03T08:17:46Z
+Kodeliste hentet på tidspunkt: 2021-08-04T14:47:47Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -565,7 +563,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-03T08:17:47Z
+Kodeliste hentet på tidspunkt: 2021-08-04T14:47:48Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -635,7 +633,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-03T08:17:48Z
+Kodeliste hentet på tidspunkt: 2021-08-04T14:47:50Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -684,7 +682,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-03T08:17:49Z
+Kodeliste hentet på tidspunkt: 2021-08-04T14:47:50Z
  
 Kodelistens navn i registeret: Medium
  
@@ -720,13 +718,15 @@ Kodelistens navn i registeret: Medium
 |I lufta
 |L
 |===
-=== Pakke: Elementer til bruk i distribusjon
-Definisjon: Inneholder modelleringselementer som ikke benyttes ved forvaltning av data, men som kan benyttes i spesifikasjoner laget med tanke p&#229; distribusjon.
+
+
+=== Modellelementer til bruk i distribusjon
+Inneholder modelleringselementer som ikke benyttes ved forvaltning av data, men som kan benyttes i spesifikasjoner laget med tanke p&#229; distribusjon.
 [caption="Figur 4: ",title=Mekanismer til bruk i distribusjon]
 image::figurer/Mekanismer til bruk i distribusjon.png[Mekanismer til bruk i distribusjon]
  
 ==== «FeatureType» EkstraegenskaperDistribusjon
-Definisjon: Inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon
+Abstrakt supertyoe som inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon
  
 ===== Egenskaper
 [cols="20,80"]
