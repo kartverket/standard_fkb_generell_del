@@ -1,11 +1,35 @@
 === «ApplicationSchema» FKB-Bygning-5.0-Utkast
-Definisjon: 
+Definisjon: datamodell for FKB-Bygning
  
 ===== Tagged Values
 [cols="20,80"]
 |===
+|language
+|no
+ 
+|SOSI_kortnavn
+|FKB-Bygning
+ 
 |SOSI_modellstatus
 |utkastOgSkjult
+ 
+|SOSI_spesifikasjonstype
+|produktspesifikasjon
+ 
+|SOSI_versjon
+|5.0
+ 
+|targetNamespace
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/
+ 
+|version
+|5.0
+ 
+|xmlns
+|app
+ 
+|xsdDocument
+|FKB-Bygning50.xsd
  
 |===
 [caption="Figur 1: ",title=Pakkerealisering]
@@ -80,7 +104,6 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |DateTime
 |Tagged Values: 
 |
-definition: "Date and time at which this version of the spatial object was inserted or changed in the spatial data set."@en + 
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
 |===
@@ -90,7 +113,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|
+|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -156,6 +179,11 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
  
 |Type: 
 |CharacterString
+|Tagged Values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: INFORMASJON + 
 |===
 [cols="20,80"]
 |===
@@ -169,7 +197,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |===
  
 ==== «FeatureType» KvalitetPåkrevd
-Definisjon: 
+Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -203,12 +231,11 @@ SOSI_navn: KVALITET +
 |«featureType» BeskrivendeBygningsdetalj +
 «featureType» Bygningsavgrensning +
 «featureType» TakoverbyggKant +
-«featureType» Bygningsvedheng +
-«featureType» VeggFrittstående
+«featureType» Bygningsvedheng
 |===
  
 ==== «FeatureType» KvalitetOpsjonell
-Definisjon: 
+Definisjon: abstrakt objekttype med valgfri kvalitetsangivelse
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -465,7 +492,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:11:47Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:18Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -516,7 +543,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:11:48Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:19Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -545,6 +572,9 @@ Kodelistens navn i registeret: Datafangstmetode
 |Fotogrammetri
 |Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
 |fot
+|Digitalisert
+|Posisjonen er digitalisert fra ortofoto eller andre plane kartdata
+|dig
 |Landmålt
 |Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
 |lan
@@ -574,7 +604,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:11:49Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:20Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -644,7 +674,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:11:50Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:22Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -693,7 +723,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:11:51Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:22Z
  
 Kodelistens navn i registeret: Medium
  
@@ -785,14 +815,14 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
 |===
+===== Roller
 [cols="20,80"]
 |===
-===== Roller
 |*Rollenavn:* 
 |*avgrensesAv.Bygningsavgrensning*
  
@@ -801,6 +831,8 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
  
 |Til klasse
 |«featureType» Bygningsavgrensning
+|===
+[cols="20,80"]
 |===
 |*Rollenavn:* 
 |*avgrensesAv.BygningsavgrensningTiltak*
@@ -811,6 +843,8 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 |Til klasse
 |«featureType» BygningsavgrensningTiltak
 |===
+[cols="20,80"]
+|===
 |*Rollenavn:* 
 |*avgrensesAv.FiktivBygningsavgrensning*
  
@@ -819,6 +853,28 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
  
 |Til klasse
 |«featureType» FiktivBygningsavgrensning
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*beskriver.AnnenBygning*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» BeskrivendeBygningsdetalj
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*vedhengTil.AnnenBygning*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Bygningsvedheng
 |===
  
 ==== «featureType» Bygning
@@ -888,7 +944,7 @@ SOSI_navn: BYGGNR +
 |[1..1]
  
 |Type: 
-|BygningstypeKode
+|Bygningstype
 |Tagged Values: 
 |
 SOSI_datatype: H + 
@@ -907,7 +963,7 @@ SOSI_navn: BYGGTYP_NBR +
 |[1..1]
  
 |Type: 
-|BygningsstatusKode
+|Bygningsstatus
 |===
 [cols="20,80"]
 |===
@@ -940,14 +996,14 @@ SOSI_navn: KOMM +
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
 |===
+===== Roller
 [cols="20,80"]
 |===
-===== Roller
 |*Rollenavn:* 
 |*avgrensesAv.BygningsavgrensningTiltak*
  
@@ -956,6 +1012,8 @@ SOSI_navn: KOMM +
  
 |Til klasse
 |«featureType» BygningsavgrensningTiltak
+|===
+[cols="20,80"]
 |===
 |*Rollenavn:* 
 |*avgrensesAv.Bygningsavgrensning*
@@ -966,6 +1024,8 @@ SOSI_navn: KOMM +
 |Til klasse
 |«featureType» Bygningsavgrensning
 |===
+[cols="20,80"]
+|===
 |*Rollenavn:* 
 |*avgrensesAv.FiktivBygningsavgrensning*
  
@@ -975,6 +1035,8 @@ SOSI_navn: KOMM +
 |Til klasse
 |«featureType» FiktivBygningsavgrensning
 |===
+[cols="20,80"]
+|===
 |*Rollenavn:* 
 |*avgrensesAv.Bygningsdelelinje*
  
@@ -983,6 +1045,28 @@ SOSI_navn: KOMM +
  
 |Til klasse
 |«featureType» Bygningsdelelinje
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*beskriver.Bygning*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» BeskrivendeBygningsdetalj
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*vedhengTil.Bygning*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Bygningsvedheng
 |===
  
 ==== «CodeList» Bygningsstatus
@@ -1009,7 +1093,7 @@ Definisjon: Bygningsstatuskoder fra matrikkelen som benyttes i FKB-Bygning
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningsstatus
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:12:09Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:43Z
  
 Kodelistens navn i registeret: Bygningsstatus
  
@@ -1020,6 +1104,42 @@ Kodelistens navn i registeret: Bygningsstatus
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
+|Rammetillatelse
+|Rammetillatelse
+|RA
+|Midlertidig brukstillatelse
+|Midlertidig brukstillatelse
+|MB
+|Frittatt for søknadsplikt
+|bygninger under 50m2 som er fritatt for søknadsplikt
+|FS
+|Bygning flyttet
+|Bygningen er flyttet
+|BF
+|Meldingssak registrer tiltak
+|Kode for at det er registrert tiltak for meldingssak
+|MT
+|Godkjent revet eller brent
+|Bygningen er godkjent for riving/brenning
+|GR
+|Tatt i bruk
+|Bygning er tatt i bruk
+|TB
+|Igangsettingstillatelse
+|Igangsettingstillatelse
+|IG
+|Meldingsak tiltak fullført
+|Kode for at det er fullført tiltak for meldingssak
+|MF
+|Ferdigattest
+|Ferdigattest
+|FA
+|Ikke pliktig registrert
+|bygninger som ikke er pliktig registrert i henhold til Plan- og bygningsloven
+|IP
+|Revet eller brent
+|Bygningen er revet eller brent
+|BR
 |===
  
 ==== «CodeList» Bygningstype
@@ -1046,7 +1166,7 @@ Definisjon: Bygningstyper fra matrikkelen som benyttes i FKB-Bygning
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningstype
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:12:09Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:45Z
  
 Kodelistens navn i registeret: Bygningstype
  
@@ -1057,10 +1177,424 @@ Kodelistens navn i registeret: Bygningstype
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
+|Skogs- og utmarkskoie, gamme
+|Skogs- og utmarkskoie, gamme 
+|172
+|Annen samf. og kom.bygn
+|Annen samf. og kom.bygn
+|490
+|Garasje, uth. anneks til fritidb
+|Garasje, uth. anneks til fritidb, garasje, uthus , anneks knyttet til fritidsbolig
+|182
+|Fritidsbygg
+|Fritidsbygg (hytter, sommerhus og lignende)
+|161
+|Annet sykehus
+|Annet sykehus, private sykehus eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|719
+|Annen fiskeri- og fangstbygn.
+|Annen fiskeri- og fangstbygn.
+|248
+|Annen bygn. for religiøs akt.
+|Annen bygn. for religiøs akt., bygninger som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|679
+|Annen eksp. og terminalbygning
+|Annen eksp. og terminalbygning
+|419
+|Kjøle- og fryselager
+|Kjøle- og fryselager
+|232
+|Annen museum/biblioteksbygning
+|Annen museum/biblioteksbygning, bygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|649
+|Annet sykehjem
+|Annet sykehjem, annet sykehjem, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|729
+|Messe- og kongressbygning
+|Messe- og kongressbygning, messe- og kongressbygning. Dette gjelder bygninger for messer, utstillinger, kongresser og konferanser
+|330
+|Svømmehall
+|Svømmehall, bygning for innendørs badeanlegg som brukes til undervisning, mosjon, trening og konkurranser.
+|653
+|Tribune og idrettsgarderobe
+|Tribune og idrettsgarderobe, innebygd tribuneanlegg til utendørs idrettsanlegg (tribune) eller bygning for garderobe i tilknytning til idrettsanlegg (idrettsgarderobe)
+|654
+|Enebolig m/hybel/sokkelleil.
+|Enebolig m/hybel/sokkelleil., enebolig som i tillegg inneholder en eller flere hybler el.l., som minimum dekkes av SSBs krav til hybel
+|112
+|Del av våningh.tomannsb/vert
+|Del av våningh.tomannsb/vert., bolighus med to boliger, inkl. våningshus på gårdsbruk
+|123
+|Annen kontorbygning
+|Annen kontorbygning
+|319
+|Camping- /utleiehytte
+|Camping- /utleiehytte, enklere overnattingshytte fortrinnsvis beregnet for bilturister. Som regel er de knyttet til en campingplass. Gjestene holder vanligvis sengetøy selv
+|524
+|Samfunnshus, grendehus
+|Samfunnshus, grendehus, sentralt aktivitetshus for bygda/grenda, multifunksjonsbygg som benyttes til alt fra idrettsarrangementer til fest og andre sosiale sammenkomster.
+|662
+|Annen veg- og trafikktilsynsbygning
+|Annen veg- og trafikktilsynsbygning
+|449
+|Del av kjede/atr.h innt.4 bol.
+|Del av kjede/atr.h innt.4 bol., del av kjede-, atriumshus med inntil 4 boliger
+|133
+|Klinikk, legekontor/legesenter
+|Klinikk, legekontor/legesenter, klinikk, legekontor/-senter/-vakt.
+|731
+|Kirke, kapell
+|Kirke, kapell, kristent gudshus
+|671
+|Hotellbygning
+|Hotellbygning, større bygning for overnatting, godkjent etter hotelloven.
+|511
+|Stort sammenh.boligbygg på 2 etasjer
+|Stort sammenh.boligbygg på 2 etasjer, Store sammenbygde boligbygg på 3 og 4 etasjer
+|144
+|Annen restaurantbygning
+|Annen restaurantbygning, andre spisesteder som ikke passer inn i kodene over, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|539
+|Bussgar.,trikke-lokomotivstall
+|Bussgar.,trikke-lokomotivstall
+|432
+|Zoologisk/botanisk hage (byg.)
+|Zoologisk/botanisk hage (byg.), bygninger i tilknytning til zoologisk og botanisk hage, gjelder også utstillingsbygninger i dyrepark.
+|643
+|Annen hotellbygning
+|Annen hotellbygning, annen bygning for overnatting - godkjent etter hotelloven. , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|519
+|Spesialsykehus
+|Spesialsykehus
+|714
+|Vakt-/bombygn.tollst., bilvekt
+|Vakt-/bombygn.tollst., bilvekt
+|443
+|Mindre kraftstasjon
+|Mindre kraftstasjon
+|222
+|Hjelpefengsel, kretsfengsel
+|Hjelpefengsel, kretsfengsel, 
+|812
+|Bo- og behandlingssenter, aldershjem
+|Bo- og behandlingssenter, aldershjem, institusjoner der man bor permanent og samtidig har tilgang til et behandlingstilbud.
+|722
+|Hospits, pensjonat
+|Hospits, pensjonat, rimelig, enkelt utstyrt overnattingssted, vanligvis serveres også mat. I byene ofte leid ut på mer fast basis, over uker, måneder eller år.
+|521
+|Godsterminal
+|Godsterminal
+|415
+|Helårsb.benyttes som fritidsb.
+|Helårsb.benyttes som fritidsb., helårsbolig utenom våningshus som benyttes som fritidsbolig.
+|162
+|Flyhangar
+|Flyhangar
+|433
+|Restaurantbygning, kafébygning
+|Restaurantbygning, kafébygning, Restaurantbygning eller  kafébygning.
+|531
+|Eksp.bygn. flyterm. kontr.tårn
+|Eksp.bygn. flyterm. kontr.tårn, ekspedisjonsbygning, flyterminal, kontrolltårn
+|411
+|Offentlig toalett
+|Offentlig toalett, 
+|840
+|Annen boligb.(Eks sekundærbolig reindr.)
+|Annen boligb.(Eks sekundærbolig reindr.)
+|199
+|Bankbygning, posthus
+|Bankbygning, posthus
+|312
+|Motellbygning
+|Motellbygning, egentlig motorhotell, oftest beliggende langs en hovedferdselsåre.
+|512
+|Terrassehus
+|Terrassehus, større bolighus i bratt terreng hvor bygningen følger hellingen i terrenget
+|135
+|Annen skolebygning
+|Annen skolebygning, andre skoler som ikke passer inn under ovennevnte kategorier, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|619
+|Sentralsykehus
+|Sentralsykehus
+|712
+|Politistasjon
+|Politistasjon, 
+|821
+|Bygning for renseanlegg
+|Bygning for renseanlegg, bygning for renseanlegg, bl.a. kloakkpumpestasjon
+|214
+|Radio og TV-hus
+|Radio og TV-hus
+|313
+|Stort sammenh.boligbygg på 3 og 4 et
+|Stort sammenh.boligbygg på 3 og 4 et, store sammenbygde boligbygg på 3 og 4 etasjer
+|145
+|Del av tomannsbolig-vertikal
+|Del av tomannsbolig-vertikal, bolighus med to boliger, inkl. våningshus på gårdsbruk
+|121
+|Kjøpesenter, varehus
+|Kjøpesenter, varehus, bygning som inneholder flere forskjellige butikker
+|321
+|Lokalsykehus
+|Lokalsykehus 
+|711
+|Bygning for avfallshåndtering
+|Bygning for avfallshåndtering
+|215
+|Idrettshall
+|Idrettshall, bygning primært til bruk for idrettsformål, innehar som regel også garderobeanlegg og kiosk.
+|651
+|Labratoriebygning
+|Bygninger for laboratorievirksomhet (f.eks. i industri, sykehus og ved universiteter).
+|623
+|Sykehjem
+|Sykehjem, 
+|721
+|Studenthjem/studentboliger
+|Studenthjem/studentboliger
+|152
+|Ukjent bygningstype
+|Ukjent eller skjermet bygningstype. Bygningen er registrert i matrikkelen, men bygningstype er ikke tilgjengelig.
+|999
+|Ungdomsskole
+|Ungdomsskole, skolebygning for skoleklassene 8-10, for barn i alderen 13-15 år.
+|614
+|Museum, kunstgalleri
+|Museum, kunstgalleri, bygning for utstilling av spesielle gjenstander, og omtale av disse (museum) eller bygning for utstilling og salg av kunst (kunstgalleri)
+|641
+|Bo- og servicesenter
+|Bo- og servicesenter, bo- og servicesenter. For eldre, utviklingshemmede, funksjonshemmede mv
+|151
+|Annen garasje-/hangarbygning
+|Annen garasje-/hangarbygning
+|439
+|Naust/redskapshus for fiske
+|Naust/redskapshus for fiske, naust / redskapshus for fiske
+|245
+|Annen idrettsbygning
+|Annen idrettsbygning, andre idrettsbygninger som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|659
+|Fyrstasjon, losstasjon
+|Fyrstasjon, losstasjon, 
+|823
+|Landsfengsel
+|Landsfengsel, 
+|811
+|Verkstedbygning
+|Verkstedbygning, bygning for spesialproduksjon eller reparasjon
+|212
+|Region-, universitetssykehus
+|Region-, universitetssykehus
+|713
+|Ishall
+|Ishall, bygning primært brukt som skøytehall for lengdeløp og ishockey, innehar som regel også garderobeanlegg og kiosk.
+|652
+|Annen industribygning
+|Annen industribygning, annen industribygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)
+|219
+|Videregående skole
+|Videregående skole, skolebygning for skole etter grunnskolen. Allmennfaglig eller yrkesrettet.Ikke høgskole
+|616
+|Gatekjøkken, kioskbygning
+|Gatekjøkken, kioskbygning, gatekjøkken, kioskbygning
+|533
+|Postterminal
+|Postterminal
+|416
+|Andre småhus med 3-4 boliger
+|Andre småhus med 3-4 boliger, andre småhus med 3 boliger eller flere
+|136
+|Arbeidskoloni
+|Arbeidskoloni, 
+|813
+|Landbruksgarasje/redskapshus
+|Landbruksgarasje/redskapshus
+|242
+|Annet kulturhus
+|Annet kulturhus, andre multifunksjonshus for kultur og idrett, herunder ungdomsklubb, som ikke passer inn under ovennevnte kategorier , eller bygning som har nær tilknytning til/tjener slik(e) bygning(er).
+|669
+|Hus for dyr/landbr.lager/silo
+|Hus for dyr/landbr.lager/silo, hus for dyr, fôrlager, strølager, landbrukssilo, høy-/korntørke
+|241
+|Helsestudio
+|Helsestudio, kompakt treningsanlegg, drevet på forretningsmessig basis - ikke offentlig.
+|655
+|Garasje ,uthus anneks til bolig
+|Garasje, uthus anneks til bolig, garasje, uthus , anneks knyttet til bolig
+|181
+|Monument
+|Monument, konstruksjoner som er minnesmerker eller kunstverker. Må tilfredsstille krav til bygning
+|830
+|AM-stasjon (kortbølgestasjon)
+|AM-stasjon (kortbølgestasjon)
+|424
+|Annen bygning for bofellesskap
+|Annen bygning for bofellesskap, annen bygning for bofellesskap, eller bygning som har nær tilknytning til / tjener slik(e) bygning(er)
+|159
+|Våningsh. tomannsb./horisont.
+|Våningsh. tomannsb./horisont., bolighus med to boliger, inkl. våningshus på gårdsbruk
+|124
+|Rehabiliter.institusjon.kurbad
+|Rehabiliter.institusjon.kurbad, institusjon der man bor for en kortere eller lengre periode, samtidig som man får behandling
+|723
+|Bedehus, menighetshus
+|Bedehus, menighetshus, kristent forsamlingshus
+|672
+|Parkeringshus
+|Parkeringshus
+|431
+|Butikk/forretningsbygning
+|Butikk/forretningsbygning
+|322
+|Produksjonshall
+|Produksjonshall
+|213
+|Annen lagerbygning
+|Annen lagerbygning
+|239
+|Jernbane- og T-banestasjon
+|Jernbane- og T-banestasjon
+|412
+|Naust, båthus, sjøbu
+|Naust, båthus, sjøbu, frittliggende bygning som primært benyttes til plassering av båt(er). Kan i tillegg benyttes til oppbevaring av forskjellig redskap o.l
+|183
+|Annen primærhelsebygning
+|Annen primærhelsebygning, annen primærhelsebygning, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)
+|739
+|Synagoge, moske
+|Synagoge, moske, jødisk gudshus (synagoge) eller muslimsk gudshus (moské)
+|674
+|Spesialbygning
+|Spesialbygning
+|622
+|Vandre-feriehjem,turisthytte
+|Vandre-feriehjem,turisthytte, rimelig nattelosji, ofte knyttet til medlemskap i en forening.
+|522
+|Diskotek
+|Diskotek, bygning for ungdomsaktiviteter, særlig knyttet til musikk og dans - drevet på forretningsmessig basis.
+|663
+|Appartement
+|Appartement, bygning med fritidsboliger/ boliger til utleie, boligene har bad og kokemuligheter, og leies oftest for døgn- eller ukebasis.
+|523
+|Annen forretningsbygning
+|Annen forretningsbygning 
+|329
+|Lekepark
+|Lekepark, sted for opphold for barn 1-5 år. Oftest 4-5 timers tilbud, men kan også være heldag. Ingen krav til pedagogisk innhold, og selve huset i lekeparken er ofte lite og dårlig utstyrt, nærmest som spiserom å betrakte. En lekepark er i stor grad basert på at barna skal være ute og leke.
+|611
+|Stort sammenh.boligbygg på 5 -&gt; etasjer eller over (5 boliger eller mer)
+|Stort sammenh.boligbygg på 5 -&gt; etasjer eller over (5 boliger eller mer), store sammenbygde boligbygg på 5 etasjer eller over (5 boliger eller mer)
+|146
+|Annet fengsel-/ beredskapsbyg. mv.
+|Annet fengsel-/ beredskapsbyg. mv., 
+|890
+|Del av rekkeh. m/3-4 boliger
+|Del av rekkeh. m/3-4 boliger, del av rekkekhus med 3-4 boliger
+|131
+|Mindre transform.stasj./kiosk
+|Mindre transform.stasj./kiosk
+|224
+|Seterhus, sel, rorbu og lignende
+|Seterhus, sel, rorbu og lignende
+|171
+|Stort frittl. boligbygg på 3 og 4 etasj.
+|Stort frittl. boligbygg på 3 og 4 etasj., stort frittliggende boligbygg på 3 og 4 etasjer (5 boliger eller mer)
+|142
+|Bibliotek, mediatek
+|Bibliotek, mediatek, bygning for utlån av bøker, lydbøker, filmer, aviser o.l. Moderne bibliotek/mediatek har ofte tilgjengelig PC gjerne med Internett-tilknytning.
+|642
+|Våningshus
+|Våningshus, enebolig på gårdsbruk, kan også omfatte enebolig med hybelleilighet, sokkelleilighet ol
+|113
+|Boligbrakker
+|Boligbrakker
+|193
+|Helse-/sosialsent. helsestasj.
+|Helse-/sosialsent. helsestasj., senter som inneholderflere tilbud som f.eks. fysioterapi, kiroprakti, akupunktur, alternative behandlingsformer etc.
+|732
+|Annen landbruksbygning
+|Annen landbruksbygning
+|249
+|Annen bygning for overnatting
+|Annen bygning for overnatting, andre bygninger som ikke kan plasseres i de underpunktene nevnt over, men som er bygning for overnatting, eller bygning som har nær tilknytning til/tjener slik(e) bygning(er)
+|529
+|Kombinert barne- og ungdomsskole
+|Kombinert barne- og ungdomsskole, skolebygning for skoleklassene 1-10, for barn i alderen 6-15 år.
+|615
+|Kremat., gravkapell, bårehus
+|Kremat., gravkapell, bårehus, bygning for likbrenning (krematorium) eller bygning for oppbevaring av døde mennesker inntil begravelse og kremasjon (gravkapell og bårehus).
+|673
+|Bygn. for vannfors. bla. pumpest
+|Bygn. for vannfors. bla. pumpest, bygning for vannforsyning, bl.a. pumpestasjon
+|216
+|Univ./høgskole m/auditor.leses
+|Univ./høgskole m/auditor.leses, universitets- og høgskolebygning med integrerte funksjoner, auditorium, lesesal mv.
+|621
+|Brannstasjon, ambulansestasjon
+|Brannstasjon, ambulansestasjon, 
+|822
+|Lagerhall
+|Lagerhall
+|231
+|Annen universitet/høgskolebygn
+|Annen universitet/høgskolebygn
+|629
+|Biltilsynsbygning
+|Biltilsynsbygning
+|441
+|Barnehage
+|Barnehage, sted for opphold for barn 1 - 5 år. Kan være heldag og halvdag, og det er knyttet et visst pedagogisk innhold til oppholdet. Selve barnehagebygningen er ofte velutstyrt, med flere avdelinger, spiserom/hvilerom for de ansatte og kjøkken. Styrt av Barnehageloven
+|612
+|Annen hotell og rest.bygn
+|Annen hotell og rest.bygn
+|590
+|Sentralkjøkken, kantinebygning
+|Sentralkjøkken, kantinebygning, bygning for kjøkken eller kantine tilknyttet større enhet, men der bygningen ligger for seg selv.
+|532
+|Våningh. benyttes som fritidsb
+|Våningh. benyttes som fritidsb, våningshus som benyttes som fritidsbolig
+|163
+|Fabrikkbygning
+|Fabrikkbygning, bygning for industriell serieproduksjon
+|211
+|Kino/teater/opera/konsertbygn
+|Kino/teater/opera/konsertbygn, bygning for framføring av kino, teater, opera og konserter.
+|661
+|Kombinert bolig &lt; annet areal
+|Kombinert bolig &lt; annet areal
+|192
+|Tomannsbolig, horisontaldelt
+|Tomannsbolig, horisontaldelt, bolighus med to boliger, inkl. våningshus på gårdsbruk
+|122
+|Barneskole
+|Barneskole, skolebygning for skoleklassene 1-7, for barn i alderen 6-12 år.
+|613
+|Veksthus
+|Veksthus, 
+|243
+|Stort frittl. boligbygg på 5 -&gt; etasjer
+|Stort frittl. boligbygg på 5 -&gt; etasjer, boligblokk på 5 etasjer eller mer
+|143
+|Bensinstasjon
+|Bensinstasjon
+|323
+|Kontor- og adm.bygning, rådhus
+|Kontor- og adm.bygning, rådhus, kontor- og administrasjonsbygning , rådhus.
+|311
+|Kloster
+|Kloster, bygning der menn eller kvinner har trukket seg tilbake for å virkeliggjøre det religiøse ideal, i et lukket samfunn, og etter en bestemt regel.
+|675
+|Stort frittl. boligbygg på 2 etasjer.
+|Stort frittl. boligbygg på 2 etasjer., stort frittliggende boligbygg på 2 etasjer (5 boliger eller mer)
+|141
+|Driftsb. fiske/fangst/oppdr
+|Driftsb. fiske/fangst/oppdr, driftsbygning for fiske og fangst, inkl. oppdrettsanlegg
+|244
 |===
  
 ==== «CodeList» Kommunenummer
-Definisjon: 
+Definisjon: nummerering av kommuner i henhold til SSB sin offisielle liste.
  
 ===== Tagged Values
 [cols="20,80"]
@@ -1083,7 +1617,7 @@ Definisjon:
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/kommunenummer-alle
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:12:12Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:34:54Z
  
 Kodelistens navn i registeret: Kommunenummer alle
  
@@ -3467,7 +4001,7 @@ Definisjon: Bygningsavgrensning hentet fra FKB-Tiltak. Dataene er tatt fra plan 
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
@@ -3486,7 +4020,7 @@ SOSI_navn: MEDIUM +
 |koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Høydereferanse
@@ -3529,7 +4063,7 @@ Merknad: Det kan ofte være vanskelig å registrere bygningsdelelinjer nøyaktig
 |hvilken 3D framstillingsmulighet (angitt i 6 nivåer) bygningen kan framstilles i.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |treDNivå
@@ -3550,7 +4084,7 @@ Definisjon: bygningens ytre avgrensing i fasaderiss
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
@@ -3569,7 +4103,7 @@ SOSI_navn: MEDIUM +
 |koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Høydereferanse
@@ -3591,7 +4125,7 @@ Merknad:
 Fasadeliv (hele eller deler av fasaden) vil i mange tilfeller eksistere i tillegg til Takkant. Egenskapen kan da benyttes til å angi at enten takriss eller fasadelivriss skal danne Bygningsavgrensning for bygningsflaten (normalt benyttes Takkant til riss hvis begge eksisterer).
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Boolean
@@ -3634,7 +4168,7 @@ Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelin
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
@@ -3657,7 +4191,7 @@ Merknad: Kan benyttes for bygning under oppføring eller for bygning som er reve
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
@@ -3676,7 +4210,7 @@ SOSI_navn: MEDIUM +
 |koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Høydereferanse
@@ -3704,7 +4238,7 @@ Merknad: Dersom deler av takkanten ikke er synlig kodes den synlige delen som ta
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
@@ -3723,7 +4257,7 @@ SOSI_navn: MEDIUM +
 |hvilken 3D framstillingsmulighet (angitt i 6 nivåer) bygningen kan framstilles i.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |treDNivå
@@ -3760,6 +4294,8 @@ image::figurer/BeskrivendeBygningslinjer - Realisering av objekttyper.png[Beskri
 image::figurer/BeskrivendeBygningslinjer - Arv av fellesegenskaper.png[BeskrivendeBygningslinjer - Arv av fellesegenskaper]
 [caption="Figur 15: ",title=BeskrivendeBygningslinjer - Objekttyper med egenskaper]
 image::figurer/BeskrivendeBygningslinjer - Objekttyper med egenskaper.png[BeskrivendeBygningslinjer - Objekttyper med egenskaper]
+[caption="Figur 16: ",title=BeskrivendeBygningslinjer - Assosiasjoner]
+image::figurer/BeskrivendeBygningslinjer - Assosiasjoner.png[BeskrivendeBygningslinjer - Assosiasjoner]
  
 ==== «featureType» BeskrivendeBygningsdetalj
 Definisjon: bygningsdetalj som ligger innenfor bygningsavgrensning, og som ikke er knyttet til bygningens avgrensning
@@ -4112,7 +4648,7 @@ Definisjon: hvilken 3D framstillingsmulighet (angitt i 6 niv&#229;er) bygningen 
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5
  
-Kodeliste hentet på tidspunkt: 2021-07-02T15:13:46Z
+Kodeliste hentet på tidspunkt: 2021-08-03T12:36:12Z
  
 Kodelistens navn i registeret: TreDNivå
  
@@ -4123,15 +4659,32 @@ Kodelistens navn i registeret: TreDNivå
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
+|Ukjent
+|3D detaljnivå er ikke kjent
+|9
+|Nivå2
+|Hovedformen på tak er ivaretatt med bruk av mønelinjer, taksprang og knekklinjer. En god modell for de fleste analyser, men mangler detaljer på tak for enklere visuell gjenkjenning
+|2
+|Nivå0
+|Bygningers avgrensning på bakkeplan i 2D
+|0
+|Nivå3
+|Takobjekter som bl.a. arker/kvister, altaner, sjakter og større piper er også med i modellen. Minstemål er innført. Jmf. den enkelte objekttype for detaljer. Dette gir noe riktigere grunnlag for analyser, og hever den visuelle kvaliteten.
+|3
+|Nivå1
+|Klosser med flate tak, hvor høyde på taket enten er minimum, maksimum eller gjennomsnitt av takhøyden rundt bygget. Dette er godt nok til enkel bruk, men blir ofte feil på bygårder og høyhus. Gjenkjennbarheten er ikke så stor. 
+|1
 |===
 === Pakke: Bygningsvedheng
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Bygningsvedheng
-[caption="Figur 16: ",title=Bygningsvedheng - Realisering av objekttyper]
+[caption="Figur 17: ",title=Bygningsvedheng - Realisering av objekttyper]
 image::figurer/Bygningsvedheng - Realisering av objekttyper.png[Bygningsvedheng - Realisering av objekttyper]
-[caption="Figur 17: ",title=Bygningsvedheng - Arv av fellesegenskaper]
+[caption="Figur 18: ",title=Bygningsvedheng - Arv av fellesegenskaper]
 image::figurer/Bygningsvedheng - Arv av fellesegenskaper.png[Bygningsvedheng - Arv av fellesegenskaper]
-[caption="Figur 18: ",title=Bygningsvedheng - Objekttyper og egenskaper]
+[caption="Figur 19: ",title=Bygningsvedheng - Objekttyper og egenskaper]
 image::figurer/Bygningsvedheng - Objekttyper og egenskaper.png[Bygningsvedheng - Objekttyper og egenskaper]
+[caption="Figur 20: ",title=Bygningsvedheng - Assosiasjoner]
+image::figurer/Bygningsvedheng - Assosiasjoner.png[Bygningsvedheng - Assosiasjoner]
  
 ==== «featureType» Bygningsvedheng
 Definisjon: bygningsdetaljer som ligger i tilknytning til  bygningen, og som ikke er knyttet til bygningens avgrensning
@@ -4161,7 +4714,8 @@ Definisjon: bygningsdetaljer som ligger i tilknytning til  bygningen, og som ikk
 |«featureType» Låvebru +
 «featureType» TrappBygg +
 «featureType» Veranda +
-«featureType» BygningBru
+«featureType» BygningBru +
+«featureType» VeggFrittstående
 |===
  
 ==== «featureType» BygningBru
@@ -4237,25 +4791,11 @@ SOSI_navn: MEDIUM +
 ==== «featureType» VeggFrittstående
 Definisjon: vegg oppsatt for skjerming
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+*Supertype:* «featureType» Bygningsvedheng
  
 *Realisering av:* «ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» VeggFrittstående
  
 ===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Kurve
-|===
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -4284,20 +4824,20 @@ SOSI_navn: HREF +
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Medium
 |===
 === Pakke: Takoverbygg
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Takoverbygg
-[caption="Figur 19: ",title=Takoverbygg - Realisering av objekttyper]
+[caption="Figur 21: ",title=Takoverbygg - Realisering av objekttyper]
 image::figurer/Takoverbygg - Realisering av objekttyper.png[Takoverbygg - Realisering av objekttyper]
-[caption="Figur 20: ",title=Takoverbygg - Arv av fellesegenskaper]
+[caption="Figur 22: ",title=Takoverbygg - Arv av fellesegenskaper]
 image::figurer/Takoverbygg - Arv av fellesegenskaper.png[Takoverbygg - Arv av fellesegenskaper]
-[caption="Figur 21: ",title=Takoverbygg - Objekttyper og egenskaper]
+[caption="Figur 23: ",title=Takoverbygg - Objekttyper og egenskaper]
 image::figurer/Takoverbygg - Objekttyper og egenskaper.png[Takoverbygg - Objekttyper og egenskaper]
-[caption="Figur 22: ",title=Takoverbygg - Flateavgrensning]
+[caption="Figur 24: ",title=Takoverbygg - Flateavgrensning]
 image::figurer/Takoverbygg - Flateavgrensning.png[Takoverbygg - Flateavgrensning]
  
 ==== «featureType» Takoverbygg
@@ -4337,9 +4877,9 @@ Eksempel:  'carport' eller tak over bensinpumper
 |Type: 
 |Punkt
 |===
+===== Roller
 [cols="20,80"]
 |===
-===== Roller
 |*Rollenavn:* 
 |*avgrensesAv.TakoverbyggKant*
  
@@ -4348,6 +4888,8 @@ Eksempel:  'carport' eller tak over bensinpumper
  
 |Til klasse
 |«featureType» TakoverbyggKant
+|===
+[cols="20,80"]
 |===
 |*Rollenavn:* 
 |*avgrensesAv.FiktivBygningsavgrensning*
