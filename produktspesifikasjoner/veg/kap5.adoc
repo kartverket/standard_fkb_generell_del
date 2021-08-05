@@ -4,8 +4,29 @@ Definisjon:
 ===== Tagged Values
 [cols="20,80"]
 |===
+|language
+|no
+ 
+|SOSI_kortnavn
+|FKB-Veg
+ 
 |SOSI_modellstatus
 |utkastOgSkjult
+ 
+|SOSI_spesifikasjonstype
+|produktspesifikasjon
+ 
+|SOSI_versjon
+|5.0
+ 
+|targetNamespace
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/
+ 
+|version
+|5.0
+ 
+|xmlns
+|app
  
 |===
 [caption="Figur 1: ",title=Oversiktsdiagram FKB-Veg 5.0]
@@ -31,85 +52,8 @@ image::figurer/Parkeringsområde flateavgrensning.png[Parkeringsområde flateavg
 [caption="Figur 11: ",title=Trafikkøy flateavgrensning]
 image::figurer/Trafikkøy flateavgrensning.png[Trafikkøy flateavgrensning]
  
-==== «FeatureType» Vegbom
-Definisjon: fysisk vegbom. Kan både være bommer som permanent sperrer for kjøring (vegsperringer) og bommer som kan passeres, f.eks. ved å betale avgift.
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*funksjon*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|FunksjonVegbom
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Kurve
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|koordinatregistering utført på topp eller bunn av et objekt
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Høydereferanse
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Medium
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vegbomtype*
- 
-|Definisjon: 
-|Angir hvilken type vegbommen er av
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|TypeVegbom
-|===
- 
 ==== «featureType» AnnetVegarealAvgrensning
-Definisjon: avgrensning av private avkjørsler, ytterkant av åpne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke hører til hovedvegnettet (for eksempel småveger mellom bebyggelse)
+Definisjon: avgrensning av private avkj&#248;rsler, ytterkant av &#229;pne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke h&#248;rer til hovedvegnettet (for eksempel sm&#229;veger mellom bebyggelse), og som ikke skal avgrense en vegflate
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -329,44 +273,50 @@ SOSI_lengde:  +
 SOSI_navn: NØ + 
 SOSI_navn: Punkt + 
 |===
+===== Roller
 [cols="20,80"]
 |===
-===== Roller
 |*Rollenavn:* 
-|*dekkekantAvgrensning*
+|*avgrensesAv.Vegdekkekant*
  
 |Multiplisitet: 
 |[0..*]
  
-|Til klasse:
+|Til klasse
 |«featureType» Vegdekkekant
 |===
+[cols="20,80"]
+|===
 |*Rollenavn:* 
-|*trafikkøyavgrensning*
+|*avgrensesAv.VegFiktivGrense*
  
 |Multiplisitet: 
 |[0..*]
  
-|Til klasse:
+|Til klasse
+|«featureType» VegFiktivGrense
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.Trafikkøykant*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
 |«featureType» Trafikkøykant
 |===
-|*Rollenavn:* 
-|*avgrensningAnnetareal*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse:
-|«featureType» VegAvgrensingslinje
+[cols="20,80"]
 |===
 |*Rollenavn:* 
-|*fiktivAvgrensning*
+|*avgrensesAv.VegAvgrensningslinje*
  
 |Multiplisitet: 
 |[0..*]
  
-|Til klasse:
-|«featureType» VegFiktivGrense
+|Til klasse
+|«featureType» VegAvgrensningslinje
 |===
  
 ==== «featureType» Skiltportal
@@ -541,17 +491,28 @@ SOSI_datatype: * +
 SOSI_lengde:  + 
 SOSI_navn: NØ + 
 |===
+===== Roller
 [cols="20,80"]
 |===
-===== Roller
 |*Rollenavn:* 
-|*avgrensning*
+|*avgrensesAv.Trafikkøykant*
  
 |Multiplisitet: 
-|[1..*]
+|[0..*]
  
-|Til klasse:
+|Til klasse
 |«featureType» Trafikkøykant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.VegFiktivGrense*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» VegFiktivGrense
 |===
  
 ==== «featureType» Trafikkøykant
@@ -628,167 +589,49 @@ SOSI_lengde: 6 +
 SOSI_navn: HREF + 
 |===
  
-==== «featureType» VegGåendeOgSyklende
-Definisjon: ferdselsåre for motorisert trafikk
+==== «featureType» VegAvgrensningslinje
+Definisjon: fiktiv linje som avgrenser veg mot avkj&#248;rsler og annet vegareal som ligger i tilknytning til vegnettet. Eksempel p&#229; annet vegareal er &#229;pne parkeringsplasser, industriomr&#229;der og g&#229;rdsplasser.
  
-*Supertype:* «FeatureType» Fellesegenskaper
+*Supertype:* «FeatureType» KvalitetPåkrevd
  
-*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» Veg
+*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» VegkantAnnetVegareal
  
 ===== Tagged Values
 [cols="20,80"]
 |===
 |SOSI_geometri
-|PUNKT;KURVE;FLATE;
+|KURVE;
  
 |===
 ===== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*område*
+|*grense*
  
 |Definisjon: 
-|objektets utstrekning
+|forløp som følger overgang mellom ulike fenomener 
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Flate
+|Kurve
 |Tagged Values: 
 |
 SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*typeveg*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|TypevegGåendeOgSyklende
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vegsystemreferanse*
- 
-|Definisjon: 
-|
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Vegsystemreferanse
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vegOverVeg*
- 
-|Definisjon: 
-|angivelse av om vegen ligger øverst av flere andre veger
-
-Merknad:                             
-egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Boolean
-|Tagged Values: 
-|
-SOIS_navn: VEGOVERVEG + 
-SOSI_datatype: BOOLSK + 
-SOSI_lengde:  + 
-SOSI_navn: VEGOVERVEG + 
-|===
-[cols="20,80"]
-|===
-===== Roller
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«featureType» VegFiktivGrense
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«featureType» Vegdekkekant
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«featureType» Trafikkøykant
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|«featureType» VegAvgrensingslinje
 |===
  
-==== «featureType» VegKjørende
-Definisjon: ferdselsåre for motorisert trafikk
+==== «FeatureType» Vegbom
+Definisjon: fysisk vegbom. Kan både være bommer som permanent sperrer for kjøring (vegsperringer) og bommer som kan passeres, f.eks. ved å betale avgift.
  
-*Supertype:* «FeatureType» Fellesegenskaper
+*Supertype:* «FeatureType» KvalitetPåkrevd
  
-*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» Veg
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;KURVE;FLATE;
- 
-|===
 ===== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*typeveg*
+|*funksjon*
  
 |Definisjon: 
 |
@@ -797,83 +640,63 @@ SOSI_navn: Flate +
 |[0..1]
  
 |Type: 
-|TypevegKjørende
+|FunksjonVegbom
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*vegsystemreferanse*
+|*senterlinje*
  
 |Definisjon: 
-|
+|forløp som følger objektets sentrale del
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Vegsystemreferanse
+|Kurve
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*vegOverVeg*
+|*høydereferanse*
  
 |Definisjon: 
-|angivelse av om vegen ligger øverst av flere andre veger
-
-Merknad:                             
-egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
+|koordinatregistering utført på topp eller bunn av et objekt
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Høydereferanse
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Boolean
-|Tagged Values: 
-|
-SOIS_navn: VEGOVERVEG + 
-SOSI_datatype: BOOLSK + 
-SOSI_lengde:  + 
-SOSI_navn: VEGOVERVEG + 
+|Medium
 |===
 [cols="20,80"]
 |===
-===== Roller
-|*Rollenavn:* 
-|*fiktivavgrensning*
+|*Navn:* 
+|*vegbomtype*
+ 
+|Definisjon: 
+|Angir hvilken type vegbommen er av
  
 |Multiplisitet: 
-|[0..*]
+|[0..1]
  
-|Til klasse:
-|«featureType» VegFiktivGrense
-|===
-|*Rollenavn:* 
-|*avgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse:
-|«featureType» Vegdekkekant
-|===
-|*Rollenavn:* 
-|*trafikkøyavgrensning*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse:
-|«featureType» Trafikkøykant
-|===
-|*Rollenavn:* 
-|*avgrensningAnnetareal*
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse:
-|«featureType» VegAvgrensingslinje
+|Type: 
+|TypeVegbom
 |===
  
 ==== «featureType» Vegdekkekant
@@ -949,39 +772,6 @@ SOSI_lengde: 6 +
 SOSI_navn: HREF + 
 |===
  
-==== «featureType» VegAvgrensingslinje
-Definisjon: fiktiv linje som avgrenser veg mot "annet vegareal" som ligger i tilknytning til vegnettet. Eksempel på "annet vegareal" er åpne parkeringsplasser, industriområder og gårdsplasser
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» VegkantAnnetVegareal
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*grense*
- 
-|Definisjon: 
-|forløp som følger overgang mellom ulike fenomener 
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Kurve
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
- 
 ==== «featureType» VegFiktivGrense
 Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater
  
@@ -1015,8 +805,296 @@ Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater
 SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
  
+==== «featureType» VegGåendeOgSyklende
+Definisjon: ferdsels&#229;re for g&#229;ende og syklende
+ 
+*Supertype:* «FeatureType» Fellesegenskaper
+ 
+*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» Veg
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_geometri
+|PUNKT;KURVE;FLATE;
+ 
+|===
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|Tagged Values: 
+|
+SOSI_melding: Fant ikke denne i SOSI_db + 
+SOSI_navn: Flate + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*typeveg*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|TypevegGåendeOgSyklende
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vegsystemreferanse*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Vegsystemreferanse
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Punkt
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vegOverVeg*
+ 
+|Definisjon: 
+|angivelse av om vegen ligger øverst av flere andre veger
+
+Merknad:                             
+egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Boolean
+|Tagged Values: 
+|
+SOIS_navn: VEGOVERVEG + 
+SOSI_datatype: BOOLSK + 
+SOSI_lengde:  + 
+SOSI_navn: VEGOVERVEG + 
+|===
+===== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.VegFiktivGrense*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» VegFiktivGrense
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.Vegdekkekant*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Vegdekkekant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.Trafikkøykant*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Trafikkøykant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.VegAvgrensningslinje*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» VegAvgrensningslinje
+|===
+ 
+==== «featureType» VegKjørende
+Definisjon: ferdselsåre for motorisert trafikk
+ 
+*Supertype:* «FeatureType» Fellesegenskaper
+ 
+*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» Veg
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_geometri
+|PUNKT;KURVE;FLATE;
+ 
+|===
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|Tagged Values: 
+|
+SOSI_melding: Fant ikke denne i SOSI_db + 
+SOSI_navn: Flate + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*typeveg*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|TypevegKjørende
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vegsystemreferanse*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Vegsystemreferanse
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Punkt
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vegOverVeg*
+ 
+|Definisjon: 
+|angivelse av om vegen ligger øverst av flere andre veger
+
+Merknad:                             
+egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Boolean
+|Tagged Values: 
+|
+SOIS_navn: VEGOVERVEG + 
+SOSI_datatype: BOOLSK + 
+SOSI_lengde:  + 
+SOSI_navn: VEGOVERVEG + 
+|===
+===== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.Vegdekkekant*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Vegdekkekant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.VegFiktivGrense*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» VegFiktivGrense
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.Trafikkøykant*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» Trafikkøykant
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*avgrensesAv.VegAvgrensingslinje*
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«featureType» VegAvgrensningslinje
+|===
+ 
 ==== «featureType» Vegoppmerking
-Definisjon: langsgående vegoppmerkingslinjer i veien
+Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i veien
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -1210,8 +1288,41 @@ SOSI_navn: HREF +
 |===
 === Pakke: Datatype og kodelister
 Definisjon: Inneholder datatyper og kodelister benyttet i produktspesifikasjonen
-[caption="Figur 12: ",title=Realisering av datatyper og kodelister]
-image::figurer/Realisering av datatyper og kodelister.png[Realisering av datatyper og kodelister]
+[caption="Figur 12: ",title=Hoveddiagram datatyper og kodelister]
+image::figurer/Hoveddiagram datatyper og kodelister.png[Hoveddiagram datatyper og kodelister]
+[caption="Figur 13: ",title=Realisering av datatyper fra Vegnett 5.0]
+image::figurer/Realisering av datatyper fra Vegnett 5.0.png[Realisering av datatyper fra Vegnett 5.0]
+ 
+==== «dataType» Vegsystemreferanse
+Definisjon: sammensatt identifikator for vegsystemreferanse
+ 
+*Realisering av:* «applicationSchema» Vegnett-5.0::«dataType» Vegsystemreferanse
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_navn
+|VREF
+ 
+|===
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vegsystem*
+ 
+|Definisjon: 
+|hvilke deler av vegnettet som forvaltningsmessig hører sammen
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Vegsystem
+|Tagged Values: 
+|
+SOSI_navn: VEGSYSTEM + 
+|===
  
 ==== «dataType» Vegsystem
 Definisjon: Definerer hvilke deler av vegnettet som forvaltningsmessig hører sammen.
@@ -1299,133 +1410,33 @@ SOSI_lengde: 5 +
 SOSI_navn: VEGNUMMER + 
 |===
  
-==== «dataType» Vegsystemreferanse
-Definisjon: sammensatt identifikator for vegsystemreferanse
- 
-*Realisering av:* «applicationSchema» Vegnett-5.0::«dataType» Vegsystemreferanse
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_navn
-|VREF
- 
-|===
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vegsystem*
- 
-|Definisjon: 
-|hvilke deler av vegnettet som forvaltningsmessig hører sammen
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Vegsystem
-|Tagged Values: 
-|
-SOSI_navn: VEGSYSTEM + 
-|===
- 
-==== «CodeList» FunksjonVegbom
-Definisjon: 
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
- 
-==== «CodeList» TypeVegbom
-Definisjon: 
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
- 
-==== «CodeList» TypevegGåendeOgSyklende
-Definisjon: 
+==== «CodeList» Vegkategori
+Definisjon: angivelse av vegens kategori/eierskap
  
 ===== Tagged Values
 [cols="20,80"]
 |===
 |asDictionary
 |true
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|30
- 
-|SOSI_navn
-|TYPEVEG
- 
-|===
- 
-==== «CodeList» TypevegKjørende
-Definisjon: 
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|30
- 
-|SOSI_navn
-|TYPEVEG
- 
-|===
- 
-==== «CodeList» VegoppmerkingBruksområde
-Definisjon: 
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
- 
-==== «codeList» Vegfase
-Definisjon: Angir vegens fase i livet.
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|asDictionary
-|false
- 
-|catalogue-entry
-|NVDB Datakatalogen
  
 |codeList
-|https://raw.githubusercontent.com/jetgeo/NVDBGML/master/XSD/NVDBFase
- 
-|NVDB_ID
-|11278
- 
-|NVDB_navn
-|Fase
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegkategori
  
 |SOSI_datatype
 |T
  
 |SOSI_lengde
-|20
+|30
  
 |SOSI_navn
-|VEGFASE
+|VEGKATEGORI
  
 |===
-Kodeliste kunne ikke hentes fra register: https://raw.githubusercontent.com/jetgeo/NVDBGML/master/XSD/NVDBFase
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegkategori
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:45Z
+ 
+Kodelistens navn i registeret: Vegkategori
  
 ===== Koder
 [cols="25,60,15"]
@@ -1434,49 +1445,99 @@ Kodeliste kunne ikke hentes fra register: https://raw.githubusercontent.com/jetg
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
+|skogsveg
+|Private landbruksveger som brukes til skogbruksformål. Nummerering iht. landbruksforvaltningens fagsystem ØKS.
+|S
+|riksveg
+|SVV er vegmyndighet. Unik nummerering på nasjonalt nivå.
+|R
+|privatVeg
+|Private veger. Evt. nummerering er unik innenfor kommunen.
+|P
+|kommunalVeg
+|Kommunen er vegmyndighet. Unik nummerering innenfor kommunen.
+|K
+|fylkesveg
+|Fylkeskommunen er vegmyndighet. Unik nummerering på nasjonalt nivå.
+|F
+|europaveg
+|SVV er vegmyndighet. Unik nummerering iht. europeisk avtale om internasjonale trafikkårer, AGR.
+|E
+|===
+ 
+==== «CodeList» Vegfase
+Definisjon: angivelse av vegens "fase i livet"
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegfase
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|30
+ 
+|SOSI_navn
+|VEGFASE
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegfase
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:45Z
+ 
+Kodelistens navn i registeret: Vegfase
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|eksisterendeVeg
+|Veg som er del av operativt vegnett
+|V
 |planlagtVeg
 |Planlagt veg, vedtatt trasé.
 |P
 |vegUnderBygging
 |Veg under bygging
 |A
-|eksisterendeVeg
-|Veg som er del av operativt vegnett
-|V
 |===
  
-==== «codeList» Vegkategori
-Definisjon: Kategorisering som angir på hvilket nivå vegmyndigheten for strekningen ligger.
+==== «CodeList» FunksjonVegbom
+Definisjon: Angir funksjon for vegbom
  
 ===== Tagged Values
 [cols="20,80"]
 |===
 |asDictionary
-|false
- 
-|catalogue-entry
-|NVDB Datakatalogen
+|true
  
 |codeList
-|https://raw.githubusercontent.com/jetgeo/NVDBGML/master/XSD/NVDBVegkategoriVegsystem
- 
-|NVDB_ID
-|11276
- 
-|NVDB_navn
-|Vegkategori
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom
  
 |SOSI_datatype
 |T
  
 |SOSI_lengde
-|50
+|30
  
 |SOSI_navn
-|VEGKATEGORI
+|NVDB_FUNKSJONVEGBOM
  
 |===
-Kodeliste kunne ikke hentes fra register: https://raw.githubusercontent.com/jetgeo/NVDBGML/master/XSD/NVDBVegkategoriVegsystem
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:46Z
+ 
+Kodelistens navn i registeret: FunksjonVegbom
  
 ===== Koder
 [cols="25,60,15"]
@@ -1485,77 +1546,301 @@ Kodeliste kunne ikke hentes fra register: https://raw.githubusercontent.com/jetg
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
-|europaveg
-|SVV er vegmyndighet. Unik nummerering iht. europeisk avtale om internasjonale trafikkårer, AGR
-|E
-|riksveg
-|SVV er vegmyndighet. Unik nummerering på nasjonalt nivå.
-|R
-|fylkesveg
-|Fylkeskommunen er vegmyndighet. Unik nummerering på nasjonalt nivå.
-|F
-|kommunalVeg
-|Kommunen er vegmyndighet. Unik nummerering innenfor kommunen.
-|K
-|privatVeg
-|Private veger. Evt. nummerering er unik innenfor kommunen.
-|P
-|skogsveg
-|Private landbruksveger som brukes til skogbruksformål. Nummerering iht. landbruksforvaltningens fagsystem ØKS
-|S
+|Bussluse
+|Grop i vegen som hindrer biltrafikk. Tilgjengelig for buss (brede kjøretøy).
+|bussluse
+|Fjernstyrt sperring
+|Bom eller annen type vegsperring som kan åpnes vha SMS, bombrikke, oppringning, vaktsentral e.l.
+|fjernstyrtSperring
+|Trafikkavviser
+|Stein, blokk, pullert, rørgelender eller andre vegsperringer som ikke kan flyttes eller åpnes uten verktøy eller store kjøretøyer.
+|trafikkavviser
+|Låst sperring
+|Bom eller annen type vegsperring som kan åpnes med nøkkel eller kode.
+|låstSperring
+|Betalingssperring
+|Bom eller annen type vegsperring som kan åpnes ved betaling.
+|betalingssperring
+|Ulåst sperring
+|Bom eller annen type vegsperring som kan åpnes manuelt uten nøkkel eller kode.
+|ulåstSperring
 |===
  
-==== «codeList» VegrekkverkType
+==== «CodeList» TypeVegbom
+Definisjon: angivelse av type vegbom
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|30
+ 
+|SOSI_navn
+|NVDB_TYPEVEGBOM
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:47Z
+ 
+Kodelistens navn i registeret: TypeVegbom
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|===
+ 
+==== «CodeList» TypevegGåendeOgSyklende
+Definisjon: typeveger som brukes for veger for g&#229;ende og syklende
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggåendeogsyklende
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|30
+ 
+|SOSI_navn
+|TYPEVEG
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggåendeogsyklende
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:47Z
+ 
+Kodelistens navn i registeret: TypevegGåendeOgSyklende
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|Trapp
+|Trapp som inngår i nettverket for gående (og syklende).
+|trapp
+|Gangveg
+|Veg som er bestemt for gående. Vegen er skilt fra annen veg med gressplen, grøft, gjerde, kantstein eller på annen måte.
+|gangveg
+|Fortau
+|Del av veg reservert for gående. Ligger høyere enn vegbanen og er adskilt fra denne med kantstein.
+|fortau
+|Gang- og sykkelveg
+|Veg som er bestemt for gående, syklende eller kombinert gang- og sykkeltrafikk. Vegen er skilt fra annen veg med gressplen, grøft, gjerde, kantstein eller på annen måte. Normalt skiltet med skilt 522.
+|gangOgSykkelveg
+|Sykkelveg
+|Veg som er bestemt for syklende. Vegen er skilt fra annen veg med gressplen, grøft, gjerde, kantstein eller på annen måte. Normalt skiltet med skilt 520.
+|sykkelveg
+|Gågate
+|Område hvor det er forbudt å kjøre motorvogn og hvor trafikkreglenes bestemmelser om gågate gjelder. Skiltet med skilt 548.
+|gågate
+|===
+ 
+==== «CodeList» TypevegKjørende
+Definisjon: typeveger som brukes for veger for kj&#248;rende
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjørende
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|30
+ 
+|SOSI_navn
+|TYPEVEG
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjørende
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:48Z
+ 
+Kodelistens navn i registeret: TypevegKjørende
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|Enkel bilveg
+|trenger beskrivelse
+|enkelBilveg
+|Kanalisert veg
+|Veg som har fysisk adskilte kjørebaner med rekkverk eller annen fysisk barriere.
+|kanalisertVeg
+|Gatetun
+|Boliggate hvor det er iverksatt fysiske tiltak for å etablere et uteareal for alle trafikantkategorier, hvor all kjøring skjer på fotgjengernes vilkår.
+|gatetun
+|Rampe
+|Veg for på- eller avkjøring av annen veg.
+|rampe
+|Rundkjøring
+|trenger beskrivelse
+|rundkjøring
+|===
+ 
+==== «CodeList» VegoppmerkingBruksområde
+Definisjon: angir bruksomr&#229;de for vegoppmerking
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksområde
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|30
+ 
+|SOSI_navn
+|VEGOPPMERKING_BRUKSOMRÅDE
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksområde
+ 
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:49Z
+ 
+Kodelistens navn i registeret: VegoppmerkingBruksområde
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|Skillelinje, kollektivfelt
+|trenger beskrivelse
+|Skillelinje, kollektivfelt
+|Skillelinje, fartsendringsfelt
+|trenger beskrivelse
+|Skillelinje, fartsendringsfelt
+|Kantlinje
+|trenger beskrivelse
+|Kantlinje
+|Skillelinje, sykkelfelt
+|trenger beskrivelse
+|Skillelinje, sykkelfelt
+|Midtlinje
+|trenger beskrivelse
+|Midtlinje
+|Delelinje
+|trenger beskrivelse
+|Delelinje
+|Ledelinje
+|trenger beskrivelse
+|Ledelinje
+|===
+ 
+==== «CodeList» VegrekkverkType
 Definisjon: angivelse av ulike typer rekkverk
  
 ===== Tagged Values
 [cols="20,80"]
 |===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverktype
+ 
 |SOSI_datatype
 |T
  
 |SOSI_lengde
-|tom
+|30
  
 |SOSI_navn
 |VEGREKKVERKTYPE
  
 |===
-===== Koder
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Definisjon:* 
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverktype
  
-|Betongrekkverk
-|
-|Betongrekkverk New Jersey
-|
-|Betongrekkverk plasstøpt
-|
-|Betongrekkverk prefabrikkerte element
-|
-|Betongrekkverk Stabb/Saxegård
-|
-|Rekkverk med skinne
-|
-|Rekkverk med wire
-|
-|Stabbesteiner
-|
+Kodeliste hentet på tidspunkt: 2021-08-05T11:40:49Z
+ 
+Kodelistens navn i registeret: VegrekkverkType
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
 |Topprekkverk på mur/kantdrage
-|
+|trenger beskrivelse
+|topprekkverkPåMurKantdrage
+|Betongrekkverk
+|trenger beskrivelse
+|betongrekkverk
+|Rekkverk med wire
+|trenger beskrivelse
+|rekkverkMedWire
+|Betongrekkverk, Stabb/Saxegård
+|trenger beskrivelse
+|betongrekkverkStabbSaxegård
+|Stabbesteiner
+|trenger beskrivelse
+|stabbesteiner
+|Betongrekkverk, prefabrikkerte element
+|trenger beskrivelse
+|betongrekkverkPrefabrikerteElement
+|Rekkverk med skinne
+|trenger beskrivelse
+|rekkverkMedSkinne
+|Betongrekkverk, New Jersey
+|trenger beskrivelse
+|betongrekkverkNewJersey
+|Betongrekkverk, plasstøpt
+|trenger beskrivelse
+|betongrekkverkPlasstøpt
 |===
 === Pakke: Generelle elementer
 Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 13: ",title=Hoveddiagram Fellesegenskaper]
+[caption="Figur 14: ",title=Hoveddiagram Fellesegenskaper]
 image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 14: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 15: ",title=Realisering av fellesegenskaper fra SOSI generell del]
 image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 15: ",title=Posisjonskvalitet]
+[caption="Figur 16: ",title=Posisjonskvalitet]
 image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
@@ -1759,7 +2044,7 @@ SOSI_navn: KVALITET +
 «featureType» AnnetVegarealAvgrensning +
 «featureType» Trafikkøykant +
 «featureType» Vegskulderkant +
-«featureType» VegAvgrensingslinje +
+«featureType» VegAvgrensningslinje +
 «FeatureType» Vegbom +
 «featureType» Skiltportal
 |===
@@ -2021,7 +2306,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-01T14:43:44Z
+Kodeliste hentet på tidspunkt: 2021-08-05T11:41:19Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -2072,7 +2357,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-01T14:43:45Z
+Kodeliste hentet på tidspunkt: 2021-08-05T11:41:20Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -2101,6 +2386,9 @@ Kodelistens navn i registeret: Datafangstmetode
 |Fotogrammetri
 |Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
 |fot
+|Digitalisert
+|Posisjonen er digitalisert fra ortofoto eller andre plane kartdata
+|dig
 |Landmålt
 |Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
 |lan
@@ -2130,7 +2418,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-01T14:43:46Z
+Kodeliste hentet på tidspunkt: 2021-08-05T11:41:21Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -2200,7 +2488,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-01T14:43:47Z
+Kodeliste hentet på tidspunkt: 2021-08-05T11:41:22Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -2249,7 +2537,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-07-01T14:43:48Z
+Kodeliste hentet på tidspunkt: 2021-08-05T11:41:22Z
  
 Kodelistens navn i registeret: Medium
  
