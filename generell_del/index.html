@@ -495,7 +495,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#truegeometrityper">7.1.1. Geometrityper</a></li>
 <li><a href="#truemultippel-geometri">7.1.2. Multippel geometri</a></li>
-<li><a href="#trueflategeometri">7.1.3. Flategeometri</a></li>
+<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a></li>
+<li><a href="#trueflategeometri">7.1.4. Flategeometri</a></li>
 </ul>
 </li>
 <li><a href="#truebruk-av-datoegenskaper">7.2. Bruk av datoegenskaper</a>
@@ -550,7 +551,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-08-05
+Testversjon 2021-08-06
 </td>
 </tr>
 </table>
@@ -681,22 +682,19 @@ FKB inngår i det offentlige kartgrunnlaget (DOK).</p>
 <p><strong>Flategeometri:</strong></p>
 </div>
 <div class="paragraph">
-<p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri, men der det er behov kan det fortsatt settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler og er nærmere beskrevet <a href="#trueflategeometri">Flategeometri</a> (i punkt 7.1.3).</p>
+<p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri, men der det er behov kan det fortsatt settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler og er nærmere beskrevet under <a href="#trueflategeometri">Flategeometri</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Assosiasjoner:</strong></p>
 </div>
 <div class="paragraph">
-<p>Det er også åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre ting enn å beskrive flategeometri. Dette kan f.eks. brukes til å beskrive en sammenheng mellom forskjellige typer objekter. f.eks. at et Bygning-objekt vet hvilke Veranda-objekter som tilhører bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering. Det er i tillegg satt som en regel at mange-til-mange forhold mellom objekter ikke bør beskrives med assosiasjoner i FKB.</p>
-</div>
-<div class="paragraph">
-<p>Må rammer for bruk og utveksling av assosiasjoner beskrives nærmere?</p>
+<p>Det er også åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre ting enn å beskrive flategeometri. Dette kan f.eks. brukes til å beskrive en sammenheng mellom forskjellige typer objekter. f.eks. at et Bygning-objekt vet hvilke Veranda-objekter som tilhører bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering. Se mer om rammer for bruk av assosiasjoner under <a href="#trueassosiasjoner">Assosiasjoner</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Multippel geometri:</strong></p>
 </div>
 <div class="paragraph">
-<p>Tidligere versjoner av FKB har også hatt objekttyper som er modellert med mer enn <em>en</em> geometri-egenskap. Dette utvides imidlertid noe i forbindelse med FKB 5.0. Dette er nærmere beskrevet under <a href="#truemultippel-geometri">Multippel geometri</a> (punkt 7.1.2).</p>
+<p>Tidligere versjoner av FKB har også hatt objekttyper som er modellert med mer enn <em>en</em> geometri-egenskap. Dette utvides noe i forbindelse med FKB 5.0. Dette er nærmere beskrevet under <a href="#truemultippel-geometri">Multippel geometri</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Endringer i fellesegenskaper:</strong></p>
@@ -1526,6 +1524,9 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="paragraph">
 <p>SOSI geometrityper benyttes i UML-modellene og SOSI-format. ISO geometritypene styrer hvilke geometrityper som er lovlige å benytte i GML.</p>
 </div>
+<div class="paragraph">
+<p>FKB-data skal ha en enklest mulig geometri. Andre geometrityper enn de som er angitt i tabellen over (som f.eks. multipoint, multicurve, multisurface etc.) skal ikke benyttes i FKB 5.0.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="truemultippel-geometri"><a class="anchor" href="#truemultippel-geometri"></a>7.1.2. Multippel geometri</h4>
@@ -1557,22 +1558,39 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper som det i noen sammenhenger er naturlig å representere som punkt og i andre sammenhenger som flate (ut fra størrelse/detaljering etc).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Bygning, Objtype Pipe</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Andre?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>For alle objekttyper i FKB 5.0 som er definert med mer enn 1 geometri-egenskap så gjelder det at det kun er en av geometri-egenskapene som er påkrevd. Den påkrevde geometri-egenskapen regnes da som "primærgeometri" og som standard legges til grunn for geomgrafiske søk o.l.</p>
+<p>For alle objekttyper i FKB 5.0 som er definert med mer enn 1 geometri-egenskap så gjelder det at det kun er en av geometri-egenskapene som er påkrevd (="primærgeometri").</p>
 </div>
 <div class="paragraph">
-<p>Modellering? SOSI-realisering/JSON-realisering?</p>
+<p>Ved geografiske søk på objekter med multippel geometri bør en union av geometriene legges til grunn for søket.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueflategeometri"><a class="anchor" href="#trueflategeometri"></a>7.1.3. Flategeometri</h4>
+<h4 id="trueassosiasjoner"><a class="anchor" href="#trueassosiasjoner"></a>7.1.3. Assosiasjoner</h4>
+<div class="paragraph">
+<p>Kartobjektene i FKB er alltid selvstendige objekter som kan eksistere uavhengig av andre objekter. Assosiasjoner uttrykker generelt en eller annen sammenheng mellom to objekttyper/objekter. Et eksempel på dette kan være å uttrykke hvilke Veranda-objekter som tilhører hvilke Bygning-objekter. FKB 5.0 åpner for å benytte assosiasjoner i datamodellene etter følgende rammer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assosiasjoner modelleres som "vanlige assosiasjoner" i tråd med reglene i SOSI Regler for UML-modellering 5.1</p>
+</li>
+<li>
+<p>Alle assosiasjoner i FKB modelleres som <em>enveis</em>. Det vil si at de bare er navigerbare i en retning. (Eks: Bbygningen vet hvilke verandaer som hører til bygget, men verandaen vet ikke hvilken bygning den tilhører)</p>
+</li>
+<li>
+<p>Multiplisitet på den navigerbare enden skal alltid være 0..1 eller 0..*. (Det at det finnes et objekt av en objekttype vil ikke medføre krav om at det må finnes et referert objekt av en annen type.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hvilke avgrensningskurver som brukes til å avgrense et flateobjekt er en spesialvariant av assosiasjoner med egne krav. Dette er beskrevet nærmere under <a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueflategeometri"><a class="anchor" href="#trueflategeometri"></a>7.1.4. Flategeometri</h4>
 <div class="sect4">
 <h5 id="trueto-typer-flateobjekter"><a class="anchor" href="#trueto-typer-flateobjekter"></a>To typer flateobjekter</h5>
 <div class="paragraph">
@@ -1619,7 +1637,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="content">
 <img src="figurer/flategeometri_modell.png" alt="flategeometri modell">
 </div>
-<div class="title">Figur 9. Mal for UML-modellering av objekttyper med flategeometri. "Type 1" til høyre og "Type 2" til venstre</div>
+<div class="title">Figur 9. Mal for UML-modellering av objekttyper med flategeometri. "Type 1" til venstre og "Type 2" til høyre</div>
 </div>
 <div class="paragraph">
 <p>Dersom man skal modellere en objekttype av "Type 2" (med krav til sammenheng mellom flateobjekt og avgrensningsobjekter) gjelder følgende regler ved UML-modelleringen:</p>
@@ -3100,16 +3118,9 @@ Kan benyttes dersom man gjør et uttak av en database som ikke inneholder origin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">definition: <br>
-description: <br>
-designation: <br>
-inLineOrByReference: <br>
-isMetadata: <br>
-sequenceNumber: <br>
-SOSI_datatype: H<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: H<br>
 SOSI_lengde: 4<br>
-SOSI_navn: OMRÅDEID<br>
-SOSI_presentasjonsnavn: <br></p></td>
+SOSI_navn: OMRÅDEID<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -3137,16 +3148,9 @@ SOSI_presentasjonsnavn: <br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">definition: <br>
-description: <br>
-designation: <br>
-inLineOrByReference: <br>
-isMetadata: <br>
-sequenceNumber: <br>
-SOSI_datatype: T<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
 SOSI_lengde: 100<br>
-SOSI_navn: ORIGINALDATAVERT<br>
-SOSI_presentasjonsnavn: <br></p></td>
+SOSI_navn: ORIGINALDATAVERT<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -3178,16 +3182,8 @@ Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Da
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tagged Values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">definition: <br>
-description: <br>
-designation: <br>
-inLineOrByReference: <br>
-isMetadata: <br>
-sequenceNumber: <br>
-SOSI_datatype: DATOTID<br>
-SOSI_lengde: <br>
-SOSI_navn: KOPIDATO<br>
-SOSI_presentasjonsnavn: <br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATOTID<br>
+SOSI_navn: KOPIDATO<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -3502,7 +3498,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-05 12:02:06 +0200
+Last updated 2021-08-06 12:22:55 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
