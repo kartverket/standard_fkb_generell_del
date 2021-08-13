@@ -1,6 +1,5 @@
 === «ApplicationSchema» FKB-Veg-5.0Utkast
-Definisjon: Spesifikasjonen gjelder for de enkelte vegelementene som beskriver veglegemets geometri.
-FKB-Veg versjon 5.0 baserer seg p&#229; generelle konsepter versjon 5.1 definert i SOSI del 1 , og Vegistuasjon versjon 4.5 og Vegnett versjon 5.0 definert i SOSI del 2.  
+Definisjon: datamodell for FKB-Veg.
  
 ===== Tagged Values
 [cols="20,80"]
@@ -184,10 +183,10 @@ Definisjon: område som er begrenset av kjørefelt på alle sider og som normalt
 [cols="20,80"]
 |===
 |*Navn:* 
-|*overkjørbartareal*
+|*overkjørbartAreal*
  
 |Definisjon: 
-|Betinget egenskap som kun brukes for del av trafikk&#248;y/rundkj&#248;ring som er overkj&#248;rbart areal. Dersom egenskapen ikke er angitt betyr dette det samme som overkj&#248;rbartareal Nei.
+|Betinget egenskap som kun brukes for del av trafikk&#248;y/rundkj&#248;ring som er overkj&#248;rbart areal. Dersom egenskapen ikke er angitt betyr dette det samme som overkj&#248;rbartAreal Nei.
  
 |Multiplisitet: 
 |[0..1]
@@ -253,7 +252,11 @@ SOSI_navn: OVERKJØRBARTAREAL +
 |===
  
 ==== «FeatureType» VegGåendeOgSyklende
-Definisjon: ferdsels&#229;re for g&#229;ende og syklende
+Definisjon: ferdsels&#229;re for g&#229;ende og syklende. 
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
+
+Merknad: brukes for strekninger med med typeveg fortau, g&#229;gate, gang- og sykkelveg, gangveg, sykkelveg og trapp i Elveg 2.0. 
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -410,7 +413,11 @@ SOSI_navn: VEGOVERVEG +
 |===
  
 ==== «FeatureType» VegKjørende
-Definisjon: ferdselsåre for motorisert trafikk
+Definisjon: ferdsels&#229;re for motorisert trafikk.
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
+
+Merknad: brukes for strekninger med med typeveg enkel bilveg, gatetun, kanalisert veg, rampe og rundkj&#248;ring i Elveg 2.0. 
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -616,7 +623,8 @@ SOSI_navn: Kurve +
 |*nedsenketKantstein*
  
 |Definisjon: 
-|om fortauskanten er nedsenket eller ikke 
+|Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
  
 |Multiplisitet: 
 |[0..1]
@@ -650,6 +658,9 @@ SOSI_navn: HREF +
  
 ==== «FeatureType» VegAvgrensningslinje
 Definisjon: fiktiv linje som avgrenser veg mot avkj&#248;rsler og annet vegareal som ligger i tilknytning til vegnettet. Eksempel p&#229; annet vegareal er &#229;pne parkeringsplasser, industriomr&#229;der og g&#229;rdsplasser.
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
+
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -677,9 +688,25 @@ Definisjon: fiktiv linje som avgrenser veg mot avkj&#248;rsler og annet vegareal
 |Type: 
 |Kurve
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Dersom det er registrert Vegdekkeant for samme fenomen, skal det ikke registreres VegAvgrensningslinje*
+ 
+|Beskrivelse: 
+|Dersom det er registrert Vegdekkeant for samme fenomen, skal det ikke registreres VegAvgrensningslinje
+ 
+|===
  
 ==== «FeatureType» Vegdekkekant
-Definisjon: sideveis avgrensning av vegdekke
+Definisjon: sideveis avgrensning av vegdekke.
+
+Objekttypen Vegdekkekant omfatter n&#229; ogs&#229; objektene Fortauskant, GangSykkelvegkant og Gangvegkant som kjent fra FKB-Veg versjon 4.6. 
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
+
+Merknad: Vegdekkekant brukes alltid som flateavgrensning dersom dette er registrert. 
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -716,7 +743,8 @@ SOSI_navn: Kurve +
 |*nedsenketKantstein*
  
 |Definisjon: 
-|om fortauskanten er nedsenket eller ikke 
+|Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
  
 |Multiplisitet: 
 |[0..1]
@@ -749,7 +777,9 @@ SOSI_navn: HREF +
 |===
  
 ==== «FeatureType» VegFiktivGrense
-Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater
+Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater. 
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
  
 *Supertype:* «FeatureType» KvalitetOpsjonell
  
@@ -903,7 +933,9 @@ Definisjon: avgrensning av gangfelt
 |===
  
 ==== «FeatureType» Kjørebanekant
-Definisjon: Avgrensing av kjørebanen
+Definisjon: Avgrensing av kj&#248;rebanen
+
+(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -1106,7 +1138,7 @@ Definisjon: fysisk vegbom. Kan både være bommer som permanent sperrer for kjø
 |===
  
 ==== «FeatureType» Vegoppmerking
-Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i veien
+Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for &#229; lede, varsle eller regulere trafikken, og for &#229; klargj&#248;re andre bestemmelser gitt ved trafikkskilt eller trafikkregler.
  
 *Supertype:* «FeatureType» NVDBobjekter_KvalitetPåkrevd
  
@@ -1151,7 +1183,7 @@ Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i veien
 |===
  
 ==== «FeatureType» Vegrekkverk
-Definisjon: rekkverk som står som hinder langs vegskulder og som trafikkdeler.
+Definisjon: En anordning som skal hindre at kj&#248;ret&#248;y forlater vegen (H&#229;ndbok N101, Statens vegvesen).
  
 *Supertype:* «FeatureType» NVDBobjekter_KvalitetPåkrevd
  
@@ -1260,7 +1292,8 @@ SOSI_navn: Kurve +
 |*nedsenketKantstein*
  
 |Definisjon: 
-|om fortauskanten er nedsenket eller ikke
+|Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
  
 |Multiplisitet: 
 |[0..1]
@@ -1439,7 +1472,7 @@ Definisjon: angivelse av vegens kategori/eierskap
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegkategori
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:15Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:45Z
  
 Kodelistens navn i registeret: Vegkategori
  
@@ -1494,7 +1527,7 @@ Definisjon: angivelse av vegens "fase i livet"
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegfase
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:15Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:46Z
  
 Kodelistens navn i registeret: Vegfase
  
@@ -1540,7 +1573,7 @@ Definisjon: Angir funksjon for vegbom
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:46Z
  
 Kodelistens navn i registeret: FunksjonVegbom
  
@@ -1595,7 +1628,7 @@ Definisjon: angivelse av type vegbom
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z
  
 Kodelistens navn i registeret: TypeVegbom
  
@@ -1632,7 +1665,7 @@ Definisjon: typeveger som brukes for veger for g&#229;ende og syklende
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggåendeogsyklende
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z
  
 Kodelistens navn i registeret: TypevegGåendeOgSyklende
  
@@ -1687,7 +1720,7 @@ Definisjon: typeveger som brukes for veger for kj&#248;rende
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjørende
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:17Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z
  
 Kodelistens navn i registeret: TypevegKjørende
  
@@ -1739,7 +1772,7 @@ Definisjon: angir bruksomr&#229;de for vegoppmerking
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksområde
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:17Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:48Z
  
 Kodelistens navn i registeret: VegoppmerkingBruksområde
  
@@ -1751,26 +1784,26 @@ Kodelistens navn i registeret: VegoppmerkingBruksområde
 |*Utvekslingsalias:* 
  
 |Skillelinje, kollektivfelt
-|trenger beskrivelse
-|Skillelinje, kollektivfelt
+|Linje som skiller mellom kjørefelt og kollektivffelt eller busslomme.
+|SK
 |Skillelinje, fartsendringsfelt
-|trenger beskrivelse
-|Skillelinje, fartsendringsfelt
+|Linje som skiller mellom vanlig kjørefelt og fartsendringsfelt
+|SF
 |Kantlinje
-|trenger beskrivelse
-|Kantlinje
+|Linje som markerer kjørebanens ytterkant (HB049).
+|K
 |Skillelinje, sykkelfelt
-|trenger beskrivelse
-|Skillelinje, sykkelfelt
+|Linje som skiller mellom kjørefelt og sykkelfelt.
+|SS
 |Midtlinje
-|trenger beskrivelse
-|Midtlinje
+|Linje som skiller mellom kjørefelt med trafikk i motgående retninger.
+|M
 |Delelinje
-|trenger beskrivelse
-|Delelinje
+|Linje som skiller mellom vanlige kjørefelt med trafikk i samme retning.
+|D
 |Ledelinje
-|trenger beskrivelse
-|Ledelinje
+|Linje som angir føring av kjørefelt eller svingebevegelser gjennom et vegkryss
+|L
 |===
  
 ==== «CodeList» VegrekkverkType
@@ -1797,7 +1830,7 @@ Definisjon: angivelse av ulike typer rekkverk
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverktype
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:18Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:53:48Z
  
 Kodelistens navn i registeret: VegrekkverkType
  
@@ -1808,33 +1841,63 @@ Kodelistens navn i registeret: VegrekkverkType
 |*Definisjon:* 
 |*Utvekslingsalias:* 
  
-|Topprekkverk på mur/kantdrage
-|trenger beskrivelse
-|topprekkverkPåMurKantdrage
-|Betongrekkverk
-|trenger beskrivelse
-|betongrekkverk
-|Rekkverk med wire
-|trenger beskrivelse
-|rekkverkMedWire
-|Betongrekkverk, Stabb/Saxegård
-|trenger beskrivelse
-|betongrekkverkStabbSaxegård
+|Stålrør m/trestolper
+|
+|srt
+|Stålskinne m/plaststolper
+|
+|sp
+|Stålskinne m/trestolper
+|
+|st
+|Betong, plasstøpt
+|
+|bps
+|Brurekkverk, betong
+|
+|bb
+|Treskinne m/trestolper
+|
+|tt
+|Betong, New Jersey
+|
+|bnj
+|Wirerekkverk
+|
+|wr
+|Stålrør m/sigma stålstolper
+|
+|srss
+|Treskinne m/stålstolper
+|
+|ts
+|Brurekkverk, stål m/føringsskinne
+|
+|bf
+|Stålskinne festet på mur/vegg
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|smv
+|Betong, prefabrikkert
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|bpf
+|Stålrør m/runde stålstolper
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|srs
+|Brurekkverk, stål u/føringsskinne
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|buf
 |Stabbesteiner
-|trenger beskrivelse
-|stabbesteiner
-|Betongrekkverk, prefabrikkerte element
-|trenger beskrivelse
-|betongrekkverkPrefabrikerteElement
-|Rekkverk med skinne
-|trenger beskrivelse
-|rekkverkMedSkinne
-|Betongrekkverk, New Jersey
-|trenger beskrivelse
-|betongrekkverkNewJersey
-|Betongrekkverk, plasstøpt
-|trenger beskrivelse
-|betongrekkverkPlasstøpt
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|sst
+|Stålskinne m/stålstolpler
+|Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.
+|ss
+|Rekkverk for gående/syklende
+|Rekkverk som er dimensjonert for gående og syklende. Kan f.eks være for å hindre utforkjørsel med sykkel. Benyttes ikke på/ved veger med biltrafikk.
+|rgs
+|Stålskinne m/sigma stålstolper
+|Rekkverk som er dimensjonert for gående og syklende. Kan f.eks være for å hindre utforkjørsel med sykkel. Benyttes ikke på/ved veger med biltrafikk.
+|sss
 |===
 === Pakke: Generelle elementer
 Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
@@ -2395,7 +2458,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:49Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:54:20Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -2446,7 +2509,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:50Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:54:21Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -2507,7 +2570,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:51Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:54:22Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -2577,7 +2640,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:51Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:54:22Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -2626,7 +2689,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-11T16:13:52Z
+Kodeliste hentet på tidspunkt: 2021-08-13T17:54:23Z
  
 Kodelistens navn i registeret: Medium
  

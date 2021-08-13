@@ -42,8 +42,7 @@ image::figurer/Datatyper og kodelister.png[Datatyper og kodelister]
 image::figurer/Realisering.png[Realisering]
  
 ==== «FeatureType» Veglenke
-Definisjon: Objekttype som representerer lenker i vegnettet
-Eksempel: NVDB Referanselenkedeler
+Definisjon: Objekttype som representerer alle senterlinje lenker i form av traktorveger, stier eller stitrapp. 
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -56,7 +55,7 @@ Eksempel: NVDB Referanselenkedeler
 |*typeVeg*
  
 |Definisjon: 
-|typeveger som brukes for veger og strekninger i FKB-TraktorvegSti 5.0.
+|egenskap for &#229; angi type strekning veglenken representerer.
  
 |Multiplisitet: 
 |[1..1]
@@ -127,7 +126,8 @@ SOSI_navn: VEGSYSTEMREFERANSE +
 |*kommunenummer*
  
 |Definisjon: 
-|Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.
+|Egenskap for nummerering av kommune objektet befinner seg i, i henhold til SSB sin offisielle liste.
+Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.
  
 |Multiplisitet: 
 |[1..1]
@@ -275,7 +275,7 @@ SOSI_navn: BEREDSKAPSVEG +
 |===
  
 ==== «FeatureType» Vegsperring
-Definisjon: Angir at veg er fysisk sperret.
+Definisjon: Objekttype som representerer fysisk sperring langs traktorveg eller sti.
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
@@ -311,7 +311,7 @@ Definisjon: Angir at veg er fysisk sperret.
 |*type*
  
 |Definisjon: 
-|Angir hvilken type sperring det er tale om
+|Egenskap for &#229; angir type sperring
  
 |Multiplisitet: 
 |[0..1]
@@ -332,7 +332,7 @@ SOSI_navn: TYPE +
 |*funksjon*
  
 |Definisjon: 
-|Angir hvilken funksjon sperringen har
+|Egenskap for &#229; angir hvilken funksjon sperringen har
  
 |Multiplisitet: 
 |[1..1]
@@ -353,7 +353,7 @@ SOSI_navn: FUNKSJON +
 |*gjeldertidsrom*
  
 |Definisjon: 
-|Angir tidsrommet (hhmm-hhmm) eller (mnd-mnd) vegsperringen gjelder
+|Egenskap for &#229; angir tidsrommet (hhmm-hhmm) eller (mnd-mnd) vegsperringen gjelder
  
 |Multiplisitet: 
 |[0..1]
@@ -388,7 +388,8 @@ SOSI_navn: GJELDERTIDSROM +
 |*kommunenummer*
  
 |Definisjon: 
-|Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.
+|Egenskap for nummerering av kommune objektet befinner seg i, i henhold til SSB sin offisielle liste.
+Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.
  
 |Multiplisitet: 
 |[1..1]
@@ -402,7 +403,7 @@ SOSI_navn: GJELDERTIDSROM +
 |*eier*
  
 |Definisjon: 
-|Angir hvem som er eier av vegobjektet
+|Egenskap for &#229; angi eier av vegobjektet
  
 |Multiplisitet: 
 |[0..1]
@@ -683,7 +684,7 @@ Definisjon: angivelse av vegens kategori/eierskap
 |T
  
 |SOSI_lengde
-|30
+|1
  
 |SOSI_navn
 |VEGKATEGORI
@@ -691,7 +692,7 @@ Definisjon: angivelse av vegens kategori/eierskap
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegkategori
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:25Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:39Z
  
 Kodelistens navn i registeret: Vegkategori
  
@@ -703,10 +704,10 @@ Kodelistens navn i registeret: Vegkategori
 |*Utvekslingsalias:* 
  
 |Skogsveg
-|Private landbruksveger som brukes til skogbruksformål. Nummerering iht. landbruksforvaltningens fagsystem ØKS.
+|Privat landbruksveg som brukes til skogbruksformål. Vegen er godkjent som landbruksvei (se Forskrift om planlegging og godkjenning av landbruksveier) og nummereres iht. Landbruksdirektoratets økonomisystem for skogordningene (ØKS) .
 |S
 |Privat veg
-|Private veger. Evt. nummerering er unik innenfor kommunen.
+|Privat veg. Eventuell nummerering er unik innenfor kommunen.
 |P
 |===
  
@@ -726,7 +727,7 @@ Definisjon: angivelse av vegens "fase i livet"
 |T
  
 |SOSI_lengde
-|30
+|1
  
 |SOSI_navn
 |VEGFASE
@@ -734,7 +735,7 @@ Definisjon: angivelse av vegens "fase i livet"
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegfase
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:25Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:39Z
  
 Kodelistens navn i registeret: Vegfase
  
@@ -747,7 +748,7 @@ Kodelistens navn i registeret: Vegfase
  
 |Eksisterende veg
 |Veg som er del av operativt nettverk for traktorveger og stier
-|P
+|V
 |===
  
 ==== «CodeList» FunksjonVegsperring
@@ -774,7 +775,7 @@ Definisjon: kodeliste for funksjon av vegsperring
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/funksjonvegsperring
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:26Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:40Z
  
 Kodelistens navn i registeret: FunksjonVegsperring
  
@@ -829,7 +830,7 @@ Definisjon: kodeliste for type vegsperring
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typevegsperring
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:27Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:40Z
  
 Kodelistens navn i registeret: TypeVegsperring
  
@@ -866,7 +867,7 @@ Definisjon: kodeliste typeveger som brukes i FKB-TraktorvegSti 5.0
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typeveg
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:27Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:41Z
  
 Kodelistens navn i registeret: Typeveg
  
@@ -878,7 +879,7 @@ Kodelistens navn i registeret: Typeveg
 |*Utvekslingsalias:* 
  
 |Sti
-|Tydelig, smalt og sammenhengende tråkk i terrenget, som har oppstått gjennom bruk eller aktiv tilrettelegging.                 --Tilleggsopplysninger FKB ---Sti benyttes primært i utmark, men kan også registreres i urbane strøk for stier/tråkk i terrenget der det ikke er noen opparbeidet veg med klar avgrensning. Stier skal være del av et sammenhengende transportnettverk for gående. Kortere frittliggende stier som ikke inngår i et transportnettverk er derfor ikke nødvendig å registrere. I områder med mange stier (for eksempel rundt parkeringsplasser, parkområder etc.) er det bare nødvendig å registrere hovedferdselårene. For å få god fullstendighet på stier ved fotogrammetrisk ajourhold bør manus benyttes. For stier i utmark kan TypevegSti benyttes gjennomgående selv om stien i områder er opparbeidet som en gangveg (som for eksempel på høgt trafikkerte turiststier).
+|Tydelig, smalt og sammenhengende tråkk i terrenget, som har oppstått gjennom bruk eller aktiv tilrettelegging. Tilleggsopplysninger FKB: Sti benyttes primært i utmark, men kan også registreres i urbane strøk for stier/tråkk i terrenget der det ikke er noen opparbeidet veg med klar avgrensning. Stier skal være del av et sammenhengende transportnettverk for gående. Kortere frittliggende stier som ikke inngår i et transportnettverk er derfor ikke nødvendig å registrere. I områder med mange stier (for eksempel rundt parkeringsplasser, parkområder etc.) er det bare nødvendig å registrere hovedferdselårene. For stier i utmark kan Typeveg Sti benyttes gjennomgående selv om stien i områder er opparbeidet som en gangveg (som for eksempel på høyt trafikkerte turiststier).
 |sti
 |Traktorveg
 |Veg som hele året (eller deler av året) ikke egner seg for vanlig bilkjøring, men som er farbar med traktor (INSPIRE: FormOfWay=Tractor). Traktorveger skal være så brede at traktorer kan benytte disse, minimum 2.5 meter. Traktorveger inngår i det permanente vegnettet og medfører varige terrenginngrep i form av en sammenhengende vegkropp. Slep og driftsveier som ikke har bearbeidet såle og som er skapt av gjentatte passeringer med traktor, defineres normalt ikke som en traktorveg. Slep og driftsveier som binder sammen samferdselsnettverket kan registreres som konnekteringslenke med typeveg sti. Veger som er bygd som traktorveger, men opprustet slik at de i praksis er kjørbare med bil skal registreres som bilveg i Elveg 2.0. En (tidligere) traktorveg som er gjengrodd med vegetasjon og ikke lenger egner seg for ferdsel med traktor skal ikke klassifiseres som traktorveg (men heller klassifiseres som Typeveg Sti).
@@ -912,7 +913,7 @@ Definisjon: kodeliste for klasser av landbruksveger. Benyttes kun for veger defi
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/klasselandbruksveg
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:28Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:41Z
  
 Kodelistens navn i registeret: KlasseLandbruksveg
  
@@ -973,7 +974,7 @@ Definisjon: kodeliste for merking langs en sti, l&#248;ype, veg, sykkelvei mv.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/rutemerking
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:28Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:42Z
  
 Kodelistens navn i registeret: Rutemerking
  
@@ -996,7 +997,7 @@ Kodelistens navn i registeret: Rutemerking
 |===
  
 ==== «CodeList» Kommunenummer
-Definisjon: Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.
+Definisjon: Kodeliste for nummerering av kommuner i henhold til SSB sin offisielle liste. Inneholder fremtidige, gyldige og utg&#229;tte kommunenummer. 
  
 ===== Tagged Values
 [cols="20,80"]
@@ -1008,7 +1009,7 @@ Definisjon: Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det pr
 |https://register.geonorge.no/sosi-kodelister/kommunenummer-alle
  
 |SOSI_datatype
-|T
+|H
  
 |SOSI_lengde
 |4
@@ -1019,7 +1020,7 @@ Definisjon: Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det pr
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/kommunenummer-alle
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:41:31Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:05:44Z
  
 Kodelistens navn i registeret: Kommunenummer alle
  
@@ -3362,7 +3363,7 @@ Merknad: lysl&#248;yper i terreng som defineres som enten traktorveg eller sti r
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:02Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:14Z
  
 Kodelistens navn i registeret: Belysning
  
@@ -3405,7 +3406,7 @@ Definisjon: kodeliste for eier og forvaltningsansvar for vegsperring
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/eiervegsperring
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:03Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:14Z
  
 Kodelistens navn i registeret: EierVegsperring
  
@@ -3436,10 +3437,7 @@ Kodelistens navn i registeret: EierVegsperring
 |uavklart
 |===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-
-Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene
+Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0.
 [caption="Figur 5: ",title=Hoveddiagram Fellesegenskaper]
 image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
 [caption="Figur 6: ",title=Arv av fellesegenskaper]
@@ -3878,7 +3876,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:28Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:37Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -3929,7 +3927,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:29Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:37Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -3990,7 +3988,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:30Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:38Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -4060,7 +4058,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:30Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:39Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -4109,7 +4107,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-11T15:42:31Z
+Kodeliste hentet på tidspunkt: 2021-08-13T18:06:39Z
  
 Kodelistens navn i registeret: Medium
  

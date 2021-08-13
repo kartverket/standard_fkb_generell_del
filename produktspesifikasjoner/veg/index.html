@@ -645,7 +645,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-08-11
+Testversjon 2021-08-13
 </td>
 </tr>
 </table>
@@ -719,10 +719,46 @@ Testversjon 2021-08-11
 <div class="ulist">
 <ul>
 <li>
-<p>Oppdatert generelle konsepter fra FKB 5.0 generell del</p>
+<p>Oppdatert generelle konsepter fra FKB 5.0 generell del.</p>
 </li>
 <li>
-<p>mer&#8230;&#8203;</p>
+<p>Datatype Vegsystemreferanse (..VREF) med datterobjekter og kodelister innført for å harmonisere med produkspesifikasjon for Elveg 2.0.</p>
+</li>
+<li>
+<p>Ny objekttype VegKjørende erstatter objekttype Veg.</p>
+</li>
+<li>
+<p>Ny objekttype VegGåendeOgSyklende erstatter objekttype GangSykkelveg.</p>
+</li>
+<li>
+<p>Objekttype Traktorveg og Traktorvegkant fjernet fra spesifikasjon da disse objektene kun skal forvaltes som senterlinjegeometri i FKB-TraktorvegSti 5.0.</p>
+</li>
+<li>
+<p>Objekttyper GangSykkelvegkant, Gangvegkant og Fortauskant innlemmes inn under Vegdekkekant.</p>
+</li>
+<li>
+<p>Objekttyper VegkantAnnetVegareal og VegkantAvkjørsel slås sammen til ny objekttype VegAvgrensningslinje.</p>
+</li>
+<li>
+<p>Objekttype VegkantFiktiv endrer navn til VegFiktivGrense.</p>
+</li>
+<li>
+<p>Objekttype VegoppmerkingLangsgående endrer navn til Vegoppmerking, definisjon revideres og egenskap bruksområde innføres.</p>
+</li>
+<li>
+<p>Objekttype VeggrøftÅpen fjernes fra FKB-Veg og innføres i FKB-Vann.</p>
+</li>
+<li>
+<p>Innført egenskap OverkjørbartAreal (ja/nei) på objekttype Trafikkøy.</p>
+</li>
+<li>
+<p>Innført egenskap FunksjonVegbom på objekttype Vegbom.</p>
+</li>
+<li>
+<p>Innført egenskapene nvdbpeker og eksternpeker for å gjøre det mulig å legge inn referanser (i form av URI-er) til de tilsvarende objektene forvaltet i andre systemer.</p>
+</li>
+<li>
+<p>Alle kodelister er flyttet ut av spesfifikasjon og forvaltes eksternt i Geonorge, se <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0</a>.</p>
 </li>
 </ul>
 </div>
@@ -1125,8 +1161,7 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="trueapplicationschema-fkb-veg-5-0utkast"><a class="anchor" href="#trueapplicationschema-fkb-veg-5-0utkast"></a>5.1. «ApplicationSchema» FKB-Veg-5.0Utkast</h3>
 <div class="paragraph">
-<p>Definisjon: Spesifikasjonen gjelder for de enkelte vegelementene som beskriver veglegemets geometri.
-FKB-Veg versjon 5.0 baserer seg p&#229; generelle konsepter versjon 5.1 definert i SOSI del 1 , og Vegistuasjon versjon 4.5 og Vegnett versjon 5.0 definert i SOSI del 2.</p>
+<p>Definisjon: datamodell for FKB-Veg.</p>
 </div>
 <div class="sect4">
 <h5 id="truetagged-values"><a class="anchor" href="#truetagged-values"></a>Tagged Values</h5>
@@ -1457,11 +1492,11 @@ FKB-Veg versjon 5.0 baserer seg p&#229; generelle konsepter versjon 5.1 definert
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>overkjørbartareal</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>overkjørbartAreal</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betinget egenskap som kun brukes for del av trafikk&#248;y/rundkj&#248;ring som er overkj&#248;rbart areal. Dersom egenskapen ikke er angitt betyr dette det samme som overkj&#248;rbartareal Nei.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Betinget egenskap som kun brukes for del av trafikk&#248;y/rundkj&#248;ring som er overkj&#248;rbart areal. Dersom egenskapen ikke er angitt betyr dette det samme som overkj&#248;rbartAreal Nei.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1576,7 +1611,13 @@ FKB-Veg versjon 5.0 baserer seg p&#229; generelle konsepter versjon 5.1 definert
 <div class="sect3">
 <h4 id="truefeaturetype-veggåendeogsyklende"><a class="anchor" href="#truefeaturetype-veggåendeogsyklende"></a>5.2.3. «FeatureType» VegGåendeOgSyklende</h4>
 <div class="paragraph">
-<p>Definisjon: ferdsels&#229;re for g&#229;ende og syklende</p>
+<p>Definisjon: ferdsels&#229;re for g&#229;ende og syklende.</p>
+</div>
+<div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
+</div>
+<div class="paragraph">
+<p>Merknad: brukes for strekninger med med typeveg fortau, g&#229;gate, gang- og sykkelveg, gangveg, sykkelveg og trapp i Elveg 2.0.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
@@ -1847,7 +1888,13 @@ SOSI_navn: VEGOVERVEG<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-vegkjørende"><a class="anchor" href="#truefeaturetype-vegkjørende"></a>5.2.4. «FeatureType» VegKjørende</h4>
 <div class="paragraph">
-<p>Definisjon: ferdselsåre for motorisert trafikk</p>
+<p>Definisjon: ferdsels&#229;re for motorisert trafikk.</p>
+</div>
+<div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
+</div>
+<div class="paragraph">
+<p>Merknad: brukes for strekninger med med typeveg enkel bilveg, gatetun, kanalisert veg, rampe og rundkj&#248;ring i Elveg 2.0.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» Fellesegenskaper</p>
@@ -2219,7 +2266,8 @@ SOSI_navn: VEGOVERVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">om fortauskanten er nedsenket eller ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2274,6 +2322,9 @@ SOSI_navn: HREF<br></p></td>
 <p>Definisjon: fiktiv linje som avgrenser veg mot avkj&#248;rsler og annet vegareal som ligger i tilknytning til vegnettet. Eksempel p&#229; annet vegareal er &#229;pne parkeringsplasser, industriomr&#229;der og g&#229;rdsplasser.</p>
 </div>
 <div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
+</div>
+<div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
 </div>
 <div class="paragraph">
@@ -2321,11 +2372,39 @@ SOSI_navn: HREF<br></p></td>
 </tbody>
 </table>
 </div>
+<div class="sect4">
+<h5 id="truerestriksjoner-5"><a class="anchor" href="#truerestriksjoner-5"></a>Restriksjoner</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dersom det er registrert Vegdekkeant for samme fenomen, skal det ikke registreres VegAvgrensningslinje</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dersom det er registrert Vegdekkeant for samme fenomen, skal det ikke registreres VegAvgrensningslinje</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="truefeaturetype-vegdekkekant"><a class="anchor" href="#truefeaturetype-vegdekkekant"></a>5.3.3. «FeatureType» Vegdekkekant</h4>
 <div class="paragraph">
-<p>Definisjon: sideveis avgrensning av vegdekke</p>
+<p>Definisjon: sideveis avgrensning av vegdekke.</p>
+</div>
+<div class="paragraph">
+<p>Objekttypen Vegdekkekant omfatter n&#229; ogs&#229; objektene Fortauskant, GangSykkelvegkant og Gangvegkant som kjent fra FKB-Veg versjon 4.6.</p>
+</div>
+<div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Vegdekkekant brukes alltid som flateavgrensning dersom dette er registrert.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
@@ -2390,7 +2469,8 @@ SOSI_navn: HREF<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">om fortauskanten er nedsenket eller ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2442,7 +2522,10 @@ SOSI_navn: HREF<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-vegfiktivgrense"><a class="anchor" href="#truefeaturetype-vegfiktivgrense"></a>5.3.4. «FeatureType» VegFiktivGrense</h4>
 <div class="paragraph">
-<p>Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater</p>
+<p>Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater.</p>
+</div>
+<div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetOpsjonell</p>
@@ -2724,7 +2807,10 @@ SOSI_navn: HREF<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-kjørebanekant"><a class="anchor" href="#truefeaturetype-kjørebanekant"></a>5.4.5. «FeatureType» Kjørebanekant</h4>
 <div class="paragraph">
-<p>Definisjon: Avgrensing av kjørebanen</p>
+<p>Definisjon: Avgrensing av kj&#248;rebanen</p>
+</div>
+<div class="paragraph">
+<p>(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON)</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
@@ -3076,7 +3162,7 @@ SOSI_navn: HREF<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-vegoppmerking"><a class="anchor" href="#truefeaturetype-vegoppmerking"></a>5.4.9. «FeatureType» Vegoppmerking</h4>
 <div class="paragraph">
-<p>Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i veien</p>
+<p>Definisjon: langs- og tverrg&#229;ende vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for &#229; lede, varsle eller regulere trafikken, og for &#229; klargj&#248;re andre bestemmelser gitt ved trafikkskilt eller trafikkregler.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» NVDBobjekter_KvalitetPåkrevd</p>
@@ -3155,7 +3241,7 @@ SOSI_navn: HREF<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-vegrekkverk"><a class="anchor" href="#truefeaturetype-vegrekkverk"></a>5.4.10. «FeatureType» Vegrekkverk</h4>
 <div class="paragraph">
-<p>Definisjon: rekkverk som står som hinder langs vegskulder og som trafikkdeler.</p>
+<p>Definisjon: En anordning som skal hindre at kj&#248;ret&#248;y forlater vegen (H&#229;ndbok N101, Statens vegvesen).</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» NVDBobjekter_KvalitetPåkrevd</p>
@@ -3340,7 +3426,8 @@ inkluderer i tillegg rom for rekkverk etc.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">om fortauskanten er nedsenket eller ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3636,7 +3723,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegkategori" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegkategori</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:15Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:45Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Vegkategori</p>
@@ -3729,7 +3816,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegfase" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegfase</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:15Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:46Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Vegfase</p>
@@ -3807,7 +3894,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:46Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: FunksjonVegbom</p>
@@ -3900,7 +3987,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: TypeVegbom</p>
@@ -3963,7 +4050,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggåendeogsyklende" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggåendeogsyklende</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:16Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: TypevegGåendeOgSyklende</p>
@@ -4056,7 +4143,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjørende" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjørende</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:17Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:47Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: TypevegKjørende</p>
@@ -4144,7 +4231,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksområde" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksområde</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:17Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:48Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: VegoppmerkingBruksområde</p>
@@ -4166,38 +4253,38 @@ SOSI_navn: VEGNUMMER<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, kollektivfelt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, kollektivfelt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som skiller mellom kjørefelt og kollektivffelt eller busslomme.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SK</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, fartsendringsfelt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, fartsendringsfelt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som skiller mellom vanlig kjørefelt og fartsendringsfelt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kantlinje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kantlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som markerer kjørebanens ytterkant (HB049).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">K</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, sykkelfelt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Skillelinje, sykkelfelt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som skiller mellom kjørefelt og sykkelfelt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SS</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Midtlinje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Midtlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som skiller mellom kjørefelt med trafikk i motgående retninger.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delelinje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delelinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som skiller mellom vanlige kjørefelt med trafikk i samme retning.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ledelinje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ledelinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linje som angir føring av kjørefelt eller svingebevegelser gjennom et vegkryss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L</p></td>
 </tr>
 </tbody>
 </table>
@@ -4242,7 +4329,7 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverktype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverktype</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:18Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:53:48Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: VegrekkverkType</p>
@@ -4263,49 +4350,99 @@ SOSI_navn: VEGNUMMER<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topprekkverk på mur/kantdrage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">topprekkverkPåMurKantdrage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålrør m/trestolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betongrekkverk</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betongrekkverk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålskinne m/plaststolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sp</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverk med wire</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rekkverkMedWire</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålskinne m/trestolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">st</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betongrekkverk, Stabb/Saxegård</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betongrekkverkStabbSaxegård</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Betong, plasstøpt</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bps</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brurekkverk, betong</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bb</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Treskinne m/trestolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Betong, New Jersey</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bnj</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wirerekkverk</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålrør m/sigma stålstolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srss</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Treskinne m/stålstolper</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brurekkverk, stål m/føringsskinne</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålskinne festet på mur/vegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Betong, prefabrikkert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bpf</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålrør m/runde stålstolper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">srs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brurekkverk, stål u/føringsskinne</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">buf</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stabbesteiner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stabbesteiner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sst</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betongrekkverk, prefabrikkerte element</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betongrekkverkPrefabrikerteElement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålskinne m/stålstolpler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverksskinne er festet på mur, vegg, skjerm, etc og ikke på egen stolper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ss</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverk med skinne</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rekkverkMedSkinne</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverk for gående/syklende</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverk som er dimensjonert for gående og syklende. Kan f.eks være for å hindre utforkjørsel med sykkel. Benyttes ikke på/ved veger med biltrafikk.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rgs</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betongrekkverk, New Jersey</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betongrekkverkNewJersey</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betongrekkverk, plasstøpt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">trenger beskrivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">betongrekkverkPlasstøpt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stålskinne m/sigma stålstolper</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rekkverk som er dimensjonert for gående og syklende. Kan f.eks være for å hindre utforkjørsel med sykkel. Benyttes ikke på/ved veger med biltrafikk.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sss</p></td>
 </tr>
 </tbody>
 </table>
@@ -5155,7 +5292,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="truerestriksjoner-5"><a class="anchor" href="#truerestriksjoner-5"></a>Restriksjoner</h5>
+<h5 id="truerestriksjoner-6"><a class="anchor" href="#truerestriksjoner-6"></a>Restriksjoner</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -5213,7 +5350,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:49Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:54:20Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Synbarhet</p>
@@ -5299,7 +5436,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:50Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:54:21Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Datafangstmetode</p>
@@ -5402,7 +5539,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:51Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:54:22Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Registreringsversjon</p>
@@ -5520,7 +5657,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:51Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:54:22Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Høydereferanse</p>
@@ -5602,7 +5739,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T16:13:52Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T17:54:23Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Medium</p>
@@ -6065,7 +6202,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-12 13:37:54 +0200
+Last updated 2021-08-13 17:58:26 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
