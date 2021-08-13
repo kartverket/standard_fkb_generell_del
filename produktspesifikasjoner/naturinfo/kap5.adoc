@@ -1,20 +1,35 @@
 === «ApplicationSchema» FKB-Naturinfo-5.0Utkast
-Definisjon: 
+Definisjon: UML-datamodell for FKB-Naturinfo
  
 ===== Tagged Values
 [cols="20,80"]
 |===
+|definition
+|"FKB-Naturinfo 5.0 Draft"@en
+ 
+|description
+|FKB-Naturinfo 5.0
+ 
+|designation
+|"Product specification FKB-Naturinfo 5.0"@en
+ 
 |language
 |no
  
 |SOSI_kortnavn
 |FKB-Naturinfo
  
+|SOSI_langnavn
+|FKB Annen naturinfomasjon
+ 
 |SOSI_modellstatus
 |utkastOgSkjult
  
+|SOSI_spesifikasjonstype
+|produktspesifikasjon
+ 
 |SOSI_versjon
-|5.0
+|5.1
  
 |targetNamespace
 |https://skjema.geonorge.no/SOSI/produktspesfikasjon/FKB-Naturinfo/5.0
@@ -26,15 +41,13 @@ Definisjon:
 |app
  
 |xsdDocument
-|FKB-Naturinfo-50.xsd
+|FKB-Naturinfo50.xsd
  
 |===
 [caption="Figur 1: ",title=Hoveddiagram]
 image::figurer/Hoveddiagram.png[Hoveddiagram]
 [caption="Figur 2: ",title=Pakkerealisering]
 image::figurer/Pakkerealisering.png[Pakkerealisering]
-[caption="Figur 3: ",title=Arv av fellesegenskaper]
-image::figurer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
  
 ==== «featureType» Hekk
 Definisjon: plantede busker som utgjør en hekk
@@ -45,11 +58,11 @@ Definisjon: plantede busker som utgjør en hekk
 [cols="20,80"]
 |===
 |SOSI_bildeAvModellelement
-|figurer/objtype_hekk.png
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png
  
 |===
-[caption="Figur 4: ",title=SOSI_bildeAvModellelement]
-image::figurer/objtype_hekk.png[figurer/objtype_hekk.png]
+[caption="Figur 3: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -78,7 +91,7 @@ SOSI_navn: Kurve +
 |aktuell tretype
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |TreType
@@ -97,7 +110,7 @@ SOSI_navn: TRE_TYP +
 |koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Høydereferanse
@@ -113,6 +126,15 @@ Definisjon: markerte enkeltrær
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png
+ 
+|===
+[caption="Figur 4: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -143,7 +165,7 @@ SOSI_navn: Punkt +
 |aktuell tretype
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |TreType
@@ -162,7 +184,7 @@ SOSI_navn: TRE_TYP +
 |koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |Høydereferanse
@@ -192,6 +214,15 @@ Definisjon: markert stein
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png
+ 
+|===
+[caption="Figur 5: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -235,7 +266,7 @@ Definisjon: hovedinndeling av tr&#230;r
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/versjon5/tretype
+|https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/5.0/tretype
  
 |SOSI_datatype
 |H
@@ -247,18 +278,39 @@ Definisjon: hovedinndeling av tr&#230;r
 |TRE_TYP
  
 |===
-Kodeliste kunne ikke hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/versjon5/tretype
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/5.0/tretype
  
+Kodeliste hentet på tidspunkt: 2021-08-13T15:11:51Z
+ 
+Kodelistens navn i registeret: Tretype
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|Lauv
+|Lauvtrær
+|3
+|Bar
+|Bartrær
+|2
+|Ukjent
+|Ukjent eller uklassifisert tretype
+|1
+|===
 === Pakke: Generelle elementer
 Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 5: ",title=Hoveddiagram Fellesegenskaper]
+[caption="Figur 6: ",title=Hoveddiagram Fellesegenskaper]
 image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 6: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 7: ",title=Realisering av fellesegenskaper fra SOSI generell del]
 image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 7: ",title=Posisjonskvalitet]
+[caption="Figur 8: ",title=Posisjonskvalitet]
 image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
@@ -327,7 +379,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|
+|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -402,12 +454,11 @@ SOSI_navn: INFORMASJON +
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«FeatureType» KvalitetPåkrevd +
-«FeatureType» KvalitetOpsjonell
+|«FeatureType» KvalitetPåkrevd
 |===
  
 ==== «FeatureType» KvalitetPåkrevd
-Definisjon: 
+Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -441,34 +492,6 @@ SOSI_navn: KVALITET +
 |«featureType» Stein +
 «featureType» InnmåltTre +
 «featureType» Hekk
-|===
- 
-==== «FeatureType» KvalitetOpsjonell
-Definisjon: 
- 
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
- 
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*kvalitet*
- 
-|Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
-
-Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Posisjonskvalitet
-|Tagged Values: 
-|
-SOSI_navn: KVALITET + 
 |===
  
 ==== «dataType» Identifikasjon
@@ -670,6 +693,16 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+ 
+|Beskrivelse: 
+|
+ 
+|===
  
 ==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
@@ -695,7 +728,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:08:47Z
+Kodeliste hentet på tidspunkt: 2021-08-13T15:12:08Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -746,7 +779,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:08:48Z
+Kodeliste hentet på tidspunkt: 2021-08-13T15:12:08Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -775,6 +808,9 @@ Kodelistens navn i registeret: Datafangstmetode
 |Fotogrammetri
 |Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
 |fot
+|Digitalisert
+|Posisjonen er digitalisert fra ortofoto eller andre plane kartdata
+|dig
 |Landmålt
 |Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
 |lan
@@ -804,7 +840,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:08:48Z
+Kodeliste hentet på tidspunkt: 2021-08-13T15:12:09Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -848,4 +884,50 @@ Kodelistens navn i registeret: Registreringsversjon
 |FKB 4.02 2011-12-01
 |Data registrert etter FKB 4.02 2011-12-01
 |2001-12-01
+|===
+ 
+==== «CodeList» Høydereferanse
+Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+ 
+===== Tagged Values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|6
+ 
+|SOSI_navn
+|HREF
+ 
+|===
+Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+ 
+Kodeliste hentet på tidspunkt: 2021-08-13T15:12:10Z
+ 
+Kodelistens navn i registeret: Høydereferanse
+ 
+===== Koder
+[cols="25,60,15"]
+|===
+|*Kodenavn:* 
+|*Definisjon:* 
+|*Utvekslingsalias:* 
+ 
+|Fot
+|Høyden målt til foten av objektet
+|FOT
+|Ukjent
+|Ukjent høydereferanse
+|UKJENT
+|Topp
+|Høyden målt til toppen av objektet
+|TOP
 |===
