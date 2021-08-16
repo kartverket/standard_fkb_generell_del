@@ -612,7 +612,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-08-11
+Testversjon 2021-08-13
 </td>
 </tr>
 </table>
@@ -649,13 +649,7 @@ Testversjon 2021-08-11
 <div class="ulist">
 <ul>
 <li>
-<p>FKB versjon 3.3 oktober 2001</p>
-</li>
-<li>
-<p>FKB versjon 3.4 august 2002</p>
-</li>
-<li>
-<p>FKB-TraktorvegSti versjon 4.0 - ????-??-??</p>
+<p>Traktorveger og stier ble før FKB versjon 4.5 forvaltet som en del av FKB-Veg.</p>
 </li>
 <li>
 <p>FKB-TraktorvegSti versjon 4.5 - 2014-03-01</p>
@@ -677,16 +671,37 @@ Testversjon 2021-08-11
 <p>Oppdatert generelle konsepter fra FKB 5.0 generell del</p>
 </li>
 <li>
-<p>Endring 1</p>
+<p>Datatype Vegsystemreferanse (..VREF) med datterobjekter og kodelister innført for å harmonisere med produkspesifikasjon for Elveg 2.0</p>
 </li>
 <li>
-<p>Endring 2</p>
+<p>Egenskaper Vegsperring: FunksjonVegsperring, GjelderTidsrom og EierVegsperring innført som nye egenskaper for å samsvare med Elveg 2.0.</p>
 </li>
 <li>
-<p>Endring 3</p>
+<p>Kodeliste for TypeVegsperring endret til å samsvare med FKB-Veg (TypeVegbom) og Elveg 2.0.</p>
 </li>
 <li>
-<p>Mer&#8230;&#8203;</p>
+<p>Typeveg gangveg, fortau og gangfelt er fjernet fra FKB-TraktorvegSti da de innføres i Elveg 2.0 og Nasjonal vegdatabank (NVDB).</p>
+</li>
+<li>
+<p>Typeveg trapp erstattes med stitrapp.</p>
+</li>
+<li>
+<p>Definisjoner for typeveg traktorveg og sti er revidert.</p>
+</li>
+<li>
+<p>Innført ny opsjonell egenskap: serviceveg ja/nei.</p>
+</li>
+<li>
+<p>Belysning kode "2 - delvis belysning" fjernes fra kodeliste.</p>
+</li>
+<li>
+<p>RuteMerking kode "PM" fjernes fra kodeliste grunnet endring i Turrutebasen.</p>
+</li>
+<li>
+<p>Innført egenskapene turruterpeker og eksterpeker for å gjøre det mulig å legge inn referanser (i form av URI-er) til de tilsvarende objektene forvaltet i andre systemer.</p>
+</li>
+<li>
+<p>Alle kodelister er flyttet ut av spesfifikasjon for videre forvaltning i Geonorge, se <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0</a>.</p>
 </li>
 </ul>
 </div>
@@ -1165,8 +1180,7 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect3">
 <h4 id="truefeaturetype-veglenke"><a class="anchor" href="#truefeaturetype-veglenke"></a>5.1.2. «FeatureType» Veglenke</h4>
 <div class="paragraph">
-<p>Definisjon: Objekttype som representerer lenker i vegnettet
-Eksempel: NVDB Referanselenkedeler</p>
+<p>Definisjon: Objekttype som representerer alle senterlinje lenker i form av traktorveger, stier eller stitrapp.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
@@ -1188,7 +1202,7 @@ Eksempel: NVDB Referanselenkedeler</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">typeveger som brukes for veger og strekninger i FKB-TraktorvegSti 5.0.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">egenskap for &#229; angi type strekning veglenken representerer.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1303,7 +1317,8 @@ Merknad: Komplett vegadresse består i tillegg av husnummer og bokstav</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for nummerering av kommune objektet befinner seg i, i henhold til SSB sin offisielle liste.
+Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1551,7 +1566,7 @@ SOSI_navn: BEREDSKAPSVEG<br></p></td>
 <div class="sect3">
 <h4 id="truefeaturetype-vegsperring"><a class="anchor" href="#truefeaturetype-vegsperring"></a>5.1.3. «FeatureType» Vegsperring</h4>
 <div class="paragraph">
-<p>Definisjon: Angir at veg er fysisk sperret.</p>
+<p>Definisjon: Objekttype som representerer fysisk sperring langs traktorveg eller sti.</p>
 </div>
 <div class="paragraph">
 <p><strong>Supertype:</strong> «FeatureType» KvalitetPåkrevd</p>
@@ -1609,7 +1624,7 @@ SOSI_navn: BEREDSKAPSVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Angir hvilken type sperring det er tale om</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angir type sperring</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1641,7 +1656,7 @@ SOSI_navn: TYPE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Angir hvilken funksjon sperringen har</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angir hvilken funksjon sperringen har</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1673,7 +1688,7 @@ SOSI_navn: FUNKSJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Angir tidsrommet (hhmm-hhmm) eller (mnd-mnd) vegsperringen gjelder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angir tidsrommet (hhmm-hhmm) eller (mnd-mnd) vegsperringen gjelder</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1729,7 +1744,8 @@ SOSI_navn: GJELDERTIDSROM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for nummerering av kommune objektet befinner seg i, i henhold til SSB sin offisielle liste.
+Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1753,7 +1769,7 @@ SOSI_navn: GJELDERTIDSROM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Angir hvem som er eier av vegobjektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenskap for &#229; angi eier av vegobjektet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2204,7 +2220,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
@@ -2216,7 +2232,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegkategori" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegkategori</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:25Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:39Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Vegkategori</p>
@@ -2238,12 +2254,12 @@ SOSI_navn: SIDEVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Skogsveg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Private landbruksveger som brukes til skogbruksformål. Nummerering iht. landbruksforvaltningens fagsystem ØKS.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privat landbruksveg som brukes til skogbruksformål. Vegen er godkjent som landbruksvei (se Forskrift om planlegging og godkjenning av landbruksveier) og nummereres iht. Landbruksdirektoratets økonomisystem for skogordningene (ØKS) .</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Privat veg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Private veger. Evt. nummerering er unik innenfor kommunen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privat veg. Eventuell nummerering er unik innenfor kommunen.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
 </tr>
 </tbody>
@@ -2277,7 +2293,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
@@ -2289,7 +2305,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegfase" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegfase</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:25Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:39Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Vegfase</p>
@@ -2312,7 +2328,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eksisterende veg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Veg som er del av operativt nettverk for traktorveger og stier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V</p></td>
 </tr>
 </tbody>
 </table>
@@ -2357,7 +2373,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/funksjonvegsperring" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/funksjonvegsperring</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:26Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:40Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: FunksjonVegsperring</p>
@@ -2450,7 +2466,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typevegsperring" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typevegsperring</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:27Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:40Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: TypeVegsperring</p>
@@ -2513,7 +2529,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typeveg" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typeveg</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:27Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:41Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Typeveg</p>
@@ -2535,7 +2551,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sti</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tydelig, smalt og sammenhengende tråkk i terrenget, som har oppstått gjennom bruk eller aktiv tilrettelegging.                 --Tilleggsopplysninger FKB ---Sti benyttes primært i utmark, men kan også registreres i urbane strøk for stier/tråkk i terrenget der det ikke er noen opparbeidet veg med klar avgrensning. Stier skal være del av et sammenhengende transportnettverk for gående. Kortere frittliggende stier som ikke inngår i et transportnettverk er derfor ikke nødvendig å registrere. I områder med mange stier (for eksempel rundt parkeringsplasser, parkområder etc.) er det bare nødvendig å registrere hovedferdselårene. For å få god fullstendighet på stier ved fotogrammetrisk ajourhold bør manus benyttes. For stier i utmark kan TypevegSti benyttes gjennomgående selv om stien i områder er opparbeidet som en gangveg (som for eksempel på høgt trafikkerte turiststier).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tydelig, smalt og sammenhengende tråkk i terrenget, som har oppstått gjennom bruk eller aktiv tilrettelegging. Tilleggsopplysninger FKB: Sti benyttes primært i utmark, men kan også registreres i urbane strøk for stier/tråkk i terrenget der det ikke er noen opparbeidet veg med klar avgrensning. Stier skal være del av et sammenhengende transportnettverk for gående. Kortere frittliggende stier som ikke inngår i et transportnettverk er derfor ikke nødvendig å registrere. I områder med mange stier (for eksempel rundt parkeringsplasser, parkområder etc.) er det bare nødvendig å registrere hovedferdselårene. For stier i utmark kan Typeveg Sti benyttes gjennomgående selv om stien i områder er opparbeidet som en gangveg (som for eksempel på høyt trafikkerte turiststier).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sti</p></td>
 </tr>
 <tr>
@@ -2591,7 +2607,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/klasselandbruksveg" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/klasselandbruksveg</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:28Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:41Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: KlasseLandbruksveg</p>
@@ -2694,7 +2710,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/rutemerking" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/rutemerking</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:28Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:42Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Rutemerking</p>
@@ -2736,7 +2752,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <div class="sect3">
 <h4 id="truecodelist-kommunenummer"><a class="anchor" href="#truecodelist-kommunenummer"></a>5.1.14. «CodeList» Kommunenummer</h4>
 <div class="paragraph">
-<p>Definisjon: Nummer til kommuner i Norge gjeldene fra 01.01.2020. Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt med ledende null.</p>
+<p>Definisjon: Kodeliste for nummerering av kommuner i henhold til SSB sin offisielle liste. Inneholder fremtidige, gyldige og utg&#229;tte kommunenummer.</p>
 </div>
 <div class="sect4">
 <h5 id="truetagged-values-13"><a class="anchor" href="#truetagged-values-13"></a>Tagged Values</h5>
@@ -2756,7 +2772,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
@@ -2772,7 +2788,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/kommunenummer-alle" class="bare">https://register.geonorge.no/sosi-kodelister/kommunenummer-alle</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:41:31Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:05:44Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Kommunenummer alle</p>
@@ -6678,7 +6694,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:02Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:14Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Belysning</p>
@@ -6751,7 +6767,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/eiervegsperring" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/eiervegsperring</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:03Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:14Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: EierVegsperring</p>
@@ -6809,11 +6825,7 @@ SOSI_navn: SIDEVEG<br></p></td>
 <div class="sect2">
 <h3 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>5.2. Pakke: Generelle elementer</h3>
 <div class="paragraph">
-<p>Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene</p>
+<p>Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -7512,7 +7524,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:28Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:37Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Synbarhet</p>
@@ -7598,7 +7610,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:29Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:37Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Datafangstmetode</p>
@@ -7701,7 +7713,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:30Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:38Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Registreringsversjon</p>
@@ -7819,7 +7831,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:30Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:39Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Høydereferanse</p>
@@ -7901,7 +7913,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <p>Kodeliste hentet fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p>
 </div>
 <div class="paragraph">
-<p>Kodeliste hentet på tidspunkt: 2021-08-11T15:42:31Z</p>
+<p>Kodeliste hentet på tidspunkt: 2021-08-13T18:06:39Z</p>
 </div>
 <div class="paragraph">
 <p>Kodelistens navn i registeret: Medium</p>
@@ -8110,7 +8122,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h2 id="truedatavedlikehold"><a class="anchor" href="#truedatavedlikehold"></a>9. Datavedlikehold</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>FKB-data vedlikeholdes gjennom 3 prosesser. Det henvises til Geovekst veiledningsmateriell (kap. 10) for nærmere beskrivelse av vedlikeholdsopplegget <a href="#GEO-VEIL">[GEO-VEIL]</a>.</p>
+<p>FKB-data vedlikeholdes gjennom 3 prosesser. Det henvises til Geovekst veiledningsmateriell (kap. 10) for nærmere beskrivelse av vedlikeholdsopplegget <a href="#GEO-VEIL">[GEO-VEIL]</a></p>
 </div>
 <div class="sect2">
 <h3 id="truevedlikeholdsinformasjon-kartleggingsprosjekter"><a class="anchor" href="#truevedlikeholdsinformasjon-kartleggingsprosjekter"></a>9.1. Vedlikeholdsinformasjon Kartleggingsprosjekter</h3>
@@ -8364,7 +8376,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-11 15:52:08 +0200
+Last updated 2021-08-13 18:09:12 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
