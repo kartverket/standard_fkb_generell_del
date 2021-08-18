@@ -1,14 +1,14 @@
 === «ApplicationSchema» FKB-Bygning-5.0-Utkast
-Definisjon: datamodell for FKB-Bygning
+Definisjon: Datamodell for produktspesfikasjonen FKB-Bygning. FKB-Bygning inneholder detaljert bygningsinformasjon. Datamodellen omfatter beskrivelse av alle typer bygninger, takoverbygg, beskrivende bygningslinjer (for eksempel m&#248;nelinje) samt bygningsvedheng (for eksempel veranda).
  
 ===== Tagged Values
 [cols="20,80"]
 |===
 |definition
-|"FKB-Bygning 5.0 Draft"@en
+|"FKB-Bygning contains detailed topographic building in 2.5D"@en
  
 |description
-|FKB-Bygning 5.0
+|"Contains building surface, contour lines describing the builing and objects connected to the building" @en
  
 |designation
 |"Product specification FKB-Bygning 5.0"@en
@@ -29,7 +29,7 @@ Definisjon: datamodell for FKB-Bygning
 |produktspesifikasjon
  
 |SOSI_versjon
-|5.1
+|5.0
  
 |targetNamespace
 |http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/
@@ -46,19 +46,16 @@ Definisjon: datamodell for FKB-Bygning
 |===
 [caption="Figur 1: ",title=Pakkerealisering]
 image::figurer/Pakkerealisering.png[Pakkerealisering]
-[caption="Figur 2: ",title=Hoveddiagram]
-image::figurer/Hoveddiagram.png[Hoveddiagram]
+[caption="Figur 2: ",title=Oversiktsdiagram FKB-Bygning]
+image::figurer/Oversiktsdiagram FKB-Bygning.png[Oversiktsdiagram FKB-Bygning]
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-
-Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 3: ",title=Hoveddiagram Fellesegenskaper]
-image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 4: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 5: ",title=Posisjonskvalitet]
-image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
+Definisjon: Inneholder elementer fra FKB Generell del 5.0
+[caption="Figur 3: ",title=Oversiktsdiagram Fellesegenskaper]
+image::figurer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 4: ",title=Realisering fra SOSI generell del]
+image::figurer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
+[caption="Figur 5: ",title=Hoveddiagram Posisjonskvalitet]
+image::figurer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
 Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
@@ -479,6 +476,16 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+ 
+|Beskrivelse: 
+|
+ 
+|===
  
 ==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
@@ -504,7 +511,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:30Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:54:53Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -555,7 +562,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:31Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:54:54Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -616,7 +623,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:32Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:54:56Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -686,7 +693,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:33Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:54:57Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -735,7 +742,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:34Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:54:57Z
  
 Kodelistens navn i registeret: Medium
  
@@ -773,14 +780,14 @@ Kodelistens navn i registeret: Medium
 |===
 === Pakke: Bygninger
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Bygningspunkt
-[caption="Figur 6: ",title=Bygning - Realisering av objekttyper og kodelister]
-image::figurer/Bygning - Realisering av objekttyper og kodelister.png[Bygning - Realisering av objekttyper og kodelister]
-[caption="Figur 7: ",title=Bygning - Arv fra fellesegenskaper]
-image::figurer/Bygning - Arv fra fellesegenskaper.png[Bygning - Arv fra fellesegenskaper]
-[caption="Figur 8: ",title=Bygning - Objekttyper med egenskaper]
-image::figurer/Bygning - Objekttyper med egenskaper.png[Bygning - Objekttyper med egenskaper]
-[caption="Figur 9: ",title=Bygning - Flateavgrensning]
-image::figurer/Bygning - Flateavgrensning.png[Bygning - Flateavgrensning]
+[caption="Figur 6: ",title=Oversiktsdiagram Bygning]
+image::figurer/Oversiktsdiagram Bygning.png[Oversiktsdiagram Bygning]
+[caption="Figur 7: ",title=Realisering fra Bygg 4.5, Bygningspunkt]
+image::figurer/Realisering fra Bygg 4.5, Bygningspunkt.png[Realisering fra Bygg 4.5, Bygningspunkt]
+[caption="Figur 8: ",title=Hoveddiagram Bygning - objekttyper og kodelister]
+image::figurer/Hoveddiagram Bygning - objekttyper og kodelister.png[Hoveddiagram Bygning - objekttyper og kodelister]
+[caption="Figur 9: ",title=Hoveddiagram Bygning - flateavgrensning]
+image::figurer/Hoveddiagram Bygning - flateavgrensning.png[Hoveddiagram Bygning - flateavgrensning]
  
 ==== «featureType» AnnenBygning
 Definisjon: bygning som ikke er registrert  i matrikkelen
@@ -836,7 +843,7 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.Bygningsavgrensning*
+|*avgrensesAvBygningsavgrensning*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning (som ikke ligger i matrikkel) med en innmålt avgrensningslinje.
@@ -850,7 +857,7 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.BygningsavgrensningTiltak*
+|*avgrensesAvBygningsavgrensningTiltak*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning (som ikke ligger i matrikkel)  ved hjelp av geometriobjekter fra tiltaksbasen.
@@ -864,7 +871,7 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*beskriver.AnnenBygning*
+|*beskriverAnnenBygning*
  
 |Definisjon:
 |AnnenBygning kjenner hvilke beskrivede bygningsdetaljer som tilhører bygningen
@@ -878,7 +885,7 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*vedhengTil.AnnenBygning*
+|*vedhengTilAnnenBygning*
  
 |Definisjon:
 |AnnenBygning kjenner sine bygningsvedheng
@@ -892,7 +899,7 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.FiktivBygningsavgrensning*
+|*avgrensesAvFiktivBygningsavgrensning*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning (som ikke ligger i matrikkel) med en fiktiv avgrensningslinje
@@ -902,6 +909,22 @@ Definisjon: bygning som ikke er registrert  i matrikkelen
  
 |Til klasse
 |«featureType» FiktivBygningsavgrensning
+|===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
+ 
+|Beskrivelse: 
+|
+ 
+|*Navn:* 
+|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+ 
+|Beskrivelse: 
+|
+ 
 |===
  
 ==== «featureType» Bygning
@@ -1014,14 +1037,6 @@ SOSI_navn: BYGGTYP_NBR +
  
 |Type: 
 |Kommunenummer
-|Tagged Values: 
-|
-asDictionary: true + 
-codeList: Kommunenummer.xml + 
-defaultCodeSpace: http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/4.61/Kommunenummer.xml + 
-SOSI_datatype: T + 
-SOSI_lengde: 4 + 
-SOSI_navn: KOMM + 
 |===
 [cols="20,80"]
 |===
@@ -1041,7 +1056,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*vedhengTil.Bygning*
+|*vedhengTilBygning*
  
 |Definisjon:
 |Bygning kjenner sine vedheng
@@ -1055,7 +1070,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*beskriver.Bygning*
+|*beskriverBygning*
  
 |Definisjon:
 |bygningen kjenner hvilke beskrivede bygningsdetaljer som tilhører bygningen
@@ -1069,7 +1084,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.BygningsavgrensningTiltak*
+|*avgrensesAvBygningsavgrensningTiltak*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning ved hjelp av geometriobjekter fra tiltaksbasen.
@@ -1083,7 +1098,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.Bygningsavgrensning*
+|*avgrensesAvBygningsavgrensning*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning med en innmålt avgrensningslinje
@@ -1097,7 +1112,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.FiktivBygningsavgrensning*
+|*avgrensesAvFiktivBygningsavgrensning*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning med en fiktiv avgrensningslinje
@@ -1111,7 +1126,7 @@ SOSI_navn: KOMM +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.Bygningsdelelinje*
+|*avgrensesAvBygningsdelelinje*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av bygning ved hjelp av bygningsdelelinje
@@ -1121,6 +1136,22 @@ SOSI_navn: KOMM +
  
 |Til klasse
 |«featureType» Bygningsdelelinje
+|===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Dersom det finns område-geometri skal posisjon-geometrien ligge innenfor område-geometrien*
+ 
+|Beskrivelse: 
+|
+ 
+|*Navn:* 
+|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+ 
+|Beskrivelse: 
+|
+ 
 |===
  
 ==== «CodeList» Bygningsstatus
@@ -1147,7 +1178,7 @@ Definisjon: Bygningsstatuskoder fra matrikkelen som benyttes i FKB-Bygning
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningsstatus
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:46Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:55:22Z
  
 Kodelistens navn i registeret: Bygningsstatus
  
@@ -1220,7 +1251,7 @@ Definisjon: Bygningstyper fra matrikkelen som benyttes i FKB-Bygning
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningstype
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:47Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:55:24Z
  
 Kodelistens navn i registeret: Bygningstype
  
@@ -1671,7 +1702,7 @@ Definisjon: nummerering av kommuner i henhold til SSB sin offisielle liste.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/kommunenummer-alle
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:40:56Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:55:34Z
  
 Kodelistens navn i registeret: Kommunenummer alle
  
@@ -3989,12 +4020,12 @@ Kodelistens navn i registeret: Kommunenummer alle
 |===
 === Pakke: Bygningsavgrensning
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Bygningsavgrensning
-[caption="Figur 11: ",title=Bygningsavgrensning - Realisering av objekttyper]
-image::figurer/Bygningsavgrensning - Realisering av objekttyper.png[Bygningsavgrensning - Realisering av objekttyper]
-[caption="Figur 12: ",title=Bygningsavgrensning - Arv fra fellesegenskaper]
-image::figurer/Bygningsavgrensning - Arv fra fellesegenskaper.png[Bygningsavgrensning - Arv fra fellesegenskaper]
-[caption="Figur 13: ",title=Bygningsavgrensning - Objekttyper med egenskaper]
-image::figurer/Bygningsavgrensning - Objekttyper med egenskaper.png[Bygningsavgrensning - Objekttyper med egenskaper]
+[caption="Figur 11: ",title=Oversiktsdiagram Bygningsavgrensning]
+image::figurer/Oversiktsdiagram Bygningsavgrensning.png[Oversiktsdiagram Bygningsavgrensning]
+[caption="Figur 12: ",title=Realisering fra Bygg 4.5, Bygningsavgrensning]
+image::figurer/Realisering fra Bygg 4.5, Bygningsavgrensning.png[Realisering fra Bygg 4.5, Bygningsavgrensning]
+[caption="Figur 13: ",title=Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper]
+image::figurer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.png[Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper]
  
 ==== «featureType» Bygningsavgrensning
 Definisjon: abstrakt supertype som bærer geometrien til avgrensningslinjene. Vil aldri realiseres som en objekttype
@@ -4341,14 +4372,14 @@ SOSI_navn: TAKSKJEGG +
 |===
 === Pakke: BeskrivendeBygningslinjer
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, BeskrivendeBygningslinjer
-[caption="Figur 14: ",title=BeskrivendeBygningslinjer - Realisering av objekttyper]
-image::figurer/BeskrivendeBygningslinjer - Realisering av objekttyper.png[BeskrivendeBygningslinjer - Realisering av objekttyper]
-[caption="Figur 15: ",title=BeskrivendeBygningslinjer - Arv av fellesegenskaper]
-image::figurer/BeskrivendeBygningslinjer - Arv av fellesegenskaper.png[BeskrivendeBygningslinjer - Arv av fellesegenskaper]
-[caption="Figur 16: ",title=BeskrivendeBygningslinjer - Objekttyper med egenskaper]
-image::figurer/BeskrivendeBygningslinjer - Objekttyper med egenskaper.png[BeskrivendeBygningslinjer - Objekttyper med egenskaper]
-[caption="Figur 17: ",title=BeskrivendeBygningslinjer - Assosiasjoner]
-image::figurer/BeskrivendeBygningslinjer - Assosiasjoner.png[BeskrivendeBygningslinjer - Assosiasjoner]
+[caption="Figur 14: ",title=Oversiktsdiagram BeskrivendeBygningslinjer]
+image::figurer/Oversiktsdiagram BeskrivendeBygningslinjer.png[Oversiktsdiagram BeskrivendeBygningslinjer]
+[caption="Figur 15: ",title=Realisering fra Bygg 4.5, BeskrivendeBygningslinjer]
+image::figurer/Realisering fra Bygg 4.5, BeskrivendeBygningslinjer.png[Realisering fra Bygg 4.5, BeskrivendeBygningslinjer]
+[caption="Figur 16: ",title=Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister]
+image::figurer/Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister.png[Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister]
+[caption="Figur 17: ",title=Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner]
+image::figurer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png[Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner]
  
 ==== «featureType» BeskrivendeBygningsdetalj
 Definisjon: bygningsdetalj som ligger innenfor bygningsavgrensning, og som ikke er knyttet til bygningens avgrensning
@@ -4370,7 +4401,7 @@ Definisjon: bygningsdetalj som ligger innenfor bygningsavgrensning, og som ikke 
 |[1..1]
  
 |Type: 
-|treDNivå
+|TreDNivå
 |Tagged Values: 
 |
 SOSI_datatype: H + 
@@ -4692,7 +4723,7 @@ Definisjon: hvilken 3D framstillingsmulighet (angitt i 6 niv&#229;er) bygningen 
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5
  
-Kodeliste hentet på tidspunkt: 2021-08-09T13:42:14Z
+Kodeliste hentet på tidspunkt: 2021-08-18T08:57:16Z
  
 Kodelistens navn i registeret: TreDNivå
  
@@ -4721,14 +4752,14 @@ Kodelistens navn i registeret: TreDNivå
 |===
 === Pakke: Bygningsvedheng
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Bygningsvedheng
-[caption="Figur 18: ",title=Bygningsvedheng - Realisering av objekttyper]
-image::figurer/Bygningsvedheng - Realisering av objekttyper.png[Bygningsvedheng - Realisering av objekttyper]
-[caption="Figur 19: ",title=Bygningsvedheng - Arv av fellesegenskaper]
-image::figurer/Bygningsvedheng - Arv av fellesegenskaper.png[Bygningsvedheng - Arv av fellesegenskaper]
-[caption="Figur 20: ",title=Bygningsvedheng - Objekttyper og egenskaper]
-image::figurer/Bygningsvedheng - Objekttyper og egenskaper.png[Bygningsvedheng - Objekttyper og egenskaper]
-[caption="Figur 21: ",title=Bygningsvedheng - Assosiasjoner]
-image::figurer/Bygningsvedheng - Assosiasjoner.png[Bygningsvedheng - Assosiasjoner]
+[caption="Figur 18: ",title=Oversiktsdiagram Bygningsvedheng]
+image::figurer/Oversiktsdiagram Bygningsvedheng.png[Oversiktsdiagram Bygningsvedheng]
+[caption="Figur 19: ",title=Realisering fra Bygg 4.5, Bygningsvedheng]
+image::figurer/Realisering fra Bygg 4.5, Bygningsvedheng.png[Realisering fra Bygg 4.5, Bygningsvedheng]
+[caption="Figur 20: ",title=Hoveddiagram Bygningsvedheng - objekttyper]
+image::figurer/Hoveddiagram Bygningsvedheng - objekttyper.png[Hoveddiagram Bygningsvedheng - objekttyper]
+[caption="Figur 21: ",title=Hoveddiagram Bygningsvedheng - assosiasjoner]
+image::figurer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[Hoveddiagram Bygningsvedheng - assosiasjoner]
  
 ==== «featureType» Bygningsvedheng
 Definisjon: bygningsdetaljer som ligger i tilknytning til  bygningen, og som ikke er knyttet til bygningens avgrensning
@@ -4874,14 +4905,14 @@ SOSI_navn: HREF +
 |===
 === Pakke: Takoverbygg
 Definisjon: Inneholder elementer fra SOSI Bygg 4.5, Takoverbygg
-[caption="Figur 22: ",title=Takoverbygg - Realisering av objekttyper]
-image::figurer/Takoverbygg - Realisering av objekttyper.png[Takoverbygg - Realisering av objekttyper]
-[caption="Figur 23: ",title=Takoverbygg - Arv av fellesegenskaper]
-image::figurer/Takoverbygg - Arv av fellesegenskaper.png[Takoverbygg - Arv av fellesegenskaper]
-[caption="Figur 24: ",title=Takoverbygg - Objekttyper og egenskaper]
-image::figurer/Takoverbygg - Objekttyper og egenskaper.png[Takoverbygg - Objekttyper og egenskaper]
-[caption="Figur 25: ",title=Takoverbygg - Flateavgrensning]
-image::figurer/Takoverbygg - Flateavgrensning.png[Takoverbygg - Flateavgrensning]
+[caption="Figur 22: ",title=Oversiktsdiagram Takoverbygg]
+image::figurer/Oversiktsdiagram Takoverbygg.png[Oversiktsdiagram Takoverbygg]
+[caption="Figur 23: ",title=Realisering fra Bygg 4.5, Takoverbygg]
+image::figurer/Realisering fra Bygg 4.5, Takoverbygg.png[Realisering fra Bygg 4.5, Takoverbygg]
+[caption="Figur 24: ",title=Hoveddiagram Takoverbygg - objekttyper]
+image::figurer/Hoveddiagram Takoverbygg - objekttyper.png[Hoveddiagram Takoverbygg - objekttyper]
+[caption="Figur 25: ",title=Hoveddiagram Takoverbygg - flateavgrensning]
+image::figurer/Hoveddiagram Takoverbygg - flateavgrensning.png[Hoveddiagram Takoverbygg - flateavgrensning]
  
 ==== «featureType» Takoverbygg
 Definisjon: byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen
@@ -4924,7 +4955,10 @@ Eksempel:  'carport' eller tak over bensinpumper
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.TakoverbyggKant*
+|*avgrensesAvTakoverbyggKant*
+ 
+|Definisjon:
+|Krav til delt flategeometri. Avgrensning av takoverbygg med takoverbyggkant
  
 |Multiplisitet: 
 |[0..*]
@@ -4935,7 +4969,10 @@ Eksempel:  'carport' eller tak over bensinpumper
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAv.FiktivBygningsavgrensning*
+|*avgrensesAvFiktivBygningsavgrensning*
+ 
+|Definisjon:
+|Krav til delt flategeometri. Avgrensning av takoverbygg med en fiktiv avgrensningslinje
  
 |Multiplisitet: 
 |[0..*]
