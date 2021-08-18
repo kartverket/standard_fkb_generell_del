@@ -1,9 +1,21 @@
 === «ApplicationSchema» FKB-BygnAnlegg-5.0-Utkast
-Definisjon: 
+Definisjon: Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer, gjerder, taubaner, kaier, moloer, tanker etc.
  
 ===== Tagged Values
 [cols="20,80"]
 |===
+|definition
+|"FKB-BygnAnlegg contains construction objects that is not realated to roads and buildings"@en
+ 
+|description
+|"Contains for instance walls, fences, warfs, tanks, cable cars"@en
+ 
+|designation
+|"Product specification FKB-BygnAnlegg 5.0"@en
+ 
+|language
+|no
+ 
 |SOSI_kortnavn
 |FKB-BygnAnlegg
  
@@ -14,7 +26,7 @@ Definisjon:
 |utkastOgSkjult
  
 |SOSI_versjon
-|5.1
+|5.0
  
 |targetNamespace
 |http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/
@@ -29,8 +41,8 @@ Definisjon:
 |FKB-BygnAnlegg50.xsd
  
 |===
-[caption="Figur 1: ",title=Hoveddiagram]
-image::figurer/Hoveddiagram.png[Hoveddiagram]
+[caption="Figur 1: ",title=Oversiktsdiagram FKB-BygnAnlegg]
+image::figurer/Oversiktsdiagram FKB-BygnAnlegg.png[Oversiktsdiagram FKB-BygnAnlegg]
 [caption="Figur 2: ",title=Pakkerealisering]
 image::figurer/Pakkerealisering.png[Pakkerealisering]
 === Pakke: Generelle elementer
@@ -38,12 +50,12 @@ Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Gener
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 3: ",title=Hoveddiagram Fellesegenskaper]
-image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 4: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 5: ",title=Posisjonskvalitet]
-image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
+[caption="Figur 3: ",title=Oversiktsdiagram Fellesegenskaper]
+image::figurer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 4: ",title=Realisering fra SOSI generell del]
+image::figurer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
+[caption="Figur 5: ",title=Hoveddiagram Posisjonskvalitet]
+image::figurer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
 ==== «FeatureType» Fellesegenskaper
 Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
@@ -111,7 +123,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|
+|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -185,7 +197,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |===
  
 ==== «FeatureType» KvalitetPåkrevd
-Definisjon: 
+Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -216,39 +228,39 @@ SOSI_navn: KVALITET +
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«FeatureType» NRLobjekter +
-«FeatureType» NVDBobjekter +
+|«featureType» Elveterskel +
 «featureType» Elveforbygning +
-«featureType» Fisketrapp +
-«featureType» FiskehjellMøne +
-«featureType» KaiBrygge +
-«featureType» Elveterskel +
-«featureType» BeskrivendeHjelpelinjeAnlegg +
-«featureType» Oppdrettskar +
-«featureType» Fiskehjell +
-«featureType» FlytebryggeLandgang +
-«featureType» Molo +
-«featureType» Demning +
-«featureType» Sluse +
-«featureType» Flytebrygge +
-«featureType» Pælebunt +
-«featureType» Rørgate +
-«featureType» Idrettsanlegg +
+«featureType» Tribune +
+«featureType» MurFrittstående +
 «featureType» Skytebaneinnretning +
 «featureType» Svømmebasseng +
-«featureType» Hoppbakke +
-«featureType» Tribune +
-«featureType» Steingjerde +
-«featureType» MurFrittstående +
+«featureType» Fiskehjell +
 «featureType» Ruin +
 «featureType» Portstolpe +
-«featureType» Parkdetalj +
-«featureType» Trapp +
-«featureType» Brønn +
+«featureType» Idrettsanlegg +
+«featureType» Steingjerde +
+«featureType» Pælebunt +
+«featureType» KaiBrygge +
+«featureType» Flytebrygge +
+«featureType» Fisketrapp +
 «featureType» Fundament +
-«featureType» Flaggstang +
+«featureType» Trapp +
+«featureType» Hoppbakke +
+«featureType» Sluse +
 «featureType» Brudetalj +
-«featureType» Søppelbeholder
+«featureType» FiskehjellMøne +
+«featureType» Parkdetalj +
+«featureType» Brønn +
+«featureType» BeskrivendeHjelpelinjeAnlegg +
+«featureType» Molo +
+«featureType» Søppelbeholder +
+«featureType» Oppdrettskar +
+«featureType» Demning +
+«featureType» Rørgate +
+«featureType» Flaggstang +
+«featureType» FlytebryggeLandgang +
+«FeatureType» NRLobjekter +
+«FeatureType» NVDBobjekter
 |===
  
 ==== «FeatureType» NRLobjekter
@@ -278,10 +290,10 @@ SOSI_navn: NRLPEKER +
 |===
 |*Subtyper:*
 |«featureType» Taubane +
-«FeatureType» Taubanemast +
-«featureType» Tank +
 «featureType» Pipe +
-«featureType» Tårn
+«featureType» Tårn +
+«featureType» Tank +
+«FeatureType» Taubanemast
 |===
  
 ==== «FeatureType» NVDBobjekter
@@ -310,15 +322,15 @@ SOSI_navn: NVDBPEKER +
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«featureType» Voll +
+|«featureType» Kulvert +
 «featureType» Skjerm +
 «featureType» SkråForstøtningsmur +
-«featureType» AnnetGjerde +
-«featureType» MurLoddrett +
 «featureType» Bru +
-«featureType» Tunnelportal +
-«featureType» Kulvert +
-«featureType» Stikkrenne
+«featureType» MurLoddrett +
+«featureType» Stikkrenne +
+«featureType» Voll +
+«featureType» AnnetGjerde +
+«featureType» Tunnelportal
 |===
  
 ==== «dataType» Identifikasjon
@@ -520,6 +532,16 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+ 
+|Beskrivelse: 
+|
+ 
+|===
  
 ==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
@@ -545,7 +567,7 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:53:52Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:14Z
  
 Kodelistens navn i registeret: Synbarhet
  
@@ -596,7 +618,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:53:53Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:14Z
  
 Kodelistens navn i registeret: Datafangstmetode
  
@@ -657,7 +679,7 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:53:54Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:15Z
  
 Kodelistens navn i registeret: Registreringsversjon
  
@@ -727,7 +749,7 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:53:55Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:16Z
  
 Kodelistens navn i registeret: Høydereferanse
  
@@ -776,7 +798,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:53:56Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:17Z
  
 Kodelistens navn i registeret: Medium
  
@@ -814,12 +836,12 @@ Kodelistens navn i registeret: Medium
 |===
 === Pakke: BruerOgTuneller
 Definisjon: Inneholder elementer fra SOSI Bygnan 4.0, Bruer og tuneller
-[caption="Figur 6: ",title=Bruer og tuneller - Realisering av objekttyper og kodelister]
-image::figurer/Bruer og tuneller - Realisering av objekttyper og kodelister.png[Bruer og tuneller - Realisering av objekttyper og kodelister]
-[caption="Figur 7: ",title=Bruer og tuneller - Arv av fellesegenskaper]
-image::figurer/Bruer og tuneller - Arv av fellesegenskaper.png[Bruer og tuneller - Arv av fellesegenskaper]
-[caption="Figur 8: ",title=Bruer og tuneller - Objekttyper med egenskaper og kodelister]
-image::figurer/Bruer og tuneller - Objekttyper med egenskaper og kodelister.png[Bruer og tuneller - Objekttyper med egenskaper og kodelister]
+[caption="Figur 6: ",title=Oversiktsdiagram Bruer og tuneller]
+image::figurer/Oversiktsdiagram Bruer og tuneller.png[Oversiktsdiagram Bruer og tuneller]
+[caption="Figur 7: ",title=Realisering fra Bygnan 4.0, Bruer og tuneller]
+image::figurer/Realisering fra Bygnan 4.0, Bruer og tuneller.png[Realisering fra Bygnan 4.0, Bruer og tuneller]
+[caption="Figur 8: ",title=Hoveddiagram Bruer og tuneller - objekttyper og kodelister]
+image::figurer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png[Hoveddiagram Bruer og tuneller - objekttyper og kodelister]
  
 ==== «featureType» Bru
 Definisjon: konstruksjon for kryssing av vanskelig farbart område
@@ -914,7 +936,10 @@ SOSI_navn: BRUTRAFIKKTYPE +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*tilhører*
+|*tilhørendeDetalj*
+ 
+|Definisjon:
+|viser hvilke brudetaljer som tilhører brua
  
 |Multiplisitet: 
 |[0..*]
@@ -933,6 +958,15 @@ Eksempler:
  
 *Realisering av:* «ApplicationSchema» Bygnan-4.0/Bruer og tuneller::«featureType» Brudetalj
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png
+ 
+|===
+[caption="Figur 9: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1015,6 +1049,15 @@ Definisjon: spesielt byggverk som sammenbinder tunnel og åpen veg
  
 *Realisering av:* «ApplicationSchema» Bygnan-4.0/Bruer og tuneller::«featureType» Tunnelportal
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png
+ 
+|===
+[caption="Figur 10: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1043,7 +1086,7 @@ Definisjon: ulike former for trafikk en bru er bygget for
 |asDictionary
 |true
  
-|codelist
+|codeList
 |https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/brutrafikktype
  
 |SOSI_datatype
@@ -1058,7 +1101,7 @@ Definisjon: ulike former for trafikk en bru er bygget for
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/brutrafikktype
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:54:05Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:30Z
  
 Kodelistens navn i registeret: Brutrafikktype
  
@@ -1087,12 +1130,12 @@ Kodelistens navn i registeret: Brutrafikktype
 |===
 === Pakke: BygningsmessigeAnlegg
 Definisjon: Inneholder elementer fra SOSI Bygnan 4.0, BygningsmessigeAnlegg
-[caption="Figur 9: ",title=Bygningsmessige anlegg - Realisering av objekttyper]
-image::figurer/Bygningsmessige anlegg - Realisering av objekttyper.png[Bygningsmessige anlegg - Realisering av objekttyper]
-[caption="Figur 10: ",title=Bygningsmessige anlegg - Arv av fellesegenskaper]
-image::figurer/Bygningsmessige anlegg - Arv av fellesegenskaper.png[Bygningsmessige anlegg - Arv av fellesegenskaper]
-[caption="Figur 11: ",title=Bygningsmessige anlegg - Objekttyper med egenskaper]
-image::figurer/Bygningsmessige anlegg - Objekttyper med egenskaper.png[Bygningsmessige anlegg - Objekttyper med egenskaper]
+[caption="Figur 11: ",title=Oversiktsdiagram Bygningsmessige anlegg]
+image::figurer/Oversiktsdiagram Bygningsmessige anlegg.png[Oversiktsdiagram Bygningsmessige anlegg]
+[caption="Figur 12: ",title=Realisering fra Bygnan 4.0, BygningsmessigeAnlegg]
+image::figurer/Realisering fra Bygnan 4.0, BygningsmessigeAnlegg.png[Realisering fra Bygnan 4.0, BygningsmessigeAnlegg]
+[caption="Figur 13: ",title=Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister]
+image::figurer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister.png[Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister]
  
 ==== «featureType» Brønn
 Definisjon: lite bygningsmessig anlegg for uttak av ferskvann
@@ -1290,12 +1333,37 @@ Definisjon: frittstående rørformete innretninger for transport av avgasser
 |Type: 
 |Høydereferanse
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha egenskapen høydereferanse ved punktgeometri*
+ 
+|Beskrivelse: 
+|
+ 
+|*Navn:* 
+|*Skal ha egenskapen kvalitet ved punktgeometri*
+ 
+|Beskrivelse: 
+|
+ 
+|===
  
 ==== «featureType» Søppelbeholder
 Definisjon: St&#248;rre tank eller annen type beholder for s&#248;ppel
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png
+ 
+|===
+[caption="Figur 14: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1345,7 +1413,7 @@ Definisjon: St&#248;rre tank eller annen type beholder for s&#248;ppel
 |*høydereferanse*
  
 |Definisjon: 
-|
+|angivelse av om registreringen er utf&#248;rt p&#229; topp eller bunn av et element
  
 |Multiplisitet: 
 |[1..1]
@@ -1366,6 +1434,16 @@ Definisjon: St&#248;rre tank eller annen type beholder for s&#248;ppel
  
 |Type: 
 |URI
+|===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha egenskapen kvalitet ved punktgeometri*
+ 
+|Beskrivelse: 
+|
+ 
 |===
  
 ==== «featureType» Tank
@@ -1417,6 +1495,16 @@ Definisjon: lukkede kar for oppbevaring av gass eller væsker som ikke er regist
  
 |Type: 
 |Medium
+|===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha egenskapen kvalitet ved punktgeometri*
+ 
+|Beskrivelse: 
+|
+ 
 |===
  
 ==== «featureType» Trapp
@@ -1508,6 +1596,16 @@ Eksempel: M&#229;let&#229;rn og stupet&#229;rn
 |Type: 
 |Medium
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha egenskapen kvalitet ved punktgeometri*
+ 
+|Beskrivelse: 
+|
+ 
+|===
  
 ==== «featureType» Parkdetalj
 Definisjon: detalj i parkmessig omr&#229;de
@@ -1580,13 +1678,18 @@ SOSI_navn: HREF +
 |*parkdetaljtype*
  
 |Definisjon: 
-|
+|angir type parkdetalj
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
 |Parkdetaljtype
+|Tagged Values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
+SOSI_navn: PARKDETALJTYPE + 
 |===
 [cols="20,80"]
 |===
@@ -1621,8 +1724,17 @@ Definisjon: angir type parkdetalj
 |SOSI_datatype
 |T
  
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|10
+ 
 |SOSI_lengde
 |15
+ 
+|SOSI_navn
+|PARKDETALJTYPE
  
 |SOSI_navn
 |PARKDETALJTYPE
@@ -1630,7 +1742,7 @@ Definisjon: angir type parkdetalj
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:54:28Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:08:51Z
  
 Kodelistens navn i registeret: Parkdetaljtype
  
@@ -1659,12 +1771,12 @@ Kodelistens navn i registeret: Parkdetaljtype
 |===
 === Pakke: MurerOgGjerder
 Definisjon: Inneholder elementer fra SOSI Bygnan 4.0, Murer og gjerder
-[caption="Figur 12: ",title=Murer og gjerder - Realisering av objekttyper og kodelister]
-image::figurer/Murer og gjerder - Realisering av objekttyper og kodelister.png[Murer og gjerder - Realisering av objekttyper og kodelister]
-[caption="Figur 13: ",title=Murer og gjerder - Arv av fellesegenskaper]
-image::figurer/Murer og gjerder - Arv av fellesegenskaper.png[Murer og gjerder - Arv av fellesegenskaper]
-[caption="Figur 14: ",title=Murer og gjerder - Objekttyper med egenskaper]
-image::figurer/Murer og gjerder - Objekttyper med egenskaper.png[Murer og gjerder - Objekttyper med egenskaper]
+[caption="Figur 15: ",title=Oversiktsdiagram Murer og gjerder]
+image::figurer/Oversiktsdiagram Murer og gjerder.png[Oversiktsdiagram Murer og gjerder]
+[caption="Figur 16: ",title=Realisering fra Bygnan 4.0, Murer og gjerder]
+image::figurer/Realisering fra Bygnan 4.0, Murer og gjerder.png[Realisering fra Bygnan 4.0, Murer og gjerder]
+[caption="Figur 17: ",title=Hoveddiagram Murer og gjerder - objekttyper og kodelister]
+image::figurer/Hoveddiagram Murer og gjerder - objekttyper og kodelister.png[Hoveddiagram Murer og gjerder - objekttyper og kodelister]
  
 ==== «featureType» AnnetGjerde
 Definisjon: oppsatt stengsel som hindrer passering
@@ -2110,6 +2222,15 @@ Definisjon: frittstående mur oppført av naturstein uten bindemiddel
  
 *Realisering av:* «ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» Steingjerde
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_steingjerde.png
+ 
+|===
+[caption="Figur 18: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_steingjerde.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_steingjerde.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2234,7 +2355,7 @@ Definisjon: ulike funksjoner en skjerm kan ha
 |asDictionary
 |true
  
-|codelist
+|codeList
 |https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/skjermingsfunksjon
  
 |SOSI_datatype
@@ -2249,7 +2370,7 @@ Definisjon: ulike funksjoner en skjerm kan ha
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/skjermingsfunksjon
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:55:00Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:09:13Z
  
 Kodelistens navn i registeret: Skjermingsfunksjon
  
@@ -2284,12 +2405,12 @@ Kodelistens navn i registeret: Skjermingsfunksjon
 |===
 === Pakke: TekniskeAnleggKulturLek
 Definisjon: Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggKulturLekMm
-[caption="Figur 15: ",title=Kultur og lek - Realisering av objekttyper]
-image::figurer/Kultur og lek - Realisering av objekttyper.png[Kultur og lek - Realisering av objekttyper]
-[caption="Figur 16: ",title=Kultur og lek - Arv av fellesegenskaper]
-image::figurer/Kultur og lek - Arv av fellesegenskaper.png[Kultur og lek - Arv av fellesegenskaper]
-[caption="Figur 17: ",title=Kultur og lek - Objekttyper og egenskaper]
-image::figurer/Kultur og lek - Objekttyper og egenskaper.png[Kultur og lek - Objekttyper og egenskaper]
+[caption="Figur 19: ",title=Oversiktsdiagram Kultur og lek]
+image::figurer/Oversiktsdiagram Kultur og lek.png[Oversiktsdiagram Kultur og lek]
+[caption="Figur 20: ",title=Realisering fra Bygnan 4.0, TekniskeAnleggKulturLekMm]
+image::figurer/Realisering fra Bygnan 4.0, TekniskeAnleggKulturLekMm.png[Realisering fra Bygnan 4.0, TekniskeAnleggKulturLekMm]
+[caption="Figur 21: ",title=Hoveddiagram Kultur og lek - objekttyper og kodelister]
+image::figurer/Hoveddiagram Kultur og lek - objekttyper og kodelister.png[Hoveddiagram Kultur og lek - objekttyper og kodelister]
  
 ==== «featureType» Hoppbakke
 Definisjon: anlegg for skihopping med kunstig eller naturlig tilløp
@@ -2507,7 +2628,7 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |*taubanetype*
  
 |Definisjon: 
-|
+|hva slags type taubane
  
 |Multiplisitet: 
 |[1..1]
@@ -2524,7 +2645,7 @@ SOSI_navn: TAUBANETYPE +
 |*høydereferanse*
  
 |Definisjon: 
-|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
+|angivelse av om registreringen er utf&#248;rt p&#229; topp eller bunn av et element
  
 |Multiplisitet: 
 |[1..1]
@@ -2541,7 +2662,10 @@ SOSI_navn: HREF +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*tilhører*
+|*tilhørendeMast*
+ 
+|Definisjon:
+|viser hvilke taubanemaster som tilhører hvilke taubaner
  
 |Multiplisitet: 
 |[0..*]
@@ -2562,7 +2686,7 @@ Definisjon: mast som taubanen er hengt opp i
 |*posisjon*
  
 |Definisjon: 
-|
+|sted som objektet eksisterer p&#229;
  
 |Multiplisitet: 
 |[1..1]
@@ -2576,7 +2700,7 @@ Definisjon: mast som taubanen er hengt opp i
 |*høydereferanse*
  
 |Definisjon: 
-|
+|angivelse av om registreringen av h&#248;ydeverdi er utf&#248;rt p&#229; topp eller bunn av et element
  
 |Multiplisitet: 
 |[1..1]
@@ -2629,7 +2753,7 @@ SOSI_navn: NØ +
 |===
  
 ==== «CodeList» Taubanetype
-Definisjon: 
+Definisjon: hva slags type taubane
  
 ===== Tagged Values
 [cols="20,80"]
@@ -2643,7 +2767,7 @@ Definisjon:
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/taubanetype
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:55:23Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:09:30Z
  
 Kodelistens navn i registeret: Taubanetype
  
@@ -2669,12 +2793,12 @@ Kodelistens navn i registeret: Taubanetype
 |===
 === Pakke: TekniskeAnleggVannVassdragKyst
 Definisjon: Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggVannVassdragKyst
-[caption="Figur 18: ",title=Vann - Realisering av objekttyper]
-image::figurer/Vann - Realisering av objekttyper.png[Vann - Realisering av objekttyper]
-[caption="Figur 19: ",title=Vann - Arv av fellesegenskaper]
-image::figurer/Vann - Arv av fellesegenskaper.png[Vann - Arv av fellesegenskaper]
-[caption="Figur 20: ",title=Vann - Objekttyper med egenskaper]
-image::figurer/Vann - Objekttyper med egenskaper.png[Vann - Objekttyper med egenskaper]
+[caption="Figur 22: ",title=Oversiktsdiagram Vann]
+image::figurer/Oversiktsdiagram Vann.png[Oversiktsdiagram Vann]
+[caption="Figur 23: ",title=Realisering fra Bygnan 4.0, TekniskeAnleggVannVassdragKyst]
+image::figurer/Realisering fra Bygnan 4.0, TekniskeAnleggVannVassdragKyst.png[Realisering fra Bygnan 4.0, TekniskeAnleggVannVassdragKyst]
+[caption="Figur 24: ",title=Hoveddiagram Vann - objekttyper og kodelister]
+image::figurer/Hoveddiagram Vann - objekttyper og kodelister.png[Hoveddiagram Vann - objekttyper og kodelister]
  
 ==== «featureType» BeskrivendeHjelpelinjeAnlegg
 Definisjon: karakteristiske linjer p&#229; bygningsmessige- og tekniske anlegg
@@ -2830,6 +2954,11 @@ Definisjon: kunstig eller naturlig oppbygning som demper eller tilintetgjør bø
  
 |Type: 
 |Medium
+|Tagged Values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 1 + 
+SOSI_navn: MEDIUM + 
 |===
  
 ==== «featureType» Flytebrygge
@@ -2879,7 +3008,10 @@ Definisjon: brygge som er forankret til bunn og hvor plasseringen kan avhenge av
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*tilhører*
+|*tilhørendeLandgang*
+ 
+|Definisjon:
+|viser hvilke landganger som tilhører hvilke flytebrygger
  
 |Multiplisitet: 
 |[0..*]
@@ -3187,6 +3319,15 @@ Definisjon: anordning bygd opp for tørking av fisk
  
 *Realisering av:* «ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Fiskehjell
  
+===== Tagged Values
+[cols="20,80"]
+|===
+|SOSI_bildeAvModellelement
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png
+ 
+|===
+[caption="Figur 25: ",title=SOSI_bildeAvModellelement]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -3220,7 +3361,10 @@ Definisjon: anordning bygd opp for tørking av fisk
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*tilhører*
+|*tilhørendeMøne*
+ 
+|Definisjon:
+|viser hvilke fiskehjellmøne som tilhører hvilke fiskehjell
  
 |Multiplisitet: 
 |[0..*]
@@ -3340,7 +3484,7 @@ Definisjon: beskrivelse av selve slusetypen
 |asDictionary
 |true
  
-|codelist
+|codeList
 |https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/slusetype
  
 |SOSI_datatype
@@ -3355,7 +3499,7 @@ Definisjon: beskrivelse av selve slusetypen
 |===
 Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/slusetype
  
-Kodeliste hentet på tidspunkt: 2021-08-03T13:56:05Z
+Kodeliste hentet på tidspunkt: 2021-08-18T13:10:01Z
  
 Kodelistens navn i registeret: Slusetype
  
