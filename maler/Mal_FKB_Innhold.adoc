@@ -12,7 +12,7 @@
 :appendix-caption: Vedlegg
 :pdf-page-size: A4
 
-_Versjon 2021-06-29_
+_Versjon 2021-08-31_
 
 == Innledning
 
@@ -21,11 +21,7 @@ Beskrivelse av hvilken informasjon som skal legges inn i FKB 5.0 UML-modellene f
 == FKB-Forvaltningsspesifikasjoner
 FKB-Forvaltningsspesifikasjonene skal være godkjente SOSI Produktspesifikasjoner.
 
-UML-pakkene i SOSI-modellregister skal ha stereotype "ApplicationSchema".
-
- TODO: 
- Beskrive krav til tagged values på pakke-nivå? 
- Beskrive Mal for navn og innhold i diagrammer (utover kravene i SOSI)? 
+UML-pakkene i SOSI-modellregister skal ha stereotype "ApplicationSchema". Pakkene skal validere med SOSI valideringsverktøy og gi validerende GML-skjema (xsd-filer) som output.
 
 === Objekttyper
 
@@ -40,23 +36,21 @@ For objekttyper som defineres i FKB legger vi inn en best mulig definisjon ut fr
 * SOSI_bildeAvModellelement (url til absolutt sti bilde/skisse som beskriver objekttypen)
 
 Det anbefales at det defineres ett stk. bilde/bilde som generelt beskriver objektet som legges inn på denne taggen. (Husk å bruke små/store bokstaver riktig!)
-Legg inn sti til bildet på http://skjema.geonorge.no/SOSI/produktspesifikasjon
+Legg inn full sti til bildet på http://skjema.geonorge.no/SOSI/produktspesifikasjon
 
 .Eksempel på bruk av SOSI_bildeAvModellelement
 image::figurer/bildeavmodellelement.png[]
 
 Bruk absolutt sti til http://skjema.geonorge.no/SOSI/produktspesifikasjon/. F.eks. http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png
 
-(flere bilder/skisser legges inn i registreringsinstruks)
+(flere bilder/skisser legges inn i registreringsinstruks. Se under punkt 3)
 
 ==== FKB tagged values
 Det skal ikke ligge noen tagged values med prefiks "FKB" på objektene i forvaltningsmodellene. Også ev. andre tagged values som finnes i de gamle modellene (SOSI_melding etc.) og som ikke er definert i dette dokumentet fjernes fra elementene.
 
 
 ==== Spesielle regler/retningslinjer for modellering av assosiasjoner
-* Assosiasjoner fra flateobjekter til flateavgrensende objekte gjøres i tråd med beskrivelse i FOU-prosjket "Geometrihåndtering SOSI 5". 
-* Det er åpnet for også andre assosiasjoner i FKB der det er behov for å uttrykke en sammenheng mellom objekter. Unngå mange-til-mange forhold.
-* Bruk gjerne arv til å forenkle assosiasjonene (assosiasjoner mellom supertyper), men ikke union, for å forenkle modellene og visningen av disse i diagrammer.
+Se beskrivelse i FKB Generell del.
 
 === Egenskaper
 
@@ -96,9 +90,9 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 
 ==== SOSI UML-profil tagged values
 * asDictionary (true)
-* codelist (url til kodeliste på Geonorge)
+* codeList (url til kodeliste på Geonorge)
 
-Bruk URL på formen: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+Bruk URL på formen: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
 (dvs. uten "api" eller extension som del av URL)
 
 ==== FKB tagged values
@@ -119,7 +113,7 @@ image::figurer/naturinfo_trestruktur.png[]
 
 === Oppskrift på etablering av registreringsinstruks
 
-. Etabler ny pakke under FKB-datasettet for registreringsinstruksen. Pakka legges til i SOSI-modellregister *uten* stereotype
+. Etabler ny pakke under FKB-datasettet for registreringsinstruksen. Pakka legges til i SOSI-modellregister *uten* stereotype 
 . Ta en kopi av en (mest mulig) ferdig UML-modell for forvaltningsspesifikasjonen til denne pakka. Denne pakka beholder stereotype _ApplicationSchema_ og skal være i tråd med alle krav til et SOSI applikasjonsskjema. GML-skjema (osv.) som setter krav til data levert etter registreringsinstruksen skal kunne eksporteres ut fra denne pakke med vanlige verktøy.
 . Oppdater realiseringsdiagram slik at det peker til applikasjonsskjema for forvaltningsmodellen 
 +
@@ -159,6 +153,18 @@ Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen 
 ** FKB_MINSTESTØRRELSE_C (fritekst) _(bare aktuelt på noen objekttyper)_
 ** FKB_MINSTESTØRRELSE_D (fritekst) _(bare aktuelt på noen objekttyper)_
 
+=== Informasjon som legges på de abstrakte kodelister
+Mange av de samme prinsippene som er brukt for objekttyper brukes også for kodelister. 
+Dersom det er behov for legge inn ekstra informasjon for registrering knyttet til en kodeliste, eller til de ulike kodeverdiene i en kodeliste må kan lage en _abstrakt_ kodeliste med samme navn som den tomme kodelista i appilkasjonsskjemaet. Denne abstrakte kodelista arver fra kodelista i applikasjonsskjema på samme måte som for objekttyper. 
+
+En viktig forskjell på objekttyper og kodelister er at for kodelister må vi definere de kodene vi ønsker å knytte informasjon til i den abstrakte kodelista (siden kodelistene i FKB 5.0 ligger i Geonorge og i utgangspunktet er modellert som tomme). Koder som finnes i kodelista, men som ikke er relevante for registreringsinstruksen trenger ikke å defineres inn i de abstrakte kodelistene.
+
+Informasjon som kan legges inn på kodelister:
+
+* Definisjon (notes) for kodelista utformes slik at det beskriver spesielle forhold rundt registrering av kodene i lista
+* Det legges inn skisser/bilder (med forklarende tekst) for å forklare registrering av av de ulike kodene i lista under "files" i EA for kodelista (angis som relativ sti) 
+* Kodenavn (attribute), Beskrivelse (notes) - gjerne med spesiell informasjon knyttet til registering, og kodeverdi (initial value)
+* Taggen SOSI_bildeAvModellelement for et bilde knyttet til hver kodeverdi (angis som relativ sti)
 
 
 

@@ -507,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truegeometrimodell-i-fkb">7.1. Geometrimodell i FKB</a>
 <ul class="sectlevel3">
 <li><a href="#truegeometrityper">7.1.1. Geometrityper</a></li>
-<li><a href="#truemultippel-geometri">7.1.2. Multippel geometri</a></li>
+<li><a href="#trueflere-geometrier">7.1.2. Flere geometrier</a></li>
 <li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a></li>
 <li><a href="#trueflategeometri">7.1.4. Flategeometri</a></li>
 </ul>
@@ -556,7 +556,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-08-18
+Testversjon 2021-08-31
 </td>
 </tr>
 </table>
@@ -684,22 +684,17 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. I UML-modellene ligger tomme kodelister med referanse (URL) til kodelistene i Geonorge. Dette innebærer at kodelistene i FKB fra og med FKB 5.0 kan endres uten at versjonsnummer på produktspesifikasjonene oppdateres. Systemer som forholder seg FKB datamodellene må også forholde seg til Geonorge kodelisteregister.</p>
 </div>
 <div class="paragraph">
-<p><strong>Flategeometri:</strong></p>
-</div>
-<div class="paragraph">
-<p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri, men der det er behov kan det fortsatt settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler og er nærmere beskrevet under <a href="#trueflategeometri">Flategeometri</a>.</p>
-</div>
-<div class="paragraph">
 <p><strong>Assosiasjoner:</strong></p>
 </div>
 <div class="paragraph">
-<p>Det er også åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre typer sammenhenger mellom objekter enn å beskrive flategeometri. F.eks. at et Bygning-objekt vet hvilke Veranda-objekter som tilhører bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering <a href="#SOSI">[SOSI]</a> . Se mer om rammer for bruk av assosiasjoner under <a href="#trueassosiasjoner">Assosiasjoner</a>.</p>
+<p>Det er åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre typer sammenhenger mellom objekter enn å beskrive flategeometri. F.eks. at et Bygning-objekt vet hvilke Veranda-objekter som "tilhører" bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering <a href="#SOSI">[SOSI]</a> . Se mer om rammer for bruk av assosiasjoner i FKB under <a href="#trueassosiasjoner">Assosiasjoner</a>.</p>
 </div>
 <div class="paragraph">
-<p><strong>Multippel geometri:</strong></p>
+<p><strong>Flategeometri:</strong></p>
 </div>
 <div class="paragraph">
-<p>Tidligere versjoner av FKB har også hatt objekttyper som er modellert med mer enn <em>en</em> geometri-egenskap. Dette utvides/endres noe i forbindelse med FKB 5.0. Dette er nærmere beskrevet under <a href="#truemultippel-geometri">Multippel geometri</a>.</p>
+<p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter og skal ha et representasjonspunkt. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri og uten representasjonspunkt.
+Der det er behov kan det imidlertid fortsatt modelleres representasjonspunkt og settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler. Se nærmere beskrivelse under <a href="#trueflategeometri">Flategeometri</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Id-håndtering; Identifikasjon av objektene i FKB og pekere til Id-er i eksterne systemer:</strong></p>
@@ -1733,9 +1728,9 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 </div>
 <div class="sect3">
-<h4 id="truemultippel-geometri"><a class="anchor" href="#truemultippel-geometri"></a>7.1.2. Multippel geometri</h4>
+<h4 id="trueflere-geometrier"><a class="anchor" href="#trueflere-geometrier"></a>7.1.2. Flere geometrier</h4>
 <div class="paragraph">
-<p>Hovedregel i FKB produktspesifikasjoner er at hver objekttype modelleres med <em>en</em> geometriegenskap. Det finnes imidlertid noen unntak fra denne hovedregelen. Se tabell under over mulige kombinasjoner av geometriegenskaper for objekttyper som er definert med mer enn <em>en</em> geometriegenskap i FKB:</p>
+<p>Hovedregel i FKB produktspesifikasjoner er at hver objekttype modelleres med <em>en</em> geometriegenskap. Det finnes imidlertid noen unntak fra denne hovedregelen. Se tabell under for mulige kombinasjoner av geometriegenskaper for objekttyper som er definert med mer enn <em>en</em> geometriegenskap i FKB:</p>
 </div>
 <table id="tab-multippel_geometri" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 5. Tabell over hvilke kombinasjoner av geometrityper som kan benyttes som multippel geometri i FKB 5.0</caption>
@@ -1753,20 +1748,17 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd flategeometri og opsjonell punktgeometri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper med flategeometri for å gi mulighet til å utveksle representasjonspunkt for flategeometrien.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Objtype AnnenByging, Objtype Industriområde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd flategeometri og opsjonell punktgeometri (og en constraint som sier at <em>en</em> av dem skal finnes)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper med flategeometri for å gi mulighet til å utveksle representasjonspunkt for flategeometrien. Anbefales kun brukt der representasjonspunktet har en mening/funksjon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Arealressursflate</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd punktgeometri og opsjonell flategeometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell punktgeometri og opsjonell flategeometri</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper som det i noen sammenhenger er naturlig å representere som punkt og i andre sammenhenger som flate (ut fra størrelse/detaljering etc).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Bygning, Objtype Pipe</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>For alle objekttyper i FKB 5.0 som er definert med mer enn 1 geometri-egenskap så gjelder det at det kun er en av geometri-egenskapene som er påkrevd (="primærgeometri").</p>
-</div>
 <div class="paragraph">
 <p>Ved geografiske søk på objekter med multippel geometri bør en union av geometriene legges til grunn for søket.</p>
 </div>
@@ -1779,13 +1771,20 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="ulist">
 <ul>
 <li>
-<p>Assosiasjoner modelleres som "vanlige assosiasjoner" i tråd med reglene i SOSI Regler for UML-modellering 5.1</p>
+<p>Assosiasjoner modelleres som vanlige assosiasjoner i tråd med reglene i SOSI Regler for UML-modellering 5.1 <a href="#SOSI">[SOSI]</a>. Andre varianter av assosiasjoner som <em>aggregering</em>, <em>komposisjon</em> etc. benyttes ikke i FKB.</p>
 </li>
 <li>
-<p>Alle assosiasjoner i FKB modelleres som <em>enveis</em>. Det vil si at de bare er navigerbare i en retning. (Eks: Bygningen vet hvilke verandaer som hører til bygget, men verandaen vet ikke hvilken bygning den tilhører)</p>
+<p>Assosiasjoner i FKB modelleres som hovedregel som <em>enveis</em>. Det vil si at de bare er navigerbare i en retning. (Eks: Bygningen vet hvilke verandaer som hører til bygget, men verandaen vet ikke hvilken bygning den tilhører)</p>
 </li>
 <li>
-<p>Multiplisitet på den navigerbare enden skal alltid være 0..1 eller 0..*. (Det at det finnes et objekt av en objekttype vil ikke medføre krav om at det må finnes et referert objekt av en annen type.)</p>
+<p>Multiplisitet på den navigerbare enden skal alltid være 0..1 eller 0..*. (Dvs. at det at det finnes et objekt av en objekttype vil ikke medføre krav om at det må finnes et referert objekt av en annen type.)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dersom det benyttes assosiasjoner som er navigerbare i begge retninger så skal det ikke være multiplisitet 0..* i begge ender. (Dvs. at <em>mange-til_mange</em>-forhold unngås i FKB datamodeller)</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1842,6 +1841,9 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <img src="figurer/flategeometri_modell.png" alt="flategeometri modell">
 </div>
 <div class="title">Figur 10. Mal for UML-modellering av objekttyper med flategeometri. "Type 1" til venstre og "Type 2" til høyre</div>
+</div>
+<div class="paragraph">
+<p>Det er lov (men ikke anbefalt) å modellere med opsjonell punktgeometri i tillegg til flategeometrien for å kunne utveksle representasjonspunkt for flater. Dette gjelder flater av både "Type 1" og "Type 2".</p>
 </div>
 <div class="paragraph">
 <p>Dersom man skal modellere en objekttype av "Type 2" (med krav til sammenheng mellom flateobjekt og avgrensningsobjekter) gjelder følgende regler ved UML-modelleringen:</p>
@@ -3618,7 +3620,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-18 08:28:11 +0200
+Last updated 2021-08-31 13:21:33 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
