@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="nb">
+<html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>SOSI standardisert produktspesifikasjon: FKB-Ledning – 5.0</title>
+<title>«ApplicationSchema» FKB-Ledning-5.0-Utkast</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,796 +436,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>SOSI standardisert produktspesifikasjon: FKB-Ledning – 5.0</h1>
-<div id="toc" class="toc2">
-<div id="toctitle">Innholdsfortegnelse</div>
-<ul class="sectlevel1">
-<li><a href="#trueinnledning-historikk-og-endringslogg">1. Innledning, historikk og endringslogg</a>
-<ul class="sectlevel2">
-<li><a href="#trueinnledning">1.1. Innledning</a></li>
-<li><a href="#truehistorikk">1.2. Historikk</a></li>
-<li><a href="#trueendringslogg">1.3. Endringslogg</a></li>
-</ul>
-</li>
-<li><a href="#truedefinisjoner-og-forkortelser">2. Definisjoner og forkortelser</a>
-<ul class="sectlevel2">
-<li><a href="#truedefinisjoner">2.1. Definisjoner</a></li>
-<li><a href="#trueforkortelser">2.2. Forkortelser</a>
-<ul class="sectlevel3">
-<li><a href="#truenormative-referanser">2.2.1. Normative referanser</a></li>
-<li><a href="#trueandre-forkortelser">2.2.2. Andre forkortelser</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#truegenerelt-om-spesifikasjonen">3. Generelt om spesifikasjonen</a>
-<ul class="sectlevel2">
-<li><a href="#trueunik-identifisering">3.1. Unik identifisering</a>
-<ul class="sectlevel3">
-<li><a href="#truekortnavn">3.1.1. Kortnavn</a></li>
-<li><a href="#truefullstendig-navn">3.1.2. Fullstendig navn</a></li>
-<li><a href="#trueversjon">3.1.3. Versjon</a></li>
-</ul>
-</li>
-<li><a href="#truereferansedato">3.2. Referansedato</a></li>
-<li><a href="#trueansvarlig-organisasjon">3.3. Ansvarlig organisasjon</a></li>
-<li><a href="#truespråk">3.4. Språk</a></li>
-<li><a href="#truehovedtema">3.5. Hovedtema</a></li>
-<li><a href="#truetemakategori">3.6. Temakategori</a></li>
-<li><a href="#truesammendrag">3.7. Sammendrag</a></li>
-<li><a href="#trueformål">3.8. Formål</a></li>
-<li><a href="#truerepresentasjonsform">3.9. Representasjonsform</a></li>
-<li><a href="#truedatasettoppløsning">3.10. Datasettoppløsning</a></li>
-<li><a href="#trueutstrekningsinformasjon">3.11. Utstrekningsinformasjon</a></li>
-<li><a href="#trueidentifikasjonsomfang">3.12. Identifikasjonsomfang</a></li>
-<li><a href="#truesupplerende-beskrivelse">3.13. Supplerende beskrivelse</a></li>
-</ul>
-</li>
-<li><a href="#truespesifikasjonsomfang">4. Spesifikasjonsomfang</a>
-<ul class="sectlevel2">
-<li><a href="#truespesifikasjonsomfang-for-hele-spesifikasjonen">4.1. Spesifikasjonsomfang for hele spesifikasjonen</a>
-<ul class="sectlevel3">
-<li><a href="#trueidentifikasjon">4.1.1. Identifikasjon</a></li>
-<li><a href="#truenivå">4.1.2. Nivå</a></li>
-<li><a href="#truenavn">4.1.3. Navn</a></li>
-<li><a href="#truebeskrivelse">4.1.4. Beskrivelse</a></li>
-<li><a href="#trueutstrekningsinformasjon-2">4.1.5. Utstrekningsinformasjon</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#trueinnhold-og-struktur">5. Innhold og struktur</a>
-<ul class="sectlevel2">
-<li><a href="#trueapplicationschema-fkb-ledning-5-0-utkast">5.1. «ApplicationSchema» FKB-Ledning-5.0-Utkast</a>
-<ul class="sectlevel4">
-<li><a href="#truetagged-values">Tagged Values</a></li>
-</ul>
-</li>
-<li><a href="#truepakke-objekttyper-abstrakte">5.2. Pakke: Objekttyper - abstrakte</a>
-<ul class="sectlevel3">
-<li><a href="#truefeaturetype-kopling_kurve">5.2.1. «FeatureType» Kopling_kurve</a></li>
-<li><a href="#truefeaturetype-kopling_punkt">5.2.2. «FeatureType» Kopling_punkt</a></li>
-<li><a href="#truefeaturetype-ledning">5.2.3. «FeatureType» Ledning</a></li>
-<li><a href="#truefeaturetype-lidarmetadata">5.2.4. «FeatureType» LidarMetadata</a></li>
-<li><a href="#truefeaturetype-nettverkskomponent">5.2.5. «FeatureType» Nettverkskomponent</a></li>
-</ul>
-</li>
-<li><a href="#truepakke-objekttyper-instansierbare">5.3. Pakke: Objekttyper - instansierbare</a>
-<ul class="sectlevel3">
-<li><a href="#truefeaturetype-flymarkør">5.3.1. «FeatureType» Flymarkør</a></li>
-<li><a href="#truefeaturetype-jordingsledning">5.3.2. «FeatureType» Jordingsledning</a></li>
-<li><a href="#truefeaturetype-kanal">5.3.3. «FeatureType» Kanal</a></li>
-<li><a href="#truefeaturetype-kumlokk">5.3.4. «FeatureType» Kumlokk</a></li>
-<li><a href="#truefeaturetype-luftlinje">5.3.5. «FeatureType» Luftlinje</a></li>
-<li><a href="#truefeaturetype-lysarmatur">5.3.6. «FeatureType» Lysarmatur</a></li>
-<li><a href="#truefeaturetype-mast">5.3.7. «FeatureType» Mast</a></li>
-<li><a href="#truefeaturetype-masteomriss">5.3.8. «FeatureType» Masteomriss</a></li>
-<li><a href="#truefeaturetype-nettverkstasjon">5.3.9. «FeatureType» Nettverkstasjon</a></li>
-<li><a href="#truefeaturetype-nettverkstasjonomriss">5.3.10. «FeatureType» Nettverkstasjonomriss</a></li>
-<li><a href="#truefeaturetype-skap">5.3.11. «FeatureType» Skap</a></li>
-<li><a href="#truefeaturetype-trase">5.3.12. «FeatureType» Trase</a></li>
-<li><a href="#truefeaturetype-vindturbin">5.3.13. «FeatureType» Vindturbin</a></li>
-<li><a href="#truefeaturetype-vindturbinomriss">5.3.14. «FeatureType» Vindturbinomriss</a></li>
-<li><a href="#truefeaturetype-åk">5.3.15. «FeatureType» Åk</a></li>
-</ul>
-</li>
-<li><a href="#truepakke-datatyper">5.4. Pakke: Datatyper</a>
-<ul class="sectlevel3">
-<li><a href="#truedatatype-vertikalavstandledning">5.4.1. «dataType» VertikalAvstandLedning</a></li>
-</ul>
-</li>
-<li><a href="#truepakke-kodelister">5.5. Pakke: Kodelister</a>
-<ul class="sectlevel3">
-<li><a href="#truecodelist-fase">5.5.1. «CodeList» Fase</a></li>
-<li><a href="#truecodelist-kumlokkform">5.5.2. «CodeList» Kumlokkform</a></li>
-<li><a href="#truecodelist-ledningsnettverkstype">5.5.3. «CodeList» Ledningsnettverkstype</a></li>
-<li><a href="#truecodelist-mastekonstruksjon">5.5.4. «CodeList» Mastekonstruksjon</a></li>
-<li><a href="#truecodelist-punktplassering">5.5.5. «CodeList» Punktplassering</a></li>
-<li><a href="#truecodelist-stasjonsplassering">5.5.6. «CodeList» Stasjonsplassering</a></li>
-</ul>
-</li>
-<li><a href="#truepakke-generelle-elementer">5.6. Pakke: Generelle elementer</a>
-<ul class="sectlevel3">
-<li><a href="#truefeaturetype-fellesegenskaper">5.6.1. «FeatureType» Fellesegenskaper</a></li>
-<li><a href="#truefeaturetype-kvalitetpåkrevd">5.6.2. «FeatureType» KvalitetPåkrevd</a></li>
-<li><a href="#truedatatype-identifikasjon">5.6.3. «dataType» Identifikasjon</a></li>
-<li><a href="#truedatatype-posisjonskvalitet">5.6.4. «dataType» Posisjonskvalitet</a></li>
-<li><a href="#truecodelist-synbarhet">5.6.5. «CodeList» Synbarhet</a></li>
-<li><a href="#truecodelist-datafangstmetode">5.6.6. «CodeList» Datafangstmetode</a></li>
-<li><a href="#truecodelist-registreringsversjon">5.6.7. «CodeList» Registreringsversjon</a></li>
-<li><a href="#truecodelist-høydereferanse">5.6.8. «CodeList» Høydereferanse</a></li>
-<li><a href="#truecodelist-medium">5.6.9. «CodeList» Medium</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#truereferansesystem">6. Referansesystem</a>
-<ul class="sectlevel2">
-<li><a href="#trueromlig-referansesystem">6.1. Romlig referansesystem</a>
-<ul class="sectlevel3">
-<li><a href="#trueomfang">6.1.1. Omfang</a></li>
-<li><a href="#truenavn-på-kilden-til-referansesystemet">6.1.2. Navn på kilden til referansesystemet</a></li>
-<li><a href="#trueansvarlig-organisasjon-for-referansesystemet">6.1.3. Ansvarlig organisasjon for referansesystemet</a></li>
-<li><a href="#truelink-til-mer-info-om-referansesystemet">6.1.4. Link til mer info om referansesystemet</a></li>
-<li><a href="#truekoderom">6.1.5. Koderom</a></li>
-<li><a href="#trueidentifikasjonskode">6.1.6. Identifikasjonskode:</a></li>
-<li><a href="#truekodeversjon">6.1.7. Kodeversjon</a></li>
-</ul>
-</li>
-<li><a href="#truetemporalt-referansesystem">6.2. Temporalt referansesystem</a>
-<ul class="sectlevel3">
-<li><a href="#truenavn-på-temporalt-referansesystem">6.2.1. Navn på temporalt referansesystem</a></li>
-<li><a href="#trueomfang-2">6.2.2. Omfang</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#truekvalitet">7. Kvalitet</a></li>
-<li><a href="#truedatafangst">8. Datafangst</a></li>
-<li><a href="#truedatavedlikehold">9. Datavedlikehold</a>
-<ul class="sectlevel2">
-<li><a href="#truevedlikeholdsinformasjon-kartleggingsprosjekter">9.1. Vedlikeholdsinformasjon Kartleggingsprosjekter</a>
-<ul class="sectlevel3">
-<li><a href="#trueomfang-3">9.1.1. Omfang</a></li>
-<li><a href="#truevedlikeholdsfrekvens">9.1.2. Vedlikeholdsfrekvens</a></li>
-<li><a href="#truevedlikeholdsbeskrivelse">9.1.3. Vedlikeholdsbeskrivelse</a></li>
-</ul>
-</li>
-<li><a href="#truevedlikeholdsinformasjon-kontinuerlig-ajourhold">9.2. Vedlikeholdsinformasjon Kontinuerlig ajourhold</a>
-<ul class="sectlevel3">
-<li><a href="#trueomfang-4">9.2.1. Omfang</a></li>
-<li><a href="#truevedlikeholdsfrekvens-2">9.2.2. Vedlikeholdsfrekvens</a></li>
-<li><a href="#truevedlikeholdsbeskrivelse-2">9.2.3. Vedlikeholdsbeskrivelse</a></li>
-</ul>
-</li>
-<li><a href="#truevedlikeholdsinformasjon-meldinger-om-feil-og-mangler">9.3. Vedlikeholdsinformasjon Meldinger om feil og mangler</a>
-<ul class="sectlevel3">
-<li><a href="#trueomfang-5">9.3.1. Omfang</a></li>
-<li><a href="#truevedlikeholdsfrekvens-3">9.3.2. Vedlikeholdsfrekvens</a></li>
-<li><a href="#truevedlikeholdsbeskrivelse-3">9.3.3. Vedlikeholdsbeskrivelse</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#truepresentasjon">10. Presentasjon</a>
-<ul class="sectlevel2">
-<li><a href="#trueomfang-6">10.1. Omfang</a></li>
-<li><a href="#truereferanse-til-presentasjonskatalog">10.2. Referanse til presentasjonskatalog</a></li>
-</ul>
-</li>
-<li><a href="#trueleveranse">11. Leveranse</a>
-<ul class="sectlevel2">
-<li><a href="#trueleveransemetode">11.1. Leveransemetode</a>
-<ul class="sectlevel3">
-<li><a href="#trueomfang-7">11.1.1. Omfang</a></li>
-<li><a href="#trueleveranseformat">11.1.2. Leveranseformat</a></li>
-<li><a href="#trueleveransemedium">11.1.3. Leveransemedium</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#truetilleggsinformasjon">12. Tilleggsinformasjon</a></li>
-<li><a href="#truemetadata">13. Metadata</a>
-<ul class="sectlevel2">
-<li><a href="#trueomfang-8">13.1. Omfang</a></li>
-<li><a href="#truemetadataspesifikasjon">13.2. Metadataspesifikasjon</a></li>
-</ul>
-</li>
-<li><a href="#truesosi-format-realisering">Vedlegg A: SOSI-format-realisering</a></li>
-<li><a href="#truegml-realisering">Vedlegg B: GML-realisering</a></li>
-<li><a href="#trueannen-nyttig-informasjon-til-brukere">Vedlegg C: Annen nyttig informasjon til brukere</a></li>
-</ul>
-</div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div style="page-break-after: always;"></div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Utkast 2021-07-23
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueinnledning-historikk-og-endringslogg"><a class="anchor" href="#trueinnledning-historikk-og-endringslogg"></a>1. Innledning, historikk og endringslogg</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
-<div class="paragraph">
-<p>FKB-Ledning er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del <a href="#FKB">[FKB]</a>.</p>
-</div>
-<div class="paragraph">
-<p>FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter og som et grunnlag for distribusjon av FKB-data.</p>
-</div>
-<div class="paragraph">
-<p>FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del og SOSI del 2 Ledning versjon 4.6.</p>
-</div>
-<div class="paragraph">
-<p>Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er nå samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0 finnes her:
-<a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Ledning/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Ledning/5.0/</a></p>
-</div>
-<div class="paragraph">
-<p>Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i
-forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truehistorikk"><a class="anchor" href="#truehistorikk"></a>1.2. Historikk</h3>
-<div class="paragraph">
-<p>Tidligere versjoner:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>FKB versjon 3.3 oktober 2001</p>
-</li>
-<li>
-<p>FKB versjon 3.4 august 2002</p>
-</li>
-<li>
-<p>FKB-LedningElTele versjon 4.0 – 2007-01-01</p>
-</li>
-<li>
-<p>FKB-LedningElTele versjon 4.01 - 2009-03-10</p>
-</li>
-<li>
-<p>FKB-LedningElTele versjon 4.02 - 2011-12-01</p>
-</li>
-<li>
-<p>FKB-LedningElTele versjon 4.6 - 2016-07-01</p>
-</li>
-<li>
-<p>FKB-Ledning versjon 4.5 - 2014-03-01</p>
-</li>
-<li>
-<p>FKB-Ledning versjon 4.6 - 2016-06-01</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.3. Endringslogg</h3>
-<div class="paragraph">
-<p>Endringer siden FKB-Ledning 4.6 - 2016-06-01</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Oppdatert generelle konsepter fra FKB 5.0 generell del.</p>
-</li>
-<li>
-<p>Alle Kodelister er gjort om til eksterne kodelister som forvaltes i Geonorge <a href="https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/</a></p>
-</li>
-<li>
-<p>Datamodellen er mer frikoblet fra SOSI-Ledning 4.6 enn i forrige versjon.</p>
-</li>
-<li>
-<p>Følgende objekttyper har endret navn:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>EL-Belysningspunkt &#8594; Mast eller LysArmatur</p>
-</li>
-<li>
-<p>EL-Flymarkør &#8594; Flymarkør</p>
-</li>
-<li>
-<p>EL-Nettstasjon &#8594; Nettverkstasjon</p>
-</li>
-<li>
-<p>EL-Vindturbun &#8594; Vindturbin</p>
-</li>
-<li>
-<p>LednKum &#8594; Kumlokk</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Jordingsledning og Luftlinje er tatt inn som nye objekttyper.</p>
-</li>
-<li>
-<p>NettverkstasjonAdkomst er tatt ut av produktspesifikasjonen.</p>
-</li>
-<li>
-<p>Etablert assosiasjoner mellom følgende objekttyper:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Mast &#8594; Lysarmatur</p>
-</li>
-<li>
-<p>Mast &#8594; Masteomriss</p>
-</li>
-<li>
-<p>Nettverkstasjon &#8594; NettverkstasjonOmriss</p>
-</li>
-<li>
-<p>Vindturbin &#8594; VindturbinOmriss</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Kumlokk i vann- og avløpsnettet er tatt inn i produktspesifikasjonen sammen med sluk og hydrant.</p>
-</li>
-<li>
-<p>Flere egenskaper og kodelister er endret. For full oversikt over alle disse endringene se <em><strong>(her må vi legge inn en referanse)</strong></em></p>
-</li>
-</ul>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truedefinisjoner-og-forkortelser"><a class="anchor" href="#truedefinisjoner-og-forkortelser"></a>2. Definisjoner og forkortelser</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truedefinisjoner"><a class="anchor" href="#truedefinisjoner"></a>2.1. Definisjoner</h3>
-<div class="paragraph">
-<div class="title">ajourføring</div>
-<p>korrigering av innholdet i geodataene slik at de fremstiller de faktiske forhold på et gitt tidspunkt, etter de retningslinjer som gjelder for innhold og kvalitet <a href="#PABG">[PABG]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Det er en selvfølge at ”konsekvensrettelser” også blir utført. For eksempel når det bygges et nytt hus, blir ofte gjerder, arealbruksgrenser og veger omkring huset forandret. Ajourføring innebærer at alle disse forandringene blir gjort i de aktuelle databaser.
-Oppgradering til nyere og bedre standard defineres som noe annet enn ajourføring, selv om det kan gjøres på samme tidspunkt som periodisk ajourføring.</p>
-</div>
-<div class="paragraph">
-<div class="title">applikasjonsskjema</div>
-<p>informasjonsmodellene i SOSI-modellregister er modellert som UML-modeller. UML-modellen for et FKB-datasett benevnes som et UML-applikasjonsskjema. Fra UML-applikasjonsskjema kan det automatisk genereres et GML-applikasjonsskjema som beskriver hvordan dataene representeres som GML.</p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Se objektkatalog</p>
-</div>
-<div class="paragraph">
-<div class="title">avledet datasett</div>
-<p>bearbeidede primærdata tilpasset et bestemt bruksområde <a href="#FKB">[FKB]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Avledede data skal i prinsippet ikke ajourføres direkte, men ajourføringen skal komme gjennom automatisk utvelgelse og generalisering fra primærdata. I noen tilfeller vil dette være en for tung prosess slik at en må avvike fra hovedprinsippet.
-	Kalles også generalisert datasett.</p>
-</div>
-<div class="paragraph">
-<p><em>EKSEMPEL</em>:	N5 Kartdata (avledet/generalisert produkt fra FKB-data).</p>
-</div>
-<div class="paragraph">
-<div class="title">basis geodata</div>
-<p>Detaljerte geodata som beskriver det fysiske landskapet ved naturlige eller menneskeskapte objekter. Basisdata brukes til lokalisering og som underlag for temadata. <a href="#FKB">[FKB]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: basis geodata er synonymt med begrepet grunnkart (eller grunnkartdata)</p>
-</div>
-<div class="paragraph">
-<div class="title">datasett</div>
-<p>identifiserbar samling av beslektede data <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">egenskap</div>
-<p>navngitt kjennetegn eller karakteristikk av et objekt</p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Egenskap defineres ved navn (for eksempel "bygge-år"), datatype (for eksempel årstall) og verdiområde (for eksempel "Kristi fødsel - dags dato").
-Egenskapsverdi er verdien til egenskapen for det aktuelle objektet, for eksempel 1998. Egenskapsdata kalles noen ganger for attributtdata.</p>
-</div>
-<div class="paragraph">
-<div class="title">egenskapsnøyaktighet</div>
-<p>uttrykk for hvor godt egenskapsdataene beskriver de aktuelle egenskapene <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">FKB</div>
-<p>FKB er en forkortelse for Felles Kartdatabase. Se <a href="#FKB">[FKB]</a>.</p>
-</div>
-<div class="paragraph">
-<div class="title">Fotogrammetrisk FKB</div>
-<p>FKB-data som er etablert ved fotogrammetrisk kartlegging <a href="#FKB">[FKB]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: I Fotogrammetrisk FKB inngår også enkelte objekttyper som ikke registreres fotogrammetrisk. Eksempel er fiktive avgrensningslinjer og representasjonspunkt.</p>
-</div>
-<div class="paragraph">
-<div class="title">grunnkart</div>
-<p>Grunnkart er et begrep som er synonymt med basis geodata. Se definisjon under basis geodata.</p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Grunnkart brukes til flere formål og kan danne grunnlag for avledede kart i forskjellige målestokker. Grunnkartet skal være det kartgrunnlaget som skal tjene alle formål som omhandles i plan- og bygningsloven eller dens forskrifter.</p>
-</div>
-<div class="paragraph">
-<div class="title">fullstendighet</div>
-<p>uttrykk for i hvilken grad spesifiserte deler av et produkt finnes i det aktuelle datasettet <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Fullstendighet karakteriseres ved kvalitetsmålene manglende objekter, overskytende objekter (ønsket om fullstendige geodatabaser innebærer også at det er galt dersom det finnes objekter i databasene som ikke skal være der i henhold til spesifikasjonene) og manglende egenskaper.
-Fullstendighet kan angis i prosent i relasjon til spesifiserte krav.
-Informasjon om fullstendighet må være datert.</p>
-</div>
-<div class="paragraph">
-<div class="title">geodata</div>
-<p>stedfestet informasjon <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Geodata består av objektidentifikasjon og informasjon om stedfesting og egenskaper. Stedfestingsdataene på sin side kan omfatte både posisjonsdata og geometriske beskrivelsesdata.</p>
-</div>
-<div class="paragraph">
-<div class="title">kart</div>
-<p>generalisert avbildning av geografiske objekter med deres romlige relasjoner; med angitt geodetisk datum, projeksjon og koordinatsystem, samt målestokk dersom avbildningen er analog <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">kartdata</div>
-<p>geodata tilrettelagt for presentasjon av kart <a href="#PABG">[PABG]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">kontinuerlig ajourhold</div>
-<p>fortløpende ajourføring basert på rapportering fra forvaltningsrutiner, daglige arbeidsrutiner og samarbeidsparter <a href="#PABG">[PABG]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Kalles også administrativt vedlikehold. Data som samles inn administrativt, kan være digitale stikningsdata eller data fra sluttkontroll av beliggenhet, koordinatfestede grensemerker, markmålte bygninger, senterpunkt bygning, situasjonsplan og melding om landbruksbygg.</p>
-</div>
-<div class="paragraph">
-<div class="title">kvalitet</div>
-<p>i hvilken grad en samling av iboende egenskaper oppfyller krav <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: I standarden Geodatakvalitet for en nærmere beskrivelse av datakvalitet.</p>
-</div>
-<div class="paragraph">
-<div class="title">logisk konsistens</div>
-<p>hvor godt regler som finnes i spesifikasjonene, er oppfylt <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Logisk konsistens betegner sammenhengen mellom produktet og reglene produktet skal oppfylle. Logisk konsistens kan altså måles uten at en kjenner noen "fasit".</p>
-</div>
-<div class="paragraph">
-<p><em>EKSEMPEL</em>:	I SOSI er det spesifisert hvordan en flate skal representeres i en SOSI-fil. Samme regel gjelder for FKB. I SOSI er det også beskrevet hvilke egenskaper for eksempel en vegkant skal ha. De samme egenskaper, eller et utvalg av disse, skal vegkant ha i FKB.</p>
-</div>
-<div class="paragraph">
-<div class="title">metadata</div>
-<p>informasjon som beskriver et datasett <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Hvilke opplysninger som inngår i metadataene, kan variere avhengig av datasettets karakter. Vanlige opplysninger er innhold, kvalitet, tilstand, struktur, format, produsent og vedlikeholdsansvar.</p>
-</div>
-<div class="paragraph">
-<div class="title">nøyaktighet</div>
-<p>mål for en estimert verdis nærhet til sin sanne verdi eller til det man antar er den sanne verdi <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: I standarden Geodatakvalitet er de ulike nøyaktighetsmålene beskrevet.</p>
-</div>
-<div class="paragraph">
-<div class="title">objekt</div>
-<p>forekomst (instans) av en objekttype <a href="#SOSI">[SOSI]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">objektkatalog</div>
-<p>definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet <a href="#SOSI">[SOSI]</a></p>
-</div>
-<div class="paragraph">
-<p><em>EKSEMPEL</em>: SOSI-Objektkatalog</p>
-</div>
-<div class="paragraph">
-<div class="title">objekttype</div>
-<p>geografisk objekttype er en klasse av objekter med felles egenskaper, forholdet mot andre objekttyper og funksjoner <a href="#SOSI">[SOSI]</a></p>
-</div>
-<div class="paragraph">
-<p><em>EKSEMPEL</em>: Eksempler på objekttyper er Takkant, Arealbruksgrense og Mønelinje.</p>
-</div>
-<div class="paragraph">
-<div class="title">områdetype</div>
-<p>arealinndeling basert på krav til detaljering/nøyaktighet av basis geodata i området <a href="#FKB">[FKB]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: I FKB brukes områdetypen til å si noe om hvilken FKB-standard som bør velges i området (se punkt 5.2). Områdetype brukes også som styrende for krav i standardene "Plassering og beliggenhetskontroll" og "Stedfesting av matrikkelenhets- og råderettsgrenser".</p>
-</div>
-<div class="paragraph">
-<div class="title">oppgradering</div>
-<p>forbedring av den datatekniske kvaliteten av eksisterende data <a href="#PABG">[PABG]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">periodisk ajourhold</div>
-<p>ajourføring som utføres systematisk med jevne mellomrom <a href="#PABG">[PABG]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Ved periodisk ajourføring blir eksisterende data, enten de har vært gjennom kontinuerlig ajourføring eller ei, kontrollert og evt. forbedret, og manglende objekter blir supplert. Objekter som ikke er endret, blir ikke kartlagt på nytt. Etter periodisk ajourføring skal datasettene minimum tilfredsstille kvalitetskravene for den valgte FKB-standard i området. Det kan være nødvendig også med en oppgradering for å oppfylle kvalitetskravene. Periodisk ajourføring gjøres vanligvis ved fotogrammetri.</p>
-</div>
-<div class="paragraph">
-<div class="title">presentasjonsdata</div>
-<p>tilleggsdata til FKB som er nødvendige for å formidle en god presentasjon uten at de opprinnelige datasettene blir berørt <a href="#FKB">[FKB]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Presentasjonsdata lages for presentasjoner i ulike målestokker. Det genereres presentasjonsdata for å ha mulighet til blant annet å redigere, avblende/slette, skrive om eller flytte tekster og symboler i kartbildet, uten at datasettene blir berørt.</p>
-</div>
-<div class="paragraph">
-<p><em>EKSEMPEL</em>:	Eksempler på presentasjonsdata er tekstdata generert fra datasett der tekst, tall eller symboler er ferdig plassert i kartbildet. En annen type presentasjonsdata er avblendingspolygoner som brukes til å fjerne unødig mye data i et aktuelt kartbilde.</p>
-</div>
-<div class="paragraph">
-<div class="title">primærdatasett</div>
-<p>et definert geodatasett som består av de mest detaljerte og nøyaktige data innen et definert område, har en viss utbredelse og jevnlig blir produsert og/eller ajourholdt <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: Primærdatasett skal være presentasjons- og produktuavhengige. De skal kunne danne utgangspunkt for forskjellig bruk og forskjellige produkter. Det er derfor krav om en viss utbredelse og produksjon før en kan kalle et datasett for primærdatasett. Primærdatasett er i prinsippet uavhengige datasett (ikke avledet fra andre datasett) og ajourholdes uavhengig av andre datasett. Et objekt tilhører bare ett primærdatasett. Primærdatasett kodes og struktureres i henhold til SOSI Del 2, men kan være gitt strengere eller svakere krav til hva som er standard og hva som er valgfritt (opsjon) i datasettet.</p>
-</div>
-<div class="paragraph">
-<div class="title">produktspesifikasjon</div>
-<p>detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart) <a href="#SOSI">[SOSI]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: En dataproduktspesifikasjon kan lages for produksjon, salg, sluttbrukervirksomhet eller annet.</p>
-</div>
-<div class="paragraph">
-<div class="title">standardavvik</div>
-<p>statistisk størrelse som angir spredningen for en gruppe måle- eller beregningsverdier i forhold til deres sanne eller estimerte verdier <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<div class="title">topologi</div>
-<p>beskrivelse av sammenhengen mellom geografiske objekter <a href="#G">[G]</a></p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: De aktuelle objektene har ofte en fysisk sammenheng. Topologi er de av objektenes egenskaper som overlever det som er kalt kontinuerlige transformasjoner (også kalt gummiduk-transformasjoner). Alle tallverdier (lengder, arealer og retninger) kan bli forandret, mens for eksempel naboskapsforhold vil være uendret.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueforkortelser"><a class="anchor" href="#trueforkortelser"></a>2.2. Forkortelser</h3>
-<div class="sect3">
-<h4 id="truenormative-referanser"><a class="anchor" href="#truenormative-referanser"></a>2.2.1. Normative referanser</h4>
-<div id="FKB" class="paragraph">
-<p><strong>[FKB]</strong> : SOSI abstrakte spesifikasjoner – FKB generell del 5.0</p>
-</div>
-<div id="PBL-KART" class="paragraph">
-<p><strong>[PBL-KART]</strong> : <a href="https://www.regjeringen.no/no/dokumenter/veiledning-til-forskrift-om-kart-stedfestet-informasjon-arealformal-og-digitalt-planregister/">Veiledning til forskrift om kart, stedfestet informasjon, arealformål og digitalt planregister</a></p>
-</div>
-<div id="G" class="paragraph">
-<p><strong>[G]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/geodatakvalitet-1.0-standarder-geografisk-informasjon.pdf">Geodatakvalitet</a></p>
-</div>
-<div id="SOSI" class="paragraph">
-<p><strong>[SOSI]</strong> : <a href="https://www.kartverket.no/geodataarbeid/standardisering/sosi-standarder2/sosi-del-1-generell-del">SOSI (Samordnet Opplegg for Stedfestet Informasjon)</a></p>
-</div>
-<div id="PABG" class="paragraph">
-<p><strong>[PABG]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/produksjon-av-basis-geodata-1.0-standarder-geografisk-informasjon.pdf">Produksjon av basis geodata</a></p>
-</div>
-<div id="GEO-VEIL" class="paragraph">
-<p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueandre-forkortelser"><a class="anchor" href="#trueandre-forkortelser"></a>2.2.2. Andre forkortelser</h4>
-<div class="paragraph">
-<p><strong>AR5</strong>: Arealressurskart i målestokk 1:5000</p>
-</div>
-<div class="paragraph">
-<p><strong>ekom</strong>: Elektronisk kommunikasjon</p>
-</div>
-<div class="paragraph">
-<p><strong>DTM</strong>: Digital TerrengModell.</p>
-</div>
-<div class="paragraph">
-<p><strong>Georef</strong>: Metadataregister for Geovekst-data.</p>
-</div>
-<div class="paragraph">
-<p><strong>Geovekst</strong>: Geodatasamarbeid mellom de nasjonale partene KS (kommunesektorens organisasjon, omfatter både kommuner og fylkeskommuner), Energi Norge, Kartverket, Telenor, Statens vegvesen, Landbruksdepartementet og Norges vassdrags- og energidirektorat. Lokalt kan Geovekst-samarbeidet også ha andre parter.</p>
-</div>
-<div class="paragraph">
-<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
-</div>
-<div class="paragraph">
-<p><strong>NVDB</strong>: Nasjonal vegdatabank med vegnett og tilhørende informasjon.</p>
-</div>
-<div class="paragraph">
-<p><strong>PBL</strong>: Plan- og bygningsloven.</p>
-</div>
-<div class="paragraph">
-<p><strong>UML</strong>: Unified Modelling Language. Modelleringsspråk som (blant annet) brukes til å beskrive geografiske informasjonsmodeller.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truegenerelt-om-spesifikasjonen"><a class="anchor" href="#truegenerelt-om-spesifikasjonen"></a>3. Generelt om spesifikasjonen</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueunik-identifisering"><a class="anchor" href="#trueunik-identifisering"></a>3.1. Unik identifisering</h3>
-<div class="sect3">
-<h4 id="truekortnavn"><a class="anchor" href="#truekortnavn"></a>3.1.1. Kortnavn</h4>
-<div class="paragraph">
-<p>FKB-Ledning</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truefullstendig-navn"><a class="anchor" href="#truefullstendig-navn"></a>3.1.2. Fullstendig navn</h4>
-<div class="paragraph">
-<p>FKB-Ledning</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueversjon"><a class="anchor" href="#trueversjon"></a>3.1.3. Versjon</h4>
-<div class="paragraph">
-<p>5.0</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truereferansedato"><a class="anchor" href="#truereferansedato"></a>3.2. Referansedato</h3>
-<div class="paragraph">
-<p>2022-01-01</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueansvarlig-organisasjon"><a class="anchor" href="#trueansvarlig-organisasjon"></a>3.3. Ansvarlig organisasjon</h3>
-<div class="paragraph">
-<p>Geovekst</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truespråk"><a class="anchor" href="#truespråk"></a>3.4. Språk</h3>
-<div class="paragraph">
-<p>Norsk</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truehovedtema"><a class="anchor" href="#truehovedtema"></a>3.5. Hovedtema</h3>
-<div class="paragraph">
-<p>Basisdata</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetemakategori"><a class="anchor" href="#truetemakategori"></a>3.6. Temakategori</h3>
-<div class="paragraph">
-<p>Basisdata</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truesammendrag"><a class="anchor" href="#truesammendrag"></a>3.7. Sammendrag</h3>
-<div class="paragraph">
-<p>Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueformål"><a class="anchor" href="#trueformål"></a>3.8. Formål</h3>
-<div class="paragraph">
-<p>Datasettet skal sammen med øvrige datasett skape et godt og detaljert kartbilde. Hovedformålet med datasettet er å kunne kjenne seg igjen ute i terrenget.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truerepresentasjonsform"><a class="anchor" href="#truerepresentasjonsform"></a>3.9. Representasjonsform</h3>
-<div class="paragraph">
-<p>Vektor</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truedatasettoppløsning"><a class="anchor" href="#truedatasettoppløsning"></a>3.10. Datasettoppløsning</h3>
-<div class="paragraph">
-<p>FKB er detaljerte data stort sett registrert fotogrammetrisk fra flybilder med en oppløsing mellom 7 og 25 cm. Nøyaktigheten varierer fra +/- 0.10 m til +/- 2 m avhengig av objekttype, områdetype og datafangstmetode. FKB-data egner seg for presentasjon i målestokker fra ca 1:100 til ca 1:20000</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueutstrekningsinformasjon"><a class="anchor" href="#trueutstrekningsinformasjon"></a>3.11. Utstrekningsinformasjon</h3>
-<div class="paragraph">
-<p><strong>Utstrekningbeskrivelse</strong>: FKB-data dekker Norges fastlandsterritorium.</p>
-</div>
-<div class="paragraph">
-<p><strong>Geografisk område</strong>: Norge</p>
-</div>
-<div class="paragraph">
-<p><strong>Vertikal utbredelse</strong>: Fra ca -5 m til ca 2500 m</p>
-</div>
-<div class="paragraph">
-<p><strong>Innhold gyldighetsperiode</strong>: Data ikke angitt</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueidentifikasjonsomfang"><a class="anchor" href="#trueidentifikasjonsomfang"></a>3.12. Identifikasjonsomfang</h3>
-<div class="paragraph">
-<p>Hele datasettet</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truesupplerende-beskrivelse"><a class="anchor" href="#truesupplerende-beskrivelse"></a>3.13. Supplerende beskrivelse</h3>
-<div class="paragraph">
-<p>Data ikke angitt</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truespesifikasjonsomfang"><a class="anchor" href="#truespesifikasjonsomfang"></a>4. Spesifikasjonsomfang</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>(Antall spesifikasjonsomfang: 1)</p>
-</div>
-<div class="sect2">
-<h3 id="truespesifikasjonsomfang-for-hele-spesifikasjonen"><a class="anchor" href="#truespesifikasjonsomfang-for-hele-spesifikasjonen"></a>4.1. Spesifikasjonsomfang for hele spesifikasjonen</h3>
-<div class="sect3">
-<h4 id="trueidentifikasjon"><a class="anchor" href="#trueidentifikasjon"></a>4.1.1. Identifikasjon</h4>
-<div class="paragraph">
-<p>Hele datasettet</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truenivå"><a class="anchor" href="#truenivå"></a>4.1.2. Nivå</h4>
-<div class="paragraph">
-<p>Datasett</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truenavn"><a class="anchor" href="#truenavn"></a>4.1.3. Navn</h4>
-<div class="paragraph">
-<p>FKB-Ledning</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truebeskrivelse"><a class="anchor" href="#truebeskrivelse"></a>4.1.4. Beskrivelse</h4>
-<div class="paragraph">
-<p>Detaljeringen av FKB er delt inn i 4 nøyaktighetsklasser; FKB-A, FKB-B, FKB-C og FKB-D, men er i denne spesifikasjonen beskrevet som et homogent produkt med ett omfang.</p>
-</div>
-<div class="paragraph">
-<p>Se FKB Generell del <a href="#FKB">[FKB]</a> for en nærmere beskrivelse av inndeling av FKB i FKB-A til D.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueutstrekningsinformasjon-2"><a class="anchor" href="#trueutstrekningsinformasjon-2"></a>4.1.5. Utstrekningsinformasjon</h4>
-<div class="paragraph">
-<p><strong>Utstrekningbeskrivelse</strong><br>
-FKB-data dekker Norges fastlandsterritorium</p>
-</div>
-<div class="paragraph">
-<p><strong>Geografisk område</strong><br>
-Nord: 72°<br>
-Sør: 57°<br>
-Øst: 32°<br>
-Vest: 4°</p>
-</div>
-<div class="paragraph">
-<p><strong>Vertikal utbredelse</strong><br>
-Fra ca -5 m til ca 2500 m</p>
-</div>
-<div class="paragraph">
-<p><strong>Innhold gyldighetsperiode</strong><br>
-Ikke angitt</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueinnhold-og-struktur"><a class="anchor" href="#trueinnhold-og-struktur"></a>5. Innhold og struktur</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueapplicationschema-fkb-ledning-5-0-utkast"><a class="anchor" href="#trueapplicationschema-fkb-ledning-5-0-utkast"></a>5.1. «ApplicationSchema» FKB-Ledning-5.0-Utkast</h3>
+<h3 id="trueapplicationschema-fkb-ledning-5-0-utkast"><a class="anchor" href="#trueapplicationschema-fkb-ledning-5-0-utkast"></a>«ApplicationSchema» FKB-Ledning-5.0-Utkast</h3>
 <div class="paragraph">
 <p>Definisjon: Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avl&#248;psanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkeniv&#229;) som inng&#229;r i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.</p>
 </div>
@@ -1300,20 +516,20 @@ Ikke angitt</p>
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="figurer/Hoveddiagram%20FKB-Ledning%205.0.png" alt="Hoveddiagram FKB-Ledning 5.0">
+<a class="image" href="figurer/Hoveddiagram FKB-Ledning 5.0.png" target="_blank" rel="noopener"><img src="figurer/Hoveddiagram%20FKB-Ledning%205.0.png" alt="Hoveddiagram FKB Ledning 5.0"></a>
 </div>
 <div class="title">Figur 1: Hoveddiagram FKB-Ledning 5.0</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer/Pakkerealisering FKB-Ledning 5.0.png"><img src="figurer/Pakkerealisering%20FKB-Ledning%205.0.png" alt="Pakkerealisering FKB Ledning 5.0"></a>
+<a class="image" href="figurer/Pakkerealisering FKB-Ledning 5.0.png" target="_blank" rel="noopener"><img src="figurer/Pakkerealisering%20FKB-Ledning%205.0.png" alt="Pakkerealisering FKB Ledning 5.0"></a>
 </div>
 <div class="title">Figur 2: Pakkerealisering FKB-Ledning 5.0</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepakke-objekttyper-abstrakte"><a class="anchor" href="#truepakke-objekttyper-abstrakte"></a>5.2. Pakke: Objekttyper - abstrakte</h3>
+<h3 id="truepakke-objekttyper-abstrakte"><a class="anchor" href="#truepakke-objekttyper-abstrakte"></a>Pakke: Objekttyper - abstrakte</h3>
 <div class="paragraph">
 <p>Definisjon: Ikke realiserbare objekttyper. Objekttypene benyttes kun som konteinerobjekter for egenskaper som benyttes av et eller flere subtyper.</p>
 </div>
@@ -1330,7 +546,7 @@ Ikke angitt</p>
 <div class="title">Figur 4: Realiseringer objekttyper - abstrakte</div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-kopling_kurve"><a class="anchor" href="#truefeaturetype-kopling_kurve"></a>5.2.1. «FeatureType» Kopling_kurve</h4>
+<h4 id="truefeaturetype-kopling_kurve"><a class="anchor" href="#truefeaturetype-kopling_kurve"></a>«FeatureType» Kopling_kurve</h4>
 <div class="paragraph">
 <p>Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnettverk</p>
 </div>
@@ -1388,7 +604,7 @@ Ikke angitt</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-kopling_punkt"><a class="anchor" href="#truefeaturetype-kopling_punkt"></a>5.2.2. «FeatureType» Kopling_punkt</h4>
+<h4 id="truefeaturetype-kopling_punkt"><a class="anchor" href="#truefeaturetype-kopling_punkt"></a>«FeatureType» Kopling_punkt</h4>
 <div class="paragraph">
 <p>Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnettverk</p>
 </div>
@@ -1452,7 +668,7 @@ Ikke angitt</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-ledning"><a class="anchor" href="#truefeaturetype-ledning"></a>5.2.3. «FeatureType» Ledning</h4>
+<h4 id="truefeaturetype-ledning"><a class="anchor" href="#truefeaturetype-ledning"></a>«FeatureType» Ledning</h4>
 <div class="paragraph">
 <p>Definisjon: generell betegnelse for langsgående objekt i et ledningsnettverk</p>
 </div>
@@ -1512,7 +728,7 @@ Ikke angitt</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-lidarmetadata"><a class="anchor" href="#truefeaturetype-lidarmetadata"></a>5.2.4. «FeatureType» LidarMetadata</h4>
+<h4 id="truefeaturetype-lidarmetadata"><a class="anchor" href="#truefeaturetype-lidarmetadata"></a>«FeatureType» LidarMetadata</h4>
 <div class="paragraph">
 <p>Definisjon: informasjon om punkskyen som ligger til grunn for klassifisering og vektorisering</p>
 </div>
@@ -1623,7 +839,7 @@ SOSI_navn: ANTALL_LASERPUNKT<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-nettverkskomponent"><a class="anchor" href="#truefeaturetype-nettverkskomponent"></a>5.2.5. «FeatureType» Nettverkskomponent</h4>
+<h4 id="truefeaturetype-nettverkskomponent"><a class="anchor" href="#truefeaturetype-nettverkskomponent"></a>«FeatureType» Nettverkskomponent</h4>
 <div class="paragraph">
 <p>Definisjon: konteiner objekt med fellesegenskaper for alle ledningsobjekter</p>
 </div>
@@ -1783,7 +999,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE<br></p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepakke-objekttyper-instansierbare"><a class="anchor" href="#truepakke-objekttyper-instansierbare"></a>5.3. Pakke: Objekttyper - instansierbare</h3>
+<h3 id="truepakke-objekttyper-instansierbare"><a class="anchor" href="#truepakke-objekttyper-instansierbare"></a>Pakke: Objekttyper - instansierbare</h3>
 <div class="paragraph">
 <p>Definisjon: Instansierbare objekttyper. Objekttypene kan benyttes som objekttyper i forbindelse med datautveksling. Objekttypene arver gjerne en eller flere egenskaper fra ett eller flere abstrakte supertyper, men kan ogs&#229; inneholde egenskaper som kun er relevante for den aktuelle objekttypen.</p>
 </div>
@@ -1866,7 +1082,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE<br></p></td>
 <div class="title">Figur 17: Åk - alle egenskaper og realisering</div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-flymarkør"><a class="anchor" href="#truefeaturetype-flymarkør"></a>5.3.1. «FeatureType» Flymarkør</h4>
+<h4 id="truefeaturetype-flymarkør"><a class="anchor" href="#truefeaturetype-flymarkør"></a>«FeatureType» Flymarkør</h4>
 <div class="paragraph">
 <p>Definisjon: markering av store luftspenn over daler og fjorder</p>
 </div>
@@ -1881,7 +1097,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-jordingsledning"><a class="anchor" href="#truefeaturetype-jordingsledning"></a>5.3.2. «FeatureType» Jordingsledning</h4>
+<h4 id="truefeaturetype-jordingsledning"><a class="anchor" href="#truefeaturetype-jordingsledning"></a>«FeatureType» Jordingsledning</h4>
 <div class="paragraph">
 <p>Definisjon: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende</p>
 </div>
@@ -1893,7 +1109,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-kanal"><a class="anchor" href="#truefeaturetype-kanal"></a>5.3.3. «FeatureType» Kanal</h4>
+<h4 id="truefeaturetype-kanal"><a class="anchor" href="#truefeaturetype-kanal"></a>«FeatureType» Kanal</h4>
 <div class="paragraph">
 <p>Definisjon: brukes som fremf&#248;ringsvei for ledning</p>
 </div>
@@ -1911,7 +1127,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-kumlokk"><a class="anchor" href="#truefeaturetype-kumlokk"></a>5.3.4. «FeatureType» Kumlokk</h4>
+<h4 id="truefeaturetype-kumlokk"><a class="anchor" href="#truefeaturetype-kumlokk"></a>«FeatureType» Kumlokk</h4>
 <div class="paragraph">
 <p>Definisjon: et deksel over en kum eller annet hulrom under bakkeniv&#229;</p>
 </div>
@@ -1963,7 +1179,7 @@ SOSI_navn: KUMLOKKFORM<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-luftlinje"><a class="anchor" href="#truefeaturetype-luftlinje"></a>5.3.5. «FeatureType» Luftlinje</h4>
+<h4 id="truefeaturetype-luftlinje"><a class="anchor" href="#truefeaturetype-luftlinje"></a>«FeatureType» Luftlinje</h4>
 <div class="paragraph">
 <p>Definisjon: en enkelt vaier/kabel mellom to faste forankringspunkt</p>
 </div>
@@ -2009,7 +1225,7 @@ SOSI_navn: FASE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-lysarmatur"><a class="anchor" href="#truefeaturetype-lysarmatur"></a>5.3.6. «FeatureType» Lysarmatur</h4>
+<h4 id="truefeaturetype-lysarmatur"><a class="anchor" href="#truefeaturetype-lysarmatur"></a>«FeatureType» Lysarmatur</h4>
 <div class="paragraph">
 <p>Definisjon: selve det elektriske punktet som gir lys</p>
 </div>
@@ -2086,7 +1302,7 @@ SOSI_navn: BELYSNINGSPLASSERING<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-mast"><a class="anchor" href="#truefeaturetype-mast"></a>5.3.7. «FeatureType» Mast</h4>
+<h4 id="truefeaturetype-mast"><a class="anchor" href="#truefeaturetype-mast"></a>«FeatureType» Mast</h4>
 <div class="paragraph">
 <p>Definisjon: alle konstruksjoner laget for &#229; holde ledningsnett/komponent oppe fra bakken. Dette betyr at det ogs&#229; inkluderer det som i noen sammenhenger kalles Stolpe</p>
 </div>
@@ -2312,7 +1528,7 @@ SOSI_navn: VERTIKALAVSTAND<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-masteomriss"><a class="anchor" href="#truefeaturetype-masteomriss"></a>5.3.8. «FeatureType» Masteomriss</h4>
+<h4 id="truefeaturetype-masteomriss"><a class="anchor" href="#truefeaturetype-masteomriss"></a>«FeatureType» Masteomriss</h4>
 <div class="paragraph">
 <p>Definisjon: ytre avgrensning av mastens fotavtrykk p&#229; bakken</p>
 </div>
@@ -2371,7 +1587,7 @@ SOSI_navn: MASTEKONSTRUKSJON<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-nettverkstasjon"><a class="anchor" href="#truefeaturetype-nettverkstasjon"></a>5.3.9. «FeatureType» Nettverkstasjon</h4>
+<h4 id="truefeaturetype-nettverkstasjon"><a class="anchor" href="#truefeaturetype-nettverkstasjon"></a>«FeatureType» Nettverkstasjon</h4>
 <div class="paragraph">
 <p>Definisjon: et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.</p>
 </div>
@@ -2450,7 +1666,7 @@ SOSI_navn: STASJONSPLASSERING<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-nettverkstasjonomriss"><a class="anchor" href="#truefeaturetype-nettverkstasjonomriss"></a>5.3.10. «FeatureType» Nettverkstasjonomriss</h4>
+<h4 id="truefeaturetype-nettverkstasjonomriss"><a class="anchor" href="#truefeaturetype-nettverkstasjonomriss"></a>«FeatureType» Nettverkstasjonomriss</h4>
 <div class="paragraph">
 <p>Definisjon: ytre avgrensning av nettverkstasjonen, i grunnriss</p>
 </div>
@@ -2462,7 +1678,7 @@ SOSI_navn: STASJONSPLASSERING<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-skap"><a class="anchor" href="#truefeaturetype-skap"></a>5.3.11. «FeatureType» Skap</h4>
+<h4 id="truefeaturetype-skap"><a class="anchor" href="#truefeaturetype-skap"></a>«FeatureType» Skap</h4>
 <div class="paragraph">
 <p>Definisjon: beskyttelseskasse plassert vanligvis p&#229; bakken, som inneholder koblinger for elektrisk str&#248;m, signal eller annet</p>
 </div>
@@ -2484,7 +1700,7 @@ Kan ogs&#229; v&#230;re p&#229; st&#248;rrelse med kiosk.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-trase"><a class="anchor" href="#truefeaturetype-trase"></a>5.3.12. «FeatureType» Trase</h4>
+<h4 id="truefeaturetype-trase"><a class="anchor" href="#truefeaturetype-trase"></a>«FeatureType» Trase</h4>
 <div class="paragraph">
 <p>Definisjon: den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)</p>
 </div>
@@ -2537,7 +1753,7 @@ SOSI_navn: TRASENAVN<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-vindturbin"><a class="anchor" href="#truefeaturetype-vindturbin"></a>5.3.13. «FeatureType» Vindturbin</h4>
+<h4 id="truefeaturetype-vindturbin"><a class="anchor" href="#truefeaturetype-vindturbin"></a>«FeatureType» Vindturbin</h4>
 <div class="paragraph">
 <p>Definisjon: en kontainer som betegner en hel "vindm&#248;lle". En vindturbin har en generator</p>
 </div>
@@ -2662,7 +1878,7 @@ SOSI_navn: NAVHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-vindturbinomriss"><a class="anchor" href="#truefeaturetype-vindturbinomriss"></a>5.3.14. «FeatureType» Vindturbinomriss</h4>
+<h4 id="truefeaturetype-vindturbinomriss"><a class="anchor" href="#truefeaturetype-vindturbinomriss"></a>«FeatureType» Vindturbinomriss</h4>
 <div class="paragraph">
 <p>Definisjon: ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken</p>
 </div>
@@ -2674,7 +1890,7 @@ SOSI_navn: NAVHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-åk"><a class="anchor" href="#truefeaturetype-åk"></a>5.3.15. «FeatureType» Åk</h4>
+<h4 id="truefeaturetype-åk"><a class="anchor" href="#truefeaturetype-åk"></a>«FeatureType» Åk</h4>
 <div class="paragraph">
 <p>Definisjon: en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av en veg eller bane</p>
 </div>
@@ -2697,7 +1913,7 @@ SOSI_navn: NAVHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepakke-datatyper"><a class="anchor" href="#truepakke-datatyper"></a>5.4. Pakke: Datatyper</h3>
+<h3 id="truepakke-datatyper"><a class="anchor" href="#truepakke-datatyper"></a>Pakke: Datatyper</h3>
 <div class="paragraph">
 <p>Definisjon: Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.</p>
 </div>
@@ -2708,7 +1924,7 @@ SOSI_navn: NAVHØYDE<br></p></td>
 <div class="title">Figur 28: Fagspesifikke datatyper FKB-Ledning</div>
 </div>
 <div class="sect3">
-<h4 id="truedatatype-vertikalavstandledning"><a class="anchor" href="#truedatatype-vertikalavstandledning"></a>5.4.1. «dataType» VertikalAvstandLedning</h4>
+<h4 id="truedatatype-vertikalavstandledning"><a class="anchor" href="#truedatatype-vertikalavstandledning"></a>«dataType» VertikalAvstandLedning</h4>
 <div class="paragraph">
 <p>Definisjon: ledningens h&#248;yde over/til terreng, vann eller sj&#248;</p>
 </div>
@@ -2798,7 +2014,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepakke-kodelister"><a class="anchor" href="#truepakke-kodelister"></a>5.5. Pakke: Kodelister</h3>
+<h3 id="truepakke-kodelister"><a class="anchor" href="#truepakke-kodelister"></a>Pakke: Kodelister</h3>
 <div class="paragraph">
 <p>Definisjon: Alle Kodelister som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.</p>
 </div>
@@ -2818,7 +2034,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 <div class="title">Figur 30: Realiseringer kodelister</div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-fase"><a class="anchor" href="#truecodelist-fase"></a>5.5.1. «CodeList» Fase</h4>
+<h4 id="truecodelist-fase"><a class="anchor" href="#truecodelist-fase"></a>«CodeList» Fase</h4>
 <div class="paragraph">
 <p>Definisjon: angivelse av intern plassering i grunnris for aktuell faseline</p>
 </div>
@@ -2891,7 +2107,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-kumlokkform"><a class="anchor" href="#truecodelist-kumlokkform"></a>5.5.2. «CodeList» Kumlokkform</h4>
+<h4 id="truecodelist-kumlokkform"><a class="anchor" href="#truecodelist-kumlokkform"></a>«CodeList» Kumlokkform</h4>
 <div class="paragraph">
 <p>Definisjon: kodeliste som inneholder hvilke geometrisk utforminger et kumlokk kan ha</p>
 </div>
@@ -2979,7 +2195,7 @@ SOSI_navn: VERTIKALHØYDE<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-ledningsnettverkstype"><a class="anchor" href="#truecodelist-ledningsnettverkstype"></a>5.5.3. «CodeList» Ledningsnettverkstype</h4>
+<h4 id="truecodelist-ledningsnettverkstype"><a class="anchor" href="#truecodelist-ledningsnettverkstype"></a>«CodeList» Ledningsnettverkstype</h4>
 <div class="paragraph">
 <p>Definisjon: oversikt over nettverkstyper, satt sammen av nettverkskomponenter, med en bestemt hensikt</p>
 </div>
@@ -3081,7 +2297,7 @@ Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til an
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-mastekonstruksjon"><a class="anchor" href="#truecodelist-mastekonstruksjon"></a>5.5.4. «CodeList» Mastekonstruksjon</h4>
+<h4 id="truecodelist-mastekonstruksjon"><a class="anchor" href="#truecodelist-mastekonstruksjon"></a>«CodeList» Mastekonstruksjon</h4>
 <div class="paragraph">
 <p>Definisjon: hvordan masta er konstruert</p>
 </div>
@@ -3172,7 +2388,7 @@ Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til an
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-punktplassering"><a class="anchor" href="#truecodelist-punktplassering"></a>5.5.5. «CodeList» Punktplassering</h4>
+<h4 id="truecodelist-punktplassering"><a class="anchor" href="#truecodelist-punktplassering"></a>«CodeList» Punktplassering</h4>
 <div class="paragraph">
 <p>Definisjon: tekstlig beskrivelse av hvor et punkt er plassert</p>
 </div>
@@ -3271,7 +2487,7 @@ NG</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-stasjonsplassering"><a class="anchor" href="#truecodelist-stasjonsplassering"></a>5.5.6. «CodeList» Stasjonsplassering</h4>
+<h4 id="truecodelist-stasjonsplassering"><a class="anchor" href="#truecodelist-stasjonsplassering"></a>«CodeList» Stasjonsplassering</h4>
 <div class="paragraph">
 <p>Definisjon: kodeliste som angir hvor nettverksstasjonen er plassert</p>
 </div>
@@ -3360,7 +2576,7 @@ NG</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>5.6. Pakke: Generelle elementer</h3>
+<h3 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>Pakke: Generelle elementer</h3>
 <div class="paragraph">
 <p>Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0</p>
 </div>
@@ -3387,7 +2603,7 @@ Kopieres direkte inn i de enkelte FKB-datasettene</p>
 <div class="title">Figur 33: Posisjonskvalitet</div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-fellesegenskaper"><a class="anchor" href="#truefeaturetype-fellesegenskaper"></a>5.6.1. «FeatureType» Fellesegenskaper</h4>
+<h4 id="truefeaturetype-fellesegenskaper"><a class="anchor" href="#truefeaturetype-fellesegenskaper"></a>«FeatureType» Fellesegenskaper</h4>
 <div class="paragraph">
 <p>Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
 </div>
@@ -3668,7 +2884,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-kvalitetpåkrevd"><a class="anchor" href="#truefeaturetype-kvalitetpåkrevd"></a>5.6.2. «FeatureType» KvalitetPåkrevd</h4>
+<h4 id="truefeaturetype-kvalitetpåkrevd"><a class="anchor" href="#truefeaturetype-kvalitetpåkrevd"></a>«FeatureType» KvalitetPåkrevd</h4>
 <div class="paragraph">
 <p>Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse</p>
 </div>
@@ -3724,7 +2940,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truedatatype-identifikasjon"><a class="anchor" href="#truedatatype-identifikasjon"></a>5.6.3. «dataType» Identifikasjon</h4>
+<h4 id="truedatatype-identifikasjon"><a class="anchor" href="#truedatatype-identifikasjon"></a>«dataType» Identifikasjon</h4>
 <div class="paragraph">
 <p>Definisjon: unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet</p>
 </div>
@@ -3850,7 +3066,7 @@ SOSI_navn: VERSJONID<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truedatatype-posisjonskvalitet"><a class="anchor" href="#truedatatype-posisjonskvalitet"></a>5.6.4. «dataType» Posisjonskvalitet</h4>
+<h4 id="truedatatype-posisjonskvalitet"><a class="anchor" href="#truedatatype-posisjonskvalitet"></a>«dataType» Posisjonskvalitet</h4>
 <div class="paragraph">
 <p>Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.</p>
 </div>
@@ -4039,7 +3255,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-synbarhet"><a class="anchor" href="#truecodelist-synbarhet"></a>5.6.5. «CodeList» Synbarhet</h4>
+<h4 id="truecodelist-synbarhet"><a class="anchor" href="#truecodelist-synbarhet"></a>«CodeList» Synbarhet</h4>
 <div class="paragraph">
 <p>Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
@@ -4122,7 +3338,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-datafangstmetode"><a class="anchor" href="#truecodelist-datafangstmetode"></a>5.6.6. «CodeList» Datafangstmetode</h4>
+<h4 id="truecodelist-datafangstmetode"><a class="anchor" href="#truecodelist-datafangstmetode"></a>«CodeList» Datafangstmetode</h4>
 <div class="paragraph">
 <p>Definisjon: metode for datafangst.</p>
 </div>
@@ -4228,7 +3444,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-registreringsversjon"><a class="anchor" href="#truecodelist-registreringsversjon"></a>5.6.7. «CodeList» Registreringsversjon</h4>
+<h4 id="truecodelist-registreringsversjon"><a class="anchor" href="#truecodelist-registreringsversjon"></a>«CodeList» Registreringsversjon</h4>
 <div class="paragraph">
 <p>Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
 </div>
@@ -4346,7 +3562,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-høydereferanse"><a class="anchor" href="#truecodelist-høydereferanse"></a>5.6.8. «CodeList» Høydereferanse</h4>
+<h4 id="truecodelist-høydereferanse"><a class="anchor" href="#truecodelist-høydereferanse"></a>«CodeList» Høydereferanse</h4>
 <div class="paragraph">
 <p>Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt</p>
 </div>
@@ -4424,7 +3640,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecodelist-medium"><a class="anchor" href="#truecodelist-medium"></a>5.6.9. «CodeList» Medium</h4>
+<h4 id="truecodelist-medium"><a class="anchor" href="#truecodelist-medium"></a>«CodeList» Medium</h4>
 <div class="paragraph">
 <p>Definisjon: objektets beliggenhet i forhold til jordoverflaten</p>
 </div>
@@ -4532,419 +3748,9 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="truereferansesystem"><a class="anchor" href="#truereferansesystem"></a>6. Referansesystem</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueromlig-referansesystem"><a class="anchor" href="#trueromlig-referansesystem"></a>6.1. Romlig referansesystem</h3>
-<div class="sect3">
-<h4 id="trueomfang"><a class="anchor" href="#trueomfang"></a>6.1.1. Omfang</h4>
-<div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truenavn-på-kilden-til-referansesystemet"><a class="anchor" href="#truenavn-på-kilden-til-referansesystemet"></a>6.1.2. Navn på kilden til referansesystemet</h4>
-<div class="paragraph">
-<p>SOSI / EPSG</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueansvarlig-organisasjon-for-referansesystemet"><a class="anchor" href="#trueansvarlig-organisasjon-for-referansesystemet"></a>6.1.3. Ansvarlig organisasjon for referansesystemet</h4>
-<div class="paragraph">
-<p>Kartverket / The international Association of Oil &amp; Gas Producers</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truelink-til-mer-info-om-referansesystemet"><a class="anchor" href="#truelink-til-mer-info-om-referansesystemet"></a>6.1.4. Link til mer info om referansesystemet</h4>
-<div class="paragraph">
-<p><a href="http://www.kartverket.no/SOSI" class="bare">http://www.kartverket.no/SOSI</a> / <a href="https://epsg.org/home.html" class="bare">https://epsg.org/home.html</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truekoderom"><a class="anchor" href="#truekoderom"></a>6.1.5. Koderom</h4>
-<div class="paragraph">
-<p>SOSI ReferansesystemKode (grunnriss) og Høydereferansesystem (høyde) / EPSG</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueidentifikasjonskode"><a class="anchor" href="#trueidentifikasjonskode"></a>6.1.6. Identifikasjonskode:</h4>
-<div class="paragraph">
-<p>Se <a href="#tab-referansesystem_sosi">Tabell 1</a> under <a href="#truekodeversjon">Kapittel 6.1.7</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truekodeversjon"><a class="anchor" href="#truekodeversjon"></a>6.1.7. Kodeversjon</h4>
-<div class="paragraph">
-<p>SOSI-del 1, SOSI-realisering SOSI-GML versjon 5.1 /
-EPSG Geodetic Parameter Dataset, version 10.0, oktober 2020</p>
-</div>
-<table id="tab-referansesystem_sosi" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 1. Liste over romlige referansesystem som benyttes i forvaltningen av FKB</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Referansesystem</th>
-<th class="tableblock halign-left valign-top">EPSG-kode (GML/JSON-format)</th>
-<th class="tableblock halign-left valign-top">SOSI-kode (SOSI-format)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM32 (2d)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25832</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum ikke angitt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM33 (2d)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25833</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum ikke angitt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM35 (2d)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25835</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum ikke angitt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM32 + NN2000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5972</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum NN2000</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM33 + NN2000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5973</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum NN2000</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM35 + NN2000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5975</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum NN2000</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Ved distribusjon kan dataene transformeres til en rekke andre referansesystemer</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truetemporalt-referansesystem"><a class="anchor" href="#truetemporalt-referansesystem"></a>6.2. Temporalt referansesystem</h3>
-<div class="sect3">
-<h4 id="truenavn-på-temporalt-referansesystem"><a class="anchor" href="#truenavn-på-temporalt-referansesystem"></a>6.2.1. Navn på temporalt referansesystem</h4>
-<div class="paragraph">
-<p>UTC</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueomfang-2"><a class="anchor" href="#trueomfang-2"></a>6.2.2. Omfang</h4>
-<div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truekvalitet"><a class="anchor" href="#truekvalitet"></a>7. Kvalitet</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Ledning/5.0/">fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0, kapittel 3</a>.</p>
-</div>
-<div class="paragraph">
-<p>FKB vil ofte også inneholde data fra andre datakilder, for eksempel data etablert gjennom kommunal/offentlig/ledningseiers saksbehandling, innmelding fra publikum eller digitalisert fra ortofoto.</p>
-</div>
-<div class="paragraph">
-<p>Prinsippet er at fullstendighet prioriteres foran nøyaktighet og FKB-data for et område vil derfor bestå av data med varierende grad av kvalitet. Alle data er kodet med datafangstdato og posisjonskvalitet slik at det er mulig å vurdere datakvaliteten til det enkelte dataobjekt. Det vil også være mulig å aggregere denne informasjonen som finnes på objektnivå opp til en beskrivelse av kvaliteten på datainnholdet i området som helhet. Det er imidlertid vanskelig å garantere datakvaliteten for FKB innenfor et område.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truedatafangst"><a class="anchor" href="#truedatafangst"></a>8. Datafangst</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Fotogrammetrisk datafangst er den dominerende datafangstmetoden for FKB-Ledning. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Ledning/5.0/">Fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0</a></p>
-</div>
-<div class="paragraph">
-<p>Administrativ datafangst er en sentral del av datafangsten knyttet til ledning. Ved administrativ datafangst vil det i mange tilfeller ikke være hensiktsmessig å registrere objektene på samme måte som ved fotogrammetri. I slike tilfeller er det spesielt viktig å registrere kvalitet, datafangstdato og høydereferanse så korrekt som mulig.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truedatavedlikehold"><a class="anchor" href="#truedatavedlikehold"></a>9. Datavedlikehold</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>FKB-data vedlikeholdes gjennom 3 prosesser. Det henvises til Geovekst veiledningsmateriell (kap. 10) for nærmere beskrivelse av vedlikeholdsopplegget <a href="#GEO-VEIL">[GEO-VEIL]</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="truevedlikeholdsinformasjon-kartleggingsprosjekter"><a class="anchor" href="#truevedlikeholdsinformasjon-kartleggingsprosjekter"></a>9.1. Vedlikeholdsinformasjon Kartleggingsprosjekter</h3>
-<div class="sect3">
-<h4 id="trueomfang-3"><a class="anchor" href="#trueomfang-3"></a>9.1.1. Omfang</h4>
-<div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsfrekvens"><a class="anchor" href="#truevedlikeholdsfrekvens"></a>9.1.2. Vedlikeholdsfrekvens</h4>
-<div class="paragraph">
-<p>Periodisk med en frekvens fra årlig til ca hvert 10. år avhengig av områdetype.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsbeskrivelse"><a class="anchor" href="#truevedlikeholdsbeskrivelse"></a>9.1.3. Vedlikeholdsbeskrivelse</h4>
-<div class="paragraph">
-<p>Fotogrammetrisk ajourhold skjer for Geovekst-kommuner gjennom Geovekst kartleggingsprosjekter. Kartleggingsprosjektene spesifiseres og finansieres gjennom Geovekst og settes ut på anbud fra Kartverket. Flyfotografering og selve det fotogrammetriske ajourholdet utføres av et privat firma i tråd med fotogrammetrisk registreringsinstruks. Kartverket gjør kontroll av leveranse ved mottak og legger dataene inn i FKB.</p>
-</div>
-<div class="paragraph">
-<p>Kommuner utenfor Geovekst gjør tilsvarende vedlikehold i egen regi og leverer data i henhold til Norge digitalt avtale.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truevedlikeholdsinformasjon-kontinuerlig-ajourhold"><a class="anchor" href="#truevedlikeholdsinformasjon-kontinuerlig-ajourhold"></a>9.2. Vedlikeholdsinformasjon Kontinuerlig ajourhold</h3>
-<div class="sect3">
-<h4 id="trueomfang-4"><a class="anchor" href="#trueomfang-4"></a>9.2.1. Omfang</h4>
-<div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsfrekvens-2"><a class="anchor" href="#truevedlikeholdsfrekvens-2"></a>9.2.2. Vedlikeholdsfrekvens</h4>
-<div class="paragraph">
-<p>Kontinuerlig</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsbeskrivelse-2"><a class="anchor" href="#truevedlikeholdsbeskrivelse-2"></a>9.2.3. Vedlikeholdsbeskrivelse</h4>
-<div class="paragraph">
-<p>Det er i regi av Geovekst inngått FDV-avtaler med de fleste kommuner. Her avtalefestes oppgaver og finansiering av et felles kontinuerlig ajourhold av FKB-dataene blant partene i avtalen. Endrigene oppdateres direkte inn i Sentral FKB eller oversendes til Kartverket på filformat for de som ikke har tilgang til å oppdatere direkte.</p>
-</div>
-<div class="paragraph">
-<p>Kommuner utenfor Geovekst gjør tilsvarende vedlikehold i egen regi og leverer data i henhold til Norge digitalt avtale.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truevedlikeholdsinformasjon-meldinger-om-feil-og-mangler"><a class="anchor" href="#truevedlikeholdsinformasjon-meldinger-om-feil-og-mangler"></a>9.3. Vedlikeholdsinformasjon Meldinger om feil og mangler</h3>
-<div class="sect3">
-<h4 id="trueomfang-5"><a class="anchor" href="#trueomfang-5"></a>9.3.1. Omfang</h4>
-<div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsfrekvens-3"><a class="anchor" href="#truevedlikeholdsfrekvens-3"></a>9.3.2. Vedlikeholdsfrekvens</h4>
-<div class="paragraph">
-<p>Kontinuerlig</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truevedlikeholdsbeskrivelse-3"><a class="anchor" href="#truevedlikeholdsbeskrivelse-3"></a>9.3.3. Vedlikeholdsbeskrivelse</h4>
-<div class="paragraph">
-<p>Kartverket mottar gjennom kundesenteret og tjenesten <a href="http://rettikartet.no/">Rettikartet.no</a> en del meldinger om feil og mangler i FKB fra publikum. Disse meldingene kan etter en vurdering mot andre datakilder bli lagt inn i FKB.</p>
-</div>
-<div class="paragraph">
-<p>Også andre parter i Geovekst vil kunne ta imot meldinger om feil og avvik i kartet og oppdatere FKB på bakgrunn av disse meldingene.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truepresentasjon"><a class="anchor" href="#truepresentasjon"></a>10. Presentasjon</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueomfang-6"><a class="anchor" href="#trueomfang-6"></a>10.1. Omfang</h3>
-<div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truereferanse-til-presentasjonskatalog"><a class="anchor" href="#truereferanse-til-presentasjonskatalog"></a>10.2. Referanse til presentasjonskatalog</h3>
-<div class="paragraph">
-<p>Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: <a href="https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi" class="bare">https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi</a></p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueleveranse"><a class="anchor" href="#trueleveranse"></a>11. Leveranse</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueleveransemetode"><a class="anchor" href="#trueleveransemetode"></a>11.1. Leveransemetode</h3>
-<div class="sect3">
-<h4 id="trueomfang-7"><a class="anchor" href="#trueomfang-7"></a>11.1.1. Omfang</h4>
-<div class="paragraph">
-<p>Hele datasettet/spesifikasjonen</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueleveranseformat"><a class="anchor" href="#trueleveranseformat"></a>11.1.2. Leveranseformat</h4>
-<table id="tab-leveranseformat" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 2. Liste over tilgjengelige filformater for nedlasting av FKB-data fra Geonorge.no</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Format</th>
-<th class="tableblock halign-left valign-top">Inndeling</th>
-<th class="tableblock halign-left valign-top">Koordinatsystem</th>
-<th class="tableblock halign-left valign-top">Tegnsett</th>
-<th class="tableblock halign-left valign-top">Språk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI 5.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Norsk</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GML 3.2.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Norsk</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ESRI fgdb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Norsk</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ESRI fgdb</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Landsdekkende + fylkesvise filer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Norsk</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="trueleveransemedium"><a class="anchor" href="#trueleveransemedium"></a>11.1.3. Leveransemedium</h4>
-<div class="paragraph">
-<p>Distribusjon av FKB-data vil skje gjennom Geonorge. Filbasert distribusjon vil lastes ned direkte fra server.</p>
-</div>
-<div class="paragraph">
-<p>FKB-data vil også være tilgjengelig gjennom Kartverkets WMS-tjenester. Lista med tilgjengelige tjenester og leveranseformater kan bli utvidet.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>12. Tilleggsinformasjon</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ingen angitt informasjon</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truemetadata"><a class="anchor" href="#truemetadata"></a>13. Metadata</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="trueomfang-8"><a class="anchor" href="#trueomfang-8"></a>13.1. Omfang</h3>
-<div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truemetadataspesifikasjon"><a class="anchor" href="#truemetadataspesifikasjon"></a>13.2. Metadataspesifikasjon</h3>
-<div class="paragraph">
-<p>Det leveres metadata i henhold til ISO-standarden 19115:2003 Geografisk informasjon.</p>
-</div>
-<div class="paragraph">
-<p>Se metadata for <a href="https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6">FKB-Ledning i kartkatalog på Geonorge</a>.</p>
-</div>
-<div class="paragraph">
-<p>Under <a href="https://forvaltningsinformasjon.geonorge.no/" class="bare">https://forvaltningsinformasjon.geonorge.no/</a> finnes mer detaljert kommunevis informasjon om datainnholdet og forvaltningen av FKB-data.</p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truesosi-format-realisering"><a class="anchor" href="#truesosi-format-realisering"></a>Vedlegg A: SOSI-format-realisering</h2>
-<div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SOSI-format-realiserings-rapport
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><em>Inntil videre foreligger SOSI-format realiseringen som eget dokument</em></p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truegml-realisering"><a class="anchor" href="#truegml-realisering"></a>Vedlegg B: GML-realisering</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Datasettet skal realiseres på GML format i henhold til de retningslinjer som er gitt for realisering av
-GML i Norge. Aktuelle retningslinjer er beskrevet i SOSI del 1, <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-gml-format-5.0-sosi-generell-del.pdf">Realisering i GML-format 5.0 (pdf),2018</a> og <a href="https://register.geonorge.no/data/documents/veiledere_GML-veileder_v1_veileder-for-geography-markup-language-gml-1-0-juli2015_.pdf">Veileder for Geography Markup Language (GML), 2015</a></p>
-</div>
-<div class="paragraph">
-<p>targetNamespace:
-<a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/</a></p>
-</div>
-<div class="paragraph">
-<p>xsdDocument:
-<a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/fkbledning50utkast.xsd" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/fkbledning50utkast.xsd</a></p>
-</div>
-<div style="page-break-after: always;"></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueannen-nyttig-informasjon-til-brukere"><a class="anchor" href="#trueannen-nyttig-informasjon-til-brukere"></a>Vedlegg C: Annen nyttig informasjon til brukere</h2>
-<div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-27 14:33:03 +0200
+Last updated 2021-09-02 08:23:12 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
