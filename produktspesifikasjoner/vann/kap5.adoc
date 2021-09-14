@@ -1,8 +1,9 @@
 === Pakke «ApplicationSchema» FKB-Vann-5.0 Utkast
-Definisjon: Spesifikasjonen beskriver geografisk beliggenhet, forl&#248;p og form for bekker, elver, kanaler, gr&#248;fter, innsj&#248;er, isbreer og den topografiske delen av kyst og sj&#248;. 
+Definisjon:Image
+Spesifikasjonen beskriver geografisk beliggenhet, forl&#248;p og form for bekker, elver, kanaler, gr&#248;fter, innsj&#248;er, isbreer og den topografiske delen av kyst og sj&#248;. 
 Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Prim&#230;rdata Kystkontur som en del av FKB-Vann.
 
-FKB-Vann versjon 5.0 baserer seg p&#229; de generelle konseptene fra SOSI del 1 versjon 4.5 og SOSI del 3 Vann, Kyst og Sj&#248; versjon 4.0. 
+FKB-Vann versjon 5.0 baserer seg p&#229; de generelle konseptene fra SOSI del 1 versjon 5 og SOSI del 3 Vann, Kyst og Sj&#248; versjon 4.0. 
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -59,20 +60,15 @@ image::diagrammer/Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekte
 [caption="Figur 7: ",title=Arv av fellesegenskaper]
 image::diagrammer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
  
-==== Klasse «FeatureType» Kystkontur
+|===
+|===
+==== «FeatureType» Kystkontur
 Definisjon: grense mellom land og sj&#248;, definert som midlere h&#248;yvannslinje.
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» KystogSjø-4.0/Topografi::«featureType» Kystkontur
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 8: ",title=Illustrasjon av objekttype Kystkontur]
 image::figurer/objtype_kystkontur.png[figurer/objtype_kystkontur.png]
 ===== Egenskaper
@@ -124,6 +120,8 @@ SOSI_navn: KYSTREF +
 |Real
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: D + 
+SOSI_lengde: 8.2 + 
 SOSI_navn: HØYDE + 
 |===
 [cols="20,80"]
@@ -141,20 +139,15 @@ SOSI_navn: HØYDE +
 |Medium
 |===
  
-==== Klasse «FeatureType» KystkonturTekniskeAnlegg
+|===
+|===
+==== «FeatureType» KystkonturTekniskeAnlegg
 Definisjon: angivelse av kystkontur der denne består av tekniske anlegg, definert som  midlere høyvann
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» KystogSjø-4.0/Topografi::«featureType» KystkonturTekniskeAnlegg
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 9: ",title=Illustrasjon av objekttype KystkonturTekniskeAnlegg]
 image::figurer/objtype_kystkonturtekniskeanlegg.png[figurer/objtype_kystkonturtekniskeanlegg.png]
 ===== Egenskaper
@@ -173,7 +166,6 @@ image::figurer/objtype_kystkonturtekniskeanlegg.png[figurer/objtype_kystkonturte
 |Kurve
 |Profilparametre i tagged values: 
 |
-SOSI_melding: Fant ikke denne i SOSI_db + 
 SOSI_navn: Kurve + 
 |===
 [cols="20,80"]
@@ -248,20 +240,15 @@ SOSI_navn: HØYDE +
 |Medium
 |===
  
-==== Klasse «FeatureType» Skjær
-Definisjon: generalisert punktobjekt for små øyer eller landareal
+|===
+|===
+==== «FeatureType» Skjær
+Definisjon: generalisert punktobjekt for sm&#229; &#248;yer eller landareal
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» KystogSjø-4.0/Topografi::«featureType» Skjær
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT
- 
-|===
 [caption="Figur 10: ",title=Illustrasjon av objekttype Skjær]
 image::figurer/objtype_skjær.png[figurer/objtype_skjær.png]
 ===== Egenskaper
@@ -278,12 +265,6 @@ image::figurer/objtype_skjær.png[figurer/objtype_skjær.png]
  
 |Type: 
 |Punkt
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: * + 
-SOSI_lengde:  + 
-SOSI_navn: NØ + 
-SOSI_navn: Punkt + 
 |===
 [cols="20,80"]
 |===
@@ -305,20 +286,15 @@ SOSI_lengde: 8.2 +
 SOSI_navn: HØYDE + 
 |===
  
-==== Klasse «FeatureType» Havflate
+|===
+|===
+==== «FeatureType» Havflate
 Definisjon: havomr&#229;de som avgrenses av Kystkontur, VannFiktivGrense og KystkonturTekniskAnlegg
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
 *Realisering av:* «ApplicationSchema» KystogSjø-4.0/Topografi::«featureType» Havflate
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|FLATE;
- 
-|===
 [caption="Figur 11: ",title=Illustrasjon av objekttype Havflate]
 image::figurer/objtype_havflate.png[figurer/objtype_havflate.png]
 ===== Egenskaper
@@ -335,9 +311,6 @@ image::figurer/objtype_havflate.png[figurer/objtype_havflate.png]
  
 |Type: 
 |Flate
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
 [cols="20,80"]
 |===
@@ -411,20 +384,15 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |«FeatureType» Kystkontur
 |===
  
-==== Klasse «FeatureType» Elvekant
+|===
+|===
+==== «FeatureType» Elvekant
 Definisjon: konturlinje mellom land og elveflate
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» ElvBekkKant
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 12: ",title=Illustrasjon av objekttype Elvekant]
 image::figurer/objtype_elvekant.png[figurer/objtype_elvekant.png]
 ===== Egenskaper
@@ -441,9 +409,6 @@ image::figurer/objtype_elvekant.png[figurer/objtype_elvekant.png]
  
 |Type: 
 |Kurve
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
 [cols="20,80"]
 |===
@@ -460,7 +425,9 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |Medium
 |===
  
-==== Klasse «FeatureType» Elv
+|===
+|===
+==== «FeatureType» Elv
 Definisjon: st&#248;rre vannvei for rennende vann representert ved flate
  
 *Supertype:* «FeatureType» Fellesegenskaper
@@ -511,6 +478,11 @@ image::figurer/objtype_elv.png[figurer/objtype_elv.png]
  
 |Type: 
 |VannBredde
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: H + 
+SOSI_lengde: 1 + 
+SOSI_navn: VANNBREDDE + 
 |===
 [cols="20,80"]
 |===
@@ -556,20 +528,15 @@ image::figurer/objtype_elv.png[figurer/objtype_elv.png]
 |«FeatureType» VannFiktivGrense
 |===
  
-==== Klasse «FeatureType» Kanalkant
+|===
+|===
+==== «FeatureType» Kanalkant
 Definisjon: avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt st&#229;r i kanalen
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Elver og bekker::«featureType» KanalGrøftKant
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 14: ",title=Illustrasjon av objekttype Kanalkant]
 image::figurer/objtype_kanalkant.png[figurer/objtype_kanalkant.png]
 ===== Egenskaper
@@ -586,9 +553,6 @@ image::figurer/objtype_kanalkant.png[figurer/objtype_kanalkant.png]
  
 |Type: 
 |Kurve
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
 [cols="20,80"]
 |===
@@ -605,7 +569,9 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |Medium
 |===
  
-==== Klasse «FeatureType» Kanal
+|===
+|===
+==== «FeatureType» Kanal
 Definisjon: rennende vann der forl&#248;pet er menneskeskapt
  
 *Supertype:* «FeatureType» Fellesegenskaper
@@ -671,6 +637,11 @@ image::figurer/objtype_kanal.png[figurer/objtype_kanal.png]
  
 |Type: 
 |VannBredde
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: H + 
+SOSI_lengde: 1 + 
+SOSI_navn: VANNBREDDE + 
 |===
 ===== Roller
 [cols="20,80"]
@@ -702,20 +673,18 @@ image::figurer/objtype_kanal.png[figurer/objtype_kanal.png]
 |«FeatureType» VannFiktivGrense
 |===
  
-==== Klasse «FeatureType» Innsjøkant
-Definisjon: konturlinje mellom land og innsjø
+|===
+|===
+==== «FeatureType» Innsjøkant
+Definisjon: konturlinje mellom land og innsj&#248;
+
+Merknad:
+for innsj&#248; som er oppdemt/regulert skal konturlinjen ligge i h&#248;ydeniv&#229;et for h&#248;yeste regulerte vannstand
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Innsjø::«featureType» Innsjøkant
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 16: ",title=Illustrasjon av objekttype Innsjøkant]
 image::figurer/objtype_innsjøkant.png[figurer/objtype_innsjøkant.png]
 ===== Egenskaper
@@ -732,9 +701,6 @@ image::figurer/objtype_innsjøkant.png[figurer/objtype_innsjøkant.png]
  
 |Type: 
 |Kurve
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
 [cols="20,80"]
 |===
@@ -765,23 +731,20 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |Real
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: D + 
+SOSI_lengde: 8.2 + 
 SOSI_navn: HØYDE + 
 |===
  
-==== Klasse «FeatureType» Innsjø
+|===
+|===
+==== «FeatureType» Innsjø
 Definisjon: en ferskvannsflate som ikke er renndende vann
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Innsjø::«featureType» Innsjø
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|FLATE;
- 
-|===
 [caption="Figur 17: ",title=Illustrasjon av objekttype Innsjø]
 image::figurer/objtype_innsjø.png[figurer/objtype_innsjø.png]
 ===== Egenskaper
@@ -798,10 +761,6 @@ image::figurer/objtype_innsjø.png[figurer/objtype_innsjø.png]
  
 |Type: 
 |Flate
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
 |===
 [cols="20,80"]
 |===
@@ -830,6 +789,11 @@ SOSI_navn: Flate +
  
 |Type: 
 |Real
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: D + 
+SOSI_lengde: 8.2 + 
+SOSI_navn: HØYDE + 
 |===
 [cols="20,80"]
 |===
@@ -858,6 +822,9 @@ SOSI_navn: Flate +
  
 |Type: 
 |Boolean
+|Profilparametre i tagged values: 
+|
+SOSI_navn: REGULERT + 
 |===
 ===== Roller
 [cols="20,80"]
@@ -889,7 +856,9 @@ SOSI_navn: Flate +
 |«FeatureType» VannFiktivGrense
 |===
  
-==== Klasse «FeatureType» Bekk
+|===
+|===
+==== «FeatureType» Bekk
 Definisjon: mindre vannvei for rennende vann representert ved senterlinje
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
@@ -926,6 +895,11 @@ image::figurer/objtype_bekk.png[figurer/objtype_bekk.png]
  
 |Type: 
 |VannBredde
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: H + 
+SOSI_lengde: 1 + 
+SOSI_navn: VANNBREDDE + 
 |===
 [cols="20,80"]
 |===
@@ -942,7 +916,9 @@ image::figurer/objtype_bekk.png[figurer/objtype_bekk.png]
 |Medium
 |===
  
-==== Klasse «FeatureType» Grøft
+|===
+|===
+==== «FeatureType» Grøft
 Definisjon: rennende vann der forl&#248;pet er menneskeskapt
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
@@ -979,6 +955,11 @@ image::figurer/objtype_grøft.png[figurer/objtype_grøft.png]
  
 |Type: 
 |VannBredde
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: H + 
+SOSI_lengde: 1 + 
+SOSI_NAVN: VANNBREDDE + 
 |===
 [cols="20,80"]
 |===
@@ -995,7 +976,9 @@ image::figurer/objtype_grøft.png[figurer/objtype_grøft.png]
 |Medium
 |===
  
-==== Klasse «FeatureType» VeggrøftÅpen
+|===
+|===
+==== «FeatureType» VeggrøftÅpen
 Definisjon: &#229;pen drenering parallelt med veg
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
@@ -1020,20 +1003,15 @@ image::figurer/objtype_veggrøftåpen.png[figurer/objtype_veggrøftåpen.png]
 |Kurve
 |===
  
-==== Klasse «FeatureType» SnøIsbreKant
+|===
+|===
+==== «FeatureType» SnøIsbreKant
 Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Breer og fonner::«featureType» SnøIsbreKant
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 21: ",title=Illustrasjon av objekttype SnøIsbreKant]
 image::figurer/objtype_snøisbrekant.png[figurer/objtype_snøisbrekant.png]
 ===== Egenskaper
@@ -1050,25 +1028,17 @@ image::figurer/objtype_snøisbrekant.png[figurer/objtype_snøisbrekant.png]
  
 |Type: 
 |Kurve
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
  
-==== Klasse «FeatureType» SnøIsbre
+|===
+|===
+==== «FeatureType» SnøIsbre
 Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Breer og fonner::«featureType» SnøIsbre
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|FLATE;
- 
-|===
 [caption="Figur 22: ",title=Illustrasjon av objekttype SnøIsbre]
 image::figurer/objtype_snøisbre.png[figurer/objtype_snøisbre.png]
 ===== Egenskaper
@@ -1085,10 +1055,6 @@ image::figurer/objtype_snøisbre.png[figurer/objtype_snøisbre.png]
  
 |Type: 
 |Flate
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
 |===
 [cols="20,80"]
 |===
@@ -1120,20 +1086,15 @@ SOSI_navn: Flate +
 |«FeatureType» SnøIsbreKant
 |===
  
-==== Klasse «FeatureType» Flomløpkant
+|===
+|===
+==== «FeatureType» Flomløpkant
 Definisjon: begrensningslinje for store markerte elvel&#248;p hvor det pga regulering eller andre &#229;rsaker bare en sjelden gang er vannf&#248;ring
  
 *Supertype:* «FeatureType» KvalitetPåkrevd
  
 *Realisering av:* «ApplicationSchema» Vann-4.0/Flom::«featureType» Flomløpkant
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 [caption="Figur 23: ",title=Illustrasjon av objekttype Flomløpkant]
 image::figurer/objtype_flomløpkant.png[figurer/objtype_flomløpkant.png]
 ===== Egenskaper
@@ -1150,13 +1111,12 @@ image::figurer/objtype_flomløpkant.png[figurer/objtype_flomløpkant.png]
  
 |Type: 
 |Kurve
-|Profilparametre i tagged values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
  
-==== Klasse «FeatureType» VannFiktivGrense
-Definisjon: fiktiv delelinje for vannflater, delelinjetype bestemmes p&#229; egenskapsniv&#229;
+|===
+|===
+==== «FeatureType» VannFiktivGrense
+Definisjon: fiktiv delelinje for vannflater, delelinjetype spesifiseres p&#229; egenskapsniv&#229;
  
 *Supertype:* «FeatureType» KvalitetOpsjonell
  
@@ -1176,6 +1136,11 @@ image::figurer/objtype_vannfiktivgrense.png[figurer/objtype_vannfiktivgrense.png
  
 |Type: 
 |VannSperretype
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 30 + 
+SOSI_NAVN: VANN_SPERRETYPE + 
 |===
 [cols="20,80"]
 |===
@@ -1192,7 +1157,9 @@ image::figurer/objtype_vannfiktivgrense.png[figurer/objtype_vannfiktivgrense.png
 |Kurve
 |===
  
-==== Klasse «FeatureType» KonnekteringVann
+|===
+|===
+==== «FeatureType» KonnekteringVann
 Definisjon: konnekteringslenke
  
 *Supertype:* «FeatureType» KvalitetOpsjonell
@@ -1214,6 +1181,9 @@ image::figurer/objtype_konnekteringvann.png[figurer/objtype_konnekteringvann.png
 |Type: 
 |Kurve
 |===
+<<<
+|===
+|===
 === Pakke: Generelle elementer
 Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
@@ -1226,7 +1196,9 @@ image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI gen
 [caption="Figur 28: ",title=Hoveddiagram Posisjonskvalitet]
 image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
-==== Klasse «FeatureType» Fellesegenskaper
+|===
+|===
+==== «FeatureType» Fellesegenskaper (abstrakt)
 Definisjon: abstrakt objekttype som b&#230;rer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagomr&#229;demodeller.
@@ -1375,7 +1347,9 @@ SOSI_navn: INFORMASJON +
 «FeatureType» Elv
 |===
  
-==== Klasse «FeatureType» KvalitetPåkrevd
+|===
+|===
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
 Definisjon: 
  
 *Supertype:* «FeatureType» Fellesegenskaper
@@ -1420,7 +1394,9 @@ SOSI_navn: KVALITET +
 «FeatureType» Kystkontur
 |===
  
-==== Klasse «FeatureType» KvalitetOpsjonell
+|===
+|===
+==== «FeatureType» KvalitetOpsjonell (abstrakt)
 Definisjon: 
  
 *Supertype:* «FeatureType» Fellesegenskaper
@@ -1454,7 +1430,9 @@ SOSI_navn: KVALITET +
 «FeatureType» VannFiktivGrense
 |===
  
-==== Klasse «dataType» Identifikasjon
+|===
+|===
+==== «dataType» Identifikasjon
 Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
@@ -1535,7 +1513,9 @@ SOSI_lengde: 100 +
 SOSI_navn: VERSJONID + 
 |===
  
-==== Klasse «dataType» Posisjonskvalitet
+|===
+|===
+==== «dataType» Posisjonskvalitet
 Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
@@ -1664,7 +1644,9 @@ SOSI_navn: H-NØYAKTIGHET +
  
 |===
  
-==== Klasse «CodeList» Synbarhet
+|===
+|===
+==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
@@ -1688,7 +1670,10 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
-==== Klasse «CodeList» Datafangstmetode
+ 
+|===
+|===
+==== «CodeList» Datafangstmetode
 Definisjon: metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
@@ -1714,7 +1699,10 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
-==== Klasse «CodeList» Registreringsversjon
+ 
+|===
+|===
+==== «CodeList» Registreringsversjon
 Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 ===== Profilparametre i tagged values
@@ -1738,7 +1726,10 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
-==== Klasse «CodeList» Høydereferanse
+ 
+|===
+|===
+==== «CodeList» Høydereferanse
 Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
  
 ===== Profilparametre i tagged values
@@ -1762,7 +1753,10 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
-==== Klasse «CodeList» Medium
+ 
+|===
+|===
+==== «CodeList» Medium
 Definisjon: objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
@@ -1788,12 +1782,18 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
+ 
+<<<
+|===
+|===
 === Pakke: Datatyper og kodelister
 Definisjon: datatyper og kodelister
 [caption="Figur 29: ",title=Hoveddiagram for datatyper og kodelister]
 image::diagrammer/Hoveddiagram for datatyper og kodelister.png[Hoveddiagram for datatyper og kodelister]
  
-==== Klasse «CodeList» Kystkonstruksjonstype
+|===
+|===
+==== «CodeList» Kystkonstruksjonstype
 Definisjon: angivelse av kystkonturens konstruksjon
  
 ===== Profilparametre i tagged values
@@ -1814,7 +1814,10 @@ Definisjon: angivelse av kystkonturens konstruksjon
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystkonstruksjonstype
  
-==== Klasse «CodeList» Kystreferanse
+ 
+|===
+|===
+==== «CodeList» Kystreferanse
 Definisjon: kystkonturens referanseniv&#229;
  
 ===== Profilparametre i tagged values
@@ -1835,7 +1838,10 @@ Definisjon: kystkonturens referanseniv&#229;
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/kystreferanse
  
-==== Klasse «CodeList» VannBredde
+ 
+|===
+|===
+==== «CodeList» VannBredde
 Definisjon: grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
  
 ===== Profilparametre i tagged values
@@ -1856,7 +1862,10 @@ Definisjon: grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over l
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannbredde
  
-==== Klasse «CodeList» VannSperretype
+ 
+|===
+|===
+==== «CodeList» VannSperretype
 Definisjon: inndeling av hjelpelinjer for avgrensning og oppdeling av vannflater
  
 ===== Profilparametre i tagged values
@@ -1879,3 +1888,5 @@ Definisjon: inndeling av hjelpelinjer for avgrensning og oppdeling av vannflater
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype
+ 
+// End of UML-model
