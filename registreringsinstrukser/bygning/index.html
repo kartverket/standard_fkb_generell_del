@@ -446,15 +446,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#trueinnledning">1.1. Innledning</a></li>
 <li><a href="#trueendringslogg">1.2. Endringslogg</a></li>
+<li><a href="#trueoppdeling-av-produktet">1.3. Oppdeling av produktet</a></li>
 </ul>
 </li>
 <li><a href="#trueobjekttyper-og-egenskaper">2. Objekttyper og egenskaper</a>
 <ul class="sectlevel2">
-<li><a href="#truefotogrammetrisk-registreringsinstruks">2.1. Fotogrammetrisk registreringsinstruks</a></li>
-<li><a href="#truebygningsavgrensning">2.2. Bygningsavgrensning</a></li>
-<li><a href="#truebeskrivendebygningslinjer">2.3. BeskrivendeBygningslinjer</a></li>
-<li><a href="#truebygningsvedheng">2.4. Bygningsvedheng</a></li>
-<li><a href="#truetakoverbygg">2.5. Takoverbygg</a></li>
+<li><a href="#truefotogrammetrisk-registreringsinstruks">2.1. Fotogrammetrisk registreringsinstruks</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-annenbygning">2.1.1. «FeatureType» AnnenBygning</a></li>
+<li><a href="#truefeaturetype-bygning">2.1.2. «FeatureType» Bygning</a></li>
+</ul>
+</li>
+<li><a href="#truebygningsavgrensning">2.2. Bygningsavgrensning</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-takkant">2.2.1. «FeatureType» Takkant</a></li>
+<li><a href="#truefeaturetype-fasadeliv">2.2.2. «FeatureType» Fasadeliv</a></li>
+<li><a href="#truefeaturetype-grunnmur">2.2.3. «FeatureType» Grunnmur</a></li>
+<li><a href="#truefeaturetype-bygningsdelelinje">2.2.4. «FeatureType» Bygningsdelelinje</a></li>
+<li><a href="#truefeaturetype-fiktivbygningsavgrensning">2.2.5. «FeatureType» FiktivBygningsavgrensning</a></li>
+</ul>
+</li>
+<li><a href="#truebeskrivendebygningslinjer">2.3. BeskrivendeBygningslinjer</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-arkade">2.3.1. «FeatureType» Arkade</a></li>
+<li><a href="#truefeaturetype-bygningslinje">2.3.2. «FeatureType» Bygningslinje</a></li>
+<li><a href="#truefeaturetype-hjelpelinje3d">2.3.3. «FeatureType» Hjelpelinje3D</a></li>
+<li><a href="#truefeaturetype-mønelinje">2.3.4. «FeatureType» Mønelinje</a></li>
+<li><a href="#truefeaturetype-portrom">2.3.5. «FeatureType» Portrom</a></li>
+<li><a href="#truefeaturetype-takmur">2.3.6. «FeatureType» Takmur</a></li>
+<li><a href="#truefeaturetype-takplatå">2.3.7. «FeatureType» Takplatå</a></li>
+<li><a href="#truefeaturetype-takplatåtopp">2.3.8. «FeatureType» TakplatåTopp</a></li>
+<li><a href="#truefeaturetype-taksprang">2.3.9. «FeatureType» Taksprang</a></li>
+<li><a href="#truefeaturetype-taksprangbunn">2.3.10. «FeatureType» TaksprangBunn</a></li>
+<li><a href="#truecodelist-trednivå">2.3.11. «CodeList» TreDNivå</a></li>
+</ul>
+</li>
+<li><a href="#truebygningsvedheng">2.4. Bygningsvedheng</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-bygningbru">2.4.1. «FeatureType» BygningBru</a></li>
+<li><a href="#truefeaturetype-låvebru">2.4.2. «FeatureType» Låvebru</a></li>
+<li><a href="#truefeaturetype-trappbygg">2.4.3. «FeatureType» TrappBygg</a></li>
+<li><a href="#truefeaturetype-veranda">2.4.4. «FeatureType» Veranda</a></li>
+<li><a href="#truefeaturetype-veggfrittstående">2.4.5. «FeatureType» Veggfrittstående</a></li>
+</ul>
+</li>
+<li><a href="#truetakoverbygg">2.5. Takoverbygg</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-takoverbygg">2.5.1. «FeatureType» Takoverbygg</a></li>
+<li><a href="#truefeaturetype-takoverbyggkant">2.5.2. «FeatureType» Takoverbyggkant</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#truedatakvalitet">3. Datakvalitet</a>
@@ -476,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-09-14
+Testversjon 2021-09-15
 </td>
 </tr>
 </table>
@@ -492,13 +533,35 @@ Testversjon 2021-09-14
 <p>Dette dokumentet er en registreringsinstruks for fotogrammetrisk ajourhold av FKB-Bygning.</p>
 </div>
 <div class="paragraph">
-<p><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/</a></p>
+<p>Spesifikasjonen omfatter beskrivelse av alle typer bygninger, takoverbygg, beskrivende bygningslinjer (for eksempel mønelinje) samt bygningsvedheng (for eksempel veranda).</p>
+</div>
+<div class="paragraph">
+<p>For en full beskrivelse av produktet FKB-Bygning og datamodellen for dette produktet henvises det til
+<a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.2. Endringslogg</h3>
 <div class="paragraph">
-<p>Endringer siden FKB-Bygning 4.61:</p>
+<p>Endringer siden FKB-Bygning 4.61 2018-01-01:</p>
+</div>
+<div class="paragraph">
+<p>(kopieres inn fra produktspesifikasjon, ev. henvises til produktspesifikasjon?)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueoppdeling-av-produktet"><a class="anchor" href="#trueoppdeling-av-produktet"></a>1.3. Oppdeling av produktet</h3>
+<div class="paragraph">
+<p>FKB-Bygning har ulik detaljeringsnivå i de ulike FKB-standardene A, B, C og D. Dette gjelder detaljering (mengde objekttyper), minstestørrelser og hvordan objekttypene registreres. Dette er beskrevet under hver enkel objekttype.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/FKB-standard.png" alt="FKB standard">
+</div>
+<div class="title">Figur 1. Detaljering av bygninger i de ulike FKB-standardene</div>
+</div>
+<div class="paragraph">
+<p>Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB generell del</a> for en grundigere beskrivelse av de ulike FKB-standardene. For FKB-Bygning er FKB-D-standard lik FKB-C-standard. Datagrunnlaget for registrering er likt i C og D og objektene skal registreres på samme måte. Forskjellen ligger i at det i FKB-D-områder finnes færre bygninger.</p>
 </div>
 </div>
 </div>
@@ -506,6 +569,9 @@ Testversjon 2021-09-14
 <div class="sect1">
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>2. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Her listes ut objekttypene i FKB-Bygning som er aktuelle for fotogrammetrisk registrering. For en full beskrivelse av alle datatyper, egenskaper, kodelister etc. så henvises det til <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/">produktspesifikasjon for FKB-Bygning</a>.</p>
+</div>
 <div class="sect2">
 <h3 id="truefotogrammetrisk-registreringsinstruks"><a class="anchor" href="#truefotogrammetrisk-registreringsinstruks"></a>2.1. Fotogrammetrisk registreringsinstruks</h3>
 <div class="paragraph">
@@ -533,12 +599,11 @@ AnnenBygning registreres med delt flategeometri.</p>
 </div>
 <div class="title">Figur  Figur fra produktspesifikasjonen</div>
 </div>
-<div class="paragraph">
-<p>[caption="Figur  ",title= Figurene viser minstehøyde for AnnenBygning over 3m².
-Bygningen til venstre skal registreres ettersom minstehøyde ved høyeste taknivå er over 2m (grønn pil).
-Bygningen (hundehuset) til høyre skal ikke registreres ettersom minstehøyde ved høyeste taknivå er under 2m (rød pil).
-]
-image::figurer/annenbygning_minstehoyde.png[figurer/annenbygning_minstehoyde.png]</p>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/annenbygning_minstehoyde.png" alt="figurer/annenbygning_minstehoyde.png">
+</div>
+<div class="title">Figur  Figurene viser minstehøyde for AnnenBygning over 3m². Bygningen til venstre skal registreres ettersom minstehøyde ved høyeste taknivå er over 2m (grønn pil). Bygningen (hundehuset) til høyre skal ikke registreres ettersom minstehøyde ved høyeste taknivå er under 2m (rød pil).</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer"><a class="anchor" href="#trueføringer"></a>Føringer</h5>
@@ -909,7 +974,7 @@ Veranda, TrappBygg, L&#229;vebru eller Bygningsbru. Da registreres to frittst&#2
 <div class="title">Figur  Figur fra produktspesifikasjonen</div>
 </div>
 <div class="paragraph">
-<p>[caption="Figur  ",title= Eksempel på registrering av takkant (takkant i rødt og taksprang i blått).
+<p>[caption="Figur  ",title=Eksempel på registrering av takkant (takkant i rødt og taksprang i blått).
 ]
 image::figurer/takkant_nodepunkt.png[figurer/takkant_nodepunkt.png]</p>
 </div>
@@ -931,10 +996,11 @@ image::figurer/takkant_nodepunkt.png[figurer/takkant_nodepunkt.png]</p>
 </div>
 <div class="title">Figur  Eksempler på registrering av takkant der det er en opphøyet kant ved takflaten. I disse tilfellene skal høyden på takkanten registreres på takplanet og ikke på de oppstikkende objektene. Takkant er tegnet med rød strek.</div>
 </div>
-<div class="paragraph">
-<p>[caption="Figur  ",title= Eksempel på registrering av takkant for bygning med flatt tak (Takkant er tegnet i rødt, Taksprang er tegnet i blått). Det skal lages 2D nodepunkt i takkant som går over taksprang.
-]
-image::figurer/takkant_taksprang_nodepunkt.png[figurer/takkant_taksprang_nodepunkt.png]</p>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/takkant_taksprang_nodepunkt.png" alt="figurer/takkant_taksprang_nodepunkt.png">
+</div>
+<div class="title">Figur  Eksempel på registrering av takkant for bygning med flatt tak (Takkant er tegnet i rødt</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-3"><a class="anchor" href="#trueføringer-3"></a>Føringer</h5>
@@ -1687,10 +1753,11 @@ bygningsdelelinje er ukjent for at det skal bli mulig &#229; danne en flate. Fik
 </div>
 <div class="title">Figur  Figur fra produktspesifikasjonen</div>
 </div>
-<div class="paragraph">
-<p>[caption="Figur  ",title= Eksempel på bruk av FiktivBygningsavgrensning (svart linje). Deler av bygningen går inn i terreng og det finnes ikke noe takkant. Dersom takkanten er usynlig på grunn av vegetasjon, registreres takkant og man benytter kvalitetskodingen for å angi dårlig synbarhet (rød stiplet linje).
-]
-image::figurer/fiktivbygningsavgrensning.png[figurer/fiktivbygningsavgrensning.png]</p>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/fiktivbygningsavgrensning.png" alt="figurer/fiktivbygningsavgrensning.png">
+</div>
+<div class="title">Figur  Eksempel på bruk av FiktivBygningsavgrensning (svart linje). Deler av bygningen går inn i terreng og det finnes ikke noe takkant. Dersom takkanten er usynlig på grunn av vegetasjon</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-7"><a class="anchor" href="#trueføringer-7"></a>Føringer</h5>
@@ -2282,10 +2349,11 @@ bygningen. Disse skal ikke presenteres p&#229; kart.</p>
 </div>
 <div class="title">Figur  Figur fra produktspesifikasjonen</div>
 </div>
-<div class="paragraph">
-<p>[caption="Figur  ",title= Eksempel på et bygg der man må benytte Hjelpelinje3D for å kunne beskrive hovedbygget fullstendig. I eksemplet over til venstre må de røde knekklinjene registreres for å kunne gi en full beskrivelse av takoverflaten. Hvis ikke vil det bli løse bygningslinjer slik det er vist i figuren til høyre. De røde knekklinjene i dette tilfellet skal registreres med Hjelpelinje3D.
-]
-image::figurer/hjelpelinje3d_fullstendig.png[figurer/hjelpelinje3d_fullstendig.png]</p>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/hjelpelinje3d_fullstendig.png" alt="figurer/hjelpelinje3d_fullstendig.png">
+</div>
+<div class="title">Figur  Eksempel på et bygg der man må benytte Hjelpelinje3D for å kunne beskrive hovedbygget fullstendig. I eksemplet over til venstre må de røde knekklinjene registreres for å kunne gi en full beskrivelse av takoverflaten. Hvis ikke vil det bli løse bygningslinjer slik det er vist i figuren til høyre. De røde knekklinjene i dette tilfellet skal registreres med Hjelpelinje3D.</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3620,10 +3688,11 @@ Der TaksprangBunn m&#248;ter andre beskrivende bygningslinjer, og har lik koordi
 </div>
 <div class="title">Figur  Eksempel på registrering av TaksprangBunn (blå linje) og Takkant (rød linje)</div>
 </div>
-<div class="paragraph">
-<p>[caption="Figur  ",title= Eksempel på registrering av Taksprang og TaksprangBunn i en bygård med indre rom.
-]
-image::figurer/taksprangbunn_eksempel2.png[figurer/taksprangbunn_eksempel2.png]</p>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/taksprangbunn_eksempel2.png" alt="figurer/taksprangbunn_eksempel2.png">
+</div>
+<div class="title">Figur  Eksempel på registrering av Taksprang og TaksprangBunn i en bygård med indre rom.</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-17"><a class="anchor" href="#trueføringer-17"></a>Føringer</h5>
@@ -5131,7 +5200,10 @@ hele bygningsavgrensningen.</p>
 <h2 id="truedatakvalitet"><a class="anchor" href="#truedatakvalitet"></a>3. Datakvalitet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til den generelle delen av produktspesifikasjonen. Sett in link??</p>
+<p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB generell del</a>.</p>
+</div>
+<div class="paragraph">
+<p>De forskjellige objekttypene er delt inn i forskjellige kvalitetsklasser som styrer krav til nøyaktighet og fullstendighet ved registrering.</p>
 </div>
 <div class="sect2">
 <h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>3.1. Kvalitetskrav</h3>
@@ -5166,67 +5238,15 @@ hele bygningsavgrensningen.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenkryssinger skal ikke forekomme i FKB-Naturinfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema.</p>
-</div>
-<table id="tab-Logisk-konsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 2. Krav til logisk konsistens</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Krav</th>
-<th class="tableblock halign-left valign-top">Kommentar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Konseptuell konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall enheter der regler i konseptuelt skjema ikke er oppfylt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/010/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F.eks. overskytende egenskaper eller ulovlige egenskaper.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenkryssinger skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Krav til logisk konsistens kontrolleres maskinelt vha. SOSI-kontroll, kontroll mot GML-skjema e.l.</p>
+<p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema. Gjelder alle kvalitetsklasser.</p>
 </div>
 <table id="tab-Egenskapskonsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Krav til egenskapskonsistens</caption>
+<caption class="title">Tabell 2. Krav til egenskapskonsistens</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -5250,18 +5270,23 @@ hele bygningsavgrensningen.</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Gjelder alle kvalitetsklasser.</p>
+</div>
 <table id="tab-Fullstendighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Krav til fullstendighet</caption>
+<caption class="title">Tabell 3. Krav til fullstendighet</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Kvalitetselement</th>
 <th class="tableblock halign-left valign-top">Kvalitetsmål</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
 <th class="tableblock halign-left valign-top">Referanse</th>
 <th class="tableblock halign-left valign-top">Krav</th>
 </tr>
@@ -5270,12 +5295,28 @@ hele bygningsavgrensningen.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% manglende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% manglende objekter</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% overskytende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% overskytende objekter</p></td>
 </tr>
@@ -5284,8 +5325,8 @@ hele bygningsavgrensningen.</p>
 <div class="paragraph">
 <p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
 </div>
-<table id="tab-Stedfestingsnoyaktighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 5. Krav til stedfestingsnøyaktighet</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 4. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -5294,72 +5335,65 @@ hele bygningsavgrensningen.</p>
 <col style="width: 16.6666%;">
 <col style="width: 16.667%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Klasse</th>
-<th class="tableblock halign-left valign-top">Krav FKB-A</th>
-<th class="tableblock halign-left valign-top">Krav FKB-B</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grove feil (%)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/301/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% grove feil</p></td>
+<td class="tableblock halign-left valign-top" colspan="2" rowspan="2"><p class="tableblock"><strong>FKB-Standard</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Nøyaktighetsklasser</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/303/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 10cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 10cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 1</em></p>
+<p class="tableblock">Svært veldefinerte detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 2</em></p>
+<p class="tableblock">Veldefinerte detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 3</em></p>
+<p class="tableblock">Uskarpe detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 4</em></p>
+<p class="tableblock">Diffuse detaljer (cm)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/303/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 15cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 15cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 35cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 35cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 / 25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 / 40</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 55cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 55cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/302/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 8cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 12cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 50</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (m)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 25cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 40cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-C/D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 / 100</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25 / 90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 / 150</p></td>
 </tr>
 </tbody>
 </table>
@@ -5373,34 +5407,69 @@ hele bygningsavgrensningen.</p>
 <p>Ved angivelse av krav til stedfestingsnøyaktighet er objekttypene inndelt i 4 klasser. Kun 2 av klassene er i bruk i FKB-Naturinfo. Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Naturinfo tilhører.</p>
 </div>
 <table id="tab-Kvalitetsklasser" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 6. Kvalitetsklasser for objekttypene i FKB-Bygning</caption>
+<caption class="title">Tabell 5. Kvalitetsklasser for objekttypene i FKB-Bygning</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Objekttype</th>
 <th class="tableblock halign-left valign-top">Kvalitetklasse Grunnriss</th>
 <th class="tableblock halign-left valign-top">Kvalitetsklasse Høyde</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bygning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnnenBygning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bygningsdelelinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Takkant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fasadeliv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Grunnmur</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FiktivBygningsAvgrensning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">osv&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Som tagged values i UML?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 </tbody>
 </table>
@@ -5410,7 +5479,7 @@ hele bygningsavgrensningen.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-14 15:09:49 +0200
+Last updated 2021-09-15 09:42:07 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
