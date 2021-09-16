@@ -1,17 +1,32 @@
-=== «ApplicationSchema» FKB-Arealbruk-5.0-Utkast
-Definisjon: 
+=== Pakke «ApplicationSchema» FKB-Arealbruk-5.0-Utkast
+Definisjon: Datamodell for produktspesifikasjonen FKB-Arealbruk. FKB-Arealbruk beskriver den fysiske bruken av et areal, f.eks. industriomr&#229;der, campingplasser og parker. Datasettet er ikke heldekkende.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
+|definition
+|"FKB-Arealbruk decribes the physical use of the land area"@en
+ 
+|description
+|"Contains industrial areas, camping grounds, parks e.g."@en 
+ 
+|designation
+|"Product specification FKB-Arealbruk 5.0"@en
+ 
 |language
 |no
  
 |SOSI_kortnavn
 |FKB-Arealbruk
  
+|SOSI_langnavn
+|FKB Arealbruk
+ 
 |SOSI_modellstatus
-|utkastOgSkjult
+|utkast
+ 
+|SOSI_spesifikasjonstype
+|Produktspesifikasjon
  
 |SOSI_versjon
 |5.0
@@ -32,623 +47,28 @@ Definisjon:
 |sosi
  
 |===
-[caption="Figur 1: ",title=Hoveddiagram]
-image::figurer/Hoveddiagram.png[Hoveddiagram]
+[caption="Figur 1: ",title=Oversiktsdiagram]
+image::diagrammer/Oversiktsdiagram.png[Oversiktsdiagram]
 [caption="Figur 2: ",title=Pakkerealisering]
-image::figurer/Pakkerealisering.png[Pakkerealisering]
-=== Pakke: Driftsområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Driftsområder
-[caption="Figur 3: ",title=Realisering av objekttyper - Driftsområder]
-image::figurer/Realisering av objekttyper - Driftsområder.png[Realisering av objekttyper - Driftsområder]
-[caption="Figur 4: ",title=Objekttyper med egenskaper - Driftsområder]
-image::figurer/Objekttyper med egenskaper - Driftsområder.png[Objekttyper med egenskaper - Driftsområder]
- 
-==== «featureType» Anleggsområde
-Definisjon: omr&#229;de der det p&#229;g&#229;r anleggsarbeid
-
-I FKB er det en m&#229;lsetting om at mest mulig av byggeaktivitet n&#229;r det gjelder f.eks. bygninger eller veganlegg fanges opp gjennom saksbehandling og legges inn i tiltaksbasen (FKB-Tiltak). Anleggsomr&#229;der som ligger i tiltaksbasen skal ikke inng&#229; i FKB-Arealbruk.
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Anleggsområde
- 
-===== Egenskaper
-[cols="20,80"]
+image::diagrammer/Pakkerealisering.png[Pakkerealisering]
+<<<
 |===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Grustak
-Definisjon: uttaksplass, område, drevet i dagen for malm eller sand, grus, pukk, skifer
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Grustak
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png
- 
-|===
-[caption="Figur 5: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Industriområde
-Definisjon: område, bebygd eller ubebygd, benyttet til industriformål
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Industriområde
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png
- 
-|===
-[caption="Figur 6: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Steintipp
-Definisjon: område for steintipp
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«FeatureType» Steintipp
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png
- 
-|===
-[caption="Figur 7: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
-=== Pakke: Fritidsområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Fritidsområder
-[caption="Figur 8: ",title=Realisering av objekttyper - Fritidsområder]
-image::figurer/Realisering av objekttyper - Fritidsområder.png[Realisering av objekttyper - Fritidsområder]
-[caption="Figur 9: ",title=Objekttyper med egenskaper - Fritidsområder]
-image::figurer/Objekttyper med egenskaper - Fritidsområder.png[Objekttyper med egenskaper - Fritidsområder]
- 
-==== «featureType» Alpinbakke
-Definisjon: nedfart for ski med permanent karakter
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Alpinbakke
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png
- 
-|===
-[caption="Figur 10: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Campingplass
-Definisjon: faste anlegg med vaskerom, campinghytter o.l.
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Campingplass
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png
- 
-|===
-[caption="Figur 11: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Golfbane
-Definisjon: område for golfspilling
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Golfbane
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png
- 
-|===
-[caption="Figur 12: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Lekeplass
-Definisjon: område for lekeplass
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Lekeplass
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png
- 
-|===
-[caption="Figur 13: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Skytebane
-Definisjon: avgrenset område hvor det skytes
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Skytebane
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png
- 
-|===
-[caption="Figur 14: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|Området for selve skytebanen
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» SportIdrettPlass
-Definisjon: område hvor det utøves sport og idrett
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» SportIdrettPlass
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png
- 
-|===
-[caption="Figur 15: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
-=== Pakke: Kulturområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Kulturområder
-[caption="Figur 16: ",title=Realisering av objekttyper - Kulturområder]
-image::figurer/Realisering av objekttyper - Kulturområder.png[Realisering av objekttyper - Kulturområder]
-[caption="Figur 17: ",title=Objekttyper med egenskaper - Kulturområder]
-image::figurer/Objekttyper med egenskaper - Kulturområder.png[Objekttyper med egenskaper - Kulturområder]
- 
-==== «featureType» Gravplass
-Definisjon: område for gravstøtter, begravelsesplass og kirkegård
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Gravplass
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png
- 
-|===
-[caption="Figur 18: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-SOSI_navn: Flate + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
-|===
- 
-==== «featureType» Park
-Definisjon: grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Park
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|SOSI_bildeAvModellelement
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png
- 
-|===
-[caption="Figur 19: ",title=SOSI_bildeAvModellelement]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|Flate
-|Tagged Values: 
-|
-SOSI_melding: Fant ikke denne i SOSI_db + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Punkt
 |===
 === Pakke: Generelle elementer
 Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 20: ",title=Hoveddiagram Fellesegenskaper]
-image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 21: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 22: ",title=Posisjonskvalitet]
-image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
+[caption="Figur 3: ",title=Oversiktsdiagram Fellesegenskaper]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 4: ",title=Realisering fra SOSI generell del]
+image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
+[caption="Figur 5: ",title=Hoveddiagram Posisjonskvalitet]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
-==== «FeatureType» Fellesegenskaper
+|===
+|===
+==== «FeatureType» Fellesegenskaper (abstrakt)
 Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
@@ -667,8 +87,11 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |unik identifikasjon av et objekt 
 
 Merknad FKB:
+
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
@@ -676,7 +99,7 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
  
 |Type: 
 |Identifikasjon
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
 |===
@@ -689,12 +112,15 @@ SOSI_navn: IDENT +
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
+
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
 iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
@@ -702,7 +128,7 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Type: 
 |DateTime
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
@@ -713,14 +139,14 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|
+|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
 |Date
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: DATAFANGSTDATO + 
@@ -741,7 +167,7 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
  
 |Type: 
 |Date
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: VERIFISERINGSDATO + 
@@ -759,8 +185,11 @@ SOSI_navn: VERIFISERINGSDATO +
  
 |Type: 
 |Registreringsversjon
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+defautCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -779,7 +208,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
  
 |Type: 
 |CharacterString
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
@@ -791,8 +220,10 @@ SOSI_navn: INFORMASJON +
 |«FeatureType» KvalitetPåkrevd
 |===
  
-==== «FeatureType» KvalitetPåkrevd
-Definisjon: 
+|===
+|===
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -816,7 +247,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Type: 
 |Posisjonskvalitet
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
@@ -828,31 +259,38 @@ SOSI_navn: KVALITET +
 |Definisjon: 
 |referanse til det samme objektet forvaltet i et annet datasystem. Kan f.eks. v&#230;re parkforvalter i en kommune, skytebaneregister e.l. Informasjonen m&#229; vedlikeholdes administrativt.
 
-Det vil v&#230;re opp til det eksterne systemet &#229; etablere URI-er som unikt indentifiserer systemet oog det aktuelle objektet i systemet. 
+Det vil v&#230;re opp til det eksterne systemet &#229; etablere URI-er som unikt indentifiserer systemet og det aktuelle objektet i systemet. 
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
 |URI
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
 |===
 [cols="20,80"]
 |===
 |*Subtyper:*
-|«featureType» Park +
-«featureType» Gravplass +
-«featureType» Alpinbakke +
-«featureType» SportIdrettPlass +
+|«featureType» Industriområde +
 «featureType» Campingplass +
-«featureType» Lekeplass +
-«featureType» Skytebane +
-«featureType» Golfbane +
-«featureType» Steintipp +
-«featureType» Industriområde +
 «featureType» Grustak +
+«featureType» Steintipp +
+«featureType» Alpinbakke +
+«featureType» Golfbane +
+«featureType» Lekeplass +
+«featureType» Gravplass +
+«featureType» Park +
+«featureType» Skytebane +
+«featureType» SportIdrettPlass +
 «featureType» Anleggsområde
 |===
  
+|===
+|===
 ==== «dataType» Identifikasjon
 Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
@@ -862,7 +300,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -885,7 +323,7 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
  
 |Type: 
 |CharacterString
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -908,7 +346,7 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
  
 |Type: 
 |CharacterString
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -927,13 +365,15 @@ SOSI_navn: NAVNEROM +
  
 |Type: 
 |CharacterString
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
  
+|===
+|===
 ==== «dataType» Posisjonskvalitet
 Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
 
@@ -942,7 +382,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -964,8 +404,10 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
  
 |Type: 
 |Datafangstmetode
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -976,9 +418,13 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
@@ -986,8 +432,9 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
  
 |Type: 
 |Integer
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -1004,8 +451,10 @@ SOSI_navn: NØYAKTIGHET +
  
 |Type: 
 |Synbarhet
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -1025,8 +474,10 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
  
 |Type: 
 |Datafangstmetode
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -1037,33 +488,50 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
+Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
 |Integer
-|Tagged Values: 
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
+|Beskrivelse: 
+|
+ 
+|===
+ 
+|===
+|===
 ==== «CodeList» Synbarhet
 Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
 |SOSI_datatype
 |H
@@ -1075,46 +543,24 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |SYNBARHET
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:14:45Z
  
-Kodelistens navn i registeret: Synbarhet
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Middels synlig
-|Objektet er middels synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som har lav kontrast eller er delvis skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en større verdi for nøyaktighet enn kravet (opptil 3 ganger kravet)
-|2
-|Ikke synlig
-|Objektet er ikke synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som er helt skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en stor verdi for nøyaktighet (mer enn 3 ganger kravet)
-|3
-|Fullt ut synlig
-|Objektet er fullt ut synlig/gjenfinnbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk registrering skal objekter som er fullt ut synlige registreres i tråd med angitte krav til nøyaktig registrering.
-|0
-|Dårlig gjenfinnbar i terreng
-|Objektets posisjon er vanskelig å definere presist i terrenget på grunn av objektets natur. Koden kan f.eks. brukes på høydekurver (eller andre isolinjer) eller objekter som er skjult i bakken (f.eks. innmåling av ledninger på lukket grøft) 
-|1
 |===
- 
 ==== «CodeList» Datafangstmetode
 Definisjon: metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -1126,53 +572,22 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:14:46Z
  
-Kodelistens navn i registeret: Datafangstmetode
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Som bygget
-|Posisjonen er hentet fra prosjekterte eller planlagte data, f.eks. fra en BIM-modell, som er verifisert som bygget ved innmålinger
-|byg
-|Ukjent
-|Ukjent eller uspesifisert datafangstmetode
-|ukj
-|Plandata
-|Posisjonen er hentet plandata. Posisjonen er ikke verifisert med innmåling. 
-|pla
-|Satellittmålt
-|Posisjonen er målt inn direkte med GNSS (for posisjoner målt inn med GNSS i kombinasjon med andre landmålingsmetoder skal koden Landmåling benyttes)
-|sat
-|Generert
-|Posisjonen er manuelt konstruert, eller generert ved maskinlæring eller annen type programvare, fra punktsky fra laserskanning, bildematching, sonar, andre typer sensordata eller kombinasjon av flere typer sensordata.
-|gen
-|Fotogrammetri
-|Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
-|fot
-|Landmålt
-|Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
-|lan
 |===
- 
 ==== «CodeList» Registreringsversjon
 Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -1184,50 +599,359 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |REGISTRERINGSVERSJON
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-01T15:14:46Z
- 
-Kodelistens navn i registeret: Registreringsversjon
- 
-===== Koder
-[cols="25,60,15"]
+<<<
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|FKB 4.5 2014-03-01
-|Data registrert etter FKB 4.5 2014-03-01
-|2014-03-01
-|FKB 4.6 2020-01-01
-|Data registrert etter FKB 4.6/4.61 2020-01-01
-|2020-01-01
-|FKB 4.6 2018-01-01
-|Data registrert etter FKB 4.6/4.61 2018-01-01
-|2018-01-01
-|FKB 5.0 2022-01-01
-|Data registrert etter FKB 5.0 2022-01-01
-|2022-01-01
-|FKB 4.01 2011-01-01
-|Data registrert etter FKB 4.01 2011-01-01
-|2011-01-01
-|FKB 4.0 2007-01-01
-|Data registrert etter FKB 4.0 2007-01-01
-|2007-01-07
-|FKB 4.6 2016-06-01
-|Data registrert etter FKB 4.6 2016-06-01
-|2016-06-01
-|FKB 4.01 2009-03-10
-|Data registrert etter FKB 4.01 2009-03-10
-|2009-03-10
-|FKB 4.5 2015-01-01
-|Data registrert etter FKB 4.5 2015-01-01
-|2015-01-01
-|FKB 4.02 2013-01-01
-|Data registrert etter FKB 4.02 2013-01-01
-|2013-01-01
-|FKB 4.02 2011-12-01
-|Data registrert etter FKB 4.02 2011-12-01
-|2001-12-01
 |===
+=== Pakke: Driftsområder
+Definisjon: Inneholder elementer fra SOSI Areal 4.0 Driftsområder
+[caption="Figur 6: ",title=Hoveddiagram Driftsområder]
+image::diagrammer/Hoveddiagram Driftsområder.png[Hoveddiagram Driftsområder]
+[caption="Figur 7: ",title=Realisering fra Areal 4.0 Driftsområder]
+image::diagrammer/Realisering fra Areal 4.0 Driftsområder.png[Realisering fra Areal 4.0 Driftsområder]
+ 
+|===
+|===
+==== «featureType» Anleggsområde
+Definisjon: omr&#229;de der det p&#229;g&#229;r anleggsarbeid
+
+I FKB er det en m&#229;lsetting om at mest mulig av byggeaktivitet n&#229;r det gjelder f.eks. bygninger eller veganlegg fanges opp gjennom saksbehandling og legges inn i tiltaksbasen (FKB-Tiltak). Anleggsomr&#229;der som ligger i tiltaksbasen skal ikke inng&#229; i FKB-Arealbruk.
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Anleggsområde
+ 
+[caption="Figur 8: ",title=Illustrasjon av objekttype Anleggsområde]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Grustak
+Definisjon: uttaksplass, område, drevet i dagen for malm eller sand, grus, pukk, skifer
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Grustak
+ 
+[caption="Figur 9: ",title=Illustrasjon av objekttype Grustak]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Industriområde
+Definisjon: område, bebygd eller ubebygd, benyttet til industriformål
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Industriområde
+ 
+[caption="Figur 10: ",title=Illustrasjon av objekttype Industriområde]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Steintipp
+Definisjon: område for steintipp
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«FeatureType» Steintipp
+ 
+[caption="Figur 11: ",title=Illustrasjon av objekttype Steintipp]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+<<<
+|===
+|===
+=== Pakke: Fritidsområder
+Definisjon: Inneholder elementer fra SOSI Areal 4.0 Fritidsområder
+[caption="Figur 12: ",title=Hoveddiagram Fritidsområder]
+image::diagrammer/Hoveddiagram Fritidsområder.png[Hoveddiagram Fritidsområder]
+[caption="Figur 13: ",title=Realisering fra Areal 4.0 Fritidsområder]
+image::diagrammer/Realisering fra Areal 4.0 Fritidsområder.png[Realisering fra Areal 4.0 Fritidsområder]
+ 
+|===
+|===
+==== «featureType» Alpinbakke
+Definisjon: nedfart for ski med permanent karakter
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Alpinbakke
+ 
+[caption="Figur 14: ",title=Illustrasjon av objekttype Alpinbakke]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Campingplass
+Definisjon: faste anlegg med vaskerom, campinghytter o.l.
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Campingplass
+ 
+[caption="Figur 15: ",title=Illustrasjon av objekttype Campingplass]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Golfbane
+Definisjon: område for golfspilling
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Golfbane
+ 
+[caption="Figur 16: ",title=Illustrasjon av objekttype Golfbane]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Lekeplass
+Definisjon: område for lekeplass
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Lekeplass
+ 
+[caption="Figur 17: ",title=Illustrasjon av objekttype Lekeplass]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Skytebane
+Definisjon: avgrenset område hvor det skytes
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Skytebane
+ 
+[caption="Figur 18: ",title=Illustrasjon av objekttype Skytebane]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|Området for selve skytebanen
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» SportIdrettPlass
+Definisjon: område hvor det utøves sport og idrett
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» SportIdrettPlass
+ 
+[caption="Figur 19: ",title=Illustrasjon av objekttype SportIdrettPlass]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+<<<
+|===
+|===
+=== Pakke: Kulturområder
+Definisjon: Inneholder elementer fra SOSI Areal 4.0 Kulturområder
+[caption="Figur 20: ",title=Hoveddiagram Kulturområder]
+image::diagrammer/Hoveddiagram Kulturområder.png[Hoveddiagram Kulturområder]
+[caption="Figur 21: ",title=Realisering fra Areal 4.0 Kulturområder]
+image::diagrammer/Realisering fra Areal 4.0 Kulturområder.png[Realisering fra Areal 4.0 Kulturområder]
+ 
+|===
+|===
+==== «featureType» Gravplass
+Definisjon: område for gravstøtter, begravelsesplass og kirkegård
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Gravplass
+ 
+[caption="Figur 22: ",title=Illustrasjon av objekttype Gravplass]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+ 
+|===
+|===
+==== «featureType» Park
+Definisjon: grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
+ 
+*Supertype:* «FeatureType» KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Park
+ 
+[caption="Figur 23: ",title=Illustrasjon av objekttype Park]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Flate
+|===
+// End of UML-model
