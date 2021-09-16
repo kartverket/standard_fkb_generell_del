@@ -45,6 +45,7 @@ Bruk absolutt sti til http://skjema.geonorge.no/SOSI/produktspesifikasjon/. F.ek
 
 (flere bilder/skisser legges inn i registreringsinstruks. Se under punkt 3)
 
+
 ==== FKB tagged values
 Det skal ikke ligge noen tagged values med prefiks "FKB" på objektene i forvaltningsmodellene. Også ev. andre tagged values som finnes i de gamle modellene (SOSI_melding etc.) og som ikke er definert i dette dokumentet fjernes fra elementene.
 
@@ -63,6 +64,7 @@ Presiseringer eller tillegg for bruken/forståelsen av objekttypen i FKB skrives
 * SOSI_datatype (skal defineres i tråd med datatypen til egenskapen)
 * SOSI_lengde
 * SOSI_navn
+* defaultCodeSpace (skal defineres for alle egenskaper som benytter kodelister og ha samme verdi som "codeList" for kodelista. dvs. URL til geonorge.)
 
 ==== FKB tagged values
 Det skal ikke ligge noen tagged values med prefiks "FKB" på egenskapene i forvaltningsmodellene.
@@ -101,7 +103,7 @@ Det skal ikke ligge noen tagged values med prefiks "FKB" på kodelistene i forva
 == Registreringsinstrukser
 
 === Mal i SOSI-modellregister
-.Se under Geovekst/FKB-Naturinfo i SOSI-modellregister for mal i tråd med dette dokumentet.
+.Se under Geovekst/FKB-Naturinfo eller FKB-Bygning i SOSI-modellregister for mal i tråd med dette dokumentet.
 image::figurer/naturinfo_trestruktur.png[]
 
 *Designmål for opplegget:*
@@ -125,6 +127,7 @@ image::figurer/arv_fellesegenskaper.png[]
 . Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) _fotogrammetrisk registreringsinstruks_ (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til pakka (teksten skrives ut i toppen av dokumentasjonen)
 . Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister/datatyper) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.
 +
+.Diagram som viser arv fra abstrakt element i fotogrammetrisk spesifikasjon til konkret element i applikasjonsskjema. Gi diagrammet et navn som starter med "utelat" dersom du ikke ønsker at det skal listes ut i dokumentasjonen.
 image::figurer/arv_til_abstrakt.png[]
 . De abstrakte objekttypene gis ekstrainformasjon med tanke på eksport av dokumentasjon for registreringsinstruksen. Hvilken informasjon som skal ligge på elementene er beskrevet lenger ned.
 
@@ -134,6 +137,9 @@ Dette er endringer som man må regne med å gjøre på nytt dersom man gjør end
 * Ev. objekttyper fra forvaltningsspesifikasjonen som ikke skal inngå i registreringsinstruksen fjernes.
 * Fjerne egenskaper som ikke skal registreres
 * Endre multiplisitet fra opsjonelt til påkrevd (eller omvendt for identifikasjon og andre egenskaper som håndteres av forvaltningssystemet).
+* For fellesegenskapene vil slike endringer typisk være:
+** identifikasjon og oppdateringsdato fra påkrevd til opsjonelt
+** registreringsversjon og nøyaktighet endres fra opsjonelt til påkrevd
 
 === Informasjon som legges på de abstrakte objekttypene
 Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen bli pakken med de abstrakte objekttypene i utgangspunktet ikke berørt. Informasjonen beholdes. Det man imidlertid må gjøre i en slik prosess er å oppdatere arve-pilene slik at de peker til oppdaterte objekttyper.
