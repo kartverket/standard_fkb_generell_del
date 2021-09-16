@@ -506,8 +506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueklasse-codelist-landbruksvegklasse">5.1.13. Klasse «CodeList» Landbruksvegklasse</a></li>
 <li><a href="#trueklasse-codelist-rutemerking">5.1.14. Klasse «CodeList» Rutemerking</a></li>
 <li><a href="#trueklasse-codelist-kommunenummer">5.1.15. Klasse «CodeList» Kommunenummer</a></li>
-<li><a href="#trueklasse-codelist-belysning">5.1.16. Klasse «CodeList» Belysning</a></li>
-<li><a href="#trueklasse-codelist-eiervegsperring">5.1.17. Klasse «CodeList» EierVegsperring</a></li>
+<li><a href="#trueklasse-codelist-eiervegsperring">5.1.16. Klasse «CodeList» EierVegsperring</a></li>
 </ul>
 </li>
 <li><a href="#truepakke-generelle-elementer">5.2. Pakke: Generelle elementer</a>
@@ -596,7 +595,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truemetadataspesifikasjon">13.2. Metadataspesifikasjon</a></li>
 </ul>
 </li>
-<li><a href="#truesosi-format-realisering">Vedlegg A: SOSI-format-realisering</a></li>
+<li><a href="#truesosi-format-realisering">Vedlegg A: SOSI-format-realisering</a>
+<ul class="sectlevel3">
+<li><a href="#truefeaturetype-veglenke">A.1. «FeatureType» Veglenke</a></li>
+<li><a href="#truefeaturetype-vegsperring">A.2. «FeatureType» Vegsperring</a></li>
+</ul>
+</li>
 <li><a href="#truegml-realisering">Vedlegg B: GML-realisering</a></li>
 <li><a href="#trueannen-nyttig-informasjon-til-brukere">Vedlegg C: Annen nyttig informasjon til brukere</a></li>
 </ul>
@@ -680,13 +684,13 @@ Testversjon 2021-09-09
 <p>Kodeliste for <em>TypeVegsperring</em> endret til å samsvare med FKB-Veg (TypeVegbom) og Elveg 2.0.</p>
 </li>
 <li>
-<p>Typeveg gangveg, fortau og gangfelt er fjernet fra FKB-TraktorvegSti da de innføres i Elveg 2.0 og Nasjonal vegdatabank (NVDB).</p>
-</li>
-<li>
-<p>Typeveg <em>trapp</em> erstattes med <em>stitrapp</em>.</p>
+<p>Typeveg <em>gangveg</em>, <em>fortau</em>, <em>gangfelt</em> og <em>trapp</em> er fjernet fra FKB-TraktorvegSti da de innføres i Elveg 2.0 og Nasjonal vegdatabank (NVDB).</p>
 </li>
 <li>
 <p>Definisjoner for typeveg <em>traktorveg</em> og <em>sti</em> er revidert.</p>
+</li>
+<li>
+<p>Ny typeveg <em>stitrapp</em> innført.</p>
 </li>
 <li>
 <p>Innført ny opsjonell egenskap: <em>serviceveg</em> ja/nei.</p>
@@ -1335,6 +1339,10 @@ Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kommunenummer</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: KOMM<br></p></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
@@ -1358,6 +1366,10 @@ Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Landbruksvegklasse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: KLASSELANDBRUKSVEG<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1383,6 +1395,11 @@ Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: BOOLSK<br>
+SOSI_navn: BELYSNING<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1461,6 +1478,10 @@ SOSI_navn: BARMARKSLØYPE<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rutemerking</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: RUTEMERKING<br></p></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
@@ -1484,6 +1505,10 @@ SOSI_navn: BARMARKSLØYPE<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: MEDIUM<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1568,6 +1593,10 @@ SOSI_navn: BEREDSKAPSVEG<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: TURRUTERPEKER<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1740,6 +1769,10 @@ SOSI_navn: GJELDERTIDSROM<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vegsystemreferanse</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: VEGSYSTEMREFERANSE<br></p></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
@@ -1764,6 +1797,10 @@ Merknad: Det presiseres at kommunenummer alltid skal ha 4 sifre, dvs. eventuelt 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kommunenummer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: KOMM<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -2200,7 +2237,7 @@ Merknad: egenskapen er påkrevd for unik identifisering av veglenkeadresser, i o
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultCodeSpace: <a href="http://skjema.geonorge.no/SOSI/kodeliste/AdmEnheter/Kommunenummer" class="bare">http://skjema.geonorge.no/SOSI/kodeliste/AdmEnheter/Kommunenummer</a><br>
-SOSI_navn: KOMMUNENUMMER<br></p></td>
+SOSI_navn: KOMM<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -2639,55 +2676,12 @@ SOSI_navn: SIDEVEG<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueklasse-codelist-belysning"><a class="anchor" href="#trueklasse-codelist-belysning"></a>5.1.16. Klasse «CodeList» Belysning</h4>
-<div class="paragraph">
-<p>Definisjon: kodeliste for type belysning.</p>
-</div>
-<div class="paragraph">
-<p>Merknad: lysl&#248;yper i terreng som defineres som enten traktorveg eller sti registreres med belysning = 1.</p>
-</div>
-<div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-15"><a class="anchor" href="#trueprofilparametre-i-tagged-values-15"></a>Profilparametre i tagged values</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BELYSNING</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/belysning</a></p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueklasse-codelist-eiervegsperring"><a class="anchor" href="#trueklasse-codelist-eiervegsperring"></a>5.1.17. Klasse «CodeList» EierVegsperring</h4>
+<h4 id="trueklasse-codelist-eiervegsperring"><a class="anchor" href="#trueklasse-codelist-eiervegsperring"></a>5.1.16. Klasse «CodeList» EierVegsperring</h4>
 <div class="paragraph">
 <p>Definisjon: kodeliste for eier og forvaltningsansvar for vegsperring</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-16"><a class="anchor" href="#trueprofilparametre-i-tagged-values-16"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-15"><a class="anchor" href="#trueprofilparametre-i-tagged-values-15"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3069,7 +3063,7 @@ SOSI_navn: INFORMASJON<br></p></td>
 <p><strong>Realisering av:</strong> «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-17"><a class="anchor" href="#trueprofilparametre-i-tagged-values-17"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-16"><a class="anchor" href="#trueprofilparametre-i-tagged-values-16"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3193,7 +3187,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 <p><strong>Realisering av:</strong> «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-18"><a class="anchor" href="#trueprofilparametre-i-tagged-values-18"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-17"><a class="anchor" href="#trueprofilparametre-i-tagged-values-17"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3391,7 +3385,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-19"><a class="anchor" href="#trueprofilparametre-i-tagged-values-19"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-18"><a class="anchor" href="#trueprofilparametre-i-tagged-values-18"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3434,7 +3428,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-20"><a class="anchor" href="#trueprofilparametre-i-tagged-values-20"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-19"><a class="anchor" href="#trueprofilparametre-i-tagged-values-19"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3474,7 +3468,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-21"><a class="anchor" href="#trueprofilparametre-i-tagged-values-21"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-20"><a class="anchor" href="#trueprofilparametre-i-tagged-values-20"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3518,7 +3512,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-22"><a class="anchor" href="#trueprofilparametre-i-tagged-values-22"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-21"><a class="anchor" href="#trueprofilparametre-i-tagged-values-21"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3903,17 +3897,475 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect1">
 <h2 id="truesosi-format-realisering"><a class="anchor" href="#truesosi-format-realisering"></a>Vedlegg A: SOSI-format-realisering</h2>
 <div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
+<div class="sect3">
+<h4 id="truefeaturetype-veglenke"><a class="anchor" href="#truefeaturetype-veglenke"></a>A.1. «FeatureType» Veglenke</h4>
+<div class="sect4">
+<h5 id="truemodellelementnavn-og-sosi_navn"><a class="anchor" href="#truemodellelementnavn-og-sosi_navn"></a>Modellelementnavn og SOSI_navn</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Dersom SOSI-format er angitt under leveranseformat i kapittel 11, klippes inn SOSI-format-realiserings-rapport
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">typeVeg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Typeveg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TYPEVEG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">konnekteringslenke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«» Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KONNEKTERINGSLENKE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Veglenkeadresse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VEGLENKEADRESSE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse.kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;KOMM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse.adressekode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;ADRESSEKODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse.adressenavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;ADRESSENAVN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse.sideveg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SIDEVEG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegsystemreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VEGSYSTEMREFERANSE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegsystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VEGSYSTEM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegkategori</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Vegkategori</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGKATEGORI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegfase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Vegfase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGFASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegstrekning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VEGSTREKNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning.strekningNummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.STREKNINGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning.delstrekningNummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.DELSTREKNINGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KOMM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">landbruksvegklasse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Landbruksvegklasse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KLASSELANDBRUKSVEG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">belysning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..BELYSNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">barmarksløype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«» Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..BARMARKSLØYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rutemerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Rutemerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..RUTEMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serviceveg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«» Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..SERVICEVEG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beredskapsveg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«» Boolean</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..BEREDSKAPSVEG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">turruterPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TURRUTERPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-vegsperring"><a class="anchor" href="#truefeaturetype-vegsperring"></a>A.2. «FeatureType» Vegsperring</h4>
+<div class="sect4">
+<h5 id="truemodellelementnavn-og-sosi_navn-2"><a class="anchor" href="#truemodellelementnavn-og-sosi_navn-2"></a>Modellelementnavn og SOSI_navn</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» TypeVegsperring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">funksjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» FunksjonVegsperring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..FUNKSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gjeldertidsrom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..GJELDERTIDSROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegsystemreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VEGSYSTEMREFERANSE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegsystem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VEGSYSTEM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegkategori</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Vegkategori</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGKATEGORI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegfase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Vegfase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGFASE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegsystem.vegnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.VEGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Vegstrekning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VEGSTREKNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning.strekningNummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.STREKNINGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vegsystemreferanse.vegstrekning.delstrekningNummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;.DELSTREKNINGNUMMER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Kommunenummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KOMM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» EierVegsperring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.POSISJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -3954,7 +4406,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-08 19:10:22 +0200
+Last updated 2021-09-16 19:51:34 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
