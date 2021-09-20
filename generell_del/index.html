@@ -556,7 +556,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-08-31
+Testversjon 2021-09-19
 </td>
 </tr>
 </table>
@@ -694,7 +694,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 <div class="paragraph">
 <p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter og skal ha et representasjonspunkt. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri og uten representasjonspunkt.
-Der det er behov kan det imidlertid fortsatt modelleres representasjonspunkt og settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler. Se nærmere beskrivelse under <a href="#trueflategeometri">Flategeometri</a>.</p>
+Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler. Se nærmere beskrivelse under <a href="#trueflategeometri">Flategeometri</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Id-håndtering; Identifikasjon av objektene i FKB og pekere til Id-er i eksterne systemer:</strong></p>
@@ -725,7 +725,7 @@ Der det er behov kan det imidlertid fortsatt modelleres representasjonspunkt og 
 <p><strong>Oppdatert kvalitetsmodell:</strong></p>
 </div>
 <div class="paragraph">
-<p>Modell for å beskrive krav til kvalitet og dokumentere kvalitet på FKB-data er oppdatert. Ny modell er baserer seg mer direkte på standarden Geodatakvalitet <a href="#G">[G]</a>. Se mer under <a href="#truekvalitet">Kvalitet</a>.</p>
+<p>Modell for å beskrive krav til kvalitet og dokumentere kvalitet på FKB-data er oppdatert. Ny modell er baserer seg mer direkte på standarden Geodatakvalitet <a href="#G">[G]</a>, noe som blant annet medfører at det i FKB 5.0 settes krav til både systematiske og tilfeldige avvik. Se mer under <a href="#truekvalitet">Kvalitet</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Endret dokumentasjon:</strong></p>
@@ -1420,7 +1420,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Alle kartobjekter i FKB har en unik identifikator i form av datatypen <em>Identifikasjon</em>. Identifikasjon er en datatype som består av <em>navnerom</em>, <em>lokalid</em> og <em>versjonid</em>. For FKB-data er <em>lokalid</em> på formen UUID <a href="#UUID">[UUID]</a>. Dette innebærer at <em>lokalid</em>-en alene alltid er globalt unik. Identifikasjon er modellert som en del av fellesegenskapene i FKB. Se detaljer om dette under kapittel 7.</p>
 </div>
 <div class="paragraph">
-<p>Logikken rundt indentifisering og håndtering av unike objekter i FKB konsentrerer seg om håndtering av egenskapen <em>lokalid</em>. Ved bruk av FKB-data skal man forholde seg til <em>lokalid</em> som den egenskapen som identifiserer hvert kartobjekt i FKB unikt. Både NGIS-OpenAPI og Geosynkronisering-API baserer seg på <em>lokalid</em> til å identifisere transaksjoner på objekter i FKB.</p>
+<p>Logikken rundt indentifisering og håndtering av unike objekter i FKB konsentrerer seg om håndtering av egenskapen <em>lokalid</em>. Ved bruk av FKB-data skal man forholde seg til <em>lokalid</em> som den egenskapen som identifiserer hvert kartobjekt i FKB unikt. Både NGIS-OpenAPI og Geosynkronisering-API baserer seg på <em>lokalid</em> til å identifisere transaksjoner på objekter i FKB. Når FKB-data utveksles på GML-format skal GML-id til objektene inneholdet <em>lokalid</em>.</p>
 </div>
 <div class="paragraph">
 <p>Det er vesentlig å presisere at identifikasjon på kartobjektene i FKB nettopp identifiserer et kartobjekt og <em>ikke</em> det fysiske objektet som kartobjektet representerer. Det kan oppstå nye/endra kartobjekter som representerer det samme fysiske objektet og man bør derfor være forsiktig med å knytte informasjon om det fysiske objektet til den unike identifikatoren i FKB. I slike sammenhenger bør man i stedet benytte en tematisk identifikator som f.eks. bygningsnummer for objekttype Bygning.</p>
@@ -1437,7 +1437,14 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Nye kartobjekter: Det genereres en ny lokalid til objektet</p>
 </li>
 <li>
-<p>Endring av et objekt (egenskaper og/eller geometri): Lokalid beholdes (versjonid oppdateres)</p>
+<p>Endring av et objekt (egenskaper og/eller geometri): Lokalid beholdes (versjonid oppdateres).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Endring av objekttype på et objekt er et spesialtilfelle. Dette håndteres som at et objekt av den gamle objekttypen slettes og at et objekt av den nye objekttypen etableres (lokalid beholdes ikke, se regler under).</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Sletting av objekt: Objektet (inkl. lokalid) slettes. Nye objekter som oppstår vil ikke gjenbruke en lokalid som allerede er brukt/slettet</p>
@@ -1446,7 +1453,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Splitting av et objekt: Håndteres som ett endret objekt (lokalid beholdes) og ett nytt objekt (ny lokalid)</p>
 </li>
 <li>
-<p>Sammenføying av to objekter: Håndteres som ett endret objekt (lokalid beholdes) og ett slettet objekt</p>
+<p>Sammenføying av to objekter: Håndteres som ett endret objekt (lokalid beholdes) og ett slettet objekt slettes.</p>
 </li>
 </ul>
 </div>
@@ -1748,19 +1755,24 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd flategeometri og opsjonell punktgeometri (og en constraint som sier at <em>en</em> av dem skal finnes)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd flategeometri og opsjonell punktgeometri</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper med flategeometri for å gi mulighet til å utveksle representasjonspunkt for flategeometrien. Anbefales kun brukt der representasjonspunktet har en mening/funksjon.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Arealressursflate</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell punktgeometri og opsjonell flategeometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd punktgeometri og opsjonell flategeometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper som alltid vil ha punktgeometri, men som også kan ha flaterepresentasjon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Bygning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell punktgeometri og opsjonell flategeometri (og en constraint som sier at <em>en</em> av dem skal finnes)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Brukes for objekttyper som det i noen sammenhenger er naturlig å representere som punkt og i andre sammenhenger som flate (ut fra størrelse/detaljering etc).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Bygning, Objtype Pipe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objtype Pipe</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Ved geografiske søk på objekter med multippel geometri bør en union av geometriene legges til grunn for søket.</p>
+<p>I alle disse kombinasjonene vil det være et krav om at punktgeometrien ligger innenfor flategeometrien. I GML-formatet vil disse dataene utveksles med flere geometriegenskaper. I SOSI-formatet vil de bare ha en geometri. Enten punktgeometri eller flategeometri - der punktgeometrien utveksles som representasjonspunkt i flaten.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1790,6 +1802,12 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 <div class="paragraph">
 <p>Hvilke avgrensningskurver som brukes til å avgrense et flateobjekt er en spesialvariant av assosiasjoner med egne krav. Dette er beskrevet nærmere under <a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></p>
+</div>
+<div class="sect4">
+<h5 id="truerealisering-av-assosiasjoner-i-sosi-og-gml"><a class="anchor" href="#truerealisering-av-assosiasjoner-i-sosi-og-gml"></a>Realisering av assosiasjoner i SOSI og GML</h5>
+<div class="paragraph">
+<p>SOSI del 1 Realisering av GML-format 5.0 og Realisering av GML-format 5.0 <a href="#SOSI">[SOSI]</a> gjelder ved utveksling av data med assosiasjoner på SOSI eller GML-format. Dette innebærer at i GML-formatet utveksles assosiasjoner med mekanismen <em>xlink:href</em> på objektet det pekes fra til GML_Id på objektet det pekes til. GML_Id skal i FKB utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila. I SOSI-formatet utveksles assosiasjoner med referanser til SOSI-gruppenummer (altså kun unikt innenfor SOSI-fila).</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1871,7 +1889,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="sect4">
 <h5 id="trueflateobjekter-på-sosi-format"><a class="anchor" href="#trueflateobjekter-på-sosi-format"></a>Flateobjekter på SOSI-format</h5>
 <div class="paragraph">
-<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater av "Type 2" kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater av "Type 1" i SOSI må man etablere en .KURVE-gruppe (som ikke er noe eget objekt og derfor inneholder kun geometri og ingen <em>..objtype</em> eller andre egenskaper) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet.</p>
+<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater av "Type 2" kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater av "Type 1" i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet.</p>
 </div>
 </div>
 <div class="sect4">
@@ -3335,7 +3353,7 @@ se på kvalitetskodingen (metadata) på det enkelte objekt. Kravene til kvalitet
 <h3 id="truekvalitetselementer-som-benyttes-for-å-sette-krav-til-fkb-data"><a class="anchor" href="#truekvalitetselementer-som-benyttes-for-å-sette-krav-til-fkb-data"></a>8.2. Kvalitetselementer som benyttes for å sette krav til FKB-data</h3>
 <div class="paragraph">
 <p>I dette avsnittet er det angitt hvilke kvalitetselementer som skal benyttes i spesifikasjoner for
-datafangst av FKB-data. Kvalitetselementene er hentet fra Geodatakvalitet <a href="#G">[G]</a> og det henvises det til
+datafangst av FKB-data. Kvalitetselementene er hentet fra Geodatakvalitet <a href="#G">[G]</a> og det henvises til
 denne standarden for nærmere beskrivelse av de ulike kvalitetselementene og kvalitetsmålene, og for
 prinsipper for kontroll av kravene i en leveranse.</p>
 </div>
@@ -3530,7 +3548,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="paragraph">
 <p>For å angi krav til stedfestingsnøyaktighet er det definert fire klasser som objekttypene er inndelt i. Inndelingen i klasser bygger på hvor skarpt objekttypen er definert i terrenget. Denne inndelingen i nøyaktighetsklasser benyttes gjennomgående for alle datasett som inngår i fotogrammetrisk FKB og kan også anvendes som utgangspunkt for å sette krav til innsamling av FKB-data med andre metoder. For å få en oversikt over hvilke krav som gjelder for ulike objekttyper henvises det til spesifikasjonen av det enkelte FKB-datasett.</p>
 </div>
-<table id="tab-Noyaktighetskrav" class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 11. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3620,7 +3638,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-08-31 13:21:33 +0200
+Last updated 2021-09-19 15:46:18 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
