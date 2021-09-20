@@ -1,41 +1,21 @@
-
-=== FKB Generell del 5.0
-Generelle klasser med fellesegenskaper som realiseres i de ulike FKB-produktspesifikasjonene.
+== UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett
+Generelle klasser og fellesegenskaper som kan kopieres inn og benyttes i FKB produktspesifikasjoner.
  
-===== «ApplicationSchema» FKB Generell del-5.0
-[cols="20,80"]
-|===
-|language
-|no
- 
-|SOSI_kortnavn
-|FKB generell del
- 
-|SOSI_langnavn
-|FKB generell del
- 
-|SOSI_modellstatus
-|utkastOgSkjult
- 
-|SOSI_spesifikasjonstype
-|abstrakte spesifikasjon
- 
-|SOSI_versjon
-|5.1
- 
-|version
-|5.0
+=== Pakke: Generelle elementer
+*Definisjon:* Pakke med modelleringselementer som benyttes i applikasjonsskjema for forvaltning av FKB
+[caption="Figur 1: ",title=Realisering fra SOSI generelle typer]
+image::diagrammer/Realisering fra SOSI generelle typer.png[Realisering fra SOSI generelle typer]
+[caption="Figur 2: ",title=Oversiktsdiagram Fellesegenskaper]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 3: ",title=Hoveddiagram Posisjonskvalitet]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
 |===
-[caption="Figur 1: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::figurer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 2: ",title=Hoveddiagram Fellesegenskaper]
-image::figurer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 3: ",title=Posisjonskvalitet]
-image::figurer/Posisjonskvalitet.png[Posisjonskvalitet]
+|===
  
-==== «FeatureType» Fellesegenskaper
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+[[fellesegenskaper]]
+==== «FeatureType» Fellesegenskaper (abstrakt)
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
@@ -53,16 +33,19 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |unik identifikasjon av et objekt 
 
 Merknad FKB:
+
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Identifikasjon
-|Tagged Values: 
+|<<identifikasjon,«dataType» Identifikasjon>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
 |===
@@ -73,13 +56,22 @@ SOSI_navn: IDENT +
  
 |Definisjon: 
 |tidspunkt for siste endring p&#229; objektet 
+
+Merknad FKB: 
+Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
+iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|DateTime
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
@@ -90,14 +82,14 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget 
+|
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: DATAFANGSTDATO + 
@@ -117,8 +109,8 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 |[0..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: VERIFISERINGSDATO + 
@@ -135,9 +127,10 @@ SOSI_navn: VERIFISERINGSDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
-|Tagged Values: 
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
 SOSI_datatype: T + 
 SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
@@ -157,12 +150,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: INFORMASJON + 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |===
 [cols="20,80"]
 |===
@@ -171,10 +159,14 @@ SOSI_navn: INFORMASJON +
 «FeatureType» KvalitetPåkrevd
 |===
  
-==== «FeatureType» KvalitetPåkrevd
-Definisjon: abstrakt objekttype som benyttes som supertype for alle objekttyper som skal ha p&#229;krevd posisjonskvalitet
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
+[[kvalitetpåkrevd]]
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* 
+ 
+*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
@@ -193,16 +185,20 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
-|Tagged Values: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
  
-==== «FeatureType» KvalitetOpsjonell
-Definisjon: abstrakt objekttype som benyttes som supertype for alle objekttyper som skal ha opsjonell posisjonskvalitet
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
+[[kvalitetopsjonell]]
+==== «FeatureType» KvalitetOpsjonell (abstrakt)
+*Definisjon:* 
+ 
+*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
@@ -221,14 +217,18 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[0..1]
  
 |Type: 
-|Posisjonskvalitet
-|Tagged Values: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
  
+|===
+|===
+ 
+[[identifikasjon]]
 ==== «dataType» Identifikasjon
-Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
@@ -236,7 +236,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -258,8 +258,8 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -281,8 +281,8 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -300,23 +300,27 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
  
+|===
+|===
+ 
+[[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -337,9 +341,11 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -350,18 +356,24 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -377,9 +389,11 @@ SOSI_navn: NØYAKTIGHET +
 |[0..1]
  
 |Type: 
-|Synbarhet
-|Tagged Values: 
+|<<synbarhet,«CodeList» Synbarhet>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -398,9 +412,11 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -411,33 +427,54 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
+
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
+|Beskrivelse: 
+|
+ 
+|===
+ 
+|===
+|===
+ 
+[[synbarhet]]
 ==== «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
 |SOSI_datatype
 |H
@@ -449,46 +486,26 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |SYNBARHET
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-08-04T14:47:46Z
  
-Kodelistens navn i registeret: Synbarhet
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Middels synlig
-|Objektet er middels synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som har lav kontrast eller er delvis skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en større verdi for nøyaktighet enn kravet (opptil 3 ganger kravet)
-|2
-|Ikke synlig
-|Objektet er ikke synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som er helt skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en stor verdi for nøyaktighet (mer enn 3 ganger kravet)
-|3
-|Fullt ut synlig
-|Objektet er fullt ut synlig/gjenfinnbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk registrering skal objekter som er fullt ut synlige registreres i tråd med angitte krav til nøyaktig registrering.
-|0
-|Dårlig gjenfinnbar i terreng
-|Objektets posisjon er vanskelig å definere presist i terrenget på grunn av objektets natur. Koden kan f.eks. brukes på høydekurver (eller andre isolinjer) eller objekter som er skjult i bakken (f.eks. innmåling av ledninger på lukket grøft) 
-|1
 |===
  
+[[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -500,56 +517,24 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-04T14:47:47Z
  
-Kodelistens navn i registeret: Datafangstmetode
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Som bygget
-|Posisjonen er hentet fra prosjekterte eller planlagte data, f.eks. fra en BIM-modell, som er verifisert som bygget ved innmålinger
-|byg
-|Ukjent
-|Ukjent eller uspesifisert datafangstmetode
-|ukj
-|Plandata
-|Posisjonen er hentet plandata. Posisjonen er ikke verifisert med innmåling. 
-|pla
-|Satellittmålt
-|Posisjonen er målt inn direkte med GNSS (for posisjoner målt inn med GNSS i kombinasjon med andre landmålingsmetoder skal koden Landmåling benyttes)
-|sat
-|Generert
-|Posisjonen er manuelt konstruert, eller generert ved maskinlæring eller annen type programvare, fra punktsky fra laserskanning, bildematching, sonar, andre typer sensordata eller kombinasjon av flere typer sensordata.
-|gen
-|Fotogrammetri
-|Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
-|fot
-|Digitalisert
-|Posisjonen er digitalisert fra ortofoto eller andre plane kartdata
-|dig
-|Landmålt
-|Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
-|lan
 |===
  
+[[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -561,65 +546,24 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |REGISTRERINGSVERSJON
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-08-04T14:47:48Z
  
-Kodelistens navn i registeret: Registreringsversjon
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|FKB 4.5 2014-03-01
-|Data registrert etter FKB 4.5 2014-03-01
-|2014-03-01
-|FKB 4.6 2020-01-01
-|Data registrert etter FKB 4.6/4.61 2020-01-01
-|2020-01-01
-|FKB 4.6 2018-01-01
-|Data registrert etter FKB 4.6/4.61 2018-01-01
-|2018-01-01
-|FKB 5.0 2022-01-01
-|Data registrert etter FKB 5.0 2022-01-01
-|2022-01-01
-|FKB 4.01 2011-01-01
-|Data registrert etter FKB 4.01 2011-01-01
-|2011-01-01
-|FKB 4.0 2007-01-01
-|Data registrert etter FKB 4.0 2007-01-01
-|2007-01-07
-|FKB 4.6 2016-06-01
-|Data registrert etter FKB 4.6 2016-06-01
-|2016-06-01
-|FKB 4.01 2009-03-10
-|Data registrert etter FKB 4.01 2009-03-10
-|2009-03-10
-|FKB 4.5 2015-01-01
-|Data registrert etter FKB 4.5 2015-01-01
-|2015-01-01
-|FKB 4.02 2013-01-01
-|Data registrert etter FKB 4.02 2013-01-01
-|2013-01-01
-|FKB 4.02 2011-12-01
-|Data registrert etter FKB 4.02 2011-12-01
-|2001-12-01
 |===
  
+[[høydereferanse]]
 ==== «CodeList» Høydereferanse
-Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
 |SOSI_datatype
 |T
@@ -631,44 +575,27 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |HREF
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-08-04T14:47:50Z
  
-Kodelistens navn i registeret: Høydereferanse
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Fot
-|Høyden målt til foten av objektet
-|FOT
-|Ukjent
-|Ukjent høydereferanse
-|UKJENT
-|Topp
-|Høyden målt til toppen av objektet
-|TOP
 |===
  
+[[medium]]
 ==== «CodeList» Medium
-Definisjon: objektets beliggenhet i forhold til jordoverflaten
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
 Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 |SOSI_datatype
 |T
@@ -680,53 +607,26 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
-Kodeliste hentet på tidspunkt: 2021-08-04T14:47:50Z
- 
-Kodelistens navn i registeret: Medium
- 
-===== Koder
-[cols="25,60,15"]
+<<<
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|På terrenget
-|På terrenget/på bakkenivå
-|T
-|Ukjent
-|Ukjent plassering i forhold til jordoverflaten
-|X
-|Delvis under vann
-|Delvis i eller under vann
-|D
-|På Isbre
-|På isbre
-|I
-|Under terrenget
-|Under terrenget
-|U
-|I vann
-|Alltid i vann
-|V
-|I Bygning
-|I eller på bygning eller bygningsmessig anlegg
-|B
-|I luft
-|I lufta
-|L
 |===
-
-
-=== Modellelementer til bruk i distribusjon
-Inneholder modelleringselementer som ikke benyttes ved forvaltning av data, men som kan benyttes i spesifikasjoner laget med tanke p&#229; distribusjon.
-[caption="Figur 4: ",title=Mekanismer til bruk i distribusjon]
-image::figurer/Mekanismer til bruk i distribusjon.png[Mekanismer til bruk i distribusjon]
+=== Pakke: Elementer til bruk i distribusjon
+*Definisjon:* Pakke med elementer som kan benyttes i applikasjonsskjema for distribusjon av FKB-data/FKB-produkter
+[caption="Figur 4: ",title=Hoveddiagram Mekanismer til bruk i distribusjon]
+image::diagrammer/Hoveddiagram Mekanismer til bruk i distribusjon.png[Hoveddiagram Mekanismer til bruk i distribusjon]
+[caption="Figur 5: ",title=Realisering av elementer fra SOSI Generell del]
+image::diagrammer/Realisering av elementer fra SOSI Generell del.png[Realisering av elementer fra SOSI Generell del]
  
-==== «FeatureType» EkstraegenskaperDistribusjon
-Abstrakt supertyoe som inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon
+|===
+|===
+ 
+[[ekstraegenskaperdistribusjon]]
+==== «FeatureType» EkstraegenskaperDistribusjon (abstrakt)
+*Definisjon:* Inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon
+ 
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -743,14 +643,20 @@ Merknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originald
 |[0..1]
  
 |Type: 
-|Kopidata
-|Tagged Values: 
+|<<kopidata,«dataType» Kopidata>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KOPIDATA + 
 |===
  
+|===
+|===
+ 
+[[kantutsnitt]]
 ==== «featureType» KantUtsnitt
-Definisjon: avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbasen men kan benyttes for å lage komplette flateavgrensninger ved klipping av et område ut fra forvaltningsbasen. KantUtsnitt kan finnes i fileksporter.
+*Definisjon:* avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbasen men kan benyttes for å lage komplette flateavgrensninger ved klipping av et område ut fra forvaltningsbasen. KantUtsnitt kan finnes i fileksporter.
+ 
+*Realisering av:* «ApplicationSchema» Generelle typer 5.1/Objekttyper med tydelige fellestrekk/Avgrensningslinjer::«FeatureType» KantUtsnitt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -765,7 +671,7 @@ Definisjon: avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbas
 |[1..1]
  
 |Type: 
-|Kurve
+|<<kurve,«dataType» Kurve>>
 |===
 [cols="20,80"]
 |===
@@ -779,18 +685,22 @@ Definisjon: avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbas
 |[0..1]
  
 |Type: 
-|Identifikasjon
+|<<identifikasjon,«dataType» Identifikasjon>>
 |===
  
+|===
+|===
+ 
+[[kopidata]]
 ==== «dataType» Kopidata
-Definisjon: angivelse av at objektet er hentet fra en kopi av originaldata
+*Definisjon:* angivelse av at objektet er hentet fra en kopi av originaldata
 
 Merknad: 
 Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Kopidata
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -812,8 +722,8 @@ Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres
 |[1..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: H + 
 SOSI_lengde: 4 + 
@@ -831,11 +741,11 @@ SOSI_navn: OMRÅDEID +
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
-SOSI_lengde: 100 + 
+SOSI_lengde: 50 + 
 SOSI_navn: ORIGINALDATAVERT + 
 |===
 [cols="20,80"]
@@ -855,9 +765,10 @@ Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Da
 |[1..1]
  
 |Type: 
-|DateTime
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
 SOSI_navn: KOPIDATO + 
 |===
+// End of UML-model
