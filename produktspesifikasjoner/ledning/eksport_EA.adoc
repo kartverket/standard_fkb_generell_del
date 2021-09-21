@@ -1,10 +1,9 @@
-=== «ApplicationSchema» FKB-Ledning-5.0-Utkast
-Definisjon: Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avl&#248;psanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkeniv&#229;) som inng&#229;r i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.
+=== Pakke «ApplicationSchema» FKB-Ledning-5.0-Utkast
+*Definisjon:* Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avl&#248;psanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkeniv&#229;) som inng&#229;r i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.
 
 FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI del 1 versjon 4.5 og SOSI del 2 Ledning versjon 4.6.
-
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |definition
@@ -20,7 +19,7 @@ FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI 
 |no
  
 |SOSI_kortnavn
-|FKB-Ledning
+|FKBLedning
  
 |SOSI_langnavn
 |FKB-Ledning
@@ -32,10 +31,10 @@ FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI 
 |prodspesifikasjon
  
 |SOSI_versjon
-|5.1
+|5.0
  
 |targetNamespace
-|http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/
+|http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0
  
 |version
 |5.0
@@ -44,29 +43,32 @@ FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI 
 |ledning
  
 |xsdDocument
-|fkbledning50utkast.xsd
+|FKBLedningUtkast.xsd
  
 |xsdEncodingRule
 |sosi
  
 |===
 [caption="Figur 1: ",title=Hoveddiagram FKB-Ledning 5.0]
-image::diagrammer/Hoveddiagram FKB-Ledning 5.0.png[link="diagrammer/Hoveddiagram FKB-Ledning 5.0.png", window=_blank]
+image::diagrammer/Hoveddiagram FKB-Ledning 5.0.png[Hoveddiagram FKB-Ledning 5.0]
 [caption="Figur 2: ",title=Pakkerealisering FKB-Ledning 5.0]
-image::diagrammer/Pakkerealisering FKB-Ledning 5.0.png[link="diagrammer/Pakkerealisering FKB-Ledning 5.0.png", window=_blank]
+image::diagrammer/Pakkerealisering FKB-Ledning 5.0.png[Pakkerealisering FKB-Ledning 5.0]
+<<<
+|===
+|===
 === Pakke: Objekttyper - abstrakte
-Definisjon: Ikke realiserbare objekttyper. Objekttypene benyttes kun som konteinerobjekter for egenskaper som benyttes av et eller flere subtyper.
+*Definisjon:* Ikke realiserbare objekttyper. Objekttypene benyttes kun som konteinerobjekter for egenskaper som benyttes av et eller flere subtyper.
 [caption="Figur 3: ",title=Objekttyper - abstrakte]
 image::diagrammer/Objekttyper - abstrakte.png[Objekttyper - abstrakte]
 [caption="Figur 4: ",title=Realiseringer objekttyper - abstrakte]
 image::diagrammer/Realiseringer objekttyper - abstrakte.png[Realiseringer objekttyper - abstrakte]
  
-==== «FeatureType» Kopling_kurve
-Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
+|===
+|===
  
-*Supertype:* «FeatureType» Nettverkskomponent
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling
+[[kopling_kurve]]
+==== «FeatureType» Kopling_kurve (abstrakt)
+*Definisjon:* generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
  
 ===== Egenskaper
 [cols="20,80"]
@@ -81,28 +83,32 @@ Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnett
 |[1..1]
  
 |Type: 
-|GM_Curve
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|Profilparametre i tagged values: 
 |
 SOSI_geometri: Kurve + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Masteomriss +
-«FeatureType» Vindturbinomriss +
-«FeatureType» Nettverkstasjonomriss +
-«FeatureType» Åk
+|Supertype: 
+|<<nettverkskomponent,«FeatureType» Nettverkskomponent>>
+ 
+|Subtyper:
+|<<masteomriss,«FeatureType» Masteomriss>> +
+<<vindturbinomriss,«FeatureType» Vindturbinomriss>> +
+<<nettverkstasjonomriss,«FeatureType» Nettverkstasjonomriss>> +
+<<åk,«FeatureType» Åk>> +
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling +
 |===
  
-==== «FeatureType» Kopling_punkt
-Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
+|===
+|===
  
-*Supertype:* «FeatureType» Nettverkskomponent
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.5/Kjernemodell::«featureType» Kopling
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling
+[[kopling_punkt]]
+==== «FeatureType» Kopling_punkt (abstrakt)
+*Definisjon:* generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
  
 ===== Egenskaper
 [cols="20,80"]
@@ -117,31 +123,35 @@ Definisjon: generell betegnelse på objekt som er node (punkt) i et ledningsnett
 |[1..1]
  
 |Type: 
-|GM_Point
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|Profilparametre i tagged values: 
 |
 SOSI_geometri: Punkt + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Vindturbin +
-«FeatureType» Kumlokk +
-«FeatureType» Nettverkstasjon +
-«FeatureType» Flymarkør +
-«FeatureType» Lysarmatur +
-«FeatureType» Mast +
-«FeatureType» Skap
+|Supertype: 
+|<<nettverkskomponent,«FeatureType» Nettverkskomponent>>
+ 
+|Subtyper:
+|<<vindturbin,«FeatureType» Vindturbin>> +
+<<kumlokk,«FeatureType» Kumlokk>> +
+<<nettverkstasjon,«FeatureType» Nettverkstasjon>> +
+<<flymarkør,«FeatureType» Flymarkør>> +
+<<lysarmatur,«FeatureType» Lysarmatur>> +
+<<mast,«FeatureType» Mast>> +
+<<skap,«FeatureType» Skap>> +
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling +
 |===
  
-==== «FeatureType» Ledning
-Definisjon: generell betegnelse for langsgående objekt i et ledningsnettverk
+|===
+|===
  
-*Supertype:* «FeatureType» Nettverkskomponent
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Ledning
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.5/Kjernemodell::«featureType» Ledning
+[[ledning]]
+==== «FeatureType» Ledning (abstrakt)
+*Definisjon:* generell betegnelse for langsgående objekt i et ledningsnettverk
  
 ===== Egenskaper
 [cols="20,80"]
@@ -156,23 +166,31 @@ Definisjon: generell betegnelse for langsgående objekt i et ledningsnettverk
 |[1..1]
  
 |Type: 
-|GM_Curve
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|Profilparametre i tagged values: 
 |
 SOSI_geometri: Kurve + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» LidarMetadata +
-«FeatureType» Kanal +
-«FeatureType» Trase
+|Supertype: 
+|<<nettverkskomponent,«FeatureType» Nettverkskomponent>>
+ 
+|Subtyper:
+|<<lidarmetadata,«FeatureType» LidarMetadata>> +
+<<kanal,«FeatureType» Kanal>> +
+<<trase,«FeatureType» Trase>> +
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Ledning +
 |===
  
-==== «FeatureType» LidarMetadata
-Definisjon: informasjon om punkskyen som ligger til grunn for klassifisering og vektorisering
+|===
+|===
  
-*Supertype:* «FeatureType» Ledning
+[[lidarmetadata]]
+==== «FeatureType» LidarMetadata (abstrakt)
+*Definisjon:* informasjon om punkskyen som ligger til grunn for klassifisering og vektorisering
  
 ===== Egenskaper
 [cols="20,80"]
@@ -187,8 +205,8 @@ Definisjon: informasjon om punkskyen som ligger til grunn for klassifisering og 
 |[1..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: H + 
 SOSI_lengde: 5 + 
@@ -206,8 +224,8 @@ SOSI_navn: ANTALL_LASERPUNKT +
 |[0..1]
  
 |Type: 
-|VertikalAvstandLedning
-|Tagged Values: 
+|<<vertikalavstandledning,«dataType» VertikalAvstandLedning>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: MAKS_VERTIKALUTSTREKNING + 
 |===
@@ -223,26 +241,28 @@ SOSI_navn: MAKS_VERTIKALUTSTREKNING +
 |[0..1]
  
 |Type: 
-|VertikalAvstandLedning
-|Tagged Values: 
+|<<vertikalavstandledning,«dataType» VertikalAvstandLedning>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: MIN_VERTIKALUTSTREKNING + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Jordingsledning +
-«FeatureType» Luftlinje
+|Supertype: 
+|<<ledning,«FeatureType» Ledning>>
+ 
+|Subtyper:
+|<<jordingsledning,«FeatureType» Jordingsledning>> +
+<<luftlinje,«FeatureType» Luftlinje>> +
 |===
  
-==== «FeatureType» Nettverkskomponent
-Definisjon: konteiner objekt med fellesegenskaper for alle ledningsobjekter
+|===
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Nettverkskomponent
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.5/Kjernemodell::«featureType» Nettverkskomponent
+[[nettverkskomponent]]
+==== «FeatureType» Nettverkskomponent (abstrakt)
+*Definisjon:* konteiner objekt med fellesegenskaper for alle ledningsobjekter
  
 ===== Egenskaper
 [cols="20,80"]
@@ -260,8 +280,8 @@ Vil kunne brukes til &#229; knytte sammen informasjon om samme komponenten forva
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 50 + 
@@ -285,8 +305,8 @@ I noen f&#229; tilfeller kan det v&#230;re delt eierskap av et objekt i marka, t
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 9 + 
@@ -304,8 +324,8 @@ SOSI_navn: EIERORGNR +
 |[0..*]
  
 |Type: 
-|URI
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
@@ -323,23 +343,32 @@ SOSI_navn: EKSTERNPEKER +
 |[1..1]
  
 |Type: 
-|Ledningsnettverkstype
-|Tagged Values: 
+|<<ledningsnettverkstype,«CodeList» Ledningsnettverkstype>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype + 
 SOSI_datatype: T + 
 SOSI_lengde: 32 + 
 SOSI_navn: LEDNINGSNETTVERKSTYPE + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Kopling_punkt +
-«FeatureType» Ledning +
-«FeatureType» Kopling_kurve
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Subtyper:
+|<<kopling_punkt,«FeatureType» Kopling_punkt>> +
+<<ledning,«FeatureType» Ledning>> +
+<<kopling_kurve,«FeatureType» Kopling_kurve>> +
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Nettverkskomponent +
+|===
+<<<
+|===
 |===
 === Pakke: Objekttyper - instansierbare
-Definisjon: Instansierbare objekttyper. Objekttypene kan benyttes som objekttyper i forbindelse med datautveksling. Objekttypene arver gjerne en eller flere egenskaper fra ett eller flere abstrakte supertyper, men kan ogs&#229; inneholde egenskaper som kun er relevante for den aktuelle objekttypen.
+*Definisjon:* Instansierbare objekttyper. Objekttypene kan benyttes som objekttyper i forbindelse med datautveksling. Objekttypene arver gjerne en eller flere egenskaper fra ett eller flere abstrakte supertyper, men kan ogs&#229; inneholde egenskaper som kun er relevante for den aktuelle objekttypen.
 [caption="Figur 5: ",title=Instansierbare objekttyper]
 image::diagrammer/Instansierbare objekttyper.png[Instansierbare objekttyper]
 [caption="Figur 6: ",title=Flymarkør - alle egenskaper og realisering]
@@ -367,40 +396,77 @@ image::diagrammer/Vindturbin og Vindturbinomriss - alle egenskaper og realiserin
 [caption="Figur 17: ",title=Åk - alle egenskaper og realisering]
 image::diagrammer/Åk - alle egenskaper og realisering.png[Åk - alle egenskaper og realisering]
  
+|===
+|===
+ 
+[[flymarkør]]
 ==== «FeatureType» Flymarkør
-Definisjon: markering av store luftspenn over daler og fjorder
+*Definisjon:* markering av store luftspenn over daler og fjorder
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-[caption="Figur 18: Eksempel på ",title=Flymarkør]
+[caption="Figur 18: ",title=Illustrasjon av objekttype Flymarkør]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg]
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*skal ligge på Trase*
  
+|Beskrivelse: 
+|Flymarkør og kurvepunkt i Trase skal ha samme posisjon, både i grunnriss og høyde.
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+ 
+|===
+ 
+|===
+|===
+ 
+[[jordingsledning]]
 ==== «FeatureType» Jordingsledning
-Definisjon: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende
+*Definisjon:* ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende
  
-*Supertype:* «FeatureType» LidarMetadata
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<lidarmetadata,«FeatureType» LidarMetadata>>
  
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» Jordingsledning
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» Jordingsledning +
+|===
  
+|===
+|===
  
+[[kanal]]
 ==== «FeatureType» Kanal
-Definisjon: brukes som fremf&#248;ringsvei for ledning
+*Definisjon:* brukes som fremf&#248;ringsvei for ledning
  
-*Supertype:* «FeatureType» Ledning
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kanal
- 
-[caption="Figur 19: Eksempel på ",title=Kanal]
+[caption="Figur 19: ",title=Illustrasjon av objekttype Kanal]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<ledning,«FeatureType» Ledning>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kanal +
+|===
+ 
+|===
+|===
+ 
+[[kumlokk]]
 ==== «FeatureType» Kumlokk
-Definisjon: et deksel over en kum eller annet hulrom under bakkeniv&#229;
+*Definisjon:* et deksel over en kum eller annet hulrom under bakkeniv&#229;
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kumlokk
- 
-[caption="Figur 20: Eksempel på ",title=Kumlokk]
+[caption="Figur 20: ",title=Illustrasjon av objekttype Kumlokk]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -415,21 +481,30 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 |[1..1]
  
 |Type: 
-|Kumlokkform
-|Tagged Values: 
+|<<kumlokkform,«CodeList» Kumlokkform>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform + 
 SOSI_datatype: T + 
 SOSI_lengde: 20 + 
 SOSI_navn: KUMLOKKFORM + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kumlokk +
+|===
+ 
+|===
+|===
+ 
+[[luftlinje]]
 ==== «FeatureType» Luftlinje
-Definisjon: en enkelt vaier/kabel mellom to faste forankringspunkt
- 
-*Supertype:* «FeatureType» LidarMetadata
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Luftlinje
+*Definisjon:* en enkelt vaier/kabel mellom to faste forankringspunkt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -444,23 +519,32 @@ Definisjon: en enkelt vaier/kabel mellom to faste forankringspunkt
 |[1..1]
  
 |Type: 
-|Fase
-|Tagged Values: 
+|<<fase,«CodeList» Fase>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase + 
 SOSI_datatype: T + 
 SOSI_lengde: 10 + 
 SOSI_navn: FASE + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<lidarmetadata,«FeatureType» LidarMetadata>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Luftlinje +
+|===
+ 
+|===
+|===
+ 
+[[lysarmatur]]
 ==== «FeatureType» Lysarmatur
-Definisjon: selve det elektriske punktet som gir lys
+*Definisjon:* selve det elektriske punktet som gir lys
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Armatur
- 
-[caption="Figur 21: Eksempel på ",title=Lysarmatur]
+[caption="Figur 21: ",title=Illustrasjon av objekttype Lysarmatur]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -475,8 +559,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 |[1..1]
  
 |Type: 
-|Punktplassering
-|Tagged Values: 
+|<<punktplassering,«CodeList» Punktplassering>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering + 
 SOSI_navn: BELYSNINGSPLASSERING + 
@@ -493,18 +577,30 @@ SOSI_navn: BELYSNINGSPLASSERING +
 |Multiplisitet: 
 |[0..1]
  
-|Til klasse:
-|«FeatureType» Mast
+|Assosiasjonsnavn: 
+|MastArmatur
+ 
+|Til klasse
+|<<mast,«FeatureType» Mast>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Armatur +
 |===
  
+|===
+|===
+ 
+[[mast]]
 ==== «FeatureType» Mast
-Definisjon: alle konstruksjoner laget for &#229; holde ledningsnett/komponent oppe fra bakken. Dette betyr at det ogs&#229; inkluderer det som i noen sammenhenger kalles Stolpe
+*Definisjon:* alle konstruksjoner laget for &#229; holde ledningsnett/komponent oppe fra bakken. Dette betyr at det ogs&#229; inkluderer det som i noen sammenhenger kalles Stolpe
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Mast
- 
-[caption="Figur 22: Eksempel på ",title=Mast]
+[caption="Figur 22: ",title=Illustrasjon av objekttype Mast]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -522,8 +618,8 @@ Angis kun dersom mastens geometri har laser som datafangstmetode.
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: H + 
 SOSI_lengde: 5 + 
@@ -541,8 +637,8 @@ SOSI_navn: ANTALL_LASERPUNKT +
 |[1..1]
  
 |Type: 
-|Boolean
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: BOOLSK + 
 SOSI_navn: BELYSNING + 
@@ -559,8 +655,8 @@ SOSI_navn: BELYSNING +
 |[0..1]
  
 |Type: 
-|Mastekonstruksjon
-|Tagged Values: 
+|<<mastekonstruksjon,«CodeList» Mastekonstruksjon>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon + 
 SOSI_datatype: H + 
@@ -581,8 +677,8 @@ Enhet: meter
 |[0..1]
  
 |Type: 
-|Real
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
 SOSI_lengde: 6.2 + 
@@ -602,8 +698,8 @@ Enhet: meter
 |[0..1]
  
 |Type: 
-|Real
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
 SOSI_lengde: 6.2 + 
@@ -621,8 +717,11 @@ SOSI_navn: VERTIKALAVSTAND +
 |Multiplisitet: 
 |[0..*]
  
-|Til klasse:
-|«FeatureType» Lysarmatur
+|Assosiasjonsnavn: 
+|MastArmatur
+ 
+|Til klasse
+|<<lysarmatur,«FeatureType» Lysarmatur>>
 |===
 [cols="20,80"]
 |===
@@ -635,18 +734,58 @@ SOSI_navn: VERTIKALAVSTAND +
 |Multiplisitet: 
 |[0..*]
  
+|Assosiasjonsnavn: 
+|MastUtstrekning
+ 
 |Til klasse
-|«FeatureType» Masteomriss
+|<<masteomriss,«FeatureType» Masteomriss>>
+|===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*hvis Mast har driftsmerking og har tilhørende Masteomriss, skal driftsmerking på Mast og Masteomriss være like*
+ 
+|Beskrivelse: 
+|hvis Mast har driftsmerking og har tilh&#248;rende Masteomriss, skal driftsmerking p&#229; Mast og Masteomriss v&#230;re like
+ 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*linjebredde angis når avstanden mellom ytterfasene er >10 meter i grunnriss*
+ 
+|Beskrivelse: 
+|linjebredde skal angis n&#229;r avstanden mellom ytterfasene (ledningene) er mer enn 10 meter i grunnriss
+ 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*mastehøyde angis når den er >15 meter*
+ 
+|Beskrivelse: 
+|angis n&#229;r masten h&#248;yde over terreng, vann eller sj&#248; er &gt;15 meter
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Mast +
 |===
  
+|===
+|===
+ 
+[[masteomriss]]
 ==== «FeatureType» Masteomriss
-Definisjon: ytre avgrensning av mastens fotavtrykk p&#229; bakken
+*Definisjon:* ytre avgrensning av mastens fotavtrykk p&#229; bakken
  
-*Supertype:* «FeatureType» Kopling_kurve
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Masteomriss
- 
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_geometri
@@ -666,21 +805,30 @@ Definisjon: ytre avgrensning av mastens fotavtrykk p&#229; bakken
 |[0..1]
  
 |Type: 
-|Mastekonstruksjon
-|Tagged Values: 
+|<<mastekonstruksjon,«CodeList» Mastekonstruksjon>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon + 
 SOSI_navn: MASTEKONSTRUKSJON + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_kurve,«FeatureType» Kopling_kurve>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Masteomriss +
+|===
+ 
+|===
+|===
+ 
+[[nettverkstasjon]]
 ==== «FeatureType» Nettverkstasjon
-Definisjon: et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.
+*Definisjon:* et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjon
- 
-[caption="Figur 23: Eksempel på ",title=Nettverkstasjon]
+[caption="Figur 23: ",title=Illustrasjon av objekttype Nettverkstasjon]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -695,8 +843,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 |[1..1]
  
 |Type: 
-|Stasjonsplassering
-|Tagged Values: 
+|<<stasjonsplassering,«CodeList» Stasjonsplassering>>
+|Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering + 
 SOSI_datatype: T + 
@@ -715,39 +863,79 @@ SOSI_navn: STASJONSPLASSERING +
 |Multiplisitet: 
 |[0..1]
  
+|Assosiasjonsnavn: 
+|NettverkstasjonUtstrekning
+ 
 |Til klasse
-|«FeatureType» Nettverkstasjonomriss
+|<<nettverkstasjonomriss,«FeatureType» Nettverkstasjonomriss>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjon +
 |===
  
+|===
+|===
+ 
+[[nettverkstasjonomriss]]
 ==== «FeatureType» Nettverkstasjonomriss
-Definisjon: ytre avgrensning av nettverkstasjonen, i grunnriss
+*Definisjon:* ytre avgrensning av nettverkstasjonen, i grunnriss
  
-*Supertype:* «FeatureType» Kopling_kurve
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*skal ha tilhørende Nettverkstasjon med samme Driftsmerking*
  
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss
+|Beskrivelse: 
+|EL_Nettstasjon og Nettverkstasjonomriss kobles sammen vha egenskapen Driftsmerking. Det vil si at alle geometriske objekter som beskriver ei fysisk mast, skal ha samme driftsmerking (koplingsnøkkel)
  
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_kurve,«FeatureType» Kopling_kurve>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss +
+|===
+ 
+|===
+|===
+ 
+[[skap]]
 ==== «FeatureType» Skap
-Definisjon: beskyttelseskasse plassert vanligvis p&#229; bakken, som inneholder koblinger for elektrisk str&#248;m, signal eller annet
+*Definisjon:* beskyttelseskasse plassert vanligvis p&#229; bakken, som inneholder koblinger for elektrisk str&#248;m, signal eller annet
 
 Merknad:
 Kan ogs&#229; v&#230;re p&#229; st&#248;rrelse med kiosk.
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Skap
- 
-[caption="Figur 24: Eksempel på ",title=Skap]
+[caption="Figur 24: ",title=Illustrasjon av objekttype Skap]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Skap +
+|===
+ 
+|===
+|===
+ 
+[[trase]]
 ==== «FeatureType» Trase
-Definisjon: den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)
+*Definisjon:* den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)
  
-*Supertype:* «FeatureType» Ledning
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Trase
- 
-[caption="Figur 25: Eksempel på ",title=Trase]
+[caption="Figur 25: ",title=Illustrasjon av objekttype Trase]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -765,29 +953,48 @@ Dette er gjerne en tekstlig beskrivelse av tras&#233;ens plassering, for eksempe
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: TRASENAVN + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*skal kobles til Mast (lik koordinat)*
  
+|Beskrivelse: 
+|Hvert punkt i trasen skal ha lik koordinat som objekttype Mast.
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<ledning,«FeatureType» Ledning>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Trase +
+|===
+ 
+|===
+|===
+ 
+[[vindturbin]]
 ==== «FeatureType» Vindturbin
-Definisjon: en kontainer som betegner en hel "vindm&#248;lle". En vindturbin har en generator
+*Definisjon:* en kontainer som betegner en hel "vindm&#248;lle". En vindturbin har en generator
  
-*Supertype:* «FeatureType» Kopling_punkt
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Vindturbin
- 
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_geometri
 |PUNKT;
  
 |===
-[caption="Figur 26: Eksempel på ",title=Vindturbin]
+[caption="Figur 26: ",title=Illustrasjon av objekttype Vindturbin]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -804,8 +1011,8 @@ Enhet: meter
 |[0..1]
  
 |Type: 
-|Real
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
 SOSI_lengde: 3.2 + 
@@ -825,8 +1032,8 @@ Enhet: meter
 |[0..1]
  
 |Type: 
-|Real
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
 SOSI_lengde: 3.2 + 
@@ -844,39 +1051,86 @@ SOSI_navn: NAVHØYDE +
 |Multiplisitet: 
 |[0..1]
  
+|Assosiasjonsnavn: 
+|VindturbinUtstrekning
+ 
 |Til klasse
-|«FeatureType» Vindturbinomriss
+|<<vindturbinomriss,«FeatureType» Vindturbinomriss>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Vindturbin +
 |===
  
+|===
+|===
+ 
+[[vindturbinomriss]]
 ==== «FeatureType» Vindturbinomriss
-Definisjon: ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken
+*Definisjon:* ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken
  
-*Supertype:* «FeatureType» Kopling_kurve
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*skal ha tilhørende Vindturbin med samme Driftsmerking*
  
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss
+|Beskrivelse: 
+|Vindturbin og Vindturbinomriss kobles sammen vha egenskapen Driftsmerking. Det vil si at alle geometriske objekter som beskriver en fysisk vindturbin, skal ha samme driftsmerking (koplingsn&#248;kkel)
  
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_kurve,«FeatureType» Kopling_kurve>>
  
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss +
+|===
+ 
+|===
+|===
+ 
+[[åk]]
 ==== «FeatureType» Åk
-Definisjon: en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av en veg eller bane
+*Definisjon:* en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av en veg eller bane
 
 Merknad FKB:
 "Beina" er egne objekter (objekttype Mast), og ikke del av objektet av objekttypen &#197;k.
  
-*Supertype:* «FeatureType» Kopling_kurve
- 
-*Realisering av:* «ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Åk
- 
-[caption="Figur 27: Eksempel på ",title=Åk]
+[caption="Figur 27: ",title=Illustrasjon av objekttype Åk]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kopling_kurve,«FeatureType» Kopling_kurve>>
+ 
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Åk +
+|===
+<<<
+|===
+|===
 === Pakke: Datatyper
-Definisjon: Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
+*Definisjon:* Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
 [caption="Figur 28: ",title=Fagspesifikke datatyper FKB-Ledning]
 image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[Fagspesifikke datatyper FKB-Ledning]
  
-==== «dataType» VertikalAvstandLedning
-Definisjon: ledningens h&#248;yde over/til terreng, vann eller sj&#248;
+|===
+|===
  
-===== Tagged Values
+[[vertikalavstandledning]]
+==== «dataType» VertikalAvstandLedning
+*Definisjon:* ledningens h&#248;yde over/til terreng, vann eller sj&#248;
+ 
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_kompaktifisering
@@ -900,8 +1154,8 @@ Eksempel: ...N&#216;HKOOR "22 7175399.09 395657.11 219.82"
 |[1..1]
  
 |Type: 
-|GM_Point
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 70 + 
@@ -921,16 +1175,19 @@ Enhet: meter
 |[1..1]
  
 |Type: 
-|Real
-|Tagged Values: 
+|<<real,«dataType» Real>>
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: 8.2 + 
 SOSI_datatype: D + 
 SOSI_lengde: 8.2 + 
 SOSI_navn: VERTIKALHØYDE + 
 |===
+<<<
+|===
+|===
 === Pakke: Kodelister
-Definisjon: Alle Kodelister som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
+*Definisjon:* Alle Kodelister som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
 
 Kodelistene forvaltes eksternt p&#229; Geonorge. Kodelistene er tilgjenglig p&#229; https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 [caption="Figur 29: ",title=Fagspesifikke kodelister FKB-Ledning]
@@ -938,10 +1195,14 @@ image::diagrammer/Fagspesifikke kodelister FKB-Ledning.png[Fagspesifikke kodelis
 [caption="Figur 30: ",title=Realiseringer kodelister]
 image::diagrammer/Realiseringer kodelister.png[Realiseringer kodelister]
  
-==== «CodeList» Fase
-Definisjon: angivelse av intern plassering i grunnris for aktuell faseline
+|===
+|===
  
-===== Tagged Values
+[[fase]]
+==== «CodeList» Fase
+*Definisjon:* angivelse av intern plassering i grunnris for aktuell faseline
+ 
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -960,31 +1221,17 @@ Definisjon: angivelse av intern plassering i grunnris for aktuell faseline
 |FASE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:55Z
  
-Kodelistens navn i registeret: Fase
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Ytre
-|ytre fase line i grunnriss
-|ytre
-|Midtre
-|midtre eller indre fase line i grunnriss
-|midtre
 |===
  
+[[kumlokkform]]
 ==== «CodeList» Kumlokkform
-Definisjon: kodeliste som inneholder hvilke geometrisk utforminger et kumlokk kan ha
+*Definisjon:* kodeliste som inneholder hvilke geometrisk utforminger et kumlokk kan ha
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1003,43 +1250,20 @@ Definisjon: kodeliste som inneholder hvilke geometrisk utforminger et kumlokk ka
 |KUMLOKKFORM
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:56Z
  
-Kodelistens navn i registeret: Kumlokkform
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Kvadratisk
-|kumlokket har utstrekning i form av et kvadrat
-|kvadratisk
-|Rektangulært
-|kumlokket har utstrekning i form av et rektangel
-|rektangulært
-|Hydrant
-|kumlokk eller konstruksjon som er utformet slik at tilkopling av slanger for håndtering av og bekjempelse av brann/ulykker er mulig
-|hydrant
-|Sluk
-|kumlokk eller åpning med rist der overflatevann kan renne ned i avløpssystemet, ofte i forbindelse med vegsystemer
-|sluk
-|Sirkelformet
-|kumlokket er sirkelformet, rundt
-|sirkelforma
 |===
  
+[[ledningsnettverkstype]]
 ==== «CodeList» Ledningsnettverkstype
-Definisjon: oversikt over nettverkstyper, satt sammen av nettverkskomponenter, med en bestemt hensikt
+*Definisjon:* oversikt over nettverkstyper, satt sammen av nettverkskomponenter, med en bestemt hensikt
 
 Merknad: 
 Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til andre nettverk, men da oftest p&#229; bestemte tilkoplingspunkter. 
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1058,48 +1282,19 @@ Et nettverk utgj&#248;r en logisk enhet. Et nettverk kan v&#230;re knytta til an
 |LEDNINGSNETTVERKSTYPE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:57Z
  
-Kodelistens navn i registeret: Ledningsnettverkstype
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Signalanlegg
-|nettverk som brukes for å oversende og formidle trafikksignal
-|signalanlegg
-|Lavspentnett
-|lavspentnett, &lt;= 1 kV
-|lavspentnett
-|Høgspentnett
-|høgspentnett, &gt; 1 kV
-|høgspentnett
-|Ekom
-|fellesbetegnelse for flere typer elektronisk kommunikasjon
-|ekom
-|Vann- og avløpsanlegg
-|anlegg for transport av drikkevann, avløpsvann eller overvann
-|vaanlegg
-|Ukjent
-|ledningsnettverkstype ikke kjent ved registreringstidspunkt
-|ukjent
-|Belysningsanlegg
-|nettverk som brukes til utendørsbelysning
-|belysningsanlegg
 |===
  
+[[mastekonstruksjon]]
 ==== «CodeList» Mastekonstruksjon
-Definisjon: hvordan masta er konstruert
+*Definisjon:* hvordan masta er konstruert
 
 Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstypen er hentet fra.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1118,40 +1313,17 @@ Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstype
 |MASTEKONSTRUKSJON
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:58Z
  
-Kodelistens navn i registeret: Mastekonstruksjon
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|StorStolpe
-|stolpe i høyspentlinjer som ikke er fagverksmast
-|storStolpe
-|EnkelStolpe
-|mast laget av kun en enkelt stolpe, vanligvis i lavspentnett, telenett eller langs jernbane
-|enkelStolpe
-|Annet
-|andre typer mastekonstruksjoner eller master sammensatt av to eller flere konstruksjonstyper
-|annet
-|Kontaktledningsmast
-|mast som bærer elektrisk strømførende ledning som er spent over sporet til en jernbane-, forstadsbane- eller sporvogns-trasé for å tilføre elektrisk energi til rullende materiell
-|kontaktledningsmast
-|Fagverksmast
-|fagverk av metallkonstruksjoner
-|fagverksmast
 |===
  
+[[punktplassering]]
 ==== «CodeList» Punktplassering
-Definisjon: tekstlig beskrivelse av hvor et punkt er plassert
+*Definisjon:* tekstlig beskrivelse av hvor et punkt er plassert
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1171,46 +1343,17 @@ Definisjon: tekstlig beskrivelse av hvor et punkt er plassert
 NG
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:58Z
  
-Kodelistens navn i registeret: Punktplassering
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Hengende i kabel
-|objektet er montert hengende i kabel
-|hengendeIKabel
-|På portal
-|objektet er montert på en portal
-|påPortal
-|I tak/kabelbru
-|objektet er montert i tak av bygning, tunnel eller annen bygningsmessig konstruksjon
-|iTakKabelbru
-|I åk
-|objektet er montert på/i åk
-|iÅk
-|På vegg
-|objektet er montert på vegg av bygning, tunnel eller annen bygningsmessig konstruksjon
-|påVegg
-|Annet
-|annet, som ikke er definert som spesifikke punktplasseringer i kodelisten forøvrig
-|annet
-|I mast
-|objektet er montert på/i mast
-|iMast
 |===
  
+[[stasjonsplassering]]
 ==== «CodeList» Stasjonsplassering
-Definisjon: kodeliste som angir hvor nettverksstasjonen er plassert
+*Definisjon:* kodeliste som angir hvor nettverksstasjonen er plassert
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1229,53 +1372,31 @@ Definisjon: kodeliste som angir hvor nettverksstasjonen er plassert
 |STASJONSPLASSERING
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:35:59Z
- 
-Kodelistens navn i registeret: Stasjonsplassering
- 
-===== Koder
-[cols="25,60,15"]
+<<<
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Mastearrangement
-|nettverkstasjon hengende i mast
-|mastearrangement
-|Frittstående
-|frittstående nettverkstasjon
-|frittstående
-|Minikiosk
-|nettverkstasjon i form av frittstående liten bygning
-|minikiosk
-|Mastefotkiosk
-|plassering av nettverkstasjon på bakkenivå mellom mastefundamentene
-|mastefotkiosk
-|I bygg
-|nettverkstasjon plasser i bygning
-|iBygg
 |===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 31: ",title=Hoveddiagram Fellesegenskaper]
-image::diagrammer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 32: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 33: ",title=Posisjonskvalitet]
-image::diagrammer/Posisjonskvalitet.png[Posisjonskvalitet]
+[caption="Figur 31: ",title=Oversiktsdiagram Fellesegenskaper]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 32: ",title=Realisering fra SOSI generell del]
+image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
+[caption="Figur 33: ",title=Hoveddiagram Posisjonskvalitet]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
-==== «FeatureType» Fellesegenskaper
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+|===
+|===
+ 
+[[fellesegenskaper]]
+==== «FeatureType» Fellesegenskaper (abstrakt)
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -1288,15 +1409,17 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 
 Merknad FKB:
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Identifikasjon
-|Tagged Values: 
+|<<identifikasjon,«dataType» Identifikasjon>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
 |===
@@ -1309,20 +1432,21 @@ SOSI_navn: IDENT +
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
+
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
+iii. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|DateTime
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
@@ -1342,8 +1466,8 @@ Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangst
 |[1..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: DATAFANGSTDATO + 
@@ -1354,7 +1478,7 @@ SOSI_navn: DATAFANGSTDATO +
 |*verifiseringsdato*
  
 |Definisjon: 
-|dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten
+|dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.
 
 Merknad FKB:
 Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)
@@ -1363,8 +1487,8 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 |[0..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: VERIFISERINGSDATO + 
@@ -1381,10 +1505,12 @@ SOSI_navn: VERIFISERINGSDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
-|Tagged Values: 
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -1393,7 +1519,7 @@ SOSI_navn: REGISTRERINGSVERSJON +
 |*informasjon*
  
 |Definisjon: 
-|generell opplysning
+|generell opplysning.
 
 Merknad FKB:
 Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
@@ -1402,8 +1528,8 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
@@ -1421,10 +1547,10 @@ SOSI_navn: INFORMASJON +
 |[1..1]
  
 |Type: 
-|Høydereferanse
-|Tagged Values: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace:  + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
 SOSI_datatype: T + 
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
@@ -1438,29 +1564,32 @@ SOSI_navn: HREF +
 |objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
-|Medium
-|Tagged Values: 
+|<<medium,«CodeList» Medium>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium + 
 SOSI_datatype: T + 
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» KvalitetPåkrevd
+|Subtyper:
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
-==== «FeatureType» KvalitetPåkrevd
-Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+[[kvalitetpåkrevd]]
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -1477,27 +1606,35 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
-|Tagged Values: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Nettverkskomponent
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<nettverkskomponent,«FeatureType» Nettverkskomponent>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
+|===
+|===
+ 
+[[identifikasjon]]
 ==== «dataType» Identifikasjon
-Definisjon: unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
-Merknad 1: Denne objektidentifikasjonen m&#229; ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
-Merknad 2: Denne unike identifikatoren vil ikke endres i l&#248;pet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
  
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
- 
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -1519,8 +1656,8 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -1542,8 +1679,8 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -1561,23 +1698,31 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
+|===
+|===
+ 
+[[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
  
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
- 
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -1591,17 +1736,18 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 |*datafangstmetode*
  
 |Definisjon: 
-|metode for datafangst. 
+|metode for datafangst
 Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -1612,18 +1758,24 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -1633,16 +1785,17 @@ SOSI_navn: NØYAKTIGHET +
 |*synbarhet*
  
 |Definisjon: 
-|beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene)
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Synbarhet
-|Tagged Values: 
+|<<synbarhet,«CodeList» Synbarhet>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -1652,7 +1805,7 @@ SOSI_navn: SYNBARHET +
 |*datafangstmetodeHøyde*
  
 |Definisjon: 
-|metoden brukt for h&#248;yderegistrering av posisjon.
+|metoden brukt for h&#248;yderegistrering av posisjon
 
 Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.
 
@@ -1661,10 +1814,11 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode + 
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -1675,33 +1829,60 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
+
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
+|Beskrivelse: 
+|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
+|===
+ 
+|===
+|===
+ 
+[[synbarhet]]
 ==== «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
 |SOSI_datatype
 |H
@@ -1713,46 +1894,26 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |SYNBARHET
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:36:28Z
  
-Kodelistens navn i registeret: Synbarhet
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Middels synlig
-|Objektet er middels synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som har lav kontrast eller er delvis skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en større verdi for nøyaktighet enn kravet (opptil 3 ganger kravet)
-|2
-|Ikke synlig
-|Objektet er ikke synlig/gjenkjennbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk datafangst brukes denne koden for objekter som er helt skjult av overliggende objekter (vegetasjon, takoverbygg, bruer etc.). For slike objekter settes en stor verdi for nøyaktighet (mer enn 3 ganger kravet)
-|3
-|Fullt ut synlig
-|Objektet er fullt ut synlig/gjenfinnbart i flybilde eller annen datakilde for posisjonering. Ved fotogrammetrisk registrering skal objekter som er fullt ut synlige registreres i tråd med angitte krav til nøyaktig registrering.
-|0
-|Dårlig gjenfinnbar i terreng
-|Objektets posisjon er vanskelig å definere presist i terrenget på grunn av objektets natur. Koden kan f.eks. brukes på høydekurver (eller andre isolinjer) eller objekter som er skjult i bakken (f.eks. innmåling av ledninger på lukket grøft) 
-|1
 |===
  
+[[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -1764,56 +1925,24 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:36:29Z
  
-Kodelistens navn i registeret: Datafangstmetode
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Som bygget
-|Posisjonen er hentet fra prosjekterte eller planlagte data, f.eks. fra en BIM-modell, som er verifisert som bygget ved innmålinger
-|byg
-|Ukjent
-|Ukjent eller uspesifisert datafangstmetode
-|ukj
-|Plandata
-|Posisjonen er hentet plandata. Posisjonen er ikke verifisert med innmåling. 
-|pla
-|Satellittmålt
-|Posisjonen er målt inn direkte med GNSS (for posisjoner målt inn med GNSS i kombinasjon med andre landmålingsmetoder skal koden Landmåling benyttes)
-|sat
-|Generert
-|Posisjonen er manuelt konstruert, eller generert ved maskinlæring eller annen type programvare, fra punktsky fra laserskanning, bildematching, sonar, andre typer sensordata eller kombinasjon av flere typer sensordata.
-|gen
-|Fotogrammetri
-|Posisjonen er konstruert/generert fra en fotogrammetrisk stereomodell 
-|fot
-|Digitalisert
-|Posisjonen er digitalisert fra ortofoto eller andre plane kartdata
-|dig
-|Landmålt
-|Posisjonen er målt inn direkte med en landmålingsmetode. Aktuelle landmålingsmetoder kan være nivellering, vinkelmåling, avstandsmåling eller treghetsmåling. Kodeverdien brukes også for kombinasjoner av disse målemetodene eller der disse målemetodene kombineres med GNSS. Landmåling utføres normalt med overskytende målinger og utjevning av resultatet.
-|lan
 |===
  
+[[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -1825,65 +1954,24 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |REGISTRERINGSVERSJON
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:36:30Z
  
-Kodelistens navn i registeret: Registreringsversjon
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|FKB 4.5 2014-03-01
-|Data registrert etter FKB 4.5 2014-03-01
-|2014-03-01
-|FKB 4.6 2020-01-01
-|Data registrert etter FKB 4.6/4.61 2020-01-01
-|2020-01-01
-|FKB 4.6 2018-01-01
-|Data registrert etter FKB 4.6/4.61 2018-01-01
-|2018-01-01
-|FKB 5.0 2022-01-01
-|Data registrert etter FKB 5.0 2022-01-01
-|2022-01-01
-|FKB 4.01 2011-01-01
-|Data registrert etter FKB 4.01 2011-01-01
-|2011-01-01
-|FKB 4.0 2007-01-01
-|Data registrert etter FKB 4.0 2007-01-01
-|2007-01-07
-|FKB 4.6 2016-06-01
-|Data registrert etter FKB 4.6 2016-06-01
-|2016-06-01
-|FKB 4.01 2009-03-10
-|Data registrert etter FKB 4.01 2009-03-10
-|2009-03-10
-|FKB 4.5 2015-01-01
-|Data registrert etter FKB 4.5 2015-01-01
-|2015-01-01
-|FKB 4.02 2013-01-01
-|Data registrert etter FKB 4.02 2013-01-01
-|2013-01-01
-|FKB 4.02 2011-12-01
-|Data registrert etter FKB 4.02 2011-12-01
-|2001-12-01
 |===
  
+[[høydereferanse]]
 ==== «CodeList» Høydereferanse
-Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
 |SOSI_datatype
 |T
@@ -1895,44 +1983,27 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |HREF
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:36:31Z
  
-Kodelistens navn i registeret: Høydereferanse
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Fot
-|Høyden målt til foten av objektet
-|FOT
-|Ukjent
-|Ukjent høydereferanse
-|UKJENT
-|Topp
-|Høyden målt til toppen av objektet
-|TOP
 |===
  
+[[medium]]
 ==== «CodeList» Medium
-Definisjon: objektets beliggenhet i forhold til jordoverflaten
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
 Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 |SOSI_datatype
 |T
@@ -1944,41 +2015,6 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
-Kodeliste hentet på tidspunkt: 2021-07-23T14:36:31Z
- 
-Kodelistens navn i registeret: Medium
- 
-===== Koder
-[cols="25,60,15"]
-|===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|På terrenget
-|På terrenget/på bakkenivå
-|T
-|Ukjent
-|Ukjent plassering i forhold til jordoverflaten
-|X
-|Delvis under vann
-|Delvis i eller under vann
-|D
-|På Isbre
-|På isbre
-|I
-|Under terrenget
-|Under terrenget
-|U
-|I vann
-|Alltid i vann
-|V
-|I Bygning
-|I eller på bygning eller bygningsmessig anlegg
-|B
-|I luft
-|I lufta
-|L
-|===
+// End of UML-model
