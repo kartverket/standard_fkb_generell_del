@@ -1,7 +1,7 @@
-=== «ApplicationSchema» FKB-AR5-5.0 utkast
-Definisjon: Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett som klassifiserer arealressuresene til alt areal ut fra arealtype (bebygd areal, dyrka mark, skog osv.), grunnforhold og bonitet.
+=== Pakke «ApplicationSchema» FKB-AR5-5.0 utkast
+*Definisjon:* Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett som klassifiserer arealressuresene til alt areal ut fra arealtype (bebygd areal, dyrka mark, skog osv.), grunnforhold og bonitet.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |definition
@@ -23,7 +23,7 @@ Definisjon: Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett so
 |FKB Arealressurs
  
 |SOSI_modellstatus
-|utkastOgSkjult
+|utkast
  
 |SOSI_spesifikasjonstype
 |Produktspesifikasjon
@@ -42,18 +42,22 @@ Definisjon: Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett so
  
 |===
 [caption="Figur 1: ",title=Oversiktsdiagram]
-image::figurer/Oversiktsdiagram.png[Oversiktsdiagram]
+image::diagrammer/Oversiktsdiagram.png[Oversiktsdiagram]
 [caption="Figur 2: ",title=Pakkerealisering]
-image::figurer/Pakkerealisering.png[Pakkerealisering]
+image::diagrammer/Pakkerealisering.png[Pakkerealisering]
 [caption="Figur 3: ",title=Realisering fra SOSI Arealressurs 4.0]
-image::figurer/Realisering fra SOSI Arealressurs 4.0.png[Realisering fra SOSI Arealressurs 4.0]
+image::diagrammer/Realisering fra SOSI Arealressurs 4.0.png[Realisering fra SOSI Arealressurs 4.0]
 [caption="Figur 4: ",title=Hoveddiagram AR5]
-image::figurer/Hoveddiagram AR5.png[Hoveddiagram AR5]
+image::diagrammer/Hoveddiagram AR5.png[Hoveddiagram AR5]
  
+|===
+|===
+ 
+[[arealressursflate]]
 ==== «featureType» ArealressursFlate
-Definisjon: et sammenhengende areal som er tilordnet de samme egenskapsverdiene i henhold til et Arealressursklassifikasjonssystem
+*Definisjon:* et sammenhengende areal som er tilordnet de samme egenskapsverdiene i henhold til et Arealressursklassifikasjonssystem
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+*Supertype:* <<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 *Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursFlate
  
@@ -70,7 +74,7 @@ Definisjon: et sammenhengende areal som er tilordnet de samme egenskapsverdiene 
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,«dataType» Flate>>
 |===
 [cols="20,80"]
 |===
@@ -84,7 +88,7 @@ Definisjon: et sammenhengende areal som er tilordnet de samme egenskapsverdiene 
 |[0..1]
  
 |Type: 
-|Punkt
+|<<punkt,«dataType» Punkt>>
 |===
 [cols="20,80"]
 |===
@@ -98,9 +102,10 @@ Definisjon: et sammenhengende areal som er tilordnet de samme egenskapsverdiene 
 |[1..1]
  
 |Type: 
-|ArealressursArealtype
-|Tagged Values: 
+|<<arealressursarealtype,«CodeList» ArealressursArealtype>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursarealtype + 
 SOSI_datatype: H + 
 SOSI_lengde: 2 + 
 SOSI_navn: ARTYPE + 
@@ -117,7 +122,13 @@ SOSI_navn: ARTYPE +
 |[1..1]
  
 |Type: 
-|ArealressursTreslag
+|<<arealressurstreslag,«CodeList» ArealressursTreslag>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressurstreslag + 
+SOSI_datatype: H + 
+SOSI_lengde: 2 + 
+SOSI_navn: ARTRESLAG + 
 |===
 [cols="20,80"]
 |===
@@ -131,7 +142,13 @@ SOSI_navn: ARTYPE +
 |[1..1]
  
 |Type: 
-|ArealressursSkogbonitet
+|<<arealressursskogbonitet,«CodeList» ArealressursSkogbonitet>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursskogbonitet + 
+SOSI_datatype: H + 
+SOSI_lengde: 2 + 
+SOSI_navn: ARSKOGBON + 
 |===
 [cols="20,80"]
 |===
@@ -145,7 +162,13 @@ SOSI_navn: ARTYPE +
 |[1..1]
  
 |Type: 
-|ArealressursGrunnforhold
+|<<arealressursgrunnforhold,«CodeList» ArealressursGrunnforhold>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursgrunnforhold + 
+SOSI_datatype: H + 
+SOSI_lengde: 2 + 
+SOSI_navn: ARGRUNNF + 
 |===
 [cols="20,80"]
 |===
@@ -159,7 +182,13 @@ SOSI_navn: ARTYPE +
 |[1..1]
  
 |Type: 
-|Klassifiseringsmetode
+|<<klassifiseringsmetode,«CodeList» Klassifiseringsmetode>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/klassifiseringsmetode + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
+SOSI_navn: KLASSIFISERINGSMETODE + 
 |===
 ===== Roller
 [cols="20,80"]
@@ -174,7 +203,7 @@ SOSI_navn: ARTYPE +
 |[0..*]
  
 |Til klasse
-|«featureType» ArealressursGrenseFiktiv
+|<<arealressursgrensefiktiv,«featureType» ArealressursGrenseFiktiv>>
 |===
 [cols="20,80"]
 |===
@@ -188,7 +217,7 @@ SOSI_navn: ARTYPE +
 |[0..*]
  
 |Til klasse
-|«featureType» ArealressursGrense
+|<<arealressursgrense,«featureType» ArealressursGrense>>
 |===
 ===== Restriksjoner
 [cols="20,80"]
@@ -197,14 +226,18 @@ SOSI_navn: ARTYPE +
 |*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
  
 |Beskrivelse: 
-|
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
  
-==== «featureType» ArealressursGrense
-Definisjon: avgrensing for en eller to arealressursflater
+|===
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+[[arealressursgrense]]
+==== «featureType» ArealressursGrense
+*Definisjon:* avgrensing for en eller to arealressursflater
+ 
+*Supertype:* <<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 *Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrense
  
@@ -221,7 +254,7 @@ Definisjon: avgrensing for en eller to arealressursflater
 |[1..1]
  
 |Type: 
-|Kurve
+|<<kurve,«dataType» Kurve>>
 |===
 [cols="20,80"]
 |===
@@ -235,13 +268,23 @@ Definisjon: avgrensing for en eller to arealressursflater
 |[1..1]
  
 |Type: 
-|ArealressursAvgrensingType
+|<<arealressursavgrensingtype,«CodeList» ArealressursAvgrensingType>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursavgrensningstype + 
+SOSI_datatype: H + 
+SOSI_lengde: 4 + 
+SOSI_navn: ARAVGRTYPE + 
 |===
  
-==== «featureType» ArealressursGrenseFiktiv
-Definisjon: avgrensing mellom to arealressursflater som har like egenskapsverdier
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
+[[arealressursgrensefiktiv]]
+==== «featureType» ArealressursGrenseFiktiv
+*Definisjon:* avgrensing mellom to arealressursflater som har like egenskapsverdier
+ 
+*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 *Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrenseFiktiv
  
@@ -258,13 +301,17 @@ Definisjon: avgrensing mellom to arealressursflater som har like egenskapsverdie
 |[1..1]
  
 |Type: 
-|Kurve
+|<<kurve,«dataType» Kurve>>
 |===
  
-==== «CodeList» ArealressursArealtype
-Definisjon: hovedinndeling etter kriterier for vegetasjon, naturlig drenering og kulturp&#229;virkning
+|===
+|===
  
-===== Tagged Values
+[[arealressursarealtype]]
+==== «CodeList» ArealressursArealtype
+*Definisjon:* hovedinndeling etter kriterier for vegetasjon, naturlig drenering og kulturp&#229;virkning
+ 
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -283,61 +330,17 @@ Definisjon: hovedinndeling etter kriterier for vegetasjon, naturlig drenering og
 |ARTYPE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursarealtype
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursarealtype
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:34Z
  
-Kodelistens navn i registeret: ArealressursArealtype
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Skog
-|areal med minst 6 trær per dekar som er eller kan bli 5 meter høye, og disse bør være jevnt fordelt på arealet.
-|30
-|Innmarksbeite
-| jordbruksareal som kan benyttes som beite, men som ikke kan høstes maskinelt. Minst 50 % av arealet skal være dekt av grasarter
-|23
-|Bebygd
-|areal som er utbygd eller i betydelig grad opparbeida, samt tilstøtende arealer som i funksjon er nært knytta til bebyggelsen
-|11
-|Snøisbre
-|blanding av snø og isbre som ikke smelter i løpet av sommeren
-|70
-|Fulldyrka jord
-| jordbruksareal som er dyrka til vanlig pløyedybde, og som kan benyttes til åkervekster eller til eng, og som kan fornyes ved pløying
-|21
-|Ferskvann
-|innsjø og elv
-|81
-|Samferdsel
-|areal som brukes til samferdsel
-|12
-|Overflatedyrka jord
-| jordbruksareal som for det meste er rydda og jevna i overflata, slik at maskinell høsting er mulig
-|22
-|Myr
-|areal med myrvegetasjon og minst 30 cm tjukt torvlag
-|60
-|Hav
-|Hav
-|82
-|Ikke kartlagt
-|areal som har ukjent beskaffenhet
-|99
-|Åpen fastmark
-|fastmark som ikke er jordbruksareal, skog, bebygd eller samferdsel
-|50
 |===
  
+[[arealressursavgrensingtype]]
 ==== «CodeList» ArealressursAvgrensingType
-Definisjon: informasjon om grense som er henta fra annet datasett
+*Definisjon:* informasjon om grense som er henta fra annet datasett
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -356,43 +359,17 @@ Definisjon: informasjon om grense som er henta fra annet datasett
 |ARAVGRTYPE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursavgrensningstype
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursavgrensningstype
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:35Z
  
-Kodelistens navn i registeret: ArealressursAvgrensningstype
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Ikke kartlagt grense
-|grense mot ikke kartlagt område
-|9300
-|Arealressursgrense
-|grense mot annet arealressurskartlagt areal
-|4206
-|Vanngrense
-|grense mot vann
-|3000
-|Isbregrense
-|grense mot isbre
-|3310
-|Lagringsenhentsgrense
-|grense for lagringsenhet
-|9111
-|Samferdselsgrense
-|grense mot samferdselsområde
-|7200
 |===
  
+[[arealressursgrunnforhold]]
 ==== «CodeList» ArealressursGrunnforhold
-Definisjon: inndeling etter tjukkelse, type og fordeling av jorddekket
+*Definisjon:* inndeling etter tjukkelse, type og fordeling av jorddekket
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -411,49 +388,17 @@ Definisjon: inndeling etter tjukkelse, type og fordeling av jorddekket
 |ARGRUNNF
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursgrunnforhold
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursgrunnforhold
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:36Z
  
-Kodelistens navn i registeret: ArealressursGrunnforhold
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Ikke registrert
-|opplysning om grunnforhold er ikke registrert.
-|99
-|Fjell i dagen
-|areal der mer enn 50 % er bart fjell og mindre enn 10 % har jord dypere enn 30 cm
-|42
-|Blokkmark
-|areal der overflata i hovedsak er dekt med steinblokker
-|41
-|Konstruert
-|areal som er sterkt menneskepåvirket og ikke biologisk produktivt
-|46
-|Ikke relevant
-|opplysning om grunnforhold er ikke relevant.
-|98
-|Jorddekt
-|fastmark der mer enn 50 % av arealet har større jorddybde enn 30 cm
-|44
-|Grunnlendt
-|areal der mer enn 50 % har mindre jorddybde enn 30 cm, men som ikke kan klassifiseres som fjell i dagen.
-|43
-|Organiske jordlag
-|areal som har et organisk jordlag tjukkere enn 30 cm (20 cm)
-|45
 |===
  
+[[arealressursskogbonitet]]
 ==== «CodeList» ArealressursSkogbonitet
-Definisjon: inndeling etter arealets evne til å produsere trevirke
+*Definisjon:* inndeling etter arealets evne til å produsere trevirke
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -472,46 +417,17 @@ Definisjon: inndeling etter arealets evne til å produsere trevirke
 |ARSKOGBON
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursskogbonitet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressursskogbonitet
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:37Z
  
-Kodelistens navn i registeret: ArealressursSkogbonitet
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Høy
-|0,5 - 1,0 m³ tilvekst per dekar og år
-|14
-|Ikke registrert
-|opplysning om skogbonitet er ikke registrert
-|99
-|Ikke relevant
-|opplysning om skogbonitet er ikke relevant
-|98
-|Middels
-|0,3 - 0,5 m³ tilvekst per dekar og år
-|13
-|Særs høy
-|mer enn 1,0 m³ tilvekst per dekar og år
-|15
-|Lav
-|0,1 - 0,3 m³ tilvekst per dekar og år
-|12
-|Impediment
-|mindre enn 0,1 m³ tilvekst per dekar og år
-|11
 |===
  
+[[arealressurstreslag]]
 ==== «CodeList» ArealressursTreslag
-Definisjon: inndeling etter fordeling av kronedekket mellom bartrær og lauvtrær
+*Definisjon:* inndeling etter fordeling av kronedekket mellom bartrær og lauvtrær
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -530,43 +446,17 @@ Definisjon: inndeling etter fordeling av kronedekket mellom bartrær og lauvtræ
 |ARTRESLAG
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressurstreslag
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/arealressurstreslag
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:38Z
  
-Kodelistens navn i registeret: ArealressursTreslag
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
- 
-|Blandingsskog
-|mellom 20 - 50 % av skogdekt areal er dekt av bartrær
-|33
-|Ikke tresatt
-|arealet har ikke tresetting som holder kravet til skog
-|39
-|Ikke registrert
-|opplysning om treslag er ikke registrert
-|99
-|Ikke relevant
-|opplysning om treslag er ikke relevant
-|98
-|Barskog
-|minst 50 % av skogdekt areal er dekt av bartrær
-|31
-|Lauvskog
-|mindre enn 20 % av skogdekt areal er dekt av bartrær
-|32
 |===
  
+[[klassifiseringsmetode]]
 ==== «CodeList» Klassifiseringsmetode
-Definisjon: metode for klassifisering av areal 
+*Definisjon:* metode for klassifisering av areal 
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -585,55 +475,58 @@ Definisjon: metode for klassifisering av areal
 |KLASSIFISERINGSMETODE
  
 |===
-Kodeliste hentet fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/klassifiseringsmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/klassifiseringsmetode
  
-Kodeliste hentet på tidspunkt: 2021-08-23T12:54:39Z
  
-Kodelistens navn i registeret: Klassifiseringsmetode
- 
-===== Koder
-[cols="25,60,15"]
 |===
-|*Kodenavn:* 
-|*Definisjon:* 
-|*Utvekslingsalias:* 
+|===
  
-|Annen usikker
-|Annen metode for klassifisering
-|uAnnen
-|Ortofoto sikker
-|Sikker klassifisering fra ortofoto på skjerm
-|sOrto
-|Fjernmåling usikker
-|Klassifisert fra fjernmåling
-|uFjern
-|Ortofoto usikker
-|Usikker klassifisering fra ortofoto på skjerm
-|uOrto
-|Felt sikker
-|sikker klassifisering ved befaring i felt
-|sFelt
-|ØK sikker
-|Klassifisert i felt ved kartleggingen av økonomisk kartverk
-|sOk
-|Melding fra grunneier - usikker
-|Direkte lagt inn etter melding fra grunneier
-|uMeld
+[[opphav]]
+==== «CodeList» Opphav
+*Definisjon:* referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+ 
+===== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/opphav
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|5
+ 
+|SOSI_navn
+|OPPHAV
+ 
+|===
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/opphav
+ 
+<<<
+|===
 |===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
 [caption="Figur 5: ",title=Oversiktsdiagram Fellesegenskaper]
-image::figurer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
 [caption="Figur 6: ",title=Realisering fra SOSI generell del]
-image::figurer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
+image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
 [caption="Figur 7: ",title=Hoveddiagram Posisjonskvalitet]
-image::figurer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
-==== «FeatureType» Fellesegenskaper
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+|===
+|===
+ 
+[[fellesegenskaper]]
+==== «FeatureType» Fellesegenskaper (abstrakt)
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
@@ -657,8 +550,8 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
 |[1..1]
  
 |Type: 
-|Identifikasjon
-|Tagged Values: 
+|<<identifikasjon,«dataType» Identifikasjon>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
 |===
@@ -671,20 +564,25 @@ SOSI_navn: IDENT +
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
+
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
+
 i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
 av klienten).
+
 ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
 ”kopibase”.
+
 iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|DateTime
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
@@ -704,8 +602,8 @@ Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangst
 |[1..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: DATAFANGSTDATO + 
@@ -722,9 +620,10 @@ SOSI_navn: DATAFANGSTDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
-|Tagged Values: 
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace:  + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -742,12 +641,32 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*opphav*
+ 
+|Definisjon: 
+|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<opphav,«CodeList» Opphav>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ar5/5.0/opphav + 
+SOSI_datatype: T + 
+SOSI_lengde: 5 + 
+SOSI_navn: OPPHAV + 
 |===
 [cols="20,80"]
 |===
@@ -756,10 +675,14 @@ SOSI_navn: INFORMASJON +
 «featureType» ArealressursGrenseFiktiv
 |===
  
-==== «FeatureType» KvalitetPåkrevd
-Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
+[[kvalitetpåkrevd]]
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+ 
+*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
@@ -776,8 +699,8 @@ Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
 |[0..1]
  
 |Type: 
-|Date
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
 SOSI_navn: VERIFISERINGSDATO + 
@@ -796,8 +719,8 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
-|Tagged Values: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
@@ -808,8 +731,12 @@ SOSI_navn: KVALITET +
 «featureType» ArealressursGrense
 |===
  
+|===
+|===
+ 
+[[identifikasjon]]
 ==== «dataType» Identifikasjon
-Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
@@ -817,7 +744,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -839,8 +766,8 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -862,8 +789,8 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
@@ -881,23 +808,27 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
  
+|===
+|===
+ 
+[[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
  
 *Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
@@ -918,9 +849,11 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -931,18 +864,23 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -958,9 +896,11 @@ SOSI_navn: NØYAKTIGHET +
 |[0..1]
  
 |Type: 
-|Synbarhet
-|Tagged Values: 
+|<<synbarhet,«CodeList» Synbarhet>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -979,9 +919,11 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
-|Tagged Values: 
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
+|Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -992,18 +934,23 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm.
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|Integer
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
@@ -1018,10 +965,14 @@ SOSI_navn: H-NØYAKTIGHET +
  
 |===
  
-==== «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|===
+|===
  
-===== Tagged Values
+[[synbarhet]]
+==== «CodeList» Synbarhet
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+ 
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1040,15 +991,19 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |SYNBARHET
  
 |===
-Kodeliste kunne ikke hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
  
+|===
+|===
+ 
+[[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1067,13 +1022,17 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Kodeliste kunne ikke hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
  
+|===
+|===
+ 
+[[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
-===== Tagged Values
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1092,5 +1051,6 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |REGISTRERINGSVERSJON
  
 |===
-Kodeliste kunne ikke hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
+// End of UML-model
