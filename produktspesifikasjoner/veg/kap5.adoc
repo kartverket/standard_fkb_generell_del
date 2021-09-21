@@ -4,17 +4,11 @@ Definisjon: datamodell for FKB-Veg.
 ===== Profilparametre i tagged values
 [cols="20,80"]
 |===
-|designation
-|"Product specification FKB-Veg 5.0"@en
- 
 |language
 |no
  
 |SOSI_kortnavn
 |FKB-Veg
- 
-|SOSI_langnavn
-|FKB Veg
  
 |SOSI_modellstatus
 |utkastOgSkjult
@@ -363,7 +357,8 @@ SOSI_navn: NVDBPEKER +
 «FeatureType» FeristAvgrensning +
 «FeatureType» Skiltportal +
 «FeatureType» Vegbom +
-«FeatureType» OverkjørbartArealAvgrensning
+«FeatureType» Trafikkøykant - foreslått fjernet +
+«FeatureType» OverkjørbartArealAvgrensning - foreslått NY
 |===
  
 ==== Klasse «dataType» Identifikasjon
@@ -572,7 +567,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
+|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
  
 |===
  
@@ -707,7 +702,7 @@ Definisjon: Pakke som inneholder de fire flateobjektene benyttet i FKB-Veg 5.0
 image::diagrammer\Hoveddiagram - Flateobjekter.png[Hoveddiagram - Flateobjekter]
  
 ==== Klasse «FeatureType» Parkeringsområde
-Definisjon: område for parkering av kjøretøy
+Definisjon: Omr&#229;de for parkering av kj&#248;ret&#248;y.
  
 *Supertype:* «FeatureType» NVDBobjekter
  
@@ -720,6 +715,8 @@ Definisjon: område for parkering av kjøretøy
 |PUNKT;FLATE;
  
 |===
+[caption="Figur 9: ",title=Illustrasjon av objekttype Parkeringsområde]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -787,6 +784,20 @@ SOSI_navn: Punkt +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
+|*avgrensesAvTrafikkøykant*
+ 
+|Definisjon:
+|Krav til delt flategeometri. Avgrensning av Parkeringsområde ved hjelp av Trafikkøykant.
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» Trafikkøykant - foreslått fjernet
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
 |*avgrensesAvVegAnnenAvgrensning*
  
 |Definisjon:
@@ -805,7 +816,7 @@ SOSI_navn: Punkt +
 |*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
  
 |Beskrivelse: 
-|Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor omr&#229;de-geometrien
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
 [cols="20,80"]
@@ -814,12 +825,12 @@ SOSI_navn: Punkt +
 |*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
  
 |Beskrivelse: 
-|Omr&#229;de-geometrien skal v&#230;re lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
  
 ==== Klasse «FeatureType» Trafikkøy
-Definisjon: område som er begrenset av kjørefelt på alle sider og som normalt ikke skal benyttes av kjøretøy
+Definisjon: Omr&#229;de som er begrenset av kj&#248;refelt p&#229; alle sider og som normalt ikke skal benyttes av kj&#248;ret&#248;y.
  
 *Supertype:* «FeatureType» NVDBobjekter
  
@@ -832,6 +843,8 @@ Definisjon: område som er begrenset av kjørefelt på alle sider og som normalt
 |PUNKT;FLATE;
  
 |===
+[caption="Figur 10: ",title=Illustrasjon av objekttype Trafikkøy]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -897,7 +910,7 @@ Definisjon: område som er begrenset av kjørefelt på alle sider og som normalt
 |*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
  
 |Beskrivelse: 
-|Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor omr&#229;de-geometrien
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
 [cols="20,80"]
@@ -906,16 +919,12 @@ Definisjon: område som er begrenset av kjørefelt på alle sider og som normalt
 |*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
  
 |Beskrivelse: 
-|Omr&#229;de-geometrien skal v&#230;re lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
  
 ==== Klasse «FeatureType» VegGåendeOgSyklende
-Definisjon: ferdsels&#229;re for g&#229;ende og syklende. 
-
-(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
-
-Merknad: brukes for strekninger med med typeveg fortau, g&#229;gate, gang- og sykkelveg, gangveg, sykkelveg og trapp i Elveg 2.0. 
+Definisjon: Ferdselsomr&#229;de for g&#229;ende og syklende. Her inng&#229;r fortau, gangveg, gang- og sykkelveg, sykkelveg, trapp og g&#229;gate. 
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -926,6 +935,8 @@ Merknad: brukes for strekninger med med typeveg fortau, g&#229;gate, gang- og sy
 |PUNKT;FLATE;
  
 |===
+[caption="Figur 11: ",title=Illustrasjon av objekttype VegGåendeOgSyklende]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1025,6 +1036,20 @@ SOSI_navn: VEGOVERVEG +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
+|*avgrensesAvTrafikkøykant*
+ 
+|Definisjon:
+|Krav til delt flategeometri. Avgrensning av VegGåendeOgSyklende ved hjelp av Trafikkøykant.
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» Trafikkøykant - foreslått fjernet
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
 |*avgrensesAvVegAnnenAvgrensning*
  
 |Definisjon:
@@ -1057,7 +1082,7 @@ SOSI_navn: VEGOVERVEG +
 |*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
  
 |Beskrivelse: 
-|Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor omr&#229;de-geometrien
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
 [cols="20,80"]
@@ -1066,16 +1091,12 @@ SOSI_navn: VEGOVERVEG +
 |*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
  
 |Beskrivelse: 
-|Omr&#229;de-geometrien skal v&#230;re lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
  
 ==== Klasse «FeatureType» VegKjørende
-Definisjon: ferdsels&#229;re for motorisert trafikk.
-
-(TRENGER MULIGENS MER UTFYLLENDE DEFINISJON) 
-
-Merknad: brukes for strekninger med med typeveg enkel bilveg, gatetun, kanalisert veg, rampe og rundkj&#248;ring i Elveg 2.0. 
+Definisjon: Fredselsomr&#229;de for motorisert trafikk. Her inng&#229;r gatetun, enkel bilveg, kanalisert bilveg, rundekj&#248;ring og rampe.
  
 *Supertype:* «FeatureType» Fellesegenskaper
  
@@ -1086,6 +1107,8 @@ Merknad: brukes for strekninger med med typeveg enkel bilveg, gatetun, kanaliser
 |PUNKT;FLATE;
  
 |===
+[caption="Figur 12: ",title=Illustrasjon av objekttype VegKjørende]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1199,6 +1222,20 @@ SOSI_navn: VEGOVERVEG +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
+|*avgrensesAvTrafikkøykant*
+ 
+|Definisjon:
+|Krav til delt flategeometri. Avgrensning av VegKjørende ved hjelp av Trafikkøykant.
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|«FeatureType» Trafikkøykant - foreslått fjernet
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
 |*avgrensesAvVegFiktivGrense*
  
 |Definisjon:
@@ -1217,7 +1254,7 @@ SOSI_navn: VEGOVERVEG +
 |*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
  
 |Beskrivelse: 
-|Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor omr&#229;de-geometrien
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
 [cols="20,80"]
@@ -1226,21 +1263,92 @@ SOSI_navn: VEGOVERVEG +
 |*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
  
 |Beskrivelse: 
-|Omr&#229;de-geometrien skal v&#230;re lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL, restriksjonen implementeres manuelt
  
 |===
 === Pakke: Flateavgrensninger
 Definisjon: Pakke som inneholder de fire kurveobjektene som brukes til flateavgrensning i FKB-Veg 5.0
-[caption="Figur 9: ",title=Hoveddiagram - Flateavgrensninger]
+[caption="Figur 13: ",title=Hoveddiagram - Flateavgrensninger]
 image::diagrammer\Hoveddiagram - Flateavgrensninger.png[Hoveddiagram - Flateavgrensninger]
-[caption="Figur 10: ",title=Parkeringsområde flateavgrensning]
+[caption="Figur 14: ",title=Parkeringsområde flateavgrensning]
 image::diagrammer\Parkeringsområde flateavgrensning.png[Parkeringsområde flateavgrensning]
-[caption="Figur 11: ",title=Trafikkøy flateavgrensning]
+[caption="Figur 15: ",title=Trafikkøy flateavgrensning]
 image::diagrammer\Trafikkøy flateavgrensning.png[Trafikkøy flateavgrensning]
-[caption="Figur 12: ",title=VegGåendeOgSyklende flateavgrensning]
+[caption="Figur 16: ",title=VegGåendeOgSyklende flateavgrensning]
 image::diagrammer\VegGåendeOgSyklende flateavgrensning.png[VegGåendeOgSyklende flateavgrensning]
-[caption="Figur 13: ",title=VegKjørende flateavgrensning]
+[caption="Figur 17: ",title=VegKjørende flateavgrensning]
 image::diagrammer\VegKjørende flateavgrensning.png[VegKjørende flateavgrensning]
+ 
+==== Klasse «FeatureType» Trafikkøykant - foreslått fjernet
+Definisjon: avgrensing av trafikkøy
+ 
+*Supertype:* «FeatureType» NVDBobjekter_KvalitetPåkrevd
+ 
+*Realisering av:* «ApplicationSchema» Vegsituasjon-4.5::«featureType» Trafikkøykant
+ 
+===== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|SOSI_geometri
+|KURVE;
+ 
+|===
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*grense*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Kurve
+|Profilparametre i tagged values: 
+|
+SOSI_navn: Kurve + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*nedsenketKantstein*
+ 
+|Definisjon: 
+|Egenskap for &#229; angi om fortauskant er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|Boolean
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: BOOLSK + 
+SOSI_navn: NEDSENKETKANTSTEIN + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|koordinatregistrering utført på topp eller bunn av et objekt 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|Høydereferanse
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
  
 ==== Klasse «FeatureType» VegAnnenAvgrensning
 Definisjon: fiktiv linje som avgrenser veg mot avkj&#248;rsler og annet vegareal som ligger i tilknytning til vegnettet. Eksempel p&#229; annet vegareal er &#229;pne parkeringsplasser, industriomr&#229;der og g&#229;rdsplasser.
@@ -1383,7 +1491,7 @@ Definisjon: fiktiv avgrensningslinje (lukkelinje) for vegflater.
 |===
 === Pakke: Andre objekter
 Definisjon: Pakke som inneholder &#248;vrige objekter som benyttes i FKB-Veg 5.0
-[caption="Figur 14: ",title=Hoveddiagram - Andre objekter]
+[caption="Figur 18: ",title=Hoveddiagram - Andre objekter]
 image::diagrammer\Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekter]
  
 ==== Klasse «FeatureType» AnnetVegarealAvgrensning
@@ -1538,9 +1646,11 @@ Definisjon: Avgrensing av kj&#248;rebanen
 |Kurve
 |===
  
-==== Klasse «FeatureType» OverkjørbartArealAvgrensning
-Definisjon: Den indre eller ytre avgrensningen
-av et overkj&#248;rbart areal. 
+==== Klasse «FeatureType» OverkjørbartArealAvgrensning - foreslått NY
+Definisjon: FORSLAG
+
+Den indre eller ytre avgrensningen
+ av et overkj&#248;rbart areal.
 
 Tilleggsinformasjon:
 Opph&#248;yd areal i sm&#229; rundkj&#248;ringer og kryss, etablert for at lange og store kj&#248;ret&#248;y skal kunne passere. Arealet er gjerne belagt med belegningsstein og avgrenset av kantstein.
@@ -1973,9 +2083,9 @@ SOSI_navn: HREF +
 |===
 === Pakke: Datatyper og kodelister
 Definisjon: Inneholder datatyper og kodelister benyttet i FKB-Veg 5.0
-[caption="Figur 15: ",title=Hoveddiagram datatyper og kodelister]
+[caption="Figur 19: ",title=Hoveddiagram datatyper og kodelister]
 image::diagrammer\Hoveddiagram datatyper og kodelister.png[Hoveddiagram datatyper og kodelister]
-[caption="Figur 16: ",title=Realisering av datatyper fra Vegnett 5.0]
+[caption="Figur 20: ",title=Realisering av datatyper fra Vegnett 5.0]
 image::diagrammer\Realisering av datatyper fra Vegnett 5.0.png[Realisering av datatyper fra Vegnett 5.0]
  
 ==== Klasse «dataType» Vegsystemreferanse
