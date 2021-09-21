@@ -1,0 +1,718 @@
+=== Fotogrammetrisk registreringsinstruks
+Definisjon: 
+[caption="Figur  ",title=Objekttyper med egenskaper]
+image::figurer/Objekttyper med egenskaper.png[Objekttyper med egenskaper]
+|===
+|===
+ 
+==== «FeatureType» Kystkontur
+Definisjon: grense mellom land og sj&#248;, definert som midlere h&#248;yvannslinje.
+ 
+Tilleggsdefinisjon: Kystkonturen skal v&#230;re registrert fullstendig og sammenhengende.
+Eventuelle synlige tekniske anlegg som ligger under MHV skal
+registreres.
+
+Det skal v&#230;re konstant h&#248;yde p&#229; kystkonturen.
+I et kartleggingsprosjekt skal oppdragsgiver fremskaffe riktige h&#248;ydeverdier for kystkontur. 
+
+Skille mellom Kystkontur og Elv markeres med VannFiktivGrense og egenskap vannSperretype lik havElvSperre.
+
+Kystkontur skal v&#230;re med p&#229; &#229; avgrense Havflate.
+
+
+Merknader:
+Kystkonturen kan v&#230;re gjennomg&#229;ende under sm&#229; brygger og lignende som st&#229;r p&#229; p&#230;ler og som stikker mindre enn 5 meter ut fra land.
+
+Kystkonturen skal f&#248;lge alle tekniske anlegg (kai/brygger ol.) som stikker
+mer enn 5 meter ut fra land, uavhengig om det er vann under eller ikke. Se
+beskrivelse for objekttype KystkonturTekniskeAnlegg.
+
+MEDIUM U benyttes p&#229; kystkontur som g&#229;r under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer. 
+
+Kystkonturen skal v&#230;re koblet mot andre situasjonsdetaljer (kai, mur, osv.) ved at kystkonturen konnekteres i 2 dimensjoner til objektet.
+Kystkonturen skal ha samme grunnrisskoordinater som objektet, men med
+riktig vannh&#248;yde.
+Det skal bearbeides nodepunkt til andre vanntema. Nodepunktene dannes i
+3D der dette er naturlig. 
+ 
+[caption="Figur  ",title=Figur fra produktspesifikasjonen]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kystkontur.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kystkontur.png]
+ 
+===== Føringer
+[cols="20,80"]
+|===
+|FKB_grunnrissreferanse
+|Terreng/vannkant i riktig høyde, se høydereferanse
+ 
+|FKB_høydereferanse
+|Midlere høyvann (MHV)
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Lengde:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|Kurve
+|.KURVE
+|[1..1]
+ 
+|kystreferanse
+|«CodeList» Kystreferanse
+|..KYSTREF
+|[0..1]
+ 
+|høyde
+|Real
+|..HØYDE
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+|===
+|===
+ 
+==== «FeatureType» KystkonturTekniskeAnlegg
+Definisjon: angivelse av kystkontur der denne består av tekniske anlegg, definert som  midlere høyvann
+ 
+Tilleggsdefinisjon: Benyttes der kystkonturen f&#248;lger tekniske anlegg som for eksempel
+kaier.
+
+Det skal v&#230;re konstant h&#248;yde p&#229; kystkonturen.
+
+Merknader:
+Det skal bearbeides nodepunkt inntil Kystkontur. Nodepunktene dannes i
+3D der dette er naturlig.
+KystkonturTekniskeAnlegg skal om mulig konnekteres til det tekniske
+anlegget i 2 dimensjoner. KystkonturTekniskeAnlegg skal (vanligvis) ha
+samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde. 
+
+MEDIUM U benyttes p&#229; kystkontur som g&#229;r under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer. 
+ 
+[caption="Figur  ",title=Figur fra produktspesifikasjonen]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kystkonturtekniskeanlegg.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kystkonturtekniskeanlegg.png]
+ 
+===== Føringer
+[cols="20,80"]
+|===
+|FKB_grunnrissreferanse
+|Terreng/vannkant i riktig høyde, se høydereferanse
+ 
+|FKB_høydereferanse
+|Midlere høyvann (MHV)
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Lengde:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|Kurve
+|.KURVE
+|[1..1]
+ 
+|kystkonstruksjonstype
+|«CodeList» Kystkonstruksjonstype
+|..KYSTKONSTRUKSJONSTYPE
+|[1..1]
+ 
+|kystreferanse
+|«CodeList» Kystreferanse
+|..KYSTREF
+|[0..1]
+ 
+|høyde
+|Real
+|..HØYDE
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+|===
+|===
+ 
+==== «FeatureType» Skjær
+Definisjon: generalisert punktobjekt for sm&#229; &#248;yer eller landareal
+ 
+Tilleggsdefinisjon: Skal benyttes p&#229; sm&#229; &#248;yer som ikke registreres som kystkontur.
+ 
+[caption="Figur  ",title=Figur fra produktspesifikasjonen]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_skjær.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_skjær.png]
+ 
+===== Føringer
+[cols="20,80"]
+|===
+|FKB_grunnrissreferanse
+|Senter av skjæret
+ 
+|FKB_høydereferanse
+|Topp skjær
+ 
+|FKB_minstestørrelse_A
+|Øyer mindre enn 10m2 registreres som skjær
+ 
+|FKB_minstestørrelse_B
+|Øyer mindre enn 10m2 registreres som skjær
+ 
+|FKB_minstestørrelse_C
+|Øyer mindre enn 10m2 registreres som skjær
+ 
+|FKB_minstestørrelse_D
+|Øyer mindre enn 10m2 registreres som skjær
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Lengde:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|Punkt
+|.PUNKT
+|[1..1]
+ 
+|høyde
+|Real
+|..HØYDE
+|[0..1]
+ 
+|===
+|===
+|===
+ 
+==== «FeatureType» Havflate
+Definisjon: havomr&#229;de som avgrenses av Kystkontur, VannFiktivGrense og KystkonturTekniskAnlegg
+ 
+Tilleggsdefinisjon: Ingen tilleggsdefinisjon.
+
+Merknad: For avgrensning av Havflate ut mot ikke kartlagt omr&#229;de benyttes den generelle objekttypen Dataavgrensning.
+
+MEDIUM U benyttes p&#229; havflater som ligger under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer. 
+ 
+[caption="Figur  ",title=Figur fra produktspesifikasjonen]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_havflate.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_havflate.png]
+ 
+===== Føringer
+[cols="20,80"]
+|===
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Lengde:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|område
+|Flate
+|.FLATE
+|[1..1]
+ 
+|posisjon
+|Punkt
+|.PUNKT
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+|===
+|===
+ 
+==== «FeatureType» Elvekant
+Definisjon: konturlinje mellom land og elveflate
+ 
+Tilleggsdefinisjon: Ingen tilleggsdefinisjon
+
+Der Elvekant renner ut i sj&#248;, innsj&#248; eller regulert innsj&#248; skal h&#248;yden i Elvekant ikke noe sted v&#230;re lavere enn h&#248;yden til nodepunktet som er felles. 
+
+Ved fotogrammetrisk datafangst er registrering av Elvekant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Elvekant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Elvekant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.
+
+Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Elvekant skal likevel konstrueres fullstendig og sammenhengende og kvalitetskodes deretter. I tilfeller med manglende innsyn er det tillatt &#229; generere Elvekant, dette skal i s&#229; fall tydelig fremkomme av kvalitetskodingen. Elveleier som tidvis er t&#248;rre, men godt synlig i flybildene og i terrenget skal konstrueres.
+
+Merknader:
+Elvekant skal ha samme geometri i grunnriss som situasjonsdetaljer som den f&#248;lger (massive kaier, murer, osv.). Vannkanten konnekteres i to dimensjoner til objektet. Det skal lages Elvekant rundt objektet med samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.
+
+N&#229;r elvekanten g&#229;r under kai/brygge, f.eks. ved mindre trebrygger, skal elvekanten v&#230;re gjennomg&#229;ende. Elvekanten registreres uten hensyn til brygga over. Brygga og elvekanten er helt "uavhengige" objekter. For &#248;vrig skal det etableres nodepunkt mellom Elvekant og andre tilst&#248;tende vannobjekter. Der det er naturlig skal nodepunktene v&#230;re i 3D.
+
+MEDIUM U benyttes p&#229; Elvekant som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.
+
+ 
+[caption="Figur  ",title=Figur fra produktspesifikasjonen]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_elvekant.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_elvekant.png]
+ 
+===== Føringer
+[cols="20,80"]
+|===
+|FKB_grunnrissreferanse
+|Der hvor høy vannføring i elva normalt går. Dette vil ofte være overgangen mellom vegetasjon og sand/grus/steiner.
+ 
+|FKB_høydereferanse
+|Terrenghøyden ved grunnrissreferanse.
+ 
+|FKB_minstestørrelse_A
+|ElvBekk bredere enn 1 meter (Vannbredde 2-5)
+ 
+|FKB_minstestørrelse_B
+|ElvBekk bredere enn 1 meter (Vannbredde 2-5)
+ 
+|FKB_minstestørrelse_C
+|ElvBekk bredere enn 3 meter (Vannbredde 3-5)
+ 
+|FKB_minstestørrelse_D
+|ElvBekk bredere enn 15 meter (Vannbredde 4-5)
+ 
+|FKB-A
+|O (se minstestørrelse for FKB-A)
+ 
+|FKB-B
+|O (se minstestørrelse for FKB-B)
+ 
+|FKB-C
+|O (se minstestørrelse for FKB-C)
+ 
+|FKB-D
+|O (se minstestørrelse for FKB-D)
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Lengde:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|Kurve
+|.KURVE
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+// End of Registreringsinstruks UML-model
