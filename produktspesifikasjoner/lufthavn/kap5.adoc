@@ -1,9 +1,15 @@
 === Pakke «ApplicationSchema» FKB-Lufthavn-5.0Utkast
-Definisjon: datamodell for FKB-Lufthavn 5.0
+*Definisjon:* datamodell for FKB-Lufthavn 5.0
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
 |===
+|definition
+|"Data model for FKB-Lufthavn"@en
+ 
+|description
+|"Contains runway surface,  taxiway boundary and certain airport lights" @en
+ 
 |designation
 |"Product specification FKB-Lufthavn 5.0"@en
  
@@ -25,21 +31,26 @@ Definisjon: datamodell for FKB-Lufthavn 5.0
 |SOSI_versjon
 |5.0
  
+|version
+|5.0
+ 
 |===
 [caption="Figur 1: ",title=Pakkerealisering]
-image::diagrammer\Pakkerealisering.png[Pakkerealisering]
+image::diagrammer/Pakkerealisering.png[Pakkerealisering]
 [caption="Figur 2: ",title=Hoveddiagram FKB-Lufthavn-5.0]
-image::diagrammer\Hoveddiagram FKB-Lufthavn-5.0.png[Hoveddiagram FKB-Lufthavn-5.0]
+image::diagrammer/Hoveddiagram FKB-Lufthavn-5.0.png[Hoveddiagram FKB-Lufthavn-5.0]
 [caption="Figur 3: ",title=Realisering]
-image::diagrammer\Realisering.png[Realisering]
+image::diagrammer/Realisering.png[Realisering]
  
-==== Klasse «FeatureType» Lufthavnlys
-Definisjon: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket
+|===
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+[[lufthavnlys]]
+==== «FeatureType» Lufthavnlys
+*Definisjon:* spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket
  
-*Realisering av:* «ApplicationSchema» Lufthavn-4.5/Lufthavnlys::«featureType» Lufthavnlys
- 
+[caption="Figur 4: ",title=Illustrasjon av objekttype Lufthavnlys]
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png[https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -53,7 +64,7 @@ Definisjon: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering a
 |[1..1]
  
 |Type: 
-|Punkt
+|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
 |===
 [cols="20,80"]
 |===
@@ -67,7 +78,7 @@ Definisjon: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering a
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: EKSTERNPEKER + 
@@ -84,16 +95,30 @@ SOSI_navn: EKSTERNPEKER +
 |[1..1]
  
 |Type: 
-|Lufthavnlystype
+|<<lufthavnlystype,«CodeList» Lufthavnlystype>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: LHLYSTYPE + 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Lufthavn-4.5/Lufthavnlys::«featureType» Lufthavnlys +
 |===
  
-==== Klasse «FeatureType» Rullebane
-Definisjon: avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer
+|===
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+[[rullebane]]
+==== «FeatureType» Rullebane
+*Definisjon:* avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer
  
-*Realisering av:* «ApplicationSchema» Lufthavn-4.5/Rullebane::«featureType» Rullebane
- 
+[caption="Figur 5: ",title=Illustrasjon av objekttype Rullebane]
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png[https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -107,7 +132,7 @@ Definisjon: avgrenset, rektangulært område på en flyplass på land innrettet 
 |[1..1]
  
 |Type: 
-|Flate
+|http://skjema.geonorge.no/SOSI/basistype/Flate[Flate]
 |===
 [cols="20,80"]
 |===
@@ -121,7 +146,7 @@ Definisjon: avgrenset, rektangulært område på en flyplass på land innrettet 
 |[0..1]
  
 |Type: 
-|Punkt
+|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
 |===
 [cols="20,80"]
 |===
@@ -135,19 +160,30 @@ Definisjon: avgrenset, rektangulært område på en flyplass på land innrettet 
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-==== Klasse «FeatureType» Taksebanegrense
-Definisjon: avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen
+|Realisering av: 
+|«ApplicationSchema» Lufthavn-4.5/Rullebane::«featureType» Rullebane +
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+|===
+|===
  
-*Realisering av:* «ApplicationSchema» Lufthavn-4.5/Taksebane::«featureType» Taksebanegrense
+[[taksebanegrense]]
+==== «FeatureType» Taksebanegrense
+*Definisjon:* avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen
  
+[caption="Figur 6: ",title=Illustrasjon av objekttype Taksebanegrense]
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png[https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -161,7 +197,7 @@ Definisjon: avgrensning av bane eller rute på en flyplass opprettet til bruk fo
 |[1..1]
  
 |Type: 
-|Kurve
+|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
 |===
 [cols="20,80"]
 |===
@@ -175,14 +211,27 @@ Definisjon: avgrensning av bane eller rute på en flyplass opprettet til bruk fo
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-==== Klasse «CodeList» Lufthavnlystype
-Definisjon: Kodeliste som angir type belysning spesielt for en lufthavn, og i forbindelse med luftfartsrelatert virksomhet.
+|Realisering av: 
+|«ApplicationSchema» Lufthavn-4.5/Taksebane::«featureType» Taksebanegrense +
+|===
+ 
+|===
+|===
+ 
+[[lufthavnlystype]]
+==== «CodeList» Lufthavnlystype
+*Definisjon:* Kodeliste som angir type belysning spesielt for en lufthavn, og i forbindelse med luftfartsrelatert virksomhet.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -204,27 +253,32 @@ Definisjon: Kodeliste som angir type belysning spesielt for en lufthavn, og i fo
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/lufthavn/5.0/lufthavnlystype
-
+ 
+<<<
+|===
+|===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 4: ",title=Hoveddiagram Fellesegenskaper]
-image::diagrammer\Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 5: ",title=Arv av fellesegenskaper]
-image::diagrammer\Arv av fellesegenskaper.png[Arv av fellesegenskaper]
-[caption="Figur 6: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::diagrammer\Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 7: ",title=Posisjonskvalitet]
-image::diagrammer\Posisjonskvalitet.png[Posisjonskvalitet]
+[caption="Figur 7: ",title=Hoveddiagram Fellesegenskaper]
+image::diagrammer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
+[caption="Figur 8: ",title=Arv av fellesegenskaper]
+image::diagrammer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
+[caption="Figur 9: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 10: ",title=Posisjonskvalitet]
+image::diagrammer/Posisjonskvalitet.png[Posisjonskvalitet]
  
-==== Klasse «FeatureType» Fellesegenskaper
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+|===
+|===
+ 
+[[fellesegenskaper]]
+==== «FeatureType» Fellesegenskaper (abstrakt)
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -244,7 +298,7 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
 |[1..1]
  
 |Type: 
-|Identifikasjon
+|<<identifikasjon,«dataType» Identifikasjon>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
@@ -270,7 +324,7 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |[1..1]
  
 |Type: 
-|DateTime
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
@@ -291,7 +345,7 @@ Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangst
 |[1..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -312,7 +366,7 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 |[0..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -330,7 +384,7 @@ SOSI_navn: VERIFISERINGSDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: REGISTRERINGSVERSJON + 
@@ -350,26 +404,28 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» KvalitetPåkrevd +
-«FeatureType» KvalitetOpsjonell
+|Subtyper:
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
-==== Klasse «FeatureType» KvalitetPåkrevd
-Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+[[kvalitetpåkrevd]]
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -386,55 +442,35 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Lufthavnlys +
-«FeatureType» Taksebanegrense +
-«FeatureType» Rullebane
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<lufthavnlys,«FeatureType» Lufthavnlys>> +
+<<taksebanegrense,«FeatureType» Taksebanegrense>> +
+<<rullebane,«FeatureType» Rullebane>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
-==== Klasse «FeatureType» KvalitetOpsjonell
-Definisjon: abstrakt objekttype med valgfri kvalitetsangivelse
- 
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
- 
-===== Egenskaper
-[cols="20,80"]
 |===
-|*Navn:* 
-|*kvalitet*
- 
-|Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
-
-Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|Posisjonskvalitet
-|Profilparametre i tagged values: 
-|
-SOSI_navn: KVALITET + 
 |===
  
-==== Klasse «dataType» Identifikasjon
-Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+[[identifikasjon]]
+==== «dataType» Identifikasjon
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -458,7 +494,7 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -481,7 +517,7 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -500,21 +536,29 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
-==== Klasse «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+|===
+|===
+ 
+[[posisjonskvalitet]]
+==== «dataType» Posisjonskvalitet
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -537,7 +581,7 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 3 + 
@@ -559,7 +603,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 6 + 
@@ -577,7 +621,7 @@ SOSI_navn: NØYAKTIGHET +
 |[0..1]
  
 |Type: 
-|Synbarhet
+|<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 1 + 
@@ -598,7 +642,7 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 3 + 
@@ -620,7 +664,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 6 + 
@@ -633,12 +677,22 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
+|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
  
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
+|===
  
-==== Klasse «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|===
+|===
+ 
+[[synbarhet]]
+==== «CodeList» Synbarhet
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -661,8 +715,13 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-==== Klasse «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+ 
+|===
+|===
+ 
+[[datafangstmetode]]
+==== «CodeList» Datafangstmetode
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
@@ -687,8 +746,13 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-==== Klasse «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+ 
+|===
+|===
+ 
+[[registreringsversjon]]
+==== «CodeList» Registreringsversjon
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -711,8 +775,13 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-==== Klasse «CodeList» Medium
-Definisjon: objektets beliggenhet i forhold til jordoverflaten
+ 
+|===
+|===
+ 
+[[medium]]
+==== «CodeList» Medium
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
 Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
@@ -737,3 +806,5 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+ 
+// End of UML-model
