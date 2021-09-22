@@ -466,6 +466,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truefeaturetype-bekk">2.1.11. «FeatureType» Bekk</a></li>
 <li><a href="#truefeaturetype-grøft">2.1.12. «FeatureType» Grøft</a></li>
 <li><a href="#truefeaturetype-veggrøftåpen">2.1.13. «FeatureType» VeggrøftÅpen</a></li>
+<li><a href="#truefeaturetype-snøisbrekant">2.1.14. «FeatureType» SnøIsbreKant</a></li>
+<li><a href="#truefeaturetype-snøisbre">2.1.15. «FeatureType» SnøIsbre</a></li>
+<li><a href="#truefeaturetype-flomløpkant">2.1.16. «FeatureType» FlomløpKant</a></li>
+<li><a href="#truefeaturetype-vannfiktivgrense">2.1.17. «FeatureType» VannFiktivGrense</a></li>
+<li><a href="#truefeaturetype-konnekteringvann">2.1.18. «FeatureType» KonnekteringVann</a></li>
 </ul>
 </li>
 </ul>
@@ -489,7 +494,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-09-21
+Testversjon 2021-09-22
 </td>
 </tr>
 </table>
@@ -568,6 +573,9 @@ I spesifikasjonen er det spesifisert minstestørrelser for øyer og vann. Dersom
 <li>
 <p>Egenskapen regulert (JA/NEI) er innført på objekttype Innsjø for å angi om en innsjø er oppdemt/regulert</p>
 </li>
+<li>
+<p>Ved registrereing av objekttype Skjær skal alle skjær som er synlige i flybildene tas med - også de som ligger under midlere høyvannstand (MHV).</p>
+</li>
 </ul>
 </div>
 </div>
@@ -592,9 +600,21 @@ I spesifikasjonen er det spesifisert minstestørrelser for øyer og vann. Dersom
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="figurer/Objekttyper%20med%20egenskaper.png" alt="Objekttyper med egenskaper">
+<img src="figurer/Objekttyper%20med%20egenskaper%20-%20Flateobjekter.png" alt="Objekttyper med egenskaper - Flateobjekter">
 </div>
-<div class="title">Figur  Objekttyper med egenskaper</div>
+<div class="title">Figur  Objekttyper med egenskaper - Flateobjekter</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/Objekttyper%20med%20egenskaper%20-%20Flateavgrensninger.png" alt="Objekttyper med egenskaper - Flateavgrensninger">
+</div>
+<div class="title">Figur  Objekttyper med egenskaper - Flateavgrensninger</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/Objekttyper%20med%20egenskaper%20-%20Andre%20objekter.png" alt="Objekttyper med egenskaper - Andre objekter">
+</div>
+<div class="title">Figur  Objekttyper med egenskaper - Andre objekter</div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
@@ -605,14 +625,12 @@ I spesifikasjonen er det spesifisert minstestørrelser for øyer og vann. Dersom
 </div>
 <div class="paragraph">
 <p>Tilleggsdefinisjon: Kystkonturen skal v&#230;re registrert fullstendig og sammenhengende.
-Eventuelle synlige tekniske anlegg som ligger under MHV skal registreres.</p>
+Eventuelle synlige tekniske anlegg som ligger under MHV skal registreres.
+Skille mellom Kystkontur og Elv markeres med VannFiktivGrense og egenskap vannSperretype lik havElvSperre.</p>
 </div>
 <div class="paragraph">
 <p>Det skal v&#230;re konstant h&#248;yde p&#229; kystkonturen.
 I et kartleggingsprosjekt skal oppdragsgiver fremskaffe riktige h&#248;ydeverdier for kystkontur.</p>
-</div>
-<div class="paragraph">
-<p>Skille mellom Kystkontur og Elv markeres med VannFiktivGrense og egenskap vannSperretype lik havElvSperre.</p>
 </div>
 <div class="paragraph">
 <p>Kystkontur skal v&#230;re med p&#229; &#229; avgrense Havflate.</p>
@@ -622,9 +640,7 @@ I et kartleggingsprosjekt skal oppdragsgiver fremskaffe riktige h&#248;ydeverdie
 Kystkonturen kan v&#230;re gjennomg&#229;ende under sm&#229; brygger og lignende som st&#229;r p&#229; p&#230;ler og som stikker mindre enn 5 meter ut fra land.</p>
 </div>
 <div class="paragraph">
-<p>Kystkonturen skal f&#248;lge alle tekniske anlegg (kai/brygger ol.) som stikker
-mer enn 5 meter ut fra land, uavhengig om det er vann under eller ikke. Se
-beskrivelse for objekttype KystkonturTekniskeAnlegg.</p>
+<p>Kystkonturen skal f&#248;lge alle tekniske anlegg (kai/brygger ol.) som stikker mer enn 5 meter ut fra land, uavhengig om det er vann under eller ikke. Se beskrivelse for objekttype KystkonturTekniskeAnlegg.</p>
 </div>
 <div class="paragraph">
 <p>MEDIUM U benyttes p&#229; kystkontur som g&#229;r under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer.</p>
@@ -832,19 +848,18 @@ riktig vannh&#248;yde. Det skal bearbeides nodepunkt til andre vanntema. Nodepun
 <p>Definisjon: angivelse av kystkontur der denne består av tekniske anlegg, definert som  midlere høyvann</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Benyttes der kystkonturen f&#248;lger tekniske anlegg som for eksempel
-kaier.</p>
+<p>Tilleggsdefinisjon: Benyttes der kystkonturen f&#248;lger tekniske anlegg som for eksempel kaier.</p>
 </div>
 <div class="paragraph">
 <p>Det skal v&#230;re konstant h&#248;yde p&#229; kystkonturen.</p>
 </div>
 <div class="paragraph">
+<p>KystkonturTekniskeAnlegg skal v&#230;re med p&#229; &#229; avgrense Havflate.</p>
+</div>
+<div class="paragraph">
 <p>Merknader:
-Det skal bearbeides nodepunkt inntil Kystkontur. Nodepunktene dannes i
-3D der dette er naturlig.
-KystkonturTekniskeAnlegg skal om mulig konnekteres til det tekniske
-anlegget i 2 dimensjoner. KystkonturTekniskeAnlegg skal (vanligvis) ha
-samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.</p>
+Det skal bearbeides nodepunkt inntil Kystkontur. Nodepunktene dannes i 3D der dette er naturlig.
+KystkonturTekniskeAnlegg skal om mulig konnekteres til det tekniske anlegget i 2 dimensjoner. KystkonturTekniskeAnlegg skal (vanligvis) ha samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.</p>
 </div>
 <div class="paragraph">
 <p>MEDIUM U benyttes p&#229; kystkontur som g&#229;r under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer.</p>
@@ -1040,6 +1055,9 @@ samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.</p>
 <div class="paragraph">
 <p>Tilleggsdefinisjon: Skal benyttes p&#229; sm&#229; &#248;yer som ikke registreres som kystkontur.</p>
 </div>
+<div class="paragraph">
+<p>Alle skj&#230;r som er synlig i flybilder skal registreres - ogs&#229; de som ligger under MHV.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_skjær.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_skjær.png">
@@ -1230,6 +1248,9 @@ samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.</p>
 <p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon.</p>
 </div>
 <div class="paragraph">
+<p>Havflate kan avgrenses av Kystkontur, KystkonturTekniskeAnlegg, VannFiktivGrense med egenskap vannSperretype lik  havElvSperre,   VannFiktivGrense med egenskap vannSperretype lik havlinjeFiktiv og Dataavgrensning.</p>
+</div>
+<div class="paragraph">
 <p>Merknad: For avgrensning av Havflate ut mot ikke kartlagt omr&#229;de benyttes den generelle objekttypen Dataavgrensning.</p>
 </div>
 <div class="paragraph">
@@ -1368,16 +1389,16 @@ samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde.</p>
 <p>Definisjon: konturlinje mellom land og elveflate</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
-</div>
-<div class="paragraph">
-<p>Ved fotogrammetrisk datafangst er registrering av Elvekant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Elvekant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Elvekant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.</p>
+<p>Tilleggsdefinisjon: Ved fotogrammetrisk datafangst er registrering av Elvekant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Elvekant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Elvekant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.</p>
 </div>
 <div class="paragraph">
 <p>Der Elvekant renner ut i sj&#248;, innsj&#248; eller regulert innsj&#248; skal h&#248;yden i Elvekant ikke noe sted v&#230;re lavere enn h&#248;yden til nodepunktet som er felles.</p>
 </div>
 <div class="paragraph">
 <p>Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Elvekant skal likevel konstrueres fullstendig og sammenhengende og kvalitetskodes deretter. I tilfeller med manglende innsyn er det tillatt &#229; generere Elvekant, dette skal i s&#229; fall tydelig fremkomme av kvalitetskodingen. Elveleier som tidvis er t&#248;rre, men godt synlig i flybildene og i terrenget skal konstrueres.</p>
+</div>
+<div class="paragraph">
+<p>Elvekant skal v&#230;re med p&#229; &#229; avgrense Elv.</p>
 </div>
 <div class="paragraph">
 <p>Merknader:
@@ -1579,13 +1600,13 @@ Elvekant skal ha samme geometri i grunnriss som situasjonsdetaljer som den f&#24
 <p>Definisjon: st&#248;rre vannvei for rennende vann representert ved flate</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
+<p>Tilleggsdefinisjon: For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap  vannSperretype lik elvelinjeFiktiv benyttes.</p>
 </div>
 <div class="paragraph">
-<p>For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap  vannSperretype lik elvelinjeFiktiv benyttes.</p>
+<p>Elv skal avgrenses av Elvrekant og kan i tillegg avgrenses av VannFiktivGrense med egenskap vannSperretype lik elveElvperre, Innsj&#248;ElvSperre, havElvSperre eller elvelinjeFiktiv.</p>
 </div>
 <div class="paragraph">
-<p>MEDIUM U benyttes p&#229; ElvBekk som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
+<p>MEDIUM U benyttes p&#229; Elv som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1820,10 +1841,10 @@ Elvekant skal ha samme geometri i grunnriss som situasjonsdetaljer som den f&#24
 <p>Definisjon: avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt st&#229;r i kanalen</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon.</p>
+<p>Tilleggsdefinisjon: Kanalkanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap vannSperretype lik elvelinjeFiktiv benyttes.</p>
 </div>
 <div class="paragraph">
-<p>Kanalkanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap vannSperretype lik elvelinjeFiktiv benyttes.</p>
+<p>Kanalkant kan v&#230;re med p&#229; &#229; avgrense Kanal.</p>
 </div>
 <div class="paragraph">
 <p>Det skal genereres nodepunkt mellom Kanalkant og andre vanntema. Nodepunktet skal v&#230;re i 3D der dette er naturlig.</p>
@@ -2018,10 +2039,10 @@ Elvekant skal ha samme geometri i grunnriss som situasjonsdetaljer som den f&#24
 <p>Definisjon: rennende vann der forl&#248;pet er menneskeskapt</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
+<p>Tilleggsdefinisjon: For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap  vannSperretype lik elvelinjeFiktiv benyttes.</p>
 </div>
 <div class="paragraph">
-<p>For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan kan VannFiktivGrense med egenskap  vannSperretype lik elvelinjeFiktiv benyttes.</p>
+<p>Kanal kan avgrenses av Kanalkant,  VannFiktivGrense med egenskap  vannSperretype lik elveElvSperre, innsj&#248;ElvSperre, havElvSperre eller elvelinjeFiktiv.</p>
 </div>
 <div class="paragraph">
 <p>MEDIUM U benyttes p&#229; Kanal som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
@@ -2185,13 +2206,12 @@ Elvekant skal ha samme geometri i grunnriss som situasjonsdetaljer som den f&#24
 for innsj&#248; som er oppdemt/regulert skal konturlinjen ligge i h&#248;ydeniv&#229;et for h&#248;yeste regulerte vannstand</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Hvis innsj&#248;en er regulert skal innsj&#248;kanten gjengi h&#248;yeste regulerte vannstand.</p>
+<p>Tilleggsdefinisjon: Hvis innsj&#248;en er regulert skal innsj&#248;kanten registreres i h&#248;ydeniv&#229; lik h&#248;yeste regulerte vannstand.
+Ved fotogrammetrisk datafangst er registrering av Innsj&#248;kant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Innsj&#248;kant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Innsj&#248;kant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.
+Innsj&#248;kanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan  VannFiktivGrense med egenskap vannSperretype lik innsj&#248;linjeFiktiv benyttes.</p>
 </div>
 <div class="paragraph">
-<p>Ved fotogrammetrisk datafangst er registrering av Innsj&#248;kant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Innsj&#248;kant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Innsj&#248;kant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.</p>
-</div>
-<div class="paragraph">
-<p>Innsj&#248;kanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan  VannFiktivGrense med egenskap vannSperretype lik innsj&#248;linjeFiktiv benyttes.</p>
+<p>Innsj&#248;kant kan v&#230;re med p&#229; &#229; avgrense Innsj&#248;.</p>
 </div>
 <div class="paragraph">
 <p>Merknader:
@@ -2398,14 +2418,14 @@ skal ha konstant høyde for hele vannet. For regulerte innsjøer brukes høyeste
 <p>Definisjon: en ferskvannsflate som ikke er renndende vann</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
-</div>
-<div class="paragraph">
-<p>For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan Innsj&#248;linjeFiktiv benyttes.</p>
+<p>Tilleggsdefinisjon: For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap vannSperretype lik innsj&#248;linjeFiktiv benyttes.</p>
 </div>
 <div class="paragraph">
 <p>Egenskapen regulert skal ha verdi lik JA er hvis innsj&#248;en er regulert. Innsj&#248;kanter som avgrenser forekomster av Innsj&#248; med egenskap regulert lik JA skal registreres i h&#248;yde lik h&#248;yeste regulerte vannstand for innsj&#248;en.
-Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes fra NVE sitt register (NVE Atlas). <a href="http://atlas.nve.no" class="bare">http://atlas.nve.no</a>. Alterrnativt kan egenskapen eksternpeker brukes til &#229; peke inn i eksterene systemer som inneholder opplysninger om reguleringsstatus for det akuelle innsj&#248;objektet.</p>
+Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes fra NVE sitt register (NVE Atlas). <a href="http://atlas.nve.no" class="bare">http://atlas.nve.no</a>. Alterrnativt kan egenskapen eksternpeker brukes til &#229; peke inn i eksterne systemer som inneholder opplysninger om reguleringsstatus.</p>
+</div>
+<div class="paragraph">
+<p>Innsj&#248; kan avgrenses av disse objekttypene; Innsj&#248;kant og VannFiktivGrense med egenskap  vannSperretype lik innsj&#248;ElvSperre eller innsj&#248;linjeFiktiv..</p>
 </div>
 <div class="paragraph">
 <p>MEDIUM U benyttes p&#229; del av Innsj&#248; som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
@@ -2426,7 +2446,7 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstesstørrelse_D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nnsjøer og øyer over 100 m2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Innsjøer og øyer over 100 m2</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_A</p></td>
@@ -2577,16 +2597,13 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 <p>Definisjon: mindre vannvei for rennende vann representert ved senterlinje</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
-</div>
-<div class="paragraph">
-<p>Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Bekk (midtlinje) skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter. Bekkeleier som tidvis er t&#248;rre, men godt synlig i flybildene og i terrenget skal konstrueres.</p>
-</div>
-<div class="paragraph">
-<p>MEDIUM U benyttes p&#229; Bekk som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
+<p>Tilleggsdefinisjon: Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Bekk (midtlinje) skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter. Bekkeleier som tidvis er t&#248;rre, men godt synlig i flybildene og i terrenget skal konstrueres.</p>
 </div>
 <div class="paragraph">
 <p>Merknad: Det skal etableres nodepunkt mellom Bekk (midtlinje) og andre tilst&#248;tende vannobjekter. Der det er naturlig skal det lages nodepunkt i 3D.</p>
+</div>
+<div class="paragraph">
+<p>MEDIUM U benyttes p&#229; Bekk som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2616,7 +2633,7 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NAturlig rennende vann med bredde opptil 1 meter registreres med midtlinje (vannBredde 1). Er vannbredden over 1 mter brukes Elvekant og Elv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Naturlig rennende vann med bredde opptil 1 meter registreres med midtlinje (vannBredde 1). Er vannbredden over 1 mter brukes Elvekant og Elv</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_C</p></td>
@@ -2781,10 +2798,7 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 <p>Definisjon: rennende vann der forl&#248;pet er menneskeskapt</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon</p>
-</div>
-<div class="paragraph">
-<p>Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Gr&#248;ft skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter.</p>
+<p>Tilleggsdefinisjon: Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Gr&#248;ft skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter.</p>
 </div>
 <div class="paragraph">
 <p>Merknad: Det skal etableres nodepunkt mellom KanalGr&#248;ft (midtlinje) og andre tilst&#248;tende vannobjekter. Der det er naturlig skal det lages nodepunkt i 3D.</p>
@@ -2816,19 +2830,19 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 1 meter (vannBredde 1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 1 meter (vannBredde 1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 3 meter (vannBredde 1 - 2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 3 meter (vannBredde 1 - 2). Er vannbredden større brukes Kanalkant og Kanal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrrelse_D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 15 meter (vannBredde 1 - 3)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grøft smalere enn 15 meter (vannBredde 1 - 3). Er vannbredden større brukes Kanalkant og Kanal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
@@ -2985,11 +2999,8 @@ Reguleringsstatus og opplysninger om h&#248;yeste regulerte vannstand kan hentes
 <p>Definisjon: &#229;pen drenering parallelt med veg</p>
 </div>
 <div class="paragraph">
-<p>Tilleggsdefinisjon: Benyttes kun for gr&#248;fter langs veg. For alle andre gr&#248;fter (for eks. langs traktorveg) benyttes Gr&#248;ft.</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Kun den delen av gr&#248;fta som g&#229;r parallelt med veg registreres som Veggr&#248;ft&#197;pen.</p>
+<p>Tilleggsdefinisjon: Benyttes kun for gr&#248;fter langs veg. For alle andre gr&#248;fter (for eks. langs traktorveg) benyttes Gr&#248;ft.
+Kun den delen av gr&#248;fta som g&#229;r parallellt med veg registreres som Veggr&#248;ft&#197;pen.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3037,6 +3048,14 @@ midtlinje. Ellers registreres ytterkant (tostreks VeggrøftÅpen).</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 </tbody>
 </table>
@@ -3116,6 +3135,923 @@ midtlinje. Ellers registreres ytterkant (tostreks VeggrøftÅpen).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-snøisbrekant"><a class="anchor" href="#truefeaturetype-snøisbrekant"></a>2.1.14. «FeatureType» SnøIsbreKant</h4>
+<div class="paragraph">
+<p>Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø</p>
+</div>
+<div class="paragraph">
+<p>Tilleggsdefinisjon: Sn&#248;/isbre som ikke smelter i l&#248;pet av sommeren. Ved etablering ved hjelp av fotogrammetri vil det v&#230;re vanskelig &#229; tolke hvilke sn&#248;flater/isbreer som vil smelte i l&#248;pet av sommeren og hvilke som vil "overleve" til neste vinter. De siste etableres slik de var p&#229; fotograferingstidspunktet.
+Dersom breen g&#229;r ned til vannkontur eller kystkontur, registreres Sn&#248;IsbreKant og vannkantene hver for seg med lik geometri.</p>
+</div>
+<div class="paragraph">
+<p>Sn&#248;IsbreKant skal avgrense Sn&#248;Isbre.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_snøisbrekant.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_snøisbrekant.png">
+</div>
+<div class="title">Figur  Figur fra produktspesifikasjonen</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-14"><a class="anchor" href="#trueføringer-14"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrenget på kanten av snøisbre, i overgangen mot bart terreng
+(eventuelt mot vann)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrenget på kanten av snø/isbre, i overgangen mot bart terreng
+(eventuelt mot vann)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-14"><a class="anchor" href="#trueegenskapstabell-14"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lengde:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-snøisbre"><a class="anchor" href="#truefeaturetype-snøisbre"></a>2.1.15. «FeatureType» SnøIsbre</h4>
+<div class="paragraph">
+<p>Definisjon: grense mellom snø eller isbre og barmark der det er usikkert om det er isbre eller snø</p>
+</div>
+<div class="paragraph">
+<p>Tilleggsdefinisjon: Sn&#248;/isbre som ikke smelter i l&#248;pet av sommeren. Ved etablering ved hjelp av fotogrammetri vil det v&#230;re vanskelig &#229; tolke hvilke sn&#248;flater/isbreer som vil smelte i l&#248;pet av sommeren og hvilke som vil "overleve" til neste vinter. De siste etableres slik de var p&#229; fotograferingstidspunktet.</p>
+</div>
+<div class="paragraph">
+<p>Avgrenses av Sn&#248;IsbreKant</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_snøisbre.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_snøisbre.png">
+</div>
+<div class="title">Figur  Figur fra produktspesifikasjonen</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-15"><a class="anchor" href="#trueføringer-15"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000m2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000m2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000m2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000m2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-15"><a class="anchor" href="#trueegenskapstabell-15"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lengde:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-flomløpkant"><a class="anchor" href="#truefeaturetype-flomløpkant"></a>2.1.16. «FeatureType» FlomløpKant</h4>
+<div class="paragraph">
+<p>Definisjon: begrensningslinje for store markerte elvel&#248;p hvor det pga regulering eller andre &#229;rsaker bare en sjelden gang er vannf&#248;ring</p>
+</div>
+<div class="paragraph">
+<p>Tilleggsdefinisjon: Ingen tilleggsdefinisjon.</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Det skal lages nodepunkt med &#248;vrige vannobjekter. Der det er naturlig skal nodepunktene v&#230;re i 3D.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_flomløpkant.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_flomløpkant.png">
+</div>
+<div class="title">Figur  Figur fra produktspesifikasjonen</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-16"><a class="anchor" href="#trueføringer-16"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ytre grense av flomløp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrenghøyde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flomløp bredere enn 2 meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flomløp bredere enn 2 meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flomløp bredere enn 5 meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_minstestørrelse_D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flomløp bredere enn 15 meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-16"><a class="anchor" href="#trueegenskapstabell-16"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lengde:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-vannfiktivgrense"><a class="anchor" href="#truefeaturetype-vannfiktivgrense"></a>2.1.17. «FeatureType» VannFiktivGrense</h4>
+<div class="paragraph">
+<p>Definisjon: fiktiv delelinje for vannflater, delelinjetype spesifiseres p&#229; egenskapsniv&#229;</p>
+</div>
+<div class="paragraph">
+<p>Tilleggsdefinisjon: Hjelpelinje som brukes for &#229; dele opp flateobjekter. Egenskapen vannSperretype gir mere detaljert inndeling.
+Kodeliste for vannSperretype finnes p&#229; <a href="https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype</a></p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype elveElvSperre:
+Hjelpelinje for avgrensning av en elveflate der den renner ut i en annen elv-/kanalflate. Elvesperre registreres over elv/kanal i munningen, der denne naturlig g&#229;r over i annen elvb/kanal.</p>
+</div>
+<div class="paragraph">
+<p>Referanse i grunnriss og h&#248;yde er lik den st&#248;rste elvas/kanalens nodepunkt.</p>
+</div>
+<div class="paragraph">
+<p>Kan v&#230;re med p&#229; &#229; avgrense Elv og Kanal.</p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype elvelinjeFiktiv:
+Kan brukes i de tilfeller det er aktuelt &#229; dele opp en elv i mindre deler. Brukes ogs&#229; der deler av elvekanten er ukjent for &#229; kunne danne elveflate og for avgrensning av av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder.</p>
+</div>
+<div class="paragraph">
+<p>Det skal lages nodepunkt mot  Elvekant/Kanalkant. Der det er naturlig lages det nodepunkt i 3D.</p>
+</div>
+<div class="paragraph">
+<p>Kan v&#230;re med p&#229; &#229; avgrense Elv og Kanal.</p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype havlinjeFiktiv:
+Kan brukes i de tilfeller det er aktuelt &#229; dele opp en havflate i mindre deler
+Det skal dannes nodepunkt med Kystkontur. Der det er naturlig lages det 3D-nodepunkt..</p>
+</div>
+<div class="paragraph">
+<p>Kan v&#230;re med p&#229; &#229; avgrense Havflate.</p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype havElvSperre:
+Sperrelinjen etableres som en rett linje mellom endepunkt p&#229; kystkontur i overgang mellom kystkontur og elvekant. Kriterier for plassering av havElvSperre:
+- Overgang fra kyst til elv er der elva har h&#248;yde lik MHV.
+- Der elvekanten er registrert med MHV oppover i elva plasseres sperrelinja i et naturlig skille mellom kyst og elv ut fra topografien (munningen).
+- Elvekanten p&#229; innsiden av sperrelinja kan registreres med MHV som h&#248;ydeverdi, men ikke h&#248;ydeverdi lavere enn MHV.</p>
+</div>
+<div class="paragraph">
+<p>Det skal dannes nodepunkt med andre vannobjekter. Der det er naturlig lages det 3D-nodepunkt. Referanse i grunnriss og h&#248;yde skal v&#230;re lik kystkonturens nodepunkt.</p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype innsj&#248;ElvSperre:
+innsj&#248;ElvSperre registreres over elv/kanal i munningen, der denne naturlig g&#229;r over i innsj&#248;.
+Referanse i grunnriss og h&#248;yde er lik innsj&#248;kantens nodepunkt.</p>
+</div>
+<div class="paragraph">
+<p>Det skal dannes nodepunkt med andre vannobjekter. Der det er naturlig lages det 3D-nodepunkt.</p>
+</div>
+<div class="paragraph">
+<p>Kan v&#230;re med p&#229; &#229; avgrense Innsj&#248;, Elv og Kanal.</p>
+</div>
+<div class="paragraph">
+<p>VannFiktivGrense med vannSperretype innsj&#248;linjeFiktiv:
+Brukes i de tilfeller det er aktuelt &#229; dele opp en innsj&#248; i mindre deler. Brukes ogs&#229; mot ikke kartlagt omr&#229;de eller mellom ulike standarder</p>
+</div>
+<div class="paragraph">
+<p>Det skal lages nodepunkt mot Innsj&#248;kant. Der det er naturlig lages det nodepunkt i 3D.</p>
+</div>
+<div class="paragraph">
+<p>Kan v&#230;re med p&#229; &#229; avgrense Innsj&#248;.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_vannfiktivgrense.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_vannfiktivgrense.png">
+</div>
+<div class="title">Figur  Figur fra produktspesifikasjonen</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-17"><a class="anchor" href="#trueføringer-17"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_standard_A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_standard_B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_standard_C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB_standard_D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-17"><a class="anchor" href="#trueegenskapstabell-17"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lengde:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vannSperretype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» VannSperretype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VANN_SPERRETYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefeaturetype-konnekteringvann"><a class="anchor" href="#truefeaturetype-konnekteringvann"></a>2.1.18. «FeatureType» KonnekteringVann</h4>
+<div class="paragraph">
+<p>Definisjon: konnekteringslenke</p>
+</div>
+<div class="paragraph">
+<p>Tilleggsdefinisjon: Et kunstig objekt hvor senterlinjen representerer en konstruert linje som skj&#248;ter sammen lenker der det er hull i geometrien.</p>
+</div>
+<div class="paragraph">
+<p>Benyttes for &#229; lage sammenhengende vannregistrering i omr&#229;der der geometrien ikke er sammenhengende.
+Kan brukes for &#229; knytte sammen bekkeforl&#248;p over dyrket mark, myromr&#229;der og liknende.</p>
+</div>
+<div class="paragraph">
+<p>Det skal lages nodepunkt mot tilst&#230;tende vannobjekter. Der det er naturlig lages det nodepunkt i 3D.</p>
+</div>
+<div class="paragraph">
+<p>Konnekteringslenker registreres vanligvis ikke fotogrammetrisk.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_konnekteringvann.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_konnekteringvann.png">
+</div>
+<div class="title">Figur  Figur fra produktspesifikasjonen</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-18"><a class="anchor" href="#trueføringer-18"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-18"><a class="anchor" href="#trueegenskapstabell-18"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lengde:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
@@ -3681,7 +4617,7 @@ Dersom 50 % eller mer av innsjøkanten/kystkonturen i et område ligger i terren
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-21 16:19:53 +0200
+Last updated 2021-09-22 14:22:09 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
