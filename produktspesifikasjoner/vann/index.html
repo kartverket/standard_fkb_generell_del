@@ -452,12 +452,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truedefinisjoner-og-forkortelser">2. Definisjoner og forkortelser</a>
 <ul class="sectlevel2">
 <li><a href="#truedefinisjoner">2.1. Definisjoner</a></li>
-<li><a href="#trueforkortelser">2.2. Forkortelser</a>
-<ul class="sectlevel3">
-<li><a href="#truenormative-referanser">2.2.1. Normative referanser</a></li>
-<li><a href="#trueandre-forkortelser">2.2.2. Andre forkortelser</a></li>
-</ul>
-</li>
+<li><a href="#trueforkortelser">2.2. Forkortelser</a></li>
 </ul>
 </li>
 <li><a href="#truegenerelt-om-spesifikasjonen">3. Generelt om spesifikasjonen</a>
@@ -502,8 +497,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#kanal">5.1.9. «FeatureType» Kanal</a></li>
 <li><a href="#innsjøkant">5.1.10. «FeatureType» Innsjøkant</a></li>
 <li><a href="#innsjø">5.1.11. «FeatureType» Innsjø</a></li>
-<li><a href="#bekk">5.1.12. «FeatureType» Bekk</a></li>
-<li><a href="#grøft">5.1.13. «FeatureType» Grøft</a></li>
+<li><a href="#elvbekk">5.1.12. «FeatureType» ElvBekk</a></li>
+<li><a href="#kanalgrøft">5.1.13. «FeatureType» KanalGrøft</a></li>
 <li><a href="#veggrøftåpen">5.1.14. «FeatureType» VeggrøftÅpen</a></li>
 <li><a href="#snøisbrekant">5.1.15. «FeatureType» SnøIsbreKant</a></li>
 <li><a href="#snøisbre">5.1.16. «FeatureType» SnøIsbre</a></li>
@@ -609,6 +604,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#truevedlegg-a-sosi-format-realisering">Vedlegg A - SOSI-format-realisering</a>
+<ul class="sectlevel2">
+<li><a href="#truepakke-fkb-vann-5-0-utkast">Pakke: FKB-Vann-5.0 Utkast</a>
 <ul class="sectlevel3">
 <li><a href="#truefeaturetype-kystkontur">«FeatureType» Kystkontur</a></li>
 <li><a href="#truefeaturetype-kystkonturtekniskeanlegg">«FeatureType» KystkonturTekniskeAnlegg</a></li>
@@ -620,14 +617,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truefeaturetype-kanal">«FeatureType» Kanal</a></li>
 <li><a href="#truefeaturetype-innsjøkant">«FeatureType» Innsjøkant</a></li>
 <li><a href="#truefeaturetype-innsjø">«FeatureType» Innsjø</a></li>
-<li><a href="#truefeaturetype-bekk">«FeatureType» Bekk</a></li>
-<li><a href="#truefeaturetype-grøft">«FeatureType» Grøft</a></li>
+<li><a href="#truefeaturetype-elvbekk">«FeatureType» ElvBekk</a></li>
+<li><a href="#truefeaturetype-kanalgrøft">«FeatureType» KanalGrøft</a></li>
 <li><a href="#truefeaturetype-veggrøftåpen">«FeatureType» VeggrøftÅpen</a></li>
 <li><a href="#truefeaturetype-snøisbrekant">«FeatureType» SnøIsbreKant</a></li>
 <li><a href="#truefeaturetype-snøisbre">«FeatureType» SnøIsbre</a></li>
 <li><a href="#truefeaturetype-flomløpkant">«FeatureType» Flomløpkant</a></li>
 <li><a href="#truefeaturetype-vannfiktivgrense">«FeatureType» VannFiktivGrense</a></li>
 <li><a href="#truefeaturetype-konnekteringvann">«FeatureType» KonnekteringVann</a></li>
+</ul>
+</li>
 <li><a href="#truepakke-generelle-elementer-2">Pakke: Generelle elementer</a>
 <ul class="sectlevel3">
 <li><a href="#truefeaturetype-fellesegenskaper">«FeatureType» Fellesegenskaper</a></li>
@@ -635,6 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truefeaturetype-kvalitetopsjonell">«FeatureType» KvalitetOpsjonell</a></li>
 </ul>
 </li>
+<li><a href="#truepakke-datatyper-og-kodelister-2">Pakke: Datatyper og kodelister</a></li>
 </ul>
 </li>
 <li><a href="#truevedlegg-b-gml-realisering">Vedlegg B - GML-realisering</a></li>
@@ -652,7 +652,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-09-22
+Testversjon 2021-09-23
 </td>
 </tr>
 </table>
@@ -672,11 +672,11 @@ Testversjon 2021-09-22
 Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Primærdata Kystkontur som en del av FKB-Vann.</p>
 </div>
 <div class="paragraph">
-<p>FKB Generell del finnes {fkb-url}[her].</p>
+<p>FKB Generell del finnes <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">her</a>.</p>
 </div>
 <div class="paragraph">
 <p>Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er nå samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Vann 5.0 finnes her:
-<a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Vann/5.0/">Fotogrammetrisk registreringsinstruks FKB-Vann 5.0</a></p>
+<a href="http://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-Vann/5.0/">Fotogrammetrisk registreringsinstruks FKB-Vann 5.0</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -730,10 +730,12 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <p>Objekttypen VeggrøftÅpen er overført fra FKB-Veg til FKB-Vann</p>
 </li>
 <li>
-<p>Objekttypen ElvBekk med geometrirepresentasjon kurve (senterlinje) eller flate er erstattet med de nye objekttypene Elv (flategeometri) og Bekk (kurvegeometri som beskriver senterlinje)</p>
+<p>Objekttypen ElvBekk med geometrirepresentasjon flate er erstattet med ny objekttype Elv (flategeometri).
+ElvBekk beskriver nå kun senterlinje (kurvegeometri)</p>
 </li>
 <li>
-<p>Objekttypen KanalGrøft med geometrirepresentasjon kurve (senterlinje) eller flate er erstattet med de nye objekttypene Kanal (flategeometri) og Grøft (kurvegeometri som beskriver senterlinje)</p>
+<p>Objekttypen KanalGrøft med geometrirepresentasjon flate er erstattet med ny objekttype Kanal (flategeometri).
+KanalGrøft beskriver nå kun senterlinje (kurvegeometri)</p>
 </li>
 <li>
 <p>Objekttypen ElvBekkKant utgår</p>
@@ -782,41 +784,217 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="truedefinisjoner"><a class="anchor" href="#truedefinisjoner"></a>2.1. Definisjoner</h3>
-
+<div class="paragraph">
+<div class="title">ajourføring</div>
+<p>korrigering av innholdet i geodataene slik at de fremstiller de faktiske forhold på et gitt tidspunkt, etter de retningslinjer som gjelder for innhold og kvalitet <a href="#PABG">[PABG]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Det er en selvfølge at ”konsekvensrettelser” også blir utført. For eksempel når det bygges et nytt hus, blir ofte gjerder, arealbruksgrenser og veger omkring huset forandret. Ajourføring innebærer at alle disse forandringene blir gjort i de aktuelle databaser.
+Oppgradering til nyere og bedre standard defineres som noe annet enn ajourføring, selv om det kan gjøres på samme tidspunkt som periodisk ajourføring.</p>
+</div>
+<div class="paragraph">
+<div class="title">applikasjonsskjema</div>
+<p>informasjonsmodellene i SOSI-modellregister er modellert som UML-modeller. UML-modellen for et FKB-datasett benevnes som et UML-applikasjonsskjema. Fra UML-applikasjonsskjema kan det automatisk genereres et GML-applikasjonsskjema som beskriver hvordan dataene representeres som GML.</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Se objektkatalog</p>
+</div>
+<div class="paragraph">
+<div class="title">avledet datasett</div>
+<p>bearbeidede primærdata tilpasset et bestemt bruksområde <a href="#FKB">[FKB]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Avledede data skal i prinsippet ikke ajourføres direkte, men ajourføringen skal komme gjennom automatisk utvelgelse og generalisering fra primærdata. I noen tilfeller vil dette være en for tung prosess slik at en må avvike fra hovedprinsippet.
+	Kalles også generalisert datasett.</p>
+</div>
+<div class="paragraph">
+<p><em>EKSEMPEL</em>:	N5 Kartdata (avledet/generalisert produkt fra FKB-data).</p>
+</div>
+<div class="paragraph">
+<div class="title">basis geodata</div>
+<p>Detaljerte geodata som beskriver det fysiske landskapet ved naturlige eller menneskeskapte objekter. Basisdata brukes til lokalisering og som underlag for temadata. <a href="#FKB">[FKB]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: basis geodata er synonymt med begrepet grunnkart (eller grunnkartdata)</p>
+</div>
+<div class="paragraph">
+<div class="title">datasett</div>
+<p>identifiserbar samling av beslektede data <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">egenskap</div>
+<p>navngitt kjennetegn eller karakteristikk av et objekt</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Egenskap defineres ved navn (for eksempel "bygge-år"), datatype (for eksempel årstall) og verdiområde (for eksempel "Kristi fødsel - dags dato").
+Egenskapsverdi er verdien til egenskapen for det aktuelle objektet, for eksempel 1998. Egenskapsdata kalles noen ganger for attributtdata.</p>
+</div>
+<div class="paragraph">
+<div class="title">egenskapsnøyaktighet</div>
+<p>uttrykk for hvor godt egenskapsdataene beskriver de aktuelle egenskapene <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">FKB</div>
+<p>FKB er en forkortelse for Felles Kartdatabase. Se <a href="#FKB">[FKB]</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">Fotogrammetrisk FKB</div>
+<p>FKB-data som er etablert ved fotogrammetrisk kartlegging <a href="#FKB">[FKB]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: I Fotogrammetrisk FKB inngår også enkelte objekttyper som ikke registreres fotogrammetrisk. Eksempel er fiktive avgrensningslinjer og representasjonspunkt.</p>
+</div>
+<div class="paragraph">
+<div class="title">grunnkart</div>
+<p>Grunnkart er et begrep som er synonymt med basis geodata. Se definisjon under basis geodata.</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Grunnkart brukes til flere formål og kan danne grunnlag for avledede kart i forskjellige målestokker. Grunnkartet skal være det kartgrunnlaget som skal tjene alle formål som omhandles i plan- og bygningsloven eller dens forskrifter.</p>
+</div>
+<div class="paragraph">
+<div class="title">fullstendighet</div>
+<p>uttrykk for i hvilken grad spesifiserte deler av et produkt finnes i det aktuelle datasettet <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Fullstendighet karakteriseres ved kvalitetsmålene manglende objekter, overskytende objekter (ønsket om fullstendige geodatabaser innebærer også at det er galt dersom det finnes objekter i databasene som ikke skal være der i henhold til spesifikasjonene) og manglende egenskaper.
+Fullstendighet kan angis i prosent i relasjon til spesifiserte krav.
+Informasjon om fullstendighet må være datert.</p>
+</div>
+<div class="paragraph">
+<div class="title">geodata</div>
+<p>stedfestet informasjon <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Geodata består av objektidentifikasjon og informasjon om stedfesting og egenskaper. Stedfestingsdataene på sin side kan omfatte både posisjonsdata og geometriske beskrivelsesdata.</p>
+</div>
+<div class="paragraph">
+<div class="title">kart</div>
+<p>generalisert avbildning av geografiske objekter med deres romlige relasjoner; med angitt geodetisk datum, projeksjon og koordinatsystem, samt målestokk dersom avbildningen er analog <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">kartdata</div>
+<p>geodata tilrettelagt for presentasjon av kart <a href="#PABG">[PABG]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">kontinuerlig ajourhold</div>
+<p>fortløpende ajourføring basert på rapportering fra forvaltningsrutiner, daglige arbeidsrutiner og samarbeidsparter <a href="#PABG">[PABG]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Kalles også administrativt vedlikehold. Data som samles inn administrativt, kan være digitale stikningsdata eller data fra sluttkontroll av beliggenhet, koordinatfestede grensemerker, markmålte bygninger, senterpunkt bygning, situasjonsplan og melding om landbruksbygg.</p>
+</div>
+<div class="paragraph">
+<div class="title">kvalitet</div>
+<p>i hvilken grad en samling av iboende egenskaper oppfyller krav <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: I standarden Geodatakvalitet for en nærmere beskrivelse av datakvalitet.</p>
+</div>
+<div class="paragraph">
+<div class="title">logisk konsistens</div>
+<p>hvor godt regler som finnes i spesifikasjonene, er oppfylt <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Logisk konsistens betegner sammenhengen mellom produktet og reglene produktet skal oppfylle. Logisk konsistens kan altså måles uten at en kjenner noen "fasit".</p>
+</div>
+<div class="paragraph">
+<p><em>EKSEMPEL</em>:	I SOSI er det spesifisert hvordan en flate skal representeres i en SOSI-fil. Samme regel gjelder for FKB. I SOSI er det også beskrevet hvilke egenskaper for eksempel en vegkant skal ha. De samme egenskaper, eller et utvalg av disse, skal vegkant ha i FKB.</p>
+</div>
+<div class="paragraph">
+<div class="title">metadata</div>
+<p>informasjon som beskriver et datasett <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Hvilke opplysninger som inngår i metadataene, kan variere avhengig av datasettets karakter. Vanlige opplysninger er innhold, kvalitet, tilstand, struktur, format, produsent og vedlikeholdsansvar.</p>
+</div>
+<div class="paragraph">
+<div class="title">nøyaktighet</div>
+<p>mål for en estimert verdis nærhet til sin sanne verdi eller til det man antar er den sanne verdi <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: I standarden Geodatakvalitet er de ulike nøyaktighetsmålene beskrevet.</p>
+</div>
+<div class="paragraph">
+<div class="title">objekt</div>
+<p>forekomst (instans) av en objekttype <a href="#SOSI">[SOSI]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">objektkatalog</div>
+<p>definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet <a href="#SOSI">[SOSI]</a></p>
+</div>
+<div class="paragraph">
+<p><em>EKSEMPEL</em>: SOSI-Objektkatalog</p>
+</div>
+<div class="paragraph">
+<div class="title">objekttype</div>
+<p>geografisk objekttype er en klasse av objekter med felles egenskaper, forholdet mot andre objekttyper og funksjoner <a href="#SOSI">[SOSI]</a></p>
+</div>
+<div class="paragraph">
+<p><em>EKSEMPEL</em>: Eksempler på objekttyper er Takkant, Arealbruksgrense og Mønelinje.</p>
+</div>
+<div class="paragraph">
+<div class="title">områdetype</div>
+<p>arealinndeling basert på krav til detaljering/nøyaktighet av basis geodata i området <a href="#FKB">[FKB]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: I FKB brukes områdetypen til å si noe om hvilken FKB-standard som bør velges i området (se punkt 5.2). Områdetype brukes også som styrende for krav i standardene "Plassering og beliggenhetskontroll" og "Stedfesting av matrikkelenhets- og råderettsgrenser".</p>
+</div>
+<div class="paragraph">
+<div class="title">oppgradering</div>
+<p>forbedring av den datatekniske kvaliteten av eksisterende data <a href="#PABG">[PABG]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">periodisk ajourhold</div>
+<p>ajourføring som utføres systematisk med jevne mellomrom <a href="#PABG">[PABG]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Ved periodisk ajourføring blir eksisterende data, enten de har vært gjennom kontinuerlig ajourføring eller ei, kontrollert og evt. forbedret, og manglende objekter blir supplert. Objekter som ikke er endret, blir ikke kartlagt på nytt. Etter periodisk ajourføring skal datasettene minimum tilfredsstille kvalitetskravene for den valgte FKB-standard i området. Det kan være nødvendig også med en oppgradering for å oppfylle kvalitetskravene. Periodisk ajourføring gjøres vanligvis ved fotogrammetri.</p>
+</div>
+<div class="paragraph">
+<div class="title">presentasjonsdata</div>
+<p>tilleggsdata til FKB som er nødvendige for å formidle en god presentasjon uten at de opprinnelige datasettene blir berørt <a href="#FKB">[FKB]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Presentasjonsdata lages for presentasjoner i ulike målestokker. Det genereres presentasjonsdata for å ha mulighet til blant annet å redigere, avblende/slette, skrive om eller flytte tekster og symboler i kartbildet, uten at datasettene blir berørt.</p>
+</div>
+<div class="paragraph">
+<p><em>EKSEMPEL</em>:	Eksempler på presentasjonsdata er tekstdata generert fra datasett der tekst, tall eller symboler er ferdig plassert i kartbildet. En annen type presentasjonsdata er avblendingspolygoner som brukes til å fjerne unødig mye data i et aktuelt kartbilde.</p>
+</div>
+<div class="paragraph">
+<div class="title">primærdatasett</div>
+<p>et definert geodatasett som består av de mest detaljerte og nøyaktige data innen et definert område, har en viss utbredelse og jevnlig blir produsert og/eller ajourholdt <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Primærdatasett skal være presentasjons- og produktuavhengige. De skal kunne danne utgangspunkt for forskjellig bruk og forskjellige produkter. Det er derfor krav om en viss utbredelse og produksjon før en kan kalle et datasett for primærdatasett. Primærdatasett er i prinsippet uavhengige datasett (ikke avledet fra andre datasett) og ajourholdes uavhengig av andre datasett. Et objekt tilhører bare ett primærdatasett. Primærdatasett kodes og struktureres i henhold til SOSI Del 2, men kan være gitt strengere eller svakere krav til hva som er standard og hva som er valgfritt (opsjon) i datasettet.</p>
+</div>
+<div class="paragraph">
+<div class="title">produktspesifikasjon</div>
+<p>detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart) <a href="#SOSI">[SOSI]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: En dataproduktspesifikasjon kan lages for produksjon, salg, sluttbrukervirksomhet eller annet.</p>
+</div>
+<div class="paragraph">
+<div class="title">standardavvik</div>
+<p>statistisk størrelse som angir spredningen for en gruppe måle- eller beregningsverdier i forhold til deres sanne eller estimerte verdier <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<div class="title">topologi</div>
+<p>beskrivelse av sammenhengen mellom geografiske objekter <a href="#G">[G]</a></p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: De aktuelle objektene har ofte en fysisk sammenheng. Topologi er de av objektenes egenskaper som overlever det som er kalt kontinuerlige transformasjoner (også kalt gummiduk-transformasjoner). Alle tallverdier (lengder, arealer og retninger) kan bli forandret, mens for eksempel naboskapsforhold vil være uendret.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="trueforkortelser"><a class="anchor" href="#trueforkortelser"></a>2.2. Forkortelser</h3>
-<div class="sect3">
-<h4 id="truenormative-referanser"><a class="anchor" href="#truenormative-referanser"></a>2.2.1. Normative referanser</h4>
-<div id="FKB" class="paragraph">
-<p><strong>[FKB]</strong> : {fkb-url}[SOSI abstrakte spesifikasjoner – FKB generell del 5.0]</p>
-</div>
-<div id="PBL-KART" class="paragraph">
-<p><strong>[PBL-KART]</strong> : <a href="https://www.regjeringen.no/no/dokumenter/veiledning-til-forskrift-om-kart-stedfestet-informasjon-arealformal-og-digitalt-planregister/">Veiledning til forskrift om kart, stedfestet informasjon, arealformål og digitalt planregister</a></p>
-</div>
-<div id="G" class="paragraph">
-<p><strong>[G]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/geodatakvalitet-1.0-standarder-geografisk-informasjon.pdf">Geodatakvalitet</a></p>
-</div>
-<div id="SOSI" class="paragraph">
-<p><strong>[SOSI]</strong> : <a href="https://www.kartverket.no/geodataarbeid/standardisering/sosi-standarder2/sosi-del-1-generell-del">SOSI (Samordnet Opplegg for Stedfestet Informasjon)</a></p>
-</div>
-<div id="PABG" class="paragraph">
-<p><strong>[PABG]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/produksjon-av-basis-geodata-1.0-standarder-geografisk-informasjon.pdf">Produksjon av basis geodata</a></p>
-</div>
-<div id="GEO-VEIL" class="paragraph">
-<p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueandre-forkortelser"><a class="anchor" href="#trueandre-forkortelser"></a>2.2.2. Andre forkortelser</h4>
 <div class="paragraph">
 <p><strong>AR5</strong>: Arealressurskart i målestokk 1:5000</p>
 </div>
-<div class="paragraph">
-<p><strong>DTM</strong>: Digital TerrengModell.</p>
+<div id="DOK" class="paragraph">
+<p><strong>DOK</strong>: Det offentlige kartgrunnlaget. DOK er offentlige geografiske data som er tilrettelagt for kommunenes plan- og byggesaksarbeid.</p>
 </div>
 <div class="paragraph">
-<p><strong>FKB</strong>: Felles KartdataBase.</p>
+<p><strong>DTM</strong>: Digital TerrengModell.</p>
 </div>
 <div class="paragraph">
 <p><strong>Georef</strong>: Metadataregister for Geovekst-data.</p>
@@ -825,17 +1003,25 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <p><strong>Geovekst</strong>: Geodatasamarbeid mellom de nasjonale partene KS (kommunesektorens organisasjon, omfatter både kommuner og fylkeskommuner), Energi Norge, Kartverket, Telenor, Statens vegvesen, Landbruksdepartementet og Norges vassdrags- og energidirektorat. Lokalt kan Geovekst-samarbeidet også ha andre parter.</p>
 </div>
 <div class="paragraph">
+<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
+</div>
+<div class="paragraph">
+<p><strong>NRL</strong>: Nasjonalt register for luftfartshindre</p>
+</div>
+<div class="paragraph">
+<p><strong>NVDB</strong>: Nasjonal vegdatabank med vegnett og tilhørende informasjon.</p>
+</div>
+<div class="paragraph">
 <p><strong>PBL</strong>: Plan- og bygningsloven.</p>
 </div>
 <div class="paragraph">
 <p><strong>UML</strong>: Unified Modelling Language. Modelleringsspråk som (blant annet) brukes til å beskrive geografiske informasjonsmodeller.</p>
 </div>
-<div class="paragraph">
-<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
+<div id="URI" class="paragraph">
+<p><strong>URI</strong>: Uniform Resource Identifier. Kompakt streng av tegn som identifiserer en abstrakt eller fysisk ressurs.</p>
 </div>
-<div class="paragraph">
-<p><strong>NVDB</strong>: Nasjonal vegdatabank med vegnett og tilhørende informasjon.</p>
-</div>
+<div id="UUID" class="paragraph">
+<p><strong>UUID</strong>: Universally unique identifier. 128-bit globalt unik streng av tegn som kan genereres automatisk av en datamaskin.</p>
 </div>
 </div>
 </div>
@@ -900,7 +1086,30 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <div class="sect2">
 <h3 id="trueformål"><a class="anchor" href="#trueformål"></a>3.8. Formål</h3>
 <div class="paragraph">
-<p>Datasettet skal sammen med øvrige datasett skape et godt og detaljert kartbilde. Hovedformålet med datasettet er å kunne kjenne seg igjen ute i terrenget.</p>
+<p>FKB er grunnleggende geografisk informasjon for å utøve lov- og forskriftsbelagte saker og ta gode beslutninger. FKB kan brukes til:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>å kjenne seg igjen ute i terrenget</p>
+</li>
+<li>
+<p>forvaltningsmessig saksbehandling i kommuner, statlige etater og ledningsetater</p>
+</li>
+<li>
+<p>saksbehandling knyttet til plan- og bygningsloven med forskrifter (jf. <a href="#PBL-KART">[PBL-KART]</a>)</p>
+</li>
+<li>
+<p>prosjekteringsformål</p>
+</li>
+<li>
+<p>analyse og presentasjon i et integrert informasjonssystem (GIS-system)</p>
+</li>
+<li>
+<p>produksjon av kart og avledede produkter med forskjellig krav til innhold, detaljering og stedfestingsnøyaktighet
+FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -953,7 +1162,7 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <p>Detaljeringen av FKB er delt inn i 4 nøyaktighetsklasser; FKB-A, FKB-B, FKB-C og FKB-D, men er i denne spesifikasjonen beskrevet som et homogent produkt med ett omfang.</p>
 </div>
 <div class="paragraph">
-<p>Se FKB Generell del for en nærmere beskrivelse av inndeling av FKB i FKB-A til D.</p>
+<p>Se FKB Generell del <a href="#FKB">[FKB]</a> for en nærmere beskrivelse av inndeling av FKB i FKB-A til D.</p>
 </div>
 </div>
 </div>
@@ -2779,15 +2988,15 @@ SOSI_navn: EKSTERNPEKER<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bekk"><a class="anchor" href="#bekk"></a>5.1.12. «FeatureType» Bekk</h4>
+<h4 id="elvbekk"><a class="anchor" href="#elvbekk"></a>5.1.12. «FeatureType» ElvBekk</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> mindre vannvei for rennende vann representert ved senterlinje</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_bekk.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_bekk.png">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_elvbekk.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_elvbekk.png">
 </div>
-<div class="title">Figur 18: Illustrasjon av objekttype Bekk</div>
+<div class="title">Figur 18: Illustrasjon av objekttype ElvBekk</div>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-11"><a class="anchor" href="#trueegenskaper-11"></a>Egenskaper</h5>
@@ -2899,15 +3108,15 @@ SOSI_navn: MEDIUM<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="grøft"><a class="anchor" href="#grøft"></a>5.1.13. «FeatureType» Grøft</h4>
+<h4 id="kanalgrøft"><a class="anchor" href="#kanalgrøft"></a>5.1.13. «FeatureType» KanalGrøft</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> rennende vann der forl&#248;pet er menneskeskapt</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_grøft.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_grøft.png">
+<img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalgrøft.png" alt="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/objtype_kanalgrøft.png">
 </div>
-<div class="title">Figur 19: Illustrasjon av objekttype Grøft</div>
+<div class="title">Figur 19: Illustrasjon av objekttype KanalGrøft</div>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-12"><a class="anchor" href="#trueegenskaper-12"></a>Egenskaper</h5>
@@ -3467,6 +3676,30 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>medium</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#medium">«CodeList» Medium</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="truearv-og-realiseringer-18"><a class="anchor" href="#truearv-og-realiseringer-18"></a>Arv og realiseringer</h5>
@@ -3801,9 +4034,9 @@ SOSI_navn: INFORMASJON<br></p></td>
 <a href="#kystkonturtekniskeanlegg">«FeatureType» KystkonturTekniskeAnlegg</a><br>
 <a href="#kanalkant">«FeatureType» Kanalkant</a><br>
 <a href="#snøisbrekant">«FeatureType» SnøIsbreKant</a><br>
-<a href="#bekk">«FeatureType» Bekk</a><br>
+<a href="#elvbekk">«FeatureType» ElvBekk</a><br>
 <a href="#flomløpkant">«FeatureType» Flomløpkant</a><br>
-<a href="#grøft">«FeatureType» Grøft</a><br>
+<a href="#kanalgrøft">«FeatureType» KanalGrøft</a><br>
 <a href="#elvekant">«FeatureType» Elvekant</a><br>
 <a href="#skjær">«FeatureType» Skjær</a><br>
 <a href="#veggrøftåpen">«FeatureType» VeggrøftÅpen</a><br>
@@ -4620,6 +4853,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -4633,7 +4867,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect3">
 <h4 id="trueomfang"><a class="anchor" href="#trueomfang"></a>6.1.1. Omfang</h4>
 <div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
+<p>Hele datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -4663,7 +4897,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect3">
 <h4 id="trueidentifikasjonskode"><a class="anchor" href="#trueidentifikasjonskode"></a>6.1.6. Identifikasjonskode:</h4>
 <div class="paragraph">
-<p>Se tabell under punkt 6.1.7</p>
+<p>Se <a href="#tab-referansesystem">Tabell 1</a> under <a href="#truekodeversjon">Section 6.1.7</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -4735,8 +4969,9 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-2"><a class="anchor" href="#trueomfang-2"></a>6.2.2. Omfang</h4>
 <div class="paragraph">
-<p>Gjelder hele spesifikasjonen</p>
+<p>Hele datasettet</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -4745,14 +4980,15 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h2 id="truekvalitet"><a class="anchor" href="#truekvalitet"></a>7. Kvalitet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se kapittel 4 i fotogrammetrisk registreringsinstruks for FKB-Vann 5.0: (link til instruks)</p>
+<p>Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-Vann/5.0/">fotogrammetrisk registreringsinstruks for FKB-Vann 5.0</a>.</p>
 </div>
 <div class="paragraph">
-<p>FKB vil ofte også inneholde data fra andre datakilder, for eksempel data etablert gjennom kommunal/offentlig saksbehandling, innmelding fra publikum eller digitalisert fra ortofoto.</p>
+<p>FKB vil ofte også inneholde data fra andre datakilder, for eksempel data etablert gjennom kommunal/offentlig saksbehandling, innmelding fra publikum eller digitalisert fra ortofoto. Se kapittel 9 for en nærmere beskrivelse av datakilder ved vedlikehold av FKB-data.</p>
 </div>
 <div class="paragraph">
 <p>Prinsippet er at fullstendighet prioriteres foran nøyaktighet og FKB-data for et område vil derfor bestå av data med varierende grad av kvalitet. Alle data er kodet med datafangstdato og posisjonskvalitet slik at det er mulig å vurdere datakvaliteten til det enkelte dataobjekt. Det vil også være mulig å aggregere denne informasjonen som finnes på objektnivå opp til en beskrivelse av kvaliteten på datainnholdet i området som helhet. Det er imidlertid vanskelig å garantere datakvaliteten for FKB innenfor et område.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
@@ -4767,14 +5003,14 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h2 id="truedatavedlikehold"><a class="anchor" href="#truedatavedlikehold"></a>9. Datavedlikehold</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>FKB-data vedlikeholdes gjennom 3 prosesser. Det henvises til Geovekst veiledningsmateriell (kap. 10) for nærmere beskrivelse av vedlikeholdsopplegget [GEO-VEIL]: <a href="http://www.kartverket.no/geodataarbeid/Geovekst/Geovekst-veiledningsdokumentasjon/" class="bare">http://www.kartverket.no/geodataarbeid/Geovekst/Geovekst-veiledningsdokumentasjon/</a></p>
+<p>FKB-data vedlikeholdes gjennom 3 prosesser. Det henvises til Geovekst veiledningsmateriell (kap. 10) for nærmere beskrivelse av vedlikeholdsopplegget <a href="#GEO-VEIL">[GEO-VEIL]</a></p>
 </div>
 <div class="sect2">
 <h3 id="truevedlikeholdsinformasjon-kartleggingsprosjekter"><a class="anchor" href="#truevedlikeholdsinformasjon-kartleggingsprosjekter"></a>9.1. Vedlikeholdsinformasjon Kartleggingsprosjekter</h3>
 <div class="sect3">
 <h4 id="trueomfang-3"><a class="anchor" href="#trueomfang-3"></a>9.1.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
+<p>Hele datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -4786,7 +5022,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="truevedlikeholdsbeskrivelse"><a class="anchor" href="#truevedlikeholdsbeskrivelse"></a>9.1.3. Vedlikeholdsbeskrivelse</h4>
 <div class="paragraph">
-<p>Fotogrammetrisk ajourhold skjer for Geovekst-kommuner gjennom Geovekst kartleggingsprosjekter. Kartleggingsprosjektene spesifiseres og finansieres gjennom Geovekst og settes ut på anbud fra Kartverket. Flyfotografering og selve det fotogrammetriske ajourholdet utføres av et privat firma i tråd med fotogrammetrisk registreringsinstruks. Kartverket gjør kontroll av leveranse ved mottak og legger dataene inn i FKB.</p>
+<p>Fotogrammetrisk ajourhold skjer for Geovekst-kommuner gjennom Geovekst kartleggingsprosjekter. Kartleggingsprosjektene spesifiseres og finansieres gjennom Geovekst og settes ut på anbud fra Kartverket. Flyfotografering og selve det fotogrammetriske ajourholdet utføres av et privat firma i tråd med fotogrammetrisk registreringsinstruks. Kartverket gjør kontroll av leveranse ved mottak og legger dataene inn i Sentral FKB.</p>
 </div>
 <div class="paragraph">
 <p>Kommuner utenfor Geovekst gjør tilsvarende vedlikehold i egen regi og leverer data i henhold til Norge digitalt avtale.</p>
@@ -4798,7 +5034,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-4"><a class="anchor" href="#trueomfang-4"></a>9.2.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
+<p>Hele datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -4813,6 +5049,9 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <p>Det er i regi av Geovekst inngått FDV-avtaler med de fleste kommuner. Her avtalefestes oppgaver og finansiering av et felles kontinuerlig ajourhold av FKB-dataene blant partene i avtalen. Den viktigste parten i avtalene er kommunen da mange av endringene i FKB kan fanges opp gjennom kommunal saksbehandling. Endrigene oppdateres direkte inn i Sentral FKB eller oversendes til Kartverket på filformat for de som ikke har tilgang til å oppdatere direkte.</p>
 </div>
 <div class="paragraph">
+<p>Ved siden av kommunene er også Statens vegvesen og fylkeskommunene aktive parter i det administrative ajourholdet av FKB-data. Disse partene legger data med oppdatert situasjon direkte inn i Sentral FKB i forbindelse med ferdigstilling av utbyggingsprosjekter de har ansvar for.</p>
+</div>
+<div class="paragraph">
 <p>Kommuner utenfor Geovekst gjør tilsvarende vedlikehold i egen regi og leverer data i henhold til Norge digitalt avtale.</p>
 </div>
 </div>
@@ -4822,7 +5061,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-5"><a class="anchor" href="#trueomfang-5"></a>9.3.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele spesifikasjonen/datasettet</p>
+<p>Hele datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -4839,6 +5078,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="paragraph">
 <p>Også andre parter i Geovekst vil kunne ta imot meldinger om feil og avvik i kartet og oppdatere FKB på bakgrunn av disse meldingene.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -4931,6 +5171,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="paragraph">
 <p>FKB-data vil også være tilgjengelig gjennom Kartverkets WMS-tjenester. Lista med tilgjengelige tjenester og leveranseformater kan bli utvidet.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -4970,6 +5211,8 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect1">
 <h2 id="truevedlegg-a-sosi-format-realisering"><a class="anchor" href="#truevedlegg-a-sosi-format-realisering"></a>Vedlegg A - SOSI-format-realisering</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="truepakke-fkb-vann-5-0-utkast"><a class="anchor" href="#truepakke-fkb-vann-5-0-utkast"></a>Pakke: FKB-Vann-5.0 Utkast</h3>
 <div class="sect3">
 <h4 id="truefeaturetype-kystkontur"><a class="anchor" href="#truefeaturetype-kystkontur"></a>«FeatureType» Kystkontur</h4>
 <div class="sect4">
@@ -6211,7 +6454,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-bekk"><a class="anchor" href="#truefeaturetype-bekk"></a>«FeatureType» Bekk</h4>
+<h4 id="truefeaturetype-elvbekk"><a class="anchor" href="#truefeaturetype-elvbekk"></a>«FeatureType» ElvBekk</h4>
 <div class="sect4">
 <h5 id="truemodellelementnavn-og-sosi-formatnavn-11"><a class="anchor" href="#truemodellelementnavn-og-sosi-formatnavn-11"></a>Modellelementnavn og SOSI-formatnavn</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -6341,7 +6584,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefeaturetype-grøft"><a class="anchor" href="#truefeaturetype-grøft"></a>«FeatureType» Grøft</h4>
+<h4 id="truefeaturetype-kanalgrøft"><a class="anchor" href="#truefeaturetype-kanalgrøft"></a>«FeatureType» KanalGrøft</h4>
 <div class="sect4">
 <h5 id="truemodellelementnavn-og-sosi-formatnavn-12"><a class="anchor" href="#truemodellelementnavn-og-sosi-formatnavn-12"></a>Modellelementnavn og SOSI-formatnavn</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -7156,8 +7399,15 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -7463,6 +7713,10 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="truepakke-datatyper-og-kodelister-2"><a class="anchor" href="#truepakke-datatyper-og-kodelister-2"></a>Pakke: Datatyper og kodelister</h3>
+
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -7502,7 +7756,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-22 16:10:19 +0200
+Last updated 2021-09-23 14:17:44 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
