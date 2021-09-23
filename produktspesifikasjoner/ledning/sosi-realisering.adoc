@@ -1,4 +1,125 @@
  
+==== «FeatureType» Bardun
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|..
+|[1..1]
+ 
+|===
+ 
 ==== «FeatureType» Flymarkør
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
@@ -242,7 +363,7 @@
 |antallLaserPunkt
 |Integer
 |..ANTALL_LASERPUNKT
-|[1..1]
+|[0..1]
  
 |maksVertikalAvstand
 |«dataType» VertikalAvstandLedning
@@ -645,7 +766,7 @@
 |antallLaserPunkt
 |Integer
 |..ANTALL_LASERPUNKT
-|[1..1]
+|[0..1]
  
 |maksVertikalAvstand
 |«dataType» VertikalAvstandLedning
@@ -808,6 +929,10 @@
 |..BELYSNINGSPLASSERING
 |[1..1]
  
+|iMast
+|«FeatureType» Mast
+|..IMAST
+|[0..1]
 |===
  
 ==== «FeatureType» Mast
@@ -954,9 +1079,17 @@
 |..VERTIKALAVSTAND
 |[0..1]
  
+|harArmatur
+|«FeatureType» Lysarmatur
+|..HARARMATUR
+|[0..*]
+|bardun
+|«FeatureType» Bardun
+|..BARDUN
+|[0..*]
 |omriss
 |«FeatureType» Masteomriss
-|..
+|..OMRISS
 |[0..*]
 |===
  
@@ -1074,7 +1207,7 @@
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|geometri
+|beliggenhet
 |GM_Curve
 |..
 |[1..1]
@@ -1330,7 +1463,7 @@
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|geometri
+|beliggenhet
 |GM_Curve
 |..
 |[1..1]
@@ -1575,6 +1708,41 @@
 |beliggenhet
 |GM_Curve
 |..
+|[1..1]
+ 
+|antallLaserPunkt
+|Integer
+|..ANTALL_LASERPUNKT
+|[0..1]
+ 
+|maksVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MAKS_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|maksVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|...NØHKOOR
+|[1..1]
+ 
+|maksVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
+|[1..1]
+ 
+|minVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MIN_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|minVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|...NØHKOOR
+|[1..1]
+ 
+|minVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
 |[1..1]
  
 |trasenavn
@@ -1833,7 +2001,7 @@
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|geometri
+|beliggenhet
 |GM_Curve
 |..
 |[1..1]
@@ -1954,7 +2122,7 @@
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|geometri
+|beliggenhet
 |GM_Curve
 |..
 |[1..1]

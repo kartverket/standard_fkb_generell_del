@@ -66,15 +66,15 @@ image::diagrammer/Realiseringer objekttyper - abstrakte.png[Realiseringer objekt
 |===
 |===
  
-[[kopling_kurve]]
-==== «FeatureType» Kopling_kurve (abstrakt)
+[[koplingkurve]]
+==== «FeatureType» KoplingKurve (abstrakt)
 *Definisjon:* generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
  
 ===== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*geometri*
+|*beliggenhet*
  
 |Definisjon: 
 |beskriver koplingens geografiske beliggenhet i form av en kurve med koordinater
@@ -99,6 +99,7 @@ SOSI_geometri: Kurve +
 <<vindturbinomriss,«FeatureType» Vindturbinomriss>> +
 <<nettverkstasjonomriss,«FeatureType» Nettverkstasjonomriss>> +
 <<åk,«FeatureType» Åk>> +
+<<bardun,«FeatureType» Bardun>> +
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling +
 |===
@@ -106,8 +107,8 @@ SOSI_geometri: Kurve +
 |===
 |===
  
-[[kopling_punkt]]
-==== «FeatureType» Kopling_punkt (abstrakt)
+[[koplingpunkt]]
+==== «FeatureType» KoplingPunkt (abstrakt)
 *Definisjon:* generell betegnelse på objekt som er node (punkt) i et ledningsnettverk
  
 ===== Egenskaper
@@ -180,7 +181,6 @@ SOSI_geometri: Kurve +
 |Subtyper:
 |<<lidarmetadata,«FeatureType» LidarMetadata>> +
 <<kanal,«FeatureType» Kanal>> +
-<<trase,«FeatureType» Trase>> +
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Ledning +
 |===
@@ -202,7 +202,7 @@ SOSI_geometri: Kurve +
 |antallet klassifiserte laserpunkt som er med p&#229; &#229; bestemme vektorisert objekt
  
 |Multiplisitet: 
-|[1..1]
+|[0..1]
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
@@ -253,7 +253,8 @@ SOSI_navn: MIN_VERTIKALUTSTREKNING +
 |<<ledning,«FeatureType» Ledning>>
  
 |Subtyper:
-|<<jordingsledning,«FeatureType» Jordingsledning>> +
+|<<trase,«FeatureType» Trase>> +
+<<jordingsledning,«FeatureType» Jordingsledning>> +
 <<luftlinje,«FeatureType» Luftlinje>> +
 |===
  
@@ -338,6 +339,9 @@ SOSI_navn: EKSTERNPEKER +
  
 |Definisjon: 
 |hovedbruken for objektet
+
+Merknad FKB:
+Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksomr&#229;de. 
  
 |Multiplisitet: 
 |[1..1]
@@ -358,9 +362,9 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE +
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 |Subtyper:
-|<<kopling_punkt,«FeatureType» Kopling_punkt>> +
+|<<koplingpunkt,«FeatureType» KoplingPunkt>> +
 <<ledning,«FeatureType» Ledning>> +
-<<kopling_kurve,«FeatureType» Kopling_kurve>> +
+<<koplingkurve,«FeatureType» KoplingKurve>> +
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Nettverkskomponent +
 |===
@@ -383,8 +387,8 @@ image::diagrammer/Kumlokk - alle egenskaper og realisering.png[Kumlokk - alle eg
 image::diagrammer/Luftlinje - alle egenskaper og realisering.png[Luftlinje - alle egenskaper og realisering]
 [caption="Figur 11: ",title=Lysarmatur - alle egenskaper og realisering]
 image::diagrammer/Lysarmatur - alle egenskaper og realisering.png[Lysarmatur - alle egenskaper og realisering]
-[caption="Figur 12: ",title=Mast og Masteomriss - alle egenskaper og realisering]
-image::diagrammer/Mast og Masteomriss - alle egenskaper og realisering.png[Mast og Masteomriss - alle egenskaper og realisering]
+[caption="Figur 12: ",title=Mast, Masteomriss og Bardun - alle egenskaper og realisering]
+image::diagrammer/Mast, Masteomriss og Bardun - alle egenskaper og realisering.png[Mast, Masteomriss og Bardun - alle egenskaper og realisering]
 [caption="Figur 13: ",title=Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering]
 image::diagrammer/Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering.png[Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering]
 [caption="Figur 14: ",title=Skap - alle egenskaper og realisering]
@@ -399,27 +403,58 @@ image::diagrammer/Åk - alle egenskaper og realisering.png[Åk - alle egenskaper
 |===
 |===
  
-[[flymarkør]]
-==== «FeatureType» Flymarkør
-*Definisjon:* markering av store luftspenn over daler og fjorder
+[[bardun]]
+==== «FeatureType» Bardun
+*Definisjon:* tau, vaier eller liknende som st&#248;tter eller stabiliserer h&#248;ye gjenstander
+
+Merknad FKB:
+Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.
+
  
-[caption="Figur 18: ",title=Illustrasjon av objekttype Flymarkør]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg]
+[caption="Figur 18: ",title=Illustrasjon av objekttype Bardun]
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg]
 ===== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
-|*skal ligge på Trase*
+|*minimum utstrekning i grunnriss >30 meter*
  
 |Beskrivelse: 
-|Flymarkør og kurvepunkt i Trase skal ha samme posisjon, både i grunnriss og høyde.
+|
  
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingkurve,«FeatureType» KoplingKurve>>
+ 
+|===
+ 
+|===
+|===
+ 
+[[flymarkør]]
+==== «FeatureType» Flymarkør
+*Definisjon:* markering av store luftspenn over daler og fjorder
+ 
+[caption="Figur 19: ",title=Illustrasjon av objekttype Flymarkør]
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg]
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*flymarkør og kurvepunkt i Trase skal ha samme posisjon, både i grunnriss og høyde*
+ 
+|Beskrivelse: 
+|
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |===
  
@@ -447,7 +482,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Kanal
 *Definisjon:* brukes som fremf&#248;ringsvei for ledning
  
-[caption="Figur 19: ",title=Illustrasjon av objekttype Kanal]
+[caption="Figur 20: ",title=Illustrasjon av objekttype Kanal]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg]
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -466,7 +501,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Kumlokk
 *Definisjon:* et deksel over en kum eller annet hulrom under bakkeniv&#229;
  
-[caption="Figur 20: ",title=Illustrasjon av objekttype Kumlokk]
+[caption="Figur 21: ",title=Illustrasjon av objekttype Kumlokk]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -493,7 +528,7 @@ SOSI_navn: KUMLOKKFORM +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kumlokk +
@@ -544,7 +579,7 @@ SOSI_navn: FASE +
 ==== «FeatureType» Lysarmatur
 *Definisjon:* selve det elektriske punktet som gir lys
  
-[caption="Figur 21: ",title=Illustrasjon av objekttype Lysarmatur]
+[caption="Figur 22: ",title=Illustrasjon av objekttype Lysarmatur]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -587,7 +622,7 @@ SOSI_navn: BELYSNINGSPLASSERING +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Armatur +
@@ -598,9 +633,12 @@ SOSI_navn: BELYSNINGSPLASSERING +
  
 [[mast]]
 ==== «FeatureType» Mast
-*Definisjon:* alle konstruksjoner laget for &#229; holde ledningsnett/komponent oppe fra bakken. Dette betyr at det ogs&#229; inkluderer det som i noen sammenhenger kalles Stolpe
+*Definisjon:* alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken
+
+Merknad FKB:
+En mast kan best&#229; av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).
  
-[caption="Figur 22: ",title=Illustrasjon av objekttype Mast]
+[caption="Figur 23: ",title=Illustrasjon av objekttype Mast]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -726,6 +764,23 @@ SOSI_navn: VERTIKALAVSTAND +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
+|*bardun*
+ 
+|Definisjon:
+|bardun til mast
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Assosiasjonsnavn: 
+|MastBardun
+ 
+|Til klasse
+|<<bardun,«FeatureType» Bardun>>
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
 |*omriss*
  
 |Definisjon:
@@ -747,7 +802,7 @@ SOSI_navn: VERTIKALAVSTAND +
 |*hvis Mast har driftsmerking og har tilhørende Masteomriss, skal driftsmerking på Mast og Masteomriss være like*
  
 |Beskrivelse: 
-|hvis Mast har driftsmerking og har tilh&#248;rende Masteomriss, skal driftsmerking p&#229; Mast og Masteomriss v&#230;re like
+|
  
 |===
 [cols="20,80"]
@@ -756,7 +811,7 @@ SOSI_navn: VERTIKALAVSTAND +
 |*linjebredde angis når avstanden mellom ytterfasene er >10 meter i grunnriss*
  
 |Beskrivelse: 
-|linjebredde skal angis n&#229;r avstanden mellom ytterfasene (ledningene) er mer enn 10 meter i grunnriss
+|
  
 |===
 [cols="20,80"]
@@ -772,7 +827,7 @@ SOSI_navn: VERTIKALAVSTAND +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Mast +
@@ -785,13 +840,6 @@ SOSI_navn: VERTIKALAVSTAND +
 ==== «FeatureType» Masteomriss
 *Definisjon:* ytre avgrensning av mastens fotavtrykk p&#229; bakken
  
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|KURVE;
- 
-|===
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -815,7 +863,7 @@ SOSI_navn: MASTEKONSTRUKSJON +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_kurve,«FeatureType» Kopling_kurve>>
+|<<koplingkurve,«FeatureType» KoplingKurve>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Masteomriss +
@@ -828,7 +876,7 @@ SOSI_navn: MASTEKONSTRUKSJON +
 ==== «FeatureType» Nettverkstasjon
 *Definisjon:* et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.
  
-[caption="Figur 23: ",title=Illustrasjon av objekttype Nettverkstasjon]
+[caption="Figur 24: ",title=Illustrasjon av objekttype Nettverkstasjon]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -869,11 +917,21 @@ SOSI_navn: STASJONSPLASSERING +
 |Til klasse
 |<<nettverkstasjonomriss,«FeatureType» Nettverkstasjonomriss>>
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*hvis Nettverkstasjon har driftsmerking og har tilhørende Nettverkstasjonomriss, skal driftsmerking på Nettverkstasjon og Nettverkstasjonomriss være like*
+ 
+|Beskrivelse: 
+|
+ 
+|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjon +
@@ -886,21 +944,11 @@ SOSI_navn: STASJONSPLASSERING +
 ==== «FeatureType» Nettverkstasjonomriss
 *Definisjon:* ytre avgrensning av nettverkstasjonen, i grunnriss
  
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*skal ha tilhørende Nettverkstasjon med samme Driftsmerking*
- 
-|Beskrivelse: 
-|EL_Nettstasjon og Nettverkstasjonomriss kobles sammen vha egenskapen Driftsmerking. Det vil si at alle geometriske objekter som beskriver ei fysisk mast, skal ha samme driftsmerking (koplingsnøkkel)
- 
-|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_kurve,«FeatureType» Kopling_kurve>>
+|<<koplingkurve,«FeatureType» KoplingKurve>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss +
@@ -916,13 +964,13 @@ SOSI_navn: STASJONSPLASSERING +
 Merknad:
 Kan ogs&#229; v&#230;re p&#229; st&#248;rrelse med kiosk.
  
-[caption="Figur 24: ",title=Illustrasjon av objekttype Skap]
+[caption="Figur 25: ",title=Illustrasjon av objekttype Skap]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Skap +
@@ -935,7 +983,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Trase
 *Definisjon:* den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)
  
-[caption="Figur 25: ",title=Illustrasjon av objekttype Trase]
+[caption="Figur 26: ",title=Illustrasjon av objekttype Trase]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -974,7 +1022,7 @@ SOSI_navn: TRASENAVN +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<ledning,«FeatureType» Ledning>>
+|<<lidarmetadata,«FeatureType» LidarMetadata>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Trase +
@@ -994,7 +1042,7 @@ SOSI_navn: TRASENAVN +
 |PUNKT;
  
 |===
-[caption="Figur 26: ",title=Illustrasjon av objekttype Vindturbin]
+[caption="Figur 27: ",title=Illustrasjon av objekttype Vindturbin]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg]
 ===== Egenskaper
 [cols="20,80"]
@@ -1057,11 +1105,21 @@ SOSI_navn: NAVHØYDE +
 |Til klasse
 |<<vindturbinomriss,«FeatureType» Vindturbinomriss>>
 |===
+===== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*hvis Vindturbin har driftsmerking og har tilhørende Vindturbinomriss, skal driftsmerking på Vindturbin og Vindturbinomriss være like*
+ 
+|Beskrivelse: 
+|
+ 
+|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_punkt,«FeatureType» Kopling_punkt>>
+|<<koplingpunkt,«FeatureType» KoplingPunkt>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Vindturbin +
@@ -1074,21 +1132,11 @@ SOSI_navn: NAVHØYDE +
 ==== «FeatureType» Vindturbinomriss
 *Definisjon:* ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken
  
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*skal ha tilhørende Vindturbin med samme Driftsmerking*
- 
-|Beskrivelse: 
-|Vindturbin og Vindturbinomriss kobles sammen vha egenskapen Driftsmerking. Det vil si at alle geometriske objekter som beskriver en fysisk vindturbin, skal ha samme driftsmerking (koplingsn&#248;kkel)
- 
-|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_kurve,«FeatureType» Kopling_kurve>>
+|<<koplingkurve,«FeatureType» KoplingKurve>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Nettverkstasjonomriss +
@@ -1104,13 +1152,13 @@ SOSI_navn: NAVHØYDE +
 Merknad FKB:
 "Beina" er egne objekter (objekttype Mast), og ikke del av objektet av objekttypen &#197;k.
  
-[caption="Figur 27: ",title=Illustrasjon av objekttype Åk]
+[caption="Figur 28: ",title=Illustrasjon av objekttype Åk]
 image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kopling_kurve,«FeatureType» Kopling_kurve>>
+|<<koplingkurve,«FeatureType» KoplingKurve>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Åk +
@@ -1120,7 +1168,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 |===
 === Pakke: Datatyper
 *Definisjon:* Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
-[caption="Figur 28: ",title=Fagspesifikke datatyper FKB-Ledning]
+[caption="Figur 29: ",title=Fagspesifikke datatyper FKB-Ledning]
 image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[Fagspesifikke datatyper FKB-Ledning]
  
 |===
@@ -1190,9 +1238,9 @@ SOSI_navn: VERTIKALHØYDE +
 *Definisjon:* Alle Kodelister som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
 
 Kodelistene forvaltes eksternt p&#229; Geonorge. Kodelistene er tilgjenglig p&#229; https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
-[caption="Figur 29: ",title=Fagspesifikke kodelister FKB-Ledning]
+[caption="Figur 30: ",title=Fagspesifikke kodelister FKB-Ledning]
 image::diagrammer/Fagspesifikke kodelister FKB-Ledning.png[Fagspesifikke kodelister FKB-Ledning]
-[caption="Figur 30: ",title=Realiseringer kodelister]
+[caption="Figur 31: ",title=Realiseringer kodelister]
 image::diagrammer/Realiseringer kodelister.png[Realiseringer kodelister]
  
 |===
@@ -1382,11 +1430,11 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 31: ",title=Oversiktsdiagram Fellesegenskaper]
+[caption="Figur 32: ",title=Oversiktsdiagram Fellesegenskaper]
 image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
-[caption="Figur 32: ",title=Realisering fra SOSI generell del]
+[caption="Figur 33: ",title=Realisering fra SOSI generell del]
 image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
-[caption="Figur 33: ",title=Hoveddiagram Posisjonskvalitet]
+[caption="Figur 34: ",title=Hoveddiagram Posisjonskvalitet]
 image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
  
 |===
@@ -1858,7 +1906,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
+|
  
 |===
 ===== Arv og realiseringer
