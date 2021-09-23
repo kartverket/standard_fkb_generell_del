@@ -1,11 +1,17 @@
 === Pakke «ApplicationSchema» FKB-Bane-5.0-Utkast
-Definisjon: datamodell for FKB-Bane.
+*Definisjon:* Datamodell for FKB-Bane.
 Spesifikasjonen omfatter jernbanens infrastruktur - i hovedsak banelegemet. 
 Elementer som naturlig inng&#229;r i jernbanens infrastruktur, men som beskrives i mer generell form i andre FKB-datasett, er ikke tatt med i denne produktspesifikasjonen. Dette gjelder for eksempel spesifikasjoner for H&#248;ydekurve, Bygning, Bygningsmessige anlegg, Veg og Ledning. 
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
 |===
+|definition
+|"Data model for FKB-Bane"@en
+ 
+|description
+|"Contains rail tracks and associated platforms" @en
+ 
 |designation
 |"Product specification FKB-Bane 5.0"@en
  
@@ -44,18 +50,18 @@ Elementer som naturlig inng&#229;r i jernbanens infrastruktur, men som beskrives
  
 |===
 [caption="Figur 1: ",title=Pakkerealisering]
-image::diagrammer\Pakkerealisering.png[Pakkerealisering]
+image::diagrammer/Pakkerealisering.png[Pakkerealisering]
 [caption="Figur 2: ",title=Hoveddiagram FKB-Bane 5.0]
-image::diagrammer\Hoveddiagram FKB-Bane 5.0.png[Hoveddiagram FKB-Bane 5.0]
+image::diagrammer/Hoveddiagram FKB-Bane 5.0.png[Hoveddiagram FKB-Bane 5.0]
 [caption="Figur 3: ",title=Realisering av objekttyper]
-image::diagrammer\Realisering av objekttyper.png[Realisering av objekttyper]
+image::diagrammer/Realisering av objekttyper.png[Realisering av objekttyper]
  
-==== Klasse «FeatureType» Jernbaneplattformkant
-Definisjon: yttergrense av konstruksjon til bruk ved av-/påstigning for passasjerer eller ved av-/pålasting av gods
+|===
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Bane-4.0::«featureType» Jernbaneplattformkant
+[[jernbaneplattformkant]]
+==== «FeatureType» Jernbaneplattformkant
+*Definisjon:* yttergrense av konstruksjon til bruk ved av-/påstigning for passasjerer eller ved av-/pålasting av gods
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -64,6 +70,8 @@ Definisjon: yttergrense av konstruksjon til bruk ved av-/påstigning for passasj
 |KURVE;
  
 |===
+[caption="Figur 4: ",title=Illustrasjon av objekttype Jernbaneplattformkant]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.0/figurer/objtype_jernbaneplattformkant.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.0/figurer/objtype_jernbaneplattformkant.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -80,7 +88,7 @@ course follwing the transition between different real world phenomena
 |[1..1]
  
 |Type: 
-|Kurve
+|<<kurve,Kurve>>
 |===
 [cols="20,80"]
 |===
@@ -94,7 +102,7 @@ course follwing the transition between different real world phenomena
 |[1..1]
  
 |Type: 
-|Medium
+|<<medium,«CodeList» Medium>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: MEDIUM + 
@@ -111,18 +119,27 @@ SOSI_navn: MEDIUM +
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-==== Klasse «FeatureType» Spormidt
-Definisjon: teoretisk linje midt mellom skinnestrengene
+|Realisering av: 
+|«ApplicationSchema» Bane-4.0::«featureType» Jernbaneplattformkant +
+|===
  
-*Supertype:* «FeatureType» KvalitetPåkrevd
+|===
+|===
  
-*Realisering av:* «ApplicationSchema» Bane-4.0::«featureType» Spormidt
+[[spormidt]]
+==== «FeatureType» Spormidt
+*Definisjon:* teoretisk linje midt mellom skinnestrengene
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -131,6 +148,8 @@ Definisjon: teoretisk linje midt mellom skinnestrengene
 |KURVE;
  
 |===
+[caption="Figur 5: ",title=Illustrasjon av objekttype Spormidt]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.0/figurer/objtype_spormidt.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.0/figurer/objtype_spormidt.png]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -144,7 +163,7 @@ Definisjon: teoretisk linje midt mellom skinnestrengene
 |[1..1]
  
 |Type: 
-|Kurve
+|<<kurve,Kurve>>
 |===
 [cols="20,80"]
 |===
@@ -158,7 +177,7 @@ Definisjon: teoretisk linje midt mellom skinnestrengene
 |[1..1]
  
 |Type: 
-|Jernbanetype
+|<<jernbanetype,«CodeList» Jernbanetype>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: JERNBANETYPE + 
@@ -175,7 +194,7 @@ SOSI_navn: JERNBANETYPE +
 |[1..1]
  
 |Type: 
-|Høydereferanse
+|<<høydereferanse,«CodeList» Høydereferanse>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: HREF + 
@@ -192,7 +211,7 @@ SOSI_navn: HREF +
 |[1..1]
  
 |Type: 
-|Medium
+|<<medium,«CodeList» Medium>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: MEDIUM + 
@@ -209,14 +228,27 @@ SOSI_navn: MEDIUM +
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-==== Klasse «CodeList» Jernbanetype
-Definisjon: klassifisering av jernbaneanlegg i hht. konstruksjon/dimensjonering 
+|Realisering av: 
+|«ApplicationSchema» Bane-4.0::«featureType» Spormidt +
+|===
+ 
+|===
+|===
+ 
+[[jernbanetype]]
+==== «CodeList» Jernbanetype
+*Definisjon:* klassifisering av jernbaneanlegg i hht. konstruksjon/dimensjonering 
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -238,27 +270,32 @@ Definisjon: klassifisering av jernbaneanlegg i hht. konstruksjon/dimensjonering
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bane/5.0/jernbanetype
-
+ 
+<<<
+|===
+|===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 4: ",title=Hoveddiagram Fellesegenskaper]
-image::diagrammer\Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 5: ",title=Arv av fellesegenskaper]
-image::diagrammer\Arv av fellesegenskaper.png[Arv av fellesegenskaper]
-[caption="Figur 6: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::diagrammer\Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 7: ",title=Posisjonskvalitet]
-image::diagrammer\Posisjonskvalitet.png[Posisjonskvalitet]
+[caption="Figur 6: ",title=Hoveddiagram Fellesegenskaper]
+image::diagrammer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
+[caption="Figur 7: ",title=Arv av fellesegenskaper]
+image::diagrammer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
+[caption="Figur 8: ",title=Realisering av fellesegenskaper fra SOSI generell del]
+image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
+[caption="Figur 9: ",title=Posisjonskvalitet]
+image::diagrammer/Posisjonskvalitet.png[Posisjonskvalitet]
  
-==== Klasse «FeatureType» Fellesegenskaper
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+|===
+|===
+ 
+[[fellesegenskaper]]
+==== «FeatureType» Fellesegenskaper (abstrakt)
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -278,7 +315,7 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
 |[1..1]
  
 |Type: 
-|Identifikasjon
+|<<identifikasjon,«dataType» Identifikasjon>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
@@ -304,7 +341,7 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |[1..1]
  
 |Type: 
-|DateTime
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
@@ -325,7 +362,7 @@ Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangst
 |[1..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -346,7 +383,7 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 |[0..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -364,7 +401,7 @@ SOSI_navn: VERIFISERINGSDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: REGISTRERINGSVERSJON + 
@@ -384,25 +421,28 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» KvalitetPåkrevd
+|Subtyper:
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
-==== Klasse «FeatureType» KvalitetPåkrevd
-Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+|===
+|===
  
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+[[kvalitetpåkrevd]]
+==== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -419,26 +459,34 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» Jernbaneplattformkant +
-«FeatureType» Spormidt
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<jernbaneplattformkant,«FeatureType» Jernbaneplattformkant>> +
+<<spormidt,«FeatureType» Spormidt>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
-==== Klasse «dataType» Identifikasjon
-Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+|===
+|===
+ 
+[[identifikasjon]]
+==== «dataType» Identifikasjon
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -462,7 +510,7 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -485,7 +533,7 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -504,21 +552,29 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
-==== Klasse «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+|===
+|===
+ 
+[[posisjonskvalitet]]
+==== «dataType» Posisjonskvalitet
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -541,7 +597,7 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 3 + 
@@ -563,7 +619,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 6 + 
@@ -581,7 +637,7 @@ SOSI_navn: NØYAKTIGHET +
 |[0..1]
  
 |Type: 
-|Synbarhet
+|<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 1 + 
@@ -602,7 +658,7 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 3 + 
@@ -624,7 +680,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_lengde: 6 + 
@@ -637,12 +693,22 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
+|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
  
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
+|===
  
-==== Klasse «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|===
+|===
+ 
+[[synbarhet]]
+==== «CodeList» Synbarhet
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -665,8 +731,13 @@ Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlage
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
  
-==== Klasse «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+ 
+|===
+|===
+ 
+[[datafangstmetode]]
+==== «CodeList» Datafangstmetode
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
@@ -691,8 +762,13 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
  
-==== Klasse «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+ 
+|===
+|===
+ 
+[[registreringsversjon]]
+==== «CodeList» Registreringsversjon
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -715,8 +791,13 @@ Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
  
-==== Klasse «CodeList» Høydereferanse
-Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+ 
+|===
+|===
+ 
+[[høydereferanse]]
+==== «CodeList» Høydereferanse
+*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -739,8 +820,13 @@ Definisjon: koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objek
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
  
-==== Klasse «CodeList» Medium
-Definisjon: objektets beliggenhet i forhold til jordoverflaten
+ 
+|===
+|===
+ 
+[[medium]]
+==== «CodeList» Medium
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
 Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
@@ -765,3 +851,5 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |===
 Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+ 
+// End of UML-model

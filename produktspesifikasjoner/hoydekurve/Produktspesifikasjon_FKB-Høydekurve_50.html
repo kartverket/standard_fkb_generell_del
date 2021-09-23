@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>Produktspesifikasjon FKB-Lufthavn 5.0</title>
+<title>Produktspesifikasjon FKB-Høydekurve 5.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Produktspesifikasjon FKB-Lufthavn 5.0</h1>
+<h1>Produktspesifikasjon FKB-Høydekurve 5.0</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
@@ -485,25 +485,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#trueinnhold-og-struktur">5. Innhold og struktur</a>
 <ul class="sectlevel2">
-<li><a href="#truepakke-applicationschema-fkb-lufthavn-5-0utkast">5.1. Pakke «ApplicationSchema» FKB-Lufthavn-5.0Utkast</a>
+<li><a href="#truepakke-applicationschema-fkb-høydekurve-5-0utkast">5.1. Pakke «ApplicationSchema» FKB-Høydekurve-5.0Utkast</a>
 <ul class="sectlevel4">
 <li><a href="#trueprofilparametre-i-tagged-values">Profilparametre i tagged values</a></li>
-<li><a href="#lufthavnlys">5.1.2. «FeatureType» Lufthavnlys</a></li>
-<li><a href="#rullebane">5.1.3. «FeatureType» Rullebane</a></li>
-<li><a href="#taksebanegrense">5.1.4. «FeatureType» Taksebanegrense</a></li>
-<li><a href="#lufthavnlystype">5.1.5. «CodeList» Lufthavnlystype</a></li>
+<li><a href="#høydekurve">5.1.2. «featureType» Høydekurve</a></li>
+<li><a href="#forsenkningskurve">5.1.3. «featureType» Forsenkningskurve</a></li>
+<li><a href="#toppunkt">5.1.4. «featureType» Toppunkt</a></li>
+<li><a href="#forsenkningspunkt">5.1.5. «featureType» Forsenkningspunkt</a></li>
+<li><a href="#terrenglinje">5.1.6. «featureType» Terrenglinje</a></li>
+<li><a href="#terrengpunkt">5.1.7. «featureType» Terrengpunkt</a></li>
+<li><a href="#opphav">5.1.8. «dataType» Opphav</a></li>
+<li><a href="#datafangsmetodeutvidet">5.1.9. «CodeList» DatafangsmetodeUtvidet</a></li>
 </ul>
 </li>
 <li><a href="#truepakke-generelle-elementer">5.2. Pakke: Generelle elementer</a>
 <ul class="sectlevel3">
 <li><a href="#fellesegenskaper">5.2.1. «FeatureType» Fellesegenskaper (abstrakt)</a></li>
 <li><a href="#kvalitetpåkrevd">5.2.2. «FeatureType» KvalitetPåkrevd (abstrakt)</a></li>
-<li><a href="#identifikasjon">5.2.3. «dataType» Identifikasjon</a></li>
-<li><a href="#posisjonskvalitet">5.2.4. «dataType» Posisjonskvalitet</a></li>
-<li><a href="#synbarhet">5.2.5. «CodeList» Synbarhet</a></li>
-<li><a href="#datafangstmetode">5.2.6. «CodeList» Datafangstmetode</a></li>
-<li><a href="#registreringsversjon">5.2.7. «CodeList» Registreringsversjon</a></li>
-<li><a href="#medium">5.2.8. «CodeList» Medium</a></li>
+<li><a href="#høyde">5.2.3. «dataType» Høyde</a></li>
+<li><a href="#identifikasjon">5.2.4. «dataType» Identifikasjon</a></li>
+<li><a href="#posisjonskvalitet">5.2.5. «dataType» Posisjonskvalitet</a></li>
+<li><a href="#synbarhet">5.2.6. «CodeList» Synbarhet</a></li>
+<li><a href="#datafangstmetode">5.2.7. «CodeList» Datafangstmetode</a></li>
+<li><a href="#registreringsversjon">5.2.8. «CodeList» Registreringsversjon</a></li>
+<li><a href="#høydereferanse">5.2.9. «CodeList» Høydereferanse</a></li>
+<li><a href="#medium">5.2.10. «CodeList» Medium</a></li>
 </ul>
 </li>
 </ul>
@@ -580,15 +586,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truemetadataspesifikasjon">13.2. Metadataspesifikasjon</a></li>
 </ul>
 </li>
-<li><a href="#truesosi-format-realisering">Vedlegg A: SOSI-format-realisering</a>
-<ul class="sectlevel3">
-<li><a href="#truefeaturetype-lufthavnlys">A.1. «FeatureType» Lufthavnlys</a></li>
-<li><a href="#truefeaturetype-rullebane">A.2. «FeatureType» Rullebane</a></li>
-<li><a href="#truefeaturetype-taksebanegrense">A.3. «FeatureType» Taksebanegrense</a></li>
-</ul>
-</li>
-<li><a href="#truegml-realisering">Vedlegg B: GML-realisering</a></li>
-<li><a href="#trueannen-nyttig-informasjon-til-brukere">Vedlegg C: Annen nyttig informasjon til brukere</a></li>
+<li><a href="#truevedlegg-a-sosi-format-realisering">Vedlegg A - SOSI-format-realisering</a></li>
+<li><a href="#truevedlegg-b-gml-realisering">Vedlegg B - GML-realisering</a></li>
+<li><a href="#truevedlegg-c-annen-nyttig-informasjon-til-brukere">Vedlegg C - Annen nyttig informasjon til brukere</a></li>
 </ul>
 </div>
 </div>
@@ -602,12 +602,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-09-22
+Utkast 2021-09-22
 </td>
 </tr>
 </table>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
@@ -616,7 +615,19 @@ Testversjon 2021-09-22
 <div class="sect2">
 <h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
 <div class="paragraph">
-<p>FKB-Lufthavn omfatter et begrenset utvalg av objekttyper for lufthavner som skal registreres og forvaltes i FKB. Avinor har en mer detaljert spesifikasjon som benyttes for datafangst og forvaltning av data for Avinors egne lufthavner. Data etter denne spesifikasjonen skal kunne avledes fra Avinors data.</p>
+<p>FKB-Høydekurve er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del.</p>
+</div>
+<div class="paragraph">
+<p>Spesifikasjonen omfatter data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå som høydekurver, forsenkningskurver, toppunkt etc.</p>
+</div>
+<div class="paragraph">
+<p>Nye høydekurver genereres hovedsaklig fra en terrengmodell basert på punktskyer fra laserskanning. Høydekurvene blir da bare en visning av terrengmodellen. Best informasjon om terrenget fås ved direkte bruk av terrengmodellen.</p>
+</div>
+<div class="paragraph">
+<p>FKB-Høydekurve versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 5.1 og SOSI del 2 Terreng versjon 4.0.</p>
+</div>
+<div class="paragraph">
+<p>Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er nå samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Høydekurve 5.0 finnes <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-H%c2%a2ydekurve/5.0">her</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -633,16 +644,19 @@ Testversjon 2021-09-22
 <p>FKB versjon 3.4 august 2002</p>
 </li>
 <li>
-<p>FKB-Lufthavn versjon 4.0 – 2007-01-01</p>
+<p>FKB-Høydekurve versjon 4.0 – 2007-01-01</p>
 </li>
 <li>
-<p>FKB-Lufthavn versjon 4.01 - 2009-03-10</p>
+<p>FKB-Høydekurve versjon 4.01 - 2009-03-10</p>
 </li>
 <li>
-<p>FKB-Lufthavn versjon 4.02 - 2011-12-01</p>
+<p>FKB-Høydekurve versjon 4.01 - 2011-02-01</p>
 </li>
 <li>
-<p>FKB-Lufthavn versjon 4.6 - 2016-06-01</p>
+<p>FKB-Høydekurve versjon 4.02 - 2011-12-01</p>
+</li>
+<li>
+<p>FKB-Høydekurve versjon 4.6 - 2016-06-01</p>
 </li>
 </ul>
 </div>
@@ -650,28 +664,39 @@ Testversjon 2021-09-22
 <div class="sect2">
 <h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.3. Endringslogg</h3>
 <div class="paragraph">
-<p>Endringer siden FKB-Lufthavn 4.6 - 2016-06-01</p>
+<p>Endringer siden FKB-Høydekurve 4.6 - 2016-06-01:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Oppdatert generelle konsepter fra FKB 5.0 generell del</p>
+<p>Oppdatert generelle konsepter fra FKB 5.0 generell del. Se <a href="#FKB">[FKB]</a> for oversikt.</p>
 </li>
 <li>
-<p>Objekttype <em>Plattformgrense</em> er fjernet</p>
+<p>Hjelpekurve er tatt ut av produktspesifikasjonen.</p>
 </li>
 <li>
-<p>Innført flate for objekttype <em>Rullebane</em> og modelleres med heleid flategeometri. Stedfestingskvalitet kodes på flateobjektet og gjelder da avgrensningen til flate-objektet.</p>
+<p>TerrenglinjeBygg er tatt ut av produktspesifikasjonen.</p>
 </li>
 <li>
-<p>Innført egenskapen <em>eksternPeker</em> for å gjøre det mulig å legge inn referanser (i form av URI-er) til de tilsvarende objektene forvaltet i andre systemer.</p>
+<p>TerrenglinjeVeg er tatt ut av produktspesifikasjonen.</p>
 </li>
 <li>
-<p>Alle kodelister er flyttet ut av produktspesifikasjon og forvaltes eksternt i <a href="https://register.geonorge.no/sosi-kodelister/fkb/bane/5.0">Geonorge</a>.</p>
+<p>DTMPunkt er tatt ut av produktspesifikasjonen.</p>
+</li>
+<li>
+<p>Bruddlinje er tatt ut av produktspesifikasjonen.</p>
+</li>
+<li>
+<p>FyllingKant er tatt ut av produktspesifikasjonen.</p>
+</li>
+<li>
+<p>SkjæringKant er tatt ut av produktspesifikasjonen.</p>
+</li>
+<li>
+<p>Opphav er tatt inn som egenskap og beskriver datakilde samt hvorvidt objektet er en sikker eller usikker representasjon av terrenget.</p>
 </li>
 </ul>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
 <h3 id="truenormative-referanser"><a class="anchor" href="#truenormative-referanser"></a>1.4. Normative referanser</h3>
@@ -693,6 +718,7 @@ Testversjon 2021-09-22
 <div id="GEO-VEIL" class="paragraph">
 <p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -940,6 +966,7 @@ Informasjon om fullstendighet må være datert.</p>
 <div id="UUID" class="paragraph">
 <p><strong>UUID</strong>: Universally unique identifier. 128-bit globalt unik streng av tegn som kan genereres automatisk av en datamaskin.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -949,12 +976,12 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="trueunik-identifisering"><a class="anchor" href="#trueunik-identifisering"></a>3.1. Unik identifisering</h3>
 <div class="paragraph">
-<p>FKB-Lufthavn</p>
+<p>FKB-Høydekurve</p>
 </div>
 <div class="sect3">
 <h4 id="truefullstendig-navn"><a class="anchor" href="#truefullstendig-navn"></a>3.1.1. Fullstendig navn</h4>
 <div class="paragraph">
-<p>FKB Lufthavn</p>
+<p>FKB Høydekurve</p>
 </div>
 </div>
 <div class="sect3">
@@ -997,36 +1024,16 @@ Informasjon om fullstendighet må være datert.</p>
 <div class="sect2">
 <h3 id="truesammendrag"><a class="anchor" href="#truesammendrag"></a>3.7. Sammendrag</h3>
 <div class="paragraph">
-<p>FKB-Lufthavn omfatter et begrenset utvalg av objekttyper for lufthavner som skal registreres og forvaltes i FKB. Avinor har en mer detaljert spesifikasjon som benyttes for datafangst og forvaltning av data for Avinors egne lufthavner. Data etter denne spesifikasjonen skal kunne avledes fra Avinors data.</p>
+<p>FKB-Høydekurve omfatter data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå som høydekurver, forsenkningskurver, toppunkt etc.</p>
+</div>
+<div class="paragraph">
+<p>Nye høydekurver genereres hovedsaklig fra en terrengmodell basert på punktskyer fra laserskanning. Høydekurvene blir da bare en visning av terrengmodellen. Best informasjon om terrenget fås ved direkte bruk av terrengmodellen.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="trueformål"><a class="anchor" href="#trueformål"></a>3.8. Formål</h3>
 <div class="paragraph">
-<p>FKB er grunnleggende geografisk informasjon for å utøve lov- og forskriftsbelagte saker og ta gode beslutninger. FKB kan brukes til:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>å kjenne seg igjen ute i terrenget</p>
-</li>
-<li>
-<p>forvaltningsmessig saksbehandling i kommuner, statlige etater og ledningsetater</p>
-</li>
-<li>
-<p>saksbehandling knyttet til plan- og bygningsloven med forskrifter (jf. <a href="#PBL-KART">[PBL-KART]</a>)</p>
-</li>
-<li>
-<p>prosjekteringsformål</p>
-</li>
-<li>
-<p>analyse og presentasjon i et integrert informasjonssystem (GIS-system)</p>
-</li>
-<li>
-<p>produksjon av kart og avledede produkter med forskjellig krav til innhold, detaljering og stedfestingsnøyaktighet
-FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
-</li>
-</ul>
+<p>Datasettet skal sammen med øvrige datasett skape et godt og detaljert kartbilde. Hovedformålet med datasettet er å kunne kjenne seg igjen ute i terrenget.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1040,9 +1047,6 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <div class="paragraph">
 <p>FKB er detaljerte data stort sett registrert fotogrammetrisk fra flybilder med en oppløsing mellom 7 og 25 cm. Nøyaktigheten varierer fra +/- 0.10 m til +/- 2 m avhengig av objekttype, områdetype og datafangstmetode. FKB-data egner seg for presentasjon i målestokker fra ca 1:100 til ca 1:20000</p>
 </div>
-<div class="paragraph">
-<p><a href="#PBL-KART">[PBL-KART]</a></p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="trueutstrekningsinformasjon"><a class="anchor" href="#trueutstrekningsinformasjon"></a>3.11. Utstrekningsinformasjon</h3>
@@ -1053,7 +1057,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <p><strong>Geografisk område</strong>: Norge</p>
 </div>
 <div class="paragraph">
-<p><strong>Vertikal utbredelse</strong>: Fra ca -5moh til ca 2500moh</p>
+<p><strong>Vertikal utbredelse</strong>: Fra ca -??moh til ca 2468moh</p>
 </div>
 <div class="paragraph">
 <p><strong>Innhold gyldighetsperiode</strong>: Data ikke angitt</p>
@@ -1070,6 +1074,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <div class="paragraph">
 <p>Data ikke angitt</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -1084,6 +1089,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <div class="paragraph">
 <p>Se FKB Generell del for en nærmere beskrivelse av inndeling av FKB i FKB-A til D.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -1091,9 +1097,15 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <h2 id="trueinnhold-og-struktur"><a class="anchor" href="#trueinnhold-og-struktur"></a>5. Innhold og struktur</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truepakke-applicationschema-fkb-lufthavn-5-0utkast"><a class="anchor" href="#truepakke-applicationschema-fkb-lufthavn-5-0utkast"></a>5.1. Pakke «ApplicationSchema» FKB-Lufthavn-5.0Utkast</h3>
+<h3 id="truepakke-applicationschema-fkb-høydekurve-5-0utkast"><a class="anchor" href="#truepakke-applicationschema-fkb-høydekurve-5-0utkast"></a>5.1. Pakke «ApplicationSchema» FKB-Høydekurve-5.0Utkast</h3>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> datamodell for FKB-Lufthavn 5.0</p>
+<p><strong>Definisjon:</strong> Spesifikasjonen omfatter alle data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå som høydekurver, forsenkningskurver, toppunkt etc.</p>
+</div>
+<div class="paragraph">
+<p>Nye høydekurver genereres hovedsaklig fra en terrengmodell basert på punktskyer fra enten laserskanning eller bildematching. Høydekurvene blir da bare en visning av terrengmodellen. Best informasjon om terrenget fås ved direkte bruk av terrengmodellen.</p>
+</div>
+<div class="paragraph">
+<p>FKB-Høydekurve versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 5.1 og SOSI del 2 Terreng versjon 4.0.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values"><a class="anchor" href="#trueprofilparametre-i-tagged-values"></a>Profilparametre i tagged values</h5>
@@ -1105,15 +1117,15 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Data model for FKB-Lufthavn"@en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"The specification details the datasets describing the shape of the terrain"@en</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Contains runway surface,  taxiway boundary and certain airport lights" @en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"FKB-Høydekurve 5.0"@en</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">designation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Product specification FKB-Lufthavn 5.0"@en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Product specification FKB-Høydekurve 5.0"@en</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">language</p></td>
@@ -1121,15 +1133,15 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_kortnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Lufthavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Høydekurve</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_langnavn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB Lufthavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB Høydekurve</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_modellstatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">utkastOgSkjult</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utkast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_spesifikasjonstype</p></td>
@@ -1137,45 +1149,54 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_versjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 </tr>
 </tbody>
 </table>
 <div class="imageblock">
 <div class="content">
-<img src="diagrammer/Pakkerealisering.png" alt="Pakkerealisering">
+<img src="diagrammer/Pakkerealisering%20FKB-Høydekurve.png" alt="Pakkerealisering FKB-Høydekurve">
 </div>
-<div class="title">Figur 1: Pakkerealisering</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="diagrammer/Hoveddiagram%20FKB-Lufthavn-5.0.png" alt="Hoveddiagram FKB-Lufthavn-5.0">
-</div>
-<div class="title">Figur 2: Hoveddiagram FKB-Lufthavn-5.0</div>
+<div class="title">Figur 1: Pakkerealisering FKB-Høydekurve</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="diagrammer/Realisering.png" alt="Realisering">
+<img src="diagrammer/Hoveddiagram%20FKB-Høydekurve.png" alt="Hoveddiagram FKB-Høydekurve">
 </div>
-<div class="title">Figur 3: Realisering</div>
+<div class="title">Figur 2: Hoveddiagram FKB-Høydekurve</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diagrammer/Realisering%20av%20objekttyper.png" alt="Realisering av objekttyper">
+</div>
+<div class="title">Figur 3: Realisering av objekttyper</div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
 </div>
 <div class="sect3">
-<h4 id="lufthavnlys"><a class="anchor" href="#lufthavnlys"></a>5.1.2. «FeatureType» Lufthavnlys</h4>
+<h4 id="høydekurve"><a class="anchor" href="#høydekurve"></a>5.1.2. «featureType» Høydekurve</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket</p>
+<p><strong>Definisjon:</strong> linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png" alt="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png">
-</div>
-<div class="title">Figur 4: Illustrasjon av objekttype Lufthavnlys</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-2"><a class="anchor" href="#trueprofilparametre-i-tagged-values-2"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE;</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper"><a class="anchor" href="#trueegenskaper"></a>Egenskaper</h5>
@@ -1187,11 +1208,11 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>senterlinje</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger objektets sentrale del</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1199,7 +1220,12 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_melding: Fant ikke denne i SOSI_db<br>
+SOSI_navn: Kurve<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1211,23 +1237,26 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eksternpeker</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høyde</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til objektet i et eksternt system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av høydekurvens høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/URI">URI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Høyde">Høyde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: EKSTERNPEKER<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 8.2<br>
+SOSI_navn: H<br>
+SOSI_navn: HØYDE<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1239,11 +1268,11 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>lufthavnlystype</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av forskjellige typer belysning spesielt for en lufthavn, og i forbindelse med luftfartsrelatert virksomhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1251,11 +1280,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#lufthavnlystype">«CodeList» Lufthavnlystype</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: LHLYSTYPE<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1274,7 +1299,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Lufthavn-4.5/Lufthavnlys::«featureType» Lufthavnlys<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Høydekurve<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1283,15 +1308,25 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="rullebane"><a class="anchor" href="#rullebane"></a>5.1.3. «FeatureType» Rullebane</h4>
+<h4 id="forsenkningskurve"><a class="anchor" href="#forsenkningskurve"></a>5.1.3. «featureType» Forsenkningskurve</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer</p>
+<p><strong>Definisjon:</strong> linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png" alt="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png">
-</div>
-<div class="title">Figur 5: Illustrasjon av objekttype Rullebane</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-3"><a class="anchor" href="#trueprofilparametre-i-tagged-values-3"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE;</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-2"><a class="anchor" href="#trueegenskaper-2"></a>Egenskaper</h5>
@@ -1303,11 +1338,11 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>område</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>senterlinje</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">objektets utstrekning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger objektets sentrale del</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1315,59 +1350,67 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Flate">Flate</a></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Punkt">Punkt</a></p></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eksternpeker</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til objektet i et eksternt system</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/URI">URI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: EKSTERNPEKER<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_melding: Fant ikke denne i SOSI_db<br>
+SOSI_navn: Kurve<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høyde</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angir forsenkningskurvens  høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Høyde">Høyde</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 8.2<br>
+SOSI_navn: H<br>
+SOSI_navn: HØYDE<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1386,7 +1429,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Lufthavn-4.5/Rullebane::«featureType» Rullebane<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Forsenkningskurve<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1395,15 +1438,24 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="taksebanegrense"><a class="anchor" href="#taksebanegrense"></a>5.1.4. «FeatureType» Taksebanegrense</h4>
+<h4 id="toppunkt"><a class="anchor" href="#toppunkt"></a>5.1.4. «featureType» Toppunkt</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen</p>
+<p><strong>Definisjon:</strong> punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png" alt="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png">
-</div>
-<div class="title">Figur 6: Illustrasjon av objekttype Taksebanegrense</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-4"><a class="anchor" href="#trueprofilparametre-i-tagged-values-4"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT;</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-3"><a class="anchor" href="#trueegenskaper-3"></a>Egenskaper</h5>
@@ -1415,11 +1467,11 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>grense</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger overgang mellom ulike fenomener</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1427,7 +1479,14 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: *<br>
+SOSI_lengde: <br>
+SOSI_navn: NØ<br>
+SOSI_navn: Punkt<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1439,23 +1498,50 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eksternpeker</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høyde</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til objektet i et eksternt system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av topp punktets øyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/URI">URI</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Høyde">Høyde</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn: EKSTERNPEKER<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 8.2<br>
+SOSI_navn: H<br>
+SOSI_navn: HØYDE<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1474,7 +1560,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Lufthavn-4.5/Taksebane::«featureType» Taksebanegrense<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Toppunkt<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1483,12 +1569,12 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="lufthavnlystype"><a class="anchor" href="#lufthavnlystype"></a>5.1.5. «CodeList» Lufthavnlystype</h4>
+<h4 id="forsenkningspunkt"><a class="anchor" href="#forsenkningspunkt"></a>5.1.5. «featureType» Forsenkningspunkt</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Kodeliste som angir type belysning spesielt for en lufthavn, og i forbindelse med luftfartsrelatert virksomhet.</p>
+<p><strong>Definisjon:</strong> punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-2"><a class="anchor" href="#trueprofilparametre-i-tagged-values-2"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-5"><a class="anchor" href="#trueprofilparametre-i-tagged-values-5"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1496,30 +1582,442 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/lufthavn/5.0/lufthavnlystype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/lufthavn/5.0/lufthavnlystype</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LHLYSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT;</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/lufthavn/5.0/lufthavnlystype" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/lufthavn/5.0/lufthavnlystype</a></p>
 </div>
+<div class="sect4">
+<h5 id="trueegenskaper-4"><a class="anchor" href="#trueegenskaper-4"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: *<br>
+SOSI_lengde: <br>
+SOSI_navn: NØ<br>
+SOSI_navn: Punkt<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høyde</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av punktets høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Høyde">Høyde</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 8.2<br>
+SOSI_navn: H<br>
+SOSI_navn: HØYDE<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="truearv-og-realiseringer-4"><a class="anchor" href="#truearv-og-realiseringer-4"></a>Arv og realiseringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kvalitetpåkrevd">«FeatureType» KvalitetPåkrevd</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Forsenkningspunkt<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="terrenglinje"><a class="anchor" href="#terrenglinje"></a>5.1.6. «featureType» Terrenglinje</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon</p>
+</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-6"><a class="anchor" href="#trueprofilparametre-i-tagged-values-6"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskaper-5"><a class="anchor" href="#trueegenskaper-5"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>senterlinje</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forløp som følger objektets sentrale del</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_melding: Fant ikke denne i SOSI_db<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="truearv-og-realiseringer-5"><a class="anchor" href="#truearv-og-realiseringer-5"></a>Arv og realiseringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kvalitetpåkrevd">«FeatureType» KvalitetPåkrevd</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Terrenglinje<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="terrengpunkt"><a class="anchor" href="#terrengpunkt"></a>5.1.7. «featureType» Terrengpunkt</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</p>
+</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-7"><a class="anchor" href="#trueprofilparametre-i-tagged-values-7"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_geometri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskaper-6"><a class="anchor" href="#trueegenskaper-6"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>posisjon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sted som objektet eksisterer på</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: *<br>
+SOSI_lengde: <br>
+SOSI_navn: NØ<br>
+SOSI_navn: Punkt<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>høyde</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av punktets høyde, og oppgis som et desimalt tall hvis nødvendig</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Høyde">Høyde</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: D<br>
+SOSI_lengde: 8.2<br>
+SOSI_navn: H<br>
+SOSI_navn: HØYDE<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>opphav</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#opphav">«dataType» Opphav</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="truearv-og-realiseringer-6"><a class="anchor" href="#truearv-og-realiseringer-6"></a>Arv og realiseringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supertype:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kvalitetpåkrevd">«FeatureType» KvalitetPåkrevd</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Terreng 4.0::«featureType» Terrengpunkt<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opphav"><a class="anchor" href="#opphav"></a>5.1.8. «dataType» Opphav</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p>
+</div>
+<div class="sect4">
+<h5 id="trueegenskaper-7"><a class="anchor" href="#trueegenskaper-7"></a>Egenskaper</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sikkerTerrenggjengivelse</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolsk verdi som forteller om objektet ansees som en sikker (1) eller usikker (0) representasjon av faktisk terreng.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Boolean">Boolean</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>datakilde</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">referanse til datasettype som ligger til grunn for kurvegenereringen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#datafangsmetodeutvidet">«CodeList» DatafangsmetodeUtvidet</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="datafangsmetodeutvidet"><a class="anchor" href="#datafangsmetodeutvidet"></a>5.1.9. «CodeList» DatafangsmetodeUtvidet</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> referanse til datasettype som ligger til grunn for kurvegenereringen</p>
+</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-8"><a class="anchor" href="#trueprofilparametre-i-tagged-values-8"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+<div class="sect4">
+<h5 id="truekoder-i-modellen"><a class="anchor" href="#truekoder-i-modellen"></a>Koder i modellen</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GenererteDataFraBildematching</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GenererteDataInterpolasjonTerrengmodell</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div style="page-break-after: always;"></div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
@@ -1529,35 +2027,25 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <div class="sect2">
 <h3 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>5.2. Pakke: Generelle elementer</h3>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene</p>
+<p><strong>Definisjon:</strong> Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i produktspesifikasjoner.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="diagrammer/Hoveddiagram%20Fellesegenskaper.png" alt="Hoveddiagram Fellesegenskaper">
 </div>
-<div class="title">Figur 7: Hoveddiagram Fellesegenskaper</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="diagrammer/Arv%20av%20fellesegenskaper.png" alt="Arv av fellesegenskaper">
-</div>
-<div class="title">Figur 8: Arv av fellesegenskaper</div>
+<div class="title">Figur 4: Hoveddiagram Fellesegenskaper</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="diagrammer/Realisering%20av%20fellesegenskaper%20fra%20SOSI%20generell%20del.png" alt="Realisering av fellesegenskaper fra SOSI generell del">
 </div>
-<div class="title">Figur 9: Realisering av fellesegenskaper fra SOSI generell del</div>
+<div class="title">Figur 5: Realisering av fellesegenskaper fra SOSI generell del</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="diagrammer/Posisjonskvalitet.png" alt="Posisjonskvalitet">
 </div>
-<div class="title">Figur 10: Posisjonskvalitet</div>
+<div class="title">Figur 6: Posisjonskvalitet</div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
@@ -1570,7 +2058,7 @@ Kopieres direkte inn i de enkelte FKB-datasettene</p>
 <p>Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
 </div>
 <div class="sect4">
-<h5 id="trueegenskaper-4"><a class="anchor" href="#trueegenskaper-4"></a>Egenskaper</h5>
+<h5 id="trueegenskaper-8"><a class="anchor" href="#trueegenskaper-8"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1586,8 +2074,8 @@ Kopieres direkte inn i de enkelte FKB-datasettene</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt</p>
 <p class="tableblock">Merknad FKB:
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.</p></td>
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1615,14 +2103,14 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring p&#229; objektet</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet</p>
 <p class="tableblock">Merknad FKB:
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
 i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
 av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en
 ”kopibase”.
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
 iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
 </tr>
 <tr>
@@ -1635,7 +2123,8 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATOTID<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">definition: "Date and time at which this version of the spatial object was inserted or changed in the spatial data set."@en<br>
+SOSI_datatype: DATOTID<br>
 SOSI_navn: OPPDATERINGSDATO<br></p></td>
 </tr>
 </tbody>
@@ -1652,9 +2141,9 @@ SOSI_navn: OPPDATERINGSDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget</p>
-<p class="tableblock">Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode f&#248;r disse legges inn i databasen.
-Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangstdato.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når objektet siste gang ble registrert/observert/målt i terrenget</p>
+<p class="tableblock">Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.
+Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1679,13 +2168,43 @@ SOSI_navn: DATAFANGSTDATO<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>medium</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">objektets beliggenhet i forhold til jordoverflaten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#medium">«CodeList» Medium</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
+SOSI_lengde: 1<br>
+SOSI_navn: MEDIUM<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>verifiseringsdato</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.</p>
 <p class="tableblock">Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1744,7 +2263,7 @@ SOSI_navn: VERIFISERINGSDATO<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.</p>
 <p class="tableblock">Merknad FKB:
-Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1754,17 +2273,11 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/CharacterString">CharacterString</a></p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
-SOSI_lengde: 255<br>
-SOSI_navn: INFORMASJON<br></p></td>
-</tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="truearv-og-realiseringer-4"><a class="anchor" href="#truearv-og-realiseringer-4"></a>Arv og realiseringer</h5>
+<h5 id="truearv-og-realiseringer-7"><a class="anchor" href="#truearv-og-realiseringer-7"></a>Arv og realiseringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1777,7 +2290,8 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt<br>
+«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Fellesegenskaper<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -1788,10 +2302,10 @@ SOSI_navn: INFORMASJON<br></p></td>
 <div class="sect3">
 <h4 id="kvalitetpåkrevd"><a class="anchor" href="#kvalitetpåkrevd"></a>5.2.2. «FeatureType» KvalitetPåkrevd (abstrakt)</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> abstrakt objekttype med p&#229;krevet kvalitetsangivelse</p>
+<p><strong>Definisjon:</strong> abstrakt objekttype med påkrevet kvalitetsangivelse</p>
 </div>
 <div class="sect4">
-<h5 id="trueegenskaper-5"><a class="anchor" href="#trueegenskaper-5"></a>Egenskaper</h5>
+<h5 id="trueegenskaper-9"><a class="anchor" href="#trueegenskaper-9"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1823,7 +2337,7 @@ SOSI_navn: INFORMASJON<br></p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="truearv-og-realiseringer-5"><a class="anchor" href="#truearv-og-realiseringer-5"></a>Arv og realiseringer</h5>
+<h5 id="truearv-og-realiseringer-8"><a class="anchor" href="#truearv-og-realiseringer-8"></a>Arv og realiseringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1836,9 +2350,12 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subtyper:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#lufthavnlys">«FeatureType» Lufthavnlys</a><br>
-<a href="#taksebanegrense">«FeatureType» Taksebanegrense</a><br>
-<a href="#rullebane">«FeatureType» Rullebane</a><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#toppunkt">«featureType» Toppunkt</a><br>
+<a href="#terrenglinje">«featureType» Terrenglinje</a><br>
+<a href="#høydekurve">«featureType» Høydekurve</a><br>
+<a href="#terrengpunkt">«featureType» Terrengpunkt</a><br>
+<a href="#forsenkningskurve">«featureType» Forsenkningskurve</a><br>
+<a href="#forsenkningspunkt">«featureType» Forsenkningspunkt</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
@@ -1851,7 +2368,38 @@ SOSI_navn: INFORMASJON<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>5.2.3. «dataType» Identifikasjon</h4>
+<h4 id="høyde"><a class="anchor" href="#høyde"></a>5.2.3. «dataType» Høyde</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> et punkts vertikale avstand over en fysisk eller matematisk definert referanseflate</p>
+</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-9"><a class="anchor" href="#trueprofilparametre-i-tagged-values-9"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">D</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HØYDE</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>5.2.4. «dataType» Identifikasjon</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
 </div>
@@ -1862,7 +2410,7 @@ SOSI_navn: INFORMASJON<br></p></td>
 <p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-3"><a class="anchor" href="#trueprofilparametre-i-tagged-values-3"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-10"><a class="anchor" href="#trueprofilparametre-i-tagged-values-10"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1877,7 +2425,7 @@ SOSI_navn: INFORMASJON<br></p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="trueegenskaper-6"><a class="anchor" href="#trueegenskaper-6"></a>Egenskaper</h5>
+<h5 id="trueegenskaper-10"><a class="anchor" href="#trueegenskaper-10"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1891,7 +2439,7 @@ SOSI_navn: INFORMASJON<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p>
-<p class="tableblock">Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
+<p class="tableblock">Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -1973,7 +2521,7 @@ SOSI_navn: VERSJONID<br></p></td>
 </table>
 </div>
 <div class="sect4">
-<h5 id="truearv-og-realiseringer-6"><a class="anchor" href="#truearv-og-realiseringer-6"></a>Arv og realiseringer</h5>
+<h5 id="truearv-og-realiseringer-9"><a class="anchor" href="#truearv-og-realiseringer-9"></a>Arv og realiseringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1991,16 +2539,16 @@ SOSI_navn: VERSJONID<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>5.2.4. «dataType» Posisjonskvalitet</h4>
+<h4 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>5.2.5. «dataType» Posisjonskvalitet</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> beskrivelse av kvaliteten p&#229; stedfestingen.</p>
+<p><strong>Definisjon:</strong> beskrivelse av kvaliteten på stedfestingen.</p>
 </div>
 <div class="paragraph">
 <p>Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-4"><a class="anchor" href="#trueprofilparametre-i-tagged-values-4"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-11"><a class="anchor" href="#trueprofilparametre-i-tagged-values-11"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2015,7 +2563,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 </table>
 </div>
 <div class="sect4">
-<h5 id="trueegenskaper-7"><a class="anchor" href="#trueegenskaper-7"></a>Egenskaper</h5>
+<h5 id="trueegenskaper-11"><a class="anchor" href="#trueegenskaper-11"></a>Egenskaper</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2029,7 +2577,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metode for datafangst.
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.</p></td>
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2059,10 +2607,10 @@ SOSI_navn: DATAFANGSTMETODE<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata.
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.
 Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2091,7 +2639,7 @@ SOSI_navn: NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2120,8 +2668,8 @@ SOSI_navn: SYNBARHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for h&#248;yderegistrering av posisjon.</p>
-<p class="tableblock">Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for høyderegistrering av posisjon.</p>
+<p class="tableblock">Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2151,10 +2699,10 @@ SOSI_navn: DATAFANGSTMETODEHØYDE<br></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.
 Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2186,13 +2734,13 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="truearv-og-realiseringer-7"><a class="anchor" href="#truearv-og-realiseringer-7"></a>Arv og realiseringer</h5>
+<h5 id="truearv-og-realiseringer-10"><a class="anchor" href="#truearv-og-realiseringer-10"></a>Arv og realiseringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2210,12 +2758,12 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="synbarhet"><a class="anchor" href="#synbarhet"></a>5.2.5. «CodeList» Synbarhet</h4>
+<h4 id="synbarhet"><a class="anchor" href="#synbarhet"></a>5.2.6. «CodeList» Synbarhet</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
+<p><strong>Definisjon:</strong> synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-5"><a class="anchor" href="#trueprofilparametre-i-tagged-values-5"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-12"><a class="anchor" href="#trueprofilparametre-i-tagged-values-12"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2228,7 +2776,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -2245,22 +2793,22 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet</a></p>
+<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="datafangstmetode"><a class="anchor" href="#datafangstmetode"></a>5.2.6. «CodeList» Datafangstmetode</h4>
+<h4 id="datafangstmetode"><a class="anchor" href="#datafangstmetode"></a>5.2.7. «CodeList» Datafangstmetode</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> metode for datafangst.</p>
 </div>
 <div class="paragraph">
-<p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.</p>
+<p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-6"><a class="anchor" href="#trueprofilparametre-i-tagged-values-6"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-13"><a class="anchor" href="#trueprofilparametre-i-tagged-values-13"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2273,7 +2821,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -2290,19 +2838,19 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode</a></p>
+<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="registreringsversjon"><a class="anchor" href="#registreringsversjon"></a>5.2.7. «CodeList» Registreringsversjon</h4>
+<h4 id="registreringsversjon"><a class="anchor" href="#registreringsversjon"></a>5.2.8. «CodeList» Registreringsversjon</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-7"><a class="anchor" href="#trueprofilparametre-i-tagged-values-7"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-14"><a class="anchor" href="#trueprofilparametre-i-tagged-values-14"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2315,7 +2863,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -2332,23 +2880,19 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon</a></p>
+<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="medium"><a class="anchor" href="#medium"></a>5.2.8. «CodeList» Medium</h4>
+<h4 id="høydereferanse"><a class="anchor" href="#høydereferanse"></a>5.2.9. «CodeList» Høydereferanse</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten</p>
-</div>
-<div class="paragraph">
-<p>Eksempel:
-Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
+<p><strong>Definisjon:</strong> koordinatregistering utført på topp eller bunn av et objekt</p>
 </div>
 <div class="sect4">
-<h5 id="trueprofilparametre-i-tagged-values-8"><a class="anchor" href="#trueprofilparametre-i-tagged-values-8"></a>Profilparametre i tagged values</h5>
+<h5 id="trueprofilparametre-i-tagged-values-15"><a class="anchor" href="#trueprofilparametre-i-tagged-values-15"></a>Profilparametre i tagged values</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2361,7 +2905,53 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_lengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_navn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HREF</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="medium"><a class="anchor" href="#medium"></a>5.2.10. «CodeList» Medium</h4>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten</p>
+</div>
+<div class="paragraph">
+<p>Eksempel:
+Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
+</div>
+<div class="sect4">
+<h5 id="trueprofilparametre-i-tagged-values-16"><a class="anchor" href="#trueprofilparametre-i-tagged-values-16"></a>Profilparametre i tagged values</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">asDictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">codeList</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype</p></td>
@@ -2378,8 +2968,9 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium</a></p>
+<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2393,7 +2984,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect3">
 <h4 id="trueomfang"><a class="anchor" href="#trueomfang"></a>6.1.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele datasettet</p>
+<p>Gjelder hele spesifikasjonen</p>
 </div>
 </div>
 <div class="sect3">
@@ -2495,8 +3086,9 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-2"><a class="anchor" href="#trueomfang-2"></a>6.2.2. Omfang</h4>
 <div class="paragraph">
-<p>Hele datasettet</p>
+<p>Gjelder hele spesifikasjonen</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2505,7 +3097,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h2 id="truekvalitet"><a class="anchor" href="#truekvalitet"></a>7. Kvalitet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Lufthavn/5.0/">fotogrammetrisk registreringsinstruks for FKB-Lufthavn 5.0</a>.</p>
+<p>Den dominerende datafangstmetoden for FKB-data er fotogrammetrisk registrering. For fotogrammetrisk registrering er det angitt detaljerte kvalitetskrav. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-H%c2%a2ydekurve/5.0">fotogrammetrisk registreringsinstruks for FKB-Høydekurve 5.0</a>.</p>
 </div>
 <div class="paragraph">
 <p>FKB vil ofte også inneholde data fra andre datakilder, for eksempel data etablert gjennom kommunal/offentlig saksbehandling, innmelding fra publikum eller digitalisert fra ortofoto. Se kapittel 9 for en nærmere beskrivelse av datakilder ved vedlikehold av FKB-data.</p>
@@ -2513,14 +3105,16 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="paragraph">
 <p>Prinsippet er at fullstendighet prioriteres foran nøyaktighet og FKB-data for et område vil derfor bestå av data med varierende grad av kvalitet. Alle data er kodet med datafangstdato og posisjonskvalitet slik at det er mulig å vurdere datakvaliteten til det enkelte dataobjekt. Det vil også være mulig å aggregere denne informasjonen som finnes på objektnivå opp til en beskrivelse av kvaliteten på datainnholdet i området som helhet. Det er imidlertid vanskelig å garantere datakvaliteten for FKB innenfor et område.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="truedatafangst"><a class="anchor" href="#truedatafangst"></a>8. Datafangst</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Fotogrammetrisk datafangst er den dominerende datafangstmetoden for FKB-Ledning. Se <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Lufthavn/5.0/">fotogrammetrisk registreringsinstruks for FKB-Lufthavn 5.0</a>.</p>
+<p>Generering fra terrengmodeller er den dominerende datafangstmetoden for FKB-Høydekurve. Se Registreringsinstruks for FKB-Høydekurve 5.0: <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-H%c2%a2ydekurve/5.0" class="bare">http://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-H%c2%a2ydekurve/5.0</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
@@ -2534,7 +3128,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-3"><a class="anchor" href="#trueomfang-3"></a>9.1.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele datasettet</p>
+<p>Hele spesifikasjonen/datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -2558,7 +3152,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-4"><a class="anchor" href="#trueomfang-4"></a>9.2.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele datasettet</p>
+<p>Hele spesifikasjonen/datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -2585,7 +3179,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect3">
 <h4 id="trueomfang-5"><a class="anchor" href="#trueomfang-5"></a>9.3.1. Omfang</h4>
 <div class="paragraph">
-<p>Hele datasettet</p>
+<p>Hele spesifikasjonen/datasettet</p>
 </div>
 </div>
 <div class="sect3">
@@ -2602,6 +3196,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="paragraph">
 <p>Også andre parter i Geovekst vil kunne ta imot meldinger om feil og avvik i kartet og oppdatere FKB på bakgrunn av disse meldingene.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2618,8 +3213,9 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect2">
 <h3 id="truereferanse-til-presentasjonskatalog"><a class="anchor" href="#truereferanse-til-presentasjonskatalog"></a>10.2. Referanse til presentasjonskatalog</h3>
 <div class="paragraph">
-<p>Presentasjonsregler for FKB-data er angitt i <a href="https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi">skjermkartografispesifikasjonen i Geonorge</a>.</p>
+<p>Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: <a href="https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi" class="bare">https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi</a></p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2694,6 +3290,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="paragraph">
 <p>FKB-data vil også være tilgjengelig gjennom Kartverkets WMS-tjenester. Lista med tilgjengelige tjenester og leveranseformater kan bli utvidet.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -2721,423 +3318,41 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <p>Det leveres metadata i henhold til ISO-standarden 19115:2003 Geografisk informasjon.</p>
 </div>
 <div class="paragraph">
-<p>Metadata for FKB-Lufthavn finnes i
-<a href="https://kartkatalog.geonorge.no/metadata/fkb-lufthavn/23dfcc33-fb04-4898-aa88-68b49c4bfea7">kartkatalogen på Geonorge</a>.</p>
+<p>Metadata for FKB-Høydekurve i kartkatalog på Geonorge:
+<a href="https://kartkatalog.geonorge.no/metadata/fkb-hoeydekurve/b49478fd-038e-4c2c-ae28-dda1958a8048" class="bare">https://kartkatalog.geonorge.no/metadata/fkb-hoeydekurve/b49478fd-038e-4c2c-ae28-dda1958a8048</a></p>
 </div>
 <div class="paragraph">
-<p>For mer detaljert informasjon om datainnhold og forvaltning per kommune, se <a href="https://forvaltningsinformasjon.geonorge.no/">forvaltningsinformasjon i Geonorge</a>.</p>
+<p>Under <a href="https://forvaltningsinformasjon.geonorge.no/" class="bare">https://forvaltningsinformasjon.geonorge.no/</a> finnes mer detaljert kommunevis informasjon om datainnholdet og forvaltningen av FKB-data.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truesosi-format-realisering"><a class="anchor" href="#truesosi-format-realisering"></a>Vedlegg A: SOSI-format-realisering</h2>
+<h2 id="truevedlegg-a-sosi-format-realisering"><a class="anchor" href="#truevedlegg-a-sosi-format-realisering"></a>Vedlegg A - SOSI-format-realisering</h2>
 <div class="sectionbody">
-<div class="sect3">
-<h4 id="truefeaturetype-lufthavnlys"><a class="anchor" href="#truefeaturetype-lufthavnlys"></a>A.1. «FeatureType» Lufthavnlys</h4>
-<div class="sect4">
-<h5 id="truemodellelementnavn-og-sosi_navn"><a class="anchor" href="#truemodellelementnavn-og-sosi_navn"></a>Modellelementnavn og SOSI_navn</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lufthavnlystype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Lufthavnlystype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..LHLYSTYPE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truefeaturetype-rullebane"><a class="anchor" href="#truefeaturetype-rullebane"></a>A.2. «FeatureType» Rullebane</h4>
-<div class="sect4">
-<h5 id="truemodellelementnavn-og-sosi_navn-2"><a class="anchor" href="#truemodellelementnavn-og-sosi_navn-2"></a>Modellelementnavn og SOSI_navn</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truefeaturetype-taksebanegrense"><a class="anchor" href="#truefeaturetype-taksebanegrense"></a>A.3. «FeatureType» Taksebanegrense</h4>
-<div class="sect4">
-<h5 id="truemodellelementnavn-og-sosi_navn-3"><a class="anchor" href="#truemodellelementnavn-og-sosi_navn-3"></a>Modellelementnavn og SOSI_navn</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="truegml-realisering"><a class="anchor" href="#truegml-realisering"></a>Vedlegg B: GML-realisering</h2>
+<h2 id="truevedlegg-b-gml-realisering"><a class="anchor" href="#truevedlegg-b-gml-realisering"></a>Vedlegg B - GML-realisering</h2>
 <div class="sectionbody">
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Dersom GML er angitt som leveranseformat i kapittel 11, skal det her angis hvordan applikasjonsskjemaet skal realiseres i GML i form av URL
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Dokumentasjon av GML-Realisering:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="FKB-Hoydekurve50.xsd">GML-Schema</a></p>
+</li>
+<li>
+<p><a href="GML-eksempel.xml">GML-eksempelfil</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueannen-nyttig-informasjon-til-brukere"><a class="anchor" href="#trueannen-nyttig-informasjon-til-brukere"></a>Vedlegg C: Annen nyttig informasjon til brukere</h2>
+<h2 id="truevedlegg-c-annen-nyttig-informasjon-til-brukere"><a class="anchor" href="#truevedlegg-c-annen-nyttig-informasjon-til-brukere"></a>Vedlegg C - Annen nyttig informasjon til brukere</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -3156,7 +3371,7 @@ Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-22 21:15:42 +0200
+Last updated 2021-09-22 14:29:52 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
