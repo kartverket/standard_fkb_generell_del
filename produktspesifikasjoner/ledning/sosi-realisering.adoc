@@ -1,6 +1,6 @@
  
-==== «FeatureType» Bardun
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Bardun
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -115,13 +115,13 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |===
  
-==== «FeatureType» Flymarkør
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Flymarkør
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -236,13 +236,13 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |===
  
-==== «FeatureType» Jordingsledning
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Jordingsledning
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -357,7 +357,7 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |antallLaserPunkt
@@ -372,7 +372,7 @@
  
 |maksVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |maksVertikalAvstand.vertikalhøyde
@@ -387,7 +387,7 @@
  
 |minVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |minVertikalAvstand.vertikalhøyde
@@ -397,8 +397,8 @@
  
 |===
  
-==== «FeatureType» Kanal
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Kanal
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -513,13 +513,134 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |===
  
-==== «FeatureType» Kumlokk
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Kum
+==== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+=== «FeatureType» Kumlokk
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -634,7 +755,7 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |kumlokkform
@@ -642,10 +763,14 @@
 |..KUMLOKKFORM
 |[1..1]
  
+|kum
+|«FeatureType» Kum
+|..KUM
+|[0..1]
 |===
  
-==== «FeatureType» Luftlinje
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Luftlinje
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -760,7 +885,7 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |antallLaserPunkt
@@ -775,7 +900,7 @@
  
 |maksVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |maksVertikalAvstand.vertikalhøyde
@@ -790,7 +915,7 @@
  
 |minVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |minVertikalAvstand.vertikalhøyde
@@ -805,8 +930,8 @@
  
 |===
  
-==== «FeatureType» Lysarmatur
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Lysarmatur
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -921,7 +1046,7 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |plassering
@@ -935,8 +1060,8 @@
 |[0..1]
 |===
  
-==== «FeatureType» Mast
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Mast
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1051,7 +1176,7 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |antallLaserPunkt
@@ -1093,8 +1218,8 @@
 |[0..*]
 |===
  
-==== «FeatureType» Masteomriss
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Masteomriss
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1209,7 +1334,7 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |type
@@ -1219,8 +1344,8 @@
  
 |===
  
-==== «FeatureType» Nettverkstasjon
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Nettverkstasjon
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1335,7 +1460,7 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |plassering
@@ -1345,12 +1470,12 @@
  
 |omriss
 |«FeatureType» Nettverkstasjonomriss
-|..
+|..OMRISS
 |[0..1]
 |===
  
-==== «FeatureType» Nettverkstasjonomriss
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Nettverkstasjonomriss
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1465,13 +1590,13 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |===
  
-==== «FeatureType» Skap
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Skap
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1586,13 +1711,13 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |===
  
-==== «FeatureType» Trase
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Trase
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1707,7 +1832,7 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |antallLaserPunkt
@@ -1722,7 +1847,7 @@
  
 |maksVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |maksVertikalAvstand.vertikalhøyde
@@ -1737,7 +1862,7 @@
  
 |minVertikalAvstand.vertikalhøydeposisjon
 |GM_Point
-|...NØHKOOR
+|.GM_POINT
 |[1..1]
  
 |minVertikalAvstand.vertikalhøyde
@@ -1752,8 +1877,8 @@
  
 |===
  
-==== «FeatureType» Vindturbin
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Vindturbin
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1868,7 +1993,7 @@
  
 |posisjon
 |GM_Point
-|..
+|.PUNKT
 |[1..1]
  
 |rotorbladlengde
@@ -1883,12 +2008,12 @@
  
 |omriss
 |«FeatureType» Vindturbinomriss
-|..
+|..OMRISS
 |[0..1]
 |===
  
-==== «FeatureType» Vindturbinomriss
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Vindturbinomriss
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2003,13 +2128,13 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |===
  
-==== «FeatureType» Åk
-===== Modellelementnavn og SOSI_navn
+=== «FeatureType» Åk
+==== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2124,7 +2249,7 @@
  
 |beliggenhet
 |GM_Curve
-|..
+|.KURVE
 |[1..1]
  
 |===
