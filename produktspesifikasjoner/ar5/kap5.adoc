@@ -57,10 +57,6 @@ image::diagrammer/Hoveddiagram AR5.png[Hoveddiagram AR5]
 ==== «featureType» ArealressursFlate
 *Definisjon:* et sammenhengende areal som er tilordnet de samme egenskapsverdiene i henhold til et Arealressursklassifikasjonssystem
  
-*Supertype:* <<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-*Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursFlate
- 
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -208,7 +204,7 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*agrensesAvArealressursGrense*
+|*avgrensesAvArealressursGrense*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av Arealressursflate ved hjelp av Arealressursgrense
@@ -229,6 +225,15 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 |--ingen OCL, restriksjonen implementeres manuelt
  
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursFlate +
+|===
  
 |===
 |===
@@ -236,10 +241,6 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 [[arealressursgrense]]
 ==== «featureType» ArealressursGrense
 *Definisjon:* avgrensing for en eller to arealressursflater
- 
-*Supertype:* <<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-*Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrense
  
 ===== Egenskaper
 [cols="20,80"]
@@ -276,6 +277,15 @@ SOSI_datatype: H +
 SOSI_lengde: 4 + 
 SOSI_navn: ARAVGRTYPE + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrense +
+|===
  
 |===
 |===
@@ -283,10 +293,6 @@ SOSI_navn: ARAVGRTYPE +
 [[arealressursgrensefiktiv]]
 ==== «featureType» ArealressursGrenseFiktiv
 *Definisjon:* avgrensing mellom to arealressursflater som har like egenskapsverdier
- 
-*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
- 
-*Realisering av:* «ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrenseFiktiv
  
 ===== Egenskaper
 [cols="20,80"]
@@ -302,6 +308,15 @@ SOSI_navn: ARAVGRTYPE +
  
 |Type: 
 |<<kurve,«dataType» Kurve>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrenseFiktiv +
 |===
  
 |===
@@ -526,11 +541,7 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvali
  
 [[fellesegenskaper]]
 ==== «FeatureType» Fellesegenskaper (abstrakt)
-*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+*Definisjon:* abstrakt objekttype som b&#230;rer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -668,11 +679,14 @@ SOSI_datatype: T +
 SOSI_lengde: 5 + 
 SOSI_navn: OPPHAV + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» KvalitetPåkrevd +
-«featureType» ArealressursGrenseFiktiv
+|Subtyper:
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+<<arealressursgrensefiktiv,«featureType» ArealressursGrenseFiktiv>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
 |===
@@ -681,10 +695,6 @@ SOSI_navn: OPPHAV +
 [[kvalitetpåkrevd]]
 ==== «FeatureType» KvalitetPåkrevd (abstrakt)
 *Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
- 
-*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -696,7 +706,7 @@ SOSI_navn: OPPHAV +
 |dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/Date[Date]
@@ -724,11 +734,17 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |
 SOSI_navn: KVALITET + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«featureType» ArealressursFlate +
-«featureType» ArealressursGrense
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<arealressursflate,«featureType» ArealressursFlate>> +
+<<arealressursgrense,«featureType» ArealressursGrense>> +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
 |===
@@ -741,8 +757,6 @@ SOSI_navn: KVALITET +
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -815,6 +829,12 @@ SOSI_datatype: T +
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
 |===
 |===
@@ -825,8 +845,6 @@ SOSI_navn: VERSJONID +
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -874,7 +892,7 @@ Merknad:
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
@@ -893,7 +911,7 @@ SOSI_navn: NØYAKTIGHET +
 |beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<synbarhet,«CodeList» Synbarhet>>
@@ -904,65 +922,11 @@ SOSI_datatype: H +
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Navn:* 
-|*datafangstmetodeHøyde*
- 
-|Definisjon: 
-|metoden brukt for h&#248;yderegistrering av posisjon.
-
-Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.
-
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<datafangstmetode,«CodeList» Datafangstmetode>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
-SOSI_datatype: T + 
-SOSI_lengde: 3 + 
-SOSI_navn: DATAFANGSTMETODEHØYDE + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*nøyaktighetHøyde*
- 
-|Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm.
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-Merknad:
-
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 6 + 
-SOSI_navn: H-NØYAKTIGHET + 
-|===
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
- 
-|Beskrivelse: 
-|Datafangstmetode Digitalisert skal ikke brukes p&#229; egenskapen datafangstmetodeH&#248;yde
- 
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
 |===
  
 |===
@@ -1030,7 +994,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
  
 [[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-versjon som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
