@@ -6,15 +6,14 @@ _MERKNAD_: Det er en selvfølge at ”konsekvensrettelser” også blir utført.
 Oppgradering til nyere og bedre standard defineres som noe annet enn ajourføring, selv om det kan gjøres på samme tidspunkt som periodisk ajourføring.
 
 .applikasjonsskjema
-informasjonsmodellene i SOSI-modellregister er modellert som UML-modeller. UML-modellen for et FKB-datasett benevnes som et UML-applikasjonsskjema. Fra UML-applikasjonsskjema kan det automatisk genereres et GML-applikasjonsskjema som beskriver hvordan dataene representeres som GML.
+informasjonsmodellene i SOSI-modellregister er modellert som UML-modeller. UML-modellen for et FKB-datasett benevnes som et UML-applikasjonsskjema. Fra UML-applikasjonsskjema kan det automatisk genereres et GML-applikasjonsskjema som beskriver hvordan dataene representeres som GML <<SOSI-UML>>.
 
 _MERKNAD_: Se objektkatalog
 
 .avledet datasett
 bearbeidede primærdata tilpasset et bestemt bruksområde <<FKB>>
 
-_MERKNAD_: Avledede data skal i prinsippet ikke ajourføres direkte, men ajourføringen skal komme gjennom automatisk utvelgelse og generalisering fra primærdata. I noen tilfeller vil dette være en for tung prosess slik at en må avvike fra hovedprinsippet. 
-	Kalles også generalisert datasett.
+_MERKNAD_: Avledede data skal i prinsippet ikke ajourføres direkte, men ajourføringen skal komme gjennom automatisk utvelgelse og generalisering fra primærdata. I noen tilfeller vil dette være en for tung prosess slik at en må avvike fra hovedprinsippet. Kalles også generalisert datasett.
 
 _EKSEMPEL_:	N5 Kartdata (avledet/generalisert produkt fra FKB-data).
 
@@ -48,13 +47,11 @@ Grunnkart er et begrep som er synonymt med basis geodata. Se definisjon under ba
 
 _MERKNAD_: Grunnkart brukes til flere formål og kan danne grunnlag for avledede kart i forskjellige målestokker. Grunnkartet skal være det kartgrunnlaget som skal tjene alle formål som omhandles i plan- og bygningsloven eller dens forskrifter. 
 
-
 .fullstendighet 
 uttrykk for i hvilken grad spesifiserte deler av et produkt finnes i det aktuelle datasettet <<G>>
 
 _MERKNAD_: Fullstendighet karakteriseres ved kvalitetsmålene manglende objekter, overskytende objekter (ønsket om fullstendige geodatabaser innebærer også at det er galt dersom det finnes objekter i databasene som ikke skal være der i henhold til spesifikasjonene) og manglende egenskaper.
-Fullstendighet kan angis i prosent i relasjon til spesifiserte krav.
-Informasjon om fullstendighet må være datert.
+Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon om fullstendighet må være datert.
 
 .geodata 
 stedfestet informasjon <<G>>
@@ -75,10 +72,10 @@ _MERKNAD_: Kalles også administrativt vedlikehold. Data som samles inn administ
 .kvalitet
 i hvilken grad en samling av iboende egenskaper oppfyller krav <<G>>
 
-_MERKNAD_: I standarden Geodatakvalitet for en nærmere beskrivelse av datakvalitet. 
+_MERKNAD_: Se standarden Geodatakvalitet for en nærmere beskrivelse av datakvalitet. 
 
 .logisk konsistens
-hvor godt regler som finnes i spesifikasjonene, er oppfylt <<G>>
+hvor godt regler som finnes i spesifikasjonene er oppfylt <<G>>
 
 _MERKNAD_: Logisk konsistens betegner sammenhengen mellom produktet og reglene produktet skal oppfylle. Logisk konsistens kan altså måles uten at en kjenner noen "fasit". 
 
@@ -98,9 +95,7 @@ _MERKNAD_: I standarden Geodatakvalitet er de ulike nøyaktighetsmålene beskrev
 forekomst (instans) av en objekttype <<SOSI>>
 
 .objektkatalog
-definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet <<SOSI>> 
-
-_EKSEMPEL_: SOSI-Objektkatalog
+definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet. <<SOSI>> 
 
 .objekttype 
 geografisk objekttype er en klasse av objekter med felles egenskaper, forholdet mot andre objekttyper og funksjoner <<SOSI>> 
@@ -110,7 +105,7 @@ _EKSEMPEL_: Eksempler på objekttyper er Takkant, Arealbruksgrense og Mønelinje
 .områdetype
 arealinndeling basert på krav til detaljering/nøyaktighet av basis geodata i området <<FKB>> 
 
-_MERKNAD_: I FKB brukes områdetypen til å si noe om hvilken FKB-standard som bør velges i området (se punkt 5.2). Områdetype brukes også som styrende for krav i standardene "Plassering og beliggenhetskontroll" og "Stedfesting av matrikkelenhets- og råderettsgrenser".
+_MERKNAD_: I FKB brukes områdetypen til å si noe om hvilken FKB-standard som bør velges i området. Områdetype brukes også som styrende for krav i standardene "Plassering og beliggenhetskontroll" og "Stedfesting av matrikkelenhets- og råderettsgrenser".
 
 .oppgradering
 forbedring av den datatekniske kvaliteten av eksisterende data <<PABG>> 
@@ -130,7 +125,7 @@ _EKSEMPEL_:	Eksempler på presentasjonsdata er tekstdata generert fra datasett d
 .primærdatasett
 et definert geodatasett som består av de mest detaljerte og nøyaktige data innen et definert område, har en viss utbredelse og jevnlig blir produsert og/eller ajourholdt <<G>>
 
-_MERKNAD_: Primærdatasett skal være presentasjons- og produktuavhengige. De skal kunne danne utgangspunkt for forskjellig bruk og forskjellige produkter. Det er derfor krav om en viss utbredelse og produksjon før en kan kalle et datasett for primærdatasett. Primærdatasett er i prinsippet uavhengige datasett (ikke avledet fra andre datasett) og ajourholdes uavhengig av andre datasett. Et objekt tilhører bare ett primærdatasett. Primærdatasett kodes og struktureres i henhold til SOSI Del 2, men kan være gitt strengere eller svakere krav til hva som er standard og hva som er valgfritt (opsjon) i datasettet.
+_MERKNAD_: Primærdatasett skal være presentasjons- og produktuavhengige. De skal kunne danne utgangspunkt for forskjellig bruk og forskjellige produkter. Det er derfor krav om en viss utbredelse og produksjon før en kan kalle et datasett for primærdatasett. Primærdatasett er i prinsippet uavhengige datasett (ikke avledet fra andre datasett) og ajourholdes uavhengig av andre datasett. Et objekt tilhører bare ett primærdatasett. 
 
 .produktspesifikasjon 
 detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart) <<SOSI>>
