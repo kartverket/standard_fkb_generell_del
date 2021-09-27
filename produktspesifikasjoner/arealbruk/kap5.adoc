@@ -1,5 +1,5 @@
 === Pakke «ApplicationSchema» FKB-Arealbruk-5.0-Utkast
-Definisjon: Datamodell for produktspesifikasjonen FKB-Arealbruk. FKB-Arealbruk beskriver den fysiske bruken av et areal, f.eks. industriomr&#229;der, campingplasser og parker. Datasettet er ikke heldekkende.
+*Definisjon:* Datamodell for produktspesifikasjonen FKB-Arealbruk. FKB-Arealbruk beskriver den fysiske bruken av et areal, f.eks. industriomr&#229;der, campingplasser og parker. Datasettet er ikke heldekkende.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -55,7 +55,7 @@ image::diagrammer/Pakkerealisering.png[Pakkerealisering]
 |===
 |===
 === Pakke: Generelle elementer
-Definisjon: pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
@@ -68,14 +68,12 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvali
  
 |===
 |===
+ 
+[[fellesegenskaper]]
 ==== «FeatureType» Fellesegenskaper (abstrakt)
-Definisjon: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -98,7 +96,7 @@ For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#
 |[1..1]
  
 |Type: 
-|Identifikasjon
+|<<identifikasjon,«dataType» Identifikasjon>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: IDENT + 
@@ -127,7 +125,7 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |[1..1]
  
 |Type: 
-|DateTime
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATOTID + 
@@ -145,7 +143,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |[1..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -166,7 +164,7 @@ Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajour
 |[0..1]
  
 |Type: 
-|Date
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: DATO + 
@@ -184,7 +182,7 @@ SOSI_navn: VERIFISERINGSDATO +
 |[0..1]
  
 |Type: 
-|Registreringsversjon
+|<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
 defautCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
@@ -207,29 +205,30 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» KvalitetPåkrevd
+|Subtyper:
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|Realisering av: 
+|«ApplicationSchema» FKB Generell del-5.0Utkast/Generelle elementer::«FeatureType» Fellesegenskaper +
+«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
+ 
 |===
  
 |===
 |===
+ 
+[[kvalitetpåkrevd]]
 ==== «FeatureType» KvalitetPåkrevd (abstrakt)
-Definisjon: abstrakt objekttype med p&#229;krevet kvalitetsangivelse
- 
-*Supertype:* «FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -246,7 +245,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |[1..1]
  
 |Type: 
-|Posisjonskvalitet
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
 |Profilparametre i tagged values: 
 |
 SOSI_navn: KVALITET + 
@@ -265,40 +264,48 @@ Det vil v&#230;re opp til det eksterne systemet &#229; etablere URI-er som unikt
 |[0..1]
  
 |Type: 
-|URI
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«featureType» Industriområde +
-«featureType» Campingplass +
-«featureType» Grustak +
-«featureType» Steintipp +
-«featureType» Alpinbakke +
-«featureType» Golfbane +
-«featureType» Lekeplass +
-«featureType» Gravplass +
-«featureType» Park +
-«featureType» Skytebane +
-«featureType» SportIdrettPlass +
-«featureType» Anleggsområde
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<industriområde,«featureType» Industriområde>> +
+<<campingplass,«featureType» Campingplass>> +
+<<grustak,«featureType» Grustak>> +
+<<steintipp,«featureType» Steintipp>> +
+<<alpinbakke,«featureType» Alpinbakke>> +
+<<golfbane,«featureType» Golfbane>> +
+<<lekeplass,«featureType» Lekeplass>> +
+<<gravplass,«featureType» Gravplass>> +
+<<park,«featureType» Park>> +
+<<skytebane,«featureType» Skytebane>> +
+<<sportidrettplass,«featureType» SportIdrettPlass>> +
+<<anleggsområde,«featureType» Anleggsområde>> +
+|Realisering av: 
+|«ApplicationSchema» FKB Generell del-5.0Utkast/Generelle elementer::«FeatureType» KvalitetPåkrevd +
+«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
+ 
 |===
  
 |===
 |===
+ 
+[[identifikasjon]]
 ==== «dataType» Identifikasjon
-Definisjon: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -322,7 +329,7 @@ Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokal
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -345,7 +352,7 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
 |[1..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
@@ -364,23 +371,29 @@ SOSI_navn: NAVNEROM +
 |[0..1]
  
 |Type: 
-|CharacterString
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: T + 
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
 |===
 |===
+ 
+[[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-Definisjon: beskrivelse av kvaliteten p&#229; stedfestingen.
+*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -403,7 +416,7 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |[1..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
@@ -431,7 +444,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: H + 
@@ -450,7 +463,7 @@ SOSI_navn: NØYAKTIGHET +
 |[0..1]
  
 |Type: 
-|Synbarhet
+|<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
@@ -473,7 +486,7 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |[0..1]
  
 |Type: 
-|Datafangstmetode
+|<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
@@ -501,7 +514,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |[0..1]
  
 |Type: 
-|Integer
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: H + 
@@ -515,14 +528,22 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|
+|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
  
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
+|===
  
 |===
 |===
+ 
+[[synbarhet]]
 ==== «CodeList» Synbarhet
-Definisjon: synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -548,8 +569,10 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
  
 |===
 |===
+ 
+[[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-Definisjon: metode for datafangst. 
+*Definisjon:* metode for datafangst. 
 
 Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
  
@@ -577,8 +600,10 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
  
 |===
 |===
+ 
+[[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-Definisjon: FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -605,7 +630,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |===
 |===
 === Pakke: Driftsområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Driftsområder
+*Definisjon:* Inneholder elementer fra SOSI Areal 4.0 Driftsområder
 [caption="Figur 6: ",title=Hoveddiagram Driftsområder]
 image::diagrammer/Hoveddiagram Driftsområder.png[Hoveddiagram Driftsområder]
 [caption="Figur 7: ",title=Realisering fra Areal 4.0 Driftsområder]
@@ -613,14 +638,12 @@ image::diagrammer/Realisering fra Areal 4.0 Driftsområder.png[Realisering fra A
  
 |===
 |===
+ 
+[[anleggsområde]]
 ==== «featureType» Anleggsområde
-Definisjon: omr&#229;de der det p&#229;g&#229;r anleggsarbeid
+*Definisjon:* omr&#229;de der det p&#229;g&#229;r anleggsarbeid
 
 I FKB er det en m&#229;lsetting om at mest mulig av byggeaktivitet n&#229;r det gjelder f.eks. bygninger eller veganlegg fanges opp gjennom saksbehandling og legges inn i tiltaksbasen (FKB-Tiltak). Anleggsomr&#229;der som ligger i tiltaksbasen skal ikke inng&#229; i FKB-Arealbruk.
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Anleggsområde
  
 [caption="Figur 8: ",title=Illustrasjon av objekttype Anleggsområde]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png]
@@ -637,17 +660,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Anleggsområde +
 |===
  
 |===
 |===
+ 
+[[grustak]]
 ==== «featureType» Grustak
-Definisjon: uttaksplass, område, drevet i dagen for malm eller sand, grus, pukk, skifer
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Grustak
+*Definisjon:* uttaksplass, område, drevet i dagen for malm eller sand, grus, pukk, skifer
  
 [caption="Figur 9: ",title=Illustrasjon av objekttype Grustak]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png]
@@ -664,17 +694,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Grustak +
 |===
  
 |===
 |===
+ 
+[[industriområde]]
 ==== «featureType» Industriområde
-Definisjon: område, bebygd eller ubebygd, benyttet til industriformål
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Industriområde
+*Definisjon:* område, bebygd eller ubebygd, benyttet til industriformål
  
 [caption="Figur 10: ",title=Illustrasjon av objekttype Industriområde]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png]
@@ -691,17 +728,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Driftsområder::«featureType» Industriområde +
 |===
  
 |===
 |===
+ 
+[[steintipp]]
 ==== «featureType» Steintipp
-Definisjon: område for steintipp
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Driftsområder::«FeatureType» Steintipp
+*Definisjon:* område for steintipp
  
 [caption="Figur 11: ",title=Illustrasjon av objekttype Steintipp]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png]
@@ -718,13 +762,22 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Driftsområder::«FeatureType» Steintipp +
 |===
 <<<
 |===
 |===
 === Pakke: Fritidsområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Fritidsområder
+*Definisjon:* Inneholder elementer fra SOSI Areal 4.0 Fritidsområder
 [caption="Figur 12: ",title=Hoveddiagram Fritidsområder]
 image::diagrammer/Hoveddiagram Fritidsområder.png[Hoveddiagram Fritidsområder]
 [caption="Figur 13: ",title=Realisering fra Areal 4.0 Fritidsområder]
@@ -732,12 +785,10 @@ image::diagrammer/Realisering fra Areal 4.0 Fritidsområder.png[Realisering fra 
  
 |===
 |===
+ 
+[[alpinbakke]]
 ==== «featureType» Alpinbakke
-Definisjon: nedfart for ski med permanent karakter
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Alpinbakke
+*Definisjon:* nedfart for ski med permanent karakter
  
 [caption="Figur 14: ",title=Illustrasjon av objekttype Alpinbakke]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png]
@@ -754,17 +805,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Alpinbakke +
 |===
  
 |===
 |===
+ 
+[[campingplass]]
 ==== «featureType» Campingplass
-Definisjon: faste anlegg med vaskerom, campinghytter o.l.
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Campingplass
+*Definisjon:* faste anlegg med vaskerom, campinghytter o.l.
  
 [caption="Figur 15: ",title=Illustrasjon av objekttype Campingplass]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png]
@@ -781,17 +839,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Campingplass +
 |===
  
 |===
 |===
+ 
+[[golfbane]]
 ==== «featureType» Golfbane
-Definisjon: område for golfspilling
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Golfbane
+*Definisjon:* område for golfspilling
  
 [caption="Figur 16: ",title=Illustrasjon av objekttype Golfbane]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png]
@@ -808,17 +873,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Golfbane +
 |===
  
 |===
 |===
+ 
+[[lekeplass]]
 ==== «featureType» Lekeplass
-Definisjon: område for lekeplass
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Lekeplass
+*Definisjon:* område for lekeplass
  
 [caption="Figur 17: ",title=Illustrasjon av objekttype Lekeplass]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png]
@@ -835,17 +907,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Lekeplass +
 |===
  
 |===
 |===
+ 
+[[skytebane]]
 ==== «featureType» Skytebane
-Definisjon: avgrenset område hvor det skytes
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Skytebane
+*Definisjon:* avgrenset område hvor det skytes
  
 [caption="Figur 18: ",title=Illustrasjon av objekttype Skytebane]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_skytebane.png]
@@ -862,17 +941,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» Skytebane +
 |===
  
 |===
 |===
+ 
+[[sportidrettplass]]
 ==== «featureType» SportIdrettPlass
-Definisjon: område hvor det utøves sport og idrett
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» SportIdrettPlass
+*Definisjon:* område hvor det utøves sport og idrett
  
 [caption="Figur 19: ",title=Illustrasjon av objekttype SportIdrettPlass]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png]
@@ -889,13 +975,22 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Fritidsområder::«featureType» SportIdrettPlass +
 |===
 <<<
 |===
 |===
 === Pakke: Kulturområder
-Definisjon: Inneholder elementer fra SOSI Areal 4.0 Kulturområder
+*Definisjon:* Inneholder elementer fra SOSI Areal 4.0 Kulturområder
 [caption="Figur 20: ",title=Hoveddiagram Kulturområder]
 image::diagrammer/Hoveddiagram Kulturområder.png[Hoveddiagram Kulturområder]
 [caption="Figur 21: ",title=Realisering fra Areal 4.0 Kulturområder]
@@ -903,12 +998,10 @@ image::diagrammer/Realisering fra Areal 4.0 Kulturområder.png[Realisering fra A
  
 |===
 |===
+ 
+[[gravplass]]
 ==== «featureType» Gravplass
-Definisjon: område for gravstøtter, begravelsesplass og kirkegård
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Gravplass
+*Definisjon:* område for gravstøtter, begravelsesplass og kirkegård
  
 [caption="Figur 22: ",title=Illustrasjon av objekttype Gravplass]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png]
@@ -925,17 +1018,24 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Gravplass +
 |===
  
 |===
 |===
+ 
+[[park]]
 ==== «featureType» Park
-Definisjon: grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
- 
-*Supertype:* «FeatureType» KvalitetPåkrevd
- 
-*Realisering av:* «ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Park
+*Definisjon:* grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
  
 [caption="Figur 23: ",title=Illustrasjon av objekttype Park]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png]
@@ -952,6 +1052,15 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/fig
 |[1..1]
  
 |Type: 
-|Flate
+|<<flate,Flate>>
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Areal-4.0/Kulturområder::«featureType» Park +
 |===
 // End of UML-model
