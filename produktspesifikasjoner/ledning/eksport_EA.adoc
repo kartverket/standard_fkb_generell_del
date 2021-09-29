@@ -25,7 +25,7 @@ FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI 
 |FKB-Ledning
  
 |SOSI_modellstatus
-|utkastOgSkjult
+|utkast
  
 |SOSI_spesifikasjonstype
 |prodspesifikasjon
@@ -34,34 +34,38 @@ FKB-Ledning versjon 5.0 baserer seg p&#229; generelle konsepter definert i SOSI 
 |5.0
  
 |targetNamespace
-|http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0
  
 |version
 |5.0
  
 |xmlns
-|ledning
+|app
  
 |xsdDocument
-|FKBLedningUtkast.xsd
+|FKBLedning50.xsd
  
 |xsdEncodingRule
 |sosi
  
 |===
-[caption="Figur 1: ",title=Hoveddiagram FKB-Ledning 5.0]
-image::diagrammer/Hoveddiagram FKB-Ledning 5.0.png[Hoveddiagram FKB-Ledning 5.0]
-[caption="Figur 2: ",title=Pakkerealisering FKB-Ledning 5.0]
-image::diagrammer/Pakkerealisering FKB-Ledning 5.0.png[Pakkerealisering FKB-Ledning 5.0]
+ 
+.Hoveddiagram FKB-Ledning 5.0 
+image::diagrammer/Hoveddiagram FKB-Ledning 5.0.png[link=diagrammer/Hoveddiagram FKB-Ledning 5.0.png,"Diagramm: Hoveddiagram FKB-Ledning 5.0"]
+ 
+.Pakkerealisering FKB-Ledning 5.0 
+image::diagrammer/Pakkerealisering FKB-Ledning 5.0.png[link=diagrammer/Pakkerealisering FKB-Ledning 5.0.png,"Diagramm: Pakkerealisering FKB-Ledning 5.0"]
 <<<
 |===
 |===
 === Pakke: Objekttyper - abstrakte
 *Definisjon:* Ikke realiserbare objekttyper. Objekttypene benyttes kun som konteinerobjekter for egenskaper som benyttes av et eller flere subtyper.
-[caption="Figur 3: ",title=Objekttyper - abstrakte]
-image::diagrammer/Objekttyper - abstrakte.png[Objekttyper - abstrakte]
-[caption="Figur 4: ",title=Realiseringer objekttyper - abstrakte]
-image::diagrammer/Realiseringer objekttyper - abstrakte.png[Realiseringer objekttyper - abstrakte]
+ 
+.Objekttyper - abstrakte 
+image::diagrammer/Objekttyper - abstrakte.png[link=diagrammer/Objekttyper - abstrakte.png,"Diagramm: Objekttyper - abstrakte"]
+ 
+.Realiseringer objekttyper - abstrakte 
+image::diagrammer/Realiseringer objekttyper - abstrakte.png[link=diagrammer/Realiseringer objekttyper - abstrakte.png,"Diagramm: Realiseringer objekttyper - abstrakte"]
  
 |===
 |===
@@ -86,7 +90,7 @@ image::diagrammer/Realiseringer objekttyper - abstrakte.png[Realiseringer objekt
 |http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |Profilparametre i tagged values: 
 |
-SOSI_geometri: Kurve + 
+SOSI_navn: Kurve + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -97,10 +101,10 @@ SOSI_geometri: Kurve +
 |Subtyper:
 |<<masteomriss,«FeatureType» Masteomriss>> +
 <<vindturbinomriss,«FeatureType» Vindturbinomriss>> +
+<<kum,«FeatureType» Kum>> +
 <<nettverkstasjonomriss,«FeatureType» Nettverkstasjonomriss>> +
 <<åk,«FeatureType» Åk>> +
 <<bardun,«FeatureType» Bardun>> +
-<<kum,«FeatureType» Kum>> +
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling +
 |===
@@ -128,7 +132,7 @@ SOSI_geometri: Kurve +
 |http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |Profilparametre i tagged values: 
 |
-SOSI_geometri: Punkt + 
+SOSI_navn: Punkt + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -171,7 +175,7 @@ SOSI_geometri: Punkt +
 |http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |Profilparametre i tagged values: 
 |
-SOSI_geometri: Kurve + 
+SOSI_navn: Kurve + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -374,32 +378,45 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE +
 |===
 === Pakke: Objekttyper - instansierbare
 *Definisjon:* Instansierbare objekttyper. Objekttypene kan benyttes som objekttyper i forbindelse med datautveksling. Objekttypene arver gjerne en eller flere egenskaper fra ett eller flere abstrakte supertyper, men kan ogs&#229; inneholde egenskaper som kun er relevante for den aktuelle objekttypen.
-[caption="Figur 5: ",title=Instansierbare objekttyper]
-image::diagrammer/Instansierbare objekttyper.png[Instansierbare objekttyper]
-[caption="Figur 6: ",title=Flymarkør - alle egenskaper og realisering]
-image::diagrammer/Flymarkør - alle egenskaper og realisering.png[Flymarkør - alle egenskaper og realisering]
-[caption="Figur 7: ",title=Jordingsledning - alle egenskaper og realisering]
-image::diagrammer/Jordingsledning - alle egenskaper og realisering.png[Jordingsledning - alle egenskaper og realisering]
-[caption="Figur 8: ",title=Kanal - alle egenskaper og realisering]
-image::diagrammer/Kanal - alle egenskaper og realisering.png[Kanal - alle egenskaper og realisering]
-[caption="Figur 9: ",title=Kum og Kumlokk - alle egenskaper og realisering]
-image::diagrammer/Kum og Kumlokk - alle egenskaper og realisering.png[Kum og Kumlokk - alle egenskaper og realisering]
-[caption="Figur 10: ",title=Luftlinje - alle egenskaper og realisering]
-image::diagrammer/Luftlinje - alle egenskaper og realisering.png[Luftlinje - alle egenskaper og realisering]
-[caption="Figur 11: ",title=Lysarmatur - alle egenskaper og realisering]
-image::diagrammer/Lysarmatur - alle egenskaper og realisering.png[Lysarmatur - alle egenskaper og realisering]
-[caption="Figur 12: ",title=Mast, Masteomriss og Bardun - alle egenskaper og realisering]
-image::diagrammer/Mast, Masteomriss og Bardun - alle egenskaper og realisering.png[Mast, Masteomriss og Bardun - alle egenskaper og realisering]
-[caption="Figur 13: ",title=Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering]
-image::diagrammer/Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering.png[Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering]
-[caption="Figur 14: ",title=Skap - alle egenskaper og realisering]
-image::diagrammer/Skap - alle egenskaper og realisering.png[Skap - alle egenskaper og realisering]
-[caption="Figur 15: ",title=Trase - alle egenskaper og realisering]
-image::diagrammer/Trase - alle egenskaper og realisering.png[Trase - alle egenskaper og realisering]
-[caption="Figur 16: ",title=Vindturbin og Vindturbinomriss - alle egenskaper og realisering]
-image::diagrammer/Vindturbin og Vindturbinomriss - alle egenskaper og realisering.png[Vindturbin og Vindturbinomriss - alle egenskaper og realisering]
-[caption="Figur 17: ",title=Åk - alle egenskaper og realisering]
-image::diagrammer/Åk - alle egenskaper og realisering.png[Åk - alle egenskaper og realisering]
+ 
+.Instansierbare objekttyper 
+image::diagrammer/Instansierbare objekttyper.png[link=diagrammer/Instansierbare objekttyper.png,"Diagramm: Instansierbare objekttyper"]
+ 
+.Flymarkør - alle egenskaper og realisering 
+image::diagrammer/Flymarkør - alle egenskaper og realisering.png[link=diagrammer/Flymarkør - alle egenskaper og realisering.png,"Diagramm: Flymarkør - alle egenskaper og realisering"]
+ 
+.Jordingsledning - alle egenskaper og realisering 
+image::diagrammer/Jordingsledning - alle egenskaper og realisering.png[link=diagrammer/Jordingsledning - alle egenskaper og realisering.png,"Diagramm: Jordingsledning - alle egenskaper og realisering"]
+ 
+.Kanal - alle egenskaper og realisering 
+image::diagrammer/Kanal - alle egenskaper og realisering.png[link=diagrammer/Kanal - alle egenskaper og realisering.png,"Diagramm: Kanal - alle egenskaper og realisering"]
+ 
+.Kum og Kumlokk - alle egenskaper og realisering 
+image::diagrammer/Kum og Kumlokk - alle egenskaper og realisering.png[link=diagrammer/Kum og Kumlokk - alle egenskaper og realisering.png,"Diagramm: Kum og Kumlokk - alle egenskaper og realisering"]
+ 
+.Luftlinje - alle egenskaper og realisering 
+image::diagrammer/Luftlinje - alle egenskaper og realisering.png[link=diagrammer/Luftlinje - alle egenskaper og realisering.png,"Diagramm: Luftlinje - alle egenskaper og realisering"]
+ 
+.Lysarmatur - alle egenskaper og realisering 
+image::diagrammer/Lysarmatur - alle egenskaper og realisering.png[link=diagrammer/Lysarmatur - alle egenskaper og realisering.png,"Diagramm: Lysarmatur - alle egenskaper og realisering"]
+ 
+.Mast, Masteomriss og Bardun - alle egenskaper og realisering 
+image::diagrammer/Mast, Masteomriss og Bardun - alle egenskaper og realisering.png[link=diagrammer/Mast, Masteomriss og Bardun - alle egenskaper og realisering.png,"Diagramm: Mast, Masteomriss og Bardun - alle egenskaper og realisering"]
+ 
+.Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering 
+image::diagrammer/Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering.png[link=diagrammer/Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering.png,"Diagramm: Nettverkstasjon og Nettverkstasjonomriss - alle egenskaper og realisering"]
+ 
+.Skap - alle egenskaper og realisering 
+image::diagrammer/Skap - alle egenskaper og realisering.png[link=diagrammer/Skap - alle egenskaper og realisering.png,"Diagramm: Skap - alle egenskaper og realisering"]
+ 
+.Trase - alle egenskaper og realisering 
+image::diagrammer/Trase - alle egenskaper og realisering.png[link=diagrammer/Trase - alle egenskaper og realisering.png,"Diagramm: Trase - alle egenskaper og realisering"]
+ 
+.Vindturbin og Vindturbinomriss - alle egenskaper og realisering 
+image::diagrammer/Vindturbin og Vindturbinomriss - alle egenskaper og realisering.png[link=diagrammer/Vindturbin og Vindturbinomriss - alle egenskaper og realisering.png,"Diagramm: Vindturbin og Vindturbinomriss - alle egenskaper og realisering"]
+ 
+.Åk - alle egenskaper og realisering 
+image::diagrammer/Åk - alle egenskaper og realisering.png[link=diagrammer/Åk - alle egenskaper og realisering.png,"Diagramm: Åk - alle egenskaper og realisering"]
  
 |===
 |===
@@ -412,8 +429,8 @@ Merknad FKB:
 Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.
 
  
-[caption="Figur 18: ",title=Illustrasjon av objekttype Bardun]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg]
+.Illustrasjon av objekttype Bardun
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg,"Illustrasjon av objekttype: Bardun"]
 ===== Restriksjoner
 [cols="20,80"]
 |===
@@ -439,8 +456,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Flymarkør
 *Definisjon:* markering av store luftspenn over daler og fjorder
  
-[caption="Figur 19: ",title=Illustrasjon av objekttype Flymarkør]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg]
+.Illustrasjon av objekttype Flymarkør
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg,"Illustrasjon av objekttype: Flymarkør"]
 ===== Restriksjoner
 [cols="20,80"]
 |===
@@ -483,8 +500,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Kanal
 *Definisjon:* brukes som fremf&#248;ringsvei for ledning
  
-[caption="Figur 20: ",title=Illustrasjon av objekttype Kanal]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg]
+.Illustrasjon av objekttype Kanal
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg,"Illustrasjon av objekttype: Kanal"]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -505,8 +522,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 Merknad FKB:
 Ytterkant topp kumkonstruksjon der denne er synlig. 
  
-[caption="Figur 21: ",title=Illustrasjon av objekttype Kum]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg]
+.Illustrasjon av objekttype Kum
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg,"Illustrasjon av objekttype: Kum"]
 ===== Restriksjoner
 [cols="20,80"]
 |===
@@ -534,8 +551,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Kumlokk
 *Definisjon:* et deksel over en kum eller annet hulrom under bakkeniv&#229;
  
-[caption="Figur 22: ",title=Illustrasjon av objekttype Kumlokk]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg]
+.Illustrasjon av objekttype Kumlokk
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg,"Illustrasjon av objekttype: Kumlokk"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -630,8 +647,8 @@ SOSI_navn: FASE +
 ==== «FeatureType» Lysarmatur
 *Definisjon:* selve det elektriske punktet som gir lys
  
-[caption="Figur 23: ",title=Illustrasjon av objekttype Lysarmatur]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg]
+.Illustrasjon av objekttype Lysarmatur
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg,"Illustrasjon av objekttype: Lysarmatur"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -689,8 +706,8 @@ SOSI_navn: BELYSNINGSPLASSERING +
 Merknad FKB:
 En mast kan best&#229; av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).
  
-[caption="Figur 24: ",title=Illustrasjon av objekttype Mast]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg]
+.Illustrasjon av objekttype Mast
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg,"Illustrasjon av objekttype: Mast"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -748,8 +765,8 @@ SOSI_navn: BELYSNING +
 |Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon + 
-SOSI_datatype: H + 
-SOSI_lengde: 2 + 
+SOSI_datatype: T + 
+SOSI_lengde: 20 + 
 SOSI_navn: MASTEKONSTRUKSJON + 
 |===
 [cols="20,80"]
@@ -853,7 +870,7 @@ SOSI_navn: VERTIKALAVSTAND +
 |*hvis Mast har driftsmerking og har tilhørende Masteomriss, skal driftsmerking på Mast og Masteomriss være like*
  
 |Beskrivelse: 
-|
+|inv: ((self.driftsmerking -&gt; size() = 1) and (self.omriss -&gt; size() &gt; 0)) implies (self.omriss-&gt;forAll(m:Masteomriss|m.driftsmerking = self.driftsmerking))
  
 |===
 [cols="20,80"]
@@ -908,6 +925,8 @@ SOSI_navn: VERTIKALAVSTAND +
 |Profilparametre i tagged values: 
 |
 defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon + 
+SOSI_datatype: T + 
+SOSI_lengde: 20 + 
 SOSI_navn: MASTEKONSTRUKSJON + 
 |===
 ===== Arv og realiseringer
@@ -927,8 +946,8 @@ SOSI_navn: MASTEKONSTRUKSJON +
 ==== «FeatureType» Nettverkstasjon
 *Definisjon:* et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.
  
-[caption="Figur 25: ",title=Illustrasjon av objekttype Nettverkstasjon]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg]
+.Illustrasjon av objekttype Nettverkstasjon
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg,"Illustrasjon av objekttype: Nettverkstasjon"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -975,7 +994,7 @@ SOSI_navn: STASJONSPLASSERING +
 |*hvis Nettverkstasjon har driftsmerking og har tilhørende Nettverkstasjonomriss, skal driftsmerking på Nettverkstasjon og Nettverkstasjonomriss være like*
  
 |Beskrivelse: 
-|
+|inv: ((self.driftsmerking -&gt; size() = 1) and (self.omriss -&gt; size() = 1)) implies (self.driftsmerking = self.omriss.driftsmerking)
  
 |===
 ===== Arv og realiseringer
@@ -1015,8 +1034,8 @@ SOSI_navn: STASJONSPLASSERING +
 Merknad:
 Kan ogs&#229; v&#230;re p&#229; st&#248;rrelse med kiosk.
  
-[caption="Figur 26: ",title=Illustrasjon av objekttype Skap]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg]
+.Illustrasjon av objekttype Skap
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg,"Illustrasjon av objekttype: Skap"]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -1034,8 +1053,8 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 ==== «FeatureType» Trase
 *Definisjon:* den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)
  
-[caption="Figur 27: ",title=Illustrasjon av objekttype Trase]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg]
+.Illustrasjon av objekttype Trase
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg,"Illustrasjon av objekttype: Trase"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1093,8 +1112,8 @@ SOSI_navn: TRASENAVN +
 |PUNKT;
  
 |===
-[caption="Figur 28: ",title=Illustrasjon av objekttype Vindturbin]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg]
+.Illustrasjon av objekttype Vindturbin
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg,"Illustrasjon av objekttype: Vindturbin"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1114,7 +1133,7 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: 3.2 + 
+SOSI_lengde: 3.3 + 
 SOSI_navn: ROTORBLADLENGDE + 
 |===
 [cols="20,80"]
@@ -1135,7 +1154,7 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: 3.2 + 
+SOSI_lengde: D3.3 + 
 SOSI_navn: NAVHØYDE + 
 |===
 ===== Roller
@@ -1163,7 +1182,7 @@ SOSI_navn: NAVHØYDE +
 |*hvis Vindturbin har driftsmerking og har tilhørende Vindturbinomriss, skal driftsmerking på Vindturbin og Vindturbinomriss være like*
  
 |Beskrivelse: 
-|
+|inv: ((self.driftsmerking -&gt; size() = 1) and (self.omriss -&gt; size() = 1)) implies (self.driftsmerking = self.omriss.driftsmerking)
  
 |===
 ===== Arv og realiseringer
@@ -1198,13 +1217,13 @@ SOSI_navn: NAVHØYDE +
  
 [[åk]]
 ==== «FeatureType» Åk
-*Definisjon:* en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av en veg eller bane
+*Definisjon:* en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av bane
 
 Merknad FKB:
 "Beina" er egne objekter (objekttype Mast), og ikke del av objektet av objekttypen &#197;k.
  
-[caption="Figur 29: ",title=Illustrasjon av objekttype Åk]
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg[http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg]
+.Illustrasjon av objekttype Åk
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg,"Illustrasjon av objekttype: Åk"]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -1219,8 +1238,9 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 |===
 === Pakke: Datatyper
 *Definisjon:* Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
-[caption="Figur 30: ",title=Fagspesifikke datatyper FKB-Ledning]
-image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[Fagspesifikke datatyper FKB-Ledning]
+ 
+.Fagspesifikke datatyper FKB-Ledning 
+image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[link=diagrammer/Fagspesifikke datatyper FKB-Ledning.png,"Diagramm: Fagspesifikke datatyper FKB-Ledning"]
  
 |===
 |===
@@ -1289,10 +1309,12 @@ SOSI_navn: VERTIKALHØYDE +
 *Definisjon:* Alle Kodelister som ikke er en del av de generelle FKB elementene, men som inng&#229;r i denne spesifikke FKB-datamodellen.
 
 Kodelistene forvaltes eksternt p&#229; Geonorge. Kodelistene er tilgjenglig p&#229; https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
-[caption="Figur 31: ",title=Fagspesifikke kodelister FKB-Ledning]
-image::diagrammer/Fagspesifikke kodelister FKB-Ledning.png[Fagspesifikke kodelister FKB-Ledning]
-[caption="Figur 32: ",title=Realiseringer kodelister]
-image::diagrammer/Realiseringer kodelister.png[Realiseringer kodelister]
+ 
+.Fagspesifikke kodelister FKB-Ledning 
+image::diagrammer/Fagspesifikke kodelister FKB-Ledning.png[link=diagrammer/Fagspesifikke kodelister FKB-Ledning.png,"Diagramm: Fagspesifikke kodelister FKB-Ledning"]
+ 
+.Realiseringer kodelister 
+image::diagrammer/Realiseringer kodelister.png[link=diagrammer/Realiseringer kodelister.png,"Diagramm: Realiseringer kodelister"]
  
 |===
 |===
@@ -1403,10 +1425,10 @@ Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstype
 |https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon
  
 |SOSI_datatype
-|H
+|T
  
 |SOSI_lengde
-|2
+|20
  
 |SOSI_navn
 |MASTEKONSTRUKSJON
@@ -1478,15 +1500,15 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |===
 === Pakke: Generelle elementer
 *Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-
-Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 33: ",title=Oversiktsdiagram Fellesegenskaper]
-image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
-[caption="Figur 34: ",title=Realisering fra SOSI generell del]
-image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
-[caption="Figur 35: ",title=Hoveddiagram Posisjonskvalitet]
-image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
+ 
+.Oversiktsdiagram Fellesegenskaper 
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png,"Diagramm: Oversiktsdiagram Fellesegenskaper"]
+ 
+.Realisering fra SOSI generell del 
+image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png,"Diagramm: Realisering fra SOSI generell del"]
+ 
+.Hoveddiagram Posisjonskvalitet 
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png,"Diagramm: Hoveddiagram Posisjonskvalitet"]
  
 |===
 |===
@@ -2032,7 +2054,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
  
 [[registreringsversjon]]
 ==== «CodeList» Registreringsversjon
-*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* produktspesifikasjon som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert eller som stammer fra NRL
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
