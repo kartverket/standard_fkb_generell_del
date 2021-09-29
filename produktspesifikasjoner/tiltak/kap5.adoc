@@ -44,14 +44,18 @@
 |FKB-Tiltak50.xsc
  
 |===
-[caption="Figur 1: ",title=Oversiktsdiagram]
-image::diagrammer/Oversiktsdiagram.png[Oversiktsdiagram]
-[caption="Figur 2: ",title=Pakkerealisering]
-image::diagrammer/Pakkerealisering.png[Pakkerealisering]
-[caption="Figur 3: ",title=Realisering fra Plan 4.5]
-image::diagrammer/Realisering fra Plan 4.5.png[Realisering fra Plan 4.5]
-[caption="Figur 4: ",title=Hoveddiagram - objekttyper og kodelister]
-image::diagrammer/Hoveddiagram - objekttyper og kodelister.png[Hoveddiagram - objekttyper og kodelister]
+ 
+.Oversiktsdiagram 
+image::diagrammer/Oversiktsdiagram.png[link=diagrammer/Oversiktsdiagram.png,"Diagramm: Oversiktsdiagram"]
+ 
+.Pakkerealisering 
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png,"Diagramm: Pakkerealisering"]
+ 
+.Realisering fra Plan 4.5 
+image::diagrammer/Realisering fra Plan 4.5.png[link=diagrammer/Realisering fra Plan 4.5.png,"Diagramm: Realisering fra Plan 4.5"]
+ 
+.Hoveddiagram - objekttyper og kodelister 
+image::diagrammer/Hoveddiagram - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram - objekttyper og kodelister.png,"Diagramm: Hoveddiagram - objekttyper og kodelister"]
  
 |===
 |===
@@ -63,10 +67,6 @@ image::diagrammer/Hoveddiagram - objekttyper og kodelister.png[Hoveddiagram - ob
 Tiltak registreres generelt s&#229; tidlig som mulig i tiltaksbasen, gjerne allerede fra mottak av s&#248;knad. 
 
 N&#229;r tiltaket er ferdig utbygd skal dette medf&#248;re oppdatering av grunnkartet (&#248;vrige FKB-datasett). Tiltak som er registrert i grunnkartet merkes med kartregistrering "Innm&#229;lt i kartet" (KARTREG 2) i FKB-Tiltak. 
- 
-*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
- 
-*Realisering av:* «ApplicationSchema» Plan 4.5/EnkeltSaker::«featureType» PblTiltak
  
 ===== Egenskaper
 [cols="20,80"]
@@ -193,12 +193,28 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: EKSTERNPEKER + 
 |===
+===== Restriksjoner
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«featureType» AndreTiltak +
-«featureType» SamferdselTiltak +
-«featureType» BygningTiltak
+|*Navn:* 
+|*Dersom det finns posisjon-geometri skal den ligge innenfor område-geometrien*
+ 
+|Beskrivelse: 
+|--ingen OCL, restriksjonen implementeres manuelt
+ 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Subtyper:
+|<<andretiltak,«featureType» AndreTiltak>> +
+<<samferdseltiltak,«featureType» SamferdselTiltak>> +
+<<bygningtiltak,«featureType» BygningTiltak>> +
+|Realisering av: 
+|«ApplicationSchema» Plan 4.5/EnkeltSaker::«featureType» PblTiltak +
 |===
  
 |===
@@ -214,13 +230,11 @@ Omr&#229;de-geometrien til tiltaket angir omr&#229;det i grunnriss som bygningen
 
 Dersom man &#248;nsker &#229; gi informasjon om bygningens planlagte h&#248;yde kan dette gj&#248;res ved &#229;:
 
-1. Angi h&#248;ydeverdier p&#229; omr&#229;degeometrien og sette h&#248;ydereferanse topp 
+1. Angi h&#248;ydeverdier p&#229; omr&#229;degeometrien og sette h&#248;ydereferanse topp. Geometrien m&#229; inneholde m&#248;neh&#248;yde (h&#248;yeste niv&#229; p&#229; bygget). 
 
 2. Angi en verdi for maks h&#248;yde over gjennomsnittlig terrengh&#248;yde 
 
 3. Registrere objekter av typen BygningKnekklinje som beskriver planlagt form p&#229; bygget i 2.5D i mer detalj. 
- 
-*Supertype:* <<tiltakgenerell,«FeatureType» TiltakGenerell>>
  
 ===== Egenskaper
 [cols="20,80"]
@@ -318,6 +332,13 @@ SOSI_navn: HREF +
 |Til klasse
 |<<bygningknekklinje,«featureType» BygningKnekklinje>>
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<tiltakgenerell,«FeatureType» TiltakGenerell>>
+ 
+|===
  
 |===
 |===
@@ -327,8 +348,6 @@ SOSI_navn: HREF +
 *Definisjon:* Tiltak som gjelder utbygging av infrastruktur for samferdsel. 
 
 Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.
- 
-*Supertype:* <<tiltakgenerell,«FeatureType» TiltakGenerell>>
  
 ===== Egenskaper
 [cols="20,80"]
@@ -351,6 +370,13 @@ SOSI_datatype: T +
 SOSI_lengde: 25 + 
 SOSI_navn: TILTAKSANSVARLIG + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<tiltakgenerell,«FeatureType» TiltakGenerell>>
+ 
+|===
  
 |===
 |===
@@ -360,8 +386,6 @@ SOSI_navn: TILTAKSANSVARLIG +
 *Definisjon:* andre typer tiltak enn tiltak for bygninger og samferdselsutbygging.
 
 Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.
- 
-*Supertype:* <<tiltakgenerell,«FeatureType» TiltakGenerell>>
  
 ===== Egenskaper
 [cols="20,80"]
@@ -404,6 +428,13 @@ SOSI_datatype: T +
 SOSI_lengde: 25 + 
 SOSI_navn: TILTAKTYPEANDRE + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<tiltakgenerell,«FeatureType» TiltakGenerell>>
+ 
+|===
  
 |===
 |===
@@ -411,8 +442,6 @@ SOSI_navn: TILTAKTYPEANDRE +
 [[bygningknekklinje]]
 ==== «featureType» BygningKnekklinje
 *Definisjon:* Geometri som beskriver takformen til bygningen i 2.5D. Som minimum b&#248;r toppen av byggets avgrensninger registreres og gjerne ogs&#229; knekklinjer som beskriver takformen inne p&#229; taket (m&#248;nelinjer, taksprang osv.)
- 
-*Supertype:* <<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 ===== Egenskaper
 [cols="20,80"]
@@ -468,6 +497,13 @@ defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/kn
 SOSI_datatype: T + 
 SOSI_lengde: 25 + 
 SOSI_navn: KNEKKLINJETYPE + 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
 |===
  
 |===
@@ -622,12 +658,15 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
-[caption="Figur 5: ",title=Oversiktsdiagram Fellesegenskaper]
-image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[Oversiktsdiagram Fellesegenskaper]
-[caption="Figur 6: ",title=Realisering fra SOSI generell del]
-image::diagrammer/Realisering fra SOSI generell del.png[Realisering fra SOSI generell del]
-[caption="Figur 7: ",title=Hoveddiagram Posisjonskvalitet]
-image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvalitet]
+ 
+.Oversiktsdiagram Fellesegenskaper 
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png,"Diagramm: Oversiktsdiagram Fellesegenskaper"]
+ 
+.Realisering fra SOSI generell del 
+image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png,"Diagramm: Realisering fra SOSI generell del"]
+ 
+.Hoveddiagram Posisjonskvalitet 
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png,"Diagramm: Hoveddiagram Posisjonskvalitet"]
  
 |===
 |===
@@ -637,10 +676,6 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[Hoveddiagram Posisjonskvali
 *Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
-*Realisering av:* «ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt
  
 ===== Egenskaper
 [cols="20,80"]
@@ -766,9 +801,6 @@ SOSI_navn: INFORMASJON +
 |Multiplisitet: 
 |[1..1]
  
-|Initialverdi: 
-|T
- 
 |Type: 
 |<<medium,«CodeList» Medium>>
 |Profilparametre i tagged values: 
@@ -778,11 +810,16 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
+===== Arv og realiseringer
 [cols="20,80"]
 |===
-|*Subtyper:*
-|«FeatureType» TiltakGenerell +
-«featureType» BygningKnekklinje
+|Subtyper:
+|<<tiltakgenerell,«FeatureType» TiltakGenerell>> +
+<<bygningknekklinje,«featureType» BygningKnekklinje>> +
+|Realisering av: 
+|«ApplicationSchema» FKB Generell del-5.0Utkast/Generelle elementer::«FeatureType» Fellesegenskaper +
+«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
+ 
 |===
  
 |===
@@ -795,8 +832,6 @@ SOSI_navn: MEDIUM +
 Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
 Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -869,6 +904,12 @@ SOSI_datatype: T +
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Identifikasjon +
+|===
  
 |===
 |===
@@ -879,8 +920,6 @@ SOSI_navn: VERSJONID +
 
 Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
- 
-*Realisering av:* «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1016,8 +1055,14 @@ SOSI_navn: H-NØYAKTIGHET +
 |*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
  
 |Beskrivelse: 
-|
+|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
  
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Posisjonskvalitet +
 |===
  
 |===
