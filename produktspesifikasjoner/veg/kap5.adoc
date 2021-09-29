@@ -23,7 +23,7 @@
 |FKB Veg
  
 |SOSI_modellstatus
-|utkastOgSkjult
+|utkast
  
 |SOSI_spesifikasjonstype
 |produktspesifikasjon
@@ -41,25 +41,32 @@
 |app
  
 |===
-[caption="Figur 1: ",title=Pakkerealisering]
-image::diagrammer/Pakkerealisering.png[Pakkerealisering]
-[caption="Figur 2: ",title=Oversiktsdiagram FKB-Veg 5.0]
-image::diagrammer/Oversiktsdiagram FKB-Veg 5.0.png[Oversiktsdiagram FKB-Veg 5.0]
-[caption="Figur 3: ",title=Realisering av objekttyper]
-image::diagrammer/Realisering av objekttyper.png[Realisering av objekttyper]
+ 
+.Pakkerealisering 
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png,"Diagramm: Pakkerealisering"]
+ 
+.Oversiktsdiagram FKB-Veg 5.0 
+image::diagrammer/Oversiktsdiagram FKB-Veg 5.0.png[link=diagrammer/Oversiktsdiagram FKB-Veg 5.0.png,"Diagramm: Oversiktsdiagram FKB-Veg 5.0"]
+ 
+.Realisering av objekttyper 
+image::diagrammer/Realisering av objekttyper.png[link=diagrammer/Realisering av objekttyper.png,"Diagramm: Realisering av objekttyper"]
 <<<
 |===
 |===
 === Pakke: Generelle elementer
 *Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-[caption="Figur 4: ",title=Hoveddiagram Fellesegenskaper]
-image::diagrammer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 5: ",title=Arv av fellesegenskaper]
-image::diagrammer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
-[caption="Figur 6: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 7: ",title=Posisjonskvalitet]
-image::diagrammer/Posisjonskvalitet.png[Posisjonskvalitet]
+ 
+.Hoveddiagram Fellesegenskaper 
+image::diagrammer/Hoveddiagram Fellesegenskaper.png[link=diagrammer/Hoveddiagram Fellesegenskaper.png,"Diagramm: Hoveddiagram Fellesegenskaper"]
+ 
+.Arv av fellesegenskaper 
+image::diagrammer/Arv av fellesegenskaper.png[link=diagrammer/Arv av fellesegenskaper.png,"Diagramm: Arv av fellesegenskaper"]
+ 
+.Realisering av fellesegenskaper fra SOSI generell del 
+image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[link=diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png,"Diagramm: Realisering av fellesegenskaper fra SOSI generell del"]
+ 
+.Posisjonskvalitet 
+image::diagrammer/Posisjonskvalitet.png[link=diagrammer/Posisjonskvalitet.png,"Diagramm: Posisjonskvalitet"]
  
 |===
 |===
@@ -81,7 +88,9 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 
 Merknad FKB:
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
@@ -96,35 +105,21 @@ SOSI_navn: IDENT +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<medium,«CodeList» Medium>>
-|Profilparametre i tagged values: 
-|
-SOSI_navn: MEDIUM + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
 |*oppdateringsdato*
  
 |Definisjon: 
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
+
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
 iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
@@ -191,6 +186,9 @@ SOSI_navn: VERIFISERINGSDATO +
 |<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -218,6 +216,25 @@ SOSI_navn: INFORMASJON +
 [cols="20,80"]
 |===
 |*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<medium,«CodeList» Medium>>
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 1 + 
+SOSI_navn: MEDIUM + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
 |*eksternPeker*
  
 |Definisjon: 
@@ -230,16 +247,18 @@ SOSI_navn: INFORMASJON +
 |http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
 SOSI_navn: EKSTERNPEKER + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Subtyper:
-|<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>> +
-<<vegkjørende,«FeatureType» VegKjørende>> +
-<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|<<vegkjørende,«FeatureType» VegKjørende>> +
 <<veggåendeogsyklende,«FeatureType» VegGåendeOgSyklende>> +
+<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>> +
 <<nvdbobjekter,«FeatureType» NVDBobjekter>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
@@ -250,7 +269,7 @@ SOSI_navn: EKSTERNPEKER +
  
 [[kvalitetpåkrevd]]
 ==== «FeatureType» KvalitetPåkrevd (abstrakt)
-*Definisjon:* abstrakt objekttype som b&#230;rer datatype Posisjonskvalitet for bruk p&#229; objekttyper der det er p&#229;krevd.
+*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -259,7 +278,7 @@ SOSI_navn: EKSTERNPEKER +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
+|beskrivelse av kvaliteten p&#229; stedfestingen
 
 Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
@@ -293,7 +312,7 @@ SOSI_navn: KVALITET +
  
 [[kvalitetopsjonell]]
 ==== «FeatureType» KvalitetOpsjonell (abstrakt)
-*Definisjon:* abstrakt objekttype som b&#230;rer datatype Posisjonskvalitet for bruk p&#229; objekttyper der det er opsjonelt.
+*Definisjon:* abstrakt objekttype med valgfri kvalitetsangivelse
  
 ===== Egenskaper
 [cols="20,80"]
@@ -350,6 +369,8 @@ SOSI_navn: KVALITET +
 |http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
 SOSI_navn: NVDBPEKER + 
 |===
 ===== Arv og realiseringer
@@ -386,6 +407,8 @@ SOSI_navn: NVDBPEKER +
 |http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
 SOSI_navn: NVDBPEKER + 
 |===
 ===== Arv og realiseringer
@@ -530,6 +553,8 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -540,10 +565,15 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
  
 |Multiplisitet: 
 |[0..1]
@@ -552,6 +582,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -570,6 +601,8 @@ SOSI_navn: NØYAKTIGHET +
 |<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -591,6 +624,8 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -601,10 +636,16 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
+
  
 |Multiplisitet: 
 |[0..1]
@@ -613,6 +654,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
@@ -647,7 +689,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
 |SOSI_datatype
 |H
@@ -659,7 +701,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
  
 |===
@@ -678,7 +720,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -690,7 +732,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
  
 |===
@@ -707,7 +749,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -719,7 +761,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |REGISTRERINGSVERSJON
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
  
 |===
@@ -736,7 +778,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
 |SOSI_datatype
 |T
@@ -748,7 +790,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |HREF
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/hoydereferanse
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
  
  
 |===
@@ -768,7 +810,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 |SOSI_datatype
 |T
@@ -780,15 +822,16 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 <<<
 |===
 |===
 === Pakke: Flateobjekter
 *Definisjon:* Pakke som inneholder de fire flateobjektene benyttet i FKB-Veg 5.0
-[caption="Figur 8: ",title=Hoveddiagram - Flateobjekter]
-image::diagrammer/Hoveddiagram - Flateobjekter.png[Hoveddiagram - Flateobjekter]
+ 
+.Hoveddiagram - Flateobjekter 
+image::diagrammer/Hoveddiagram - Flateobjekter.png[link=diagrammer/Hoveddiagram - Flateobjekter.png,"Diagramm: Hoveddiagram - Flateobjekter"]
  
 |===
 |===
@@ -804,8 +847,8 @@ image::diagrammer/Hoveddiagram - Flateobjekter.png[Hoveddiagram - Flateobjekter]
 |PUNKT;FLATE;
  
 |===
-[caption="Figur 9: ",title=Illustrasjon av objekttype Parkeringsområde]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png]
+.Illustrasjon av objekttype Parkeringsområde
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_parkeringsomr%c3%a5de.png,"Illustrasjon av objekttype: Parkeringsområde"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -927,8 +970,8 @@ SOSI_navn: Punkt +
 |PUNKT;FLATE;
  
 |===
-[caption="Figur 10: ",title=Illustrasjon av objekttype Trafikkøy]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png]
+.Illustrasjon av objekttype Trafikkøy
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png,"Illustrasjon av objekttype: Trafikkøy"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1030,8 +1073,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |PUNKT;FLATE;
  
 |===
-[caption="Figur 11: ",title=Illustrasjon av objekttype VegGåendeOgSyklende]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png]
+.Illustrasjon av objekttype VegGåendeOgSyklende
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_veggaendeogsyklende.png,"Illustrasjon av objekttype: VegGåendeOgSyklende"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1110,7 +1153,7 @@ Merknad:
 egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<boolean,Boolean>>
@@ -1203,8 +1246,8 @@ SOSI_navn: VEGOVERVEG +
 |PUNKT;FLATE;
  
 |===
-[caption="Figur 12: ",title=Illustrasjon av objekttype VegKjørende]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png]
+.Illustrasjon av objekttype VegKjørende
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png,"Illustrasjon av objekttype: VegKjørende"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1283,7 +1326,7 @@ Merknad:
 egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<boolean,Boolean>>
@@ -1366,16 +1409,21 @@ SOSI_navn: VEGOVERVEG +
 |===
 === Pakke: Flateavgrensninger
 *Definisjon:* Pakke som inneholder de fire kurveobjektene som brukes til flateavgrensning i FKB-Veg 5.0
-[caption="Figur 13: ",title=Hoveddiagram - Flateavgrensninger]
-image::diagrammer/Hoveddiagram - Flateavgrensninger.png[Hoveddiagram - Flateavgrensninger]
-[caption="Figur 14: ",title=Parkeringsområde flateavgrensning]
-image::diagrammer/Parkeringsområde flateavgrensning.png[Parkeringsområde flateavgrensning]
-[caption="Figur 15: ",title=Trafikkøy flateavgrensning]
-image::diagrammer/Trafikkøy flateavgrensning.png[Trafikkøy flateavgrensning]
-[caption="Figur 16: ",title=VegGåendeOgSyklende flateavgrensning]
-image::diagrammer/VegGåendeOgSyklende flateavgrensning.png[VegGåendeOgSyklende flateavgrensning]
-[caption="Figur 17: ",title=VegKjørende flateavgrensning]
-image::diagrammer/VegKjørende flateavgrensning.png[VegKjørende flateavgrensning]
+ 
+.Hoveddiagram - Flateavgrensninger 
+image::diagrammer/Hoveddiagram - Flateavgrensninger.png[link=diagrammer/Hoveddiagram - Flateavgrensninger.png,"Diagramm: Hoveddiagram - Flateavgrensninger"]
+ 
+.Parkeringsområde flateavgrensning 
+image::diagrammer/Parkeringsområde flateavgrensning.png[link=diagrammer/Parkeringsområde flateavgrensning.png,"Diagramm: Parkeringsområde flateavgrensning"]
+ 
+.Trafikkøy flateavgrensning 
+image::diagrammer/Trafikkøy flateavgrensning.png[link=diagrammer/Trafikkøy flateavgrensning.png,"Diagramm: Trafikkøy flateavgrensning"]
+ 
+.VegGåendeOgSyklende flateavgrensning 
+image::diagrammer/VegGåendeOgSyklende flateavgrensning.png[link=diagrammer/VegGåendeOgSyklende flateavgrensning.png,"Diagramm: VegGåendeOgSyklende flateavgrensning"]
+ 
+.VegKjørende flateavgrensning 
+image::diagrammer/VegKjørende flateavgrensning.png[link=diagrammer/VegKjørende flateavgrensning.png,"Diagramm: VegKjørende flateavgrensning"]
  
 |===
 |===
@@ -1391,8 +1439,8 @@ image::diagrammer/VegKjørende flateavgrensning.png[VegKjørende flateavgrensnin
 |KURVE;
  
 |===
-[caption="Figur 18: ",title=Illustrasjon av objekttype VegAnnenAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegannenavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegannenavgrensning.png]
+.Illustrasjon av objekttype VegAnnenAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegannenavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegannenavgrensning.png,"Illustrasjon av objekttype: VegAnnenAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1430,8 +1478,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |KURVE;
  
 |===
-[caption="Figur 19: ",title=Illustrasjon av objekttype Vegdekkekant]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegdekkekant.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegdekkekant.png]
+.Illustrasjon av objekttype Vegdekkekant
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegdekkekant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegdekkekant.png,"Illustrasjon av objekttype: Vegdekkekant"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1460,7 +1508,7 @@ SOSI_navn: Kurve +
 Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<boolean,Boolean>>
@@ -1512,8 +1560,8 @@ SOSI_navn: HREF +
 |KURVE;
  
 |===
-[caption="Figur 20: ",title=Illustrasjon av objekttype VegFiktivGrense]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegfiktivgrense.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegfiktivgrense.png]
+.Illustrasjon av objekttype VegFiktivGrense
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegfiktivgrense.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegfiktivgrense.png,"Illustrasjon av objekttype: VegFiktivGrense"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1543,15 +1591,16 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |===
 === Pakke: Andre objekter
 *Definisjon:* Pakke som inneholder &#248;vrige objekter som benyttes i FKB-Veg 5.0
-[caption="Figur 21: ",title=Hoveddiagram - Andre objekter]
-image::diagrammer/Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekter]
+ 
+.Hoveddiagram - Andre objekter 
+image::diagrammer/Hoveddiagram - Andre objekter.png[link=diagrammer/Hoveddiagram - Andre objekter.png,"Diagramm: Hoveddiagram - Andre objekter"]
  
 |===
 |===
  
 [[annetvegarealavgrensning]]
 ==== «FeatureType» AnnetVegarealAvgrensning
-*Definisjon:* avgrensning av private avkj&#248;rsler, ytterkant av &#229;pne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke h&#248;rer til hovedvegnettet (for eksempel sm&#229;veger mellom bebyggelse), og som ikke skal avgrense en vegflate
+*Definisjon:* Avgrensning av private avkj&#248;rsler, ytterkant av &#229;pne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke h&#248;rer til hovedvegnettet (for eksempel sm&#229;veger mellom bebyggelse), og som ikke skal avgrense en vegflate.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1560,8 +1609,8 @@ image::diagrammer/Hoveddiagram - Andre objekter.png[Hoveddiagram - Andre objekte
 |KURVE;
  
 |===
-[caption="Figur 22: ",title=Illustrasjon av objekttype AnnetVegarealAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png]
+.Illustrasjon av objekttype AnnetVegarealAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png,"Illustrasjon av objekttype: AnnetVegarealAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1592,7 +1641,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[fartsdemperavgrensning]]
 ==== «FeatureType» FartsdemperAvgrensning
-*Definisjon:* avgrensningslinje for Fartsdemper
+*Definisjon:* Avgrensning av forh&#248;yning i veger og/eller gater for &#229; begrense kj&#248;rehastigheten.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1601,8 +1650,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |KURVE;
  
 |===
-[caption="Figur 23: ",title=Illustrasjon av objekttype FartsdemperAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_fartsdemperavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_fartsdemperavgrensning.png]
+.Illustrasjon av objekttype FartsdemperAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_fartsdemperavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_fartsdemperavgrensning.png,"Illustrasjon av objekttype: FartsdemperAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1633,7 +1682,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[feristavgrensning]]
 ==== «FeatureType» FeristAvgrensning
-*Definisjon:* avgrensning av ferist
+*Definisjon:* Rist eller gitter som er innbygd i vegbanen, og som hindrer dyr i &#229; komme over.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1642,8 +1691,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |KURVE;
  
 |===
-[caption="Figur 24: ",title=Illustrasjon av objekttype FeristAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_feristavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_feristavgrensning.png]
+.Illustrasjon av objekttype FeristAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_feristavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_feristavgrensning.png,"Illustrasjon av objekttype: FeristAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1674,7 +1723,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[gangfeltavgrensning]]
 ==== «FeatureType» GangfeltAvgrensning
-*Definisjon:* avgrensning av gangfelt
+*Definisjon:* Avgrensning av gangfelt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1683,8 +1732,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |KURVE;
  
 |===
-[caption="Figur 25: ",title=Illustrasjon av objekttype GangfeltAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_gangfeltavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_gangfeltavgrensning.png]
+.Illustrasjon av objekttype GangfeltAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_gangfeltavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_gangfeltavgrensning.png,"Illustrasjon av objekttype: GangfeltAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1724,8 +1773,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |KURVE;
  
 |===
-[caption="Figur 26: ",title=Illustrasjon av objekttype Kjørebanekant]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kjorbanekant.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kjorbanekant.png]
+.Illustrasjon av objekttype Kjørebanekant
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kjorbanekant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kjorbanekant.png,"Illustrasjon av objekttype: Kjørebanekant"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1756,8 +1805,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[overkjørbartarealavgrensning]]
 ==== «FeatureType» OverkjørbartArealAvgrensning
-*Definisjon:* Den indre eller ytre avgrensningen
-av et overkj&#248;rbart areal. 
+*Definisjon:* Den indre eller ytre avgrensningen av et overkj&#248;rbart areal. 
 
 Tilleggsinformasjon:
 Opph&#248;yd areal i sm&#229; rundkj&#248;ringer og kryss, etablert for at lange og store kj&#248;ret&#248;y skal kunne passere. Arealet er gjerne belagt med belegningsstein og avgrenset av kantstein.
@@ -1769,8 +1817,8 @@ Opph&#248;yd areal i sm&#229; rundkj&#248;ringer og kryss, etablert for at lange
 |KURVE;
  
 |===
-[caption="Figur 27: ",title=Illustrasjon av objekttype OverkjørbartArealAvgrensning]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_overkjorbartarealavgrensning.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_overkjorbartarealavgrensning.png]
+.Illustrasjon av objekttype OverkjørbartArealAvgrensning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_overkjorbartarealavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_overkjorbartarealavgrensning.png,"Illustrasjon av objekttype: OverkjørbartArealAvgrensning"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1799,7 +1847,7 @@ SOSI_navn: Kurve +
 Dersom egenskapen ikke er angitt betyr dette det samme som nedsenketKantstein Nei.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<boolean,Boolean>>
@@ -1840,7 +1888,7 @@ SOSI_navn: HREF +
  
 [[skiltportal]]
 ==== «FeatureType» Skiltportal
-*Definisjon:* anordning for å henge opp skilt, teknisk utstyr etc. over kjørefeltene
+*Definisjon:* Anordning for &#229; henge opp skilt, teknisk utstyr etc. over kj&#248;refeltene.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1849,8 +1897,8 @@ SOSI_navn: HREF +
 |PUNKT;KURVE;
  
 |===
-[caption="Figur 28: ",title=Illustrasjon av objekttype Skiltportal]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_skiltportal.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_skiltportal.png]
+.Illustrasjon av objekttype Skiltportal
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_skiltportal.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_skiltportal.png,"Illustrasjon av objekttype: Skiltportal"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1895,7 +1943,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[trafikksignalpunkt]]
 ==== «FeatureType» Trafikksignalpunkt
-*Definisjon:* trafikksignal inkludert signalhoder og stolpe lokalisert i ett punkt.
+*Definisjon:* Trafikksignal inkludert signalhoder og stolpe lokalisert i ett punkt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1904,8 +1952,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |PUNKT;
  
 |===
-[caption="Figur 29: ",title=Illustrasjon av objekttype Trafikksignalpunkt]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikksignalpunkt.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikksignalpunkt.png]
+.Illustrasjon av objekttype Trafikksignalpunkt
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikksignalpunkt.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikksignalpunkt.png,"Illustrasjon av objekttype: Trafikksignalpunkt"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1930,7 +1978,7 @@ SOSI_navn: Punkt +
 |*høydereferanse*
  
 |Definisjon: 
-|koordinatregistrering utført på topp eller bunn av et objekt 
+|koordinatregistrering utf&#248;rt p&#229; topp eller bunn av et objekt 
  
 |Multiplisitet: 
 |[1..1]
@@ -1958,10 +2006,10 @@ SOSI_navn: HREF +
  
 [[vegbom]]
 ==== «FeatureType» Vegbom
-*Definisjon:* fysisk vegbom. Kan både være bommer som permanent sperrer for kjøring (vegsperringer) og bommer som kan passeres, f.eks. ved å betale avgift.
+*Definisjon:* Fysisk vegbom. Kan b&#229;de v&#230;re bommer som permanent sperrer for kj&#248;ring (vegsperringer) og bommer som kan passeres, f.eks. ved &#229; betale avgift.
  
-[caption="Figur 30: ",title=Illustrasjon av objekttype Vegbom]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegbom.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegbom.png]
+.Illustrasjon av objekttype Vegbom
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegbom.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegbom.png,"Illustrasjon av objekttype: Vegbom"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2041,7 +2089,7 @@ SOSI_navn: NVDB_TYPEVEGBOM +
  
 [[vegoppmerking]]
 ==== «FeatureType» Vegoppmerking
-*Definisjon:* langs- og tverrg&#229;ende vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for &#229; lede, varsle eller regulere trafikken, og for &#229; klargj&#248;re andre bestemmelser gitt ved trafikkskilt eller trafikkregler.
+*Definisjon:* Langs- og/eller tverrg&#229;ende vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for &#229; lede, varsle eller regulere trafikken, og for &#229; klargj&#248;re andre bestemmelser gitt ved trafikkskilt eller trafikkregler.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2050,8 +2098,8 @@ SOSI_navn: NVDB_TYPEVEGBOM +
 |KURVE;
  
 |===
-[caption="Figur 31: ",title=Illustrasjon av objekttype Vegoppmerking]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegoppmerking.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegoppmerking.png]
+.Illustrasjon av objekttype Vegoppmerking
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegoppmerking.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegoppmerking.png,"Illustrasjon av objekttype: Vegoppmerking"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2100,7 +2148,7 @@ SOSI_navn: VEGOPPMERKING_BRUKSOMRÅDE +
  
 [[vegrekkverk]]
 ==== «FeatureType» Vegrekkverk
-*Definisjon:* En anordning som skal hindre at kj&#248;ret&#248;y forlater vegen (H&#229;ndbok N101, Statens vegvesen).
+*Definisjon:* En anordning som skal hindre at kj&#248;ret&#248;y forlater vegen.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2109,8 +2157,8 @@ SOSI_navn: VEGOPPMERKING_BRUKSOMRÅDE +
 |KURVE;
  
 |===
-[caption="Figur 32: ",title=Illustrasjon av objekttype Vegrekkverk]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegrekkverk.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegrekkverk.png]
+.Illustrasjon av objekttype Vegrekkverk
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegrekkverk.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegrekkverk.png,"Illustrasjon av objekttype: Vegrekkverk"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2135,7 +2183,7 @@ SOSI_navn: Kurve +
 |*høydereferanse*
  
 |Definisjon: 
-|koordinatregistrering utført på topp eller bunn av et objekt 
+|koordinatregistrering utf&#248;rt p&#229; topp eller bunn av et objekt 
  
 |Multiplisitet: 
 |[1..1]
@@ -2189,8 +2237,8 @@ SOSI_navn: VEGREKKVERKTYPE +
 |KURVE;
  
 |===
-[caption="Figur 33: ",title=Illustrasjon av objekttype Vegskulderkant]
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegskulderkant.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegskulderkant.png]
+.Illustrasjon av objekttype Vegskulderkant
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegskulderkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegskulderkant.png,"Illustrasjon av objekttype: Vegskulderkant"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2234,7 +2282,7 @@ SOSI_navn: NEDSENKETKANTSTEIN +
 |*høydereferanse*
  
 |Definisjon: 
-|koordinatregistrering utført på topp eller bunn av et objekt 
+|koordinatregistrering utf&#248;rt p&#229; topp eller bunn av et objekt 
  
 |Multiplisitet: 
 |[1..1]
@@ -2261,10 +2309,12 @@ SOSI_navn: HREF +
 |===
 === Pakke: Datatyper og kodelister
 *Definisjon:* Inneholder datatyper og kodelister benyttet i FKB-Veg 5.0
-[caption="Figur 34: ",title=Hoveddiagram datatyper og kodelister]
-image::diagrammer/Hoveddiagram datatyper og kodelister.png[Hoveddiagram datatyper og kodelister]
-[caption="Figur 35: ",title=Realisering av datatyper fra Vegnett 5.0]
-image::diagrammer/Realisering av datatyper fra Vegnett 5.0.png[Realisering av datatyper fra Vegnett 5.0]
+ 
+.Hoveddiagram datatyper og kodelister 
+image::diagrammer/Hoveddiagram datatyper og kodelister.png[link=diagrammer/Hoveddiagram datatyper og kodelister.png,"Diagramm: Hoveddiagram datatyper og kodelister"]
+ 
+.Realisering av datatyper fra Vegnett 5.0 
+image::diagrammer/Realisering av datatyper fra Vegnett 5.0.png[link=diagrammer/Realisering av datatyper fra Vegnett 5.0.png,"Diagramm: Realisering av datatyper fra Vegnett 5.0"]
  
 |===
 |===
