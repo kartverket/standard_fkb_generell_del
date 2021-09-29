@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fkbhk="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0" version="5.0" xmlns:="">
+  <annotation>
+    <documentation>Spesifikasjonen omfatter alle data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå som høydekurver, forsenkningskurver, toppunkt etc.
+
+Nye høydekurver genereres hovedsaklig fra en terrengmodell basert på punktskyer fra enten laserskanning eller bildematching. Høydekurvene blir da bare en visning av terrengmodellen. Best informasjon om terrenget fås ved direkte bruk av terrengmodellen. 
+
+FKB-Høydekurve versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 5.1 og SOSI del 2 Terreng versjon 4.0.</documentation>
+  </annotation>
+  <import namespace=""/>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <simpleType name="DatafangsmetodeUtvidetType">
+    <annotation>
+      <documentation>referanse til datasettype som ligger til grunn for kurvegenereringen</documentation>
+    </annotation>
+    <union memberTypes="fkbhk:DatafangsmetodeUtvidetEnumerationType fkbhk:DatafangsmetodeUtvidetOtherType"/>
+  </simpleType>
+  <simpleType name="DatafangsmetodeUtvidetEnumerationType">
+    <annotation>
+      <documentation>referanse til datasettype som ligger til grunn for kurvegenereringen</documentation>
+    </annotation>
+    <restriction base="string">
+      <enumeration value="GenererteDataFraBildematching"/>
+      <enumeration value="GenererteDataInterpolasjonTerrengmodell"/>
+    </restriction>
+  </simpleType>
+  <simpleType name="DatafangsmetodeUtvidetOtherType">
+    <restriction base="string">
+      <pattern value="other: \w{2,}"/>
+    </restriction>
+  </simpleType>
+  <element name="Forsenkningskurve" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:ForsenkningskurveType">
+    <annotation>
+      <documentation>DepressionCurve: linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.</documentation>
+    </annotation>
+  </element>
+  <complexType name="ForsenkningskurveType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høyde" type="string">
+            <annotation>
+              <documentation>height: angir forsenkningskurvens  høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ForsenkningskurvePropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Forsenkningskurve"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Forsenkningspunkt" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:ForsenkningspunktType">
+    <annotation>
+      <documentation>DepressionPoint: punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget</documentation>
+    </annotation>
+  </element>
+  <complexType name="ForsenkningspunktType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØ</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Punkt</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høyde" type="string">
+            <annotation>
+              <documentation>height: angivelse av punktets høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ForsenkningspunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Forsenkningspunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Høydekurve" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:HøydekurveType">
+    <annotation>
+      <documentation>ContourLine/HeightContour ??: linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden</documentation>
+    </annotation>
+  </element>
+  <complexType name="HøydekurveType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høyde" type="string">
+            <annotation>
+              <documentation>height: angivelse av høydekurvens høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HøydekurvePropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Høydekurve"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Opphav" substitutionGroup="gml:AbstractObject" type="fkbhk:OpphavType">
+    <annotation>
+      <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+    </annotation>
+  </element>
+  <complexType name="OpphavType">
+    <sequence>
+      <element name="sikkerTerrenggjengivelse" type="boolean">
+        <annotation>
+          <documentation>Boolsk verdi som forteller om objektet ansees som en sikker (1) eller usikker (0) representasjon av faktisk terreng.</documentation>
+        </annotation>
+      </element>
+      <element name="datakilde" type="fkbhk:DatafangsmetodeUtvidetType">
+        <annotation>
+          <documentation>referanse til datasettype som ligger til grunn for kurvegenereringen</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="OpphavPropertyType">
+    <sequence>
+      <element ref="fkbhk:Opphav"/>
+    </sequence>
+  </complexType>
+  <element name="Terrenglinje" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:TerrenglinjeType">
+    <annotation>
+      <documentation>TerrainLine: linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon</documentation>
+    </annotation>
+  </element>
+  <complexType name="TerrenglinjeType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TerrenglinjePropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Terrenglinje"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Terrengpunkt" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:TerrengpunktType">
+    <annotation>
+      <documentation>TerrainPoint: punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</documentation>
+    </annotation>
+  </element>
+  <complexType name="TerrengpunktType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØ</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Punkt</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høyde" type="string">
+            <annotation>
+              <documentation>height: angivelse av punktets høyde, og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TerrengpunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Terrengpunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Toppunkt" substitutionGroup=":KvalitetPåkrevd" type="fkbhk:ToppunktType">
+    <annotation>
+      <documentation>TopPoint: punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget</documentation>
+    </annotation>
+  </element>
+  <complexType name="ToppunktType">
+    <complexContent>
+      <extension base=":KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØ</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Punkt</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høyde" type="string">
+            <annotation>
+              <documentation>height: angivelse av topp punktets øyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="fkbhk:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ToppunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="fkbhk:Toppunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>
