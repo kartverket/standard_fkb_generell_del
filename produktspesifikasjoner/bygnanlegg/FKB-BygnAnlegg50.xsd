@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/" version="5.0">
+  <annotation>
+    <documentation>Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer, gjerder, taubaner, kaier, moloer, tanker etc.</documentation>
+  </annotation>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="BeskrivendeHjelpelinjeAnlegg" substitutionGroup="app:KvalitetPåkrevd" type="app:BeskrivendeHjelpelinjeAnleggType">
+    <annotation>
+      <documentation>DescriptiveConstructionLineFacility: karakteristiske linjer på bygningsmessige- og tekniske anlegg
+
+Merknad:
+Kan også benyttes til å registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB, men som det er naturlig å registrere i et detaljert grunnkart.
+
+Eksempel: 
+Markerte linjer på en demning.
+Skilderhus</documentation>
+    </annotation>
+  </element>
+  <complexType name="BeskrivendeHjelpelinjeAnleggType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BeskrivendeHjelpelinjeAnleggPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:BeskrivendeHjelpelinjeAnlegg"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Bru" substitutionGroup="app:NVDBobjekter" type="app:BruType">
+    <annotation>
+      <documentation>Bridge: konstruksjon for kryssing av vanskelig farbart område
+Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlige hindringer, samt kryssende infrastruktur.</documentation>
+    </annotation>
+  </element>
+  <complexType name="BruType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="bruOverBru" type="boolean">
+            <annotation>
+              <documentation>bridgeOverBridge: angivelse av om brue ligger over en eller flere andre bruer</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BRUOVERBRU</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="brutrafikktype" type="gml:CodeType">
+            <annotation>
+              <documentation>bridgeTrafficType: type trafikk bruen brukes til</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/brutrafikktype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BRUTRAFIKKTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="friseilingshøyde" type="double">
+            <annotation>
+              <documentation>friseilingshøyde angitt i meter. Angis kun for bruer over vann der friseilingshøyde er relevant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">FRISEILINGSHØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="tilhørendeDetalj" type="app:BrudetaljPropertyType">
+            <annotation>
+              <documentation>viser hvilke brudetaljer som tilhører brua</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BruPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Bru"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Brudetalj" substitutionGroup="app:KvalitetPåkrevd" type="app:BrudetaljType">
+    <annotation>
+      <documentation>BridgeDetail: markante detaljer på bru som ikke registreres gjennom andre objekttyper
+Eksempler:
+-          Brutårn for hengebruer.
+-          Bæreelement for brukonstruksjon.</documentation>
+    </annotation>
+  </element>
+  <complexType name="BrudetaljType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BrudetaljPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Brudetalj"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Brygge" substitutionGroup="app:KvalitetPåkrevd" type="app:BryggeType">
+    <annotation>
+      <documentation>Wharf: angivelse av  innretninger som er satt opp for å betjene båter ved lasting- lossing og landligge
+Merknad: Kai er utvidet til også å kunne være bare et fortøyningsanlegg- f.eks. enkeltstående metallring for fastgjøring av skip.</documentation>
+    </annotation>
+  </element>
+  <complexType name="BryggeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BryggePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Brygge"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Brønn" substitutionGroup="app:KvalitetPåkrevd" type="app:BrønnType">
+    <annotation>
+      <documentation>Well: lite bygningsmessig anlegg for uttak av ferskvann</documentation>
+    </annotation>
+  </element>
+  <complexType name="BrønnType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BrønnPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Brønn"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Demning" substitutionGroup="app:KvalitetPåkrevd" type="app:DemningType">
+    <annotation>
+      <documentation>Dam: konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen</documentation>
+    </annotation>
+  </element>
+  <complexType name="DemningType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DemningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Demning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Elveforbygning" substitutionGroup="app:KvalitetPåkrevd" type="app:ElveforbygningType">
+    <annotation>
+      <documentation>RiverEmbankment: konstruksjon i eller langs vassdrag for å sikre mot erosjon, flom eller som miljøtiltak</documentation>
+    </annotation>
+  </element>
+  <complexType name="ElveforbygningType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ElveforbygningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Elveforbygning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Elveterskel" substitutionGroup="app:KvalitetPåkrevd" type="app:ElveterskelType">
+    <annotation>
+      <documentation>RiverThreshold: kunstig oppbygning i elver som brukes for å lage vannspeil i elveløpet</documentation>
+    </annotation>
+  </element>
+  <complexType name="ElveterskelType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ElveterskelPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Elveterskel"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
+    <annotation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+
+Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identifikasjon" type="app:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="oppdateringsdato" type="dateTime">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
+
+iv. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="datafangstdato" type="date">
+            <annotation>
+              <documentation>dato når objektet siste gang ble registrert/observert/målt i terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="verifiseringsdato" type="date">
+            <annotation>
+              <documentation>dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERIFISERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="registreringsversjon" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REGISTRERINGSVERSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="informasjon" type="string">
+            <annotation>
+              <documentation>generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">INFORMASJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fellesegenskaper"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FiktivAvgrensningForAnlegg" substitutionGroup="app:Fellesegenskaper" type="app:FiktivAvgrensningForAnleggType">
+    <annotation>
+      <documentation>FictiousDelimitationForFacility: fiktiv avgrensningslinje for anlegg
+Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anlegg og det mangler en eller flere avgrensingslinjer.</documentation>
+    </annotation>
+  </element>
+  <complexType name="FiktivAvgrensningForAnleggType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FiktivAvgrensningForAnleggPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:FiktivAvgrensningForAnlegg"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Fiskehjell" substitutionGroup="app:KvalitetPåkrevd" type="app:FiskehjellType">
+    <annotation>
+      <documentation>DryingRackForFish: anordning bygd opp for tørking av fisk</documentation>
+    </annotation>
+  </element>
+  <complexType name="FiskehjellType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="tilhørendeMøne" type="app:FiskehjellMønePropertyType">
+            <annotation>
+              <documentation>viser hvilke fiskehjellmøne som tilhører hvilke fiskehjell</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FiskehjellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fiskehjell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FiskehjellMøne" substitutionGroup="app:KvalitetPåkrevd" type="app:FiskehjellMøneType">
+    <annotation>
+      <documentation>FishDryingRackRidgepole: toppen av rammeverket for fiskehjell</documentation>
+    </annotation>
+  </element>
+  <complexType name="FiskehjellMøneType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FiskehjellMønePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:FiskehjellMøne"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Fisketrapp" substitutionGroup="app:KvalitetPåkrevd" type="app:FisketrappType">
+    <annotation>
+      <documentation>FishLadder: innretning i elver for at fisken kan vandre oppover elven</documentation>
+    </annotation>
+  </element>
+  <complexType name="FisketrappType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FisketrappPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fisketrapp"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Flaggstang" substitutionGroup="app:KvalitetPåkrevd" type="app:FlaggstangType">
+    <annotation>
+      <documentation>FlagPole: lang rett stang for heising av flagg</documentation>
+    </annotation>
+  </element>
+  <complexType name="FlaggstangType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FlaggstangPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Flaggstang"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Flytebrygge" substitutionGroup="app:KvalitetPåkrevd" type="app:FlytebryggeType">
+    <annotation>
+      <documentation>FloatingStage: brygge som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning</documentation>
+    </annotation>
+  </element>
+  <complexType name="FlytebryggeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="tilhørendeLandgang" type="app:FlytebryggeLandgangPropertyType">
+            <annotation>
+              <documentation>viser hvilke landganger som tilhører hvilke flytebrygger</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FlytebryggePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Flytebrygge"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FlytebryggeLandgang" substitutionGroup="app:KvalitetPåkrevd" type="app:FlytebryggeLandgangType">
+    <annotation>
+      <documentation>landgang for flytebrygger</documentation>
+    </annotation>
+  </element>
+  <complexType name="FlytebryggeLandgangType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FlytebryggeLandgangPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:FlytebryggeLandgang"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Fundament" substitutionGroup="app:KvalitetPåkrevd" type="app:FundamentType">
+    <annotation>
+      <documentation>Foundation: støpt underlag for frittstående konstruksjoner 
+Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil eventuelt  være beskrevet som en node i nettverket den er en del av.
+Eksempel: Stolper og master</documentation>
+    </annotation>
+  </element>
+  <complexType name="FundamentType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FundamentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fundament"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Gjerde" substitutionGroup="app:NVDBobjekter" type="app:GjerdeType">
+    <annotation>
+      <documentation>otherFence: oppsatt stengsel som hindrer passering. Står ofte i grensa mellom eiendommer</documentation>
+    </annotation>
+  </element>
+  <complexType name="GjerdeType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="gjerdetype" type="gml:CodeType">
+            <annotation>
+              <documentation>Type gjerde</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/gjerdetype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">GJERDETYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GjerdePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Gjerde"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Hoppbakke" substitutionGroup="app:KvalitetPåkrevd" type="app:HoppbakkeType">
+    <annotation>
+      <documentation>SkiJump: anlegg for skihopping med kunstig eller naturlig tilløp</documentation>
+    </annotation>
+  </element>
+  <complexType name="HoppbakkeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HoppbakkePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Hoppbakke"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="app:IdentifikasjonType">
+    <annotation>
+      <documentation>Identification: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>localId: lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LOKALID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>namespace: navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>versionId: identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERSJONID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="app:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="Idrettsanlegg" substitutionGroup="app:KvalitetPåkrevd" type="app:IdrettsanleggType">
+    <annotation>
+      <documentation>SportsFacility: linje for avgrensning av anleggsmessige deler av et idrettsanlegg, som f.eks ytteravgrensning av en fotballbane
+Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se kap. for arealbruk).</documentation>
+    </annotation>
+  </element>
+  <complexType name="IdrettsanleggType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="IdrettsanleggPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Idrettsanlegg"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kai" substitutionGroup="app:Fellesegenskaper" type="app:KaiType">
+    <annotation>
+      <documentation>Quay: brolignende platformkonstruksjon langs land eller fra land og ut i vannet, brukt som fortøyningssted for større eller mindre fartøyer. 
+Brygger er mindre konstruksjoner en kaier og er ofte bygget i treverk. Brygger kan være bygget over vann slik at vannkonturen registeres under brygga.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KaiType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="havnedatapeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til Kai-objekt i Havnedata</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HAVNEDATAPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvKaiFront" type="app:KaiFrontPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Kai ved hjelp av fiktive geometriobjekter (mot vegareal, bygninger eller annet areal på land)</documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvFiktivAvgrensningForAnlegg" type="app:FiktivAvgrensningForAnleggPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Kai ved hjelp av KaiFront-objekter</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KaiPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kai"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="KaiFront" substitutionGroup="app:KvalitetPåkrevd" type="app:KaiFrontType">
+    <annotation>
+      <documentation>QuayWharfEdge: avgrensning av kai mot vann.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KaiFrontType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="havnedatapeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til KaiFront-objekt i Havnedata</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HAVNEDATAPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KaiFrontPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KaiFront"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kulvert" substitutionGroup="app:NVDBobjekter" type="app:KulvertType">
+    <annotation>
+      <documentation>Culvert: gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &lt; lysåpning &lt; 2,5m</documentation>
+    </annotation>
+  </element>
+  <complexType name="KulvertType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KulvertPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kulvert"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KvalitetPåkrevd" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype med påkrevet kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Molo" substitutionGroup="app:KvalitetPåkrevd" type="app:MoloType">
+    <annotation>
+      <documentation>Mole: kunstig eller naturlig oppbygning som demper eller tilintetgjør bølgebevegelser i sjøen</documentation>
+    </annotation>
+  </element>
+  <complexType name="MoloType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MoloPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Molo"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MurFrittstående" substitutionGroup="app:KvalitetPåkrevd" type="app:MurFrittståendeType">
+    <annotation>
+      <documentation>BrickWallFreeStanding: mur hvor oppfyllingen på en side utgjør mindre enn halve høyden på den andre siden</documentation>
+    </annotation>
+  </element>
+  <complexType name="MurFrittståendeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MurFrittståendePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:MurFrittstående"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="MurLoddrett" substitutionGroup="app:NVDBobjekter" type="app:MurLoddrettType">
+    <annotation>
+      <documentation>BrickWallVertical: forstøtningsmur hvor topp og bunn er ubetydelig forskjøvet i  forhold til hverandre</documentation>
+    </annotation>
+  </element>
+  <complexType name="MurLoddrettType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MurLoddrettPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:MurLoddrett"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="NRLobjekter" substitutionGroup="app:KvalitetPåkrevd" type="app:NRLobjekterType">
+    <annotation>
+      <documentation>abstrakt objekttype som arves fra for objekter som har kobling til NRL</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="NRLobjekterType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="nrlpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NRL</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NRLPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NRLobjekterPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:NRLobjekter"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="NVDBobjekter" substitutionGroup="app:KvalitetPåkrevd" type="app:NVDBobjekterType">
+    <annotation>
+      <documentation>abstrakt objekttype som arves fra for objekter som har kobling til NVDB</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="NVDBobjekterType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="nvdbpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NVDB</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NVDBPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NVDBobjekterPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:NVDBobjekter"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Oppdrettskar" substitutionGroup="app:KvalitetPåkrevd" type="app:OppdrettskarType">
+    <annotation>
+      <documentation>SmoltTank: kar i sjøen for oppdrett av fisk</documentation>
+    </annotation>
+  </element>
+  <complexType name="OppdrettskarType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OppdrettskarPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Oppdrettskar"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Parkdetalj" substitutionGroup="app:KvalitetPåkrevd" type="app:ParkdetaljType">
+    <annotation>
+      <documentation>detalj i parkmessig område
+
+Merknad:
+Omfatter detaljer som f.eks. bauter, statuer, fontener, basseng, lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParkdetaljType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="parkdetaljtype" type="gml:CodeType">
+            <annotation>
+              <documentation>angir type parkdetalj</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">PARKDETALJTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ParkdetaljPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Parkdetalj"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Pipe" substitutionGroup="app:NRLobjekter" type="app:PipeType">
+    <annotation>
+      <documentation>Chimney: frittstående rørformete innretninger for transport av avgasser</documentation>
+    </annotation>
+  </element>
+  <complexType name="PipeType">
+    <complexContent>
+      <extension base="app:NRLobjekterType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PipePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Pipe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Portstolpe" substitutionGroup="app:KvalitetPåkrevd" type="app:PortstolpeType">
+    <annotation>
+      <documentation>GatePost: stolpe som en port kan være hengslet til</documentation>
+    </annotation>
+  </element>
+  <complexType name="PortstolpeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PortstolpePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Portstolpe"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="app:PosisjonskvalitetType">
+    <annotation>
+      <documentation>beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="datafangstmetode" type="gml:CodeType">
+        <annotation>
+          <documentation>metode for datafangst. 
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="synbarhet" type="gml:CodeType">
+        <annotation>
+          <documentation>beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SYNBARHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="datafangstmetodeHøyde" type="gml:CodeType">
+        <annotation>
+          <documentation>metoden brukt for høyderegistrering av posisjon.
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODEHØYDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighetHøyde" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+Merknad:
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H-NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="app:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <element name="Pælebunt" substitutionGroup="app:KvalitetPåkrevd" type="app:PælebuntType">
+    <annotation>
+      <documentation>Dolphin: bunt av stokker som er drevet ned i sjøbunnen, vann eller elver for å lede trafikken eller tømmer</documentation>
+    </annotation>
+  </element>
+  <complexType name="PælebuntType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PælebuntPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Pælebunt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Ruin" substitutionGroup="app:KvalitetPåkrevd" type="app:RuinType">
+    <annotation>
+      <documentation>Synlig mur som er rester etter tidligere byggverk</documentation>
+    </annotation>
+  </element>
+  <complexType name="RuinType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RuinPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Ruin"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Rørgate" substitutionGroup="app:KvalitetPåkrevd" type="app:RørgateType">
+    <annotation>
+      <documentation>PipeAlley: rør som leder vann frem til foredlingsanlegg</documentation>
+    </annotation>
+  </element>
+  <complexType name="RørgateType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RørgatePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Rørgate"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Skjerm" substitutionGroup="app:NVDBobjekter" type="app:SkjermType">
+    <annotation>
+      <documentation>Shield/Screen: frittstående konstruksjon som skal være et hinder for eksempel til støyutbredelse eller snøfokk</documentation>
+    </annotation>
+  </element>
+  <complexType name="SkjermType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="skjermingsfunksjon" type="gml:CodeType">
+            <annotation>
+              <documentation>shieldingFunction: hvilken funksjon skjermen har</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/skjermingsfunksjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SKJERMINGFUNK</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="høydeOverBakken" type="double">
+            <annotation>
+              <documentation>heightAboveGround: høyde over bakken (angitt i meter)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HOB</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SkjermPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Skjerm"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="SkråForstøtningsmur" substitutionGroup="app:NVDBobjekter" type="app:SkråForstøtningsmurType">
+    <annotation>
+      <documentation>SlopingRetainingWall: forstøtningsmur hvor topp og bunn er betydelig forskjøvet i forhold til hverandre</documentation>
+    </annotation>
+  </element>
+  <complexType name="SkråForstøtningsmurType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SkråForstøtningsmurPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:SkråForstøtningsmur"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Skytebaneinnretning" substitutionGroup="app:KvalitetPåkrevd" type="app:SkytebaneinnretningType">
+    <annotation>
+      <documentation>ShootingRangeFacility: omriss av tekniske anlegg på skytebane - standplass og skiver som ikke blir registrert som f.eks bygninger og murer</documentation>
+    </annotation>
+  </element>
+  <complexType name="SkytebaneinnretningType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SkytebaneinnretningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Skytebaneinnretning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Sluse" substitutionGroup="app:KvalitetPåkrevd" type="app:SluseType">
+    <annotation>
+      <documentation>Sluice: byggverk i elv eller kanal med flere slusekamre som gjør det mulig å heve eller senke fartøy fra et vann-nivå til et annet</documentation>
+    </annotation>
+  </element>
+  <complexType name="SluseType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: geometri-egenskap - omriss</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluseType" type="gml:CodeType">
+            <annotation>
+              <documentation>sluiceType: beskrivelse av selve slusetypen</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/slusetype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUSETYP</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SlusePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Sluse"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Stikkrenne" substitutionGroup="app:NVDBobjekter" type="app:StikkrenneType">
+    <annotation>
+      <documentation>Subdrain/culvert: gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &gt; lysåpning</documentation>
+    </annotation>
+  </element>
+  <complexType name="StikkrenneType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="StikkrennePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Stikkrenne"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Svømmebasseng" substitutionGroup="app:KvalitetPåkrevd" type="app:SvømmebassengType">
+    <annotation>
+      <documentation>SwimmingPool: basseng for svømming og vannlek</documentation>
+    </annotation>
+  </element>
+  <complexType name="SvømmebassengType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SvømmebassengPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Svømmebasseng"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Søppelbeholder" substitutionGroup="app:KvalitetPåkrevd" type="app:SøppelbeholderType">
+    <annotation>
+      <documentation>Større tank eller annen type beholder for søppel</documentation>
+    </annotation>
+  </element>
+  <complexType name="SøppelbeholderType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av om registreringen er utført på topp eller bunn av et element</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system, f.eks. hos ansvarlig renovasjonsselskap.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SøppelbeholderPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Søppelbeholder"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Tank" substitutionGroup="app:NRLobjekter" type="app:TankType">
+    <annotation>
+      <documentation>Tank/vessel: lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning</documentation>
+    </annotation>
+  </element>
+  <complexType name="TankType">
+    <complexContent>
+      <extension base="app:NRLobjekterType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TankPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Tank"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Taubane" substitutionGroup="app:NRLobjekter" type="app:TaubaneType">
+    <annotation>
+      <documentation>Cableway: innretning hvor tau eller vaiere bærer og eller trekker last over en strekning</documentation>
+    </annotation>
+  </element>
+  <complexType name="TaubaneType">
+    <complexContent>
+      <extension base="app:NRLobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="taubanetype" type="gml:CodeType">
+            <annotation>
+              <documentation>hva slags type taubane</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/taubanetype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TAUBANETYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av om registreringen er utført på topp eller bunn av et element</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="tilhørendeMast" type="app:TaubanemastPropertyType">
+            <annotation>
+              <documentation>viser hvilke taubanemaster som tilhører hvilke taubaner</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaubanePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Taubane"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Taubanemast" substitutionGroup="app:NRLobjekter" type="app:TaubanemastType">
+    <annotation>
+      <documentation>mast som taubanen er hengt opp i</documentation>
+    </annotation>
+  </element>
+  <complexType name="TaubanemastType">
+    <complexContent>
+      <extension base="app:NRLobjekterType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av om registreringen av høydeverdi er utført på topp eller bunn av et element</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TaubanemastPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Taubanemast"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Trapp" substitutionGroup="app:KvalitetPåkrevd" type="app:TrappType">
+    <annotation>
+      <documentation>FreeStandingStairs: trapp som ikke står i tilknytning til en bygning</documentation>
+    </annotation>
+  </element>
+  <complexType name="TrappType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrappPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Trapp"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Tribune" substitutionGroup="app:KvalitetPåkrevd" type="app:TribuneType">
+    <annotation>
+      <documentation>Grandstand: opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer, særlig idrettsanlegg
+Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.</documentation>
+    </annotation>
+  </element>
+  <complexType name="TribuneType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TribunePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Tribune"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Tunnelportal" substitutionGroup="app:NVDBobjekter" type="app:TunnelportalType">
+    <annotation>
+      <documentation>TunnelPortal: spesielt byggverk som sammenbinder tunnel og åpen veg</documentation>
+    </annotation>
+  </element>
+  <complexType name="TunnelportalType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TunnelportalPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Tunnelportal"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Tårn" substitutionGroup="app:NRLobjekter" type="app:TårnType">
+    <annotation>
+      <documentation>Tower: høy bygningsmessig konstruksjon hvor høyden er stor i forhold til bygningens areal i grunnplanet
+Merknad: Omfatter alle tårn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse- som f.eks tank. 
+Eksempel: Måletårn og stupetårn</documentation>
+    </annotation>
+  </element>
+  <complexType name="TårnType">
+    <complexContent>
+      <extension base="app:NRLobjekterType">
+        <sequence>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>extent: objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TårnPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Tårn"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Voll" substitutionGroup="app:NVDBobjekter" type="app:VollType">
+    <annotation>
+      <documentation>Berm (Earthwork): opphøyd terrengformasjon anlagt for å skjerme</documentation>
+    </annotation>
+  </element>
+  <complexType name="VollType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="skjermingsfunksjon" type="gml:CodeType">
+            <annotation>
+              <documentation>shieldingFunction: hvilken funksjon vollen har</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/skjermingsfunksjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SKJERMINGFUNK</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="høydeOverBakken" type="double">
+            <annotation>
+              <documentation>heightAboveGround: objekts høyde over bakken</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HOB</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VollPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Voll"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>
