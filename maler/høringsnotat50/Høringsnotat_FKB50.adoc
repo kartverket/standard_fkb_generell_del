@@ -465,7 +465,19 @@ http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Tiltak/5.0/#trueendr
 
 === FKB-TraktorvegSti
 
-_Tekst om viktigste endringer og ev. problemstillinger man spesielt vil ha tilbakemelding på_
+==== Forslag om å endre navn på gjenstående trapper i datasettet til «stitrapp»
+Trapper som er del av nettverk for gående og syklende (gangveg, fortau, gangsykkelveg) flyttes til Elveg i forbindelse med revisjonen. Trappene som ligger igjen i TraktorvegSti er knyttet opp mot sti og foreslås derfor å hete «stitrapp». Arbeidsgruppa ønsker tilbakemeldinger på om det er behov for å ha objekttype «stitrapp».
+
+==== Kodeliste hentet fra NVDB
+Flere kodelister er hentet fra https://www.vegdata.no/hva-du-finner-i-nvdb/datakatalog/[NVDB datakatalogen] per september 2021. Det startes arbeid med revisjon av kodelister i NVDB Datakatalogen i forbindelse med utarbeidelse av produktspesifikasjoner for hver enkelt objekt, et arbeid som vil startes etter FKB-revisjon. Kodelister i FKB som baserer seg på NVDB objekatalogen (eksempelvis TypeVegbom og VegoppmerkingBruksområde i FKB-Veg) vil oppdateres parallelt med NVDB datakatalogen.
+
+Dette gjelder 4 kodelister i TraktorvegSti:
+
+* EierVegsperring
+* FunksjonVegsperring
+* KlasseLandbruksveg
+* TypeVegsperring
+
 
 http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-TraktorvegSti/5.0/#trueendringslogg[Endringslogg for FKB-TraktorvegSti] beskriver de viktigste endringene for datasettet.
 
@@ -549,29 +561,29 @@ Avgrensingslinjene til flatene (VegKjørende og VegGåendeOgSyklende):
 
 Arbeidsgruppen har valgt å fremme forslag med færre typer flater og avgrensingslinjer i FKB-Veg, for at det forhåpentligvis vil forenkle registrering, og også føre til mer ensartethet. 
 
-.Alternativ 1, uten typeveg
+.Illustrasjon av alternativ 1
 image::vegflate_alt1.png[]
 
-.Alternativ 1, med typeveg
+.Illustrasjon av alternativ 1, med senterlinjegeometri fra Elveg (veglenker med ulik typeveg)
 image::vegflate_alt1_typeveg.png[]
 
 ===== Alternativ 2
 Forskjellen mellom dette alternativet og alternativ 1, er at flaten VegGåendeOgSyklende avgrenses av GangSykkelvegkant i tillegg til Vegdekkekant, VegFiktivGrense og VegAnnenAvgrensning.
 
-.Alternativ 2, uten typeveg
+.Illustrasjon av alternativ 1
 image::vegflate_alt2.png[]
 
-.Alternativ 2, med typeveg
+.Illustrasjon av alternativ 2, med senterlinjegeometri fra Elveg (veglenker med ulik typeveg)
 image::vegflate_alt2_typeveg.png[]
 
 ==== Forslag om å innføre Kantstein (opsjonell)
 Arbeidsgruppa vil ha tilbakemeldinger på om det er ønskelig å ha mulighet til å registrere toppen av kantstein (oftest lik geometri i grunnriss som tidligere Fortauskant), og at denne kan inngå i flatedanning av fortauene der den er registrert. I så fall vil Kantstein være opsjonelt, den vil ikke registreres fotogrammetrisk og registreringsreferanse endres til href topp. Gruppa har diskutert hvordan fortausflaten skal representeres på riktig måte. Med dagens forslag vil fortausflaten være en skrå flate som går fra ytterkanten av fortauet og ned til vegdekkekant (tidligere fortauskant). For å få en eksakt beskrivelse av flaten (i 3D) må flaten løftes til kantstein, derfor har gruppa fremmet forslaget om å innføre dette som opsjon ved for eksempel nøyaktig innmåling med GPS eller laser. Ved fotogrammetrisk registrering vil avstanden mellom vegdekkekant og kantstein være mindre enn forventet nøyaktighet ved registrering fotogrammetrisk.
 
-.Illustrasjon av kantstein med ulik høyde
+.Illustrasjon av kantstein 
 image::kantstein1.png[]
 
 .Gule piler representerer flate på fortau med dagens foreslåtte standard (fotogrammetrisk datafangst) og blå piler representerer mulig flate på fortau hvis innmåling gjøres utenom fotogrammetri
-image::kantstein1.png[]
+image::kantstein2.png[]
 
 ==== Kodeliste hentet fra NVDB
 Flere kodelister er hentet fra https://www.vegdata.no/hva-du-finner-i-nvdb/datakatalog/[NVDB datakatalogen] per september 2021. Det startes arbeid med revisjon av kodelister i NVDB Datakatalogen i forbindelse med utarbeidelse av produktspesifikasjoner for hver enkelt objekt, et arbeid som vil startes etter FKB-revisjon. Kodelister i FKB som baserer seg på NVDB objekatalogen (eksempelvis TypeVegbom og VegoppmerkingBruksområde i FKB-Veg) vil oppdateres parallelt med NVDB datakatalogen.
@@ -583,8 +595,6 @@ Dette gjelder 4 kodelister i Veg:
 * TypeVegbom
 * VegrekkverkType
 
-
-==== Endringslogg
 
 http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Veg/5.0/#trueendringslogg[Endringslogg for FKB-Veg] beskriver de viktigste endringene for datasettet.
 
