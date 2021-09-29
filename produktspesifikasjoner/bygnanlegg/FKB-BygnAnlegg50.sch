@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
   <title>Schematron constraints for schema 'FKB-BygnAnlegg-5.0-Utkast'</title>
   <ns prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
-  <ns prefix="app" uri="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/"/>
+  <ns prefix="app" uri="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-BygnAnlegg/5.0/"/>
   <pattern>
     <rule context="app:Brønn">
       <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
