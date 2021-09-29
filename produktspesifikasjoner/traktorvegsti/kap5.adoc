@@ -23,7 +23,7 @@
 |FKB TraktorvegSti
  
 |SOSI_modellstatus
-|utkastOgSkjult
+|utkast
  
 |SOSI_spesifikasjonstype
 |produktspesifikasjon
@@ -41,14 +41,18 @@
 |app
  
 |===
-[caption="Figur 1: ",title=Pakkerealisering]
-image::diagrammer/Pakkerealisering.png[Pakkerealisering]
-[caption="Figur 2: ",title=Hoveddiagram FKB-TraktorvegSti 5.0]
-image::diagrammer/Hoveddiagram FKB-TraktorvegSti 5.0.png[Hoveddiagram FKB-TraktorvegSti 5.0]
-[caption="Figur 3: ",title=Kodelister]
-image::diagrammer/Kodelister.png[Kodelister]
-[caption="Figur 4: ",title=Realisering av objekttyper og datatyper]
-image::diagrammer/Realisering av objekttyper og datatyper.png[Realisering av objekttyper og datatyper]
+ 
+.Pakkerealisering 
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png,"Diagramm: Pakkerealisering"]
+ 
+.Hoveddiagram FKB-TraktorvegSti 5.0 
+image::diagrammer/Hoveddiagram FKB-TraktorvegSti 5.0.png[link=diagrammer/Hoveddiagram FKB-TraktorvegSti 5.0.png,"Diagramm: Hoveddiagram FKB-TraktorvegSti 5.0"]
+ 
+.Kodelister 
+image::diagrammer/Kodelister.png[link=diagrammer/Kodelister.png,"Diagramm: Kodelister"]
+ 
+.Realisering av objekttyper og datatyper 
+image::diagrammer/Realisering av objekttyper og datatyper.png[link=diagrammer/Realisering av objekttyper og datatyper.png,"Diagramm: Realisering av objekttyper og datatyper"]
  
 |===
 |===
@@ -57,8 +61,8 @@ image::diagrammer/Realisering av objekttyper og datatyper.png[Realisering av obj
 ==== «FeatureType» Veglenke
 *Definisjon:* Objekttype som representerer alle senterlinjelenker i FKB-TraktorvegSti.
  
-[caption="Figur 5: ",title=Illustrasjon av objekttype Veglenke]
-image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png[https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png]
+.Illustrasjon av objekttype Veglenke
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png,"Illustrasjon av objekttype: Veglenke"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -94,6 +98,7 @@ Dersom egenskapen ikke er angitt betyr dette det samme som konnekteringslenke Ne
 |<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: BOOLSK + 
 SOSI_navn: KONNEKTERINGSLENKE + 
 |===
 [cols="20,80"]
@@ -180,7 +185,7 @@ Dersom egenskapen ikke er angitt betyr dette det samme som belysning Nei.
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
+|<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: BOOLSK + 
@@ -215,6 +220,7 @@ SOSI_navn: BELYSNING +
 |<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: BOOLSK + 
 SOSI_navn: BARMARKSLØYPE + 
 |===
 [cols="20,80"]
@@ -267,6 +273,7 @@ Dersom egenskapen ikke er angitt betyr dette det samme som serviceveg Nei.
 |<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: BOOLSK + 
 SOSI_navn: SERVICEVEG + 
 |===
 [cols="20,80"]
@@ -285,7 +292,27 @@ Dersom egenskapen ikke er angitt betyr dette det samme som beredskapsveg Nei.
 |<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: BOOLSK + 
 SOSI_navn: BEREDSKAPSVEG + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*eksternPeker*
+ 
+|Definisjon: 
+|referanse til objekt i et eksternt system, som ikke er Nasjonal database for turruter.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
 |===
 [cols="20,80"]
 |===
@@ -302,6 +329,8 @@ SOSI_navn: BEREDSKAPSVEG +
 |http://skjema.geonorge.no/SOSI/basistype/URI[URI]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
 SOSI_navn: TURRUTERPEKER + 
 |===
 ===== Arv og realiseringer
@@ -346,8 +375,8 @@ SOSI_navn: TURRUTERPEKER +
 |VEGSPERRING
  
 |===
-[caption="Figur 6: ",title=Illustrasjon av objekttype Vegsperring]
-image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_vegsperring.png[https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_vegsperring.png]
+.Illustrasjon av objekttype Vegsperring
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_vegsperring.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_vegsperring.png,"Illustrasjon av objekttype: Vegsperring"]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -803,7 +832,7 @@ SOSI_navn: ADRESSENAVN +
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
+|<<boolean,Boolean>>
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: BOOLSK + 
@@ -1091,14 +1120,18 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |===
 === Pakke: Generelle elementer
 *Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0.
-[caption="Figur 7: ",title=Hoveddiagram Fellesegenskaper]
-image::diagrammer/Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper]
-[caption="Figur 8: ",title=Arv av fellesegenskaper]
-image::diagrammer/Arv av fellesegenskaper.png[Arv av fellesegenskaper]
-[caption="Figur 9: ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del]
-[caption="Figur 10: ",title=Posisjonskvalitet]
-image::diagrammer/Posisjonskvalitet.png[Posisjonskvalitet]
+ 
+.Hoveddiagram Fellesegenskaper 
+image::diagrammer/Hoveddiagram Fellesegenskaper.png[link=diagrammer/Hoveddiagram Fellesegenskaper.png,"Diagramm: Hoveddiagram Fellesegenskaper"]
+ 
+.Arv av fellesegenskaper 
+image::diagrammer/Arv av fellesegenskaper.png[link=diagrammer/Arv av fellesegenskaper.png,"Diagramm: Arv av fellesegenskaper"]
+ 
+.Realisering av fellesegenskaper fra SOSI generell del 
+image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[link=diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png,"Diagramm: Realisering av fellesegenskaper fra SOSI generell del"]
+ 
+.Posisjonskvalitet 
+image::diagrammer/Posisjonskvalitet.png[link=diagrammer/Posisjonskvalitet.png,"Diagramm: Posisjonskvalitet"]
  
 |===
 |===
@@ -1120,7 +1153,9 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 
 Merknad FKB:
 Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
@@ -1141,12 +1176,15 @@ SOSI_navn: IDENT +
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
+
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
 iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
@@ -1166,9 +1204,6 @@ SOSI_navn: OPPDATERINGSDATO +
  
 |Definisjon: 
 |dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
-
-Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode f&#248;r disse legges inn i databasen.
-Ved f&#248;rstegangsregistrering settes Datafangstdato lik f&#248;rsteDatafangstdato.
  
 |Multiplisitet: 
 |[1..1]
@@ -1216,6 +1251,9 @@ SOSI_navn: VERIFISERINGSDATO +
 |<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -1240,23 +1278,6 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
 |===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*eksternPeker*
- 
-|Definisjon: 
-|referanse til objekt i et eksternt system, som ikke er Nasjonal database for turruter.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_navn: EKSTERNPEKER + 
-|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -1280,7 +1301,7 @@ SOSI_navn: EKSTERNPEKER +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
+|beskrivelse av kvaliteten p&#229; stedfestingen
 
 Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
@@ -1429,6 +1450,8 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -1439,10 +1462,15 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
  
 |Multiplisitet: 
 |[0..1]
@@ -1451,6 +1479,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -1469,6 +1498,8 @@ SOSI_navn: NØYAKTIGHET +
 |<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
+SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -1490,6 +1521,8 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
+SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -1500,10 +1533,16 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+
 Merknad:
+
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+
+
  
 |Multiplisitet: 
 |[0..1]
@@ -1512,6 +1551,7 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
+SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
@@ -1546,7 +1586,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
 |SOSI_datatype
 |H
@@ -1558,7 +1598,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
  
  
 |===
@@ -1577,7 +1617,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -1589,7 +1629,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
  
  
 |===
@@ -1606,7 +1646,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -1618,7 +1658,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |REGISTRERINGSVERSJON
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
  
  
 |===
@@ -1638,7 +1678,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 |SOSI_datatype
 |T
@@ -1650,6 +1690,6 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5-0/medium
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
  
 // End of UML-model
