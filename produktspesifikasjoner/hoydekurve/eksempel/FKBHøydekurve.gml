@@ -9,7 +9,7 @@
                      http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/FKBHøydekurve.xsd
                      http://www.opengis.net/wfs/2.0
                      http://schemas.opengis.net/wfs/2.0/wfs.xsd"
-  timeStamp="2021-09-29T15:06:04Z"
+  timeStamp="2021-09-30T11:20:04Z"
   numberMatched="unknown"
   numberReturned="0">
   <wfs:member>
@@ -21,10 +21,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -38,7 +38,7 @@
       </kvalitet>
       <senterlinje>
         <gml:LineString srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:posList>568525,84 6661998,97 90,8 568520,52 6662017,57 90,8 568517,55 6662029,69 90,8 568511,79 6662034,72 90,8</gml:posList>
+          <gml:posList>568525.84 6661998.97 90.8 568520.52 6662017.57 90.8 568517.55 6662029.69 90.8 568511.79 6662034.72 90.8</gml:posList>
         </gml:LineString>
       </senterlinje>
       <høyde>21.21</høyde>
@@ -59,10 +59,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -76,7 +76,7 @@
       </kvalitet>
       <senterlinje>
         <gml:LineString srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:posList>568625,84 6661998,97 90,8 568620,52 6662017,57 90,8 568617,55 6662029,69 90,8 568611,79 6662034,72 90,8</gml:posList>
+          <gml:posList>568625.84 6661998.97 90.8 568620.52 6662017.57 90.8 568617.55 6662029.69 90.8 568611.79 6662034.72 90.8</gml:posList>
         </gml:LineString>
       </senterlinje>
       <høyde>21.21</høyde>
@@ -97,10 +97,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -114,7 +114,7 @@
       </kvalitet>
       <posisjon>
         <gml:Point srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:pos>568658,83 6662075,36 90,67</gml:pos>
+          <gml:pos>568613.83 6662030.36 90.67</gml:pos>
         </gml:Point>
       </posisjon>
       <høyde>21.21</høyde>
@@ -135,10 +135,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -152,7 +152,7 @@
       </kvalitet>
       <posisjon>
         <gml:Point srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:pos>568758,83 6662075,36 90,67</gml:pos>
+          <gml:pos>568713.83 6662030.36 90.67</gml:pos>
         </gml:Point>
       </posisjon>
       <høyde>21.21</høyde>
@@ -173,10 +173,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -190,7 +190,7 @@
       </kvalitet>
       <senterlinje>
         <gml:LineString srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:posList>568925,84 6661998,97 90,8 568920,52 6662017,57 90,8 568917,55 6662029,69 90,8 568911,79 6662034,72 90,8</gml:posList>
+          <gml:posList>568925.84 6661998.97 90.8 568920.52 6662017.57 90.8 568917.55 6662029.69 90.8 568911.79 6662034.72 90.8</gml:posList>
         </gml:LineString>
       </senterlinje>
       <opphav>
@@ -210,10 +210,10 @@
           <versjonId>Some meaningful text</versjonId>
         </Identifikasjon>
       </identifikasjon>
-      <oppdateringsdato>2021-07-17T19:25:00Z</oppdateringsdato>
-      <datafangstdato>2021-07-17</datafangstdato>
+      <oppdateringsdato>2021-08-26T21:08:00Z</oppdateringsdato>
+      <datafangstdato>2021-08-26</datafangstdato>
       <medium>T</medium>
-      <verifiseringsdato>2021-07-17</verifiseringsdato>
+      <verifiseringsdato>2021-08-26</verifiseringsdato>
       <registreringsversjon>2014-03-01</registreringsversjon>
       <informasjon>Some meaningful text</informasjon>
       <kvalitet>
@@ -227,7 +227,7 @@
       </kvalitet>
       <posisjon>
         <gml:Point srsName="http://www.opengis.net/def/crs/epsg/0/5972" srsDimension="3">
-          <gml:pos>568958,83 6662075,36 90,67</gml:pos>
+          <gml:pos>568913.83 6662030.36 90.67</gml:pos>
         </gml:Point>
       </posisjon>
       <høyde>21.21</høyde>
