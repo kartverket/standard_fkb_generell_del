@@ -1,416 +1,25 @@
-=== Pakke «ApplicationSchema» FKB-Naturinfo-5.0Utkast
-*Definisjon:* UML-datamodell for FKB-Naturinfo
+=== Pakke «ApplicationSchema» FKB Generell del-5.0Utkast
+*Definisjon:* Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i produktspesifikasjoner.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
 |===
-|definition
-|"FKB-Naturinfo describes information about natural objects not covered by any other FKB datasets"@en
- 
-|description
-|"Contains trees, large stones and hedges"@en
- 
-|designation
-|"Product specification FKB-Naturinfo 5.0"@en
- 
 |language
 |no
- 
-|SOSI_kortnavn
-|FKB-Naturinfo
- 
-|SOSI_langnavn
-|FKB Annen naturinfomasjon
  
 |SOSI_modellstatus
 |utkast
  
-|SOSI_spesifikasjonstype
-|produktspesifikasjon
- 
-|SOSI_versjon
-|5.1
- 
-|targetNamespace
-|https://skjema.geonorge.no/SOSI/produktspesfikasjon/FKB-Naturinfo/5.0
- 
 |version
 |5.0
  
-|xmlns
-|app
- 
-|xsdDocument
-|FKB-Naturinfo50.xsd
- 
-|xsdEncodingRule
-|sosi
- 
 |===
- 
-.Oversiktsdiagram 
-image::diagrammer/Oversiktsdiagram.png[link=diagrammer/Oversiktsdiagram.png, window=_blank, alt="Diagramm: Oversiktsdiagram"]
- 
-.Pakkerealisering 
-image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, window=_blank, alt="Diagramm: Pakkerealisering"]
- 
-.Realisering fra Annen naturinformasjon 4.0 
-image::diagrammer/Realisering fra Annen naturinformasjon 4.0.png[link=diagrammer/Realisering fra Annen naturinformasjon 4.0.png, window=_blank, alt="Diagramm: Realisering fra Annen naturinformasjon 4.0"]
- 
-'''
- 
-[[hekk]]
-==== «featureType» Hekk
-*Definisjon:* plantede busker som utgjør en hekk
- 
-.Illustrasjon av objekttype Hekk
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png[alt="Illustrasjon av objekttype: Hekk"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<kurve,Kurve>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*treType*
- 
-|Definisjon: 
-|aktuell tretype
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<tretype,«CodeList» TreType>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace:  + 
-SOSI_datatype: H + 
-SOSI_lengde: 2 + 
-SOSI_navn: TRE_TYP + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|koordinatregistering utført på topp eller bunn av et objekt
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<medium,«CodeList» Medium>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium + 
-SOSI_datatype: T + 
-SOSI_lengde: 1 + 
-SOSI_navn: MEDIUM + 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Annen naturinformasjon-4.0::«featureType» Hekk +
-|===
- 
-'''
- 
-[[innmålttre]]
-==== «featureType» InnmåltTre
-*Definisjon:* markerte enkeltrær
- 
-.Illustrasjon av objekttype InnmåltTre
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png[alt="Illustrasjon av objekttype: InnmåltTre"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<punkt,Punkt>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*treType*
- 
-|Definisjon: 
-|aktuell tretype
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<tretype,«CodeList» TreType>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace:  + 
-SOSI_datatype: H + 
-SOSI_lengde: 2 + 
-SOSI_navn: TRE_TYP + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|koordinatregistering utført på topp eller bunn av et objekt
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<medium,«CodeList» Medium>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium + 
-SOSI_datatype: T + 
-SOSI_lengde: 1 + 
-SOSI_navn: MEDIUM + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*eksternpeker*
- 
-|Definisjon: 
-|peker til eksternt system i kommunen eller et annet sted som inneholder mer informasjon om treet
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: EKSTERNPEKER + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*nvbdpeker*
- 
-|Definisjon: 
-|peker til objekt i NVDB
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: NVDBPEKER + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*stammediameter*
- 
-|Definisjon: 
-|M&#229;lt stammediameter, angitt i hele cm
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 5 + 
-SOSI_navn: STAMMEDIAMETER + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*kronediameter*
- 
-|Definisjon: 
-|M&#229;lt kronediameter, angitt i antall meter med en desimal
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: D + 
-SOSI_lengde: 5 + 
-SOSI_navn: KRONEDIAMETER + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*trehøyde*
- 
-|Definisjon: 
-|M&#229;lt treh&#248;yde, angitt i antall meter med en desimal
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: D + 
-SOSI_lengde: 5 + 
-SOSI_navn: TREHØYDE + 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Annen naturinformasjon-4.0::«featureType» InnmåltTre +
-|===
- 
-'''
- 
-[[stein]]
-==== «featureType» Stein
-*Definisjon:* markert stein
- 
-.Illustrasjon av objekttype Stein
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png[alt="Illustrasjon av objekttype: Stein"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Annen naturinformasjon-4.0::«featureType» Stein +
-|===
- 
-'''
- 
-[[tretype]]
-==== «CodeList» TreType
-*Definisjon:* hovedinndeling av tr&#230;r
- 
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/5.0/tretype
- 
-|SOSI_datatype
-|H
- 
-|SOSI_lengde
-|2
- 
-|SOSI_navn
-|TRE_TYP
- 
-|===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/naturinfo/5.0/tretype
- 
-<<<
-'''
-=== Pakke: Generelle elementer
-*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-
-Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene
- 
-.Hoveddiagram Fellesegenskaper 
-image::diagrammer/Hoveddiagram Fellesegenskaper.png[link=diagrammer/Hoveddiagram Fellesegenskaper.png, window=_blank, alt="Diagramm: Hoveddiagram Fellesegenskaper"]
  
 .Realisering av fellesegenskaper fra SOSI generell del 
 image::diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png[link=diagrammer/Realisering av fellesegenskaper fra SOSI generell del.png, window=_blank, alt="Diagramm: Realisering av fellesegenskaper fra SOSI generell del"]
+ 
+.Hoveddiagram Fellesegenskaper 
+image::diagrammer/Hoveddiagram Fellesegenskaper.png[link=diagrammer/Hoveddiagram Fellesegenskaper.png, window=_blank, alt="Diagramm: Hoveddiagram Fellesegenskaper"]
  
 .Posisjonskvalitet 
 image::diagrammer/Posisjonskvalitet.png[link=diagrammer/Posisjonskvalitet.png, window=_blank, alt="Diagramm: Posisjonskvalitet"]
@@ -455,15 +64,12 @@ SOSI_navn: IDENT +
 |tidspunkt for siste endring p&#229; objektet 
 
 Merknad FKB: 
-
 Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
-
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
-
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
 iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
@@ -473,6 +79,7 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.
 |http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
 |Profilparametre i tagged values: 
 |
+definition: "Date and time at which this version of the spatial object was inserted or changed in the spatial data set."@en + 
 SOSI_datatype: DATOTID + 
 SOSI_navn: OPPDATERINGSDATO + 
 |===
@@ -482,7 +89,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
+|
  
 |Multiplisitet: 
 |[1..1]
@@ -530,9 +137,6 @@ SOSI_navn: VERIFISERINGSDATO +
 |<<registreringsversjon,«CodeList» Registreringsversjon>>
 |Profilparametre i tagged values: 
 |
-defaultCodeSpace:  + 
-SOSI_datatype: T + 
-SOSI_lengde: 10 + 
 SOSI_navn: REGISTRERINGSVERSJON + 
 |===
 [cols="20,80"]
@@ -551,19 +155,15 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: INFORMASJON + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Subtyper:
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
+|<<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>> +
+<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
 |Realisering av: 
-|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper +
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Fellesegenskaper +
 «ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
  
 |===
@@ -572,7 +172,7 @@ SOSI_navn: INFORMASJON +
  
 [[kvalitetpåkrevd]]
 ==== «FeatureType» KvalitetPåkrevd (abstrakt)
-*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+*Definisjon:* 
  
 ===== Egenskaper
 [cols="20,80"]
@@ -600,14 +200,44 @@ SOSI_navn: KVALITET +
 |Supertype: 
 |<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
-|Subtyper:
-|<<stein,«featureType» Stein>> +
-<<innmålttre,«featureType» InnmåltTre>> +
-<<hekk,«featureType» Hekk>> +
 |Realisering av: 
-|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd +
-«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
+|===
  
+'''
+ 
+[[kvalitetopsjonell]]
+==== «FeatureType» KvalitetOpsjonell (abstrakt)
+*Definisjon:* 
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kvalitet*
+ 
+|Definisjon: 
+|beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: KVALITET + 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
 '''
@@ -731,8 +361,6 @@ Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for 
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
-SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODE + 
 |===
@@ -743,15 +371,10 @@ SOSI_navn: DATAFANGSTMETODE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
-
 Merknad:
-
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
-
  
 |Multiplisitet: 
 |[0..1]
@@ -760,7 +383,6 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
-SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: NØYAKTIGHET + 
 |===
@@ -779,8 +401,6 @@ SOSI_navn: NØYAKTIGHET +
 |<<synbarhet,«CodeList» Synbarhet>>
 |Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet + 
-SOSI_datatype: H + 
 SOSI_lengde: 1 + 
 SOSI_navn: SYNBARHET + 
 |===
@@ -802,8 +422,6 @@ Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangs
 |<<datafangstmetode,«CodeList» Datafangstmetode>>
 |Profilparametre i tagged values: 
 |
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode + 
-SOSI_datatype: T + 
 SOSI_lengde: 3 + 
 SOSI_navn: DATAFANGSTMETODEHØYDE + 
 |===
@@ -814,16 +432,10 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
  
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
-
+I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
 I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
-
 Merknad:
-
 Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
-
-
  
 |Multiplisitet: 
 |[0..1]
@@ -832,7 +444,6 @@ Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med
 |http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
 |Profilparametre i tagged values: 
 |
-SOSI_datatype: H + 
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
@@ -866,7 +477,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet
  
 |SOSI_datatype
 |H
@@ -878,7 +489,7 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/synbarhet
  
  
 '''
@@ -896,7 +507,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode
  
 |SOSI_datatype
 |T
@@ -908,7 +519,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/datafangstmetode
  
  
 '''
@@ -924,7 +535,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon
  
 |SOSI_datatype
 |T
@@ -936,7 +547,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |REGISTRERINGSVERSJON
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/registreringsversjon
  
  
 '''
@@ -952,7 +563,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse
  
 |SOSI_datatype
 |T
@@ -964,7 +575,7 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |HREF
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/høydereferanse
  
  
 '''
@@ -983,7 +594,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |true
  
 |codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
+|https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium
  
 |SOSI_datatype
 |T
@@ -995,6 +606,185 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
+Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/versjon5/medium
  
+<<<
+'''
+=== Pakke: Elementer til bruk i distribusjon
+*Definisjon:* 
+ 
+.Mekanismer til bruk i distribusjon 
+image::diagrammer/Mekanismer til bruk i distribusjon.png[link=diagrammer/Mekanismer til bruk i distribusjon.png, window=_blank, alt="Diagramm: Mekanismer til bruk i distribusjon"]
+ 
+'''
+ 
+[[ekstraegenskaperdistribusjon]]
+==== «FeatureType» EkstraegenskaperDistribusjon (abstrakt)
+*Definisjon:* Inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kopidata*
+ 
+|Definisjon: 
+|angivelse av at objektet er hentet fra et kopidatasett og ikke fra originaldatasettet
+
+Merknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originaldatasettet og hvem som er originaldataansvarlig
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|<<kopidata,«dataType» Kopidata>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: KOPIDATA + 
+|===
+ 
+'''
+ 
+[[kantutsnitt]]
+==== «featureType» KantUtsnitt
+*Definisjon:* avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbasen men kan benyttes for å lage komplette flateavgrensninger ved klipping av et område ut fra forvaltningsbasen. KantUtsnitt kan finnes i fileksporter.
+ 
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*grense*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<kurve,«dataType» Kurve>>
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*identifikasjon*
+ 
+|Definisjon: 
+|Unik identifikasjon av objektet
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|<<identifikasjon,«dataType» Identifikasjon>>
+|===
+ 
+'''
+ 
+[[kopidata]]
+==== «dataType» Kopidata
+*Definisjon:* angivelse av at objektet er hentet fra en kopi av originaldata
+
+Merknad: 
+Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.
+ 
+===== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|SOSI_navn
+|KOPIDATA
+ 
+|===
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*områdeId*
+ 
+|Definisjon: 
+|identifikasjon av område som dataene dekker
+
+Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
+|
+definition:  + 
+description:  + 
+designation:  + 
+inLineOrByReference:  + 
+isMetadata:  + 
+sequenceNumber:  + 
+SOSI_datatype: H + 
+SOSI_lengde: 4 + 
+SOSI_navn: OMRÅDEID + 
+SOSI_presentasjonsnavn:  + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*originalDatavert*
+ 
+|Definisjon: 
+|ansvarlig etat for forvaltning av data
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
+|
+definition:  + 
+description:  + 
+designation:  + 
+inLineOrByReference:  + 
+isMetadata:  + 
+sequenceNumber:  + 
+SOSI_datatype: T + 
+SOSI_lengde: 100 + 
+SOSI_navn: ORIGINALDATAVERT + 
+SOSI_presentasjonsnavn:  + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kopidato*
+ 
+|Definisjon: 
+|dato når objektet ble kopiert fra originaldatasettet  
+
+Merknad:
+Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.
+Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.
+Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
+|
+definition:  + 
+description:  + 
+designation:  + 
+inLineOrByReference:  + 
+isMetadata:  + 
+sequenceNumber:  + 
+SOSI_datatype: DATOTID + 
+SOSI_lengde:  + 
+SOSI_navn: KOPIDATO + 
+SOSI_presentasjonsnavn:  + 
+|===
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«dataType» Kopidata +
+|===
 // End of UML-model
