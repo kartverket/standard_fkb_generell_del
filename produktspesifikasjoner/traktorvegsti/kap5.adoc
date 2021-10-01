@@ -339,7 +339,7 @@ SOSI_navn: TURRUTERPEKER +
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 |Realisering av: 
-|«ApplicationSchema» Vegnett-5.0::«featureType» Veglenke +
+|«applicationSchema» Vegnett-5.0::«featureType» Veglenke +
 |===
  
 '''
@@ -565,7 +565,7 @@ SOSI_navn: VEGSTREKNING +
 [cols="20,80"]
 |===
 |Realisering av: 
-|«ApplicationSchema» Vegnett-5.0::«dataType» Vegsystemreferanse +
+|«applicationSchema» Vegnett-5.0::«dataType» Vegsystemreferanse +
 |===
  
 '''
@@ -658,7 +658,7 @@ SOSI_navn: VEGNUMMER +
 [cols="20,80"]
 |===
 |Realisering av: 
-|«ApplicationSchema» Vegnett-5.0::«dataType» Vegsystem +
+|«applicationSchema» Vegnett-5.0::«dataType» Vegsystem +
 |===
  
 '''
@@ -717,7 +717,7 @@ SOSI_navn: DELSTREKNINGNUMMER +
 [cols="20,80"]
 |===
 |Realisering av: 
-|«ApplicationSchema» Vegnett-5.0::«dataType» Vegstrekning +
+|«applicationSchema» Vegnett-5.0::«dataType» Vegstrekning +
 |===
  
 '''
@@ -753,7 +753,7 @@ SOSI_navn: DELSTREKNINGNUMMER +
 Merknad: egenskapen er påkrevd for unik identifisering av veglenkeadresser, i og med at adressekoden kun er unik innen en kommune.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |<<kommunenummer,«CodeList» Kommunenummer>>
@@ -822,21 +822,11 @@ SOSI_navn: ADRESSENAVN +
 SOSI_datatype: BOOLSK + 
 SOSI_navn: SIDEVEG + 
 |===
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*kommunenummerPåkrevetHvisIkkeEierobjektetHarDet*
- 
-|Beskrivelse: 
-|inv:count(self.kommunenummer)+count(self.owner.kommunenummer)&gt;0
- 
-|===
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Realisering av: 
-|«ApplicationSchema» Vegnett-5.0::«dataType» Veglenkeadresse +
+|«applicationSchema» Vegnett-5.0::«dataType» Veglenkeadresse +
 |===
  
 '''
