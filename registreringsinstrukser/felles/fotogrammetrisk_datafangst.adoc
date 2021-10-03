@@ -1,0 +1,37 @@
+
+=== Fotogrammetrisk nykonstruksjon
+
+Ved fotogrammetrisk nykonstruksjon skal alle objektene som er spesifisert i registreringsinstruksen og som er synlige i flybildene registreres. 
+
+==== Registrering av ny kartobjekter
+
+Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.
+
+Unntak fra hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.
+
+==== Registrering av egenskaper på nye kartobjekter 
+
+Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.
+
+Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen. 
+
+Følgende egenskaper håndteres spesielt:
+
+* Egenskapen _Identifikasjon_ skal ikke legges inn på objektene
+* Egenskapen _Oppdateringsdato_ skal ikke legges inn på objektene
+* Alle objekter skal ha egenskapene _Nøyaktighet_ og _NøyaktighetHøyde_ som del av datatypen Posisjonskvalitet
+* Alle objekter skal ha egenskapen _Registreringsversjon_
+
+Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap lenger ned i spesifikasjonen eller i teknisk spesifikasjon for kartleggleggingsprosjektet.
+
+=== Fotogrammetrisk ajourhold
+
+Ved fotogrammetrisk ajourhold skal eksisterende situasjon bringes ajour med oppdatert situasjon i terrenget ved fotograferingstidspunkt. Oppdragsgiver sender eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring.
+
+Dette innebærer i prinsippet følgende operasjoner:
+
+. Registrere nye objekter der disse finnes i flybildene, men ikke i eksisterende data. Reglene som gjelder nye objekter ved <<Fotogrammetrisk nykonstruksjon>> skal da anvendes.
+. Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se {fkbGenerellDel-url}/#truebruk-av-datoegenskaper[beskrivelse av håndtering av datoegenskaper i FKB Generell del] for mer om dette.
+. Slette objekter som finnes i eksisterende data, men som ikke finnes i flybildene. 
+
+Unntak fra/presisering av hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.

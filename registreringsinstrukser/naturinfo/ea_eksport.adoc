@@ -1,17 +1,12 @@
 === Fotogrammetrisk registreringsinstruks
 Definisjon: Dokumentasjon av Fotogrammetrisk registreringsinstruks for FKB-Naturinfo
-[caption="Figur  ",title=Objekttyper med egenskaper]
-image::Objekttyper med egenskaper.png[Objekttyper med egenskaper]
-[caption="Figur  ",title=Registreringsobjekter]
-image::Registreringsobjekter.png[Registreringsobjekter]
-
-NOTE: Hvilke diagrammer er det egentlig fornuftig å ta med? Kanskje bare linke til produktspesifikasjon og ikke ha noen UML-diagrammer i registreringsinstruks? 
  
 ==== «FeatureType» Hekk
 Definisjon: plantede busker som utgjør en hekk
  
 [caption="Figur  ",title=Figur fra produktspesifikasjonen]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png[http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png]
+ 
 ===== Føringer
 [cols="20,80"]
 |===
@@ -26,7 +21,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
  
 |FKB_minstestørrelse_B
 |Alle synlige hekker lengre enn 3m registreres
-
  
 |FKB-A
 |Påkrevd registrering
@@ -50,20 +44,50 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |*SOSI_navn:* 
 |*Lengde:* 
  
-|senterlinje
-|Kurve
-|.KURVE
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
 |[1..1]
  
-|treType
-|«CodeList» TreType
-|..TRE_TYP
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
 |[1..1]
  
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
 |[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
  
 |kvalitet
 |«dataType» Posisjonskvalitet
@@ -90,65 +114,34 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
-|  kvalitet.nøyaktighetHøyde
+|kvalitet.nøyaktighetHøyde
 |Integer
 |...H-NØYAKTIGHET
 |[0..1]
  
-
-|datafangstdato
-|DateTime
-|..DATAFANGSTDATO
-|[0..1]
- 
-
-|verifiseringsdato
-|DateTime
-|..VERIFISERINGSDATO
-|[0..1]
- 
-
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..*]
- 
-|registreringsversjon
-|«dataType» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
+|senterlinje
+|Kurve
+|.KURVE
 |[1..1]
  
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
+|treType
+|«CodeList» TreType
+|..TRE_TYP
 |[1..1]
  
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
  
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
  
-
 |===
-
-
-NOTE: Format på egenskapstabell ok. Må skrive ut de riktige egenskapene (ikke fra objekttypene det er realisert fra)
+|===
+|===
  
 ==== «FeatureType» InnmåltTre
 Definisjon: markerte enkeltrær
@@ -190,6 +183,81 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |*SOSI_navn:* 
 |*Lengde:* 
  
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
 |posisjon
 |Punkt
 |.PUNKT
@@ -205,6 +273,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |..HREF
 |[1..1]
  
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
 |eksternpeker
 |URI
 |..EKSTERNPEKER
@@ -216,7 +289,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |[0..1]
  
 |stammediameter
-|int
+|Integer
 |..STAMMEDIAMETER
 |[0..1]
  
@@ -230,10 +303,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/fig
 |..TREHØYDE
 |[0..1]
  
- 
 |===
-
-osv...
+|===
+|===
  
 ==== «FeatureType» Stein
 Definisjon: markert stein
@@ -283,10 +355,50 @@ image::figurer/registrering_storstein.png[figurer/registrering_storstein.png]
 |*SOSI_navn:* 
 |*Lengde:* 
  
-|område
-|Flate
-|.FLATE
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
 |[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
  
 |kvalitet
 |«dataType» Posisjonskvalitet
@@ -318,57 +430,10 @@ image::figurer/registrering_storstein.png[figurer/registrering_storstein.png]
 |...H-NØYAKTIGHET
 |[0..1]
  
- 
-|datafangstdato
-|DateTime
-|..DATAFANGSTDATO
-|[0..1]
- 
+|område
+|Flate
+|.FLATE
+|[1..1]
  
 |===
-
-osv.
-
-==== «CodeList» TreType
-Definisjon: Dersom ikke annet spesielt avtales skal det ikke gj&#248;re klassifisering av tretype ved fotogrammetrisk registrering. Det inneb&#230;rer at alle data merkes tretype Ukjent.
- 
-===== Tagged Values
-
-NOTE: Link til kodeliste på Geonorge hentes fra codeList på kodelista det arves fra. Annen/bedre overskrift?
-
-
-===== Koder
-
-NOTE: Kodeverdier hentes fra de som er definert på de abstakte kodelistene i registreringsinstruksen. Skrives ut på samme måte som egenskaper i produktspesifikasjon.
-
-
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Bar*
- 
-|Definisjon: 
-|Registreres som bartr&#230;r der et er tydelig at skogen i hovedsak best&#229;r av bartr&#230;r
- 
-|Kodeverdi 
-|2
-|===
-
-
-NOTE: Bilde av kodeverdi lagt inn som tagged value SOSI_bildeavModellelement
-
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Lauv*
- 
-|Definisjon: 
-|Registreres som Lauv der det er &#229;penbart at skogen hovedsaklig best&#229;r av lauvtr&#230;r
- 
-|Kodeverdi 
-|1
-|===
-
-===== Skisser
-
-NOTE: Utlisting av skisser/bilder med forklarende tekst som er lagt inn som "files" på kodelista
+// End of Registreringsinstruks UML-model
