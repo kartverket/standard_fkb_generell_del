@@ -2,7 +2,7 @@
 '''
  
 [[bardun]]
-==== «FeatureType» Bardun
+=== «FeatureType» Bardun
 *Definisjon fra FKB produktspesifikasjon*: tau, vaier eller liknende som st&#248;tter eller stabiliserer h&#248;ye gjenstander
 
 Merknad FKB:
@@ -22,7 +22,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres."]
  
  
-===== Føringer
+==== Føringer
 [cols="25,75"]
 |===
 |FKB grunnrissreferanse
@@ -48,7 +48,7 @@ image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner g�
  
 |===
  
-===== Egenskapstabell
+==== Egenskapstabell
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -168,10 +168,10 @@ image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner g�
  
 |===
  
-'''
+<<<
  
 [[mast]]
-==== «FeatureType» Mast
+=== «FeatureType» Mast
 *Definisjon fra FKB produktspesifikasjon*: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken
 
 Merknad FKB:
@@ -193,15 +193,15 @@ Mast kan ha en assosiasjon til evt. Lysarmatur som er montert i mast. Dette foru
  
 '''
 .Illustrasjon fra produktspesifikasjon av Mast
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg,"Illustrasjon fra produktspesifikasjon: Mast"]
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, alt="Illustrasjon fra produktspesifikasjon: Mast"]
  
  
 '''
-.Illustrasjon fra fil av objekttype Mast
-image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAvstand_linjebredde.png,"For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde. "]
+.For mast som er høyere enn 15 meter skal vertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen linjebredde.
+image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAvstand_linjebredde.png, alt="For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde."]
  
  
-===== Føringer
+==== Føringer
 [cols="25,75"]
 |===
 |FKB grunnrissreferanse
@@ -224,7 +224,7 @@ image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAv
  
 |===
  
-===== Egenskapstabell
+==== Egenskapstabell
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -380,8 +380,48 @@ image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAv
 |..OMRISS
 |[0..*]
 |===
+
+===== Betingelser
+[cols="30,70"]
+|===
+|*Egenskapsnavn:* 
+|*Betingelse:*
  
-'''
+|linjebredde: 
+|største avstanden mellom ytterfasene (ledningene) i ei mast
+
+|vertikalavstand:
+|fra fot/bakkenivå til topp mast
+|===
+
+==== Kodelister og kodelisteverdier
+Figurer og skisser knyttet til bruk av bestemte kodelister og kodelisteverdier.
+
+===== Mastekonstruksjon: Annet
+*Definisjon*: andre typer mastekonstruksjoner som ikke er spesifisert i kodelisten eller master sammensatt av to eller flere konstruksjonstyper
+
+.Telemaster, radiomaster etc. registreres som topp senter mast  
+image::figurer/mast_annet.png[link=figurer/mast_annet.png, window=_blank, alt="Telemaster, radiomaster etc. registreres som topp senter mast."]
+ 
+===== Mastekonstruksjon: EnkelStolpe
+*Definisjon*: mast laget av kun en enkelt stolpe, vanligvis i lavspentnett, ekom eller langs jernbane
+
+.For enkeltstolper skal topp mast registreres. I noen tilfeller, typisk på veilys, må man generere topp mast (se figur lengst til høyre)   
+image::figurer/mast_enkelStolpe.png[link=figurer/mast_enkelStolpe.png, window=_blank, alt="For enkeltstolper skal topp mast registreres. I noen tilfeller, typisk på veilys, må man generere topp mast (se figur lengst til høyre)"]
+
+===== Mastekonstruksjon: Fagverksmast
+*Definisjon*: fagverk av metallkonstruksjoner
+
+.Senter topp mast registreres
+image::figurer/mast_fagverkmast.png[link=figurer/mast_fagverkmast.png, window=_blank, alt="Senter topp mast registreres"]
+
+===== Mastekonstruksjon: StorStolpe
+*Definisjon*: stolpe(r) i høyspentlinjer som ikke er fagverksmast
+
+.Senter topp mast registreres  
+image::figurer/mast_storStolpe.png[link=figurer/mast_storStolpe.png, window=_blank, alt="Senter topp mast registreres"]
+
+<<<
  
 [[kanal]]
 ==== «FeatureType» Kanal
