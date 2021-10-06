@@ -9,17 +9,17 @@ Merknad FKB:
 Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.
 
  
-*Tilleggsinformasjon for fotogrammetrisk registrering:* ??
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.
  
  
 '''
 .Illustrasjon fra produktspesifikasjon av Bardun
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg,"Illustrasjon fra produktspesifikasjon: Bardun"]
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg, Alt="Illustrasjon fra produktspesifikasjon: Bardun"]
  
  
 '''
 .Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres.
-image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres."]
+image::figurer\bardun.png[link=figurer\bardun.png, Alt="Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres."]
  
  
 ===== Føringer
@@ -30,9 +30,6 @@ image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner g�
  
 |FKB høydereferanse
 |Topp bardun senter mast og fot bardun i feste ved bakken.
- 
-|FKB registreringsmetode
-|Enkeltpunkt i sekvens
  
 |FKB-A
 |Påkrevd registrering
@@ -170,6 +167,854 @@ image::figurer\bardun.png[link=figurer\bardun.png, alt="Dersom flere barduner g�
  
 '''
  
+[[flymarkør]]
+==== «FeatureType» Flymarkør
+*Definisjon fra FKB produktspesifikasjon*: markering av store luftspenn over daler og fjorder
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Brukes for markering av lange luftspenn. Typisk er dette oransje bl&#229;ser festet p&#229; linjene.
+
+Pilh&#248;yden for lange luftspenn kan variere mye som f&#248;lge av v&#230;r og temperatur. Dette f&#248;rer til at mark&#248;renes posisjon vil variere, noe som resulterer i d&#229;rlig posisjonsn&#248;yaktighet.
+
+Flymark&#248;r og kurvepunkt i Trase skal ha samme posisjon, b&#229;de i grunnriss og h&#248;yde.
+
+I tilfeller hvor flymark&#248;ren ikke er plassert p&#229; Trase, normalforskyves flymark&#248;ren inn p&#229; traseen og kvalitetskodes deretter. I tillegg legges det til _informasjon_ "Mark&#248;r normalforskj&#248;vet inn p&#229; trase".
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Flymarkør
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg, Alt="Illustrasjon fra produktspesifikasjon: Flymarkør"]
+ 
+ 
+'''
+.Flymarkører registreres som senter topp flymarkør/blåse.
+image::figurer\flymarkør.png[link=figurer\flymarkør.png, Alt="Flymarkører registreres som senter topp flymarkør/blåse."]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter flymarkør
+ 
+|FKB høydereferanse
+|Topp flymarkør
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|===
+ 
+'''
+ 
+[[kanal]]
+==== «FeatureType» Kanal
+*Definisjon fra FKB produktspesifikasjon*: brukes som fremf&#248;ringsvei for ledning
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Brukes ved registrering av kanaler som f&#248;rer kabler for elektrotekniske anlegg.
+
+N&#229;r flere kanaler ligger parallelt, skal hver enkelt kanal registreres.
+
+*I FKB er det kun kanaler som er synlige i terrenget som skal registreres. Oftest tilh&#248;rende Bane NOR.*
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Kanal
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg, Alt="Illustrasjon fra produktspesifikasjon: Kanal"]
+ 
+ 
+'''
+.Registrering av kabelkanal (foto: Bane NOR)
+image::figurer\kanal.png[link=figurer\kanal.png, Alt="Registrering av kabelkanal (foto: Bane NOR)"]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter kanal, med knekkpunkt
+ 
+|FKB høydereferanse
+|Topp kanal
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+'''
+ 
+[[kum]]
+==== «FeatureType» Kum
+*Definisjon fra FKB produktspesifikasjon*: et fysisk objekt som regel av st&#229;l, plast eller betong som er gravd ned i bakken, og som lager et rom
+
+Merknad FKB:
+Ytterkant topp kumkonstruksjon der denne er synlig. 
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Ytterkant topp kumkonstruksjon der denne er synlig.
+Kum er spesielt tenkt benyttet ved bane for &#229; registrere sammenheng mellom kanaler. Se figur.
+
+*P&#229;krevet registrering langs bane, opsjonell for&#248;vrig*
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Kum
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg, Alt="Illustrasjon fra produktspesifikasjon: Kum"]
+ 
+ 
+'''
+.Ytterkant topp kumkonstruksjon registreres som kurve der den er synlig og konstruksjonen har en diagonale/diameter større enn 1,5 meter.
+image::figurer\kum.png[link=figurer\kum.png, Alt="Ytterkant topp kumkonstruksjon registreres som kurve der den er synlig og konstruksjonen har en diagonale/diameter større enn 1,5 meter."]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Ytterkant kum
+ 
+|FKB høydereferanse
+|Topp ytterkant kum
+ 
+|FKB minstestørrelse A
+|Diagonal/diameter 1,5 meter
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+'''
+ 
+[[kumlokk]]
+==== «FeatureType» Kumlokk
+*Definisjon fra FKB produktspesifikasjon*: et deksel over en kum eller annet hulrom under bakkeniv&#229;
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Egenskapen _kumlokkform_ benyttes for &#229; angi geometrisk form av kumlokket. I FKB skilles det p&#229; disse &#171;kumlokkformene&#187;; Hydrant, Kvadratisk, Rektangul&#230;rt, Sirkelformet og Sluk.  
+
+For &#229; sikre god fullstendighet og riktig tolkning ved fotogrammetrisk registrering anbefales det &#229; etablere manus eller signalere kumlokkene.
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Kumlokk
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg, Alt="Illustrasjon fra produktspesifikasjon: Kumlokk"]
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter topp kum
+ 
+|FKB høydereferanse
+|Topp kum
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|kumlokkform
+|«CodeList» Kumlokkform
+|..KUMLOKKFORM
+|[1..1]
+ 
+|kum
+|«FeatureType» Kum
+|..KUM
+|[0..1]
+|===
+===== Roller
+[cols="20,80"]
+|===
+|===
+ 
+'''
+ 
+[[lysarmatur]]
+==== «FeatureType» Lysarmatur
+*Definisjon fra FKB produktspesifikasjon*: selve det elektriske punktet som gir lys
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Belysningspunkt som henger i vaier registreres som Lysarmatur. Typisk er disse knyttet til samferdselsobjekter.
+Det er ogs&#229; mulig &#229; registrere Lysarmatur for lyspunkt i mast. 
+
+*I FKB er det kun lysarmatur i vaier som henger over veger/gater som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre lysarmaturer skal registreres er opsjonelt.*
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Lysarmatur
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg, Alt="Illustrasjon fra produktspesifikasjon: Lysarmatur"]
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter lysarmatur
+ 
+|FKB høydereferanse
+|Topp lysarmatur
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|plassering
+|«CodeList» Punktplassering
+|..BELYSNINGSPLASSERING
+|[1..1]
+ 
+|iMast
+|«FeatureType» Mast
+|..IMAST
+|[0..1]
+|===
+===== Roller
+[cols="20,80"]
+|===
+|===
+ 
+'''
+ 
 [[mast]]
 ==== «FeatureType» Mast
 *Definisjon fra FKB produktspesifikasjon*: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken
@@ -180,11 +1025,11 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 *Tilleggsinformasjon for fotogrammetrisk registrering:* En mast kan best&#229; av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt). 
 
 Mast er en generalisering av komponenter slik som stolper, barduner, traverser osv. som danner en mast. En mast kan v&#230;re konstruert i ulike fasonger og materiale som st&#229;l, tre eller kompositt.
-Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type mast det er (EnkeltStolpe, StorStolpe, Fagverksmast, Kontaktledningsmast eller Annet).
+Den p&#229;krevde egenskapen _konstruksjon_ benyttes for &#229; angi hvilken type mast det er (EnkeltStolpe, StorStolpe, Fagverksmast eller Annet).
 
-Den p&#229;krevde egenskapen BELYSNING benyttes for &#229; angi om det henger lysarmatur i masten eller ikke.
+Den p&#229;krevde egenskapen _belysning_ benyttes for &#229; angi om det henger lysarmatur i masten eller ikke.
 
-For mast som er h&#248;yere enn 15 meter skal VERTIKALAVSTAND angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen LINJEBREDDE. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett.
+For mast som er h&#248;yere enn 15 meter skal _vertikalAvstand_ angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen _linjebredde_. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett.
 
 Mast og knekkpunkt i Trase skal ha samme posisjon (fortrinnsvis i b&#229;de grunnriss og h&#248;yde, minimum i grunnriss).
 
@@ -193,19 +1038,19 @@ Mast kan ha en assosiasjon til evt. Lysarmatur som er montert i mast. Dette foru
  
 '''
 .Illustrasjon fra produktspesifikasjon av Mast
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg,"Illustrasjon fra produktspesifikasjon: Mast"]
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, Alt="Illustrasjon fra produktspesifikasjon: Mast"]
  
  
 '''
-.Illustrasjon fra fil av objekttype Mast
-image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAvstand_linjebredde.png,"For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde. "]
+.For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde.
+image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAvstand_linjebredde.png, Alt="For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde."]
  
  
 ===== Føringer
 [cols="25,75"]
 |===
 |FKB grunnrissreferanse
-|Senter for mastekonstruksjon 
+|Senter for mastekonstruksjon
  
 |FKB høydereferanse
 |Som hovedregel skal topp mast registreres.
@@ -380,38 +1225,44 @@ image::figurer\mast_vertikalAvstand_linjebredde.png[link=figurer\mast_vertikalAv
 |..OMRISS
 |[0..*]
 |===
+===== Roller
+[cols="20,80"]
+|===
+|===
+[cols="20,80"]
+|===
+|===
  
 '''
  
-[[kanal]]
-==== «FeatureType» Kanal
-*Definisjon fra FKB produktspesifikasjon*: brukes som fremf&#248;ringsvei for ledning
+[[masteomriss]]
+==== «FeatureType» Masteomriss
+*Definisjon fra FKB produktspesifikasjon*: ytre avgrensning av mastens fotavtrykk p&#229; bakken
  
-*Tilleggsinformasjon for fotogrammetrisk registrering:* Brukes ved registrering av kanaler som f&#248;rer kabler for elektrotekniske anlegg.
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Geometrisk utstrekning av masten.
+Hovedregelen er at alle master som best&#229;r av flere fundamenterings-/bakkepunkt (store master) skal registreres med masteomriss
 
-N&#229;r flere kanaler ligger parallelt, skal hver enkelt kanal registreres.
-
-I FKB er det kun kanaler som er synlige i terrenget som skal registreres. Oftest tilh&#248;rende Bane NOR. 
+I de tilfeller hvor to master st&#229;r inntil hverandre skal hver mast ha sin egen utstrekning.
  
  
 '''
-.Illustrasjon fra produktspesifikasjon av Kanal
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg,"Illustrasjon fra produktspesifikasjon: Kanal"]
+.Eksempel på registrering av Masteomriss for StolpeStor og Fagverksmast. Hvert enkelt punkt i kurven angir det enkelte fundament for masten.
+image::figurer\masteomriss1.png[link=figurer\masteomriss1.png, Alt="Eksempel på registrering av Masteomriss for StolpeStor og Fagverksmast. Hvert enkelt punkt i kurven angir det enkelte fundament for masten."]
  
  
 '''
-.Illustrasjon fra fil av objekttype Kanal
-image::figurer\kanal.png[link=figurer\kanal.png,"Registrering av kabelkanal (foto: Bane NOR)"]
+.For mast som har betongfundament, typisk rund form, registreres omriss av fundamentet.
+image::figurer\masteomriss2.png[link=figurer\masteomriss2.png, Alt="For mast som har betongfundament, typisk rund form, registreres omriss av fundamentet."]
  
  
 ===== Føringer
 [cols="25,75"]
 |===
 |FKB grunnrissreferanse
-|Senter kanal, med knekkpunkt
+|Ytterkant av mastens fotavtrykk
  
 |FKB høydereferanse
-|Topp kanal
+|Fot mast
  
 |FKB-A
 |Påkrevd registrering
@@ -420,10 +1271,10 @@ image::figurer\kanal.png[link=figurer\kanal.png,"Registrering av kabelkanal (fot
 |Påkrevd registrering
  
 |FKB-C
-|Registreres ikke
+|Påkrevd registrering
  
 |FKB-D
-|Registreres ikke
+|Påkrevd registrering
  
 |===
  
@@ -545,6 +1396,188 @@ image::figurer\kanal.png[link=figurer\kanal.png,"Registrering av kabelkanal (fot
 |.KURVE
 |[1..1]
  
+|type
+|«CodeList» Mastekonstruksjon
+|..MASTEKONSTRUKSJON
+|[0..1]
+ 
+|===
+ 
+'''
+ 
+[[nettverkstasjon]]
+==== «FeatureType» Nettverkstasjon
+*Definisjon fra FKB produktspesifikasjon*: et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Egenskapen _plassering_ benyttes for &#229; klassifisere type Nettverkstasjon. I FKB skilles det p&#229; disse nettverkstasjonen; frittst&#229;ende, minikiosk, mastearrangement og mastefotkiosk. 
+
+Fortrinnsvis skal b&#229;de punkt og omriss inng&#229; i FKB. Ved sm&#229; bygninger eller d&#229;rlig innsyn ved kartkonstruksjon kan bare punkt benyttes. N&#229;r nettverkstasjonen er registrert i matrikkel, registreres den som bygning. Dette gjelder typisk for bygninger med areal st&#248;rre enn 15 m2.
+
+Ved fotogrammetrisk registrering kan det v&#230;re vanskelig &#229; skille minikiosk, pumpestasjon og andre bygninger fra hverandre. Det anbefales derfor manuskart for korrekt registrering.
+
+Kan avgrenses av Nettverkstasjonsomriss. Omriss (Nettverkstasjonsomriss) skal om mulig alltid registreres.
+
+*I FKB er det ikke p&#229;krevd &#229; registrere Nettverkstasjon med _plassering_ Mastearrangement i FKB-C og FKB-D omr&#229;der fotogrammetrisk.*
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Nettverkstasjon
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg, Alt="Illustrasjon fra produktspesifikasjon: Nettverkstasjon"]
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter Nettverkstasjon
+ 
+|FKB høydereferanse
+|Topp av senter Nettverkstasjon
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|plassering
+|«CodeList» Stasjonsplassering
+|..STASJONSPLASSERING
+|[1..1]
+ 
+|omriss
+|«FeatureType» Nettverkstasjonomriss
+|..OMRISS
+|[0..1]
+|===
+===== Roller
+[cols="20,80"]
+|===
 |===
  
 '''
@@ -556,6 +1589,62 @@ image::figurer\kanal.png[link=figurer\kanal.png,"Registrering av kabelkanal (fot
 |===
 |===
  
+|===
+|===
+ 
+==== «CodeList» Kumlokkform
+Definisjon: 
+ 
+===== Koder
+[cols="15,25,60"]
+|===
+|*Utvekslingsalias:* 
+|*Kodenavn:* 
+|*Definisjon:* 
+ 
+|hydrant
+|Hydrant
+|konstruksjon som er utformet slik at vannslanger for spyling eller brannslukning, kan kobles direkte til r&#248;rmuffe i konstruksjonen
+|kvadratisk
+|Kvadratisk
+|kumlokket har utstrekning i form av et kvadrat
+|rektangulært
+|Rektangulært
+|kumlokket har utstrekning i form av et rektangel
+|sirkelforma
+|Sirkelformet
+|kumlokket er sirkelformet, rundt
+|sluk
+|Sluk
+|kumlokk eller &#229;pning med rist der overflatevann kan renne ned i avl&#248;pssystemet, ofte i forbindelse med vegsystemer
+|===
+|===
+|===
+ 
+==== «CodeList» Punktplassering
+Definisjon: 
+ 
+===== Koder
+[cols="15,25,60"]
+|===
+|*Utvekslingsalias:* 
+|*Kodenavn:* 
+|*Definisjon:* 
+ 
+|hengendeIKabel
+|Hengende i kabel
+|objektet er montert hengende i kabel
+|iÅk
+|I åk
+|objektet er montert p&#229;/i &#229;k
+
+*Fotogrammetrisk registrering: Opsjonel registrering*
+|iMast
+|I mast
+|objektet er montert p&#229;/i mast
+
+*Fotogrammetrisk registrering: Opsjonel registrering*
+|===
 |===
 |===
  
@@ -571,16 +1660,18 @@ Definisjon:
  
 |annet
 |Annet
-|Telemaster, radiomaster etc. registreres som topp senter mast. 
+|andre typer mastekonstruksjoner som ikke er spesifisert i kodelisten eller master sammensatt av to eller flere konstruksjonstyper
+
+For at en mast skal registreres som Annet skal den ha en vertikalAvstand &gt; 5 meter.
 |enkelStolpe
 |EnkelStolpe
-|For enkeltstolper skal topp mast registreres.
+|mast laget av kun en enkelt stolpe, vanligvis i lavspentnett, ekom eller langs jernbane
 |fagverksmast
 |Fagverksmast
-|Senter topp mast registreres.
+|fagverk av metallkonstruksjoner
 |storStolpe
 |StorStolpe
-|Senter topp mast registreres.
+|stolpe(r) i h&#248;yspentlinjer som ikke er fagverksmast
 |===
 |===
 |===
@@ -597,9 +1688,35 @@ Definisjon:
  
 |kontaktledning
 |Kontaktledning
-|Senter topp mast registreres
+|anlegg for str&#248;mforsyning gjennom takmontert str&#248;mavtakerutstyr p&#229; elektriske kj&#248;ret&#248;y
 |signalanlegg
 |Signalanlegg
-|Senter topp mast registreres
+|nettverk som brukes for &#229; oversende og formidle trafikksignal
+|===
+|===
+|===
+ 
+==== «CodeList» Stasjonsplassering
+Definisjon: 
+ 
+===== Koder
+[cols="15,25,60"]
+|===
+|*Utvekslingsalias:* 
+|*Kodenavn:* 
+|*Definisjon:* 
+ 
+|frittstående
+|Frittstående
+|frittst&#229;ende nettverkstasjon i form av liten bygning
+|mastearrangement
+|Mastearrangement
+|nettverkstasjon hengende i mast
+|mastefotkiosk
+|Mastefotkiosk
+|plassering av nettverkstasjon p&#229; bakkeniv&#229; mellom mastefundamentene
+|minikiosk
+|Minikiosk
+|nettverkstasjon som minikiosk
 |===
 // End of Registreringsinstruks UML-model
