@@ -856,7 +856,7 @@ image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/f
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Belysningspunkt som henger i vaier registreres som Lysarmatur. Typisk er disse knyttet til samferdselsobjekter.
 Det er ogs&#229; mulig &#229; registrere Lysarmatur for lyspunkt i mast. 
 
-*I FKB er det kun lysarmatur i vaier som henger over veger/gater som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre lysarmaturer skal registreres er opsjonelt.*
+*I FKB er det kun lysarmatur i vaier som henger over veger/gater som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre lysarmaturer skal registreres m&#229; dette avtales s&#230;rskilt (er opsjonelt).*
  
  
 '''
@@ -1754,6 +1754,177 @@ image::figurer\nettverkstasjonomriss.png[link=figurer\nettverkstasjonomriss.png,
 <<<
 '''
  
+[[skap]]
+==== «FeatureType» Skap
+*Definisjon fra FKB produktspesifikasjon*: beskyttelseskasse plassert vanligvis p&#229; bakken, som inneholder koblinger for elektrisk str&#248;m, signal eller annet
+
+Merknad:
+Kan ogs&#229; v&#230;re p&#229; st&#248;rrelse med kiosk.
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Skap for fordeling av elektrisitet eller ekom.
+Brukes ved registrering av koblingsbokser (-skap) for elektrisitet og ekom p&#229; bakken, inntil hus, inntil gjerder m.m. 
+
+Ofte st&#229;r flere skap tilh&#248;rende flere etater/fagomr&#229;der inntil hverandre. Det kan v&#230;re vanskelig &#229; skille de enkelte skap fra hverandre.
+
+For &#229; sikre god fullstendighet og riktig tolkning ved fotogrammetrisk registrering anbefales det &#229; etablere manus eller signalere skapene.
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Skap
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Skap.jpg, Alt="Illustrasjon fra produktspesifikasjon: Skap"]
+ 
+ 
+'''
+.Eksempel på registrering av skap.
+image::figurer\skap.png[link=figurer\skap.png, Alt="Eksempel på registrering av skap."]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter topp skap
+ 
+|FKB høydereferanse
+|Topp skap
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
 [[trase]]
 ==== «FeatureType» Trase
 *Definisjon fra FKB produktspesifikasjon*: den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)
@@ -1773,7 +1944,12 @@ I FKB er det kun traseer som er synlige i terrenget som skal registreres (luftsp
 Det skal dannes nodepunkt (knutepunkt) mellom tilst&#248;tende traseer. Situasjonen avgj&#248;r om nodepunktet skal etableres i 2D eller 3D.
 Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon eller Flymark&#248;r.
 
-*I FKB er det kun h&#248;gspenttraseer og andre traseer, ikke lavspent og ekom, som har luftspenn lengre enn 100 meter som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre traseer slik som belysning, ekom og lavspent skal registreres er opsjonelt.*
+*I FKB er f&#248;lgende p&#229;krevd &#229; registrere fotogrammetrisk:
+<ul>
+	<li>h&#248;gspenttraseer</li>
+	<li>andre traseer (luftspenn) lengre enn 100 meter</li>
+</ul>
+Lavspent, belysning og ekom traseer skal ikke fotogrammetrisk registreres med mindre dette er s&#230;rskilt avtalt (er opsjonelt). *
  
  
 '''
@@ -1976,13 +2152,512 @@ image::figurer\trase_forgrening_fjorspenn.png[link=figurer\trase_forgrening_fjor
 <<<
 '''
  
-[[malobjekt]]
-==== «FeatureType» malObjekt
+[[vindturbin]]
+==== «FeatureType» Vindturbin
+*Definisjon fra FKB produktspesifikasjon*: en kontainer som betegner en hel "vindm&#248;lle". En vindturbin har en generator
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Benyttes for &#229; registrere vindturbiner. 
+
+Egenskapene _navh&#248;yde_ og _rotorbladlengde_ skal registreres for &#229; angi utstrekning til Vindturbinen. Disse egenskapene, i tillegg til registrert posisjon, kan benyttes til visualisere den romlige utstrekningen for vindturbinen.
+
+Fotavtrykket for Vindturbin registreres som Vindturbinomriss.
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Vindturbin
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Vindturbin.jpg, Alt="Illustrasjon fra produktspesifikasjon: Vindturbin"]
+ 
+ 
+'''
+.Eksempel på registrering av Vindturbin (topp nav)
+image::figurer\vindturbin1.png[link=figurer\vindturbin1.png, Alt="Eksempel på registrering av Vindturbin (topp nav)"]
+ 
+ 
+'''
+.Illustrasjon som viser betydningen av egenskapene Navhøyde og Rotorbladlengde
+image::figurer\vindturbin2.png[link=figurer\vindturbin2.png, Alt="Illustrasjon som viser betydningen av egenskapene Navhøyde og Rotorbladlengde"]
+ 
+ 
 ===== Føringer
 [cols="25,75"]
 |===
+|FKB grunnrissreferanse
+|Senter vindturbin
+ 
+|FKB høydereferanse
+|Top nav for vindturbin
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
 |===
  
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|rotorbladlengde
+|Real
+|..ROTORBLADLENGDE
+|[0..1]
+ 
+|navhøyde
+|Real
+|..NAVHØYDE
+|[0..1]
+ 
+|omriss
+|«FeatureType» Vindturbinomriss
+|..OMRISS
+|[0..1]
+|===
+ 
+<<<
+'''
+ 
+[[vindturbinomriss]]
+==== «FeatureType» Vindturbinomriss
+*Definisjon fra FKB produktspesifikasjon*: ytre avgrensning av vindturbinens fotavtrykk p&#229; bakken
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Omriss av Vindturbin
+ 
+ 
+'''
+.Eksempel på registrering av vindturbinomriss
+image::figurer\vindturbinomriss.png[link=figurer\vindturbinomriss.png, Alt="Eksempel på registrering av vindturbinomriss"]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Ytterkant av vindturbinens fundament
+ 
+|FKB høydereferanse
+|Fot vindturbin
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[åk]]
+==== «FeatureType» Åk
+*Definisjon fra FKB produktspesifikasjon*: en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei p&#229; hver side av bane
+
+Merknad FKB:
+"Beina" er egne objekter (objekttype Mast), og ikke del av objektet av objekttypen &#197;k.
+ 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Horisontal konstruksjon i st&#229;l, som regel med mast i hver ende, for opphenging av kontaktledning, signalanlegg eller belysning. I FKB registreres &#197;k kun i forbindelse med bane.
+ 
+ 
+'''
+.Illustrasjon fra produktspesifikasjon av Åk
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Aak.jpg, Alt="Illustrasjon fra produktspesifikasjon: Åk"]
+ 
+ 
+'''
+.Eksempel på registrering av Åk. Den enkelte mast registreres i tillegg.
+image::figurer\åk.png[link=figurer\åk.png, Alt="Eksempel på registrering av Åk. Den enkelte mast registreres i tillegg."]
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Endepunkt Åk
+ 
+|FKB høydereferanse
+|Topp Åk
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+|«CodeList» Ledningsnettverkstype
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
 |===
 |===
  
