@@ -460,27 +460,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
-<ul class="sectlevel2">
-<li><a href="#bardun">3.1. «FeatureType» Bardun</a>
 <ul class="sectlevel3">
-<li><a href="#trueføringer">3.1.1. Føringer</a></li>
-<li><a href="#trueegenskapstabell">3.1.2. Egenskapstabell</a></li>
-</ul>
-</li>
-<li><a href="#mast">3.2. «FeatureType» Mast</a>
-<ul class="sectlevel3">
-<li><a href="#trueføringer-2">3.2.1. Føringer</a></li>
-<li><a href="#trueegenskapstabell-2">3.2.2. Egenskapstabell</a></li>
-<li><a href="#truekodelister-og-kodelisteverdier">3.2.3. Kodelister og kodelisteverdier</a></li>
-<li><a href="#kanal">3.2.4. «FeatureType» Kanal</a></li>
-</ul>
-</li>
+<li><a href="#bardun">3.1. «FeatureType» Bardun</a></li>
+<li><a href="#flymarkør">3.2. «FeatureType» Flymarkør</a></li>
+<li><a href="#kanal">3.3. «FeatureType» Kanal</a></li>
+<li><a href="#kum">3.4. «FeatureType» Kum</a></li>
+<li><a href="#kumlokk">3.5. «FeatureType» Kumlokk</a></li>
+<li><a href="#lysarmatur">3.6. «FeatureType» Lysarmatur</a></li>
+<li><a href="#mast">3.7. «FeatureType» Mast</a></li>
+<li><a href="#masteomriss">3.8. «FeatureType» Masteomriss</a></li>
+<li><a href="#nettverkstasjon">3.9. «FeatureType» Nettverkstasjon</a></li>
+<li><a href="#nettverkstasjonomriss">3.10. «FeatureType» Nettverkstasjonomriss</a></li>
+<li><a href="#trase">3.11. «FeatureType» Trase</a></li>
+<li><a href="#malobjekt">3.12. «FeatureType» malObjekt</a></li>
+<li><a href="#truecodelist-kumlokkform">3.13. «CodeList» Kumlokkform</a></li>
+<li><a href="#truecodelist-punktplassering">3.14. «CodeList» Punktplassering</a></li>
+<li><a href="#truecodelist-mastekonstruksjon">3.15. «CodeList» Mastekonstruksjon</a></li>
+<li><a href="#truecodelist-ledningsnettverkstype">3.16. «CodeList» Ledningsnettverkstype</a></li>
+<li><a href="#truecodelist-stasjonsplassering">3.17. «CodeList» Stasjonsplassering</a></li>
+<li><a href="#truecodelist-ledningsnettverkstype-2">3.18. «CodeList» Ledningsnettverkstype</a></li>
 </ul>
 </li>
 <li><a href="#truedatakvalitet">4. Datakvalitet</a>
 <ul class="sectlevel2">
 <li><a href="#truekvalitetskrav">4.1. Kvalitetskrav</a></li>
 <li><a href="#truekvalitetsklasser">4.2. Kvalitetsklasser</a></li>
+</ul>
+</li>
+<li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a>
+<ul class="sectlevel2">
+<li><a href="#trueprinsipp-for-geometrisk-registrering">5.1. Prinsipp for geometrisk registrering</a>
+<ul class="sectlevel3">
+<li><a href="#truehøgspent">5.1.1. Høgspent</a></li>
+<li><a href="#truelavspent-ekom-og-belysningsanlegg">5.1.2. Lavspent, ekom og belysningsanlegg</a></li>
+</ul>
+</li>
+<li><a href="#truespesielt-om-registrering-av-traseknutepunkt">5.2. Spesielt om registrering av traseknutepunkt</a></li>
+<li><a href="#truespesielt-om-registrering-av-ledningsdata-ved-større-trafostasjoner">5.3. Spesielt om registrering av ledningsdata ved større trafostasjoner</a></li>
 </ul>
 </li>
 </ul>
@@ -608,9 +624,35 @@ Høringsversjon 15. oktober 2021
 <div class="sect1">
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Alle FKB-Ledning objekter skal registreres med et sett egenskaper som er felles for alle FKB datasett. En nærmere beskrivelse av hvilke og hvordan disse egneskapene skal registreres ved fotogrammetrisk datafangst er beskrevet i kapitellet <a href="#truegenerelle-retningslinjer-som-gjelder-fotogrammetrisk-registrering-av-fkb">Generelle retningslinjer som gjelder fotogrammetrisk registrering av FKB</a> og <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB Generell del</a>.</p>
+</div>
+<div class="paragraph">
+<p>I tillegg har alle FKB-Ledning objekter noen felles fagspesifikke egenskaper som skal eller kan registeres. Ved fotogrammetrisk registrering skal disse egenskapene håndteres på følgende måte:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>driftsmerking</em>: Registreres ikke fotogrammetrisk. Eksisterende egenskapsverdi beholdes.</p>
+</li>
+<li>
+<p><em>eierOrgNr</em>: Registreres ikke fotogrammetrisk. Eksisterende egenskapsverdi beholdes.</p>
+</li>
+<li>
+<p><em>eksternPeker</em>: Registreres ikke fotogrammetrisk. Eksisterende egenskapsverdi beholdes.</p>
+</li>
+<li>
+<p><em>eksternPeker</em>: Skal registreres ved fotogrammetrisk datafangst. Korrekt egenskapsverdi skal registeres så langt det lar seg gjøre. Dersom dette ikke er mulig skal kodeverdien "ukjent" benyttes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Enkelte objekttyper har en eller flere egenskaper som er spesifikke for objekttypene. Om og hvordan disse skal registeres er beskrevet under den enkelte objekttype.</p>
+</div>
+<div style="page-break-after: always;"></div>
 <hr>
-<div class="sect2">
-<h3 id="bardun"><a class="anchor" href="#bardun"></a>3.1. «FeatureType» Bardun</h3>
+<div class="sect3">
+<h4 id="bardun"><a class="anchor" href="#bardun"></a>3.1. «FeatureType» Bardun</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: tau, vaier eller liknende som st&#248;tter eller stabiliserer h&#248;ye gjenstander</p>
 </div>
@@ -619,24 +661,24 @@ Høringsversjon 15. oktober 2021
 Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.</p>
 </div>
 <div class="paragraph">
-<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> ??</p>
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg" alt="Bardun" width="Illustrasjon fra produktspesifikasjon: Bardun"></a>
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Bardun.jpg" alt="Bardun"></a>
 </div>
 <div class="title">Figur 1. Illustrasjon fra produktspesifikasjon av Bardun</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer\bardun.png"><img src="figurer\bardun.png" alt="Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres."></a>
+<a class="image" href="figurer\bardun.png"><img src="figurer\bardun.png" alt="figurer\bardun"></a>
 </div>
 <div class="title">Figur 2. Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres.</div>
 </div>
-<div class="sect3">
-<h4 id="trueføringer"><a class="anchor" href="#trueføringer"></a>3.1.1. Føringer</h4>
+<div class="sect4">
+<h5 id="trueføringer"><a class="anchor" href="#trueføringer"></a>Føringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -650,10 +692,6 @@ Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topp bardun senter mast og fot bardun i feste ved bakken.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB registreringsmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enkeltpunkt i sekvens</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
@@ -674,8 +712,8 @@ Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste 
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="trueegenskapstabell"><a class="anchor" href="#trueegenskapstabell"></a>3.1.2. Egenskapstabell</h4>
+<div class="sect4">
+<h5 id="trueegenskapstabell"><a class="anchor" href="#trueegenskapstabell"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -825,10 +863,1125 @@ Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste 
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
+<hr>
 </div>
 </div>
-<div class="sect2">
-<h3 id="mast"><a class="anchor" href="#mast"></a>3.2. «FeatureType» Mast</h3>
+<div class="sect3">
+<h4 id="flymarkør"><a class="anchor" href="#flymarkør"></a>3.2. «FeatureType» Flymarkør</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: markering av store luftspenn over daler og fjorder</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Brukes for markering av lange luftspenn. Typisk er dette oransje bl&#229;ser festet p&#229; linjene.</p>
+</div>
+<div class="paragraph">
+<p>Pilh&#248;yden for lange luftspenn kan variere mye som f&#248;lge av v&#230;r og temperatur. Dette f&#248;rer til at mark&#248;renes posisjon vil variere, noe som resulterer i d&#229;rlig posisjonsn&#248;yaktighet.</p>
+</div>
+<div class="paragraph">
+<p>Flymark&#248;r og kurvepunkt i Trase skal ha samme posisjon, b&#229;de i grunnriss og h&#248;yde.</p>
+</div>
+<div class="paragraph">
+<p>I tilfeller hvor flymark&#248;ren ikke er plassert p&#229; Trase, normalforskyves flymark&#248;ren inn p&#229; traseen og kvalitetskodes deretter. I tillegg legges det til <em>informasjon</em> "Mark&#248;r normalforskj&#248;vet inn p&#229; trase".</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Flymarkor.jpg" alt="Flymarkor"></a>
+</div>
+<div class="title">Figur 3. Illustrasjon fra produktspesifikasjon av Flymarkør</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer\flymarkør.png"><img src="figurer\flymarkør.png" alt="figurer\flymarkør"></a>
+</div>
+<div class="title">Figur 4. Flymarkører registreres som senter topp flymarkør/blåse.</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-2"><a class="anchor" href="#trueføringer-2"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter flymarkør</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp flymarkør</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-2"><a class="anchor" href="#trueegenskapstabell-2"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kanal"><a class="anchor" href="#kanal"></a>3.3. «FeatureType» Kanal</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: brukes som fremf&#248;ringsvei for ledning</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Brukes ved registrering av kanaler som f&#248;rer kabler for elektrotekniske anlegg.</p>
+</div>
+<div class="paragraph">
+<p>N&#229;r flere kanaler ligger parallelt, skal hver enkelt kanal registreres.</p>
+</div>
+<div class="paragraph">
+<p><strong>I FKB er det kun kanaler som er synlige i terrenget som skal registreres. Oftest tilh&#248;rende Bane NOR.</strong></p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg" alt="Kanal"></a>
+</div>
+<div class="title">Figur 5. Illustrasjon fra produktspesifikasjon av Kanal</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer\kanal.png"><img src="figurer\kanal.png" alt="figurer\kanal"></a>
+</div>
+<div class="title">Figur 6. Registrering av kabelkanal (foto: Bane NOR)</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-3"><a class="anchor" href="#trueføringer-3"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter kanal, med knekkpunkt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp kanal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-3"><a class="anchor" href="#trueegenskapstabell-3"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beliggenhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kum"><a class="anchor" href="#kum"></a>3.4. «FeatureType» Kum</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: et fysisk objekt som regel av st&#229;l, plast eller betong som er gravd ned i bakken, og som lager et rom</p>
+</div>
+<div class="paragraph">
+<p>Merknad FKB:
+Ytterkant topp kumkonstruksjon der denne er synlig.</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Ytterkant topp kumkonstruksjon der denne er synlig.
+Kum er spesielt tenkt benyttet ved bane for &#229; registrere sammenheng mellom kanaler. Se figur.</p>
+</div>
+<div class="paragraph">
+<p><strong>P&#229;krevet registrering langs bane, opsjonell for&#248;vrig</strong></p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg" alt="Kum"></a>
+</div>
+<div class="title">Figur 7. Illustrasjon fra produktspesifikasjon av Kum</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer\kum.png"><img src="figurer\kum.png" alt="figurer\kum"></a>
+</div>
+<div class="title">Figur 8. Ytterkant topp kumkonstruksjon registreres som kurve der den er synlig og konstruksjonen har en diagonale/diameter større enn 1,5 meter.</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-4"><a class="anchor" href="#trueføringer-4"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ytterkant kum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp ytterkant kum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagonal/diameter 1,5 meter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-4"><a class="anchor" href="#trueegenskapstabell-4"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beliggenhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="kumlokk"><a class="anchor" href="#kumlokk"></a>3.5. «FeatureType» Kumlokk</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: et deksel over en kum eller annet hulrom under bakkeniv&#229;</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Egenskapen <em>kumlokkform</em> benyttes for &#229; angi geometrisk form av kumlokket. I FKB skilles det p&#229; disse &#171;kumlokkformene&amp;#187</dt>
+<dd>
+<p>Hydrant, Kvadratisk, Rektangul&#230;rt, Sirkelformet og Sluk.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For &#229; sikre god fullstendighet og riktig tolkning ved fotogrammetrisk registrering anbefales det &#229; etablere manus eller signalere kumlokkene.</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kumlokk.jpg" alt="Kumlokk"></a>
+</div>
+<div class="title">Figur 9. Illustrasjon fra produktspesifikasjon av Kumlokk</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-5"><a class="anchor" href="#trueføringer-5"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter topp kum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp kum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-5"><a class="anchor" href="#trueegenskapstabell-5"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kumlokkform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Kumlokkform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KUMLOKKFORM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» Kum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueroller"><a class="anchor" href="#trueroller"></a>Roller</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="lysarmatur"><a class="anchor" href="#lysarmatur"></a>3.6. «FeatureType» Lysarmatur</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: selve det elektriske punktet som gir lys</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Belysningspunkt som henger i vaier registreres som Lysarmatur. Typisk er disse knyttet til samferdselsobjekter.
+Det er ogs&#229; mulig &#229; registrere Lysarmatur for lyspunkt i mast.</p>
+</div>
+<div class="paragraph">
+<p><strong>I FKB er det kun lysarmatur i vaier som henger over veger/gater som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre lysarmaturer skal registreres er opsjonelt.</strong></p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Lysarmatur.jpg" alt="Lysarmatur"></a>
+</div>
+<div class="title">Figur 10. Illustrasjon fra produktspesifikasjon av Lysarmatur</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-6"><a class="anchor" href="#trueføringer-6"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter lysarmatur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp lysarmatur</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-6"><a class="anchor" href="#trueegenskapstabell-6"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plassering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Punktplassering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..BELYSNINGSPLASSERING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iMast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» Mast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IMAST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueroller-2"><a class="anchor" href="#trueroller-2"></a>Roller</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mast"><a class="anchor" href="#mast"></a>3.7. «FeatureType» Mast</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken</p>
 </div>
@@ -841,13 +1994,13 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 </div>
 <div class="paragraph">
 <p>Mast er en generalisering av komponenter slik som stolper, barduner, traverser osv. som danner en mast. En mast kan v&#230;re konstruert i ulike fasonger og materiale som st&#229;l, tre eller kompositt.
-Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type mast det er (EnkeltStolpe, StorStolpe, Fagverksmast, Kontaktledningsmast eller Annet).</p>
+Den p&#229;krevde egenskapen <em>konstruksjon</em> benyttes for &#229; angi hvilken type mast det er (EnkeltStolpe, StorStolpe, Fagverksmast eller Annet).</p>
 </div>
 <div class="paragraph">
-<p>Den p&#229;krevde egenskapen BELYSNING benyttes for &#229; angi om det henger lysarmatur i masten eller ikke.</p>
+<p>Den p&#229;krevde egenskapen <em>belysning</em> benyttes for &#229; angi om det henger lysarmatur i masten eller ikke.</p>
 </div>
 <div class="paragraph">
-<p>For mast som er h&#248;yere enn 15 meter skal VERTIKALAVSTAND angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen LINJEBREDDE. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett.</p>
+<p>For mast som er h&#248;yere enn 15 meter skal <em>vertikalAvstand</em> angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen <em>linjebredde</em>. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett.</p>
 </div>
 <div class="paragraph">
 <p>Mast og knekkpunkt i Trase skal ha samme posisjon (fortrinnsvis i b&#229;de grunnriss og h&#248;yde, minimum i grunnriss).</p>
@@ -858,19 +2011,19 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg" alt="Illustrasjon fra produktspesifikasjon: Mast"></a>
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg" alt="Mast"></a>
 </div>
-<div class="title">Figur 3. Illustrasjon fra produktspesifikasjon av Mast</div>
+<div class="title">Figur 11. Illustrasjon fra produktspesifikasjon av Mast</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer\mast_vertikalAvstand_linjebredde.png"><img src="figurer\mast_vertikalAvstand_linjebredde.png" alt="For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde."></a>
+<a class="image" href="figurer\mast_vertikalAvstand_linjebredde.png"><img src="figurer\mast_vertikalAvstand_linjebredde.png" alt="figurer\mast vertikalAvstand linjebredde"></a>
 </div>
-<div class="title">Figur 4. For mast som er høyere enn 15 meter skal vertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen linjebredde.</div>
+<div class="title">Figur 12. For mast som er høyere enn 15 meter skal VertikalAvstand angis som avstand fra fot/bakkenivå til topp mast. For mast som har liner med avstand lengre enn 10 meter fra hverandre, skal største avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen Linjebredde.</div>
 </div>
-<div class="sect3">
-<h4 id="trueføringer-2"><a class="anchor" href="#trueføringer-2"></a>3.2.1. Føringer</h4>
+<div class="sect4">
+<h5 id="trueføringer-7"><a class="anchor" href="#trueføringer-7"></a>Føringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -904,8 +2057,8 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="trueegenskapstabell-2"><a class="anchor" href="#trueegenskapstabell-2"></a>3.2.2. Egenskapstabell</h4>
+<div class="sect4">
+<h5 id="trueegenskapstabell-7"><a class="anchor" href="#trueegenskapstabell-7"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -1102,139 +2255,45 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect4">
-<h5 id="truebetingelser"><a class="anchor" href="#truebetingelser"></a>Betingelser</h5>
+<h5 id="trueroller-3"><a class="anchor" href="#trueroller-3"></a>Roller</h5>
 <table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Egenskapsnavn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Betingelse:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">linjebredde:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">største avstanden mellom ytterfasene (ledningene) i ei mast</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vertikalavstand:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fra fot/bakkenivå til topp mast</p></td>
-</tr>
-</tbody>
 </table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="truekodelister-og-kodelisteverdier"><a class="anchor" href="#truekodelister-og-kodelisteverdier"></a>3.2.3. Kodelister og kodelisteverdier</h4>
-<div class="paragraph">
-<p>Figurer og skisser knyttet til bruk av bestemte kodelister og kodelisteverdier.</p>
-</div>
-<div class="sect4">
-<h5 id="truemastekonstruksjon-annet"><a class="anchor" href="#truemastekonstruksjon-annet"></a>Mastekonstruksjon: Annet</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: andre typer mastekonstruksjoner som ikke er spesifisert i kodelisten eller master sammensatt av to eller flere konstruksjonstyper</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_annet.png" target="_blank" rel="noopener"><img src="figurer/mast_annet.png" alt="Telemaster, radiomaster etc. registreres som topp senter mast."></a>
-</div>
-<div class="title">Figur 5. Telemaster, radiomaster etc. registreres som topp senter mast</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="truemastekonstruksjon-enkelstolpe"><a class="anchor" href="#truemastekonstruksjon-enkelstolpe"></a>Mastekonstruksjon: EnkelStolpe</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: mast laget av kun en enkelt stolpe, vanligvis i lavspentnett, ekom eller langs jernbane</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_enkelStolpe.png" target="_blank" rel="noopener"><img src="figurer/mast_enkelStolpe.png" alt="For enkeltstolper skal topp mast registreres. I noen tilfeller, typisk på veilys, må man generere topp mast (se figur lengst til høyre)"></a>
-</div>
-<div class="title">Figur 6. For enkeltstolper skal topp mast registreres. I noen tilfeller, typisk på veilys, må man generere topp mast (se figur lengst til høyre)</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="truemastekonstruksjon-fagverksmast"><a class="anchor" href="#truemastekonstruksjon-fagverksmast"></a>Mastekonstruksjon: Fagverksmast</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: fagverk av metallkonstruksjoner</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_fagverkmast.png" target="_blank" rel="noopener"><img src="figurer/mast_fagverkmast.png" alt="Senter topp mast registreres"></a>
-</div>
-<div class="title">Figur 7. Senter topp mast registreres</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="truemastekonstruksjon-storstolpe"><a class="anchor" href="#truemastekonstruksjon-storstolpe"></a>Mastekonstruksjon: StorStolpe</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: stolpe(r) i høyspentlinjer som ikke er fagverksmast</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_storStolpe.png" target="_blank" rel="noopener"><img src="figurer/mast_storStolpe.png" alt="Senter topp mast registreres"></a>
-</div>
-<div class="title">Figur 8. Senter topp mast registreres</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueledningsnettverkstype-kontaktledning"><a class="anchor" href="#trueledningsnettverkstype-kontaktledning"></a>Ledningsnettverkstype: Kontaktledning</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: anlegg for strømforsyning gjennom takmontert strømavtakerutstyr på elektriske kjøretøy</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_kontaktledning.png" target="_blank" rel="noopener"><img src="figurer/mast_kontaktledning.png" alt="Senter topp mast registreres"></a>
-</div>
-<div class="title">Figur 9. Senter topp mast registreres</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueledningsnettverkstype-signalanlegg"><a class="anchor" href="#trueledningsnettverkstype-signalanlegg"></a>Ledningsnettverkstype: Signalanlegg</h5>
-<div class="paragraph">
-<p><strong>Definisjon</strong>: nettverk som brukes for å oversende og formidle trafikksignal</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/mast_signalanlegg.png" target="_blank" rel="noopener"><img src="figurer/mast_signalanlegg.png" alt="Senter topp mast registreres"></a>
-</div>
-<div class="title">Figur 10. Senter topp mast registreres</div>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+</table>
 <div style="page-break-after: always;"></div>
+<hr>
 </div>
 </div>
 <div class="sect3">
-<h4 id="kanal"><a class="anchor" href="#kanal"></a>3.2.4. «FeatureType» Kanal</h4>
+<h4 id="masteomriss"><a class="anchor" href="#masteomriss"></a>3.8. «FeatureType» Masteomriss</h4>
 <div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: brukes som fremf&#248;ringsvei for ledning</p>
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: ytre avgrensning av mastens fotavtrykk p&#229; bakken</p>
 </div>
 <div class="paragraph">
-<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Brukes ved registrering av kanaler som f&#248;rer kabler for elektrotekniske anlegg.</p>
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Geometrisk utstrekning av masten.
+Hovedregelen er at alle master som best&#229;r av flere fundamenterings-/bakkepunkt (store master) skal registreres med masteomriss</p>
 </div>
 <div class="paragraph">
-<p>N&#229;r flere kanaler ligger parallelt, skal hver enkelt kanal registreres.</p>
-</div>
-<div class="paragraph">
-<p>I FKB er det kun kanaler som er synlige i terrenget som skal registreres. Oftest tilh&#248;rende Bane NOR.</p>
+<p>I de tilfeller hvor to master st&#229;r inntil hverandre skal hver mast ha sin egen utstrekning.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kanal.jpg" alt="Kanal" width="Illustrasjon fra produktspesifikasjon: Kanal"></a>
+<a class="image" href="figurer\masteomriss1.png"><img src="figurer\masteomriss1.png" alt="figurer\masteomriss1"></a>
 </div>
-<div class="title">Figur 11. Illustrasjon fra produktspesifikasjon av Kanal</div>
+<div class="title">Figur 13. Eksempel på registrering av Masteomriss for StolpeStor og Fagverksmast. Hvert enkelt punkt i kurven angir det enkelte fundament for masten.</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer\kanal.png"><img src="figurer\kanal.png" alt="figurer\kanal" width="Registrering av kabelkanal (foto: Bane NOR)"></a>
+<a class="image" href="figurer\masteomriss2.png"><img src="figurer\masteomriss2.png" alt="figurer\masteomriss2"></a>
 </div>
-<div class="title">Figur 12. Illustrasjon fra fil av objekttype Kanal</div>
+<div class="title">Figur 14. For mast som har betongfundament, typisk rund form, registreres omriss av fundamentet.</div>
 </div>
 <div class="sect4">
-<h5 id="trueføringer-3"><a class="anchor" href="#trueføringer-3"></a>Føringer</h5>
+<h5 id="trueføringer-8"><a class="anchor" href="#trueføringer-8"></a>Føringer</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1243,11 +2302,11 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Senter kanal, med knekkpunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ytterkant av mastens fotavtrykk</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topp kanal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fot mast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
@@ -1259,17 +2318,466 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect4">
-<h5 id="trueegenskapstabell-3"><a class="anchor" href="#trueegenskapstabell-3"></a>Egenskapstabell</h5>
+<h5 id="trueegenskapstabell-8"><a class="anchor" href="#trueegenskapstabell-8"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beliggenhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Mastekonstruksjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MASTEKONSTRUKSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nettverkstasjon"><a class="anchor" href="#nettverkstasjon"></a>3.9. «FeatureType» Nettverkstasjon</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Egenskapen <em>plassering</em> benyttes for &#229; klassifisere type Nettverkstasjon. I FKB skilles det p&#229; disse nettverkstasjonen; frittst&#229;ende, minikiosk, mastearrangement og mastefotkiosk.</p>
+</div>
+<div class="paragraph">
+<p>Fortrinnsvis skal b&#229;de punkt og omriss inng&#229; i FKB. Ved sm&#229; bygninger eller d&#229;rlig innsyn ved kartkonstruksjon kan bare punkt benyttes. N&#229;r nettverkstasjonen er registrert i matrikkel, registreres den som bygning. Dette gjelder typisk for bygninger med areal st&#248;rre enn 15 m2.</p>
+</div>
+<div class="paragraph">
+<p>Ved fotogrammetrisk registrering kan det v&#230;re vanskelig &#229; skille minikiosk, pumpestasjon og andre bygninger fra hverandre. Det anbefales derfor manuskart for korrekt registrering.</p>
+</div>
+<div class="paragraph">
+<p>Kan avgrenses av Nettverkstasjonsomriss. Omriss (Nettverkstasjonsomriss) skal om mulig alltid registreres.</p>
+</div>
+<div class="paragraph">
+<p><strong>I FKB er det ikke p&#229;krevd &#229; registrere Nettverkstasjon med <em>plassering</em> Mastearrangement i FKB-C og FKB-D omr&#229;der fotogrammetrisk.</strong></p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Nettverkstasjon.jpg" alt="Nettverkstasjon"></a>
+</div>
+<div class="title">Figur 15. Illustrasjon fra produktspesifikasjon av Nettverkstasjon</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-9"><a class="anchor" href="#trueføringer-9"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter Nettverkstasjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp av senter Nettverkstasjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-9"><a class="anchor" href="#trueegenskapstabell-9"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plassering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Stasjonsplassering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..STASJONSPLASSERING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">omriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» Nettverkstasjonomriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OMRISS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueroller-4"><a class="anchor" href="#trueroller-4"></a>Roller</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="nettverkstasjonomriss"><a class="anchor" href="#nettverkstasjonomriss"></a>3.10. «FeatureType» Nettverkstasjonomriss</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: ytre avgrensning av nettverkstasjonen, i grunnriss</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Liten bygning som inneholder transformator for fordeling av elektrisitet.</p>
+</div>
+<div class="paragraph">
+<p>Ved sm&#229; bygninger eller d&#229;rlig innsyn ved kartkonstruksjon kan bare punkt benyttes. N&#229;r nettstasjon er registrert i matrikkel, registreres den som bygning. Dette gjelder typisk for bygninger med areal st&#248;rre enn 15 m2.</p>
+</div>
+<div class="paragraph">
+<p>Nettverkstasjonomriss beskriver omrisset av en Nettverkstasjon.</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer\nettverkstasjonomriss.png"><img src="figurer\nettverkstasjonomriss.png" alt="figurer\nettverkstasjonomriss"></a>
+</div>
+<div class="title">Figur 16. Eksempel på registrering av Nettverkstasjonomriss.</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-10"><a class="anchor" href="#trueføringer-10"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ytterkant nettstasjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp ytterkant nettstasjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-10"><a class="anchor" href="#trueegenskapstabell-10"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -1418,8 +2926,632 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
 <hr>
 </div>
+</div>
+<div class="sect3">
+<h4 id="trase"><a class="anchor" href="#trase"></a>3.11. «FeatureType» Trase</h4>
+<div class="paragraph">
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: den mest mulig geografisk riktige posisjonen for en framf&#248;ring av ledning(er)</p>
+</div>
+<div class="paragraph">
+<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Brukes ved registrering av traseer mellom master. En trase beskriver den geografisk plassering for en eller flere ledninger, (ledning = kabel, linje, r&#248;r osv.).</p>
+</div>
+<div class="paragraph">
+<p>Registreres som rett linje mellom punkter i master. Det skal kun registreres nodepunkt eller knutepunkt der hvor traseen er tilknyttet et annet fysisk objekt (Mast, Nettverkstasjon eller Flymark&#248;r).</p>
+</div>
+<div class="paragraph">
+<p>Ved fotogrammetrisk registrering kan det v&#230;re vanskelig &#229; skille mellom hva som er lavspent og ekom. Det kan derfor v&#230;re aktuelt &#229; lage manus f&#248;r kartkonstruksjon.</p>
+</div>
+<div class="paragraph">
+<p>Ved fjordspenn og overf&#248;ringer over dal der ledningene forgreiner seg og avstanden mellom hver enkel ledning er st&#248;rre enn 15 meter, skal det registreres en trase pr. ledning.</p>
+</div>
+<div class="paragraph">
+<p>Lange luftspenn traseer over fjorder og lignende skal registreres som ei sammenhengende kurve mellom endemastene. N&#229;r slike spenn har mark&#248;rer skal traseen registreres med et punkt i kurven som er lik mark&#248;rens koordinat (rett linje fra mark&#248;r til mark&#248;r).</p>
+</div>
+<div class="paragraph">
+<p>I FKB er det kun traseer som er synlige i terrenget som skal registreres (luftspenn).</p>
+</div>
+<div class="paragraph">
+<p>Det skal dannes nodepunkt (knutepunkt) mellom tilst&#248;tende traseer. Situasjonen avgj&#248;r om nodepunktet skal etableres i 2D eller 3D.
+Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon eller Flymark&#248;r.</p>
+</div>
+<div class="paragraph">
+<p><strong>I FKB er det kun h&#248;gspenttraseer og andre traseer, ikke lavspent og ekom, som har luftspenn lengre enn 100 meter som er p&#229;krevd &#229; fotogrammetrisk registrere. Om andre traseer slik som belysning, ekom og lavspent skal registreres er opsjonelt.</strong></p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Trase.jpg" alt="Trase"></a>
+</div>
+<div class="title">Figur 17. Illustrasjon fra produktspesifikasjon av Trase</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer\trase_forgrening_fjorspenn.png"><img src="figurer\trase_forgrening_fjorspenn.png" alt="figurer\trase forgrening fjorspenn"></a>
+</div>
+<div class="title">Figur 18. Eksempel på registrering av trase med forgreining, samt hvordan en fjordoverføring med forgreining skal synliggjøres i kartet.</div>
+</div>
+<div class="sect4">
+<h5 id="trueføringer-11"><a class="anchor" href="#trueføringer-11"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter mastekonstruksjon, nettverkstasjon eller flymarkør</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp mast (absolutt høyeste punkt), nettstasjon eller flymarkør. Høyden kan være vanskelig å bestemme nøyaktig.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueegenskapstabell-11"><a class="anchor" href="#trueegenskapstabell-11"></a>Egenskapstabell</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">driftsmerking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..DRIFTSMERKING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eierOrgNr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EIERORGNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eksternPeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hovedbruk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Ledningsnettverkstype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..LEDNINGSNETTVERKSTYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beliggenhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antallLaserPunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..ANTALL_LASERPUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maksVertikalAvstand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» VertikalAvstandLedning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MAKS_VERTIKALUTSTREKNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maksVertikalAvstand.vertikalhøydeposisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.NØHKOOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maksVertikalAvstand.vertikalhøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERTIKALHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minVertikalAvstand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» VertikalAvstandLedning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MIN_VERTIKALUTSTREKNING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minVertikalAvstand.vertikalhøydeposisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.NØHKOOR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minVertikalAvstand.vertikalhøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERTIKALHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trasenavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TRASENAVN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="trueroller-5"><a class="anchor" href="#trueroller-5"></a>Roller</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<div style="page-break-after: always;"></div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="malobjekt"><a class="anchor" href="#malobjekt"></a>3.12. «FeatureType» malObjekt</h4>
+<div class="sect4">
+<h5 id="trueføringer-12"><a class="anchor" href="#trueføringer-12"></a>Føringer</h5>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-kumlokkform"><a class="anchor" href="#truecodelist-kumlokkform"></a>3.13. «CodeList» Kumlokkform</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder"><a class="anchor" href="#truekoder"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hydrant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hydrant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">konstruksjon som er utformet slik at vannslanger for spyling eller brannslukning, kan kobles direkte til r&#248;rmuffe i konstruksjonen
+<br>
+Senter topp hydrant skal registreres
+<span class="image"><a class="image" href="figurer/kumlokk_hydrant.png"><img src="figurer/kumlokk_hydrant.png" alt="kumlokk hydrant" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvadratisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kvadratisk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kumlokket har utstrekning i form av et kvadrat
+<br>
+Senter kumlokk skal registreres. I bildet til venstre vises både et kvadratisk og sirkelformet kumlokk
+<span class="image"><a class="image" href="figurer/kumlokk_kvadratisk.png"><img src="figurer/kumlokk_kvadratisk.png" alt="kumlokk kvadratisk" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rektangulært</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rektangulært</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kumlokket har utstrekning i form av et rektangel
+<br>
+Senter kumlokk skal registreres
+<span class="image"><a class="image" href="figurer/kumlokk_rektangulært.png"><img src="figurer/kumlokk_rektangulært.png" alt="kumlokk rektangulært" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sirkelforma</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sirkelformet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kumlokket er sirkelformet, rundt
+<br>
+Senter kumlokk skal registreres
+<span class="image"><a class="image" href="figurer/kumlokk_sirkulært.png"><img src="figurer/kumlokk_sirkulært.png" alt="kumlokk sirkulært" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sluk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sluk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kumlokk eller &#229;pning med rist der overflatevann kan renne ned i avl&#248;pssystemet, ofte i forbindelse med vegsystemer
+<br>
+Senter kumlokk skal registreres
+<span class="image"><a class="image" href="figurer/kumlokk_sluk.png"><img src="figurer/kumlokk_sluk.png" alt="kumlokk sluk" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-punktplassering"><a class="anchor" href="#truecodelist-punktplassering"></a>3.14. «CodeList» Punktplassering</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder-2"><a class="anchor" href="#truekoder-2"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hengendeIKabel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hengende i kabel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">objektet er montert hengende i kabel
+<br>
+Topp senter lysarmatur for lysarmatur i vaier over gater/veger skal registreres
+<span class="image"><a class="image" href="figurer/lysarmatur_hengendeIKabel.png"><img src="figurer/lysarmatur_hengendeIKabel.png" alt="lysarmatur hengendeIKabel" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iÅk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I åk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">objektet er montert p&#229;/i &#229;k</p>
+<p class="tableblock"><strong>Fotogrammetrisk registrering: Opsjonel registrering</strong>
+<br>
+Eksempel på registrering av lysarmatur i/på åk. Kun et utvalg armatur er markert med rød prikk. Dette er ikke en påkrevet registrering ved fotogrammetri.
+<span class="image"><a class="image" href="figurer/lysarmatur_iÅk.png"><img src="figurer/lysarmatur_iÅk.png" alt="lysarmatur iÅk" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iMast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I mast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">objektet er montert p&#229;/i mast</p>
+<p class="tableblock"><strong>Fotogrammetrisk registrering: Opsjonel registrering</strong>
+<br>
+Eksempel på registrering av lysarmatur i mast. Kun et utvalg armatur er markert med rød prikk. Dette er ikke en påkrevet registrering ved fotogrammetri.
+<span class="image"><a class="image" href="figurer/lysarmatur_iMast.png"><img src="figurer/lysarmatur_iMast.png" alt="lysarmatur iMast" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-mastekonstruksjon"><a class="anchor" href="#truecodelist-mastekonstruksjon"></a>3.15. «CodeList» Mastekonstruksjon</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder-3"><a class="anchor" href="#truekoder-3"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">annet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">andre typer mastekonstruksjoner som ikke er spesifisert i kodelisten eller master sammensatt av to eller flere konstruksjonstyper</p>
+<p class="tableblock">For at en mast skal registreres som Annet skal den ha en vertikalAvstand &gt; 5 meter.
+<br>
+Telemaster, radiomaster etc. registreres som topp senter mast.
+<span class="image"><a class="image" href="figurer/mast_annet.png"><img src="figurer/mast_annet.png" alt="mast annet" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enkelStolpe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EnkelStolpe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mast laget av kun en enkelt stolpe, vanligvis i lavspentnett, ekom eller langs jernbane
+<br>
+For enkeltstolper skal topp mast registreres. I noen tilfeller, typisk på veilys, må man generere topp mast (se figur lengst til høyre)
+<span class="image"><a class="image" href="figurer/mast_enkelStolpe.png"><img src="figurer/mast_enkelStolpe.png" alt="mast enkelStolpe" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fagverksmast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fagverksmast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fagverk av metallkonstruksjoner
+<br>
+Senter topp mast registreres
+<span class="image"><a class="image" href="figurer/mast_fagverkmast.png"><img src="figurer/mast_fagverkmast.png" alt="mast fagverkmast" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storStolpe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StorStolpe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stolpe(r) i h&#248;yspentlinjer som ikke er fagverksmast
+<br>
+Senter topp mast registreres
+<span class="image"><a class="image" href="figurer/mast_storStolpe.png"><img src="figurer/mast_storStolpe.png" alt="mast storStolpe" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-ledningsnettverkstype"><a class="anchor" href="#truecodelist-ledningsnettverkstype"></a>3.16. «CodeList» Ledningsnettverkstype</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder-4"><a class="anchor" href="#truekoder-4"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kontaktledning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kontaktledning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">anlegg for str&#248;mforsyning gjennom takmontert str&#248;mavtakerutstyr p&#229; elektriske kj&#248;ret&#248;y
+<br>
+Senter topp mast registreres
+<span class="image"><a class="image" href="figurer/mast_kontaktledning.png"><img src="figurer/mast_kontaktledning.png" alt="mast kontaktledning" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">signalanlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signalanlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nettverk som brukes for &#229; oversende og formidle trafikksignal
+<br>
+Senter topp mast registreres
+<span class="image"><a class="image" href="figurer/mast_signalanlegg.png"><img src="figurer/mast_signalanlegg.png" alt="mast signalanlegg" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-stasjonsplassering"><a class="anchor" href="#truecodelist-stasjonsplassering"></a>3.17. «CodeList» Stasjonsplassering</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder-5"><a class="anchor" href="#truekoder-5"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">frittstående</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frittstående</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">frittst&#229;ende nettverkstasjon i form av liten bygning
+<br>
+Eksempel på registrering av frittstående nettverkstasjon som representasjonspunkt. Uten manus vil det være vanskelig å skille frittstående nettverksstasjoner med andre bygninger, og man må derfor påregne at slike nettverkstasjoner blir registrert som Anne
+<span class="image"><a class="image" href="figurer/nettverkstasjon_frittstående.png"><img src="figurer/nettverkstasjon_frittstående.png" alt="nettverkstasjon frittstående" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mastearrangement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mastearrangement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nettverkstasjon hengende i mast
+<br>
+Eksempel på registrering av mastearrangement som representasjonspunkt.
+<span class="image"><a class="image" href="figurer/nettverkstasjon_mastearrangement.png"><img src="figurer/nettverkstasjon_mastearrangement.png" alt="nettverkstasjon mastearrangement" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mastefotkiosk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mastefotkiosk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plassering av nettverkstasjon p&#229; bakkeniv&#229; mellom mastefundamentene</p>
+<p class="tableblock"><strong>H&#248;gspenttraseer er p&#229;krevd &#229; registrere ved fotogrammetrisk konstruksjon</strong>
+<br>
+Eksempel på registrering av mastefotkiosk som representasjonspunkt.
+<span class="image"><a class="image" href="figurer/nettverkstasjon_mastefotstasjon.png"><img src="figurer/nettverkstasjon_mastefotstasjon.png" alt="nettverkstasjon mastefotstasjon" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minikiosk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minikiosk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nettverkstasjon som minikiosk
+<br>
+Eksempel på registrering av minikiosk som representasjonspunkt.
+<span class="image"><a class="image" href="figurer/nettverkstasjon_minikiosk.png"><img src="figurer/nettverkstasjon_minikiosk.png" alt="nettverkstasjon minikiosk" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecodelist-ledningsnettverkstype-2"><a class="anchor" href="#truecodelist-ledningsnettverkstype-2"></a>3.18. «CodeList» Ledningsnettverkstype</h4>
+<div class="paragraph">
+<p>Definisjon:</p>
+</div>
+<div class="sect4">
+<h5 id="truekoder-6"><a class="anchor" href="#truekoder-6"></a>Koder</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvekslingsalias:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kodenavn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definisjon:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">belysningsanlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Belysningsanlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nettverk som brukes til utend&#248;rsbelysning
+<br>
+Eksempel på registrering av trase for belysningsanlegg. Til venstre er det gatelys og til høyre lysløype.
+<span class="image"><a class="image" href="figurer/trase_belysningsanlegg.png"><img src="figurer/trase_belysningsanlegg.png" alt="trase belysningsanlegg" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ekom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ekom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">anlegg for eKom-luftledninger, f.eks. fiberkabler, telefonstolper og -ledninger
+<br>
+Eksempel på registrering av ekomlinje. I eksemplet benytter ekom-traseen de samme stolpene som en lavspenttrasen (fellesføring).
+<span class="image"><a class="image" href="figurer/trase_ekom.png"><img src="figurer/trase_ekom.png" alt="trase ekom" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høgspentnett</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høgspentnett</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h&#248;gspentnett, &gt; 1 kV
+<br>
+Eksempel på registrering av høgspentlinje
+<span class="image"><a class="image" href="figurer/trase_høgspent.png"><img src="figurer/trase_høgspent.png" alt="trase høgspent" width="100" height="100"></a></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lavspentnett</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lavspentnett</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lavspentnett, &lt;= 1 kV
+<br>
+Eksempel på registrering av lavspentlinje.
+<span class="image"><a class="image" href="figurer/trase_lavspent.png"><img src="figurer/trase_lavspent.png" alt="trase lavspent" width="100" height="100"></a></span></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1429,6 +3561,9 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <div class="sectionbody">
 <div class="paragraph">
 <p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truekvalitet">FKB Generell del, kapittel 8</a></p>
+</div>
+<div class="paragraph">
+<p>De forskjellige objekttypene er delt inn i forskjellige <a href="#truekvalitetsklasser">Kvalitetsklasser</a> som styrer krav til nøyaktighet og fullstendighet ved registrering.</p>
 </div>
 <div class="sect2">
 <h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>4.1. Kvalitetskrav</h3>
@@ -1463,67 +3598,15 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenkryssinger skal ikke forekomme i FKB-Naturinfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema.</p>
-</div>
-<table id="tab-Logisk-konsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 2. Krav til logisk konsistens</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Krav</th>
-<th class="tableblock halign-left valign-top">Kommentar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Konseptuell konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall enheter der regler i konseptuelt skjema ikke er oppfylt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/010/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F.eks. overskytende egenskaper eller ulovlige egenskaper.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenkryssinger skal ikke forekomme i FKB-Naturinfo</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Krav til logisk konsistens kontrolleres maskinelt vha. SOSI-kontroll, kontroll mot GML-skjema e.l.</p>
+<p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema. Gjelder alle kvalitetsklasser.</p>
 </div>
 <table id="tab-Egenskapskonsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Krav til egenskapskonsistens</caption>
+<caption class="title">Tabell 2. Krav til egenskapskonsistens</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1547,18 +3630,23 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Gjelder alle kvalitetsklasser.</p>
+</div>
 <table id="tab-Fullstendighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Krav til fullstendighet</caption>
+<caption class="title">Tabell 3. Krav til fullstendighet</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Kvalitetselement</th>
 <th class="tableblock halign-left valign-top">Kvalitetsmål</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
 <th class="tableblock halign-left valign-top">Referanse</th>
 <th class="tableblock halign-left valign-top">Krav</th>
 </tr>
@@ -1567,12 +3655,28 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% manglende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% manglende objekter</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% overskytende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% overskytende objekter</p></td>
 </tr>
@@ -1582,7 +3686,7 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 5. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
+<caption class="title">Tabell 4. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -1660,7 +3764,264 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 <div class="sect2">
 <h3 id="truekvalitetsklasser"><a class="anchor" href="#truekvalitetsklasser"></a>4.2. Kvalitetsklasser</h3>
 <div class="paragraph">
-<p>Ved angivelse av krav til stedfestingsnøyaktighet er objekttypene inndelt i 4 klasser. Alle objekttyper i FKB-Ledning er plassert i kvalitetsklasse 4 når det gjelder stedfestingsnøyaktighet.</p>
+<p>Ved angivelse av toleranser for stedfestingsnøyaktighet er objekttypene inndelt i 4 klasser, og ved angivelse av toleranser for fullstendighet er objekttypene inndelt i 2 klasser.</p>
+</div>
+<div class="paragraph">
+<p>Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Ledning tilhører.</p>
+</div>
+<table id="tab-Kvalitetsklasser" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 5. Kvalitetsklasser for objekttypene i FKB-Ledning</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top">Kvalitetklasse Grunnriss</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Høyde</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bardun</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flymarkør</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kanal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kumlokk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lysarmatur</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Masteomriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nettverkstasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nettverkstasjonomriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skap</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vindturbin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vindturbinomriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Åk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueprinsipp-for-geometrisk-registrering"><a class="anchor" href="#trueprinsipp-for-geometrisk-registrering"></a>5.1. Prinsipp for geometrisk registrering</h3>
+<div class="paragraph">
+<p>I dette avsnittet redegjøres det for prinsippene i geometrimodellen. Dette avsnittet sammen med spesifikasjonen for den enkelte objekttype er grunnlaget for å forstå hvordan objektene skal registreres og sammenhengen mellom dem.</p>
+</div>
+<div class="sect3">
+<h4 id="truehøgspent"><a class="anchor" href="#truehøgspent"></a>5.1.1. Høgspent</h4>
+<div class="paragraph">
+<p>Under er en beskrivelse av geometrimodellen for master, stolper og ledninger for elektrisitet. Det presiseres at geometrimodellen som benyttes i FKB ikke har som intensjon å kartfeste alle komponenter knyttet til master og traseer (alle ledninger, traverser, isolatorer etc.). Målsettingen er å registrere mastene på en slik måte at de kan gjengis på en god måte både i 2D og i 3D.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent1.png" alt="tilleggsbeskrivelse høgspent1">
+</div>
+<div class="title">Figur 19. Eksempel på hvordan master med flere linje/ledere forenkles i FKB.</div>
+</div>
+<div class="paragraph">
+<p>I eksemplet til venstre i figuren over registreres topp mast (rødt punkt) og senter ledningstrase fra topp mast videre til neste topp mast (blå strek). I enkelte tilfeller kan man ha registrert både topp og fot samme mast. Begge registreringene skal da beholdes, men skilles med egenskapen ledning høydereferanse.</p>
+</div>
+<div class="paragraph">
+<p>I eksemplet til høyre i figuren over registreres Masteomriss som en KURVE (grønn strek). Hvert enkelt punkt i kurven angir hver enkelt stolpe i masten. I figuren er det også vist hvilke objekttyper som skal benyttes for nyregistrering av Mast og Trase.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent2.png" alt="tilleggsbeskrivelse høgspent2">
+</div>
+<div class="title">Figur 20. Eksempel på hvordan en fagverksmast med flere ledninger forenkles i FKB. I dette tilfellet registreres senter topp mast, omriss av fundament og senter ledningstrase. Ved at man registrerer høyde på mast og trase, kan man lage en forenklet 3D-modell av masten.</div>
+</div>
+<div class="sect4">
+<h5 id="trueeksempel-på-registering-av-mast"><a class="anchor" href="#trueeksempel-på-registering-av-mast"></a>Eksempel på registering av Mast</h5>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent3.png" alt="tilleggsbeskrivelse høgspent3">
+</div>
+<div class="title">Figur 21. Senterpunkt for hver enkelt mast i høgspentlinjer. Høyden registreres som topp mast. (Kilde: Mastefiguren er hentet fra NVE)</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueeksempel-på-registering-av-trase"><a class="anchor" href="#trueeksempel-på-registering-av-trase"></a>Eksempel på registering av Trase</h5>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent4.png" alt="tilleggsbeskrivelse høgspent4">
+</div>
+<div class="title">Figur 22. Trase for høgspent. I høgspenttraseen skal det for hver mast settes inn et punkt i traseen (kurven) med lik koordinat som masten. Dette for å knytte masten til høgspenttraseen. (Kilde: Mastefiguren er hentet fra NVE)</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueeksempel-på-registering-av-masteomriss"><a class="anchor" href="#trueeksempel-på-registering-av-masteomriss"></a>Eksempel på registering av Masteomriss</h5>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent5.png" alt="tilleggsbeskrivelse høgspent5">
+</div>
+<div class="title">Figur 23. I de tilfellene masten er representert med ett eller flere ”fundamenteringspunkt” skal dette registreres med egen geometri. (Kilde: Mastefiguren er hentet fra NVE)</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueeksempel-på-registering-av-mast-masteomriss-og-trase"><a class="anchor" href="#trueeksempel-på-registering-av-mast-masteomriss-og-trase"></a>Eksempel på registering av Mast, Masteomriss og Trase</h5>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_høgspent6.png" alt="tilleggsbeskrivelse høgspent6">
+</div>
+<div class="title">Figur 24. Samlet oversikt over registrerte objekter for høgspenttraseer (Kilde: Mastefiguren er hentet fra NVE)</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truelavspent-ekom-og-belysningsanlegg"><a class="anchor" href="#truelavspent-ekom-og-belysningsanlegg"></a>5.1.2. Lavspent, ekom og belysningsanlegg</h4>
+<div class="paragraph">
+<p>Lavspent registreres etter samme modell som høgspent. Mastene i lavspent registreres fortrinnsvis som mast med høydereferanse topp mast (rødt punkt), alternativt med høydereferanse på bakken. Ved fotogrammetrisk registrering vil mastene normalt være registrert som topp mast, mens ved landmåling vil ofte mastene være registrert ved bakken (fot stolpe).  I begge disse tilfellene skal man benytte objekttype Mast, men det er viktig at man registrerer høydereferanse for masten ved bruk av egenskapen ledning høydereferanse.</p>
+</div>
+<div class="paragraph">
+<p>I en del tilfeller kan man ha registrert både topp og fot mast slik som i eksemplet under. Typisk er fot mast landmålt, mens topp mast kommer fra fotogrammetri. Topp mast skal alltid registreres fotogrammetrisk i de tilfellende hvor masten kun har høydereferanse fot.</p>
+</div>
+<div class="paragraph">
+<p>I lavspenttraseen (blå linje) skal det settes inn et punkt med lik koordinat som masten (blått punkt). Dette for å markere hvert mastepunkt/knekkpunkt i traseen, samt knytte masten til lavspenttraseen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_lavspent.png" alt="tilleggsbeskrivelse lavspent">
+</div>
+<div class="title">Figur 25. Eksempel på registrering av lavspentnett. I dette tilfellet er både fot og topp mast registrert, men det er ikke påkrevet å registrere både fot og topp mast.</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truespesielt-om-registrering-av-traseknutepunkt"><a class="anchor" href="#truespesielt-om-registrering-av-traseknutepunkt"></a>5.2. Spesielt om registrering av traseknutepunkt</h3>
+<div class="paragraph">
+<p>Når to eller flere lavspent- og/eller høgspenttraseer møtes skal det etableres et knutepunkt med lik koordinat som masten. Knutepunktets høydeverdi (høydereferansen) skal alltid være topp mast. Dette gjelder i de tilfeller hvor to eller flere traseer er koblet sammen i en mast.</p>
+</div>
+<div class="paragraph">
+<p>Mastene i slike traseknutepunkt kan være utformet på mange ulike måter. Hovedregelen for hvordan master konstrueres er som følger:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>En mast er samling av en eller flere stolper som er knyttet sammen med traverser, slik at stolpene fysisk sett er koplet sammen og mekanisk påvirker hverandre. Hvis flere stolper geografisk står i nærheten av hverandre, men ikke fysisk er knyttet sammen, altså ikke mekanisk påvirker hverandre, skal de registreres som to eller flere master.</p>
+</li>
+<li>
+<p>Blir det definert to eller flere master, skal det registreres trase mellom mastepunktene.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Skissen under illustrerer når et traseknutepunkt skal registreres som en mast kontra to master.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_traseknutepunkt1.png" alt="tilleggsbeskrivelse traseknutepunkt1">
+</div>
+<div class="title">Figur 26. Eksempel på registrering av maste(r) og traseknutepunkt</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_traseknutepunkt2.png" alt="tilleggsbeskrivelse traseknutepunkt2">
+</div>
+<div class="title">Figur 27. Traseknutepunkt som skal registreres som en mast (mastepunkt = grønn ring)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_traseknutepunkt3.png" alt="tilleggsbeskrivelse traseknutepunkt3">
+</div>
+<div class="title">Figur 28. Traseknutepunkt som skal registreres som to master (mastepunkt = grønn ring)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truespesielt-om-registrering-av-ledningsdata-ved-større-trafostasjoner"><a class="anchor" href="#truespesielt-om-registrering-av-ledningsdata-ved-større-trafostasjoner"></a>5.3. Spesielt om registrering av ledningsdata ved større trafostasjoner</h3>
+<div class="paragraph">
+<p>Ved trafostasjoner skal koplingsobjekter, master og ledning registreres som spesifisert i denne spesifikasjonen. Det samme gjelder bygninger, veger, gjerder etc. skal registreres som normalt.
+Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) skal ikke registreres.</p>
+</div>
+<div class="paragraph">
+<p>Området innenfor gjerdet for trafostasjon skal registreres som arealbruksområde industriområde i FKB-Arealbruk. Se spesifikasjonen av <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-Arealbruk/5.0/">FKB-Arealbruk 5.0</a> for detaljer.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer/tilleggsbeskrivelse_trafostasjon.png" alt="tilleggsbeskrivelse trafostasjon">
+</div>
+<div class="title">Figur 29. Avgrensing av trafostasjon skal gjøres ved hjelp av arealbruksobjekt IndustriOmråde</div>
 </div>
 </div>
 </div>
@@ -1668,7 +4029,7 @@ Den p&#229;krevde egenskapen KONSTRUKSJON benyttes for &#229; angi hvilken type 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-06 11:03:05 +0200
+Last updated 2021-10-06 20:31:53 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
