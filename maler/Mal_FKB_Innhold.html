@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
@@ -436,15 +436,63 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>Innlegging av FKB-spesifikk informasjon i UML-modellene</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Innholdsfortegnelse</div>
+<ul class="sectlevel1">
+<li><a href="#trueinnledning">1. Innledning</a></li>
+<li><a href="#truefkb-forvaltningsspesifikasjoner">2. FKB-Forvaltningsspesifikasjoner</a>
+<ul class="sectlevel2">
+<li><a href="#trueobjekttyper">2.1. Objekttyper</a>
+<ul class="sectlevel3">
+<li><a href="#truebruk-av-notes-felt">2.1.1. Bruk av notes-felt</a></li>
+<li><a href="#truesosi-uml-profil-tagged-values">2.1.2. SOSI UML-profil tagged values</a></li>
+<li><a href="#truefkb-tagged-values">2.1.3. FKB tagged values</a></li>
+<li><a href="#truespesielle-reglerretningslinjer-for-modellering-av-assosiasjoner">2.1.4. Spesielle regler/retningslinjer for modellering av assosiasjoner</a></li>
+</ul>
+</li>
+<li><a href="#trueegenskaper">2.2. Egenskaper</a>
+<ul class="sectlevel3">
+<li><a href="#truebruk-av-notes-felt-2">2.2.1. Bruk av notes-felt</a></li>
+<li><a href="#truesosi-uml-profil-tagged-values-2">2.2.2. SOSI UML-profil tagged values</a></li>
+<li><a href="#truefkb-tagged-values-2">2.2.3. FKB tagged values</a></li>
+</ul>
+</li>
+<li><a href="#truedatatyper">2.3. Datatyper</a>
+<ul class="sectlevel3">
+<li><a href="#truebruk-av-notes-felt-3">2.3.1. Bruk av notes-felt</a></li>
+<li><a href="#truesosi-uml-profil-tagged-values-3">2.3.2. SOSI UML-profil tagged values</a></li>
+<li><a href="#truefkb-tagged-values-3">2.3.3. FKB tagged values</a></li>
+</ul>
+</li>
+<li><a href="#truekodelister">2.4. Kodelister</a>
+<ul class="sectlevel3">
+<li><a href="#truebruk-av-notes-felt-4">2.4.1. Bruk av notes-felt</a></li>
+<li><a href="#truesosi-uml-profil-tagged-values-4">2.4.2. SOSI UML-profil tagged values</a></li>
+<li><a href="#truefkb-tagged-values-4">2.4.3. FKB tagged values</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#trueregistreringsinstrukser">3. Registreringsinstrukser</a>
+<ul class="sectlevel2">
+<li><a href="#truemal-i-sosi-modellregister">3.1. Mal i SOSI-modellregister</a></li>
+<li><a href="#trueoppskrift-på-etablering-av-registreringsinstruks">3.2. Oppskrift på etablering av registreringsinstruks</a></li>
+<li><a href="#trueendringer-som-kan-utføres-i-det-realiserte-applikasjonsskjemaet">3.3. Endringer som kan utføres i det realiserte applikasjonsskjemaet</a></li>
+<li><a href="#trueinformasjon-som-legges-på-de-abstrakte-objekttypene">3.4. Informasjon som legges på de abstrakte objekttypene</a></li>
+<li><a href="#trueinformasjon-som-legges-på-de-abstrakte-kodelister">3.5. Informasjon som legges på de abstrakte kodelister</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>Versjon 2021-09-16</em></p>
+<p><em>Versjon 2021-10-07</em></p>
 </div>
 </div>
 </div>
@@ -682,10 +730,10 @@ Legg inn full sti til bildet på <a href="http://skjema.geonorge.no/SOSI/produkt
 </div>
 </li>
 <li>
-<p>Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) <em>fotogrammetrisk registreringsinstruks</em> (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til pakka (teksten skrives ut i toppen av dokumentasjonen)</p>
+<p>Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) <em>fotogrammetrisk registreringsinstruks</em> (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til ev. underpakker (teksten skrives ut i dokumentasjonen)</p>
 </li>
 <li>
-<p>Under denne pakke legges det inn <em>Abstrakte objekttyper</em> for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister/datatyper) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.</p>
+<p>Under denne pakke legges det inn <em>Abstrakte objekttyper</em> for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.</p>
 <div class="imageblock">
 <div class="content">
 <img src="figurer/arv_til_abstrakt.png" alt="arv til abstrakt">
@@ -710,11 +758,9 @@ Legg inn full sti til bildet på <a href="http://skjema.geonorge.no/SOSI/produkt
 <p>Ev. objekttyper fra forvaltningsspesifikasjonen som ikke skal inngå i registreringsinstruksen fjernes.</p>
 </li>
 <li>
-<p>Fjerne egenskaper som ikke skal registreres</p>
-</li>
-<li>
-<p>Endre multiplisitet fra opsjonelt til påkrevd (eller omvendt for identifikasjon og andre egenskaper som håndteres av forvaltningssystemet).</p>
-</li>
+<p>Endre multiplisitet på egenskaper fra påkrevd til opsjonelt.</p>
+<div class="ulist">
+<ul>
 <li>
 <p>For fellesegenskapene vil slike endringer typisk være:</p>
 <div class="ulist">
@@ -724,6 +770,12 @@ Legg inn full sti til bildet på <a href="http://skjema.geonorge.no/SOSI/produkt
 </li>
 <li>
 <p>registreringsversjon og nøyaktighet endres fra opsjonelt til påkrevd</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Det bør ikke endres multiplisitet fra opsjonelt til påkrevd da dette vil medføre at eksisterende data ikke kan valideres og derfor vil kunne skape problemer i dataflyten</p>
 </li>
 </ul>
 </div>
@@ -752,7 +804,7 @@ Legg inn full sti til bildet på <a href="http://skjema.geonorge.no/SOSI/produkt
 </div>
 </li>
 <li>
-<p>Legg til ekstra tagged values på objekttypene</p>
+<p>Legg til ekstra tagged values på objekttypene (bruk gjerne egen UML-profil ved opprettelse av objekttyper for å få disse automatisk på plass)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -785,6 +837,22 @@ Legg inn full sti til bildet på <a href="http://skjema.geonorge.no/SOSI/produkt
 <li>
 <p>FKB_minstestørrelse_D (fritekst) <em>(bare aktuelt på noen objekttyper)</em></p>
 </li>
+<li>
+<p>FKB_registreringsmetode (fritekst) <em>(bare aktuelt på noen objekttyper)</em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Legg til informasjon under <em>constraints</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>For regler knyttet til registrering av spesielle egenskaper legges det inn en constraint med navn = egenskapsnavn og en beskrivelse av regelen (fritekst) under "notes"</p>
+</li>
+<li>
+<p>For regler knyttet til en verdier i en kodeliste legges det inn en constraint med navn "presiseringAvKode_kodelistenavn". Dette gjør at informasjon om den angitte kodelista listes ut under objekttypen i dokumentasjonen.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -815,7 +883,7 @@ Dersom det er behov for legge inn ekstra informasjon for registrering knyttet ti
 <p>Kodenavn (attribute), Beskrivelse (notes) - gjerne med spesiell informasjon knyttet til registering, og kodeverdi (initial value)</p>
 </li>
 <li>
-<p>Taggen SOSI_bildeAvModellelement for et bilde knyttet til hver kodeverdi (angis som relativ sti)</p>
+<p>Taggen SOSI_bildeAvModellelement for et bilde knyttet til hver kodeverdi (angis som relativ sti) og taggen FKB_bildetekst angir bildetekst til bildet.</p>
 </li>
 </ul>
 </div>
@@ -825,7 +893,7 @@ Dersom det er behov for legge inn ekstra informasjon for registrering knyttet ti
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-04 10:22:22 +0200
+Last updated 2021-10-07 15:21:02 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

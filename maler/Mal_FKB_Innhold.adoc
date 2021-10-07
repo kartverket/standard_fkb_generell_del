@@ -1,5 +1,4 @@
 = Innlegging av FKB-spesifikk informasjon i UML-modellene
-
 :sectnums:
 :toc: left
 :toc-title: Innholdsfortegnelse
@@ -12,7 +11,7 @@
 :appendix-caption: Vedlegg
 :pdf-page-size: A4
 
-_Versjon 2021-09-16_
+_Versjon 2021-10-07_
 
 == Innledning
 
@@ -124,8 +123,8 @@ image::figurer/naturinfo_pakkerealisering.png[]
 +
 .Multiplisitet er endret for flere egenskaper i Fellesegenskaper. 
 image::figurer/arv_fellesegenskaper.png[]
-. Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) _fotogrammetrisk registreringsinstruks_ (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til pakka (teksten skrives ut i toppen av dokumentasjonen)
-. Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister/datatyper) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.
+. Etabler en ny underpakke i registreringsinstruksen på samme nivå som det realiserte applikasjonsskjemaet med navn (f.eks.) _fotogrammetrisk registreringsinstruks_ (se figur 1). I denne pakka legges ekstrainformasjon for å kunne generere god dokumentasjon til registreringsinstruksen. Ingen krav til tagged values på pakkenivå, men legg inn en forklarende tekst på notes-feltet til ev. underpakker (teksten skrives ut i dokumentasjonen)
+. Under denne pakke legges det inn _Abstrakte objekttyper_ for alle objekttyper som skal registreres. Det legges også inn andre abstrakte elementer (kodelister) dersom det er ønskelig å beskrive spesielle regler for registrering av disse.
 +
 .Diagram som viser arv fra abstrakt element i fotogrammetrisk spesifikasjon til konkret element i applikasjonsskjema. Gi diagrammet et navn som starter med "utelat" dersom du ikke ønsker at det skal listes ut i dokumentasjonen.
 image::figurer/arv_til_abstrakt.png[]
@@ -135,11 +134,11 @@ image::figurer/arv_til_abstrakt.png[]
 Dette er endringer som man må regne med å gjøre på nytt dersom man gjør endringer i UML-modell for produktspesifikasjonen og man må hente en ny kopi (realisering) inn til registreringsinstruksen.
 
 * Ev. objekttyper fra forvaltningsspesifikasjonen som ikke skal inngå i registreringsinstruksen fjernes.
-* Fjerne egenskaper som ikke skal registreres
-* Endre multiplisitet fra opsjonelt til påkrevd (eller omvendt for identifikasjon og andre egenskaper som håndteres av forvaltningssystemet).
-* For fellesegenskapene vil slike endringer typisk være:
-** identifikasjon og oppdateringsdato fra påkrevd til opsjonelt
-** registreringsversjon og nøyaktighet endres fra opsjonelt til påkrevd
+* Endre multiplisitet på egenskaper fra påkrevd til opsjonelt.
+** For fellesegenskapene vil slike endringer typisk være:
+*** identifikasjon og oppdateringsdato fra påkrevd til opsjonelt
+*** registreringsversjon og nøyaktighet endres fra opsjonelt til påkrevd
+** Det bør ikke endres multiplisitet fra opsjonelt til påkrevd da dette vil medføre at eksisterende data ikke kan valideres og derfor vil kunne skape problemer i dataflyten
 
 === Informasjon som legges på de abstrakte objekttypene
 Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen bli pakken med de abstrakte objekttypene i utgangspunktet ikke berørt. Informasjonen beholdes. Det man imidlertid må gjøre i en slik prosess er å oppdatere arve-pilene slik at de peker til oppdaterte objekttyper.
@@ -147,7 +146,7 @@ Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen 
 * Ekstrainformasjon om registrering av objektet legges inn i notes-feltet for elementet (ev. annen informasjon slettes).
 * Legge til link til bilder/skisser med bildetekst knyttet til objekttyper m/egenskaper 
 ** Bruk "files" i UML med tittel/bildetekst!
-* Legg til ekstra tagged values på objekttypene
+* Legg til ekstra tagged values på objekttypene (bruk gjerne egen UML-profil ved opprettelse av objekttyper for å få disse automatisk på plass)
 ** FKB-A (-/O/P) _(alle objekttyper)_
 ** FKB-B (-/O/P) _(alle objekttyper)_
 ** FKB-C (-/O/P) _(alle objekttyper)_
@@ -158,6 +157,11 @@ Dersom man må hente inn en ny kopi (realisering) av FKB produktspesifikasjonen 
 ** FKB_minstestørrelse_B (fritekst) _(bare aktuelt på noen objekttyper)_
 ** FKB_minstestørrelse_C (fritekst) _(bare aktuelt på noen objekttyper)_
 ** FKB_minstestørrelse_D (fritekst) _(bare aktuelt på noen objekttyper)_
+** FKB_registreringsmetode (fritekst) _(bare aktuelt på noen objekttyper)_
+* Legg til informasjon under _constraints_
+** For regler knyttet til registrering av spesielle egenskaper legges det inn en constraint med navn = egenskapsnavn og en beskrivelse av regelen (fritekst) under "notes"
+** For regler knyttet til en verdier i en kodeliste legges det inn en constraint med navn "presiseringAvKode_kodelistenavn". Dette gjør at informasjon om den angitte kodelista listes ut under objekttypen i dokumentasjonen.   
+
 
 === Informasjon som legges på de abstrakte kodelister
 Mange av de samme prinsippene som er brukt for objekttyper brukes også for kodelister. 
@@ -170,7 +174,7 @@ Informasjon som kan legges inn på kodelister:
 * Definisjon (notes) for kodelista utformes slik at det beskriver spesielle forhold rundt registrering av kodene i lista
 * Det legges inn skisser/bilder (med forklarende tekst) for å forklare registrering av av de ulike kodene i lista under "files" i EA for kodelista (angis som relativ sti) 
 * Kodenavn (attribute), Beskrivelse (notes) - gjerne med spesiell informasjon knyttet til registering, og kodeverdi (initial value)
-* Taggen SOSI_bildeAvModellelement for et bilde knyttet til hver kodeverdi (angis som relativ sti)
+* Taggen SOSI_bildeAvModellelement for et bilde knyttet til hver kodeverdi (angis som relativ sti) og taggen FKB_bildetekst angir bildetekst til bildet.
 
 
 
