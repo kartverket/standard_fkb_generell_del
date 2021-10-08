@@ -1,132 +1,459 @@
+ 
 <<<
-'''
-=== Pakke: Fotogrammetrisk registreringsinstruks
-*Definisjon:* Dokumentasjon av Fotogrammetrisk registreringsinstruks for FKB-Naturinfo
- 
-.utelat - Objekttyper med egenskaper 
-image::diagrammer/utelat - Objekttyper med egenskaper.png[link=diagrammer/utelat - Objekttyper med egenskaper.png, window=_blank, alt="Diagramm: utelat - Objekttyper med egenskaper"]
- 
-.utelat - registreringsobjekter 
-image::diagrammer/utelat - registreringsobjekter.png[link=diagrammer/utelat - registreringsobjekter.png, window=_blank, alt="Diagramm: utelat - registreringsobjekter"]
- 
 '''
  
 [[hekk]]
-==== «FeatureType» Hekk (abstrakt)
-*Definisjon:* 
+==== «FeatureType» Hekk
+*Definisjon fra FKB produktspesifikasjon*: plantede busker som utgjør en hekk
  
-===== Profilparametre i tagged values
-[cols="20,80"]
+ 
+.Illustrasjon fra produktspesifikasjon av Hekk
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png, Alt="Illustrasjon fra produktspesifikasjon: Hekk"]
+ 
+ 
+ 
+===== Føringer
+[cols="25,75"]
 |===
-|FKB_grunnrissreferanse
+|FKB grunnrissreferanse
 |Midten av hekken
  
-|FKB_høydereferanse
+|FKB høydereferanse
 |Toppen av hekken
  
-|FKB_minstestørrelse_A
+|FKB minstestørrelse A
 |Alle synlige hekker lengre enn 3m registreres
  
-|FKB_minstestørrelse_B
+|FKB minstestørrelse B
 |Alle synlige hekker lengre enn 3m registreres
  
 |FKB-A
-|P
+|Påkrevd registrering
  
 |FKB-B
-|P
+|Påkrevd registrering
  
 |FKB-C
-|-
+|Registreres ikke
  
 |FKB-D
-|-
- 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<hekk,«featureType» Hekk>>
+|Registreres ikke
  
 |===
  
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|senterlinje
+|Kurve
+|.KURVE
+|[1..1]
+ 
+|treType
+|«CodeList» TreType
+|..TRE_TYP
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+<<<
 '''
  
 [[innmålttre]]
-==== «FeatureType» InnmåltTre (abstrakt)
-*Definisjon:* Ved fotogrammetrisk datafangst er det vanskelig &#229; vurdere hvilke tr&#230;r som skal registreres. Det forutsettes derfor at det utarbeides manus/instruks med n&#230;rmere angivelse av hvilke tr&#230;r som skal registreres, for eksempel langs utvalgte veger.
+==== «FeatureType» InnmåltTre
+*Definisjon fra FKB produktspesifikasjon*: markerte enkeltrær
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av InnmåltTre
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png, Alt="Illustrasjon fra produktspesifikasjon: InnmåltTre"]
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+Ved fotogrammetrisk datafangst er det vanskelig &#229; vurdere hvilke tr&#230;r som skal registreres. Det forutsettes derfor at det utarbeides manus/instruks med n&#230;rmere angivelse av hvilke tr&#230;r som skal registreres, for eksempel langs utvalgte veger.
 
  
-===== Profilparametre i tagged values
-[cols="20,80"]
+ 
+===== Føringer
+[cols="25,75"]
 |===
-|FKB_grunnrissreferanse
+|FKB grunnrissreferanse
 |Midten av treet (der stammen møter bakken om dette er synlig)
  
-|FKB_høydereferanse
+|FKB høydereferanse
 |Toppen av trekrona
  
 |FKB-A
-|O
+|Opsjonell registrering
  
 |FKB-B
-|O
+|Opsjonell registrering
  
 |FKB-C
-|-
+|Registreres ikke
  
 |FKB-D
-|-
- 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<innmålttre,«featureType» InnmåltTre>>
+|Registreres ikke
  
 |===
  
+===== Egenskapstabell
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|Punkt
+|.PUNKT
+|[1..1]
+ 
+|treType
+|«CodeList» TreType
+|..TRE_TYP
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|nvbdpeker
+|URI
+|..NVDBPEKER
+|[0..1]
+ 
+|stammediameter
+|Integer
+|..STAMMEDIAMETER
+|[0..1]
+ 
+|kronediameter
+|Real
+|..KRONEDIAMETER
+|[0..1]
+ 
+|trehøyde
+|Real
+|..TREHØYDE
+|[0..1]
+ 
+|===
+ 
+<<<
 '''
  
 [[stein]]
-==== «FeatureType» Stein (abstrakt)
-*Definisjon:* Ved fotogrammetrisk registrering anbefales det at oppdragsgiver og oppdragstaker f&#248;r prosjektstart, blir enige om hvor store steiner som skal tas med. Eventuelt i hvilke deler av prosjektet det skal registreres steiner.
+==== «FeatureType» Stein
+*Definisjon fra FKB produktspesifikasjon*: markert stein
  
-===== Profilparametre i tagged values
-[cols="20,80"]
+ 
+.Illustrasjon fra produktspesifikasjon av Stein
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png, Alt="Illustrasjon fra produktspesifikasjon: Stein"]
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+Ved fotogrammetrisk registrering anbefales det at oppdragsgiver og oppdragstaker f&#248;r prosjektstart, blir enige om hvor store steiner som skal tas med. Eventuelt i hvilke deler av prosjektet det skal registreres steiner.
+ 
+ 
+'''
+.Eksempel på registrering av stor stein.
+image::figurer/registrering_storstein.png[link=figurer/registrering_storstein.png, Alt="Eksempel på registrering av stor stein."]
+ 
+ 
+ 
+===== Føringer
+[cols="25,75"]
 |===
-|FKB_grunnrissreferanse
+|FKB grunnrissreferanse
 |Ytterkant av stein
  
-|FKB_høydereferanse
+|FKB høydereferanse
 |Topp ytterkant av stein
  
-|FKB_minstestørrelse_A
+|FKB minstestørrelse A
 |Steiner større enn 10m3 registreres
  
-|FKB_minstestørrelse_B
+|FKB minstestørrelse B
 |Steiner større enn 10m3 registreres
  
 |FKB-A
-|P
+|Påkrevd registrering
  
 |FKB-B
-|P
+|Påkrevd registrering
  
 |FKB-C
-|-
+|Registreres ikke
  
 |FKB-D
-|-
+|Registreres ikke
  
 |===
-===== Arv og realiseringer
-[cols="20,80"]
+ 
+===== Egenskapstabell
+[cols="20,20,20,10"]
 |===
-|Supertype: 
-|<<stein,«featureType» Stein>>
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|Flate
+|.FLATE
+|[1..1]
  
 |===
-// End of UML-model
+// End of Registreringsinstruks UML-model
