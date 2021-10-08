@@ -24,8 +24,12 @@ Kystkonturen skal f&#248;lge alle tekniske anlegg (kai/brygger ol.) som stikker 
 
 MEDIUM U benyttes p&#229; kystkontur som g&#229;r under terreng, for eksempel i kulvert. Skal ikke benyttes ved bruer. 
 
-Kystkonturen skal v&#230;re koblet mot andre situasjonsdetaljer (kai, mur, osv.) ved at kystkonturen konnekteres i 2 dimensjoner til objektet. Kystkonturen skal ha samme grunnrisskoordinater som objektet, men med
-riktig vannh&#248;yde. Det skal bearbeides nodepunkt til andre vanntema. Nodepunktene dannes i 3D der dette er naturlig. 
+Kystkonturen skal v&#230;re koblet mot andre situasjonsdetaljer (kai, mur, osv.) ved at kystkonturen konnekteres i 2 dimensjoner til objektet. Kystkonturen skal ha samme grunnrisskoordinater som objektet, men med riktig vannh&#248;yde. Det skal bearbeides nodepunkt til andre vanntema. Nodepunktene dannes i 3D der dette er naturlig. 
+
+
+image::figurer/kystkontur_ved_brygge.png[link=figurer/annenbygning_minstehoyde.png, Alt="Figur som viser registrering av kystkontur ved brygge. "]
+
+image::figurer/kystkontur_ved_kystkonturtekniskeanlegg.png[link=figurer/kystkontur_ved_kystkonturtekniskeanlegg.png, Alt="Figur som viser registrering av kystkontur ved kai. "]
  
  
 '''
@@ -760,13 +764,13 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 ==== «FeatureType» Elv
 *Definisjon fra FKB produktspesifikasjon*: st&#248;rre vannvei for rennende vann representert ved flate
  
-*Definisjon fra FKB produktspesifikasjon*: st&#248;rre vannvei for rennende vann representert ved flate
- 
 *Tilleggsinformasjon for fotogrammetrisk registrering:* For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap  vannSperretype lik elvelinjeFiktiv benyttes.
 
 Elv skal avgrenses av Elvrekant og kan i tillegg avgrenses av VannFiktivGrense med egenskap vannSperretype lik elveElvperre, Innsj&#248;ElvSperre, havElvSperre eller elvelinjeFiktiv.
 
 MEDIUM U benyttes p&#229; Elv som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.
+
+image::figurer/elv_flate_med_medium_u.png[link=figurer/elv_flate_med_medium_u.png, Alt="Figur som viser registrering av elv som g&#229;r i r&#248;r under veg. "]
  
  
 '''
@@ -875,71 +879,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |..MEDIUM
 |[1..1]
  
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|vannBredde
-|«CodeList» VannBredde
-|..VANNBR
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
 |===
  
 <<<
@@ -951,7 +890,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
  
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Kanalkanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan VannFiktivGrense med egenskap vannSperretype lik elvelinjeFiktiv benyttes.
 
-Kanalkant kan v&#230;re med p&#229; &#229; avgrense Kanal.
+Kanalkant er med p&#229; &#229; avgrense Kanal.
 
 Det skal genereres nodepunkt mellom Kanalkant og andre vanntema. Nodepunktet skal v&#230;re i 3D der dette er naturlig.
 
@@ -1231,7 +1170,7 @@ for innsj&#248; som er oppdemt/regulert skal konturlinjen ligge i h&#248;ydeniv&
 Ved fotogrammetrisk datafangst er registrering av Innsj&#248;kant en opsjon. Fotovannstanden vil v&#230;re avgj&#248;rende for om registrering av Innsj&#248;kant skal utf&#248;res eller ikke. Dersom fotovannstand er unormalt h&#248;y (flom) vil det v&#230;re vanskelig &#229; f&#229; en korrekt registrering av Innsj&#248;kant og det m&#229; vurderes om eksisterende data gir en riktigere beskrivelse.
 Innsj&#248;kanten skal registreres fullstendig og sammenhengende. For avgrensing av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder kan  VannFiktivGrense med egenskap vannSperretype lik innsj&#248;linjeFiktiv benyttes.
 
-Innsj&#248;kant kan v&#230;re med p&#229; &#229; avgrense Innsj&#248;.
+Innsj&#248;kant er med p&#229; &#229; avgrense Innsj&#248;.
 
 
 Merknader:
@@ -1683,11 +1622,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 ==== «FeatureType» KanalGrøft
 *Definisjon fra FKB produktspesifikasjon*: rennende vann der forl&#248;pet er menneskeskapt
  
-*Tilleggsinformasjon for fotogrammetrisk registrering:* Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. Gr&#248;ft skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter. 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Ved fotogrammetrisk datafangst kan det v&#230;re vanskelig &#229; se ned til vannspeilet i enkelte tilfeller. KanalGr&#248;ft skal likevel konstrueres s&#229; fullstendig og sammenhengende som mulig og kvalitetskodes deretter. 
 
 Merknad: Det skal etableres nodepunkt mellom KanalGr&#248;ft (midtlinje) og andre tilst&#248;tende vannobjekter. Der det er naturlig skal det lages nodepunkt i 3D. 
 
-MEDIUM U benyttes p&#229; Gr&#248;ft som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.
+MEDIUM U benyttes p&#229; KanalGr&#248;ft som ligger under terreng, for eksempel under veg. Skal ikke benyttes ved bruer.
  
  
 '''
@@ -1704,16 +1643,16 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |Terrenghøyde i vannspeilet
  
 |FKB minstestørrelse A
-|Grøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal
+|KanalGrøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal
  
 |FKB minstestørrelse B
-|Grøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal
+|KanalGrøft smalere enn 1 meter (vannBredde 1). Er vannbredden større brukes Kanalkant og Kanal
  
 |FKB minstestørrelse C
-|Grøft smalere enn 3 meter (vannBredde 1 - 2). Er vannbredden større brukes Kanalkant og Kanal
+|KanalGrøft smalere enn 3 meter (vannBredde 1 - 2). Er vannbredden større brukes Kanalkant og Kanal
  
 |FKB minstestørrrelse D
-|Grøft smalere enn 15 meter (vannBredde 1 - 3). Er vannbredden større brukes Kanalkant og Kanal
+|KanalGrøft smalere enn 15 meter (vannBredde 1 - 3). Er vannbredden større brukes Kanalkant og Kanal
  
 |FKB registreringsmetode
 |Enkeltpunkt i sekvens brukes der det er rette strekninger.  Ellers kontinuerlig registrering.
@@ -1839,8 +1778,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 ==== «FeatureType» VeggrøftÅpen
 *Definisjon fra FKB produktspesifikasjon*: &#229;pen drenering parallelt med veg
  
-*Tilleggsinformasjon for fotogrammetrisk registrering:* Benyttes kun for gr&#248;fter langs veg. For alle andre gr&#248;fter (for eks. langs traktorveg) benyttes Gr&#248;ft.
-Kun den delen av gr&#248;fta som g&#229;r parallellt med veg registreres som Veggr&#248;ft&#197;pen. 
+*Tilleggsinformasjon for fotogrammetrisk registrering:* Benyttes kun for gr&#248;fter langs veg. For alle andre gr&#248;fter (for eks. langs traktorveg) benyttes KanalGr&#248;ft.
+Kun den delen av gr&#248;fta som g&#229;r parallellt med veg registreres som Veggr&#248;ft&#197;pen.
 
 
 
@@ -1996,18 +1935,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
  
 |FKB høydereferanse
 |Terrenget på kanten av snø/isbre, i overgangen mot bart terreng  (eventuelt mot vann)
- 
-|FKB minstestørrelse A
-|Registreres ikke
- 
-|FKB minstestørrelse B
-|Registreres ikke
- 
-|FKB minstestørrelse C
-|Registreres ikke
- 
-|FKB minstestørrelse D
-|Registreres ikke
  
 |FKB registreringsmetode
 |Kontinuerlig reegistrering
@@ -2379,7 +2306,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 Kodeliste for vannSperretype finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/vann/5.0/vannsperretype
 
 
-==== VannFiktivGrense med vannSperretype elveElvSperre
+===== VannFiktivGrense med vannSperretype elveElvSperre
 Hjelpelinje for avgrensning av en elveflate der den renner ut i en annen elv-/kanalflate. Elvesperre registreres over elv/kanal i munningen, der denne naturlig g&#229;r over i annen elv/kanal.
 
 Referanse i grunnriss og h&#248;yde er lik den st&#248;rste elvas/kanalens nodepunkt. 
@@ -2387,7 +2314,7 @@ Referanse i grunnriss og h&#248;yde er lik den st&#248;rste elvas/kanalens nodep
 Kan v&#230;re med p&#229; &#229; avgrense Elv og Kanal.
 
 
-==== VannFiktivGrense med vannSperretype elvelinjeFiktiv
+===== VannFiktivGrense med vannSperretype elvelinjeFiktiv
 Kan brukes i de tilfeller det er aktuelt &#229; dele opp en elv i mindre deler. Brukes ogs&#229; der deler av elvekanten er ukjent for &#229; kunne danne elveflate og for avgrensning av av flate mot ikke kartlagt omr&#229;de eller mellom ulike standarder.
 
 Det skal lages nodepunkt mot  Elvekant/Kanalkant. Der det er naturlig lages det nodepunkt i 3D. 
@@ -2395,24 +2322,24 @@ Det skal lages nodepunkt mot  Elvekant/Kanalkant. Der det er naturlig lages det 
 Kan v&#230;re med p&#229; &#229; avgrense Elv og Kanal.
 
 
-==== VannFiktivGrense med vannSperretype havlinjeFiktiv
+===== VannFiktivGrense med vannSperretype havlinjeFiktiv
 Kan brukes i de tilfeller det er aktuelt &#229; dele opp en havflate i mindre deler
 Det skal dannes nodepunkt med Kystkontur. Der det er naturlig lages det 3D-nodepunkt..
 
 Kan v&#230;re med p&#229; &#229; avgrense Havflate.
 
 
-==== VannFiktivGrense med vannSperretype havElvSperre:
-Sperrelinjen etableres som en rett linje mellom endepunkt p&#229; kystkontur i overgang mellom kystkontur og elvekant. Kriterier for plassering av havElvSperre:
+===== VannFiktivGrense med vannSperretype havElvSperre:
+Sperrelinjen etableres som en rett linje mellom endepunkt p&#229; Kystkontur i overgang mellom Kystkontur og Elvekant. Kriterier for plassering av havElvSperre:
 
 - Overgang fra kyst til elv er der elva har h&#248;yde lik MHV
 - Der elvekanten er registrert med MHV oppover i elva plasseres sperrelinja i et naturlig skille mellom kyst og elv ut fra topografien (munningen)
-- Elvekanten p&#229; innsiden av sperrelinja kan registreres med MHV som h&#248;ydeverdi, men ikke h&#248;ydeverdi lavere enn MHV
+- Elvekanten p&#229; innsiden av sperrelinja kan registreres med MHV som h&#248;ydeverdi, men h&#248;ydeverdien skal ikke v&#230;re lavere enn MHV
 
 Det skal dannes nodepunkt med andre vannobjekter. Der det er naturlig lages det 3D-nodepunkt. Referanse i grunnriss og h&#248;yde skal v&#230;re lik kystkonturens nodepunkt.
 
 
-==== VannFiktivGrense med vannSperretype innsj&#248;ElvSperre
+===== VannFiktivGrense med vannSperretype innsj&#248;ElvSperre
 innsj&#248;ElvSperre registreres over elv/kanal i munningen, der denne naturlig g&#229;r over i innsj&#248;. 
 Referanse i grunnriss og h&#248;yde er lik innsj&#248;kantens nodepunkt. 
 
@@ -2421,7 +2348,7 @@ Det skal dannes nodepunkt med andre vannobjekter. Der det er naturlig lages det 
 Kan v&#230;re med p&#229; &#229; avgrense Innsj&#248;, Elv og Kanal.
 
 
-==== VannFiktivGrense med vannSperretype innsj&#248;linjeFiktiv
+===== VannFiktivGrense med vannSperretype innsj&#248;linjeFiktiv
 Brukes i de tilfeller det er aktuelt &#229; dele opp en innsj&#248; i mindre deler. Brukes ogs&#229; mot ikke kartlagt omr&#229;de eller mellom ulike standarder
 
 Det skal lages nodepunkt mot Innsj&#248;kant. Der det er naturlig lages det nodepunkt i 3D. 
