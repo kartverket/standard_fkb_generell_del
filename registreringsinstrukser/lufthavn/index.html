@@ -448,34 +448,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueendringslogg">1.2. Endringslogg</a></li>
 </ul>
 </li>
-<li><a href="#trueobjekttyper-og-egenskaper">2. Objekttyper og egenskaper</a>
+<li><a href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb">2. Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</a>
+<ul class="sectlevel2">
+<li><a href="#truefotogrammetrisk-nykonstruksjon">2.1. Fotogrammetrisk nykonstruksjon</a>
 <ul class="sectlevel3">
-<li><a href="#lufthavnlys">2.1. «FeatureType» Lufthavnlys</a></li>
-<li><a href="#rullebane">2.2. «FeatureType» Rullebane</a></li>
-<li><a href="#taksebanegrense">2.3. «FeatureType» Taksebanegrense</a></li>
+<li><a href="#trueregistrering-av-nye-kartobjekter">2.1.1. Registrering av nye kartobjekter</a></li>
+<li><a href="#trueregistrering-av-egenskaper-på-nye-kartobjekter">2.1.2. Registrering av egenskaper på nye kartobjekter</a></li>
 </ul>
 </li>
-<li><a href="#truedatakvalitet">3. Datakvalitet</a>
-<ul class="sectlevel2">
-<li><a href="#truekvalitetskrav">3.1. Kvalitetskrav</a></li>
-<li><a href="#truekvalitetsklasser">3.2. Kvalitetsklasser</a></li>
+<li><a href="#truefotogrammetrisk-ajourhold">2.2. Fotogrammetrisk ajourhold</a></li>
+<li><a href="#truefotogrammetrisk-oppgradering">2.3. Fotogrammetrisk oppgradering</a></li>
 </ul>
 </li>
-<li><a href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb">Vedlegg A: Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</a>
-<ul class="sectlevel2">
-<li><a href="#truefotogrammetrisk-nykonstruksjon">A.1. Fotogrammetrisk nykonstruksjon</a>
+<li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
 <ul class="sectlevel3">
-<li><a href="#trueregistrering-av-nye-kartobjekter">A.1.1. Registrering av nye kartobjekter</a></li>
-<li><a href="#trueregistrering-av-egenskaper-på-nye-kartobjekter">A.1.2. Registrering av egenskaper på nye kartobjekter</a></li>
+<li><a href="#lufthavnlys">3.1. «FeatureType» Lufthavnlys</a></li>
+<li><a href="#rullebane">3.2. «FeatureType» Rullebane</a></li>
+<li><a href="#taksebanegrense">3.3. «FeatureType» Taksebanegrense</a></li>
 </ul>
 </li>
-<li><a href="#truefotogrammetrisk-ajourhold">A.2. Fotogrammetrisk ajourhold</a></li>
-<li><a href="#truefotogrammetrisk-oppgradering">A.3. Fotogrammetrisk oppgradering</a></li>
-</ul>
-</li>
-<li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg B: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
+<li><a href="#truedatakvalitet">4. Datakvalitet</a>
 <ul class="sectlevel2">
-<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">B.1. Informasjon som angis om alle objekttyper</a></li>
+<li><a href="#truekvalitetskrav">4.1. Kvalitetskrav</a></li>
+<li><a href="#truekvalitetsklasser">4.2. Kvalitetsklasser</a></li>
+</ul>
+</li>
+<li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
+<ul class="sectlevel2">
+<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.1. Informasjon som angis om alle objekttyper</a></li>
 </ul>
 </li>
 </ul>
@@ -491,7 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Høringsversjon 7. oktober 2021
+Høringsversjon 11. oktober 2021
 </td>
 </tr>
 </table>
@@ -505,6 +505,10 @@ Høringsversjon 7. oktober 2021
 <h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
 <div class="paragraph">
 <p>Dette dokumentet er en registreringsinstruks for fotogrammetrisk ajourhold av FKB-Lufthavn.</p>
+</div>
+<div class="paragraph">
+<p>For lufthavner der Avinor er dataeier benyttes normalt en mer detaljert produduktspesifikasjon for datafangst.
+Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal registreres i prosjekter hvor Avinor ikke er deltaker.</p>
 </div>
 <div class="paragraph">
 <p>For full beskrivelse av FKB-Lufthavn og detaljer rundt modellering og UML-modeller henvises det til Produktspesifikasjon FKB-Lufthavn 5.0: <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Lufthavn/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Lufthavn/5.0/</a></p>
@@ -522,17 +526,191 @@ Høringsversjon 7. oktober 2021
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>2. Objekttyper og egenskaper</h2>
+<h2 id="truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"><a class="anchor" href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"></a>2. Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="truefotogrammetrisk-nykonstruksjon"><a class="anchor" href="#truefotogrammetrisk-nykonstruksjon"></a>2.1. Fotogrammetrisk nykonstruksjon</h3>
+<div class="paragraph">
+<p>Ved fotogrammetrisk nykonstruksjon skal alle objektene som er spesifisert i registreringsinstruksen og som er synlige i flybildene registreres.</p>
+</div>
+<div class="sect3">
+<h4 id="trueregistrering-av-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-nye-kartobjekter"></a>2.1.1. Registrering av nye kartobjekter</h4>
+<div class="paragraph">
+<p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
+</div>
+<div class="paragraph">
+<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueregistrering-av-egenskaper-på-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-egenskaper-på-nye-kartobjekter"></a>2.1.2. Registrering av egenskaper på nye kartobjekter</h4>
+<div class="paragraph">
+<p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
+</div>
+<div class="paragraph">
+<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
+</div>
+<div class="paragraph">
+<p>Følgende egenskaper håndteres spesielt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Egenskapen <em>Identifikasjon</em> skal ikke legges inn på objektene</p>
+</li>
+<li>
+<p>Egenskapen <em>Oppdateringsdato</em> skal ikke legges inn på objektene</p>
+</li>
+<li>
+<p>Alle objekter skal ha egenskapene <em>Nøyaktighet</em> og <em>NøyaktighetHøyde</em> som del av datatypen Posisjonskvalitet</p>
+</li>
+<li>
+<p>Alle objekter skal ha egenskapen <em>Registreringsversjon</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
+</div>
+<div class="sect4">
+<h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
+<div class="paragraph">
+<p>En del egenskaper med kodelister er angitt som påkrevde. Dette krever at det legges på en verdi ved fotogrammetrisk registrering. For slike egenskaper skal det være definert en "standardverdi" som benyttes i de tilfellene det ikke er angitt noe annet. Konkrete regler for hvordan dette skal registreres for de enkelte objekttyper/egenskaper skal være angitt i registreringsinstruksen. Egenskapene <em>Medium</em> og <em>Høydereferanse</em> (HREF) er benyttet på mange objekter i flere FKB-datasett og for disse gjelder følgende generelle regler dersom ikke annet er spesielt angitt:</p>
+</div>
+<table id="tab-medium" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 1. Registrering av verdier for egenskapen Medium der ikke annet er spesifisert</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Kodeverdi</th>
+<th class="tableblock halign-left valign-top">Forklaring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T  (på terrenget)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi. Benyttes for alle objekter der det ikke er grunn til å benytte en annen verdi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">U (under bakken)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
+</tr>
+</tbody>
+</table>
+<table id="tab-href" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Kodeverdi</th>
+<th class="tableblock halign-left valign-top">Forklaring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truefotogrammetrisk-ajourhold"><a class="anchor" href="#truefotogrammetrisk-ajourhold"></a>2.2. Fotogrammetrisk ajourhold</h3>
+<div class="paragraph">
+<p>Ved fotogrammetrisk ajourhold skal eksisterende situasjon bringes ajour med oppdatert situasjon i terrenget ved fotograferingstidspunkt. Oppdragsgiver sender eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring.</p>
+</div>
+<div class="paragraph">
+<p>Dette innebærer i prinsippet følgende operasjoner:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Registrere nye objekter der disse finnes i flybildene, men ikke i eksisterende data. Reglene som gjelder nye objekter ved <a href="#truefotogrammetrisk-nykonstruksjon">Fotogrammetrisk nykonstruksjon</a> skal da anvendes.</p>
+</li>
+<li>
+<p>Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0//#truebruk-av-datoegenskaper">beskrivelse av håndtering av datoegenskaper i FKB Generell del</a> for mer om dette.</p>
+</li>
+<li>
+<p>Slette objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Unntak fra/presisering av hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truefotogrammetrisk-oppgradering"><a class="anchor" href="#truefotogrammetrisk-oppgradering"></a>2.3. Fotogrammetrisk oppgradering</h3>
+<div class="paragraph">
+<p>Mens <em>ajourføring</em> dreier seg om å fange opp endringer i terrenget som ikke finnes i FKB-dataene dreier en <em>oppgradering</em> seg om en total gjennomgang av alle data innenfor kartleggingsområdet for å sikre at de er i tråd med spesifiserte krav. Eksempler på oppgradering kan være:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
+</li>
+<li>
+<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
+</li>
+<li>
+<p>Påføring av egenskaper på alle objekter av en objekttype</p>
+</li>
+<li>
+<p>Påføring av høydeverdier på alle objekter av en objekttype</p>
+</li>
+<li>
+<p>Tilpasning av angitte objekttyper for å skape konsistens mellom datasett (f.eks. en omkoding av eksisterende data i FKB-Veg for å skape konsistens med vegnettet)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Det er kun klassifisering av objekttype og registering av geometri med metadata (kvalitet og dato) som gjøres ved fotogrammetrisk kartlegging dersom ikke annet er avtalt.</p>
+</div>
+<div class="paragraph">
+<p>For heleid flategeometri (Rullebane) må krav til stedfestingsnøyaktighet oppfattes som om det gjelder avgrensningen av flateobjektet. Kodingen med posisjonskvalitet på objektene skal gjenspeile det som er registrert. Det innebærer at posisjonskvaliteten til flata ikke kan settes bedre enn den minst nøyaktige delen av avgrensningen til flata.</p>
+</div>
 <div style="page-break-after: always;"></div>
 <hr>
 <div class="sect3">
-<h4 id="lufthavnlys"><a class="anchor" href="#lufthavnlys"></a>2.1. «FeatureType» Lufthavnlys</h4>
+<h4 id="lufthavnlys"><a class="anchor" href="#lufthavnlys"></a>3.1. «FeatureType» Lufthavnlys</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png" alt="objtype lufthavnlys"></a>
+</div>
+<div class="title">Figur 1. Illustrasjon fra produktspesifikasjon av Lufthavnlys</div>
+</div>
+<div class="sect4">
+<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
 <div class="paragraph">
-<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Alle lufthavnlys klassifiseres som Annen lufthavnbelysning (..LHLYSTYPE 99) ved registrering etter denne instruksen.</p>
+<p>Alle lufthavnlys klassifiseres som Annen lufthavnbelysning (..LHLYSTYPE 99) ved registrering etter denne instruksen.</p>
 </div>
 <div class="paragraph">
 <p>I kartleggingsprosjekter der Avinor (lufthavneier) ikke deltar som oppdragsgiver skal det, hvis annet ikke avtales, kun registreres lufthavnlys utenfor lufthavnen.</p>
@@ -540,16 +718,10 @@ Høringsversjon 7. oktober 2021
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png" alt="objtype lufthavnlys"></a>
-</div>
-<div class="title">Figur 1. Illustrasjon fra produktspesifikasjon av Lufthavnlys</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
 <a class="image" href="figurer/lufthavnlys.png"><img src="figurer/lufthavnlys.png" alt="lufthavnlys"></a>
 </div>
 <div class="title">Figur 2. Eksempel på Lufthavnlys. Røde punkter markerer hvert lufthavnlys utenfor lufthavnen.</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer"><a class="anchor" href="#trueføringer"></a>Føringer</h5>
@@ -717,19 +889,20 @@ Høringsversjon 7. oktober 2021
 </div>
 </div>
 <div class="sect3">
-<h4 id="rullebane"><a class="anchor" href="#rullebane"></a>2.2. «FeatureType» Rullebane</h4>
+<h4 id="rullebane"><a class="anchor" href="#rullebane"></a>3.2. «FeatureType» Rullebane</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer</p>
 </div>
-<div class="paragraph">
-<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Skal registreres som lukket areal, og slik sett overstyrer dette objektet andre objekter som for eksempel Taksebanegrense</p>
-</div>
-<hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png" alt="objtype rullebane"></a>
 </div>
 <div class="title">Figur 3. Illustrasjon fra produktspesifikasjon av Rullebane</div>
+</div>
+<div class="sect4">
+<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-2"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-2"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
+<div class="paragraph">
+<p>Skal registreres som lukket areal, og slik sett overstyrer dette objektet andre objekter som for eksempel Taksebanegrense</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -744,6 +917,7 @@ Høringsversjon 7. oktober 2021
 <a class="image" href="figurer/rullebane2.png"><img src="figurer/rullebane2.png" alt="rullebane2"></a>
 </div>
 <div class="title">Figur 5. Eksempel på registrering av rullebane (rød strek).</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-2"><a class="anchor" href="#trueføringer-2"></a>Føringer</h5>
@@ -911,19 +1085,20 @@ Høringsversjon 7. oktober 2021
 </div>
 </div>
 <div class="sect3">
-<h4 id="taksebanegrense"><a class="anchor" href="#taksebanegrense"></a>2.3. «FeatureType» Taksebanegrense</h4>
+<h4 id="taksebanegrense"><a class="anchor" href="#taksebanegrense"></a>3.3. «FeatureType» Taksebanegrense</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen</p>
 </div>
-<div class="paragraph">
-<p><strong>Tilleggsinformasjon for fotogrammetrisk registrering:</strong> Registreres fortrinnsvis langs ytterkant oppmerking eller dersom oppmerking mangler langs dekkekant. Starter ved rullebanen og g&#229;r frem og konnekteres til annen vegsituasjonsobjekter (i FKB-Veg).</p>
-</div>
-<hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png" alt="taksebanegrense"></a>
 </div>
 <div class="title">Figur 6. Illustrasjon fra produktspesifikasjon av Taksebanegrense</div>
+</div>
+<div class="sect4">
+<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
+<div class="paragraph">
+<p>Registreres fortrinnsvis langs ytterkant oppmerking eller dersom oppmerking mangler langs dekkekant. Starter ved rullebanen og g&#229;r frem og konnekteres til annen vegsituasjonsobjekter (i FKB-Veg).</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -938,6 +1113,7 @@ Høringsversjon 7. oktober 2021
 <a class="image" href="figurer/taksebanegrense2.png"><img src="figurer/taksebanegrense2.png" alt="taksebanegrense2"></a>
 </div>
 <div class="title">Figur 8. Eksempel på taksebanegrense er markert med blått i bildet. Taksebanegrense skal registreres etter markering alternativt dekkekant hvis markering mangler. Rullebane er markert i rødt i bildet. Annen vegsituasjon (gult i bildet) på lufthavnen som ikke beskrives av andre objekttyper skal registreres som AnnetVegarealAvgrensning. Se mer om dette i registreringsinstruksen for FKB-Veg.</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-3"><a class="anchor" href="#trueføringer-3"></a>Føringer</h5>
@@ -1099,18 +1275,18 @@ Høringsversjon 7. oktober 2021
 </div>
 </div>
 <div class="sect1">
-<h2 id="truedatakvalitet"><a class="anchor" href="#truedatakvalitet"></a>3. Datakvalitet</h2>
+<h2 id="truedatakvalitet"><a class="anchor" href="#truedatakvalitet"></a>4. Datakvalitet</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truekvalitet">FKB Generell del, kapittel 8</a></p>
 </div>
-<div class="sect2">
-<h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>3.1. Kvalitetskrav</h3>
 <div class="paragraph">
-<p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema.</p>
+<p>Kvalitetskravene gjelder alle nye data som blir etablert i et FKB kartleggingsprosjekt (jf. <a href="#trueregistrering-av-nye-kartobjekter">Registrering av nye kartobjekter</a> i kapittel 2).</p>
 </div>
+<div class="sect2">
+<h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>4.1. Kvalitetskrav</h3>
 <table id="tab-Logisk-konsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 1. Krav til logisk konsistens</caption>
+<caption class="title">Tabell 3. Krav til logisk konsistens</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -1155,7 +1331,7 @@ Høringsversjon 7. oktober 2021
 <p>Krav til logisk konsistens kontrolleres maskinelt vha. SOSI-kontroll, kontroll mot GML-skjema e.l.</p>
 </div>
 <table id="tab-Egenskapskonsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 2. Krav til egenskapskonsistens</caption>
+<caption class="title">Tabell 4. Krav til egenskapskonsistens</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1180,17 +1356,19 @@ Høringsversjon 7. oktober 2021
 </tbody>
 </table>
 <table id="tab-Fullstendighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Krav til fullstendighet</caption>
+<caption class="title">Tabell 5. Krav til fullstendighet</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Kvalitetselement</th>
 <th class="tableblock halign-left valign-top">Kvalitetsmål</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
 <th class="tableblock halign-left valign-top">Referanse</th>
 <th class="tableblock halign-left valign-top">Krav</th>
 </tr>
@@ -1199,12 +1377,28 @@ Høringsversjon 7. oktober 2021
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% manglende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% manglende objekter</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% overskytende objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% overskytende objekter</p></td>
 </tr>
@@ -1214,7 +1408,7 @@ Høringsversjon 7. oktober 2021
 <p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
+<caption class="title">Tabell 6. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -1288,178 +1482,64 @@ Høringsversjon 7. oktober 2021
 <div class="paragraph">
 <p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
 </div>
+<div class="paragraph">
+<p><strong>Grove feil</strong></p>
+</div>
+<div class="paragraph">
+<p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet er at maksimalt 1 % av registrerte objekter skal ha avvik som kategoriseres som grove feil.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="truekvalitetsklasser"><a class="anchor" href="#truekvalitetsklasser"></a>3.2. Kvalitetsklasser</h3>
-
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"><a class="anchor" href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"></a>Vedlegg A: Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="truefotogrammetrisk-nykonstruksjon"><a class="anchor" href="#truefotogrammetrisk-nykonstruksjon"></a>A.1. Fotogrammetrisk nykonstruksjon</h3>
+<h3 id="truekvalitetsklasser"><a class="anchor" href="#truekvalitetsklasser"></a>4.2. Kvalitetsklasser</h3>
 <div class="paragraph">
-<p>Ved fotogrammetrisk nykonstruksjon skal alle objektene som er spesifisert i registreringsinstruksen og som er synlige i flybildene registreres.</p>
+<p>Ved angivelse av krav til stedfestingsnøyaktighet og fullstendighet er objekttypene inndelt i forskjellige klasser.
+Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn tilhører.</p>
 </div>
-<div class="sect3">
-<h4 id="trueregistrering-av-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-nye-kartobjekter"></a>A.1.1. Registrering av nye kartobjekter</h4>
-<div class="paragraph">
-<p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
-</div>
-<div class="paragraph">
-<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="trueregistrering-av-egenskaper-på-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-egenskaper-på-nye-kartobjekter"></a>A.1.2. Registrering av egenskaper på nye kartobjekter</h4>
-<div class="paragraph">
-<p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
-</div>
-<div class="paragraph">
-<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
-</div>
-<div class="paragraph">
-<p>Følgende egenskaper håndteres spesielt:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Egenskapen <em>Identifikasjon</em> skal ikke legges inn på objektene</p>
-</li>
-<li>
-<p>Egenskapen <em>Oppdateringsdato</em> skal ikke legges inn på objektene</p>
-</li>
-<li>
-<p>Alle objekter skal ha egenskapene <em>Nøyaktighet</em> og <em>NøyaktighetHøyde</em> som del av datatypen Posisjonskvalitet</p>
-</li>
-<li>
-<p>Alle objekter skal ha egenskapen <em>Registreringsversjon</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
-</div>
-<div class="sect4">
-<h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
-<div class="paragraph">
-<p>En del egenskaper med kodelister er angitt som påkrevde. Dette krever at det legges på en verdi ved fotogrammetrisk registrering. For slike egenskaper skal det være definert en "standardverdi" som benyttes i de tilfellene det ikke er angitt noe annet. Konkrete regler for hvordan dette skal registreres for de enkelte objekttyper/egenskaper skal være angitt i registreringsinstruksen. Egenskapene <em>Medium</em> og <em>Høydereferanse</em> (HREF) er benyttet på mange objekter i flere FKB-datasett og for disse gjelder følgende generelle regler dersom ikke annet er spesielt angitt:</p>
-</div>
-<table id="tab-medium" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 5. Registrering av verdier for egenskapen Medium der ikke annet er spesifisert</caption>
+<table id="tab-Kvalitetsklasser" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 7. Kvalitetsklasser for objekttypene i FKB-Bygning</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Kodeverdi</th>
-<th class="tableblock halign-left valign-top">Forklaring</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top">Kvalitetklasse Grunnriss</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Høyde</th>
+<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T  (på terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi. Benyttes for alle objekter der det ikke er grunn til å benytte en annen verdi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lufthavnlys</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U (under bakken)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rullebane</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
-</tr>
-</tbody>
-</table>
-<table id="tab-href" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 6. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kodeverdi</th>
-<th class="tableblock halign-left valign-top">Forklaring</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taksebanegrense</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="truefotogrammetrisk-ajourhold"><a class="anchor" href="#truefotogrammetrisk-ajourhold"></a>A.2. Fotogrammetrisk ajourhold</h3>
-<div class="paragraph">
-<p>Ved fotogrammetrisk ajourhold skal eksisterende situasjon bringes ajour med oppdatert situasjon i terrenget ved fotograferingstidspunkt. Oppdragsgiver sender eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring.</p>
-</div>
-<div class="paragraph">
-<p>Dette innebærer i prinsippet følgende operasjoner:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Registrere nye objekter der disse finnes i flybildene, men ikke i eksisterende data. Reglene som gjelder nye objekter ved <a href="#truefotogrammetrisk-nykonstruksjon">Fotogrammetrisk nykonstruksjon</a> skal da anvendes.</p>
-</li>
-<li>
-<p>Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0//#truebruk-av-datoegenskaper">beskrivelse av håndtering av datoegenskaper i FKB Generell del</a> for mer om dette.</p>
-</li>
-<li>
-<p>Slette objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Unntak fra/presisering av hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truefotogrammetrisk-oppgradering"><a class="anchor" href="#truefotogrammetrisk-oppgradering"></a>A.3. Fotogrammetrisk oppgradering</h3>
-<div class="paragraph">
-<p>Mens <em>ajourføring</em> dreier seg om å fange opp endringer i terrenget som ikke finnes i FKB-dataene dreier en <em>oppgradering</em> seg om en total gjennomgang av alle data innenfor kartleggingsområdet for å sikre at de er i tråd med spesifiserte krav. Eksempler på oppgradering kan være:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
-</li>
-<li>
-<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
-</li>
-<li>
-<p>Påføring av egenskaper på alle objekter av en objekttype</p>
-</li>
-<li>
-<p>Påføring av høydeverdier på alle objekter av en objekttype</p>
-</li>
-<li>
-<p>Tilpasning av angitte objekttyper for å skape konsistens mellom datasett (f.eks. en omkoding av eksisterende data i FKB-Veg for å skape konsistens med vegnettet)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="sect1">
-<h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg B: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
+<h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>B.1. Informasjon som angis om alle objekttyper</h3>
+<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.1. Informasjon som angis om alle objekttyper</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1489,7 +1569,7 @@ Høringsversjon 7. oktober 2021
 </ul>
 </div>
 <table id="tab-foringer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 7. Føringer for registrering som er angitt i registreringsinstruksene</caption>
+<caption class="title">Tabell 8. Føringer for registrering som er angitt i registreringsinstruksene</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1561,7 +1641,7 @@ Høringsversjon 7. oktober 2021
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Krav til minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
+<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
 </div>
 </div>
 </div>
@@ -1569,7 +1649,7 @@ Høringsversjon 7. oktober 2021
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-08 08:40:42 +0200
+Last updated 2021-10-08 11:10:55 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
