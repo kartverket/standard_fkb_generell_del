@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>Registreringsinstruks: Fotogrammetrisk FKB-Ledning 5.0: Versjon 2022-01-01</title>
+<meta name="author" content="Geovekst">
+<title>Registreringsinstruks: Fotogrammetrisk FKB-Ledning</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +439,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Registreringsinstruks: Fotogrammetrisk FKB-Ledning 5.0: Versjon 2022-01-01</h1>
+<h1>Registreringsinstruks: Fotogrammetrisk FKB-Ledning</h1>
+<div class="details">
+<span id="author" class="author">Geovekst</span><br>
+<span id="revnumber">versjon 5.0,</span>
+<span id="revdate">01-01-2022</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
@@ -458,6 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#truefotogrammetrisk-ajourhold">2.2. Fotogrammetrisk ajourhold</a></li>
 <li><a href="#truefotogrammetrisk-oppgradering">2.3. Fotogrammetrisk oppgradering</a></li>
+<li><a href="#truegeografisk-avgrensning-av-kartleggingsområder">2.4. Geografisk avgrensning av kartleggingsområder</a></li>
 </ul>
 </li>
 <li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
@@ -617,8 +624,8 @@ Høringsversjon 15. oktober 2021
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi. Benyttes for alle objekter der det ikke er grunn til å benytte en annen verdi</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U (under bakken)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">U (under terrenget)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer/bygninger etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
@@ -655,26 +662,43 @@ Høringsversjon 15. oktober 2021
 <div class="sect2">
 <h3 id="truefotogrammetrisk-ajourhold"><a class="anchor" href="#truefotogrammetrisk-ajourhold"></a>2.2. Fotogrammetrisk ajourhold</h3>
 <div class="paragraph">
-<p>Ved fotogrammetrisk ajourhold skal eksisterende situasjon bringes ajour med oppdatert situasjon i terrenget ved fotograferingstidspunkt. Oppdragsgiver sender eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring.</p>
+<p>Ved fotogrammetrisk ajourhold sender oppdragsgiver eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring. FKB-dataene oppdateres der det har skjedd endringer slik at fullstendigheten i kartet skal bli tilsvarende som på fototidspunktet.</p>
 </div>
 <div class="paragraph">
-<p>Dette innebærer i prinsippet følgende operasjoner:</p>
+<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør vurderes.</p>
+</div>
+<div class="paragraph">
+<p>Fotogrammetrisk ajourhold innebærer i prinsippet følgende operasjoner:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Registrere nye objekter der disse finnes i flybildene, men ikke i eksisterende data. Reglene som gjelder nye objekter ved <a href="#truefotogrammetrisk-nykonstruksjon">Fotogrammetrisk nykonstruksjon</a> skal da anvendes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn. Dvs. at splitting innebærer ett endret objekt (<em>lokalid</em> beholdes) og et nytt objekt (uten <em>lokalid</em>), mens sammenføying innebærer ett endret objekt (<em>lokalid</em> beholdes) og et slettet objekt slettes.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0//#truebruk-av-datoegenskaper">beskrivelse av håndtering av datoegenskaper i FKB Generell del</a> for mer om dette.</p>
+<p>Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truebruk-av-datoegenskaper">beskrivelse av håndtering av datoegenskaper i FKB Generell del</a> for mer om dette.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Det presiseres at for objekter som verifiseres ved ajourføring skal <em>lokalid</em> beholdes uendret.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Slette objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Unntak fra/presisering av hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
+<p>Unntak fra/presisering av hovedreglene kan avtales i det enkelte kartleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect2">
@@ -703,6 +727,62 @@ Høringsversjon 15. oktober 2021
 </div>
 <div class="paragraph">
 <p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truegeografisk-avgrensning-av-kartleggingsområder"><a class="anchor" href="#truegeografisk-avgrensning-av-kartleggingsområder"></a>2.4. Geografisk avgrensning av kartleggingsområder</h3>
+<div class="paragraph">
+<p>Ved fotogrammetrisk datafangst angis <em>prosjektområdet</em> datafangsten skal skje innenfor ved hjelp av et definert <em>avgrensningspolygon</em>.
+Følgende håndtering gjelder dersom ikke annet er angitt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Avgrensningspolygonet utformes av oppdragsgiver på en slik måte at bygninger (og sekundært andre typer flate-objekter) i minst mulig grad deles.</p>
+</li>
+<li>
+<p>Avgrensningspolygonet leveres tilbake fra oppdragstaker sammen med dataene.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Nærmere retningslinjer for ev. justeringer i avgrensningspolygonet fra oppdragstaker avtales i det enkelte prosjekt.
+I så fall skal justert avgrensning leveres tilbake sammen med dataene. Justering kan for eksempel være aktuelt dersom
+man ønsker å konstruere objekter innenfor hele flyfotodekningen eller man ønsker å få registrert alle
+bygninger som deles av avgrensningspolygonet</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Nye flate-objekter skal deles av avgrensningspolygonet</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For flater med delt geometri benyttes en fiktiv avgrensningsobjekttype langs avgrensningspolygonet som det i følge datamodellen er lovlig at kan avgrense flata.</p>
+</li>
+<li>
+<p>For flater med heleid geometri angis det ikke på noen spesielle måte at flata er avgrenset av avgrensningspolygonet, men avgrensninga til flata skal være helt sammenfallende med geometrien til avgrensningspolygonet</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+</li>
+<li>
+<p>Nye kurve-objekter skal konnekteres til avgrensningspolygonet</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter enten i eller like innenfor avgrensningspolygonet</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Kurve-objekter som skal verifiseres i forbindelse med ajourføring splittes i siste punkt som ligger innenfor prosjektområdet. VERIFISERINGSDATO påføres kun på den delen som i sin helhet ligger innenfor prosjektområdet. Dersom objektet krysser prosjektavgrensningen gjentatte ganger kan hele objektet verifiseres uten splitting, forutsatt stereodekning</p>
+</li>
+</ul>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -5170,7 +5250,8 @@ Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-08 15:03:43 +0200
+Versjon 5.0<br>
+Last updated 2021-10-08 16:17:06 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
