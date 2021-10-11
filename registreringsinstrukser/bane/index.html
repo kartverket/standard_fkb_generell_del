@@ -491,7 +491,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Testversjon 2021-10-01
+Høringsversjon 12. oktober 2021
 </td>
 </tr>
 </table>
@@ -547,7 +547,7 @@ Testversjon 2021-10-01
 <p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
 </div>
 <div class="paragraph">
-<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
+<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Opsjonelle egenskaper som ikke er spesielt nevnt i registreringsinstruksen skal ikke registreres med mindre annet er spesielt angitt.</p>
 </div>
 <div class="paragraph">
 <p>Følgende egenskaper håndteres spesielt:</p>
@@ -603,6 +603,9 @@ Testversjon 2021-10-01
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for medium. Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med medium U typisk ikke tegnes ut (ev. stiples), mens objekter med medium L tegnes over/oppå andre objekter.</p>
+</div>
 <table id="tab-href" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
 <colgroup>
@@ -622,7 +625,7 @@ Testversjon 2021-10-01
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet eller terrenghøyde.</p></td>
 </tr>
 </tbody>
 </table>
@@ -635,7 +638,7 @@ Testversjon 2021-10-01
 <p>Ved fotogrammetrisk ajourhold sender oppdragsgiver eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring. FKB-dataene oppdateres der det har skjedd endringer slik at fullstendigheten i kartet skal bli tilsvarende som på fototidspunktet.</p>
 </div>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør vurderes.</p>
+<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør da vurderes.</p>
 </div>
 <div class="paragraph">
 <p>Fotogrammetrisk ajourhold innebærer i prinsippet følgende operasjoner:</p>
@@ -663,7 +666,7 @@ Testversjon 2021-10-01
 </div>
 </li>
 <li>
-<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene. Ved tvil grunnet dårlig innsyn skal objektet beholdes.</p>
 </li>
 </ol>
 </div>
@@ -696,7 +699,7 @@ Testversjon 2021-10-01
 </ul>
 </div>
 <div class="paragraph">
-<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
+<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#trueoppgradering">FKB generell del</a> for en generell beskrivelse av oppgradering av FKB-data.</p>
 </div>
 </div>
 <div class="sect2">
@@ -738,6 +741,13 @@ bygninger som deles av avgrensningspolygonet</p>
 </li>
 <li>
 <p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Særlig store sammenhengende flateobjekter (vannflater, vegflater etc.) kan splittes i nærheten av avgrensningspolygon dersom dette er hensiktsmessig.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Nye kurve-objekter skal konnekteres til avgrensningspolygonet</p>
@@ -1595,7 +1605,7 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-11 08:52:00 +0200
+Last updated 2021-10-11 17:41:02 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
