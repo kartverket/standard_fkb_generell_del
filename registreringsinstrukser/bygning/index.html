@@ -823,13 +823,55 @@ bygninger som deles av avgrensningspolygonet</p>
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Her listes ut objekttypene i FKB-Bygning som er aktuelle for fotogrammetrisk registrering. For en full beskrivelse av alle datatyper, egenskaper, kodelister etc. så henvises det til <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/">produktspesifikasjon for FKB-Bygning</a>.</p>
+<p>Generelt er det følgende informasjon som skal registreres om det enkelte objekt i FKB-Bygning:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Objekttype (riktig klassifisering av objektet)</p>
+</li>
+<li>
+<p>Geometri (i henhold til angitt grunnrissreferanse/høydereferanse og andre beskrivelser)</p>
+</li>
+<li>
+<p>Datafangstdato/verifiseringsdato (flyfotodato angis)</p>
+</li>
+<li>
+<p>Posisjonskvalitet med datafangstmetode og nøyaktighet (i både grunnriss og høyde) og synbarhet</p>
+</li>
+<li>
+<p>Registreringsversjon (med verdien "2022-01-01" for alle data som nyregistreres)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Om 3Dnivå</p>
+<p>Mange objekttyper har også egenskapen treDNivå som en påkrevd egenskap. Se <a href="https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/trednivå">kodeliste på Geonorge kodelisteregister</a> for en full beskrivelse av kodelista og kodeverdiene for treDNivå. Ved fotogrammetrisk registrering skal en av 2 verdier angis:</p>
 </div>
+<table id="tab-treD" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 3. TreDNivå ved fotogrammetrisk registrering</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Kodeverdi</th>
+<th class="tableblock halign-left valign-top">Beskrivelse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hovedformen på tak. Objektene merket med treDnivå 2 skal til sammen danne en konsistent beskrivelse av takets/byggets hovedform.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arker/utstikk og andre detaljer på et tak. Objektene merket med treDnivå 3 legger til detaljer i beskrivelsen av takets/byggets form.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Om medium?</p>
+<p>Nærmere om bruk av tredDNivå 2/3 er angitt med skisser/beskrivelser på den enkelte objekttype i beskrivelsene under.</p>
 </div>
 <div class="sect2">
 <h3 id="truebygninger"><a class="anchor" href="#truebygninger"></a>3.1. Bygninger</h3>
@@ -1423,7 +1465,7 @@ Veranda, TrappBygg, L&#229;vebru eller Bygningsbru. Da registreres to frittst&#2
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -1627,7 +1669,7 @@ bygningsavgrensning til AnnenBygning/Bygning. Egenskapen SKAL_AVGRENSE_BYGNING s
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -1831,7 +1873,7 @@ Merknad: Kan benyttes for bygning under oppføring eller for bygning som er reve
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -2193,7 +2235,7 @@ Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelin
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -2379,7 +2421,7 @@ Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelin
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -2610,7 +2652,7 @@ bygningslinja OK eller s&#229; registreres den ikke i det hele tatt.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -2832,7 +2874,7 @@ bygningen. Disse skal ikke presenteres p&#229; kart.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3025,7 +3067,7 @@ bygningen. Disse skal ikke presenteres p&#229; kart.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3205,7 +3247,7 @@ bygningen. Disse skal ikke presenteres p&#229; kart.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3387,7 +3429,7 @@ Merknad: Eksempel på kanter der TakMur skal benyttes er gavlvegger og brannvegg
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3594,7 +3636,7 @@ koordinat i grunnriss og h&#248;yde og samme TRE_D_NIV&#197;, skal det dannes et
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3782,7 +3824,7 @@ MERKNAD: Objekttypen skal benyttes som en utfyllende linje for &#229; beskrive b
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -3970,7 +4012,7 @@ Bygningsdelelinje og Taksprang kan v&#230;re sammenfallende. Da registreres to f
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -4165,7 +4207,7 @@ Der TaksprangBunn m&#248;ter andre beskrivende bygningslinjer, og har lik koordi
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -4353,7 +4395,7 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -4535,7 +4577,7 @@ Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som An
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -4734,7 +4776,7 @@ Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som An
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -4801,37 +4843,37 @@ Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den li
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer/veranda_takoverbygg.png"><img src="figurer/veranda_takoverbygg.png" alt="veranda takoverbygg"></a>
-</div>
-<div class="title">Figur 48. Veranda skal registreres også under Takoverbygg på verandaen</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
 <a class="image" href="figurer/veranda_blokk.png"><img src="figurer/veranda_blokk.png" alt="veranda blokk"></a>
 </div>
-<div class="title">Figur 49. Registrering av veranda (rød linje) i blokk. Alle verandaene skal registreres. I bildet til høyre skal det også registreres takoverbygg på toppen (blå linje).</div>
+<div class="title">Figur 48. Registrering av veranda (rød linje) i blokk. Alle verandaene skal registreres. I bildet til høyre skal det også registreres takoverbygg på toppen (blå linje).</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/veranda_eksempel.png"><img src="figurer/veranda_eksempel.png" alt="veranda eksempel"></a>
 </div>
-<div class="title">Figur 50. Eksempel på registrering av Veranda med forskjellige høydereferanser (ikke alle Verandaer på bildet er illustrert med en egen strek)</div>
+<div class="title">Figur 49. Eksempel på registrering av Veranda med forskjellige høydereferanser (ikke alle Verandaer på bildet er illustrert med en egen strek)</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/veranda_hoydesprang.png"><img src="figurer/veranda_hoydesprang.png" alt="veranda hoydesprang"></a>
 </div>
-<div class="title">Figur 51. Figur som viser prinsippene for registrering av verandaer med høydesprang. Dersom høydesprangene er over 50cm skal det registreres høydesprang som på bildet nederst.</div>
+<div class="title">Figur 50. Figur som viser prinsippene for registrering av verandaer med høydesprang. Dersom høydesprangene er over 50cm skal det registreres høydesprang som på bildet nederst.</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/veranda_skisse.png"><img src="figurer/veranda_skisse.png" alt="veranda skisse"></a>
 </div>
-<div class="title">Figur 52. Skisse som viser registrering av Veranda med forskjellig verdier av MEDIUM og HREF</div>
+<div class="title">Figur 51. Skisse som viser registrering av Veranda med forskjellig verdier av MEDIUM og HREF</div>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer/veranda_takoverbygg.png"><img src="figurer/veranda_takoverbygg.png" alt="veranda takoverbygg"></a>
+</div>
+<div class="title">Figur 52. Veranda skal registreres også under Takoverbygg på verandaen</div>
 </div>
 </div>
 <div class="sect4">
@@ -4964,7 +5006,7 @@ Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den li
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -5165,7 +5207,7 @@ Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den li
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -5537,7 +5579,7 @@ hele bygningsavgrensningen.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
@@ -5582,7 +5624,7 @@ hele bygningsavgrensningen.</p>
 <div class="sect2">
 <h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>4.1. Kvalitetskrav</h3>
 <table id="tab-Logisk-konsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Krav til logisk konsistens</caption>
+<caption class="title">Tabell 4. Krav til logisk konsistens</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5620,7 +5662,7 @@ hele bygningsavgrensningen.</p>
 <p>Logisk konsistens kontrolleres vha. SOSI-kontroll eller kontroll mot GML-skjema. Gjelder alle kvalitetsklasser.</p>
 </div>
 <table id="tab-Egenskapskonsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Krav til egenskapskonsistens</caption>
+<caption class="title">Tabell 5. Krav til egenskapskonsistens</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -5648,7 +5690,7 @@ hele bygningsavgrensningen.</p>
 <p>Gjelder alle kvalitetsklasser.</p>
 </div>
 <table id="tab-Fullstendighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 5. Krav til fullstendighet</caption>
+<caption class="title">Tabell 6. Krav til fullstendighet</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5700,7 +5742,7 @@ hele bygningsavgrensningen.</p>
 <p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 6. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
+<caption class="title">Tabell 7. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -5787,7 +5829,7 @@ hele bygningsavgrensningen.</p>
 <p>Ved angivelse av krav til stedfestingsnøyaktighet og fullstendighet er objekttypene inndelt i forskjellige klasser. Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Bygning tilhører.</p>
 </div>
 <table id="tab-Kvalitetsklasser" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 7. Kvalitetsklasser for objekttypene i FKB-Bygning</caption>
+<caption class="title">Tabell 8. Kvalitetsklasser for objekttypene i FKB-Bygning</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -6046,7 +6088,7 @@ koordinater i 2 dimensjoner (xy) eller i 3 dimensjoner (xyz) i nodepunktet (2D-n
 </ul>
 </div>
 <table id="tab-foringer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 8. Føringer for registrering som er angitt i registreringsinstruksene</caption>
+<caption class="title">Tabell 9. Føringer for registrering som er angitt i registreringsinstruksene</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -6127,7 +6169,7 @@ koordinater i 2 dimensjoner (xy) eller i 3 dimensjoner (xyz) i nodepunktet (2D-n
 <div id="footer">
 <div id="footer-text">
 Versjon 5.0<br>
-Last updated 2021-10-11 09:14:16 +0200
+Last updated 2021-10-11 09:58:44 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
