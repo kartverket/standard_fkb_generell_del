@@ -538,7 +538,7 @@ Høringsversjon 12. oktober 2021
 <p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
 </div>
 <div class="paragraph">
-<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect3">
@@ -571,6 +571,9 @@ Høringsversjon 12. oktober 2021
 <div class="paragraph">
 <p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
 </div>
+<div class="paragraph">
+<p><em>Assosiasjoner</em> håndteres ved fotogrammetrisk registrering av FKB-data på samme måte som opsjonelle egenskaper. Dvs. at det ikke skal etableres <em>assosiasjoner</em> i dataene dersom det ikke er spesielt beskrivet i den enkelte registreringsinstruks eller avtalt i kartleggingsprosjektet.</p>
+</div>
 <div class="sect4">
 <h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
 <div class="paragraph">
@@ -595,16 +598,23 @@ Høringsversjon 12. oktober 2021
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U (under terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer/bygninger etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekter under bakken er generelt lite aktuelt for fotogrammetrisk registrering, men det kan likevel være aktuelt å benytte denne verdien for objekter (delvis) under bruer/bygninger/kulverter etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B (på bygning)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på toppen av (på taket av) bygninger og ev. andre konstruksjoner.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for generelt for objekter befinner seg lufta. Dette kan være objekter i en stolpe eller på en bru. Bruk er presisert for en del objekttyper.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for medium. Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med medium U typisk ikke tegnes ut (ev. stiples), mens objekter med medium L tegnes over/oppå andre objekter.</p>
+<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for Medium. F.eks. er det presisert at en Veranda på et tak (takterrasse) registreres med Medium B, mens en Veranda som henger på en vegg (balkong) registreres med Medium L.</p>
+</div>
+<div class="paragraph">
+<p>Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med Medium U typisk ikke tegnes ut (ev. stiples), mens objekter med Medium L tegnes over/oppå andre objekter.</p>
 </div>
 <table id="tab-href" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
@@ -621,7 +631,7 @@ Høringsversjon 12. oktober 2021
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
@@ -666,12 +676,19 @@ Høringsversjon 12. oktober 2021
 </div>
 </li>
 <li>
-<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene. Ved tvil grunnet dårlig innsyn skal objektet beholdes.</p>
+<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dersom man er i tvil om objektet fremdeles finnes i terrenget grunnet dårlig innsyn i flybildene så skal objektet beholdes. Det finnes særlige retningslinjer for slike vurderinger på en del objekttyper.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Unntak fra/presisering av hovedreglene kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra/presisering av hovedreglene kan avtales i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect2">
@@ -772,9 +789,6 @@ bygninger som deles av avgrensningspolygonet</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB generell del</a> for en grundigere beskrivelse av de ulike FKB-standardene.</p>
-</div>
-<div class="paragraph">
-<p>FKB-Bane har ulik detaljeringsnivå i de ulike FKB-standardene A, B, C og D. Dette gjelder detaljering (mengde objekttyper), minstestørrelser og hvordan objekttypene registreres. Dette er beskrevet under hver enkelt objekttype.</p>
 </div>
 <div style="page-break-after: always;"></div>
 <hr>
@@ -1234,20 +1248,6 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige småpolygoner</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
@@ -1335,113 +1335,87 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 <div class="paragraph">
 <p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
 </div>
-<table id="tab-Stedfestingsnoyaktighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 6. Krav til stedfestingsnøyaktighet</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 6. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
 <colgroup>
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Klasse</th>
-<th class="tableblock halign-left valign-top">Krav FKB-A</th>
-<th class="tableblock halign-left valign-top">Krav FKB-B</th>
-<th class="tableblock halign-left valign-top">Krav FKB-C</th>
-<th class="tableblock halign-left valign-top">Krav FKB-D</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grove feil (%)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/301/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
+<td class="tableblock halign-left valign-top" colspan="2" rowspan="2"><p class="tableblock"><strong>FKB-Standard</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Nøyaktighetsklasser</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/303/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 5 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 7 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 18 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 18 cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 1</em></p>
+<p class="tableblock">Svært veldefinerte detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 2</em></p>
+<p class="tableblock">Veldefinerte detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 3</em></p>
+<p class="tableblock">Uskarpe detaljer (cm)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 4</em></p>
+<p class="tableblock">Diffuse detaljer (cm)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissnøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 15 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 20 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 55 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 55 cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grove feil (%)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/301/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 1% grove feil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 / 25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 / 40</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/302/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 3 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 5 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 16 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 16 cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Systematiske feil (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/302/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 5 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 7 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 23 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 23 cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 50</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 10 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 15 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 48 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 48 cm</p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-C/D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30 / 100</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høydenøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/304/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 15 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 20 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 70 cm</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 70 cm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25 / 90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40 / 150</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
+</div>
+<div class="paragraph">
+<p><strong>Grove feil</strong></p>
+</div>
+<div class="paragraph">
+<p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet er at maksimalt 1 % av registrerte objekter skal ha avvik som kategoriseres som grove feil.</p>
+</div>
 <div class="paragraph">
 <p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
 </div>
@@ -1572,22 +1546,22 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse B</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse C</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse D</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB registeringsmetode</p></td>
@@ -1597,7 +1571,7 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
+<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt.</p>
 </div>
 </div>
 </div>
@@ -1605,7 +1579,7 @@ Det skal registreres knutepunkt (nodepunkt) i sporveksler og sporkryss/kryssveks
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-11 17:41:02 +0200
+Last updated 2021-10-12 09:22:38 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
