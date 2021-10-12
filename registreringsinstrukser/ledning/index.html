@@ -506,7 +506,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
 <ul class="sectlevel2">
-<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.1. Informasjon som angis om alle objekttyper</a></li>
+<li><a href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser">A.1. UML-modell for Fotogrammetriske registreringsinsrukser</a></li>
+<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.2. Informasjon som angis om alle objekttyper</a></li>
 </ul>
 </li>
 </ul>
@@ -522,7 +523,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Høringsversjon 15. oktober 2021
+Høringsversjon 12. oktober 2021
 </td>
 </tr>
 </table>
@@ -568,7 +569,7 @@ Høringsversjon 15. oktober 2021
 <p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
 </div>
 <div class="paragraph">
-<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect3">
@@ -577,7 +578,7 @@ Høringsversjon 15. oktober 2021
 <p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
 </div>
 <div class="paragraph">
-<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
+<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Opsjonelle egenskaper som ikke er spesielt nevnt i registreringsinstruksen skal ikke registreres med mindre annet er spesielt angitt.</p>
 </div>
 <div class="paragraph">
 <p>Følgende egenskaper håndteres spesielt:</p>
@@ -600,6 +601,9 @@ Høringsversjon 15. oktober 2021
 </div>
 <div class="paragraph">
 <p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
+</div>
+<div class="paragraph">
+<p><em>Assosiasjoner</em> håndteres ved fotogrammetrisk registrering av FKB-data på samme måte som opsjonelle egenskaper. Dvs. at det ikke skal etableres <em>assosiasjoner</em> i dataene dersom det ikke er spesielt beskrivet i den enkelte registreringsinstruks eller avtalt i kartleggingsprosjektet.</p>
 </div>
 <div class="sect4">
 <h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
@@ -625,14 +629,24 @@ Høringsversjon 15. oktober 2021
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U (under terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer/bygninger etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekter under bakken er generelt lite aktuelt for fotogrammetrisk registrering, men det kan likevel være aktuelt å benytte denne verdien for objekter (delvis) under bruer/bygninger/kulverter etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B (på bygning)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på toppen av (på taket av) bygninger og ev. andre konstruksjoner.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for generelt for objekter befinner seg lufta. Dette kan være objekter i en stolpe eller på en bru. Bruk er presisert for en del objekttyper.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for Medium. F.eks. er det presisert at en Veranda på et tak (takterrasse) registreres med Medium B, mens en Veranda som henger på en vegg (balkong) registreres med Medium L.</p>
+</div>
+<div class="paragraph">
+<p>Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med Medium U typisk ikke tegnes ut (ev. stiples), mens objekter med Medium L tegnes over/oppå andre objekter.</p>
+</div>
 <table id="tab-href" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
 <colgroup>
@@ -648,11 +662,11 @@ Høringsversjon 15. oktober 2021
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet eller terrenghøyde.</p></td>
 </tr>
 </tbody>
 </table>
@@ -665,7 +679,7 @@ Høringsversjon 15. oktober 2021
 <p>Ved fotogrammetrisk ajourhold sender oppdragsgiver eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring. FKB-dataene oppdateres der det har skjedd endringer slik at fullstendigheten i kartet skal bli tilsvarende som på fototidspunktet.</p>
 </div>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør vurderes.</p>
+<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør da vurderes.</p>
 </div>
 <div class="paragraph">
 <p>Fotogrammetrisk ajourhold innebærer i prinsippet følgende operasjoner:</p>
@@ -694,11 +708,18 @@ Høringsversjon 15. oktober 2021
 </li>
 <li>
 <p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dersom man er i tvil om objektet fremdeles finnes i terrenget grunnet dårlig innsyn i flybildene så skal objektet beholdes. Det finnes særlige retningslinjer for slike vurderinger på en del objekttyper.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Unntak fra/presisering av hovedreglene kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra/presisering av hovedreglene kan avtales i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect2">
@@ -726,7 +747,7 @@ Høringsversjon 15. oktober 2021
 </ul>
 </div>
 <div class="paragraph">
-<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
+<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#trueoppgradering">FKB generell del</a> for en generell beskrivelse av oppgradering av FKB-data.</p>
 </div>
 </div>
 <div class="sect2">
@@ -768,6 +789,13 @@ bygninger som deles av avgrensningspolygonet</p>
 </li>
 <li>
 <p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Særlig store sammenhengende flateobjekter (vannflater, vegflater etc.) kan splittes i nærheten av avgrensningspolygon dersom dette er hensiktsmessig.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Nye kurve-objekter skal konnekteres til avgrensningspolygonet</p>
@@ -792,7 +820,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Alle FKB-Ledning objekter skal registreres med et sett egenskaper som er felles for alle FKB datasett. En nærmere beskrivelse av hvilke og hvordan disse egneskapene skal registreres ved fotogrammetrisk datafangst er beskrevet i kapitellet <a href="#Generelle retningslinjer som gjelder fotogrammetrisk registrering av FKB">[Generelle retningslinjer som gjelder fotogrammetrisk registrering av FKB]</a> og <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB Generell del</a>.</p>
+<p>Alle FKB-Ledning objekter skal registreres med et sett egenskaper som er felles for alle FKB datasett, f.eks. <em>datafangstdato</em> og <em>kvalitet</em>. En nærmere beskrivelse av hvilke og hvordan disse egneskapene skal registreres ved fotogrammetrisk datafangst er beskrevet i kapitellet <a href="#Generelle retningslinjer som gjelder fotogrammetrisk registrering av FKB">[Generelle retningslinjer som gjelder fotogrammetrisk registrering av FKB]</a> og <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB Generell del</a>.</p>
 </div>
 <div class="paragraph">
 <p>I tillegg har alle FKB-Ledning objekter noen felles fagspesifikke egenskaper som skal eller kan registeres. Ved fotogrammetrisk registrering skal disse egenskapene håndteres på følgende måte:</p>
@@ -836,7 +864,7 @@ Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste 
 <div class="sect4">
 <h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
 <div class="paragraph">
-<p>Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste bardunen registreres.</p>
+<p>Ingen</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -863,7 +891,7 @@ Dersom flere barduner g&#229;r i samme retning skal den h&#248;yeste og lengste 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topp bardun senter mast og fot bardun i feste ved bakken.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum utstrekning i grunnriss 30 meter</p></td>
 </tr>
 <tr>
@@ -1532,7 +1560,7 @@ Kum er spesielt tenkt benyttet ved bane for &#229; registrere sammenheng mellom 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topp ytterkant kum</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Diagonal/diameter 1,5 meter</p></td>
 </tr>
 <tr>
@@ -2280,9 +2308,6 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 <div class="sect4">
 <h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-7"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-7"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
 <div class="paragraph">
-<p>En mast kan best&#229; av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).</p>
-</div>
-<div class="paragraph">
 <p>Mast er en generalisering av komponenter slik som stolper, barduner, traverser osv. som danner en mast. En mast kan v&#230;re konstruert i ulike fasonger og materiale som st&#229;l, tre eller kompositt.
 Den p&#229;krevde egenskapen <em>konstruksjon</em> benyttes for &#229; angi hvilken type mast det er (EnkeltStolpe, StorStolpe, Fagverksmast eller Annet).</p>
 </div>
@@ -2562,7 +2587,7 @@ Den p&#229;krevde egenskapen <em>konstruksjon</em> benyttes for &#229; angi hvil
 <td class="tableblock halign-left valign-top"><p class="tableblock">benyttes kun for master som har en bredde &gt; 10 meter</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mastekonstruksjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">konstruksjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(EnkelStolpe, StorStolpe, Fagverksmast eller Annet) registreres for master hvor det er mulig &#229; tolke funksjonen i bildene.</p></td>
 </tr>
 <tr>
@@ -2629,8 +2654,10 @@ Den p&#229;krevde egenskapen <em>konstruksjon</em> benyttes for &#229; angi hvil
 <div class="sect4">
 <h5 id="trueledningsnettverkstype-kodenavn-kontaktledning"><a class="anchor" href="#trueledningsnettverkstype-kodenavn-kontaktledning"></a>Ledningsnettverkstype - Kodenavn: Kontaktledning</h5>
 <div class="paragraph">
-<p><strong>Definisjon :</strong> anlegg for str&#248;mforsyning gjennom takmontert str&#248;mavtakerutstyr p&#229; elektriske kj&#248;ret&#248;y<br>
-For kontaktledningsmaster angis egenskapen <em>konstruksjon</em> med veriden "enkelStolpe"</p>
+<p><strong>Definisjon :</strong> anlegg for str&#248;mforsyning gjennom takmontert str&#248;mavtakerutstyr p&#229; elektriske kj&#248;ret&#248;y</p>
+</div>
+<div class="paragraph">
+<p>For kontaktledningsmaster angis egenskapen <em>konstruksjon</em> med verdien "enkelStolpe".</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2642,8 +2669,10 @@ For kontaktledningsmaster angis egenskapen <em>konstruksjon</em> med veriden "en
 <div class="sect4">
 <h5 id="trueledningsnettverkstype-kodenavn-signalanlegg"><a class="anchor" href="#trueledningsnettverkstype-kodenavn-signalanlegg"></a>Ledningsnettverkstype - Kodenavn: Signalanlegg</h5>
 <div class="paragraph">
-<p><strong>Definisjon :</strong> nettverk som brukes for &#229; oversende og formidle trafikksignal<br>
-For signalmaster angis egenskapen <em>konstruksjon</em> med veriden "enkelStolpe"</p>
+<p><strong>Definisjon :</strong> nettverk som brukes for &#229; oversende og formidle trafikksignal</p>
+</div>
+<div class="paragraph">
+<p>For signalmaster angis egenskapen <em>konstruksjon</em> med verdien "enkelStolpe".</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3142,7 +3171,7 @@ Hovedregelen er at alle master som best&#229;r av flere fundamenterings-/bakkepu
 <div class="content">
 <a class="image" href="figurer/nettverkstasjon_frittstående.png"><img src="figurer/nettverkstasjon_frittstående.png" alt="nettverkstasjon frittstående"></a>
 </div>
-<div class="title">Figur 30. Eksempel på registrering av frittstående nettverkstasjon som representasjonspunkt. Uten manus vil det være vanskelig å skille frittstående nettverksstasjoner med andre bygninger, og man må derfor påregne at slike nettverkstasjoner blir registrert som Anne</div>
+<div class="title">Figur 30. Eksempel på registrering av frittstående nettverkstasjon som representasjonspunkt. Uten manus vil det være vanskelig å skille disse fra andre bygninger, og man må derfor påregne at slike nettverkstasjoner blir registrert som Bygning</div>
 </div>
 </div>
 <div class="sect4">
@@ -3160,7 +3189,7 @@ Hovedregelen er at alle master som best&#229;r av flere fundamenterings-/bakkepu
 <div class="sect4">
 <h5 id="truestasjonsplassering-kodenavn-mastefotkiosk"><a class="anchor" href="#truestasjonsplassering-kodenavn-mastefotkiosk"></a>Stasjonsplassering - Kodenavn: Mastefotkiosk</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> plassering av nettverkstasjon p&#229; bakkeniv&#229; mellom mastefundamentene    <strong>H&#248;gspenttraseer er p&#229;krevd &#229; registrere ved fotogrammetrisk konstruksjon</strong></p>
+<p><strong>Definisjon:</strong> plassering av nettverkstasjon p&#229; bakkeniv&#229; mellom mastefundamentene</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3637,7 +3666,7 @@ Brukes ved registrering av koblingsbokser (-skap) for elektrisitet og ekom p&#22
 <div class="sect4">
 <h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-12"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-12"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
 <div class="paragraph">
-<p>Brukes ved registrering av traseer mellom master. En trase beskriver den geografisk plassering for en eller flere ledninger, (ledning = kabel, linje, r&#248;r osv.).</p>
+<p>Brukes ved registrering av traseer mellom master. En trase beskriver den geografisk plassering for en eller flere ledninger.</p>
 </div>
 <div class="paragraph">
 <p>Registreres som rett linje mellom punkter i master. Det skal kun registreres nodepunkt eller knutepunkt der hvor traseen er tilknyttet et annet fysisk objekt (Mast, Nettverkstasjon eller Flymark&#248;r).</p>
@@ -3649,7 +3678,7 @@ Brukes ved registrering av koblingsbokser (-skap) for elektrisitet og ekom p&#22
 <p>Ved fjordspenn og overf&#248;ringer over dal der ledningene forgreiner seg og avstanden mellom hver enkel ledning er st&#248;rre enn 15 meter, skal det registreres en trase pr. ledning.</p>
 </div>
 <div class="paragraph">
-<p>Lange luftspenn traseer over fjorder og lignende skal registreres som ei sammenhengende kurve mellom endemastene. N&#229;r slike spenn har mark&#248;rer skal traseen registreres med et punkt i kurven som er lik mark&#248;rens koordinat (rett linje fra mark&#248;r til mark&#248;r).</p>
+<p>Lange luftspenntraseer over fjorder og lignende skal registreres som ei sammenhengende kurve mellom endemastene. N&#229;r slike spenn har mark&#248;rer, skal traseen registreres med et punkt i kurven som er lik mark&#248;rens koordinat (rett linje fra mark&#248;r til mark&#248;r).</p>
 </div>
 <div class="paragraph">
 <p>I FKB er det kun traseer som er synlige i terrenget som skal registreres (luftspenn).</p>
@@ -3931,6 +3960,18 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">trasenavn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreres ikke fotogrammetrisk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antallLaserPunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreres ikke fotogrammetrisk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maksVertikalAvstand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">registreres ikke fotogrammetrisk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minVertikalAvstand</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">registreres ikke fotogrammetrisk</p></td>
 </tr>
 </tbody>
@@ -4231,6 +4272,29 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 <td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» Vindturbinomriss</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..OMRISS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="truerestriksjoner-4"><a class="anchor" href="#truerestriksjoner-4"></a>Restriksjoner</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beskrivelse:</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotorbladlengde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">skal registreres fotogrammetrisk ved nykonstruksjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navhøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">skal registreres fotogrammetrisk ved nykonstruksjon</p></td>
 </tr>
 </tbody>
 </table>
@@ -4696,18 +4760,32 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Konseptuell konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall enheter der regler i konseptuelt skjema ikke er oppfylt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/010/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domenekonsistens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall enheter som ikke er i samsvar med domenet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/016/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F.eks. overskytende egenskaper eller ulovlige egenskaper.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekttyper, egenskaper og egenskapsverdier skal være i tråd med datamodellen. Kontrolleres f.eks. ved GML-validering eller SOSI-kontroll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige løse ender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/201/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Traseer som er knyttet sammen i virkeligheten skal ha felles nodepunkt (2D eller 3D) i leverte data</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall "fram og tilbakelinjer" og doble punkter / kick-backs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall elementer i dataene  som ulovlig krysser seg selv («grisehaler»)</p></td>
 </tr>
 </tbody>
 </table>
@@ -4868,6 +4946,12 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 </table>
 <div class="paragraph">
 <p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
+</div>
+<div class="paragraph">
+<p><strong>Grove feil</strong></p>
+</div>
+<div class="paragraph">
+<p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet er at maksimalt 1 % av registrerte objekter skal ha avvik som kategoriseres som grove feil.</p>
 </div>
 </div>
 <div class="sect2">
@@ -5140,7 +5224,17 @@ Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) s
 <h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.1. Informasjon som angis om alle objekttyper</h3>
+<h3 id="trueuml-modell-for-fotogrammetriske-registreringsinsrukser"><a class="anchor" href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser"></a>A.1. UML-modell for Fotogrammetriske registreringsinsrukser</h3>
+<div class="paragraph">
+<p>For å sørge for at det er fullt samsvar mellom FKB produktspesifikasjonene og registreringsinstruksene for datafangst er det utarbeida et opplegg
+med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette ut på at det tas en kopi av UML datamodellen for FKB produktspesifikasjonene der det legges inn justeringer og ekstrainformasjonen med tanke på datafangst. Disse UML-modellene følger ikke noen SOSI-standard, men er utarbeide med tanke på å kunne generere ut godt lesbar dokumentasjon og maskinlesbare filer for validering (SOSI-kontroll, GML-skjema etc.). UML datamodellene finnes i SOSI modellregister.</p>
+</div>
+<div class="paragraph">
+<p>Registreringsinstruksene består av UML-elementer (<a href="https://sosi.geonorge.no/veiledere/uml/">se veiledning for å lese UML-diagrammer</a>). Alle objekttyper listes derfor ut som "FeatureType" slik de er modellert i UML. Assosiasjoner i FKB listes i registreringsinstruksene ut i egenskapstabellen (med en featuretype som datatype). I forbindelse med fotogrammetrisk registrering vil hovedregelen være at assosiasjoner håndteres som opsjonelle egenskaper, dvs. at de ikke registreres.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.2. Informasjon som angis om alle objekttyper</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5215,24 +5309,24 @@ Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) s
 <td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB registeringsmetode</p></td>
@@ -5242,7 +5336,7 @@ Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) s
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
+<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt.</p>
 </div>
 </div>
 </div>
@@ -5251,7 +5345,7 @@ Andre ledningsdetaljer (som for eksempel samleskinner, brytere, avledere osv.) s
 <div id="footer">
 <div id="footer-text">
 Versjon 5.0<br>
-Last updated 2021-10-11 08:17:58 +0200
+Last updated 2021-10-12 09:39:08 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

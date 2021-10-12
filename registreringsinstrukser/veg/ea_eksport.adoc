@@ -132,7 +132,7 @@ Trafikk&#248;y skal s&#229; langt som mulig registreres under bruer og trafikklo
 For rundkj&#248;ringer med flere indre avgrensninger (overkj&#248;rbart areal), se objekttype Overkj&#248;rbartArealAvgrensning. 
 
 
-Trafikk&#248;y avgrenses av Vegdekkekant 
+Trafikk&#248;y avgrenses av Vegdekkekant.
 
 Trafikk&#248;yer som delvis ligger p&#229; bru (MEDIUM L) tillates splittet med VegFiktivGrense. 
 
@@ -143,6 +143,12 @@ Trafikk&#248;yer som delvis ligger p&#229; bru (MEDIUM L) tillates splittet med 
 '''
 .Illustrasjon fra produktspesifikasjon av Trafikkøy
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_trafikkoy.png, Alt="Illustrasjon fra produktspesifikasjon: Trafikkøy"]
+ 
+ 
+'''
+.Eksempel på registrering av trafikkøy som delvis ligger på bru. Her er det benyttet VegFiktivGrense (grønn stiplet) for å avgrense delen av trafikkøya som ligger oppe på brua (MEDIUM L).  
+image::figurer/trafikkoy_som_delvis_ligger_paa_bru.png[link=figurer/trafikkoy_som_delvis_ligger_paa_bru.png, Alt="Eksempel på registrering av trafikkøy som delvis ligger på bru. Her er det benyttet VegFiktivGrense (grønn stiplet) for å avgrense delen av trafikkøya som ligger oppe på brua (MEDIUM L).  "]
+ 
  
 ===== Føringer
 [cols="25,75"]
@@ -250,25 +256,17 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Benyttes ogs&#229; for tydelig opparbeida sammenhengende Gang/sykkelveger uten direkte tilknytning til kj&#248;reveg 
 
-
-
 Ved fotogrammetrisk kartlegging kan det v&#230;re vanskelig &#229; se forskjell p&#229; GangSykkelveg, fortau, gangveg og annet vegareal. Veglenke fra FKB-Elveg skal benyttes som manus for registrering av VegG&#229;endeOgSyklende.  
-
-
 
 GangSykkelveg kan v&#230;re fremkommelige for kj&#248;ret&#248;y men er ikke &#229;pen for annet enn kj&#248;ring for ”teknisk vedlikehold”, kj&#248;ring til eiendommene og evt n&#248;dhjelpskj&#248;ring. 
 
-
-
 Dersom g&#229;gate, gangveg eller fortau g&#229;r helt inn til husvegg benyttes VegFiktivGrense som lukkelinjer ved flatedanning. 
-
-
 
 VegG&#229;endeOgSyklende skal s&#229; langt som mulig registreres under bruer og trafikklokk. Usikker n&#248;yaktighet/synbarhet oppgis gjennom kvalitetskodingen. VegG&#229;endeOgSyklende i tunnel registreres ikke fotogrammetrisk, men kan legges inn i FKB-Veg fra andre datakilder og kodes da med Medium U. 
 
-
-
 VegG&#229;endeOgSyklende (FLATE) kan avgrenses av Vegdekkekant, og &#248;vrige objekttyper som kan avgrense vegflata.
+
+Kodeliste for egenskapen typeveg finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegg&#229;endeogsyklende.
  
  
 '''
@@ -420,33 +418,63 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 - Vegen er lenger enn 50 meter 
 - Vegen er gjennomkj&#248;rbar (knytter vegnettet sammen) 
 
-
 VegKj&#248;rende skal s&#229; langt som mulig registreres under bruer og trafikklokk. Usikker n&#248;yaktighet/ synbarhet oppgis gjennom kvalitetskodingen. Veg i tunnel registreres ikke fotogrammetrisk, men kan legges inn i FKB-Veg fra andre datakilder og kodes da med Medium U. 
-
-
 
 Typeveg i FKB-Elveg 2.0 skal benyttes som manus for, og v&#230;re styrende for koding av vegkanter og flater i FKB-Veg. Enhver endring av geometri og typeveg i FKB-Elveg 2.0 eller TraktorvegSti skal f&#248;lges opp med konsekvensretting av vegkanter og flater i FKB-Veg. Det er alltid senterlinjegeometri i FKB-Elveg 2.0 og FKB-TraktorvegSti som skal v&#230;re f&#248;rende for innhold og koding av vegkanter og vegflater i FKB-Veg, ikke omvendt. I FKB-Elveg 2.0 kan det ligge veglenker som ikke oppfyller kriteriene for etablering av VegKj&#248;rende (Flate), for eksempel at de er kortere enn minstem&#229;l. I slike tilfeller er det ikke krav om etablering av vegflate i FKB-Veg, se figur 12. 
 
 Det tolereres inntil +/- 10 meter avvik mellom FKB-Elveg og FKB-Veg i forbindelse med avslutning av veglenker inn p&#229; g&#229;rdsplasser ol, se figur 13 og 14. 
 
-
-
-VegKj&#248;rende skal registreres fram til g&#229;rdsplass/g&#229;rdstun hvor vegarealet videre beskrives av AnnetVegarealAvgrensning. Se figur 15. 
-
-
+VegKj&#248;rende skal registreres fram til g&#229;rdsplass/g&#229;rdstun hvor vegarealet videre beskrives av AnnetVegarealAvgrensning. Se figur.
 
 VegKj&#248;rende skal ikke registreres over &#229;pne vegareal avgrenset av AnnetVegarealAvgrensning, med mindre det faktisk g&#229;r en veg med unike adresser over omr&#229;det. Se figur 16. 
 
 Egenskapen VEGNUMMER skal p&#229;f&#248;res alle ERF-veger.
 Egenskapen VEGOVERVEG benyttes der man har to eller flere veger over hverandre og alle har MEDIUM L, dette kan forekomme i store trafikkmaskiner. Verdi JA benyttes for vegen som ligger &#248;verst. Denne egenskapen benyttes for &#229; styre hvilke flater som tegnes &#248;verst (prioritet).
 
-
 VegKj&#248;rende (flate) kan avgrenses av Vegdekkekant,  VegAnnenAvgrensningeller VegFiktivGrense. Vegflatene skal deles der VREF-koding endres, eller oftere. For kommunale og private veger samt skogsbilveier deles vegflatene opp etter vegkategori (K, P eller S), ikke vegnummer. 
+
+Kodeliste for egenskapen typeveg finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkj&#248;rende.
  
  
 '''
 .Illustrasjon fra produktspesifikasjon av VegKjørende
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_vegkjorende.png, Alt="Illustrasjon fra produktspesifikasjon: VegKjørende"]
+ 
+ 
+'''
+.Eksempelet viser en Veglenke (rødt) i FKB-Elveg som er kortere enn 50 m som ikke skal slettes (selv om den ikke oppfyller kriteriene for fotogrammetrisk registrering) ettersom vegen fortsatt eksisterer og er kjørbar i bildene. I dette tilfellet skal det ikke registreres vegflate i FKB-Veg (inkonsistens mot Elveg tolereres).
+image::figurer/veglenke_i_fkb_elveg_kortere_enn_50meter_som_ikke_skal_slettes_fordi_veg_eksisterer_og_er_kjorbar.png[link=figurer/veglenke_i_fkb_elveg_kortere_enn_50meter_som_ikke_skal_slettes_fordi_veg_eksisterer_og_er_kjorbar.png, Alt="Eksempelet viser en Veglenke (rødt) i FKB-Elveg som er kortere enn 50 m som ikke skal slettes (selv om den ikke oppfyller kriteriene for fotogrammetrisk registrering) ettersom vegen fortsatt eksisterer og er kjørbar i bildene. I dette tilfellet skal det ikke registreres vegflate i FKB-Veg (inkonsistens mot Elveg tolereres)."]
+ 
+ 
+'''
+.Eksempel på godkjent avvik (under 10m) mellom FKB-Elveg (grønt) og FKB-Veg (flate med skravur). Det er ikke krav om å danne vegflate helt ut til enden av veglenka.  
+image::figurer/godkjent_avvik_under_10meter_mellom_fkb_elveg_og_fkb_veg__ikke_krav_om_vegflatedanning_til_ende_av_veglenke.png[link=figurer/godkjent_avvik_under_10meter_mellom_fkb_elveg_og_fkb_veg__ikke_krav_om_vegflatedanning_til_ende_av_veglenke.png, Alt="Eksempel på godkjent avvik (under 10m) mellom FKB-Elveg (grønt) og FKB-Veg (flate med skravur). Det er ikke krav om å danne vegflate helt ut til enden av veglenka.  "]
+ 
+ 
+'''
+.Eksempel på godkjent avvik (under 10m) mellom FKB-Elveg (grønt) og FKB-Veg (flate med skravur). Det er ikke krav om å slette del av vegflaten som strekker seg lenger enn veglenka.  
+image::figurer/godkjent_avvik_under_10meter_mellom_fkb_elveg_og_fkb_veg__ikke_krav_om_sletting_av_vegflate_som_strekker_seg_lenger_enn_veglenka.png[link=figurer/godkjent_avvik_under_10meter_mellom_fkb_elveg_og_fkb_veg__ikke_krav_om_sletting_av_vegflate_som_strekker_seg_lenger_enn_veglenka.png, Alt="Eksempel på godkjent avvik (under 10m) mellom FKB-Elveg (grønt) og FKB-Veg (flate med skravur). Det er ikke krav om å slette del av vegflaten som strekker seg lenger enn veglenka.  "]
+ 
+ 
+'''
+.Eksempel på feilaktig registrert VegKjørende i forbindelse med gårdstun til venstre (rød avgrensing) og korrekt registrering til høyre. Veglenke fra FKB-Elveg skal benyttes som støtte i konstruksjonsarbeidet.  
+image::figurer/vegkjorende_gaardstun_feil_og_korrekt.png[link=figurer/vegkjorende_gaardstun_feil_og_korrekt.png, Alt="Eksempel på feilaktig registrert VegKjørende i forbindelse med gårdstun til venstre (rød avgrensing) og korrekt registrering til høyre. Veglenke fra FKB-Elveg skal benyttes som støtte i konstruksjonsarbeidet.  "]
+ 
+ 
+'''
+.Eksempel på feilaktig registrert VegKjørende i forbindelse med VegAnnenAvgrensning til venstre (rød med skravur) og korrekt registrering til høyre. Veglenke fra FKB-Elveg skal benyttes som støtte i konstruksjonsarbeidet.  
+image::figurer/vegkjorende_i_forbindelse_med_vegannenavgrensning_feil_og_korrekt.png[link=figurer/vegkjorende_i_forbindelse_med_vegannenavgrensning_feil_og_korrekt.png, Alt="Eksempel på feilaktig registrert VegKjørende i forbindelse med VegAnnenAvgrensning til venstre (rød med skravur) og korrekt registrering til høyre. Veglenke fra FKB-Elveg skal benyttes som støtte i konstruksjonsarbeidet.  "]
+ 
+ 
+'''
+.Eksempel på registrering av VegKjørende i forbindelse med fergeleie. Veglenke fra FKB-Elveg er her korrekt benyttet som manus for avgrensing av vegflatene.  
+image::figurer/vegkjorende_i_forbindelse_med_fergeleie.png[link=figurer/vegkjorende_i_forbindelse_med_fergeleie.png, Alt="Eksempel på registrering av VegKjørende i forbindelse med fergeleie. Veglenke fra FKB-Elveg er her korrekt benyttet som manus for avgrensing av vegflatene.  "]
+ 
+ 
+'''
+.Eksempel på registrering av VegKjørende i forbindelse med et mindre fergeleie. Veglenke fra FKB-Elveg er her korrekt benyttet som manus for avgrensing av vegflatene.
+image::figurer/vegkjorende_i_forbindelse_med_mindre_fergeleie.png[link=figurer/vegkjorende_i_forbindelse_med_mindre_fergeleie.png, Alt="Eksempel på registrering av VegKjørende i forbindelse med et mindre fergeleie. Veglenke fra FKB-Elveg er her korrekt benyttet som manus for avgrensing av vegflatene."]
+ 
  
 ===== Føringer
 [cols="25,75"]
@@ -796,26 +824,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
  
 '''
-.Eksempel på registrering av Vegdekkekant (asfaltkanten registreres – rød linje).
-image::figurer/vegdekkekant_asfaltkant.png[link=figurer/vegdekkekant_asfaltkant.png, Alt="Eksempel på registrering av Vegdekkekant (asfaltkanten registreres – rød linje)."]
- 
- 
-'''
-.Eksempel på registrering av Vegdekkekant (rød strek). I dette tilfellet vil Vegskulderkant, Vegdekkekant og Kjørebanekant ha lik geometri i grunnriss og høyde (dersom opsjoner er bestilt).  
-image::figurer/vegdekkekant__vegskulderkant_vegdekkekant_kjorbanekant_med_lik_geometri.png[link=figurer/vegdekkekant__vegskulderkant_vegdekkekant_kjorbanekant_med_lik_geometri.png, Alt="Eksempel på registrering av Vegdekkekant (rød strek). I dette tilfellet vil Vegskulderkant, Vegdekkekant og Kjørebanekant ha lik geometri i grunnriss og høyde (dersom opsjoner er bestilt).  "]
- 
- 
-'''
-.Eksempel på registrering av Vegdekkekant for grusveg.  
-image::figurer/vegdekkekant_for_grusveg.png[link=figurer/vegdekkekant_for_grusveg.png, Alt="Eksempel på registrering av Vegdekkekant for grusveg.  "]
- 
- 
-'''
-.Eksempel på registrering av trafikkøyer med Vegdekkekant (tegnet med rød strek).
-image::figurer/trafikkoy_med_vegdekkekant.png[link=figurer/trafikkoy_med_vegdekkekant.png, Alt="Eksempel på registrering av trafikkøyer med Vegdekkekant (tegnet med rød strek)."]
- 
- 
-'''
 .Eksempel på registrering av fortauskanter med Vegdekkekant (tegnet med rød strek).  
 image::figurer/fortauskant_med_vegdekkekant.png[link=figurer/fortauskant_med_vegdekkekant.png, Alt="Eksempel på registrering av fortauskanter med Vegdekkekant (tegnet med rød strek).  "]
  
@@ -828,6 +836,26 @@ image::figurer/gang_og_sykkelveg_med_vegdekkekant.png[link=figurer/gang_og_sykke
 '''
 .Eksempel på registrering av gangveger med Vegdekkekant (tegnet med rød strek).
 image::figurer/gangveg_med_vegdekkekant.png[link=figurer/gangveg_med_vegdekkekant.png, Alt="Eksempel på registrering av gangveger med Vegdekkekant (tegnet med rød strek)."]
+ 
+ 
+'''
+.Eksempel på registrering av trafikkøyer med Vegdekkekant (tegnet med rød strek).
+image::figurer/trafikkoy_med_vegdekkekant.png[link=figurer/trafikkoy_med_vegdekkekant.png, Alt="Eksempel på registrering av trafikkøyer med Vegdekkekant (tegnet med rød strek)."]
+ 
+ 
+'''
+.Eksempel på registrering av Vegdekkekant (rød strek). I dette tilfellet vil Vegskulderkant, Vegdekkekant og Kjørebanekant ha lik geometri i grunnriss og høyde (dersom opsjoner er bestilt).  
+image::figurer/vegdekkekant__vegskulderkant_vegdekkekant_kjorbanekant_med_lik_geometri.png[link=figurer/vegdekkekant__vegskulderkant_vegdekkekant_kjorbanekant_med_lik_geometri.png, Alt="Eksempel på registrering av Vegdekkekant (rød strek). I dette tilfellet vil Vegskulderkant, Vegdekkekant og Kjørebanekant ha lik geometri i grunnriss og høyde (dersom opsjoner er bestilt).  "]
+ 
+ 
+'''
+.Eksempel på registrering av Vegdekkekant (asfaltkanten registreres – rød linje).
+image::figurer/vegdekkekant_asfaltkant.png[link=figurer/vegdekkekant_asfaltkant.png, Alt="Eksempel på registrering av Vegdekkekant (asfaltkanten registreres – rød linje)."]
+ 
+ 
+'''
+.Eksempel på registrering av Vegdekkekant for grusveg.  
+image::figurer/vegdekkekant_for_grusveg.png[link=figurer/vegdekkekant_for_grusveg.png, Alt="Eksempel på registrering av Vegdekkekant for grusveg.  "]
  
  
 ===== Føringer
@@ -1155,6 +1183,17 @@ Merknad: Der det er naturlig lages nodepunkt til de andre objekttypene i vegsitu
 '''
 .Illustrasjon fra produktspesifikasjon av AnnetVegarealAvgrensning
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_annetvegarealavgrensning.png, Alt="Illustrasjon fra produktspesifikasjon: AnnetVegarealAvgrensning"]
+ 
+ 
+'''
+.Eksempler på områder med tilstrekkelig registrering av AnnetVegarealAvgrensning (tegnet med oransje linjer).  
+image::figurer/annetvegarealavgrensning_eksempel_paa_tilstrekkelig_registrering.png[link=figurer/annetvegarealavgrensning_eksempel_paa_tilstrekkelig_registrering.png, Alt="Eksempler på områder med tilstrekkelig registrering av AnnetVegarealAvgrensning (tegnet med oransje linjer).  "]
+ 
+ 
+'''
+.Diffuse avkjørsler trenger ikke å gå lengre enn nødvendig. Dette er et eksempel på en naturlig avslutning av AnnetVegarealAvgrensning, selv om garasjen er plassert lengre opp enn avkjørselen
+image::figurer/annetvegarealavgrensning_diffus_stopp_av_avkjorsel.png[link=figurer/annetvegarealavgrensning_diffus_stopp_av_avkjorsel.png, Alt="Diffuse avkjørsler trenger ikke å gå lengre enn nødvendig. Dette er et eksempel på en naturlig avslutning av AnnetVegarealAvgrensning, selv om garasjen er plassert lengre opp enn avkjørselen"]
+ 
  
 ===== Føringer
 [cols="25,75"]
@@ -2363,9 +2402,15 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Alle synlige vegbommer skal registreres. 
 
- 
+
 
 Vegbommer er ogs&#229; representert med punktgeometri (objekttype Vegsperring) i FKB-Vegnett og FKB-TraktorvegSti. Ved fotogrammetrisk datafangst skal vegbommer kun registreres i FKB-Veg.
+
+Kodeliste for egenskapen vegbomtype finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom.
+
+Kodeliste for egenskapen funksjon finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegbom.
+
+
  
  
 '''
@@ -2526,6 +2571,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 *Definisjon fra FKB produktspesifikasjon*: Langs- og/eller tverrg&#229;ende vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for &#229; lede, varsle eller regulere trafikken, og for &#229; klargj&#248;re andre bestemmelser gitt ved trafikkskilt eller trafikkregler.
  
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Dersom denne opsjonen bestilles m&#229; det utarbeides instruks for hvilke typer vegoppmerking som skal registreres. 
+
+Kodeliste for egenskapen bruksomr&#229;de finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegoppmerkingbruksomr&#229;de.
  
  
 '''
@@ -2677,7 +2724,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 *Tilleggsinformasjon for fotogrammetrisk registrering:* Hinder som st&#229;r langs vegskulder, parkeringsplasser og st&#248;rre &#229;pne omr&#229;der hvor det foreg&#229;r motorisert ferdsel, for &#229; sikre ferdsel, skille ulike trafikantgrupper eller styre kj&#248;rem&#248;nster. Gjelder ikke private avkj&#248;rsler. Vegrekkverk skal ogs&#229; registreres p&#229; bru. 
 
-Se eksempler p&#229; typer rekkverk under kodeliste VEGREKKVERKTYPE.
+Kodeliste for egenskapen rekkverkstype finnes p&#229; https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/vegrekkverk.
  
  
 '''
