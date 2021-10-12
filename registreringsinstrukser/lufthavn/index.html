@@ -482,7 +482,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
 <ul class="sectlevel2">
-<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.1. Informasjon som angis om alle objekttyper</a></li>
+<li><a href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser">A.1. UML-modell for Fotogrammetriske registreringsinsrukser</a></li>
+<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.2. Informasjon som angis om alle objekttyper</a></li>
 </ul>
 </li>
 </ul>
@@ -498,7 +499,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Høringsversjon 11. oktober 2021
+Høringsversjon 12. oktober 2021
 </td>
 </tr>
 </table>
@@ -527,7 +528,7 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 <p>Se produktspesifikasjon for FKB-Lufthavn 5.0 for en oversikt over <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Lufthavn/5.0/#trueendringer-siden-fkb-lufthavn-4-6-2016-06-01">endringer siden FKB-Lufthavn 4.6 2016-06-01</a>. Det er ikke gjort endringer når det gjelder bestemmelser for fotogrammetrisk registrering utover det som følger av endringene i produktspesifikasjonen.</p>
 </div>
 <div class="paragraph">
-<p>Den endringen som vil påvirke fotogrammetrisk registrering mest er at Rullebane er endret til å bli et flateobjekt med heleid flategeometri. Selve avgrensningen (dataene som på registreres) er imidlertid de samme som før. Posisjonsnøyaktigheten på flatene skal gjenspeile nøyktigheten på regstreringen av flateavgrensningene.</p>
+<p>Den endringen som vil påvirke fotogrammetrisk registrering mest er at Rullebane er endret til å bli et flateobjekt med heleid flategeometri. Selve avgrensningen (dataene som må registreres) er imidlertid de samme som før. Posisjonsnøyaktigheten på flatene skal gjenspeile nøyktigheten på regstreringen av flateavgrensningene.</p>
 </div>
 </div>
 </div>
@@ -546,7 +547,7 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 <p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
 </div>
 <div class="paragraph">
-<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra hovedregelen kan avtales i teknisk spesifikasjon for kartleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect3">
@@ -555,7 +556,7 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 <p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
 </div>
 <div class="paragraph">
-<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
+<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Opsjonelle egenskaper som ikke er spesielt nevnt i registreringsinstruksen skal ikke registreres med mindre annet er spesielt angitt.</p>
 </div>
 <div class="paragraph">
 <p>Følgende egenskaper håndteres spesielt:</p>
@@ -578,6 +579,9 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 </div>
 <div class="paragraph">
 <p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
+</div>
+<div class="paragraph">
+<p><em>Assosiasjoner</em> håndteres ved fotogrammetrisk registrering av FKB-data på samme måte som opsjonelle egenskaper. Dvs. at det ikke skal etableres <em>assosiasjoner</em> i dataene dersom det ikke er spesielt beskrivet i den enkelte registreringsinstruks eller avtalt i kartleggingsprosjektet.</p>
 </div>
 <div class="sect4">
 <h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
@@ -603,16 +607,23 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">U (under terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer/bygninger etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekter under bakken er generelt lite aktuelt for fotogrammetrisk registrering, men det kan likevel være aktuelt å benytte denne verdien for objekter (delvis) under bruer/bygninger/kulverter etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">B (på bygning)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på toppen av (på taket av) bygninger og ev. andre konstruksjoner.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for generelt for objekter befinner seg lufta. Dette kan være objekter i en stolpe eller på en bru. Bruk er presisert for en del objekttyper.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for medium. Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med medium U typisk ikke tegnes ut (ev. stiples), mens objekter med medium L tegnes over/oppå andre objekter.</p>
+<p>Enkelte objekttyper kan ha spesielle beskrivelser av bruk av andre koder for Medium. F.eks. er det presisert at en Veranda på et tak (takterrasse) registreres med Medium B, mens en Veranda som henger på en vegg (balkong) registreres med Medium L.</p>
+</div>
+<div class="paragraph">
+<p>Medium brukes i stor grad for å styre tegneregler for FKB-dataene. Altså slik at objekter med Medium U typisk ikke tegnes ut (ev. stiples), mens objekter med Medium L tegnes over/oppå andre objekter.</p>
 </div>
 <table id="tab-href" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
@@ -629,7 +640,7 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
@@ -675,11 +686,18 @@ Fotogrammetrisk FKB-Lufthavn omfatter et begrenset utvalg av objekttyper skal re
 </li>
 <li>
 <p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dersom man er i tvil om objektet fremdeles finnes i terrenget grunnet dårlig innsyn i flybildene så skal objektet beholdes. Det finnes særlige retningslinjer for slike vurderinger på en del objekttyper.</p>
+</li>
+</ul>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Unntak fra/presisering av hovedreglene kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>Unntak fra/presisering av hovedreglene kan avtales i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1632,7 +1650,17 @@ Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn til
 <h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.1. Informasjon som angis om alle objekttyper</h3>
+<h3 id="trueuml-modell-for-fotogrammetriske-registreringsinsrukser"><a class="anchor" href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser"></a>A.1. UML-modell for Fotogrammetriske registreringsinsrukser</h3>
+<div class="paragraph">
+<p>For å sørge for at det er fullt samsvar mellom FKB produktspesifikasjonene og registreringsinstruksene for datafangst er det utarbeida et opplegg
+med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette ut på at det tas en kopi av UML datamodellen for FKB produktspesifikasjonene der det legges inn justeringer og ekstrainformasjonen med tanke på datafangst. Disse UML-modellene følger ikke noen SOSI-standard, men er utarbeide med tanke på å kunne generere ut godt lesbar dokumentasjon og maskinlesbare filer for validering (SOSI-kontroll, GML-skjema etc.). UML datamodellene finnes i SOSI modellregister.</p>
+</div>
+<div class="paragraph">
+<p>Registreringsinstruksene består av UML-elementer (<a href="https://sosi.geonorge.no/veiledere/uml/">se veiledning for å lese UML-diagrammer</a>). Alle objekttyper listes derfor ut som "FeatureType" slik de er modellert i UML. Assosiasjoner i FKB listes i registreringsinstruksene ut i egenskapstabellen (med en FeatureType som datatype). I forbindelse med fotogrammetrisk registrering vil hovedregelen være at assosiasjoner håndteres som opsjonelle egenskaper, dvs. at de ikke registreres.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.2. Informasjon som angis om alle objekttyper</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1707,24 +1735,24 @@ Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn til
 <td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D minstestørrelse</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der det er minstestørrelser for registrering</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB registeringsmetode</p></td>
@@ -1734,7 +1762,7 @@ Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn til
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
+<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt.</p>
 </div>
 </div>
 </div>
@@ -1743,7 +1771,7 @@ Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn til
 <div id="footer">
 <div id="footer-text">
 Versjon 5.0<br>
-Last updated 2021-10-11 08:51:46 +0200
+Last updated 2021-10-12 12:14:59 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
