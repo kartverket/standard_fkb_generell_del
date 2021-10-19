@@ -563,7 +563,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-TEST - Høringsversjon 19. oktober 2021
+Høringsversjon 20. oktober 2021
 </td>
 </tr>
 </table>
@@ -586,12 +586,36 @@ TEST - Høringsversjon 19. oktober 2021
 <div class="sect2">
 <h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.2. Endringslogg</h3>
 <div class="paragraph">
-<p>Se produktspesifikasjon for FKB-BygnAnlegg 5.0 for en oversikt over <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-BygnAnlegg/5.0/#trueendringslogg">endringer siden FKB-BygnAnlegg 4.61 2018-01-01</a>.</p>
+<p>I grove trekk er det et tilsvarende datainnhold som skal registreres etter ny versjon av registreringsinstruksen som etter tidligere versjoner. Imidlertid er det gjort noen endringer for FKB generelt som påvirker måten dataene skal registreres/organiseres på og det er gjort noen endringer for enkelte objekttyper i FKB-BygnAnlegg. Se produktspesifikasjon for FKB-BygnAnlegg 5.0 for en komplett oversikt over <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-BygnAnlegg/5.0/#trueendringslogg">endringer siden FKB-BygnAnlegg 4.61 2018-01-01</a>.</p>
 </div>
 <div class="paragraph">
-<p>Endringer i Registreringsinstruks:
-- Endret minstemål for registrering av Gjerde
--</p>
+<p>Endringer som er spesielt viktige for fotogrammetrisk registrering:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alle flate-objekttyper (unntatt Kai) registreres som heleid flate. Dette innebærer at veldig mange kant/avgrensningsobjekter ikke lenger skal registreres som egne objekter. Den samme geometrien må likevel fortsatt registreres og posisjonskvaliteten på flata skal gjenspeile nøyaktigheten på avgrensningen av flata.</p>
+</li>
+<li>
+<p>Registrering av KaiBrygge splittet i Kai og Brygge</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kai skal fortsatt registreres med delt flategeometri, men på en litt annen måte enn før. KaiFront brukes i stedet for KaiBryggekant (harmonisering med Havnedata).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Gjerde er ny felles objekttype for steingjerde og annet gjerde. Steingjerde/annet gjerde derfor fått felles og litt justerte verdier for minstemål</p>
+</li>
+<li>
+<p>Parkdetalj innført som ny opsjonell objekttype</p>
+</li>
+<li>
+<p>Skitrekk, Gondol osv. er samlet i en felles objekttype Taubane og skilles med kodelista taubanetype.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -882,7 +906,7 @@ bygninger som deles av avgrensningspolygonet</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Noe spesielt om håndtering av Eksternpeker eller andre egenskaper??</strong></p>
+<p>Mange av objekttypene i FKB-BygnAnlegg inneholder mulighet for kobling av objektene i FKB mot andre systemer/databaser (<em>nvdbpeker</em>, <em>nrlpeker</em>, <em>eksternpeker</em> etc.). Dette er ikke informasjon som egner seg for fotogrammetrisk kartlegging, men dersom slike pekere er etablert i dataene er det naturlig at de bevares gjennom fotogrammetrisk ajourhold. Håndtering av slik informasjon avtales nærmere i det enkelte kartleggingsprosjekt dersom det er aktuelt.</p>
 </div>
 <div class="sect2">
 <h3 id="truebruer-og-tuneller"><a class="anchor" href="#truebruer-og-tuneller"></a>3.1. Bruer og tuneller</h3>
@@ -1101,7 +1125,7 @@ Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlig
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tilhørendeDetalj</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» Brudetalj</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TILHØRENDEDETALJ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 </tr>
 </tbody>
@@ -2675,7 +2699,7 @@ Omfatter detaljer som f.eks. bauter, statuer, fontener, basseng, lekeapparater o
 <div class="sect4">
 <h5 id="trueparkdetaljtype-kodenavn-lekeapparat"><a class="anchor" href="#trueparkdetaljtype-kodenavn-lekeapparat"></a>Parkdetaljtype - Kodenavn: Lekeapparat</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> St&#248;rre lekeapparater registreres som flate med HREF FOT for omrisset av konstruksjonen/utstrekning av gummiunderlag, etc.</p>
+<p><strong>Definisjon:</strong> St&#248;rre lekeapparater registreres som flate med HREF FOT for omrisset av konstruksjonen.    Et litt st&#248;rre omr&#229;de rundt lekeapparatene kan registreres som Lekeplass i FKB-Arealbruk</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3955,9 +3979,13 @@ Eksempel: M&#229;let&#229;rn og stupet&#229;rn</p>
 <div class="sect4">
 <h5 id="truegjerdetype-kodenavn-annet-gjerde"><a class="anchor" href="#truegjerdetype-kodenavn-annet-gjerde"></a>Gjerdetype - Kodenavn: Annet gjerde</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Oppsatt stengsel som hindrer passering.    Standardverdi for fotogrammetrisk registrering. Brukes for alle andre typer gjerder enn steingjerder.
-===== Gjerdetype - Kodenavn: Steingjerde
-<strong>Definisjon:</strong> frittst&#229;ende mur oppf&#248;rt av naturstein uten bindemiddel</p>
+<p><strong>Definisjon:</strong> Oppsatt stengsel som hindrer passering.    Standardverdi for fotogrammetrisk registrering. Brukes for alle andre typer gjerder enn steingjerder.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegjerdetype-kodenavn-steingjerde"><a class="anchor" href="#truegjerdetype-kodenavn-steingjerde"></a>Gjerdetype - Kodenavn: Steingjerde</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> frittst&#229;ende mur oppf&#248;rt av naturstein uten bindemiddel</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4591,7 +4619,7 @@ med KVALITET.</p>
 <div class="content">
 <a class="image" href="figurer/skjerm_hoydesprang.png"><img src="figurer/skjerm_hoydesprang.png" alt="skjerm hoydesprang"></a>
 </div>
-<div class="title">Figur 37. Eksempel på registrering av støyskjerm. Det lages 2D nodepunkt der det er høydesprang på mer enn 0.5 meter. Samme prinsipp for høyderegistrering gjelder for også for andre objekttyper i FKB-BygnAnlegg som Gjerde etc.</div>
+<div class="title">Figur 37. Eksempel på registrering av støyskjerm. Det lages 2D nodepunkt der det er høydesprang på mer enn 0.5 meter. Samme prinsipp for høyderegistrering gjelder også for veldig mange andre objekttyper i FKB-BygnAnlegg som Gjerde etc.</div>
 </div>
 <div class="sect4">
 <h5 id="trueføringer-19"><a class="anchor" href="#trueføringer-19"></a>Føringer</h5>
@@ -6152,7 +6180,7 @@ Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se k
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tilhørendeMast</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» Taubanemast</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TILHØRENDEMAST</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 </tr>
 </tbody>
@@ -6186,9 +6214,13 @@ Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se k
 <div class="sect4">
 <h5 id="truetaubanetype-kodenavn-annen-taubane"><a class="anchor" href="#truetaubanetype-kodenavn-annen-taubane"></a>Taubanetype - Kodenavn: Annen taubane</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Benyttes ved fotogrammetrisk registrering kun der det ikke er mulig &#229; klassifisere taubana til en av de andre taubanetypene.
-===== Taubanetype - Kodenavn: Gondolbane
-<strong>Definisjon:</strong> Taubaner hvor lasten er plassert i lukkete kabiner. Oftest kun 2 gondoler som er festet til vaieren der den ene g&#229;r opp n&#229;r den andre g&#229;r ned.     En del skianlegg har taubaner med mange lukkende kabiner. Disse registreres ogs&#229; som Gondolbane.</p>
+<p><strong>Definisjon:</strong> Benyttes ved fotogrammetrisk registrering kun der det ikke er mulig &#229; klassifisere taubana til en av de andre taubanetypene.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truetaubanetype-kodenavn-gondolbane"><a class="anchor" href="#truetaubanetype-kodenavn-gondolbane"></a>Taubanetype - Kodenavn: Gondolbane</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> Taubaner hvor lasten er plassert i lukkete kabiner. Oftest kun 2 gondoler som er festet til vaieren der den ene g&#229;r opp n&#229;r den andre g&#229;r ned.     En del skianlegg har taubaner med mange lukkende kabiner. Disse registreres ogs&#229; som Gondolbane.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -6200,9 +6232,13 @@ Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se k
 <div class="sect4">
 <h5 id="truetaubanetype-kodenavn-løypestreng"><a class="anchor" href="#truetaubanetype-kodenavn-løypestreng"></a>Taubanetype - Kodenavn: Løypestreng</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Vaier spent mellom to punkter i terrenget for transport av last. Kan ha ekstra vaier/tau festet til sveiv eller motor slik at transporten ikke er avhengig av fall.    Mindre vanlig type taubane som sjelden forekommer  i forbindelse med skianlegg/turisme etc.
-===== Taubanetype - Kodenavn: Skitrekk
-<strong>Definisjon:</strong> Taubane til &#229; dra skil&#248;per opp bratte bakker (T-krok, sk&#229;lheiser etc.)</p>
+<p><strong>Definisjon:</strong> Vaier spent mellom to punkter i terrenget for transport av last. Kan ha ekstra vaier/tau festet til sveiv eller motor slik at transporten ikke er avhengig av fall.    Mindre vanlig type taubane som sjelden forekommer  i forbindelse med skianlegg/turisme etc.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truetaubanetype-kodenavn-skitrekk"><a class="anchor" href="#truetaubanetype-kodenavn-skitrekk"></a>Taubanetype - Kodenavn: Skitrekk</h5>
+<div class="paragraph">
+<p><strong>Definisjon:</strong> Taubane til &#229; dra skil&#248;per opp bratte bakker (T-krok, sk&#229;lheiser etc.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -7853,7 +7889,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tilhørendeMøne</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» FiskehjellMøne</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TILHØRENDEMØNE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 </tr>
 </tbody>
@@ -8371,7 +8407,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tilhørendeLandgang</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» FlytebryggeLandgang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TILHØRENDELANDGANG</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..*]</p></td>
 </tr>
 </tbody>
@@ -10005,6 +10041,9 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
 </div>
 <div class="paragraph">
+<p>Kravene til nøyaktighet gjelder for veldefinerte detaljer. Dersom detaljene ikke er veldefinerte i datagrunnlaget for konstruksjon slik at nøyaktighetskravene kan holdes skal dette angis i kvalitetskodingen (synbarhet og nøyaktighet) for objektene.</p>
+</div>
+<div class="paragraph">
 <p><strong>Grove feil</strong></p>
 </div>
 <div class="paragraph">
@@ -10034,16 +10073,244 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fylles ut&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BeskrivendeHjelpelinjeAnlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brygge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bru</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brudetalj</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brønn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elveforbygning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elveterksel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FiktivAvgrensningForAnlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fiskehjell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FiskehjellMøne</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fisketrapp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flaggstang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flytebrygge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FlytebryggeLandgang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fundament</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gjerde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hoppbakke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Idrettsanlegg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kai</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KaiFront</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kulvert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Molo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MurFrittstående</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MurLoddrett</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parkdetalj</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pipe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Portstolpe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pælebunt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rørgate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skjerm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SkråForstøtningsmur</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Svømmebasseng</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fylles ut&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tank</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Taubane</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TaubaneMast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tribune</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tunnelportal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tårn</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voll</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
 </tr>
 </tbody>
 </table>
@@ -10054,7 +10321,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Behov for informasjon her for BygnAnlegg??</strong></p>
+<p>Informasjon ikke angitt</p>
 </div>
 </div>
 </div>
@@ -10183,7 +10450,7 @@ med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette
 <div id="footer">
 <div id="footer-text">
 Versjon 5.0<br>
-Last updated 2021-10-19 12:45:45 +0200
+Last updated 2021-10-19 15:04:17 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
