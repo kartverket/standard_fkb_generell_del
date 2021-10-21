@@ -1,0 +1,20 @@
+== Leveranse
+=== Leveransemetode Punktsky
+
+Punktskyen skal leveres på LAS format som detaljert i  http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf[LAS Specification 1.4 - R15]. Filene skal komprimeres til https://laszip.org/[LAZ].
+
+Det skal benyttes 'Point Data Record' 6 til 10 avhengig av faktisk innhold. ##Eksempel##: 
+
+Ut over standard parametre skal følgende kodes inn i leveransen: 
+
+
+.ASPRS LAS 1.4 Lokale Tilpasninger
+[width="100%",options="header,footer"]
+|====================
+| Attributt | Kommentar  
+| Header / System Identifier | Sensorsystem skal kodes i henhold til https://github.com/ASPRSorg/LAS/wiki/Standard-System-Identifiers[ASPRS Standard System Identifiers] 
+| Header / Projection | ##Klargjøre HREF / VREF##   
+| Point Record / Scanner Channel | Rapport skal detaljere faktisk skanner kanal regime som er benyttet i prosjektet.     
+| Point Record / User Data | Felt som muliggjør enkel informasjon per punkt. Eventuell bruk skal detaljeres i rapport    
+| Point Record / Point Source ID | Unik ID for datafangstlinjenummer skal kodes til denne attributten. Det skal være en til en relasjon mellom Point Source og ..STRIPENUMMER i metadatasett.
+|====================
