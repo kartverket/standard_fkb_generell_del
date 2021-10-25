@@ -1,1 +1,50 @@
 == Metadata
+##må sees i sammenheng med høydedata.no ##
+
+##bør ikke være mer innhold enn nødvendig##
+
+=== Prosjektavgrensning
+SOSI-fil som definerer prosjektområde. Skal ha følgende innhold: 
+
+ .HODE
+ ..TEGNSETT UTF-8
+ ..SOSI-VERSJON 4.5
+ ..SOSI-NIVÅ 4
+ ..OBJEKTKATALOG Punktsky 1.0
+ .KURVE 1:
+ ..OBJTYPE LaserDekningsområdeAvgrensning
+ ..DEKNINGSNUMMER ”08777”       (Unik ProsjektID)
+ .FLATE 1:
+ ..OBJTYPE LaserDekningsområde
+ ..OPPDRAGSGIVER ”Kartverket”
+ ..DEKNINGSNUMMER ”08777”       (Unik ProsjektID)
+ ..FKB-LASERSTANDARD FKB-Laser-X-DTMYY (Se Kap 5)
+ ..FLYFIRMA ”Laser AS”          (Firma ansvarlig for datafangst)
+ 
+=== Datafangstlinje
+SOSI-fil som inneholder flyets/sensorens opptaksrute.
+
+Flyhøyde, dato og innstillinger av instrumentet kan variere
+innenfor et dekningsområde og angis derfor på flystripe. For …LASERTYPE må
+Instrumentnavn og unik instrumentID settes sammen. Eksempel: "Riegl
+VQ-1560i - L735"
+
+ .HODE
+ ..TEGNSETT UTF-8
+ ..SOSI-VERSJON 4.5
+ ..SOSI-NIVÅ 2
+ ..OBJEKTKATALOG Punktsky 1.0
+ .KURVE 1:
+ ..OBJTYPE LaserFlystripe
+ ..FLYDATO 20150502				(Dato på ISO format: YYYYMMDD)
+ ..FLYHØYDE 2085.61
+ ..FLYFIRMA "Laser AS"			(Firma som utfører datafangst)
+ ..DEKNINGSNUMMER 10887			(Unik ID)
+ ..STRIPENUMMER 073				(Stripenummer innenfor datafangstblokk)
+ ..LASERINFORMASJON
+ ...LASERTYPE "Riegl VQ-1560i - L735"	(Sensornavn - Unik Sensor ID)
+ ...PULSFREKVENS 295600			(Pulsrepetisjonsfrekvens (Hz))
+ ...SKANNERVINKEL 13			    (Åpningsvinkel sentrert om nadir (Deg))
+ ...SKANNERFREKVENS 46.3		    (Skannefrekvens (Hz))
+
+ 
