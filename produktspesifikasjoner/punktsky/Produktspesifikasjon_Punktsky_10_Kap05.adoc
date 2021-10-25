@@ -1,25 +1,46 @@
 == Innhold og struktur
+Produktspesifikasjonen er bygget opp rundt en matrise med datasettkategorier som kolonner og felleskrav og krav per sensortyper som rader. 
 
-=== Omfang
+Datasettkategoriene består av følgende: 
+
+ * Høy Tetthet
+ * Middels Tetthet
+ * Lav Tetthet
+ * Egendefinert
+ 
+Spesifikasjonen omhandler følgende sensortyper og datakilder: 
+
+ * Luftbåren Topografisk LiDAR
+ * Luftbåren Bathymetrisk LiDAR
+ * Terrestrisk Topografisk LiDAR
+ * Multistråle Ekkolodd
+ * Bildematching
+
+=== Felleskomponenter
+
+For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egendefinert) er det et sett med krav som er uavhengige av sensor. 
+
 
 //Originaldatasett i XLSX på Teams
 //Alle endringer må gjøres i XLSX
 //Kolonne "L" kopieres under...
-.Punktsky Kategorier 
+.Punktsky Kategorier og generelle krav
 [width="100%",options="header,footer"]
 |====================
 |Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Kategoribeskrivelse| |Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Forvaltning / Ikke Geovekst Datasett
+|Kategoribeskrivelse| |Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Klasse for forvaltningsløsning
 |KlasseID||A|B|C|E
-|Minimum Tetthet||10+||2|Egendefinert
+|Minimum Tetthet||10+|5|2|Egendefinert
 
 
 |Kartbladinndeling||1 : 500|1 : 1000|1 : 1000|-
-|Fullstendighet ||80% (2x2 innenfor 10x10)|?|95% (10x10) innenfor prosjekt|-
+|Fullstendighet ||80% (2x2 innenfor 10x10)|80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|-
 |Feilklassifisering||0,02|0,02|0,02|-
 |Feilklassifisering - 'Aktive' ||0,02|0,02|0,02|-
 |Antall bakkepunkt referanseflater||0,8|0,8|0,8|-
 |====================
+
+=== Luftbåren Topografisk LiDAR
 .Luftbåren Topografisk LiDAR
 [width="100%",options="header,footer"]
 |====================
@@ -34,6 +55,8 @@
 |Obligatoriske Klasser||1+2+7+9+17+21|1+2+7+9+17+21|1+2+7+9+17+21|1+7
 |NHM Oppdateres||Ja|Ja|Ja|Nei
 |====================
+
+=== Luftbåren Bathymetrisk LiDAR
 .Luftbåren Bathymetrisk LiDAR
 [width="100%",options="header,footer"]
 |====================
@@ -45,6 +68,8 @@
 |Obligatoriske Klasser||40+41+45|x|x|40+41+45
 |NHM Oppdateres||Ja|x|x|Nei
 |====================
+
+=== Terrestrisk Topografisk LiDAR
 .Terrestrisk Topografisk LiDAR
 [width="100%",options="header,footer"]
 |====================
@@ -55,6 +80,8 @@
 |Horisontal Nøyaktighet|Systematisk|0,15|x|x|Egendefinert
 |Obligatoriske Klasser||1+2+7+9+17+21|x|x|1+7
 |====================
+
+=== Multistråle Ekkolodd
 .Multistråle Ekkolodd
 [width="100%",options="header,footer"]
 |====================
@@ -66,6 +93,8 @@
 |Obligatoriske Klasser||40|x|x|40
 |NHM Oppdateres||Ja|x|x|Nei
 |====================
+
+=== Bildematching
 .Bildematching
 [width="100%",options="header,footer"]
 |====================

@@ -1,9 +1,9 @@
 == Leveranse
-=== Leveransemetode Punktsky
+=== Leveranse Punktsky
 
 Punktskyen skal leveres på LAS format som detaljert i  http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf[LAS Specification 1.4 - R15]. Filene skal komprimeres til https://laszip.org/[LAZ].
 
-Det skal benyttes 'Point Data Record' 6 til 10 avhengig av faktisk innhold. ##Eksempel##: 
+Det skal benyttes 'Point Data Record' 6 til 10 avhengig av faktisk innhold. Minimumskrav er 'Point Data Record' 6. 
 
 Ut over standard parametre skal følgende kodes inn i leveransen: 
 
@@ -18,3 +18,59 @@ Ut over standard parametre skal følgende kodes inn i leveransen:
 | Point Record / User Data | Felt som muliggjør enkel informasjon per punkt. Eventuell bruk skal detaljeres i rapport    
 | Point Record / Point Source ID | Unik ID for datafangstlinjenummer skal kodes til denne attributten. Det skal være en til en relasjon mellom Point Source og ..STRIPENUMMER i metadatasett.
 |====================
+
+Datasett skal klippes henholdsvis 1:500 og 1:1000 kartblad. Kartbladindeks er beskrevet ##trenger referanse her##
+
+=== Leveranse Metadata
+==== Områdeavgrensning
+Områdeavgrensning(er) skal leveres på SOSI i henhold til datamodell detaljert i Kap13. Områdeavgrensningsfil skal navnes som følger:
+
+ * <Prosjektnavn>_Prosjektavgrensning.sos
+ * Eksempel: Trollfjorden 2021_Prosjektavgrensning.sos
+
+==== Flystripe
+Datafangstlinjer skal leveres på SOSI i henhold til datamodell detaljert i Kap13. Datafangstlinjer skal navnes som følger:
+
+ * <Prosjektnavn>_Flystripe.sos
+ * Eksempel: Trollfjorden 2021_Flystripe.sos
+
+==== Homogenitetsplott
+Homogenitetsplott skal leveres som GeoTIFF med 1m oppløsning. Kartbladinndeling for homogenitetsplott skal følge LAS filinndelingen og hver tile skal navnes som følger:
+
+ * <kartbladindeks>_Homogenitet.tif 
+ * Eksempel: 32-1-507-212-16_Homogenitet.tif
+
+Alle tiles som bygger homogenitetsplottet skal komprimeres til zip kontainer som navngis som følger:
+
+ * <Prosjektnavn>_Homogenitetsplott.zip
+ * Eksempel: Trollfjorden 2021_Homogenitetsplott.zip
+
+==== Kontrollflater
+
+Alle kontrollflater benyttet i justering av punktsky skal leveres på SOSI format. Kontrollflatene lastes opp til underkatalog <Diverse> på høydedata.no. Merk at evt. høydejustering av punktskyleveransen skal dokumenteres i rapport. 
+
+=== Rapport
+Hovedrapport skal leveres på PDF format iht. krav spesifisert i PaBG. 
+Rapporten skal spesifisere hvilken realisasjon av høydereferansemodell som er benyttet.
+
+Rapporten skal navngis:
+
+ * <Prosjektnavn>_Prosjektrapport.pdf
+ * Eksempel: Trollfjorden 2021_Prosjektrapport.pdf
+
+Eventuelle vedlegg skal komprimeres til zip kontainer og lastes opp til [Diverse] katalog på høydedata.no med følgende navning:
+
+ * <Prosjektnavn>_Vedlegg_Beskrivelse.zip
+ * Eksempel: Trollfjorden 2021_Vedlegg_Landmålingsrapport.zip
+
+=== Leveransestruktur
+Datasettet skal leveres direkte i https://hoydedata.no/laserforvaltning[leverandørportal] på høydedata.no med følgende katalogstruktur: 
+
+ <<Prosjektnavn>>
+ [] *.laz
+ [Metadata]\<Prosjektnavn>_Prosjektavgrensning.sos
+ [Metadata]\<Prosjektnavn>_Flystripe.sos
+ [Metadata]\<Prosjektnavn>_Prosjektrapport.pdf
+ [Diverse]\<Prosjektnavn>_Homogenitet.zip
+ [Diverse]\<Prosjektnavn>_Kontrollflater.sos
+ [Diverse]\<Prosjektnavn>_Vedlegg.zip
