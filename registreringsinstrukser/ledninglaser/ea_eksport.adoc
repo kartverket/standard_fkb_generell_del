@@ -1,0 +1,631 @@
+=== Punktsky registreringsinstruks
+ 
+<<<
+'''
+ 
+[[jordingsledning]]
+==== «FeatureType» Jordingsledning
+*Definisjon fra FKB produktspesifikasjon*: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+Dette er liner som benyttes som lynavledere og som benyttes for &#229; hindre at evt. overspenning skal sl&#229; i spenningsf&#248;rende deler. P&#229; traseer med stor spenning, typisk sentralnettet, ligger jordledningen over fasene og betegnes som toppliner. 
+
+Ved lavere spenning (regional- og distribusjonsnett) henger jordingsledningen normalt under fasene. Det er ikke alltid det finnes jordingsledninger i h&#248;yspenttraseene og det kan v&#230;re vanskelig &#229; skille disse linene fra andre kommunikasjonsliner som ogs&#229; kan henge p&#229; mastene. Jordingsledninger som henger under fasene kan v&#230;re sv&#230;rt vanskelig &#229; detektere dersom man ikke har h&#248;y punktetthet i laserdataene.
+
+Kurven skal v&#230;re sammenhengende fra en mast til neste mast (splittes i hver mast). Det skal settes inn et punkt i kurven for minimum hver femte meter. Dette anses som tilstrekkelig punkttetthet for &#229; beskrive fasen i tre dimensjoner.
+ 
+ 
+'''
+.Eksempel på jordingsledning (toppline).
+image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_toppline.png, Alt="Eksempel på jordingsledning (toppline)."]
+ 
+ 
+'''
+.Eksempel på jordingsledning som henger under fasene (heltrukket strek). Til høyre er en kommunikasjonsline (stiplet strek).
+image::figurer\jordingsledning_andre.png[link=figurer\jordingsledning_andre.png, Alt="Eksempel på jordingsledning som henger under fasene (heltrukket strek). Til høyre er en kommunikasjonsline (stiplet strek)."]
+ 
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter jordingsledning
+ 
+|FKB høydereferanse
+|Topp jordingsledning
+ 
+|FKB registreringsmetode
+|Vektorisering av laserpunktsky
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Opsjonell registrering
+ 
+|FKB-D
+|Opsjonell registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+===== Egenskapstabell for objekttype: Jordingsledning
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|antallLaserPunkt
+|Integer
+|..ANTALL_LASERPUNKT
+|[0..1]
+ 
+|maksVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MAKS_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|maksVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|.NØHKOOR
+|[1..1]
+ 
+|maksVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
+|[1..1]
+ 
+|minVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MIN_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|minVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|.NØHKOOR
+|[1..1]
+ 
+|minVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[luftlinje]]
+==== «FeatureType» Luftlinje
+*Definisjon fra FKB produktspesifikasjon*: en enkelt vaier/kabel mellom to faste forankringspunkt
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+I denne spesifikasjonen benyttes objekttypen for faser i h&#248;yspentlinjer, men den kan ogs&#229; benyttes for andre typer luftlinjer.
+
+Normalt er det tre str&#248;mf&#248;rende faser i en h&#248;yspenttrase. 
+I noen tilfeller kan det g&#229; to parallelle traseer i samme mastearrangement. Da vil det v&#230;re 6 faser. 
+
+Egenskapen _fase_ benyttes for &#229; angi om luftlinjen er ytterfase eller i midten. Verdien "ytre" benyttes for luftlinjene som er ytterst i grunnriss. &#216;vrige luftlinjer kodes med verdien "midtre".
+
+Kurven skal v&#230;re sammenhengende fra en mast til neste mast (splittes i hver mast). Det skal settes inn et punkt i kurven for minimum hver femte meter. Dette anses som tilstrekkelig punkttetthet for &#229; beskrive fasen i tre dimensjoner.
+ 
+ 
+'''
+.Eksempel på faser i høyspent (sentralnett)
+image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png, Alt="Eksempel på faser i høyspent (sentralnett)"]
+ 
+ 
+'''
+.Eksempel på faser i høyspent (distribusjonsnett)
+image::figurer\luftlinje_distribusjonsnett.png[link=figurer\luftlinje_distribusjonsnett.png, Alt="Eksempel på faser i høyspent (distribusjonsnett)"]
+ 
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter fase
+ 
+|FKB høydereferanse
+|Topp fase
+ 
+|FKB registreringsmetode
+|Vektorisering av laserpunktsky
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Opsjonell registrering
+ 
+|FKB-D
+|Opsjonell registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+===== Egenskapstabell for objekttype: Luftlinje
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|beliggenhet
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|antallLaserPunkt
+|Integer
+|..ANTALL_LASERPUNKT
+|[0..1]
+ 
+|maksVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MAKS_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|maksVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|.NØHKOOR
+|[1..1]
+ 
+|maksVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
+|[1..1]
+ 
+|minVertikalAvstand
+|«dataType» VertikalAvstandLedning
+|..MIN_VERTIKALUTSTREKNING
+|[0..1]
+ 
+|minVertikalAvstand.vertikalhøydeposisjon
+|GM_Point
+|.NØHKOOR
+|[1..1]
+ 
+|minVertikalAvstand.vertikalhøyde
+|«dataType» Real
+|...VERTIKALHØYDE
+|[1..1]
+ 
+|fase
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase[Fase, window = _blank]
+|..FASE
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[mast]]
+==== «FeatureType» Mast
+*Definisjon fra FKB produktspesifikasjon*: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken
+
+Merknad FKB:
+En mast kan best&#229; av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Mast
+image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, Alt="Illustrasjon fra produktspesifikasjon: Mast"]
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+I denne spesifikasjonen benyttes objekttypen for mast i h&#248;yspenttrase, men den kan ogs&#229; benyttes for andre typer master.
+ 
+ 
+'''
+.Blå punkt er punkt fra laserskanning som er klassifisert som mast. Magenta punkt er det punktet som skal registreres/genereres for mast
+image::figurer\mast.png[link=figurer\mast.png, Alt="Blå punkt er punkt fra laserskanning som er klassifisert som mast. Magenta punkt er det punktet som skal registreres/genereres for mast"]
+ 
+ 
+ 
+===== Føringer
+[cols="25,75"]
+|===
+|FKB grunnrissreferanse
+|Senter mast
+ 
+|FKB høydereferanse
+|Høyeste punkt på mast. Høyden tas fra det høyeste punktet som er klassifisert som mast (se figur under).
+ 
+|FKB registreringsmetode
+|Vektorisering av laserpunktsky
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Opsjonell registrering
+ 
+|FKB-D
+|Opsjonell registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+===== Egenskapstabell for objekttype: Mast
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|driftsmerking
+|CharacterString
+|..DRIFTSMERKING
+|[0..1]
+ 
+|eierOrgNr
+|CharacterString
+|..EIERORGNR
+|[0..1]
+ 
+|eksternPeker
+|URI
+|..EKSTERNPEKER
+|[0..*]
+ 
+|hovedbruk
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
+|..LEDNINGSNETTVERKSTYPE
+|[1..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|antallLaserPunkt
+|Integer
+|..ANTALL_LASERPUNKT
+|[0..1]
+ 
+|belysning
+|Boolean
+|..BELYSNING
+|[1..1]
+ 
+|konstruksjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon[Mastekonstruksjon, window = _blank]
+|..MASTEKONSTRUKSJON
+|[0..1]
+ 
+|linjebredde
+|Real
+|..LINJEBREDDE
+|[0..1]
+ 
+|vertikalAvstand
+|Real
+|..VERTIKALAVSTAND
+|[0..1]
+ 
+|===
+// End of Registreringsinstruks UML-model
