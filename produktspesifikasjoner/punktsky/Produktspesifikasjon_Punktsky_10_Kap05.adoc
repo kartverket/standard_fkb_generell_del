@@ -1,14 +1,14 @@
 == Innhold og struktur
-Produktspesifikasjonen er bygget opp rundt en matrise med datasettkategorier som kolonner og felleskrav og krav per sensortyper som rader. 
+Produktspesifikasjonen er bygget opp over en matrise med datasettkategorier som kolonner og felleskrav og krav per sensortyper som rader. 
 
-Datasettkategoriene består av følgende: 
+Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekstprosjekt. 
 
  * Høy Tetthet
  * Middels Tetthet
  * Lav Tetthet
  * Egendefinert
  
-Spesifikasjonen omhandler følgende sensortyper og datakilder: 
+Spesifikasjonen omhandler krav til følgende sensortyper og datakilder: 
 
  * Luftbåren Topografisk LiDAR
  * Luftbåren Bathymetrisk LiDAR
@@ -28,49 +28,85 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 .Punktsky Kategorier og generelle krav
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Kategoribeskrivelse| |Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Klasse for forvaltningsløsning
-|KlasseID||A|B|C|E
-|Minimum Tetthet||10+|5|2|Egendefinert
-
-
-|Kartbladinndeling||1 : 500|1 : 1000|1 : 1000|-
-|Fullstendighet ||80% (2x2 innenfor 10x10)|80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|-
-|Feilklassifisering||0,02|0,02|0,02|-
-|Feilklassifisering - 'Aktive' ||0,02|0,02|0,02|-
-|Antall bakkepunkt referanseflater||0,8|0,8|0,8|-
+|Kategorier| Høy tetthet|Middels Tetthet|Minimum|Egendefinert
+|Kategoribeskrivelse| Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Klasse for forvaltningsløsning
+|KlasseID|A|B|C|E
+|Minimum Tetthet|10+|5|2|Egendefinert
+|Kartbladinndeling|1 : 500|1 : 1000|1 : 1000|-
+|Fullstendighet |80% (2x2 innenfor 10x10)|80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|-
+|Feilklassifisering|0,02|0,02|0,02|-
+|Feilklassifisering - 'Aktive' |0,02|0,02|0,02|-
+|Antall bakkepunkt referanseflater|0,8|0,8|0,8|-
 |====================
+
+****
+*KlasseID* er unik identifikasjon av hver klasse. Benyttes i metadata og nødvendig for høydedata.no prosessering. 
+
+*Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet.
+
+*Kartbladinndeling* beskriver ønsket kartbladindeks. Kartbladindeksene er definert i  https://kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/kart-og-geodata-2.0-standarder-geografisk-informasjon.pdf[Kart og Geodata - Tillegg D (side 108 og utover)]
+
+*Fullstendighet* setter kravene til forventet punkttetthet. Beregningen er definert i kapittel Kap7.
+
+*Feilklassifisering* definerer antall punkt innenfor en gitt klasse som tillattes feilklassifisert. Innen enhver 1 km x1 km rute, skal ikke mer enn 2 prosent av punktene være feilklassifisert. 
+
+*Feilklassifisering - Objekt* definerer antall objekt som tillates feilklassifisert. Eksempel Bygning: Kun 2% av bygg innenfor prosjektområdet tillates feilklassifisert. Objekttelling gjøres for følgende klasser: [Bygning(6),Ledning(13,14,15,16),Bru(17),Hengende Struktur(19)]
+
+*Antall bakkepunkt referanseflater* refererer seg til prosentandel klassifiserte bakkepunkt beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Kontrollflatene skal ha minimum størrelse 20*20 meter og ligge på harde, veldefinerte horisontale flater (maks helling 10%), for eksempel veg eller parkeringsplass. 
+****
 
 <<<
 === Luftbåren Topografisk LiDAR
 .Luftbåren Topografisk LiDAR
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
+|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
 |Vertikal Nøyaktighet|Standardavvik|0,03|0,04|0,04|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|0,1|0,1|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|0,10|0,20|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|0,15|0,3|0,3|Egendefinert
 |Maksimum Punktavstand|0,95|0,316227766016838|0,447213595499958|0,707106781186548|Egendefinert
-
+|Maksimum Fotavtrykk||0,2|0,5|2|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|20|20|20|Egendefinert
 |Obligatoriske Klasser||1+2+7+9+17+21|1+2+7+9+17+21|1+2+7+9+17+21|1+7
 |NHM Oppdateres||Ja|Ja|Ja|Nei
 |====================
+
+****
+*Vertikal Nøyaktighet - Standardavvik* definerer vertikal presisjonen i punktskyen over en hard veldefinert flate. 
+
+*Vertikal Nøyaktighet - Systematisk* definerer vertikal avstand til sann verdi, hvor sann verdi er representert ved uavhengig innmålte kontrollflater.
+
+*Horisontal Nøyaktighet - Standardavvik* definerer presisjonen i punktskyen mot gitt veldefinert profil.
+
+*Horisontal Nøyaktighet - Systematisk* definerer horisonal avstand til sann verdi, hvor sann verdi er representert ved uavhengig innmålte kontrollprofiler.
+
+*Maksimum Punktavstand* er en funksjon av punkttetthet [SQRT(1/tetthet)]. 
+
+*Maksimum Fotavtrykk* ##tekst her##
+
+*Maksimum Skannevinkel* beregnes som pluss og minusverdi fra nadir. 
+
+*Obligatoriske Klasser* definerer minimum klassifiseringsregime. Utvided klassifisering kan bestilles per prosjekt. 
+
+*NHM Oppdateres* forteller hvorvidt høydedata.no automatisk oppdaterer nasjonal detaljert høydemodell
+****
 
 <<<
 === Luftbåren Bathymetrisk LiDAR
 .Luftbåren Bathymetrisk LiDAR
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Vertikal Nøyaktighet (Presisjon)|Standardavvik|-|x|x|Egendefinert
-|Vertikal Nøyaktighet (Absolutt)|Systematisk|0.3 + 0.01*d (1sig) |x|x|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|-|x|x|Egendefinert
-|Horisontal Nøyaktighet|Systematisk|3.5 + 0,05*d (1sig)|x|x|Egendefinert
-|Obligatoriske Klasser||40+41+45|x|x|40+41+45
-|NHM Oppdateres||Ja|x|x|Nei
+|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
+|Vertikal Nøyaktighet (Absolutt)|Systematisk|x|-|x|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
+|Horisontal Nøyaktighet|Systematisk|x|-|x|Egendefinert
+|Maksimum Skannevinkel|pluss / minus|x|20|x|Egendefinert
+|Obligatoriske Klasser||x|40+41+45|x|40+41+45
+|NHM Oppdateres||x|Ja|x|Nei
 |====================
+
 
 <<<
 === Terrestrisk Topografisk LiDAR
