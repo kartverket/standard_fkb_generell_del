@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>Punktsky registreringsinstruks</title>
+<meta name="author" content="Geovekst">
+<title>Registreringsinstruks: Punktsky FKB-Ledning</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,16 +437,432 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="book toc2 toc-left">
 <div id="header">
+<h1>Registreringsinstruks: Punktsky FKB-Ledning</h1>
+<div class="details">
+<span id="author" class="author">Geovekst</span><br>
+<span id="revnumber">versjon 5.0,</span>
+<span id="revdate">2022-01-01</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Innholdsfortegnelse</div>
+<ul class="sectlevel1">
+<li><a href="#trueinnledning-historikk-og-endringslogg">1. Innledning, historikk og endringslogg</a>
+<ul class="sectlevel2">
+<li><a href="#trueinnledning">1.1. Innledning</a></li>
+<li><a href="#trueendringslogg">1.2. Endringslogg</a></li>
+</ul>
+</li>
+<li><a href="#truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata">2. Generelle retningslinjer for vektorisering av klassifiserte punktskydata</a></li>
+<li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
+<ul class="sectlevel2">
+<li><a href="#truepunktsky-registreringsinstruks">3.1. Punktsky registreringsinstruks</a>
+<ul class="sectlevel3">
+<li><a href="#jordingsledning">3.1.1. «FeatureType» Jordingsledning</a></li>
+<li><a href="#luftlinje">3.1.2. «FeatureType» Luftlinje</a></li>
+<li><a href="#mast">3.1.3. «FeatureType» Mast</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truedatakvalitet">4. Datakvalitet</a>
+<ul class="sectlevel2">
+<li><a href="#truekvalitetskrav">4.1. Kvalitetskrav</a>
+<ul class="sectlevel3">
+<li><a href="#truestedfestingsnøyaktighet">4.1.1. Stedfestingsnøyaktighet</a></li>
+<li><a href="#trueegenskapsnøyaktighet">4.1.2. Egenskapsnøyaktighet</a></li>
+<li><a href="#truefullstendighet">4.1.3. Fullstendighet</a></li>
+<li><a href="#truelogisk-konsistens">4.1.4. Logisk konsistens</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a>
+<ul class="sectlevel2">
+<li><a href="#trueeksempel-på-visualisering-av-vektoriserte-ledningsdata-i-2d">5.1. Eksempel på visualisering av vektoriserte ledningsdata i 2D</a></li>
+</ul>
+</li>
+<li><a href="#truelisensvilkår">Vedlegg A: Lisensvilkår</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+???? Høringsversjon 1. desember 2021 ?????
+</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueinnledning-historikk-og-endringslogg"><a class="anchor" href="#trueinnledning-historikk-og-endringslogg"></a>1. Innledning, historikk og endringslogg</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="truepunktsky-registreringsinstruks"><a class="anchor" href="#truepunktsky-registreringsinstruks"></a>Punktsky registreringsinstruks</h3>
+<h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
+<div class="paragraph">
+<p>Dette dokumentet er en registreringsinstruks for vektorisering av ledningsdata fra punktskydata.</p>
+</div>
+<div class="paragraph">
+<p>Spesifikasjonen omfatter luftlinje, jordingsledning og generert senterpunkt for mast. Spesifikasjonen fokuserer på vektorisering av høyspentanlegg, men den er også mulig å benytte på lavspent og tele.</p>
+</div>
+<div class="paragraph">
+<p>I et laserskanningsprosjekt kan det være aktuelt å klassifisere andre objekter også, samt utføre diverse analyser. For eksempel kan det være aktuelt å analysere om det er vegetasjon som er så nær fasene at det må utføres skogrydding. Slike analyser/klassifiseringer er ikke beskrevet i denne spesifikasjonen.</p>
+</div>
+<div class="paragraph">
+<p>Spesifikasjon av klassifisering og leveranse av laserdata for ledninger finnes i <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/punktsky/1.0/Produktspesifikasjon_Punktsky_10.html">Produktspesifikasjon Punktsky 1.0</a>. Beskrivelse av laserskanning som datafangstmetode finnes i standarden <a href="https://www.kartverket.no/globalassets/standard/bransjestandarder-utover-sosi/produksjon-av-basis-geodata.pdf">Produksjon av basis geodata</a>.</p>
+</div>
+<div class="paragraph">
+<p>For full beskrivelse av FKB-Ledning og detaljer rundt modellering og UML-modeller henvises det til Produktspesifikasjon FKB-Ledning 5.0: <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.2. Endringslogg</h3>
+<div class="paragraph">
+<p>I 2018 ble det utgitt et utkast til en produktspesifikasjon for klassifisering og vektorisering av ledningsdata fra laserskanning. Spesifikasjonen ble benevnt FKB-LedningLaser. Innholdet i FKB-LedningLaser er nå tatt ut i tre spesifikasjoner; <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/">Produktspesifikasjon FKB-Ledning 5.0</a>, Produktspesifikasjon <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/punktsky/1.0/Produktspesifikasjon_Punktsky_10.html">Punktsky 1.0</a> og denne registreringsinstruksen.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata"><a class="anchor" href="#truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata"></a>2. Generelle retningslinjer for vektorisering av klassifiserte punktskydata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Spesifikasjon av en leveranse fra et laserskanningsprosjekt, slik som klassifisering, kvalitetskrav og krav til leveranse, finnes i punktskyspesifikasjonen.</p>
+</div>
+<div class="paragraph">
+<p>De klassifiserte laserpunktene er grunnlaget for vektorisering av ledningsobjektene som er spesifisert i denne spesifikasjonen.</p>
+</div>
+<table id="tab-lasklasser-ledning" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 1. Oversikt over klasser i punktskyspesifikasjonen som benyttes ved vektorisering.</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">LAS-klasse</th>
+<th class="tableblock halign-left valign-top">Definisjon i LAS-standarden</th>
+<th class="tableblock halign-left valign-top">Definisjon i punktskyspesifikasjonen</th>
+<th class="tableblock halign-left valign-top">Objekttype i FKB-Ledning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wire Guard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ledning – Beskyttelse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Jordingslinje</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wire Conductor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ledning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Luftledning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transmission Tower</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mast</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\lasklasser_ledning.png" alt="figurer\lasklasser ledning">
+</div>
+<div class="title">Figur 1. Oversikt over LAS-klasser som benyttes for klassifisering av punkt på ledning.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_klassifisering_ledning.png" alt="figurer\eksempel klassifisering ledning">
+</div>
+<div class="title">Figur 2. Eksempel fra Vestland på punktsky med klassifiserte ledningsobjekt.</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alle objekter skal registreres med et sett egenskaper som er felles for alle FKB datasett, f.eks. datafangstdato og kvalitet. I tillegg har alle FKB-Ledning objekter noen felles fagspesifikke egenskaper som skal eller kan registreres.</p>
+</div>
+<div class="paragraph">
+<p>Ved vektorisering av ledningsdata fra laserdata skal egenskapene beskrevet i denne spesifikasjonen benyttes på følgende måte:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>identifikasjon</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>oppdateringsdata</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>datafangstdato</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Settes lik dato for laserskanning.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>verifiseringsdato</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>registreringsversjon</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Settes lik «FKB 5.0 2022-01-01»</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>informasjon</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Benyttes normalt ikke? Ha med henvisning til laserprosjekt?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>høydereferanse</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kode "topp" benyttes alltid</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>medium</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kode "L" (Jordingslinjer, Luftledning)</p>
+</li>
+<li>
+<p>Kode "T" (Mast)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>kvalitet</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Som datafangstdato benyttes kode Generert. Nøyaktighet angis ut fra forventet stedfesting som er mulig å oppnå fra laserdataene.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>driftsmerking</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>eierOrgNr</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>eksternPeker</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>hovedbruk</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Korrekt egenskapsverdi skal registreres så langt det lar seg gjøre. Dersom dette ikke er mulig skal kode "ukjent" benyttes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>antallLaserPunkt</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>For vektoriserte ledningsdata fra laserskanning skal det på hvert enkelt objekt angis antallet klassifiserte laserpunkt som er med på å bestemme det vektoriserte objektet.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>maksVertikalAvstand</em> (gjelder Jordingsledning og Luftledning)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>vertikalhøydeposisjon</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Posisjonen til stedet på objektet hvor vertikalhøyden er angitt. Z-koordinaten angis i forhold til referansepunktet på objektet. Enhet er meter.</p>
+</li>
+<li>
+<p>Ved SOSI-realisering skal <em>vertikalhøydeposisjonen</em> angis på følgende måte: &#8230;&#8203;NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;"</p>
+</li>
+<li>
+<p>Eksempel: &#8230;&#8203;NØHKOOR "22 7175399.09 395657.11 219.82"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>vertikalhøyde</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Høyde over terreng (bakke, vann, sjø). Enhet er meter.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>minVertikalAvstand</em> (gjelder Jordingsledning og Luftledning)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Tilsvarende som <em>maksVertikalAvstand</em>, men posisjon og vertikalavstand for laveste vertikalhøyde.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>fase</em> (gjelder Jordingsledning og Luftledning)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Skal alltid registreres</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>belysning</em> (gjelder Mast)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Skal alltid registreres</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>konstruksjon</em> (gjelder Mast)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registreres ikke?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>linjebredde</em> (gjelder Mast)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Registres ikke</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>vertikalAvstand</em> (gjelder Mast)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Skal alltid registreres</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_klassifisering_mast.png" alt="figurer\eksempel klassifisering mast">
+</div>
+<div class="title">Figur 3. Eksempel på bruk av egenskapen antallLaserPunkt. I dette eksempel er det benyttet 14 punkt som grunnlag for å beregne hvor senter topp mast skal være. Verdi 14 skal derfor oppgis for egenskapen antallLaserPunkt.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_maksimalVertikalavstand.png" alt="figurer\eksempel maksimalVertikalavstand">
+</div>
+<div class="title">Figur 4. Eksempel på bruk av egenskapene maksVertikalAvstand og minVertikalAvstand.</div>
+</div>
+<div class="sect2">
+<h3 id="truepunktsky-registreringsinstruks"><a class="anchor" href="#truepunktsky-registreringsinstruks"></a>3.1. Punktsky registreringsinstruks</h3>
 <div style="page-break-after: always;"></div>
 <hr>
 <div class="sect3">
-<h4 id="jordingsledning"><a class="anchor" href="#jordingsledning"></a>«FeatureType» Jordingsledning</h4>
+<h4 id="jordingsledning"><a class="anchor" href="#jordingsledning"></a>3.1.1. «FeatureType» Jordingsledning</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende</p>
 </div>
@@ -465,14 +882,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <a class="image" href="figurer\jordingsledning_toppline.png"><img src="figurer\jordingsledning_toppline.png" alt="figurer\jordingsledning toppline"></a>
 </div>
-<div class="title">Figure 1. Eksempel på jordingsledning (toppline).</div>
+<div class="title">Figur 5. Eksempel på jordingsledning (toppline).</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer\jordingsledning_andre.png"><img src="figurer\jordingsledning_andre.png" alt="figurer\jordingsledning andre"></a>
 </div>
-<div class="title">Figure 2. Eksempel på jordingsledning som henger under fasene (heltrukket strek). Til høyre er en kommunikasjonsline (stiplet strek).</div>
+<div class="title">Figur 6. Eksempel på jordingsledning som henger under fasene (heltrukket strek). Til høyre er en kommunikasjonsline (stiplet strek).</div>
 </div>
 </div>
 <div class="sect4">
@@ -712,7 +1129,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="luftlinje"><a class="anchor" href="#luftlinje"></a>«FeatureType» Luftlinje</h4>
+<h4 id="luftlinje"><a class="anchor" href="#luftlinje"></a>3.1.2. «FeatureType» Luftlinje</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: en enkelt vaier/kabel mellom to faste forankringspunkt</p>
 </div>
@@ -736,14 +1153,14 @@ I noen tilfeller kan det g&#229; to parallelle traseer i samme mastearrangement.
 <div class="content">
 <a class="image" href="figurer\luftlinje_sentralnett.png"><img src="figurer\luftlinje_sentralnett.png" alt="figurer\luftlinje sentralnett"></a>
 </div>
-<div class="title">Figure 3. Eksempel på faser i høyspent (sentralnett)</div>
+<div class="title">Figur 7. Eksempel på faser i høyspent (sentralnett)</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer\luftlinje_distribusjonsnett.png"><img src="figurer\luftlinje_distribusjonsnett.png" alt="figurer\luftlinje distribusjonsnett"></a>
 </div>
-<div class="title">Figure 4. Eksempel på faser i høyspent (distribusjonsnett)</div>
+<div class="title">Figur 8. Eksempel på faser i høyspent (distribusjonsnett)</div>
 </div>
 </div>
 <div class="sect4">
@@ -989,7 +1406,7 @@ I noen tilfeller kan det g&#229; to parallelle traseer i samme mastearrangement.
 </div>
 </div>
 <div class="sect3">
-<h4 id="mast"><a class="anchor" href="#mast"></a>«FeatureType» Mast</h4>
+<h4 id="mast"><a class="anchor" href="#mast"></a>3.1.3. «FeatureType» Mast</h4>
 <div class="paragraph">
 <p><strong>Definisjon fra FKB produktspesifikasjon</strong>: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken</p>
 </div>
@@ -1001,7 +1418,7 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg"><img src="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg" alt="Mast"></a>
 </div>
-<div class="title">Figure 5. Illustrasjon fra produktspesifikasjon av Mast</div>
+<div class="title">Figur 9. Illustrasjon fra produktspesifikasjon av Mast</div>
 </div>
 <div class="sect4">
 <h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
@@ -1013,7 +1430,7 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 <div class="content">
 <a class="image" href="figurer\mast.png"><img src="figurer\mast.png" alt="figurer\mast"></a>
 </div>
-<div class="title">Figure 6. Blå punkt er punkt fra laserskanning som er klassifisert som mast. Magenta punkt er det punktet som skal registreres/genereres for mast</div>
+<div class="title">Figur 10. Blå punkt er punkt fra laserskanning som er klassifisert som mast. Magenta punkt er det punktet som skal registreres/genereres for mast</div>
 </div>
 </div>
 <div class="sect4">
@@ -1236,13 +1653,151 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truedatakvalitet"><a class="anchor" href="#truedatakvalitet"></a>4. Datakvalitet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truekvalitet">FKB Generell del, kapittel 8</a></p>
+</div>
+<div class="paragraph">
+<p>De forskjellige objekttypene er delt inn i forskjellige <a href="#Kvalitetsklasser">[Kvalitetsklasser]</a> som styrer krav til nøyaktighet og fullstendighet ved registrering.</p>
+</div>
+<div class="sect2">
+<h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>4.1. Kvalitetskrav</h3>
+<div class="sect3">
+<h4 id="truestedfestingsnøyaktighet"><a class="anchor" href="#truestedfestingsnøyaktighet"></a>4.1.1. Stedfestingsnøyaktighet</h4>
+<div class="paragraph">
+<p>Stedfestingsnøyaktighet til vektoriserte data er helt avhengig av nøyaktigheten til laserdataene. For lange spenn vil nedsenkningen av fasene være avhengig av blant annet temperatur. Dette er vanskelig å angi i dataene og dette må derfor brukerne være oppmerksomme på.</p>
+</div>
+<div class="paragraph">
+<p>Stedfestingsnøyaktighet angis ved egenskapen <em>kvalitet</em>. For objekter som naturlig beveger seg (f.eks. Luftledning) referer nøyaktighetsangivelsen til posisjonen objektet befant seg i på skannetidspunket.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueegenskapsnøyaktighet"><a class="anchor" href="#trueegenskapsnøyaktighet"></a>4.1.2. Egenskapsnøyaktighet</h4>
+<div class="paragraph">
+<p>Mast, jordingsledning og fase skal være klassifisert riktig.
+Det kan være vanskelig å skille jordingsledning og kommunikasjonsliner som henger i mast.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefullstendighet"><a class="anchor" href="#truefullstendighet"></a>4.1.3. Fullstendighet</h4>
+<div class="paragraph">
+<p>Det er flere forhold som påvirker hvor mange laserpunkt som treffer fasene. For eksempel vil sensortype, punktetthet, tykkelse på fasene og fasenes materiale påvirke antall treff. Antall treff på fasene avgjør hvor enkelt det er å utføre vektorisering.</p>
+</div>
+<div class="paragraph">
+<p>I de tilfelle det er så få punkt at det ikke er mulig å vektorisere objektene riktig (færre enn 3-5 punkt pr line/mast), så skal disse objektene ikke inngå i datasettet.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truelogisk-konsistens"><a class="anchor" href="#truelogisk-konsistens"></a>4.1.4. Logisk konsistens</h4>
+<div class="paragraph">
+<p>Leverte data skal være iht. til Produktspesifikasjon  <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/">FKB-Ledning 5.0</a> (format og koding).</p>
+</div>
+<div class="paragraph">
+<p>Fasene og jordingsledningene skal splittes ved hver mast. Tilstøtende faser/jordingsledninger skal ha samme koordinat i grunnriss og høyde.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueeksempel-på-visualisering-av-vektoriserte-ledningsdata-i-2d"><a class="anchor" href="#trueeksempel-på-visualisering-av-vektoriserte-ledningsdata-i-2d"></a>5.1. Eksempel på visualisering av vektoriserte ledningsdata i 2D</h3>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_vektorisering_ledningsdata_2d.png" alt="figurer\eksempel vektorisering ledningsdata 2d">
+</div>
+<div class="title">Figur 11. Eksempel på uttegning av luftlinjer dersom disse er registrert. Her kan hver enkelt line synliggjøres og utstrekningen til høyspenttraseen vises på en god måte.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_vektorisering_ledningsdata_3d.png" alt="figurer\eksempel vektorisering ledningsdata 3d">
+</div>
+<div class="title">Figur 12. Eksempel på 3D-visualisering av jordingsledning, luftlinje og mast når disse er vektorisert fra laserdata.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\eksempel_vektorisering_ledningsdata_3d_2.png" alt="figurer\eksempel vektorisering ledningsdata 3d 2">
+</div>
+<div class="title">Figur 13. Eksempel på 3D-visualisering av jordingsledning, luftlinje og mast når disse er vektorisert fra laserdata.</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truelisensvilkår"><a class="anchor" href="#truelisensvilkår"></a>Vedlegg A: Lisensvilkår</h2>
+<div class="sectionbody">
+<h3 id="truelisens" class="discrete">Lisens</h3>
+<div class="paragraph">
+<p>Denne standarden er gitt ut under
+<a href="https://data.norge.no/nlod/no/">norsk lisens for offentlige data (NLOD)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Du har lov til:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>å kopiere og tilgjengeliggjøre</p>
+</li>
+<li>
+<p>å endre og/eller sette sammen med andre datasett</p>
+</li>
+<li>
+<p>å kopiere og tilgjengeliggjøre en endret eller sammensatt versjon</p>
+</li>
+<li>
+<p>å benytte datasettet kommersielt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>På følgende vilkår:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at du navngir lisensgiver slik lisensgiver ber om, men ikke på en måte som
+indikerer at disse har godkjent eller anbefaler deg eller din bruk av datasettet</p>
+</li>
+<li>
+<p>at du ikke bruker dataene på en måte som fremstår som villedende, og heller ikke
+fordreier eller uriktig fremstiller dataene</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Med den forståelse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at data som inneholder personopplysninger og er taushetsbelagt ikke er omfattet
+av denne lisensen og ikke kan viderebrukes</p>
+</li>
+<li>
+<p>at lisensgiver fraskriver seg ethvert ansvar for informasjonens kvalitet og hva informasjonen brukes til</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-09 11:36:35 +0100
+Versjon 5.0<br>
+Last updated 2021-11-12 07:09:56 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
