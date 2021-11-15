@@ -1,1 +1,35 @@
 == Appendix B - Høydedata.no
+Alle punktskydata skal forvaltes i https://hoydedata.no/LaserInnsyn/[høydedata.no]. Forvaltningsløsningen (FvL) serverer rådatasett, avledede grid med varierende oppløsning samt enkle visualiseringer i 2D og 3D. 
+
+Punktskyene som holdes i FvL må sees i sammenheng med produktspesifikasjonen som var gjeldende når datasettet ble etablert og lagt inn i FvL. Dette kommuniseres ved hjelp av attributt '..OBJEKTKATALOG' i visningstjeneste og i metadatasett ved eksport. Informasjon om delspesifikasjon finnes i attributt ' ..FKB-LASERSTANDARD'. Ved overgang til ny spesifikasjon oppgraderes ikke punktskydatasettene. 
+
+Primærdatasettet i FvL er punktskyen og alle produkt avledes fra denne automatisk. Dette sikrer en effektiv prosesseringsflyt, men bortfall av manuell editering kan gi visse artefakter i prosjektgrid og i nasjonale grid. 
+
+Prosesseringsflyten i FvL er: 
+
+[ditaa]
+....
++--------------+    Gridding    +--------------+
+| LAS Punktsky |----------------+ Prosjektgrid +
++--------------+                |          DTM |
+                                |          DOM |
+                                |  Tetthet DTM |
+                                |  Tetthet DOM |
+                                +--------------+
+                                  |
+                                  | Generalisering
+                                  |
+                                +--------------+
+                                |  NHM 1m DTM  |
+                                |  NHM 1m DOM  |
+                                +--------------+
+                                  |
+                                  | Generalisering
+                                  |
+                                +--------------+
+                                |  NHM 10m DTM |
+                                |  NHM 10m DOM |
+                                |  NHM 10m DOM |
+                                +--------------+
+....
+For gjeldende funksjonalitet refereres til hjelpetekst tilgjengelig på https://hoydedata.no/LaserInnsyn/[høydedata.no]

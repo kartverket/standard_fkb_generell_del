@@ -16,7 +16,7 @@ Spesifikasjonen omhandler krav til følgende sensortyper og datakilder:
  * Multistråle Ekkolodd
  * Bildematching
 
-Ikke alle sensortyper er egnet for alle kategorier. Der hvor det ikke anbefales å benytte gitt sensor er det satt en 'x' i tabellen. 
+Ikke alle sensortyper er egnet for bestilling i alle kategorier. Der hvor det ikke anbefales å benytte gitt sensor er det satt en 'x' i tabellen. 
 
 <<<
 === Felleskomponenter
@@ -30,21 +30,21 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 .Punktsky Kategorier og generelle krav
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Kategoribeskrivelse| Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Klasse for forvaltningsløsning
+|Kategorier|"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|Kategoribeskrivelse|Ledningskartlegging Detaljprosjektering|Prosjektering Samferdsel|NDH|Klasse for forvaltningsløsning
 |KlasseID|A|B|C|E
 |Minimum Tetthet|10+|5|2|Egendefinert
 |Kartbladinndeling|1 : 500|1 : 1000|1 : 1000|-
-|Fullstendighet |80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|95% (10x10) innenfor prosjekt|-
-|Feilklassifisering|0,02|0,02|0,02|-
-|Feilklassifisering - 'Aktive' |0,02|0,02|0,02|-
-|Antall bakkepunkt referanseflater|0,8|0,8|0,8|-
+|Fullstendighet|80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|95% (10x10) innenfor prosjekt|-
+|Feilklassifisering|2%|2%|2%|-
+|Feilklassifisering - 'Objekt' |2%|2%|2%|-
+|Antall bakkepunkt referanseflater|80%|80%|%80|-
 |====================
 
 ****
-*KlasseID* er unik identifikasjon av hver klasse. Benyttes i metadata og nødvendig for høydedata.no prosessering. 
+*KlasseID* er unik identifikasjon av hver klasse. Benyttes i metadata og nødvendig for korrekt behandling i høydedata.no.
 
-*Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet.
+*Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet. Høyere tetthet kan spesifiseres per prosjekt. 
 
 *Kartbladinndeling* beskriver ønsket kartbladindeks. Kartbladindeksene er definert i  https://kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/kart-og-geodata-2.0-standarder-geografisk-informasjon.pdf[Kart og Geodata - Tillegg D (side 108 og utover)]
 
@@ -54,21 +54,27 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 
 *Feilklassifisering - Objekt* definerer antall objekt som tillates feilklassifisert. Eksempel Bygning: Kun 2% av bygg innenfor prosjektområdet tillates feilklassifisert. Objekttelling gjøres for følgende klasser: [Bygning(6),Ledning(13,14,15,16),Bru(17),Hengende Struktur(19)]
 
-*Antall bakkepunkt referanseflater* refererer seg til prosentandel klassifiserte bakkepunkt beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Kontrollflatene skal ha minimum størrelse 20*20 meter og ligge på harde, veldefinerte horisontale flater (maks helling 10%), for eksempel veg eller parkeringsplass. 
+*Antall bakkepunkt referanseflater* refererer seg til prosentandel klassifiserte bakkepunkt beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Kontrollflatene skal ha minimum størrelse 20*20 meter og ligge på harde, veldefinerte horisontale flater (maks helling 10%), for eksempel veg eller parkeringsplass. Krav til kontrollflater er definert i PaBG. 
 ****
 
 <<<
 === Luftbåren Topografisk LiDAR
+
+Klassisk luftbåren LiDAR.
+
+Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG. 
+
 .Luftbåren Topografisk LiDAR
 [width="100%",options="header,footer"]
 |====================
 |Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID||Punktsky_1_ALS_A|Punktsky_1_ALS_B|Punktsky_1_ALS_C|Punktsky_1_ALS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|0,04|0,04|Egendefinert
-|Vertikal Nøyaktighet|Systematisk|0,05|0,1|0,1|Egendefinert
+|Vertikal Nøyaktighet|Systematisk|0,05|0,10|0,10|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|0,10|0,20|Egendefinert
-|Horisontal Nøyaktighet|Systematisk|0,15|0,3|0,3|Egendefinert
-|Maksimum Punktavstand|0,95|0,316227766016838|0,447213595499958|0,707106781186548|Egendefinert
-|Maksimum Fotavtrykk||0,2|0,5|2|Egendefinert
+|Horisontal Nøyaktighet|Systematisk|0,15|0,30|0,30|Egendefinert
+|Maksimum Punktavstand||0,32|0,45|0,71|Egendefinert
+|Maksimum Fotavtrykk||0,20|0,50|2,00|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|20|20|20|Egendefinert
 |Obligatoriske Klasser||1+2+7+9+17+21|1+2+7+9+17+21|1+2+7+9+17+21|1+7
 |NHM Oppdateres||Ja|Ja|Ja|Nei
@@ -83,11 +89,11 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 
 *Horisontal Nøyaktighet - Systematisk* definerer horisonal avstand til sann verdi, hvor sann verdi er representert ved uavhengig innmålte kontrollprofiler.
 
-*Maksimum Punktavstand* er en funksjon av punkttetthet [SQRT(1/tetthet)]. 
+*Maksimum Punktavstand* er en funksjon av punkttetthet [SQRT(1/tetthet)] og sikrer en homogen punktdistribusjon. 
 
 *Maksimum Fotavtrykk* ##tekst her##
 
-*Maksimum Skannevinkel* beregnes som pluss og minusverdi fra nadir. 
+*Maksimum Skannevinkel* beregnes som pluss og minusverdi fra nadir. Kravet legger premisser for selve flyplanleggingen og høyere åpningsvinkel for leveransen kan spesifiseres per prosjekt. 
 
 *Obligatoriske Klasser* definerer minimum klassifiseringsregime. Utvided klassifisering kan bestilles per prosjekt. 
 
@@ -96,10 +102,16 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 
 <<<
 === Luftbåren Bathymetrisk LiDAR
+
+Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. 
+
+For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning" 
+
 .Luftbåren Bathymetrisk LiDAR
 [width="100%",options="header,footer"]
 |====================
 |Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID||Punktsky_1_ALB_A|Punktsky_1_ALB_B|Punktsky_1_ALB_C|Punktsky_1_ALB_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|-|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
@@ -112,41 +124,58 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 
 <<<
 === Terrestrisk Topografisk LiDAR
+
+Punktsky sanket fra bakkenivå med mobil platform eller statisk oppstilling.
+
+Krav til datafangst må spesifiseres per prosjekt. 
+
 .Terrestrisk Topografisk LiDAR
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
+|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID||Punktsky_1_TLS_A|Punktsky_1_TLS_B|Punktsky_1_TLS_C|Punktsky_1_TLS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|x|x|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|0,15|x|x|Egendefinert
 |Obligatoriske Klasser||1+2+7+9+17+21|x|x|1+7
+|NHM Oppdateres||Nei|x|x|Nei
 |====================
 
 <<<
 === Multistråle Ekkolodd
+
+Punktsky etablert med høyfrekvent gruntvanns ekkolodd. 
+
+For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf[Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00]. Hvert enkelt prosjekt må spesifisere hvilke deler i standarddokumentet som er gjeldende for kartleggingsoppgaven.
+
 .Multistråle Ekkolodd
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Vertikal Nøyaktighet (Presisjon)|Standardavvik|0.05 + 0.001*d (1sig)|x|x|Egendefinert
-|Vertikal Nøyaktighet (Absolutt)|Systematisk|0.1 + 0.002*d (1sig)|x|x|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|-|x|x|Egendefinert
-|Horisontal Nøyaktighet|Systematisk|0.2 + 0.016*d (1sig)|x|x|Egendefinert
-|Obligatoriske Klasser||40|x|x|40
-|NHM Oppdateres||Ja|x|x|Nei
+|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID||Punktsky_1_MBES_A|Punktsky_1_MBES_B|Punktsky_1_MBES_C|Punktsky_1_MBES_E
+|Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.05 + 0.001*dybde|x|Egendefinert
+|Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10 + 0.002*dybde|x|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik|x|-|x|Egendefinert
+|Horisontal Nøyaktighet|Systematisk|x|0.20 + 0.016*dybde|x|Egendefinert
+|Obligatoriske Klasser||x|40|x|40
+|NHM Oppdateres||x|Ja|x|Nei
 |====================
 
 <<<
 === Bildematching
+
+Punktsky generert fra bildemateriale. Minimumskategorien beskriver punktsky generert fra en klassisk omløpsoppgave. Middels tetthet definerer punktskyer generert fra en standard Geovekstbestilling.
+
 .Bildematching
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum|Egendefinert
-|Grunnlagsfoto / AT||Pentacam 5 bilder|GSD4-10 |GSD25|Egendefinert
+|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID||Punktsky_1_DIM_A|Punktsky_1_DIM_B|Punktsky_1_DIM_C|Punktsky_1_DIM_E
+|Grunnlagsfoto / AT||Vertikal (+ 4 Skrå)|GSD4-10 |GSD25|Egendefinert
 |Oppløsning DSM||0,08|0,2|0,5|Egendefinert
 |Avledet Punkttetthet||156,25|25|4|Egendefinert
-|Overlapp||80%+60%|L80% S(20% til 80%)|L80%+S20%|Egendefinert
+|Overlapp||80%+80%|L80% S(20% til 80%)|L80%+S20%|Egendefinert
 |Vertikal Nøyaktighet|Standardavvik|-|-|-|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,03-0,07|0,12-0,18 |0,30-0,75|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|-|-|-|Egendefinert
