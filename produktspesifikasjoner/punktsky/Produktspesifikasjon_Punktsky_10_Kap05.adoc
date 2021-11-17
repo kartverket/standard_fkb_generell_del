@@ -91,7 +91,7 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 
 *Maksimum Punktavstand* er en funksjon av punkttetthet [SQRT(1/tetthet)] og sikrer en homogen punktdistribusjon. 
 
-*Maksimum Fotavtrykk* ##tekst her##
+*Maksimum Fotavtrykk* maksimum tillatte fotavtrykk. 
 
 *Maksimum Skannevinkel* beregnes som pluss og minusverdi fra nadir. Kravet legger premisser for selve flyplanleggingen og høyere åpningsvinkel for leveransen kan spesifiseres per prosjekt. 
 
@@ -103,9 +103,11 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 <<<
 === Luftbåren Bathymetrisk LiDAR
 
-Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. 
+Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
 
-For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning" 
+For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning"
+
+Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2010/12/LAS_Domain_Profile_Description_Topo-Bathy_Lidar.pdf[ASPRS LAS Domain Profile Description: Topo-Bathy Lidar (July 17, 2013)]
 
 .Luftbåren Bathymetrisk LiDAR
 [width="100%",options="header,footer"]
@@ -113,14 +115,22 @@ For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "K
 |Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
 |KlasseID||Punktsky_1_ALB_A|Punktsky_1_ALB_B|Punktsky_1_ALB_C|Punktsky_1_ALB_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
-|Vertikal Nøyaktighet (Absolutt)|Systematisk|x|-|x|Egendefinert
+|Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
-|Horisontal Nøyaktighet|Systematisk|x|-|x|Egendefinert
+|Horisontal Nøyaktighet|Systematisk|x|0.30|x|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|x|20|x|Egendefinert
-|Obligatoriske Klasser||x|40+41+45|x|40+41+45
-|NHM Oppdateres||x|Ja|x|Nei
+|Obligatoriske Klasser||x|40+41+42+45|x|40+41+42+45
+|NHM Oppdateres||x|Nei|x|Nei
 |====================
 
+****
+Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topologikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
+
+Krav til *Skannevinkel* er veiledende og vil ikke gjelde for alle type ALB sensorer. 
+
+For både bathymetrisk og topologisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Bathymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42
+
+****
 
 <<<
 === Terrestrisk Topografisk LiDAR
@@ -142,6 +152,10 @@ Krav til datafangst må spesifiseres per prosjekt.
 |NHM Oppdateres||Nei|x|x|Nei
 |====================
 
+****
+For presiseringer nøyaktighet og skannevinkel, tabell for Luftbåren Terrestrisk LiDAR.
+****
+
 <<<
 === Multistråle Ekkolodd
 
@@ -159,8 +173,15 @@ For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjo
 |Horisontal Nøyaktighet|Standardavvik|x|-|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|x|0.20 + 0.016*dybde|x|Egendefinert
 |Obligatoriske Klasser||x|40|x|40
-|NHM Oppdateres||x|Ja|x|Nei
+|NHM Oppdateres||x|Nei|x|Nei
 |====================
+
+****
+Nøyaktighetskrav til MBES er en funksjon av dybde og verdiene gjelder for oppdrag som faller under kategori "Kaimåling og spesialmåling" (Kap 6.4) i https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf[Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00]. Navigasjonskritiske dybdeområder defineres ned til 40m.  
+
+Det er ikke satt noe eksplisitt krav til *Skannevinkel* og det blir opp til hvert prosjekt å vurdere hvor høy skannevinkel som er egnet for hvert enkelt måleoppdrag.
+
+****
 
 <<<
 === Bildematching
@@ -170,15 +191,20 @@ Punktsky generert fra bildemateriale. Minimumskategorien beskriver punktsky gene
 .Bildematching
 [width="100%",options="header,footer"]
 |====================
-|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
-|KlasseID||Punktsky_1_DIM_A|Punktsky_1_DIM_B|Punktsky_1_DIM_C|Punktsky_1_DIM_E
-|Grunnlagsfoto / AT||Vertikal (+ 4 Skrå)|GSD4-10 |GSD25|Egendefinert
-|Oppløsning DSM||0,08|0,2|0,5|Egendefinert
-|Avledet Punkttetthet||156,25|25|4|Egendefinert
-|Overlapp||80%+80%|L80% S(20% til 80%)|L80%+S20%|Egendefinert
-|Vertikal Nøyaktighet|Standardavvik|-|-|-|Egendefinert
-|Vertikal Nøyaktighet|Systematisk|0,03-0,07|0,12-0,18 |0,30-0,75|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|-|-|-|Egendefinert
-|Horisontal Nøyaktighet|Systematisk|0,02-0,05|0,08-0,12 |0,20-0,25|Egendefinert
-|Obligatoriske Klasser||1+2+7+9|1+7+9|1+7+9|1+7
+|Kategorier| | |"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
+|KlasseID|| |Punktsky_1_DIM_B|Punktsky_1_DIM_C|Punktsky_1_DIM_E
+|Grunnlagsfoto / AT|| |GSD4-10 |GSD25|Egendefinert
+|Oppløsning DSM|| |0,2|0,5|Egendefinert
+|Avledet Punkttetthet|| |25|4|Egendefinert
+|Overlapp||  |L80% S(20% til 80%)|L80%+S20%|Egendefinert
+|Vertikal Nøyaktighet|Standardavvik| |-|-|Egendefinert
+|Vertikal Nøyaktighet|Systematisk| |0,12-0,18 |0,30-0,75|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik| |-|-|Egendefinert
+|Horisontal Nøyaktighet|Systematisk| |0,08-0,12 |0,20-0,25|Egendefinert
+|Obligatoriske Klasser|| |1+7+9|1+7+9|1+7
+|NHM Oppdateres|||Nei|Nei|Nei
 |====================
+
+****
+For bildematching så oppdateres kun Nasjonal Detaljert Høydemodell kun høyfjellsområder og noen egnede kystområder hvor vi har lite eller ingen vegetasjon og en heldekkende terrengmodell kan avledes fra den bildematchede punktskyen. Som standard oppdateres ikke terrengmodell eller overflatemodeller med datasett generert fra bildematchede punktskyer.  
+****
