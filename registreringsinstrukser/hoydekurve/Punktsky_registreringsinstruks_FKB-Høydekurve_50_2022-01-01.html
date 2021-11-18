@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>Registreringsinstruks for datafangst: FKB-Høydekurve 5.0 2022-01-01</title>
+<meta name="author" content="Geovekst">
+<title>Registreringsinstruks: Punktsky FKB-Høydekurve</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +439,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Registreringsinstruks for datafangst: FKB-Høydekurve 5.0 2022-01-01</h1>
+<h1>Registreringsinstruks: Punktsky FKB-Høydekurve</h1>
+<div class="details">
+<span id="author" class="author">Geovekst</span><br>
+<span id="revnumber">versjon 5.0,</span>
+<span id="revdate">2022-01-01</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
@@ -448,50 +454,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueendringslogg">1.2. Endringslogg</a></li>
 </ul>
 </li>
-<li><a href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb">2. Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</a>
-<ul class="sectlevel2">
-<li><a href="#truefotogrammetrisk-nykonstruksjon">2.1. Fotogrammetrisk nykonstruksjon</a>
-<ul class="sectlevel3">
-<li><a href="#trueregistrering-av-nye-kartobjekter">2.1.1. Registrering av nye kartobjekter</a></li>
-<li><a href="#trueregistrering-av-egenskaper-på-nye-kartobjekter">2.1.2. Registrering av egenskaper på nye kartobjekter</a></li>
-</ul>
-</li>
-<li><a href="#truefotogrammetrisk-ajourhold">2.2. Fotogrammetrisk ajourhold</a></li>
-<li><a href="#truefotogrammetrisk-oppgradering">2.3. Fotogrammetrisk oppgradering</a></li>
-<li><a href="#truegeografisk-avgrensning-av-kartleggingsområder">2.4. Geografisk avgrensning av kartleggingsområder</a></li>
-</ul>
-</li>
+<li><a href="#truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata">2. Generelle retningslinjer for vektorisering av klassifiserte punktskydata</a></li>
 <li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
+<ul class="sectlevel2">
+<li><a href="#truehøydelinjer">3.1. Høydelinjer</a>
 <ul class="sectlevel3">
-<li><a href="#høydekurve">3.1. «featureType» Høydekurve</a></li>
-<li><a href="#forsenkningskurve">3.2. «featureType» Forsenkningskurve</a></li>
-<li><a href="#toppunkt">3.3. «featureType» Toppunkt</a></li>
-<li><a href="#forsenkningspunkt">3.4. «featureType» Forsenkningspunkt</a></li>
-<li><a href="#terrenglinje">3.5. «featureType» Terrenglinje</a></li>
-<li><a href="#terrengpunkt">3.6. «featureType» Terrengpunkt</a></li>
-<li><a href="#opphav">3.7. «dataType» Opphav</a></li>
-<li><a href="#truegenerelle-elementer">3.8. Generelle elementer</a>
-<ul class="sectlevel4">
-<li><a href="#truetagged-values">Tagged Values</a></li>
-<li><a href="#fellesegenskaper">3.8.2. «FeatureType» Fellesegenskaper</a></li>
-<li><a href="#kvalitetpåkrevd">3.8.3. «FeatureType» KvalitetPåkrevd</a></li>
-<li><a href="#identifikasjon">3.8.4. «dataType» Identifikasjon</a></li>
-<li><a href="#posisjonskvalitet">3.8.5. «dataType» Posisjonskvalitet</a></li>
+<li><a href="#trueforsenkningskurve">3.1.1. Forsenkningskurve</a></li>
+<li><a href="#truehøydekurve">3.1.2. Høydekurve</a></li>
+<li><a href="#trueterrenglinje">3.1.3. Terrenglinje</a></li>
+</ul>
+</li>
+<li><a href="#trueterrengpunkter">3.2. Terrengpunkter</a>
+<ul class="sectlevel3">
+<li><a href="#trueterrengpunkt">3.2.1. Terrengpunkt</a></li>
+<li><a href="#trueforsenkningspunkt">3.2.2. Forsenkningspunkt</a></li>
+<li><a href="#truetoppunkt">3.2.3. Toppunkt</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#truedatakvalitet">4. Datakvalitet</a>
 <ul class="sectlevel2">
-<li><a href="#truekvalitetskrav">4.1. Kvalitetskrav</a></li>
-<li><a href="#truekvalitetsklasser">4.2. Kvalitetsklasser</a></li>
+<li><a href="#truekvalitetskrav">4.1. Kvalitetskrav</a>
+<ul class="sectlevel3">
+<li><a href="#truestedfestingsnøyaktighet">4.1.1. Stedfestingsnøyaktighet</a></li>
+<li><a href="#trueegenskapsnøyaktighet">4.1.2. Egenskapsnøyaktighet</a></li>
+<li><a href="#truefullstendighet">4.1.3. Fullstendighet</a></li>
+<li><a href="#truelogisk-konsistens">4.1.4. Logisk konsistens</a></li>
 </ul>
 </li>
-<li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
+</ul>
+</li>
+<li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a>
 <ul class="sectlevel2">
-<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.1. Informasjon som angis om alle objekttyper</a></li>
+<li><a href="#truekrav-til-høydekurver-etablert-med-bakgrunn-i-punktskyer">5.1. Krav til høydekurver etablert med bakgrunn i punktskyer</a></li>
+<li><a href="#truekrav-til-visuell-kvalitet">5.2. Krav til visuell kvalitet</a></li>
+<li><a href="#truetilleggsregler-for-generering-av-kurver">5.3. Tilleggsregler for generering av kurver</a>
+<ul class="sectlevel3">
+<li><a href="#truebruk-av-eksisterende-fkb-data-ved-generering-av-kurver-punktsky">5.3.1. Bruk av eksisterende FKB-data ved generering av kurver punktsky</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#truelisensvilkår">Vedlegg A: Lisensvilkår</a></li>
 </ul>
 </div>
 </div>
@@ -505,11 +510,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-Arbeidskopi 11. oktober 2021
+Høringsversjon 19. november 2021
 </td>
 </tr>
 </table>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
@@ -518,274 +524,154 @@ Arbeidskopi 11. oktober 2021
 <div class="sect2">
 <h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
 <div class="paragraph">
-<p>Dette dokumentet er en registreringsinstruks for ajourhold av FKB-Høydekurve.</p>
+<p>Dette dokumentet er en registreringsinstruks for generering av FKB-Høydekurve fra punktskydata.</p>
 </div>
 <div class="paragraph">
-<p>For full beskrivelse av FKB-Høydekurve og detaljer rundt modellering og UML-modeller henvises det til Produktspesifikasjon FKB-Høydekurve 5.0: <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/</a></p>
+<p>Spesifikasjonen omfatter data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå. Objekttypene høydekurve, forsenkningskurve, terrenglinje, toppunkt forsenkningspunkt og terrengpunkt omfattes av instruksen.</p>
+</div>
+<div class="paragraph">
+<p>Nye høydekurver og forsenkningskurver genereres hovedsakelig fra en terrengmodell basert på punktskyer fra laserskanning eller bildematching.</p>
+</div>
+<div class="paragraph">
+<p>Spesifikasjon av klassifisering og leveranse av laserdata for ledninger finnes i <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/punktsky/1.0/Produktspesifikasjon_Punktsky_10.html">Produktspesifikasjon Punktsky 1.0</a>. Beskrivelse av laserskanning som datafangstmetode finnes i standarden <a href="https://www.kartverket.no/globalassets/standard/bransjestandarder-utover-sosi/produksjon-av-basis-geodata.pdf">Produksjon av basis geodata</a>.</p>
+</div>
+<div class="paragraph">
+<p>For full beskrivelse av FKB-Høydekurve og detaljer rundt modellering og UML-modeller henvises det til Produktspesifikasjon FKB-Ledning 5.0: <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/" class="bare">http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>1.2. Endringslogg</h3>
 <div class="paragraph">
-<p>Se produktspesifikasjon for FKB-Høydekurve 5.0 for en oversikt over <a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/#trueendringer-siden-fkb-høydekurve-4-6-2016-06-01">endringer siden FKB-Høydekurve 4.6 2016-06-01</a>. Det er ikke gjort endringer når det gjelder bestemmelser for fotogrammetrisk registrering utover det som følger av endringene i produktspesifikasjonen.</p>
+<p>Se produktspesifikasjon for FKB-Høydekurve 5.0 for en oversikt over endringer siden FKB-Høydekurve 4.61 2018-01-01.</p>
 </div>
+<div class="paragraph">
+<p>Registreringsinstruksen er utover dette endret fra å være en fotogrammetrisk registreringsinstruks til instruks for generering av høydekurver fra punktsky.</p>
+</div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"><a class="anchor" href="#truegenerelle-retningslinjer-for-fotogrammetrisk-kartlegging-av-fkb"></a>2. Generelle retningslinjer for fotogrammetrisk kartlegging av FKB</h2>
+<h2 id="truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata"><a class="anchor" href="#truegenerelle-retningslinjer-for-vektorisering-av-klassifiserte-punktskydata"></a>2. Generelle retningslinjer for vektorisering av klassifiserte punktskydata</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="truefotogrammetrisk-nykonstruksjon"><a class="anchor" href="#truefotogrammetrisk-nykonstruksjon"></a>2.1. Fotogrammetrisk nykonstruksjon</h3>
 <div class="paragraph">
-<p>Ved fotogrammetrisk nykonstruksjon skal alle objektene som er spesifisert i registreringsinstruksen og som er synlige i flybildene registreres.</p>
-</div>
-<div class="sect3">
-<h4 id="trueregistrering-av-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-nye-kartobjekter"></a>2.1.1. Registrering av nye kartobjekter</h4>
-<div class="paragraph">
-<p>Hovedregelen er at påkrevde objekttyper registreres, mens opsjonelle objekttyper ikke registreres.</p>
+<p>Spesifikasjon av en leveranse fra et laserskanningsprosjekt, slik som klassifisering, kvalitetskrav og krav til leveranse, finnes i punktskyspesifikasjonen.</p>
 </div>
 <div class="paragraph">
-<p>Unntak fra hovedregelen kan avtales i det enkelte kartleggingsprosjektet.</p>
+<p>De klassifiserte laserpunktene er grunnlaget for vektorisering av høydekurveobjektene som er spesifisert i denne spesifikasjonen.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="trueregistrering-av-egenskaper-på-nye-kartobjekter"><a class="anchor" href="#trueregistrering-av-egenskaper-på-nye-kartobjekter"></a>2.1.2. Registrering av egenskaper på nye kartobjekter</h4>
-<div class="paragraph">
-<p>Hovedregelen er at obligatoriske egenskaper registreres, mens opsjonelle egenskaper ikke registreres ved fotogrammetrisk datafangst.</p>
-</div>
-<div class="paragraph">
-<p>Egenskaper som skal registreres/klassifiseres ved hjelp av fotogrammetri er beskrevet spesielt i registreringsinstruksen. Øvrige egenskaper er ikke nevnt i registreringsinstruksen.</p>
-</div>
-<div class="paragraph">
-<p>Følgende egenskaper håndteres spesielt:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Egenskapen <em>Identifikasjon</em> skal ikke legges inn på objektene</p>
-</li>
-<li>
-<p>Egenskapen <em>Oppdateringsdato</em> skal ikke legges inn på objektene</p>
-</li>
-<li>
-<p>Alle objekter skal ha egenskapene <em>Nøyaktighet</em> og <em>NøyaktighetHøyde</em> som del av datatypen Posisjonskvalitet</p>
-</li>
-<li>
-<p>Alle objekter skal ha egenskapen <em>Registreringsversjon</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Unntak fra hovedreglene kan spesifiseres under den enkelte objekttype/egenskap i den enkelte registreringsinstruks eller i teknisk spesifikasjon for kartleggleggingsprosjektet.</p>
-</div>
-<div class="sect4">
-<h5 id="trueobligatoriske-egenskaper-med-kodelister"><a class="anchor" href="#trueobligatoriske-egenskaper-med-kodelister"></a>Obligatoriske egenskaper med kodelister</h5>
-<div class="paragraph">
-<p>En del egenskaper med kodelister er angitt som påkrevde. Dette krever at det legges på en verdi ved fotogrammetrisk registrering. For slike egenskaper skal det være definert en "standardverdi" som benyttes i de tilfellene det ikke er angitt noe annet. Konkrete regler for hvordan dette skal registreres for de enkelte objekttyper/egenskaper skal være angitt i registreringsinstruksen. Egenskapene <em>Medium</em> og <em>Høydereferanse</em> (HREF) er benyttet på mange objekter i flere FKB-datasett og for disse gjelder følgende generelle regler dersom ikke annet er spesielt angitt:</p>
-</div>
-<table id="tab-medium" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 1. Registrering av verdier for egenskapen Medium der ikke annet er spesifisert</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kodeverdi</th>
-<th class="tableblock halign-left valign-top">Forklaring</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">T  (på terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi. Benyttes for alle objekter der det ikke er grunn til å benytte en annen verdi</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">U (under terrenget)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter under bruer/bygninger etc. der det ikke er direkte innsyn med fotogrammetri, men krav til gjennomgående registrering av objektet</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">L (i lufta)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes for objekter på bruer/bygninger etc.</p></td>
-</tr>
-</tbody>
-</table>
-<table id="tab-href" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 2. Registrering av verdier for egenskapen Høydereferanse der ikke annet er spesifisert</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kodeverdi</th>
-<th class="tableblock halign-left valign-top">Forklaring</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TOP  (toppen av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objektertyper dette også presisert på objekttypen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FOT (foten av objektet)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benyttes ved fotogrammetrisk registrering kun for objekttyper der det er presisert at høydereferansen skal være foten av objektet</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truefotogrammetrisk-ajourhold"><a class="anchor" href="#truefotogrammetrisk-ajourhold"></a>2.2. Fotogrammetrisk ajourhold</h3>
-<div class="paragraph">
-<p>Ved fotogrammetrisk ajourhold sender oppdragsgiver eksisterende data i henhold til FKB-produktspesifikasjon til oppdragstaker som grunnlag for ajourføring. FKB-dataene oppdateres der det har skjedd endringer slik at fullstendigheten i kartet skal bli tilsvarende som på fototidspunktet.</p>
-</div>
-<div class="paragraph">
-<p><strong>Merknad:</strong> Det forutsettes at eksisterende data oppfyller kravene til stedfestingsnøyaktighet gitt i produktspesifikasjonen. Dersom dette ikke er tilfelle kan det være vanskelig å gjøre en fornuftig ajourføring av dataene. Nykonstruksjon eller oppgradering bør vurderes.</p>
-</div>
-<div class="paragraph">
-<p>Fotogrammetrisk ajourhold innebærer i prinsippet følgende operasjoner:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Registrere nye objekter der disse finnes i flybildene, men ikke i eksisterende data. Reglene som gjelder nye objekter ved <a href="#truefotogrammetrisk-nykonstruksjon">Fotogrammetrisk nykonstruksjon</a> skal da anvendes.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn. Dvs. at splitting innebærer ett endret objekt (<em>lokalid</em> beholdes) og et nytt objekt (uten <em>lokalid</em>), mens sammenføying innebærer ett endret objekt (<em>lokalid</em> beholdes) og et slettet objekt slettes.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Verifisere at objekter som er registrert i eksisterende data fortsatt er i tråd med datagrunnlaget/flybildene. For disse objektene skal egenskapen VERIFISERINGSDATO oppdateres, men forøvrig skal objektene ikke endres. Se <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truebruk-av-datoegenskaper">beskrivelse av håndtering av datoegenskaper i FKB Generell del</a> for mer om dette.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Det presiseres at for objekter som verifiseres ved ajourføring skal <em>lokalid</em> beholdes uendret.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Slette (fjerne fra fila) objekter som finnes i eksisterende data, men som ikke finnes i flybildene.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Unntak fra/presisering av hovedreglene kan avtales i det enkelte kartleggingsprosjektet.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truefotogrammetrisk-oppgradering"><a class="anchor" href="#truefotogrammetrisk-oppgradering"></a>2.3. Fotogrammetrisk oppgradering</h3>
-<div class="paragraph">
-<p>Mens <em>ajourføring</em> dreier seg om å fange opp endringer i terrenget som ikke finnes i FKB-dataene dreier en <em>oppgradering</em> seg om en total gjennomgang av alle data innenfor kartleggingsområdet for å sikre at de er i tråd med spesifiserte krav. Eksempler på oppgradering kan være:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
-</li>
-<li>
-<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
-</li>
-<li>
-<p>Påføring av egenskaper på alle objekter av en objekttype</p>
-</li>
-<li>
-<p>Påføring av høydeverdier på alle objekter av en objekttype</p>
-</li>
-<li>
-<p>Tilpasning av angitte objekttyper for å skape konsistens mellom datasett (f.eks. en omkoding av eksisterende data i FKB-Veg for å skape konsistens med vegnettet)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Reglene for oppgradering er ikke beskrevet i fotogrammetrisk registreringsinstruks og må avtales spesielt i det enkelte kartlegginsprosjekt der dette er aktuelt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truegeografisk-avgrensning-av-kartleggingsområder"><a class="anchor" href="#truegeografisk-avgrensning-av-kartleggingsområder"></a>2.4. Geografisk avgrensning av kartleggingsområder</h3>
-<div class="paragraph">
-<p>Ved fotogrammetrisk datafangst angis <em>prosjektområdet</em> datafangsten skal skje innenfor ved hjelp av et definert <em>avgrensningspolygon</em>.
-Følgende håndtering gjelder dersom ikke annet er angitt:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Avgrensningspolygonet utformes av oppdragsgiver på en slik måte at bygninger (og sekundært andre typer flate-objekter) i minst mulig grad deles.</p>
-</li>
-<li>
-<p>Avgrensningspolygonet leveres tilbake fra oppdragstaker sammen med dataene.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Nærmere retningslinjer for ev. justeringer i avgrensningspolygonet fra oppdragstaker avtales i det enkelte prosjekt.
-I så fall skal justert avgrensning leveres tilbake sammen med dataene. Justering kan for eksempel være aktuelt dersom
-man ønsker å konstruere objekter innenfor hele flyfotodekningen eller man ønsker å få registrert alle
-bygninger som deles av avgrensningspolygonet</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Nye flate-objekter skal deles av avgrensningspolygonet</p>
-<div class="ulist">
-<ul>
-<li>
-<p>For flater med delt geometri benyttes en fiktiv avgrensningsobjekttype langs avgrensningspolygonet som det i følge datamodellen er lovlig at kan avgrense flata.</p>
-</li>
-<li>
-<p>For flater med heleid geometri angis det ikke på noen spesielle måte at flata er avgrenset av avgrensningspolygonet, men avgrensninga til flata skal være helt sammenfallende med geometrien til avgrensningspolygonet</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
-</li>
-<li>
-<p>Nye kurve-objekter skal konnekteres til avgrensningspolygonet</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter enten i eller like innenfor avgrensningspolygonet</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Kurve-objekter som skal verifiseres i forbindelse med ajourføring splittes i siste punkt som ligger innenfor prosjektområdet. VERIFISERINGSDATO påføres kun på den delen som i sin helhet ligger innenfor prosjektområdet. Dersom objektet krysser prosjektavgrensningen gjentatte ganger kan hele objektet verifiseres uten splitting, forutsatt stereodekning</p>
-</li>
-</ul>
-</div>
-</div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
-<div style="page-break-after: always;"></div>
-<hr>
+<div class="sect2">
+<h3 id="truehøydelinjer"><a class="anchor" href="#truehøydelinjer"></a>3.1. Høydelinjer</h3>
 <div class="sect3">
-<h4 id="høydekurve"><a class="anchor" href="#høydekurve"></a>3.1. «featureType» Høydekurve</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer"><a class="anchor" href="#trueføringer"></a>Føringer</h5>
+<h4 id="trueforsenkningskurve"><a class="anchor" href="#trueforsenkningskurve"></a>3.1.1. Forsenkningskurve</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forsenkningskurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+</tr>
+</tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon (SOSI Del 2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget</p>
+<p class="tableblock">Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Forsenkningskurve har retningsavhengighet mot urviseren.</p>
 </div>
+<div class="paragraph">
+<p>Forsenkningskurver skal brukes i følgende tilfeller:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Naturlige depresjoner (spesielt: moreneflater med dødisgroper, fordypninger i områder med kalkrikt fjell).</p>
+</li>
+<li>
+<p>Hull og groper som skyldes bergverk/steinbrudd/grustak</p>
+</li>
+<li>
+<p>(Vei)grøfter hvor vannet renner mot en stikkrenne eller drensrør.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Forsenkningskurver skal ikke brukes i følgende tilfeller:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Større områder (for eksempel innsjøer på flere km2) som renner/drenerer ut gjennom/under store veg- eller jernbanefyllinger.</p>
+</li>
+<li>
+<p>Områder mellom HRV og LRV i regulerte elver og innsjøer.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Forsenkningskurver generert fra punktsky, skal ha påført datafangstmetode Generert. I tillegg skal egenskapen Opphav benyttes for å skille på om punktskyen som ligger til grunn for kurvegenereringen er etablert ved hjelp av laserskanning eller bildematching og om objektet sikkert gjengir terrenget eller ikke.</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Ved fotogrammetrisk registrering tillates at forsenkningskurver avsluttes mot loddrett forstøtningsmur, massive brygger og lignende, og at det i disse tilfellene medfører at kurvene ikke er sammenhengende.</p>
+</div>
+<div class="paragraph">
+<p>Ved generering av forsenkningskurver fra punktsky skal forsenkningskurvene være gjennomgående ved forstøtningsmur, massive brygger og lignende.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assosiasjoner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ingen</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell"><a class="anchor" href="#trueegenskapstabell"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -930,27 +816,79 @@ bygninger som deles av avgrensningspolygonet</p>
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
-<hr>
 </div>
 </div>
 <div class="sect3">
-<h4 id="forsenkningskurve"><a class="anchor" href="#forsenkningskurve"></a>3.2. «featureType» Forsenkningskurve</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-2"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-2"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
-Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-2"><a class="anchor" href="#trueføringer-2"></a>Føringer</h5>
+<h4 id="truehøydekurve"><a class="anchor" href="#truehøydekurve"></a>3.1.2. Høydekurve</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydekurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P</p></td>
+</tr>
+</tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon (SOSI Del 2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden</p>
+<p class="tableblock">Merknad: Høydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Høydekurver skal ikke brytes når de går gjennom bygninger, steinbrudd, sandtak, ur etc.; over veier, over bekker/elver, passerer bruer o.l. Alle kurver skal være lukket og merket med knutepunkt. Dersom det er knyttet usikkerhet til nøyaktigheten til høydekurver som går gjennom store bygninger, skal dette angis med kvalitetskoding.</p>
 </div>
+<div class="paragraph">
+<p>Høydekurver generert fra punktsky, skal ha påført datafangstmetode Generert. I tillegg skal egenskapen Opphav benyttes for å skille på om punktskyen som ligger til grunn for kurvegenereringen er etablert ved hjelp av laserskanning eller bildematching og om objektet sikkert gjengir terrenget eller ikke.</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Ved generering av høydekurver fra punktsky skal høydekurvene være gjennomgående ved forstøtningsmur, massive brygger og lignende.</p>
+</div>
+<div class="paragraph">
+<p>Ved fotogrammetrisk registrering tillates at høydekurver avsluttes mot loddrett forstøtningsmur, massive brygger og lignende, og at det i disse tilfellene medfører at kurvene ikke er sammenhengende.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell-2"><a class="anchor" href="#trueegenskapstabell-2"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -1095,26 +1033,92 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
-<hr>
 </div>
 </div>
 <div class="sect3">
-<h4 id="toppunkt"><a class="anchor" href="#toppunkt"></a>3.3. «featureType» Toppunkt</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-3"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-3"><a class="anchor" href="#trueføringer-3"></a>Føringer</h5>
+<h4 id="trueterrenglinje"><a class="anchor" href="#trueterrenglinje"></a>3.1.3. Terrenglinje</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrenglinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+</tr>
+</tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon (SOSI Del 2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk kan terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon</p>
+<p class="tableblock">Merknad 1: Benyttes normalt som et supplement utover annen høydebærende informasjon slik at de til sammen gir nok høydebærende informasjon til å beskrive terrengets form og høyde innenfor de kvalitetskrav som er satt. Det er ikke krav om at terrenglinjen skal være lukket eller sammenhengende med andre linjeelementer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KURVE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>I områder hvor høydegrunnlaget er etablert ved laserskanning vil det som regel kun være aktuelt å registrere terrenglinjer i forbindelse med tekniske anlegg langs veg og i bebygde områder.</p>
 </div>
+<div class="paragraph">
+<p>I områder med dårlig terrengmodell kan det i tillegg være aktuelt å bestille ytterligere registrering av terrenglinjer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>på markerte terrengformasjoner ved bygningsmessige og tekniske anlegg</p>
+</li>
+<li>
+<p>på begge sider av støyskjerm</p>
+</li>
+<li>
+<p>på kant av større grøfter og bekker der høyden fra vannkant til topp kant er større enn 1,5 meter</p>
+</li>
+<li>
+<p>på knekklinjer og på topp kant langs elv der andre objekttyper ikke beskriver terrengformen. Benyttes for elver som i snitt er bredere enn ca. 10 meter, samt for mindre elver i flate områder der det er fare for flom. Dersom det er elveforbygninger langs elva skal disse registreres spesielt. Det er viktig med nok terrenglinjer langs elv. Dette med tanke på flomanalyse.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Objekttypen er opsjonell og det må avklares i hvert enkelt oppdrag når og hvordan den eventuelt skal benyttes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell-3"><a class="anchor" href="#trueegenskapstabell-3"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -1228,15 +1232,9 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">høyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..HØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -1259,26 +1257,77 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
-<hr>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="trueterrengpunkter"><a class="anchor" href="#trueterrengpunkter"></a>3.2. Terrengpunkter</h3>
 <div class="sect3">
-<h4 id="forsenkningspunkt"><a class="anchor" href="#forsenkningspunkt"></a>3.4. «featureType» Forsenkningspunkt</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-4"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-4"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-4"><a class="anchor" href="#trueføringer-4"></a>Føringer</h5>
+<h4 id="trueterrengpunkt"><a class="anchor" href="#trueterrengpunkt"></a>3.2.1. Terrengpunkt</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengpunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+</tr>
+</tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definisjon (SOSI Del 2)</th>
+<th class="tableblock halign-left valign-top">punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Terrengpunkt skal benyttes der høydekurvene alene, eventuelt sammen med terrenglinjer, ikke gir detaljert nok informasjon om terrengformene.</p>
 </div>
+<div class="paragraph">
+<p>Objekttyper er opsjonell og det må avklares i hvert enkelt oppdrag når og hvordan den eventuelt skal benyttes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell-4"><a class="anchor" href="#trueegenskapstabell-4"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -1423,26 +1472,77 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
-<hr>
 </div>
 </div>
 <div class="sect3">
-<h4 id="terrenglinje"><a class="anchor" href="#terrenglinje"></a>3.5. «featureType» Terrenglinje</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-5"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-5"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-5"><a class="anchor" href="#trueføringer-5"></a>Føringer</h5>
+<h4 id="trueforsenkningspunkt"><a class="anchor" href="#trueforsenkningspunkt"></a>3.2.2. Forsenkningspunkt</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forsenkningspunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P<sup>1</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>Minstemål:</p>
 </div>
+<div class="paragraph">
+<p>1) Objekttypen skal registreres for forsenkninger dypere enn 7 meter under omkringliggende terreng. Det tillates skjønnsmessig justering av minstemålet i terrengtyper hvor dette gir uhensiktsmessig få eller mange forsenkningspunkt</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definisjon (SOSI Del 2)</th>
+<th class="tableblock halign-left valign-top">Punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ingen</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell-5"><a class="anchor" href="#trueegenskapstabell-5"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -1556,9 +1656,15 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HØYDE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -1581,26 +1687,82 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
-<hr>
 </div>
 </div>
 <div class="sect3">
-<h4 id="terrengpunkt"><a class="anchor" href="#terrengpunkt"></a>3.6. «featureType» Terrengpunkt</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-6"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-6"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-6"><a class="anchor" href="#trueføringer-6"></a>Føringer</h5>
+<h4 id="truetoppunkt"><a class="anchor" href="#truetoppunkt"></a>3.2.3. Toppunkt</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definert i standard</th>
+<th class="tableblock halign-left valign-top">Objekttype</th>
+<th class="tableblock halign-left valign-top" colspan="2">FKB-Høydekurve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI40/TERR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toppunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P<sup>1</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">O</p></td>
+</tr>
+</tbody>
 </table>
+<div class="paragraph">
+<p>Minstemål:</p>
 </div>
+<div class="paragraph">
+<p>1) Objekttypen skal registreres for høyder som er høyere enn 10 meter over omkringliggende terreng. For mindre øyer som stikker opp mindre enn 10 meter over havflaten, skal det normalt alltid registreres toppunkt. Unntaket er når øvrig terrenginformasjon gir en god nok beskrivelse av terrengoverflaten.
+ Det tillates skjønnsmessig justering av minstemålet i terrengtyper hvor dette gir uhensiktsmessig få eller mange toppunkt</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Definisjon (SOSI Del 2)</th>
+<th class="tableblock halign-left valign-top">punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geometritype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUNKT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreringsmetode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avledes fra digital terrengmodell etablert fra punktsky.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilleggsbeskrivelse</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ingen</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnrissreferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyeste punkt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terrengnivå i aktuell høyde</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect4">
 <h5 id="trueegenskapstabell-6"><a class="anchor" href="#trueegenskapstabell-6"></a>Egenskapstabell</h5>
 <table class="tableblock frame-all grid-all stretch">
@@ -1746,497 +1908,6 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<hr>
-</div>
-</div>
-<div class="sect3">
-<h4 id="opphav"><a class="anchor" href="#opphav"></a>3.7. «dataType» Opphav</h4>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-7"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-7"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-7"><a class="anchor" href="#trueføringer-7"></a>Føringer</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskapstabell-7"><a class="anchor" href="#trueegenskapstabell-7"></a>Egenskapstabell</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sikkerTerrenggjengivelse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datakilde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» DatafangsmetodeUtvidet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truegenerelle-elementer"><a class="anchor" href="#truegenerelle-elementer"></a>3.8. Generelle elementer</h3>
-<div class="paragraph">
-<p><strong>Pakkens definisjon:</strong> Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i produktspesifikasjoner.</p>
-</div>
-<div class="sect4">
-<h5 id="truetagged-values"><a class="anchor" href="#truetagged-values"></a>Tagged Values</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-<div class="imageblock">
-<div class="content">
-<img src="Hoveddiagram%20Fellesegenskaper.png" alt="Hoveddiagram Fellesegenskaper">
-</div>
-<div class="title">Figur  Hoveddiagram Fellesegenskaper</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="Realisering%20av%20fellesegenskaper%20fra%20SOSI%20generell%20del.png" alt="Realisering av fellesegenskaper fra SOSI generell del">
-</div>
-<div class="title">Figur  Realisering av fellesegenskaper fra SOSI generell del</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="Posisjonskvalitet.png" alt="Posisjonskvalitet">
-</div>
-<div class="title">Figur  Posisjonskvalitet</div>
-</div>
-<div style="page-break-after: always;"></div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="fellesegenskaper"><a class="anchor" href="#fellesegenskaper"></a>3.8.2. «FeatureType» Fellesegenskaper</h4>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-8"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-8"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
-</div>
-<div class="paragraph">
-<p>Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-8"><a class="anchor" href="#trueføringer-8"></a>Føringer</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskapstabell-8"><a class="anchor" href="#trueegenskapstabell-8"></a>Egenskapstabell</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueroller"><a class="anchor" href="#trueroller"></a>Roller</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generalisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«FeatureType» KvalitetPåkrevd</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<hr>
-</div>
-</div>
-<div class="sect3">
-<h4 id="kvalitetpåkrevd"><a class="anchor" href="#kvalitetpåkrevd"></a>3.8.3. «FeatureType» KvalitetPåkrevd</h4>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
-</div>
-<div class="paragraph">
-<p>Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
-</div>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-9"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-9"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>abstrakt objekttype med påkrevet kvalitetsangivelse</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-9"><a class="anchor" href="#trueføringer-9"></a>Føringer</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskapstabell-9"><a class="anchor" href="#trueegenskapstabell-9"></a>Egenskapstabell</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Medium</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueroller-2"><a class="anchor" href="#trueroller-2"></a>Roller</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Generalisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«featureType» Toppunkt<br>
-«featureType» Terrenglinje<br>
-«featureType» Høydekurve<br>
-«featureType» Terrengpunkt<br>
-«featureType» Forsenkningskurve<br>
-«featureType» Forsenkningspunkt</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<hr>
-</div>
-</div>
-<div class="sect3">
-<h4 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>3.8.4. «dataType» Identifikasjon</h4>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-10"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-10"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-10"><a class="anchor" href="#trueføringer-10"></a>Føringer</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskapstabell-10"><a class="anchor" href="#trueegenskapstabell-10"></a>Egenskapstabell</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<hr>
-</div>
-</div>
-<div class="sect3">
-<h4 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>3.8.5. «dataType» Posisjonskvalitet</h4>
-<div class="sect4">
-<h5 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-11"><a class="anchor" href="#truetilleggsinformasjon-for-fotogrammetrisk-registrering-11"></a>Tilleggsinformasjon for fotogrammetrisk registrering</h5>
-<div class="paragraph">
-<p>beskrivelse av kvaliteten på stedfestingen.</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="trueføringer-11"><a class="anchor" href="#trueføringer-11"></a>Føringer</h5>
-<table class="tableblock frame-all grid-all stretch">
-</table>
-</div>
-<div class="sect4">
-<h5 id="trueegenskapstabell-11"><a class="anchor" href="#trueegenskapstabell-11"></a>Egenskapstabell</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SOSI_navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mult.:</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="truerestriksjoner"><a class="anchor" href="#truerestriksjoner"></a>Restriksjoner</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
@@ -2246,378 +1917,175 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 <h2 id="truedatakvalitet"><a class="anchor" href="#truedatakvalitet"></a>4. Datakvalitet</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For detaljer om kvalitetsmodellen som er benyttet her henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truekvalitet">FKB Generell del, kapittel 8</a></p>
-</div>
-<div class="paragraph">
-<p>Kvalitetskravene gjelder alle nye data som blir etablert i et FKB kartleggingsprosjekt (jf. <a href="#trueregistrering-av-nye-kartobjekter">Registrering av nye kartobjekter</a> i kapittel 2).</p>
+<p>For mer detaljer om generelle FKB kvalitetskrav henvises det til <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/#truekvalitet">FKB Generell del, kapittel 8</a></p>
 </div>
 <div class="sect2">
 <h3 id="truekvalitetskrav"><a class="anchor" href="#truekvalitetskrav"></a>4.1. Kvalitetskrav</h3>
-<table id="tab-Logisk-konsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Krav til logisk konsistens</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Krav</th>
-<th class="tableblock halign-left valign-top">Kommentar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Konseptuell konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall enheter der regler i konseptuelt skjema ikke er oppfylt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/010/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">F.eks. overskytende egenskaper eller ulovlige egenskaper.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenoverlappinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/027/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenoverlapper ("spiker") skal ikke forekomme i FKB-Lufthavn</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topologisk konsistens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Antall ulovlige egenkryssinger</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NS-EN ISO19157:2013/026/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 feil</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Egenkryssinger skal ikke forekomme i FKB-Lufthavn</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sect3">
+<h4 id="truestedfestingsnøyaktighet"><a class="anchor" href="#truestedfestingsnøyaktighet"></a>4.1.1. Stedfestingsnøyaktighet</h4>
 <div class="paragraph">
-<p>Krav til logisk konsistens kontrolleres maskinelt vha. SOSI-kontroll, kontroll mot GML-skjema e.l.</p>
-</div>
-<table id="tab-Egenskapskonsistens" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Krav til egenskapskonsistens</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Krav</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Klassifikasjonsriktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel feil klassifiserte egenskaper</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/508/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0.5% feilklassifisering</p></td>
-</tr>
-</tbody>
-</table>
-<table id="tab-Fullstendighet" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 5. Krav til fullstendighet</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Kvalitetselement</th>
-<th class="tableblock halign-left valign-top">Kvalitetsmål</th>
-<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
-<th class="tableblock halign-left valign-top">Referanse</th>
-<th class="tableblock halign-left valign-top">Krav</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% manglende objekter</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel manglende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/102/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% manglende objekter</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 0,5% overskytende objekter</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overskytende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prosentandel overskytende objekter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geodatakvalitet:2014/101/1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Maksimalt 2% overskytende objekter</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Krav til fullstendighet og egenskapskonsistens kontrolleres mot flybilder (ortofoto) som ble brukt under kartkonstruksjon.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 6. Oversikt over krav til stedfestingsnøyaktighet (systematisk avvik / standardavvik ) for ulike nøyaktighetsklasser i de ulike FKB-standardene</caption>
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2" rowspan="2"><p class="tableblock"><strong>FKB-Standard</strong></p></td>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Nøyaktighetsklasser</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 1</em></p>
-<p class="tableblock">Svært veldefinerte detaljer (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 2</em></p>
-<p class="tableblock">Veldefinerte detaljer (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 3</em></p>
-<p class="tableblock">Uskarpe detaljer (cm)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Klasse 4</em></p>
-<p class="tableblock">Diffuse detaljer (cm)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3 / 10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8 / 25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12 / 40</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5 / 15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 / 20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10 / 35</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 50</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">FKB-C/D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Grunnriss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 55</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">30 / 100</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Høyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15 / 48</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20 / 70</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25 / 90</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">40 / 150</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Krav til stedfestingsnøyaktighet kontrolleres mot uavhengige innmålinger med bedre kvalitet som f.eks. laserdata eller landmåling. Hvilke objekttyper som inngår i hvilke kvalitetsklasser er angitt under.</p>
+<p>Stedfestingsnøyaktigheten til genererte data er helt avhengig av nøyaktigheten til punktskyene. Hvor godt punktskyene beskriver terrenget vil avhenge av datafangstmetode, punkttetthet og kvalitet på terrengklassifiseringen.</p>
 </div>
 <div class="paragraph">
-<p><strong>Grove feil</strong></p>
+<p>Stedfestingsnøyaktighet angis ved egenskapen kvalitet. I flatt og slakt terreng skal stedfestingsnøyaktigheten i høyde ikke overstige 1/3 av ekvidistansen. Dersom terrenget har steilet større enn 20%, gjelder ikke kravet til stedfestingsnøyaktighet.</p>
 </div>
 <div class="paragraph">
-<p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet er at maksimalt 1 % av registrerte objekter skal ha avvik som kategoriseres som grove feil.</p>
+<p>Grunnrissnøyaktighet oppgis med standardverdi «0». Det er ikke aktuelt å kontrollere stedfestingsnøyaktigheten i grunnriss for objekttypene i FKB-Høydekurve.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="truekvalitetsklasser"><a class="anchor" href="#truekvalitetsklasser"></a>4.2. Kvalitetsklasser</h3>
 <div class="paragraph">
-<p>Ved angivelse av krav til stedfestingsnøyaktighet og fullstendighet er objekttypene inndelt i forskjellige klasser.
-Nedenfor følger en oversikt over hvilken klasse objekttypene i FKB-Lufthavn tilhører.</p>
+<p>Høydekurver skal ikke krysse eller tangere andre høydekurver. Unntak kan være der dette er tilfelle (overheng). Kurvene skal ikke krysse eller tangere seg selv (skal ikke inneholde ”looper”) og de skal ikke inneholde dobbeltpunkter (punkter med lik koordinat).</p>
 </div>
-<table id="tab-Kvalitetsklasser" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 7. Kvalitetsklasser for objekttypene i FKB-Høydekurve</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Objekttype</th>
-<th class="tableblock halign-left valign-top">Kvalitetklasse Grunnriss</th>
-<th class="tableblock halign-left valign-top">Kvalitetsklasse Høyde</th>
-<th class="tableblock halign-left valign-top">Kvalitetsklasse Fullstendighet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="sect3">
+<h4 id="trueegenskapsnøyaktighet"><a class="anchor" href="#trueegenskapsnøyaktighet"></a>4.1.2. Egenskapsnøyaktighet</h4>
+<div class="paragraph">
+<p>Objekttypene skal være klassifisert riktig.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefullstendighet"><a class="anchor" href="#truefullstendighet"></a>4.1.3. Fullstendighet</h4>
+
+</div>
+<div class="sect3">
+<h4 id="truelogisk-konsistens"><a class="anchor" href="#truelogisk-konsistens"></a>4.1.4. Logisk konsistens</h4>
+<div class="paragraph">
+<p>Leverte data skal være i henhold til Produktspesifikasjon FKB-Høydekurve 5.0 (format og koding). Det tillates ikke ulovlige småpolygoner, ulovlige egenkryssinger, ulovlige egenoverlappinger, ulovlige løse ender eller ulovlige lenkekryssinger.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
+<h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.1. Informasjon som angis om alle objekttyper</h3>
+<h3 id="truekrav-til-høydekurver-etablert-med-bakgrunn-i-punktskyer"><a class="anchor" href="#truekrav-til-høydekurver-etablert-med-bakgrunn-i-punktskyer"></a>5.1. Krav til høydekurver etablert med bakgrunn i punktskyer</h3>
+<div class="paragraph">
+<p>I Geovekst-prosjekter der man benytter laserskanning som datafangstmetode, skal det alltid genereres høyde- og forsenkningskurver med ekvidistanse 1 meter (FKB-H1).</p>
+</div>
+<div class="paragraph">
+<p>For områder hvor grunnlaget er punktsky fra bildematching, vil nøyaktighet til punktskyen og bruksformålet være bestemmende for valg av ekvidistanse. I områder hvor Nasjonal høydemodell er etablert med punktsky fra bildematching av omløpsbilder (GSD25), skal det alltid generes høyde- og forsenkningskurver med ekvidistanse 5 meter (FKB-H5).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truekrav-til-visuell-kvalitet"><a class="anchor" href="#truekrav-til-visuell-kvalitet"></a>5.2. Krav til visuell kvalitet</h3>
+<div class="paragraph">
+<p>Formålet med de genererte kurvene er å gi et godt visuelt bilde av terrenget. Dette innebærer at kurvene skal være glattet. Det er ikke stilt krav til produksjon av kurvene, men normalt vil kurvene bli generert fra en glattet terrengmodell. Høydekurvene skal ha en punkttetthet som står i samsvar med stedfestingsnøyaktigheten.</p>
+</div>
+<div class="paragraph">
+<p>Det er ikke stilt krav til metode eller parametere for glatting av kurvene. Årsaken til dette er at metode og parametere vil variere avhengig av programsystem og terrengtype. I stedet er det i figur 3 vist eksempler på hva som er akseptabel glatting.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\Figur_Glatting_Høydekurver.png" alt="figurer\Figur Glatting Høydekurver">
+</div>
+<div class="title">Figur 1. Oversikt over LAS-klasser som benyttes for klassifisering av punkt på ledning.</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truetilleggsregler-for-generering-av-kurver"><a class="anchor" href="#truetilleggsregler-for-generering-av-kurver"></a>5.3. Tilleggsregler for generering av kurver</h3>
+<div class="sect3">
+<h4 id="truebruk-av-eksisterende-fkb-data-ved-generering-av-kurver-punktsky"><a class="anchor" href="#truebruk-av-eksisterende-fkb-data-ved-generering-av-kurver-punktsky"></a>5.3.1. Bruk av eksisterende FKB-data ved generering av kurver punktsky</h4>
+<div class="paragraph">
+<p>Normalt vil det ikke være aktuelt å benytte vektordata (FKB-data) som støttedata ved generering av høyde- og forsenkningskurver fra punktsky. Ofte vil resultatet forringes, fordi FKB-dataene er utdatert eller har dårligere stedfestingsnøyaktighet enn punktskya.</p>
+</div>
+<div class="paragraph">
+<p>Unntaksvis kan det være ønskelig å benytte utvalgte objekttyper med bakgrunn i at de kan beskrive potensielle knekklinjer i terrenget som ikke klart fremgår av punktskyene. I områder med mye bebyggelse, skjæringer i terrenget (for eksempel støttemurer) og samferdselsobjekter vil dette kunne forbedre lesbarhet og angivelse av terrenget.</p>
+</div>
+<div class="paragraph">
+<p>Aktuelle objekttyper:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Definisjon hentet fra FKB-produktspesifikasjon</p>
+<p>MurLoddrett</p>
 </li>
 <li>
-<p>Bilde/skisse hentet fra FKB-produktspesifikasjon</p>
+<p>SkråForstøtningsmurAvgrensning</p>
 </li>
 <li>
-<p>Tilleggsbeskrivelse for objekttypen for fotogrammetrisk registrering</p>
-</li>
-<li>
-<p>Bilder/skisser med bildetekst for fotogrammetrisk registrering</p>
-</li>
-<li>
-<p>Tabell med <strong>Føringer</strong> for fotogrammetrisk registrering. Se tabell under for en forklaring på hvilke føringer som kan være angitt og hva disse betyr.</p>
-</li>
-<li>
-<p>Egenskapstabell hentet fra FKB-produktspesifikasjon. Denne inneholder alle egenskaper for objekttypen. Både de som skal registreres fotogrammetrisk og alle andre.</p>
-</li>
-<li>
-<p>Tabell med <strong>Restriksjoner</strong> er angitt for noen objekttyper. Denne tabellen inneholder egenskaper det er knyttet spesielle krav til ved fotogrammetrisk registrering.</p>
-</li>
-<li>
-<p>For objekttyper med egenskaper som benytter kodelister der disse kodeverdiene skal klassifiseres fotogrammetrisk finnes det også <strong>Presiseringer til beskrivelsen av kodelistekoder</strong>. Her listes de aktuelle kodene for fotogrammetrisk registering ut med en definisjon/beskrivelse som skal ligge til grunn for klassifiseringen og gjerne også forklarende bilder/skisser.</p>
+<p>Terrenglinje</p>
 </li>
 </ul>
 </div>
-<table id="tab-foringer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 8. Føringer for registrering som er angitt i registreringsinstruksene</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Føring</th>
-<th class="tableblock halign-left valign-top">Verdier</th>
-<th class="tableblock halign-left valign-top">Kommentar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke / Opsjonell registrering / Påkrevd registrering</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke / Opsjonell registrering /Påkrevd registrering</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke / Opsjonell registrering /Påkrevd registrering</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke / Opsjonell registrering /Påkrevd registrering</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir høydereferanse for registrering av geometrien til objekttypen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir grunnrissreferanse for registrering av geometrien til objekttypen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes på alle objekttyper</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-A</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-B</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-C</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB minstestørrelse D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir minstestørrelse for registrering i FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er det er minstestørrelser for registrering.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB registeringsmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fritekst som angir krav til registreringsmetode for objekttypen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Finnes bare på objekttyper der dette er relevant</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Så dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt</p>
+<p>Bruk av vektordata som knekklinjer ved generering av kurver  er opsjonell og det må avtales i hvert enkelt prosjekt hvor og hvordan dette skal  eventuelt skal gjøres.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="figurer\Figur_Eksempel_Dårlig_Kurveløp.png" alt="figurer\Figur Eksempel Dårlig Kurveløp">
+</div>
+<div class="title">Figur 2. Oversikt over LAS-klasser som benyttes for klassifisering av punkt på ledning.</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truelisensvilkår"><a class="anchor" href="#truelisensvilkår"></a>Vedlegg A: Lisensvilkår</h2>
+<div class="sectionbody">
+<h3 id="truelisens" class="discrete">Lisens</h3>
+<div class="paragraph">
+<p>Denne standarden er gitt ut under
+<a href="https://data.norge.no/nlod/no/">norsk lisens for offentlige data (NLOD)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Du har lov til:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>å kopiere og tilgjengeliggjøre</p>
+</li>
+<li>
+<p>å endre og/eller sette sammen med andre datasett</p>
+</li>
+<li>
+<p>å kopiere og tilgjengeliggjøre en endret eller sammensatt versjon</p>
+</li>
+<li>
+<p>å benytte datasettet kommersielt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>På følgende vilkår:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at du navngir lisensgiver slik lisensgiver ber om, men ikke på en måte som
+indikerer at disse har godkjent eller anbefaler deg eller din bruk av datasettet</p>
+</li>
+<li>
+<p>at du ikke bruker dataene på en måte som fremstår som villedende, og heller ikke
+fordreier eller uriktig fremstiller dataene</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Med den forståelse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at data som inneholder personopplysninger og er taushetsbelagt ikke er omfattet
+av denne lisensen og ikke kan viderebrukes</p>
+</li>
+<li>
+<p>at lisensgiver fraskriver seg ethvert ansvar for informasjonens kvalitet og hva informasjonen brukes til</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-11 12:14:54 +0200
+Versjon 5.0<br>
+Last updated 2021-11-18 13:16:36 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
