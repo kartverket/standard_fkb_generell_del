@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>SOSI abstrakte spesifikasjoner – FKB generell del 5.0</title>
+<title>SOSI abstrakte spesifikasjoner: FKB generell del 5.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>SOSI abstrakte spesifikasjoner – FKB generell del 5.0</h1>
+<h1>SOSI abstrakte spesifikasjoner: FKB generell del 5.0</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
@@ -497,9 +497,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data">6.5.4. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</a></li>
 </ul>
 </li>
-<li><a href="#truevedlikehold">6.6. Vedlikehold</a></li>
-<li><a href="#trueoppgradering">6.7. Oppgradering</a></li>
-<li><a href="#truesømløse-data">6.8. Sømløse data</a></li>
+<li><a href="#truekodelister">6.6. Kodelister</a></li>
+<li><a href="#truevedlikehold">6.7. Vedlikehold</a></li>
+<li><a href="#trueoppgradering">6.8. Oppgradering</a></li>
+<li><a href="#truesømløse-data">6.9. Sømløse data</a></li>
 </ul>
 </li>
 <li><a href="#truemodellering-av-fkb-produktspesifikasjoner">7. Modellering av FKB-Produktspesifikasjoner</a>
@@ -508,14 +509,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#truegeometrityper">7.1.1. Geometrityper</a></li>
 <li><a href="#trueflere-geometrier">7.1.2. Flere geometrier</a></li>
-<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a></li>
-<li><a href="#trueflategeometri">7.1.4. Flategeometri</a></li>
+<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a>
+<ul class="sectlevel4">
+<li><a href="#truerealisering-av-assosiasjoner-i-sosi-og-gml">Realisering av assosiasjoner i SOSI og GML</a></li>
+</ul>
+</li>
+<li><a href="#trueflategeometri">7.1.4. Flategeometri</a>
+<ul class="sectlevel4">
+<li><a href="#trueto-typer-flateobjekter">To typer flateobjekter</a></li>
+<li><a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></li>
+<li><a href="#truerealisering-av-assosiasjoner-i-sosi-og-gml-2">Realisering av assosiasjoner i SOSI og GML</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#trueuml-felleselementer-til-bruk-i-applicationschema-for-fkb-datasett">7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</a>
 <ul class="sectlevel3">
-<li><a href="#truepakke-generelle-elementer">7.2.1. Pakke: Generelle elementer</a></li>
-<li><a href="#truepakke-elementer-til-bruk-i-distribusjon">7.2.2. Pakke: Elementer til bruk i distribusjon</a></li>
+<li><a href="#truepakke-generelle-elementer">7.2.1. Pakke: Generelle elementer</a>
+<ul class="sectlevel4">
+<li><a href="#fellesegenskaper">«FeatureType» Fellesegenskaper (abstrakt)</a></li>
+<li><a href="#kvalitetpåkrevd">«FeatureType» KvalitetPåkrevd (abstrakt)</a></li>
+<li><a href="#kvalitetopsjonell">«FeatureType» KvalitetOpsjonell (abstrakt)</a></li>
+<li><a href="#identifikasjon">«dataType» Identifikasjon</a></li>
+<li><a href="#posisjonskvalitet">«dataType» Posisjonskvalitet</a></li>
+<li><a href="#synbarhet">«CodeList» Synbarhet</a></li>
+<li><a href="#datafangstmetode">«CodeList» Datafangstmetode</a></li>
+<li><a href="#registreringsversjon">«CodeList» Registreringsversjon</a></li>
+<li><a href="#høydereferanse">«CodeList» Høydereferanse</a></li>
+<li><a href="#medium">«CodeList» Medium</a></li>
+</ul>
+</li>
+<li><a href="#truepakke-elementer-til-bruk-i-distribusjon">7.2.2. Pakke: Elementer til bruk i distribusjon</a>
+<ul class="sectlevel4">
+<li><a href="#ekstraegenskaperdistribusjon">«FeatureType» EkstraegenskaperDistribusjon (abstrakt)</a></li>
+<li><a href="#kantutsnitt">«featureType» KantUtsnitt</a></li>
+<li><a href="#kopidata">«dataType» Kopidata</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -534,26 +564,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueeksempler-på-utveksling-av-flater-med-delt-geometri">Eksempler på utveksling av flater med delt geometri</a></li>
 </ul>
 </li>
+<li><a href="#truelisensvilkår">Lisensvilkår</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Høringsversjon 1.oktober 2021
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
 <div class="sect1">
 <h2 id="trueorientering-og-introduksjon"><a class="anchor" href="#trueorientering-og-introduksjon"></a>1. Orientering og introduksjon</h2>
 <div class="sectionbody">
@@ -675,7 +690,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <p><strong>Håndtering av kodelister:</strong></p>
 </div>
 <div class="paragraph">
-<p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. I UML-modellene ligger tomme kodelister med referanse (URL) til kodelistene i Geonorge. Dette innebærer at kodelistene i FKB fra og med FKB 5.0 kan endres uten at versjonsnummer på produktspesifikasjonene oppdateres. Systemer som forholder seg FKB datamodellene må også forholde seg til Geonorge kodelisteregister.</p>
+<p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. Se mer om rammer for bruk av kodelister i FKB under <a href="#truekodelister">Kodelister</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Assosiasjoner:</strong></p>
@@ -768,32 +783,29 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 <div class="paragraph">
 <p>Det er nødvendig å ha kjennskap til dokumentene under for fullt ut å forstå denne produktspesifikasjonen.</p>
 </div>
-<div id="FKB" class="paragraph">
-<p><strong>[FKB]</strong> : <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">SOSI abstrakte spesifikasjoner – FKB generell del 5.0</a></p>
-</div>
 <div id="G" class="paragraph">
-<p><strong>[G]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/geodatakvalitet-1.0-standarder-geografisk-informasjon.pdf">Geodatakvalitet, versjon 1.0</a></p>
+<p><strong>[G]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/geodatakvalitet-1.0-standarder-geografisk-informasjon.pdf">Geodatakvalitet, versjon 1.0 2015</a></p>
+</div>
+<div id="PABG" class="paragraph">
+<p><strong>[PABG]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/produksjon-av-basis-geodata-1.0-standarder-geografisk-informasjon.pdf">Produksjon av basis geodata, versjon 1.0 2015</a></p>
+</div>
+<div id="SOSI-UML" class="paragraph">
+<p><strong>[SOSI-UML]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/regler-for-uml-modellering-5.1-sosi-generell-del.pdf">SOSI Regler for UML-modellering, versjon 5.1 2020</a></p>
+</div>
+<div id="SOSI-KRAV" class="paragraph">
+<p><strong>[SOSI-KRAV]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/sosi-produktspesifikasjoner-krav-og-godkjenning-5.0-sosi-generell-del.pdf">SOSI produktspesifikasjoner – Krav og godkjenning, versjon 5.0 2014</a></p>
+</div>
+<div id="SOSI-FORMAT" class="paragraph">
+<p><strong>[SOSI-FORMAT]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-sosi-format-5.0-sosi-generell-del.pdf">SOSI Realisering i SOSI-format, versjon 5.0 2018</a></p>
+</div>
+<div id="SOSI-GML" class="paragraph">
+<p><strong>[SOSI-GML]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-gml-format-5.0-sosi-generell-del.pdf">SOSI Realisering i GML-format, versjon 5.0 2018</a></p>
 </div>
 <div id="GEO-VEIL" class="paragraph">
 <p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
 </div>
-<div id="PABG" class="paragraph">
-<p><strong>[PABG]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/produksjon-av-basis-geodata-1.0-standarder-geografisk-informasjon.pdf">Produksjon av basis geodata</a></p>
-</div>
 <div id="PBL-KART" class="paragraph">
 <p><strong>[PBL-KART]</strong> : <a href="https://www.regjeringen.no/no/dokumenter/veiledning-til-forskrift-om-kart-stedfestet-informasjon-arealformal-og-digitalt-planregister/">Veiledning til forskrift om kart, stedfestet informasjon, arealformål og digitalt planregister</a></p>
-</div>
-<div id="SOSI" class="paragraph">
-<p><strong>[SOSI]</strong> : <a href="https://www.kartverket.no/geodataarbeid/standardisering/sosi-standarder2/sosi-del-1-generell-del">SOSI (Samordnet Opplegg for Stedfestet Informasjon)</a></p>
-</div>
-<div id="SOSI-KRAV" class="paragraph">
-<p><strong>[SOSI-KRAV]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/sosi-produktspesifikasjoner-krav-og-godkjenning-5.0-sosi-generell-del.pdf">SOSI produktspesifikasjoner – Krav og godkjenning, versjon 5.1</a></p>
-</div>
-<div id="SOSI-UML" class="paragraph">
-<p><strong>[SOSI-UML]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/regler-for-uml-modellering-5.1-sosi-generell-del.pdf">SOSI Regler for UML-modellering, versjon 5.0</a></p>
-</div>
-<div class="paragraph">
-<p>Øvrige <a href="https://kartverket.no/geodataarbeid/standardisering/sosi-standarder2/standarder-geografisk-informasjon">standarder for geografisk informasjon</a> er også viktige referanser.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1067,88 +1079,90 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-AR5/5.0/">FKB-AR5</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-AR5/5.0">FKB-AR5</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ikke aktuelt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Arealbruk/5.0/">FKB-Arealbruk</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0">FKB-Arealbruk</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk registreringsinstruks FKB-Arealbruk 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Arealbruk/5.0">Fotogrammetrisk registreringsinstruks FKB-Arealbruk 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bane/5.0/">FKB-Bane</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bane/5.0">FKB-Bane</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-Bane 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Bane/5.0">Fotogrammetrisk kartlegging av FKB-Bane 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-BygnAnlegg/5.0/">FKB-BygnAnlegg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/">FKB-BygnAnlegg</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-BygnAnlegg 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-BygnAnlegg/5.0">Fotogrammetrisk kartlegging av FKB-BygnAnlegg 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Bygning/5.0/">FKB-Bygning</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/">FKB-Bygning</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-Bygning 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Bygning/5.0">Fotogrammetrisk kartlegging av FKB-Bygning 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Høydekurve/5.0/">FKB-Høydekurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Høydekurve/5.0/">FKB-Høydekurve</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(Usikkert navn)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/Punktsky-FKB-Høydekurve/5.0">Punktsky FKB-Høydekurve 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/">FKB-Ledning</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/">FKB-Ledning</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk registreringsinstruks FKB-Ledning 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Ledning/5.0/">Fotogrammetrisk registreringsinstruks FKB-Ledning 5.0 2022-01-01</a></p>
+<p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/Punktsky-FKB-Ledning/">Punktsky FKB-Ledning 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Lufthavn/5.0/">FKB-Lufthavn</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/">FKB-Lufthavn</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-Lufthavn 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks//FKB-Lufthavn/5.0">Fotogrammetrisk registreringsinstruks FKB-Lufthavn 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Naturinfo/5.0/">FKB-Naturinfo</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/">FKB-Naturinfo</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-Naturinfo 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Naturinfo/5.0">Fotogrammetrisk registreringsinstruks FKB-Naturinfo 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Tiltak/5.0/">FKB-Tiltak</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.0/">FKB-Tiltak</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ikke aktuelt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-TraktorvegSti/5.0/">FKB-TraktorvegSti</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/">FKB-TraktorvegSti</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-TraktorvegSti 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks//FKB-TraktorvegSti/5.0">Fotogrammetrisk registreringsinstruks FKB-TraktorvegSti 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Vann/5.0/">FKB-Vann</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/">FKB-Vann</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk registreringsinstruks FKB-Vann 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks//FKB-Vann/5.0">Fotogrammetrisk registreringsinstruks FKB-Vann 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Veg/5.0/">FKB-Veg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/">FKB-Veg</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av FKB-Veg 5.0 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks//FKB-Veg/5.0">Fotogrammetrisk registreringsinstruks FKB-Veg 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vegnett (følger bare delvis reglene for resten av FKB)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elveg 2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Elveg (vegnett)</p>
+<p class="tableblock">(følger bare delvis reglene for resten av FKB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/register/versjoner/produktspesifikasjoner/kartverket/elveg-2-0">Produktspesifikasjon Elveg 2.0</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NVDB (med oppdatering fra kommunene gjennom Sentral FKB)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fotogrammetrisk kartlegging av vegnettet 2022-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/registreringsinstruks//Fotogrammetri-Elveg/2.0">Fotogrammetrisk registreringsinstruks Elveg 2.0 2022-01-01</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1212,7 +1226,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Områdetype 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tettbygd/utbyggingsområder.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Områder med liten eller ingen bebyggelse.</p>
 <p class="tableblock">Dette vil være den delen av kommunen som har en ekstensiv arealutnytting og lav grunnverdi: som regel fjellområder eller tilsvarende lite produktive arealer.</p></td>
 </tr>
 </tbody>
@@ -1424,7 +1438,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Alle kartobjekter i FKB har en unik identifikator i form av datatypen <em>Identifikasjon</em>. Identifikasjon er en datatype som består av <em>navnerom</em>, <em>lokalid</em> og <em>versjonid</em>. For FKB-data er <em>lokalid</em> på formen UUID <a href="#UUID">[UUID]</a>. Dette innebærer at <em>lokalid</em>-en alene alltid er globalt unik. Identifikasjon er modellert som en del av fellesegenskapene i FKB. Se detaljer om dette under kapittel 7.</p>
 </div>
 <div class="paragraph">
-<p>Logikken rundt indentifisering og håndtering av unike objekter i FKB konsentrerer seg om håndtering av egenskapen <em>lokalid</em>. Ved bruk av FKB-data skal man forholde seg til <em>lokalid</em> som den egenskapen som identifiserer hvert kartobjekt i FKB unikt. Både NGIS-OpenAPI og Geosynkronisering-API baserer seg på <em>lokalid</em> til å identifisere transaksjoner på objekter i FKB. Når FKB-data utveksles på GML-format skal GML-id til objektene inneholdet <em>lokalid</em>.</p>
+<p>Logikken rundt identifisering og håndtering av unike objekter i FKB konsentrerer seg om håndtering av egenskapen <em>lokalid</em>. Ved bruk av FKB-data skal man forholde seg til <em>lokalid</em> som den egenskapen som identifiserer hvert kartobjekt i FKB unikt. Både NGIS-OpenAPI og Geosynkronisering-API baserer seg på <em>lokalid</em> til å identifisere transaksjoner på objekter i FKB. Når FKB-data utveksles på GML-format skal GML-id til objektene inneholde <em>lokalid</em>.</p>
 </div>
 <div class="paragraph">
 <p>Det er vesentlig å presisere at identifikasjon på kartobjektene i FKB nettopp identifiserer et kartobjekt og <em>ikke</em> det fysiske objektet som kartobjektet representerer. Det kan oppstå nye/endra kartobjekter som representerer det samme fysiske objektet og man bør derfor være forsiktig med å knytte informasjon om det fysiske objektet til den unike identifikatoren i FKB. I slike sammenhenger bør man i stedet benytte en tematisk identifikator som f.eks. bygningsnummer for objekttype Bygning.</p>
@@ -1438,31 +1452,47 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <div class="ulist">
 <ul>
 <li>
-<p>Nye kartobjekter: Det genereres en ny lokalid til objektet</p>
+<p>Nye kartobjekter: Det genereres en ny <em>lokalid</em> til objektet</p>
 </li>
 <li>
-<p>Endring av et objekt (egenskaper og/eller geometri): Lokalid beholdes (versjonid oppdateres).</p>
+<p>Endring av et objekt (egenskaper og/eller geometri): <em>Lokalid</em> beholdes (versjonid oppdateres).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Endring av objekttype på et objekt er et spesialtilfelle. Dette håndteres som at et objekt av den gamle objekttypen slettes og at et objekt av den nye objekttypen etableres (lokalid beholdes ikke, se regler under).</p>
+<p>Endring av objekttype på et objekt er et spesialtilfelle. Dette håndteres som at et objekt av den gamle objekttypen slettes og at et objekt av den nye objekttypen etableres (<em>lokalid</em> beholdes ikke, se regler under).</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Sletting av objekt: Objektet (inkl. lokalid) slettes. Nye objekter som oppstår vil ikke gjenbruke en lokalid som allerede er brukt/slettet</p>
+<p>Sletting av objekt: Objektet (inkl. <em>lokalid</em>) slettes. Nye objekter som oppstår skal ikke gjenbruke en <em>lokalid</em> som allerede er brukt/slettet</p>
 </li>
 <li>
-<p>Splitting av et objekt: Håndteres som ett endret objekt (lokalid beholdes) og ett nytt objekt (ny lokalid)</p>
+<p>Splitting av et objekt: Håndteres som ett endret objekt (<em>lokalid</em> beholdes) og ett nytt objekt (ny <em>lokalid</em>)</p>
 </li>
 <li>
-<p>Sammenføying av to objekter: Håndteres som ett endret objekt (lokalid beholdes) og ett slettet objekt slettes.</p>
+<p>Sammenføying av to objekter: Håndteres som ett endret objekt (<em>lokalid</em> beholdes) og ett slettet objekt</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Merknad: Dersom det finnes egenskaper på kartobjektene som er knyttet til det fysiske objektet (f.eks. bygningsnummer i FKB-Bygning) så må det lages rutiner sikrer at denne informasjonen tas vare på gjennom av alle typer endringer i kartobjektene. Den generelle transaksjonslogikken i FKB vil ikke automatisk håndtere dette. Les mer om dette under <a href="#truekoblingsnøkler-til-andre-data">Koblingsnøkler til andre data</a>.</p>
+<p>Dersom det finnes egenskaper på kartobjektene som er knyttet til det fysiske objektet (f.eks. bygningsnummer i FKB-Bygning) så må det lages rutiner sikrer at denne informasjonen tas vare på gjennom av alle typer endringer i kartobjektene. Den generelle transaksjonslogikken i FKB vil ikke automatisk håndtere dette. Les mer om dette under <a href="#truekoblingsnøkler-til-andre-data">Koblingsnøkler til andre data</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Alternativ håndtering av lokalid:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Det absolutte kravet i FKB er at situasjonen etter transaksjonen er komplett/riktig. I noen tilfeller er det lite hensiktsmessig/meningsfullt å beholde <em>lokalid</em> ved splitting/sammenføying av objekter. Dette kan f.eks. være ved ajourhold av FKB-AR5 (eller andre datasett) der det er vanskelig å knytte et kartobjekt til et spesifikt objekt i terrenget. I slike tilfeller kan man velge en alternativ håndtering ved splitting/sammenføying:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Splitting av objekt: Håndteres som ett slettet objekt og to nye objekter (to nye <em>lokaid-er</em>)</p>
+</li>
+<li>
+<p>Sammenføying av objekt: Håndteres som to slettinger og ett nytt objekt (en ny <em>lokaid</em>).</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Regler for håndtering av navnerom:</strong></p>
@@ -1624,7 +1654,51 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="truevedlikehold"><a class="anchor" href="#truevedlikehold"></a>6.6. Vedlikehold</h3>
+<h3 id="truekodelister"><a class="anchor" href="#truekodelister"></a>6.6. Kodelister</h3>
+<div class="paragraph">
+<p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. I UML-modellene ligger tomme kodelister med referanse (URL) til kodelistene i Geonorge. Dette innebærer at kodelistene i FKB kan endres uten at versjonsnummer på produktspesifikasjonene oppdateres. Systemer som forholder seg FKB datamodellene må også forholde seg til Geonorge kodelisteregister.</p>
+</div>
+<div class="paragraph">
+<p>Alle kodelister i Geonorge kodelisteregister inneholder 3 verdier: kodenavn, beskrivelse/definisjon og kodeverdi. Det er kodeverdiene som utveksles i dataene i alle formater, mens kodenavn og beskrivelse vil være det som presenteres for brukerne i de fleste tilfeller.</p>
+</div>
+<div class="paragraph">
+<p><strong>Retningslinjene for utforming av kodeverdier i FKB 5.0:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kodeverdiene må være unike og teknisk enkle å utveksle/tolke. Det innebærer at norske tegn, skilletegn (bindestrek/underscore/mellomrom) og andre spesialtegn unngås. Som hovedregel brukes små bokstaver og ved sammensatte kodeverdier brukes stor bokstav på andre ledd ("NCName")</p>
+</li>
+<li>
+<p>Kodeverdiene skal være kortest mulig (normalt under 10 tegn)</p>
+</li>
+<li>
+<p>Kodeverdiene skal om mulig gi en intuitiv mening (en forkortet/sammentrekt versjon av kodenavn e.l.)</p>
+</li>
+<li>
+<p>Etablerte kodeverdier (f.eks. i form av tallverdier) fra tidligere versjoner av FKB beholdes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Statuskoder i Geonorge kodelistergister:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Status <em>Gyldig</em>: Brukes for gyldige koder i FKB. Kun kodeverdier med status <em>Gyldig</em> kan brukes ved oppdateringer inn i FKB</p>
+</li>
+<li>
+<p>Status <em>Utgått</em> og <em>Erstattet</em>: Brukes for koder som ikke lenger skal benyttes ved oppdateringer i FKB. Det kan likevel være mulig at eldre FKB-data har disse kodene.</p>
+</li>
+<li>
+<p>Status <em>Sendt inn</em>, <em>Ikke godkjent</em> og <em>Utkast</em>: Brukes for koder som er foreslått brukt i FKB, men disse skal ikke benyttes før status ev. endres til <em>Gyldig</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truevedlikehold"><a class="anchor" href="#truevedlikehold"></a>6.7. Vedlikehold</h3>
 <div class="paragraph">
 <p>Hovedprinsippet for ajourføring av FKB-data er at utvalgte objekter og datasett skal ajourføres kontinuerlig gjennom daglige administrative rutiner, for eksempel byggesaksbehandling, eller ved rapportering fra samarbeidspartene. Fullstendighet og hurtig oppdatering av de viktigste objektene skal prioriteres fremfor stedfestingsnøyaktighet. Dette betyr at stedfestingsnøyaktighet i enkelte tilfeller kan bli dårligere enn kravet til aktuell FKB-standard. Det er imidlertid et krav at alle aktuelle objekter skal være kodet med opplysninger om målemetode og stedfestingsnøyaktighet (..KVALITET).</p>
 </div>
@@ -1642,7 +1716,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueoppgradering"><a class="anchor" href="#trueoppgradering"></a>6.7. Oppgradering</h3>
+<h3 id="trueoppgradering"><a class="anchor" href="#trueoppgradering"></a>6.8. Oppgradering</h3>
 <div class="paragraph">
 <p>Med oppgradering menes forbedring av den datatekniske kvaliteten av eksisterende data.</p>
 </div>
@@ -1670,7 +1744,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesømløse-data"><a class="anchor" href="#truesømløse-data"></a>6.8. Sømløse data</h3>
+<h3 id="truesømløse-data"><a class="anchor" href="#truesømløse-data"></a>6.9. Sømløse data</h3>
 <div class="paragraph">
 <p><strong>Mellom Kommuner eller fylker:</strong></p>
 </div>
@@ -3486,6 +3560,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="title">Eksempel på assosiasjon på GML-format. Referanse fra Maste-objekt til GML-id for Bardun-objekt ("&lt;app:bardun xlink:href="Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d" /&gt;")</div>
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+&lt;gml:featureMember&gt;
     &lt;app:Bardun gml:id="Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"&gt;
       &lt;app:identifikasjon&gt;
         &lt;app:Identifikasjon&gt;
@@ -3524,7 +3599,9 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
         &lt;/gml:Curve&gt;
       &lt;/app:beliggenhet&gt;
     &lt;/app:Bardun&gt;
-&lt;app:Mast gml:id="Mast_81ffc802-3e9f-492b-95b6-bb15b645a7e8"&gt;
+&lt;/gml:featureMember&gt;
+&lt;gml:featureMember&gt;
+   &lt;app:Mast gml:id="Mast_81ffc802-3e9f-492b-95b6-bb15b645a7e8"&gt;
       &lt;app:identifikasjon&gt;
         &lt;app:Identifikasjon&gt;
           &lt;app:lokalId&gt;81ffc802-3e9f-492b-95b6-bb15b645a7e8&lt;/app:lokalId&gt;
@@ -3563,7 +3640,9 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
       &lt;app:linjebredde&gt;0.23&lt;/app:linjebredde&gt;
       &lt;app:vertikalAvstand&gt;8.23&lt;/app:vertikalAvstand&gt;
       &lt;app:bardun xlink:href="Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d" /&gt;
-    &lt;/app:Mast&gt;</code></pre>
+    &lt;/app:Mast&gt;
+&lt;/gml:featureMember&gt;
+&lt;/gml:featureMembers&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3637,11 +3716,12 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="listingblock">
 <div class="title">Eksempel på GML-format. Geometrien ligger "inline" i objektet.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs"> &lt;wfs:member&gt;
-    &lt;Anleggsområde gml:id="Anleggsområde.1"&gt;
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+  &lt;gml:featureMember&gt;
+    &lt;Anleggsområde gml:id="Anleggsområde_58c892c4-f615-4317-935f-038765687265"&gt;
       &lt;identifikasjon&gt;
         &lt;Identifikasjon&gt;
-          &lt;lokalId&gt;Anleggsområde.1&lt;/lokalId&gt;
+          &lt;lokalId&gt;58c892c4-f615-4317-935f-038765687265&lt;/lokalId&gt;
           &lt;navnerom&gt;http://data.geonorge.no/SOSI/FKB-Arealbruk&lt;/navnerom&gt;
         &lt;/Identifikasjon&gt;
       &lt;/identifikasjon&gt;
@@ -3665,7 +3745,9 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
           &lt;/gml:exterior&gt;
         &lt;/gml:Polygon&gt;
       &lt;/område&gt;
-    &lt;/Anleggsområde&gt;</code></pre>
+    &lt;/Anleggsområde&gt;
+  &lt;/gml:featureMember&gt;
+&lt;/gml:featureMembers&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3685,7 +3767,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
   .FLATE 2:
   ..OBJTYPE Anleggsområde
   ..IDENT
-  ...LOKALID "Anleggsområde.1"
+  ...LOKALID 58c892c4-f615-4317-935f-038765687265
   ...NAVNEROM "http://data.geonorge.no/SOSI/FKB-Arealbruk"
   ..OPPDATERINGSDATO "2021-08-26T21:08:00Z"
   ..DATAFANGSTDATO "2021-08-26"
@@ -3707,13 +3789,14 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <p>Viser fiktive eksempler på hvordan Bygning med delt flategeometri kan utveksles på GML og SOSI-format.</p>
 </div>
 <div class="listingblock">
-<div class="title">Eksempel på heleid geometri i på GML-format. Flate-geometrien ligger "inline" i objektet og i tillegg er ligger det inne referanser til egne avgrensningsobjekter som en assosiasjon med spesielle regler ("&lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning.1"/&gt;"). Det er krav om samsvar mellom geometrien til flata og de refererte avgrensningsobjektene.</div>
+<div class="title">Eksempel på heleid geometri i på GML-format. Flate-geometrien ligger "inline" i objektet og i tillegg er ligger det inne referanser til egne avgrensningsobjekter som en assosiasjon med spesielle regler ("&lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"/&gt;"). Det er krav om samsvar mellom geometrien til flata og de refererte avgrensningsobjektene.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;wfs:member&gt;
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+   &lt;gml:featureMember&gt;
       &lt;Bygning gml:id="Bygning.1"&gt;
          &lt;identifikasjon&gt;
             &lt;Identifikasjon&gt;
-               &lt;lokalId&gt;Bygning.1&lt;/lokalId&gt;
+               &lt;lokalId&gt;Bygning_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d&lt;/lokalId&gt;
                &lt;navnerom&gt;http://data.geonorge.no/SOSI/FKB-Bygning&lt;/navnerom&gt;
                &lt;versjonId&gt;&lt;/versjonId&gt;
             &lt;/Identifikasjon&gt;
@@ -3732,15 +3815,15 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
                &lt;gml:pos&gt;568497.68 6662024.15 90.67&lt;/gml:pos&gt;
             &lt;/gml:Point&gt;
          &lt;/sentralpunkt&gt;
-         &lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning.1"/&gt;
-         &lt;avgrensning xlink:title="0 0 1 +" xlink:href="#Bygningsavgrensning.2"/&gt;
+         &lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"/&gt;
+         &lt;avgrensning xlink:title="0 0 1 +" xlink:href="#Bygningsavgrensning_32face7c-c0d8-4264-ac2d-1e47977cc976"/&gt;
       &lt;/Bygning&gt;
-   &lt;/wfs:member&gt;
-   &lt;wfs:member&gt;
-      &lt;Bygningsavgrensning gml:id="Bygningsavgrensning.1"&gt;
+  &lt;/gml:featureMember&gt;
+  &lt;gml:featureMember&gt;
+      &lt;Bygningsavgrensning gml:id="Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"&gt;
          &lt;identifikasjon&gt;
             &lt;Identifikasjon&gt;
-               &lt;lokalId&gt;Bygningsavgrensning.1&lt;/lokalId&gt;
+               &lt;lokalId&gt;81ffc802-3e9f-492b-95b6-bb15b645a7e8&lt;/lokalId&gt;
                &lt;navnerom&gt;http://data.geonorge.no/SOSI/FKB-Bygning&lt;/navnerom&gt;
                &lt;versjonId&gt;&lt;/versjonId&gt;
             &lt;/Identifikasjon&gt;
@@ -3751,12 +3834,12 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
             &lt;/gml:LineString&gt;
          &lt;/grense&gt;
       &lt;/Bygningsavgrensning&gt;
-   &lt;/wfs:member&gt;
-   &lt;wfs:member&gt;
-      &lt;Bygningsavgrensning gml:id="Bygningsavgrensning.2"&gt;
+  &lt;/gml:featureMember&gt;
+  &lt;gml:featureMember&gt;
+      &lt;Bygningsavgrensning gml:id="Bygningsavgrensning_32face7c-c0d8-4264-ac2d-1e47977cc976"&gt;
          &lt;identifikasjon&gt;
             &lt;Identifikasjon&gt;
-               &lt;lokalId&gt;Bygningsavgrensning.2&lt;/lokalId&gt;
+               &lt;lokalId&gt;32face7c-c0d8-4264-ac2d-1e47977cc976&lt;/lokalId&gt;
                &lt;navnerom&gt;http://data.geonorge.no/SOSI/FKB-Bygning&lt;/navnerom&gt;
                &lt;versjonId&gt;&lt;/versjonId&gt;
             &lt;/Identifikasjon&gt;
@@ -3767,7 +3850,8 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
             &lt;/gml:LineString&gt;
          &lt;/grense&gt;
       &lt;/Bygningsavgrensning&gt;
-   &lt;/wfs:member&gt;</code></pre>
+   &lt;/gml:featureMember&gt;
+&lt;/gml:featureMembers&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3776,7 +3860,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .FLATE 1:
   ..OBJTYPE Bygning
   ..IDENT
-  ...LOKALID Bygning.1
+  ...LOKALID 5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
   ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
   ..REF :2 :-3
   ..NØH
@@ -3784,7 +3868,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
   .KURVE 2:
   ..OBJTYPE Bygningsavgrensning
   ..IDENT
-  ...LOKALID Bygningsavgrensning.1
+  ...LOKALID 81ffc802-3e9f-492b-95b6-bb15b645a7e8
   ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
   ..NØH
   56852584 666199897 9080
@@ -3793,7 +3877,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
   .KURVE 3:
   ..OBJTYPE Bygningsavgrensning
   ..IDENT
-  ...LOKALID Bygningsavgrensning.1
+  ...LOKALID 32face7c-c0d8-4264-ac2d-1e47977cc976
   ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
   ..NØH
   56852584 666199897 9080
@@ -3807,10 +3891,68 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="truelisensvilkår"><a class="anchor" href="#truelisensvilkår"></a>Lisensvilkår</h2>
+<div class="sectionbody">
+<h3 id="truelisens" class="discrete">Lisens</h3>
+<div class="paragraph">
+<p>Denne standarden er gitt ut under
+<a href="https://data.norge.no/nlod/no/">norsk lisens for offentlige data (NLOD)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Du har lov til:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>å kopiere og tilgjengeliggjøre</p>
+</li>
+<li>
+<p>å endre og/eller sette sammen med andre datasett</p>
+</li>
+<li>
+<p>å kopiere og tilgjengeliggjøre en endret eller sammensatt versjon</p>
+</li>
+<li>
+<p>å benytte datasettet kommersielt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>På følgende vilkår:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at du navngir lisensgiver slik lisensgiver ber om, men ikke på en måte som
+indikerer at disse har godkjent eller anbefaler deg eller din bruk av datasettet</p>
+</li>
+<li>
+<p>at du ikke bruker dataene på en måte som fremstår som villedende, og heller ikke
+fordreier eller uriktig fremstiller dataene</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Med den forståelse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at data som inneholder personopplysninger og er taushetsbelagt ikke er omfattet
+av denne lisensen og ikke kan viderebrukes</p>
+</li>
+<li>
+<p>at lisensgiver fraskriver seg ethvert ansvar for informasjonens kvalitet og hva informasjonen brukes til</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-30 21:55:10 +0200
+Last updated 2021-11-28 14:01:30 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
