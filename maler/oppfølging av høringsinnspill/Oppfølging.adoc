@@ -49,8 +49,9 @@ Prosjektledelsen sentralt = Nils med bistand
 == Følges opp av den enkelte arbeidsgruppe
 Den enkelt arbeidsgruppe = prosjektleder + ansvarlig for UML-modellering og dokumentasjon.
 
+*Endringer i UML-modell:*
+
 * Gjøre reelle justeringer i UML datamodellen som følge av høringsinnspillene (i tråd med omforent behandling i arbeidsgruppa og høringskommentar)
-* Gå gjennom kodelistene på Geonorge. Gi alle kodelister og kodelisteverdier status "Gyldig", _Gyldig fra_ dato til "2022-01-01"og vurder om kodeverdiene kan/bør forkortes/forenkles (skal være "kortest mulig" og som hovedregel undert 10 tegn)
 * Sørge for at tagger på pakkenivå er i tråd med innspill fra standardiseringssekretariatet:
 ** SOSI_spesifikasjonstype skal ha verdien _produktspesifikasjon_
 ** SOSI_kortnavn skal angis uten skilletegn og versjonsnummer. Eks. _FKBBygning_
@@ -59,22 +60,35 @@ Den enkelt arbeidsgruppe = prosjektleder + ansvarlig for UML-modellering og doku
 * Hente inn oppdateringer fra UML-modellen "Generelle elementer" (kopiere inn og koble opp på nytt??)
 * Gå gjennom alle diagrammer og vurdere om de kan/bør forbedres i tråd med "best practice": https://github.com/ISO-TC211/UML-Best-Practices/wiki/Best-practices-for-diagram-design
 ** Om visning av tagger i UML-diagrammer: Bør unngås på featuretyper og datatyper, men kan brukes på kodelister for å vise fram url til ekstern kodeliste.
-* Legge til alternativ bildetekst på alle bilder/skisser som legges inn i adoc
-* Kap 1.1: Legg til følgende setninger avslutningsvis/innledningsvis: «Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 [SOSI-KRAV]. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 [SOSI-UML]. Denne veilederen (link til: http://sosi.geonorge.no/veiledere/UML/) gir hjelp til å lese UML-diagrammene.» 
+* Fjerne "utkast" som del av pakkenavn og endre statuskode for pakka (når gjør vi dette?)
+
+*Endringer i Geonorge kodelisteregister:*
+
+* Gå gjennom kodelistene på Geonorge. Gi alle kodelister og kodelisteverdier status "Gyldig", _Gyldig fra_ dato til "2022-01-01"og vurder om kodeverdiene kan/bør forkortes/forenkles (skal være "kortest mulig" og som hovedregel undert 10 tegn)
+
+
+*Endringer på bitbucket (adoc-filer + ev. skisser):*
+
+* Endre dokument-tittel fra "SOSI standardisert produktspesifikasjon" til SOSI-standardisert produktspesifikasjon"
+* Kap 1.1: Legg til følgende setninger avslutningsvis: «Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <<SOSI-KRAV>>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <<SOSI-UML>>. http://sosi.geonorge.no/veiledere/UML[Denne veilederen] gir hjelp til å lese UML-diagrammene.» 
+* Kap 1.3: Oppdater med ev. justeringer som følge av høringsinnspill 
 * Kap 3.1.1: Kortnavn skal være lik "SOSI_kortnavn" i UML-modellen, men med skilletegn. Eks. _FKB-Bygning_
 * Kap 3.4: Skal ha verdien "nor" (og ikke "Norsk")
 * Kap 3.5: Dette er et fritekstfelt. Vurdere om det kan legges til mer konkrete "temakategorier" i tillegg til basisdata. Eks. _Bygning_ for FKB-Bygning.
 * Kap 3.6: Hentes fra en kodeliste. Skal ha verdien "basisData".
 * Kap 3.8: Vurdere om det kan legges inn litt tekst som beskriver formålet til FKB-datasettet i tillegg til den generelle teksten som beskriver formålet til FKB (som inkluderes som en felles-del)
+* Endre til :toclevels: 4 i hodet på adoc-fila (??)
+* Legge til alternativ bildetekst på alle bilder/skisser som legges inn i adoc (image::bilde-url[Alt="Tekst som beskriver bildet"])
 * Generere ut ny Adoc-dokumentasjon fra UML-modellen. 
 * Generere ut ny SOSI-realisering fra UML-modellen
 * Generere ny HTML-dokumentasjon og se over ("korrekturlese") at helheten i dokumentet er ok.
 
 == Avklaringspunkter
 
-* Modellering med historikk-egenskaper i fellesegenskaper (gyldig_fra, gyldig_til) ?
-* Hvor skal lisensinformasjon inkluderes inn i dokumentene?
+* Modellering med historikk-egenskaper i fellesegenskaper. Forslag om innføring av sluttdato ok?
+* Hvor skal lisensinformasjon inkluderes inn i dokumentene. Til slutt ok? Kode for å få den til å ikke inngå i innholdsfortegnelse?
 * Standardisere navn på geometriegenskaper til posisjon, grense/senterlinje og område?
 * Standardisere verdi på geometriegenskaper til GM_point, GM_Curve og GM_Surface (i stedet for punkt, kurve, flate)?
+* Justert eksport av adoc ok?
 * Justeringer i eksport av SOSI-realisering?
 * Beskrive JSON-realisering, i så fall hvordan?

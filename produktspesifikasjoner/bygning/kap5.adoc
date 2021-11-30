@@ -1,5 +1,5 @@
 === Pakke «ApplicationSchema» FKB-Bygning-5.0-Utkast
-*Definisjon:* Datamodell for produktspesfikasjonen FKB-Bygning. FKB-Bygning inneholder detaljert bygningsinformasjon. Datamodellen omfatter beskrivelse av alle typer bygninger, takoverbygg, beskrivende bygningslinjer (for eksempel m&#248;nelinje) samt bygningsvedheng (for eksempel veranda).
+*Definisjon:* Datamodell for produktspesfikasjonen FKB-Bygning. FKB-Bygning inneholder detaljert bygningsinformasjon. Datamodellen omfatter beskrivelse av alle typer bygninger, takoverbygg, beskrivende bygningslinjer (for eksempel mønelinje) samt bygningsvedheng (for eksempel veranda).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -48,32 +48,40 @@
  
 |===
  
+'''
+ 
 .Pakkerealisering 
-image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, window=_blank, alt="Diagramm: Pakkerealisering"]
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, Alt="Diagram med navn Pakkerealisering som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Oversiktsdiagram FKB-Bygning 
-image::diagrammer/Oversiktsdiagram FKB-Bygning.png[link=diagrammer/Oversiktsdiagram FKB-Bygning.png, window=_blank, alt="Diagramm: Oversiktsdiagram FKB-Bygning"]
+image::diagrammer/Oversiktsdiagram FKB-Bygning.png[link=diagrammer/Oversiktsdiagram FKB-Bygning.png, Alt="Diagram med navn Oversiktsdiagram FKB-Bygning som viser UML-klasser beskrevet i teksten nedenfor."]
 <<<
 '''
 === Pakke: Generelle elementer
 *Definisjon:* Inneholder elementer fra FKB Generell del 5.0
  
+'''
+ 
 .Oversiktsdiagram Fellesegenskaper 
-image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, window=_blank, alt="Diagramm: Oversiktsdiagram Fellesegenskaper"]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, Alt="Diagram med navn Oversiktsdiagram Fellesegenskaper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra SOSI generell del 
-image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, window=_blank, alt="Diagramm: Realisering fra SOSI generell del"]
+image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, Alt="Diagram med navn Realisering fra SOSI generell del som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Posisjonskvalitet 
-image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, window=_blank, alt="Diagramm: Hoveddiagram Posisjonskvalitet"]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, Alt="Diagram med navn Hoveddiagram Posisjonskvalitet som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[fellesegenskaper]]
 ==== «FeatureType» Fellesegenskaper (abstrakt)
-*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -82,12 +90,7 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |*identifikasjon*
  
 |Definisjon: 
-|unik identifikasjon av et objekt 
-
-Merknad FKB:
-Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
+|unik identifikasjon av et objekt     Merknad FKB:  Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.  Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.  For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -104,19 +107,7 @@ SOSI_navn: IDENT +
 |*oppdateringsdato*
  
 |Definisjon: 
-|tidspunkt for siste endring p&#229; objektet 
-
-Merknad FKB: 
-
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
-
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
-
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
+|tidspunkt for siste endring på objektet     Merknad FKB:     Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:    i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).    ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.    iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.    iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -134,7 +125,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
+|dato når objektet siste gang ble registrert/observert/målt i terrenget  
  
 |Multiplisitet: 
 |[1..1]
@@ -152,10 +143,7 @@ SOSI_navn: DATAFANGSTDATO +
 |*verifiseringsdato*
  
 |Definisjon: 
-|dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.
-
-Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)
+|dato når dataene er fastslått å være i samsvar med virkeligheten.    Merknad FKB:  Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -193,10 +181,7 @@ SOSI_navn: REGISTRERINGSVERSJON +
 |*informasjon*
  
 |Definisjon: 
-|generell opplysning.
-
-Merknad FKB:
-Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
+|generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -221,15 +206,15 @@ SOSI_navn: INFORMASJON +
 <<kvalitetopsjonell,«FeatureType» KvalitetOpsjonell>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
-«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper +
- 
+|Realisering av: 
+|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper +
 |===
  
 '''
  
 [[kvalitetpåkrevd]]
 ==== «FeatureType» KvalitetPåkrevd (abstrakt)
-*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+*Definisjon:* abstrakt objekttype med påkrevet kvalitetsangivelse  
  
 ===== Egenskaper
 [cols="20,80"]
@@ -238,9 +223,7 @@ SOSI_navn: INFORMASJON +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
-
-Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+|beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Multiplisitet: 
 |[1..1]
@@ -264,15 +247,15 @@ SOSI_navn: KVALITET +
 <<bygningsvedheng,«featureType» Bygningsvedheng>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
-«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd +
- 
+|Realisering av: 
+|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd +
 |===
  
 '''
  
 [[kvalitetopsjonell]]
 ==== «FeatureType» KvalitetOpsjonell (abstrakt)
-*Definisjon:* abstrakt objekttype med valgfri kvalitetsangivelse
+*Definisjon:* abstrakt objekttype med valgfri kvalitetsangivelse  
  
 ===== Egenskaper
 [cols="20,80"]
@@ -281,9 +264,7 @@ SOSI_navn: KVALITET +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
-
-Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+|beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Multiplisitet: 
 |[0..1]
@@ -311,11 +292,7 @@ SOSI_navn: KVALITET +
  
 [[identifikasjon]]
 ==== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
-
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
-
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -331,9 +308,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
 |*lokalId*
  
 |Definisjon: 
-|lokal identifikator av et objekt
-
-Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+|lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
  
 |Multiplisitet: 
 |[1..1]
@@ -352,11 +327,7 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
-
-Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
-
-Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
+|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
  
 |Multiplisitet: 
 |[1..1]
@@ -399,10 +370,7 @@ SOSI_navn: VERSJONID +
  
 [[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
-
-Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
+*Definisjon:* beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -418,8 +386,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 |*datafangstmetode*
  
 |Definisjon: 
-|metode for datafangst. 
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.
+|metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -439,14 +406,7 @@ SOSI_navn: DATAFANGSTMETODE +
 |*nøyaktighet*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
-
-Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+|standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:  Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
@@ -465,7 +425,7 @@ SOSI_navn: NØYAKTIGHET +
 |*synbarhet*
  
 |Definisjon: 
-|beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 |Multiplisitet: 
 |[0..1]
@@ -485,10 +445,7 @@ SOSI_navn: SYNBARHET +
 |*datafangstmetodeHøyde*
  
 |Definisjon: 
-|metoden brukt for h&#248;yderegistrering av posisjon.
-
-Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.
-
+|metoden brukt for høyderegistrering av posisjon.    Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.    
  
 |Multiplisitet: 
 |[0..1]
@@ -508,15 +465,7 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |*nøyaktighetHøyde*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
-
+|standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     Merknad:  Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.    
  
 |Multiplisitet: 
 |[0..1]
@@ -533,10 +482,10 @@ SOSI_navn: H-NØYAKTIGHET +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+|*ugyldige datafangstmetoder for høyde*
  
 |Beskrivelse: 
-|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
+|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'  --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
  
 |===
 ===== Arv og realiseringer
@@ -550,7 +499,7 @@ SOSI_navn: H-NØYAKTIGHET +
  
 [[synbarhet]]
 ==== «CodeList» Synbarhet
-*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+*Definisjon:* synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -571,16 +520,12 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
- 
  
 '''
  
 [[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-*Definisjon:* metode for datafangst. 
-
-Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
+*Definisjon:* metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -601,8 +546,6 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
- 
  
 '''
  
@@ -629,14 +572,12 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |REGISTRERINGSVERSJON
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
- 
  
 '''
  
 [[høydereferanse]]
 ==== «CodeList» Høydereferanse
-*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+*Definisjon:* koordinatregistering utført på topp eller bunn av et objekt
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -657,17 +598,12 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |HREF
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
- 
  
 '''
  
 [[medium]]
 ==== «CodeList» Medium
-*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
-
-Eksempel:
-Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten    Eksempel:  Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -688,24 +624,30 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
- 
 <<<
 '''
 === Pakke: Bygninger
 *Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningspunkt
  
+'''
+ 
 .Oversiktsdiagram Bygning 
-image::diagrammer/Oversiktsdiagram Bygning.png[link=diagrammer/Oversiktsdiagram Bygning.png, window=_blank, alt="Diagramm: Oversiktsdiagram Bygning"]
+image::diagrammer/Oversiktsdiagram Bygning.png[link=diagrammer/Oversiktsdiagram Bygning.png, Alt="Diagram med navn Oversiktsdiagram Bygning som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygg 4.5 - Bygningspunkt 
-image::diagrammer/Realisering fra Bygg 4.5 - Bygningspunkt.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningspunkt.png, window=_blank, alt="Diagramm: Realisering fra Bygg 4.5 - Bygningspunkt"]
+image::diagrammer/Realisering fra Bygg 4.5 - Bygningspunkt.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningspunkt.png, Alt="Diagram med navn Realisering fra Bygg 4.5 - Bygningspunkt som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bygning - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Bygning - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bygning - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Bygning - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram Bygning - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bygning - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Bygning - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bygning - flateavgrensning 
-image::diagrammer/Hoveddiagram Bygning - flateavgrensning.png[link=diagrammer/Hoveddiagram Bygning - flateavgrensning.png, window=_blank, alt="Diagramm: Hoveddiagram Bygning - flateavgrensning"]
+image::diagrammer/Hoveddiagram Bygning - flateavgrensning.png[link=diagrammer/Hoveddiagram Bygning - flateavgrensning.png, Alt="Diagram med navn Hoveddiagram Bygning - flateavgrensning som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -713,8 +655,10 @@ image::diagrammer/Hoveddiagram Bygning - flateavgrensning.png[link=diagrammer/Ho
 ==== «featureType» Bygning
 *Definisjon:* bygning som er registrert i matrikkelen
  
+ 
+'''
 .Illustrasjon av objekttype Bygning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygning.png[alt="Illustrasjon av objekttype: Bygning"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygning.png, Alt="Bilde av et eksempel på objekttypen Bygning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -736,7 +680,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |*posisjon*
  
 |Definisjon: 
-|sted som objektet eksisterer p&#229;. Punktet er en kopi av bygningspunktet i matrikkelen
+|sted som objektet eksisterer på. Punktet er en kopi av bygningspunktet i matrikkelen  
  
 |Multiplisitet: 
 |[1..1]
@@ -769,7 +713,7 @@ SOSI_navn: BYGGNR +
 |*bygningstype*
  
 |Definisjon: 
-|beskrivelse av hva bygningen faktisk er brukt til, eventuelt hva bygningen er godkjent til. 
+|beskrivelse av hva bygningen faktisk er brukt til, eventuelt hva bygningen er godkjent til.
  
 |Multiplisitet: 
 |[1..1]
@@ -829,7 +773,7 @@ SOSI_navn: KOMM +
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
+|objektets beliggenhet i forhold til jordoverflaten  
  
 |Multiplisitet: 
 |[1..1]
@@ -878,7 +822,7 @@ SOSI_navn: MEDIUM +
 |*avgrensesAvBygningsavgrensningTiltak*
  
 |Definisjon:
-|Krav til delt flategeometri. Avgrensning av bygning ved hjelp av geometriobjekter fra tiltaksbasen.
+|Krav til delt flategeometri. Avgrensning av bygning ved hjelp av geometriobjekter fra tiltaksbasen.  
  
 |Multiplisitet: 
 |[0..*]
@@ -932,19 +876,19 @@ SOSI_navn: MEDIUM +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Dersom det finns område-geometri skal posisjon-geometrien ligge innenfor område-geometrien*
+|*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+|*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -963,8 +907,10 @@ SOSI_navn: MEDIUM +
 ==== «featureType» AnnenBygning
 *Definisjon:* bygning som ikke er registrert  i matrikkelen
  
+ 
+'''
 .Illustrasjon av objekttype AnnenBygning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_annenbygning.png[alt="Illustrasjon av objekttype: AnnenBygning"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_annenbygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_annenbygning.png, Alt="Bilde av et eksempel på objekttypen AnnenBygning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1089,19 +1035,19 @@ SOSI_navn: MEDIUM +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
+|*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+|*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finns område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -1139,8 +1085,6 @@ SOSI_navn: MEDIUM +
 |BYGGSTAT
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningsstatus
- 
  
 '''
  
@@ -1167,8 +1111,6 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |BYGGTYP_NBR
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningstype
- 
  
 '''
  
@@ -1195,21 +1137,25 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |KOMM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/kommunenummer-alle
- 
 <<<
 '''
 === Pakke: Bygningsavgrensning
 *Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningsavgrensning
  
+'''
+ 
 .Oversiktsdiagram Bygningsavgrensning 
-image::diagrammer/Oversiktsdiagram Bygningsavgrensning.png[link=diagrammer/Oversiktsdiagram Bygningsavgrensning.png, window=_blank, alt="Diagramm: Oversiktsdiagram Bygningsavgrensning"]
+image::diagrammer/Oversiktsdiagram Bygningsavgrensning.png[link=diagrammer/Oversiktsdiagram Bygningsavgrensning.png, Alt="Diagram med navn Oversiktsdiagram Bygningsavgrensning som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygg 4.5 - Bygningsavgrensning 
-image::diagrammer/Realisering fra Bygg 4.5 - Bygningsavgrensning.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningsavgrensning.png, window=_blank, alt="Diagramm: Realisering fra Bygg 4.5 - Bygningsavgrensning"]
+image::diagrammer/Realisering fra Bygg 4.5 - Bygningsavgrensning.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningsavgrensning.png, Alt="Diagram med navn Realisering fra Bygg 4.5 - Bygningsavgrensning som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper 
-image::diagrammer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.png[link=diagrammer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.png, window=_blank, alt="Diagramm: Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper"]
+image::diagrammer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.png[link=diagrammer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.png, Alt="Diagram med navn Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1252,8 +1198,10 @@ image::diagrammer/Hoveddiagram Bygningsavgrensning - Objekttyper med egenskaper.
 ==== «featureType» BygningsavgrensningTiltak
 *Definisjon:* Bygningsavgrensning hentet fra FKB-Tiltak. Dataene er tatt fra plan og er ikke innmålt i terrenget.
  
+ 
+'''
 .Illustrasjon av objekttype BygningsavgrensningTiltak
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsavgrensningtiltak.png[alt="Illustrasjon av objekttype: BygningsavgrensningTiltak"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsavgrensningtiltak.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsavgrensningtiltak.png, Alt="Bilde av et eksempel på objekttypen BygningsavgrensningTiltak, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1321,11 +1269,12 @@ SOSI_navn: HREF +
  
 [[bygningsdelelinje]]
 ==== «featureType» Bygningsdelelinje
-*Definisjon:* linje mellom to bygninger (bygninger registrert i Matrikkelen) som står inntil hverandre
-Merknad: Det kan ofte være vanskelig å registrere bygningsdelelinjer nøyaktig. Usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50).
+*Definisjon:* linje mellom to bygninger (bygninger registrert i Matrikkelen) som står inntil hverandre  Merknad: Det kan ofte være vanskelig å registrere bygningsdelelinjer nøyaktig. Usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50).
  
+ 
+'''
 .Illustrasjon av objekttype Bygningsdelelinje
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsdelelinje.png[alt="Illustrasjon av objekttype: Bygningsdelelinje"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsdelelinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsdelelinje.png, Alt="Bilde av et eksempel på objekttypen Bygningsdelelinje, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1377,8 +1326,10 @@ SOSI_navn: TRE_D_NIVÅ +
 ==== «featureType» Fasadeliv
 *Definisjon:* bygningens ytre avgrensing i fasaderiss
  
+ 
+'''
 .Illustrasjon av objekttype Fasadeliv
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fasadeliv.png[alt="Illustrasjon av objekttype: Fasadeliv"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fasadeliv.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fasadeliv.png, Alt="Bilde av et eksempel på objekttypen Fasadeliv, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1426,10 +1377,7 @@ SOSI_navn: HREF +
 |*skalAvgrenseBygning*
  
 |Definisjon: 
-|angivelse av om fasadeliv skal benyttes til å danne bygningsflate. Defaultverdi er Nei, dvs. at fasadeliv kun benyttes til flateavgrensning dersom skalAvgrenseBygning = Ja.
-
-Merknad:
-Fasadeliv (hele eller deler av fasaden) vil i mange tilfeller eksistere i tillegg til Takkant. Egenskapen kan da benyttes til å angi at enten takriss eller fasadelivriss skal danne Bygningsavgrensning for bygningsflaten (normalt benyttes Takkant til riss hvis begge eksisterer).
+|angivelse av om fasadeliv skal benyttes til å danne bygningsflate. Defaultverdi er Nei, dvs. at fasadeliv kun benyttes til flateavgrensning dersom skalAvgrenseBygning = Ja.    Merknad:  Fasadeliv (hele eller deler av fasaden) vil i mange tilfeller eksistere i tillegg til Takkant. Egenskapen kan da benyttes til å angi at enten takriss eller fasadelivriss skal danne Bygningsavgrensning for bygningsflaten (normalt benyttes Takkant til riss hvis begge eksisterer).
  
 |Multiplisitet: 
 |[1..1]
@@ -1453,11 +1401,12 @@ SOSI_navn: SKAL_AVGR_BYGN +
  
 [[fiktivbygningsavgrensning]]
 ==== «featureType» FiktivBygningsavgrensning
-*Definisjon:* fiktiv avgrensing av bygning
-Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig å danne en flate.  Fiktiv bygningsavgrensing benyttes også for å lage flater for underjordiske bygninger og som fiktiv linje på takoverbygg der takoverbyggkant mangler.
+*Definisjon:* fiktiv avgrensing av bygning  Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig å danne en flate.  Fiktiv bygningsavgrensing benyttes også for å lage flater for underjordiske bygninger og som fiktiv linje på takoverbygg der takoverbyggkant mangler.
  
+ 
+'''
 .Illustrasjon av objekttype FiktivBygningsavgrensning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fiktivbygningsavgrensning.png[alt="Illustrasjon av objekttype: FiktivBygningsavgrensning"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fiktivbygningsavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fiktivbygningsavgrensning.png, Alt="Bilde av et eksempel på objekttypen FiktivBygningsavgrensning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1504,12 +1453,12 @@ defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/
  
 [[grunnmur]]
 ==== «featureType» Grunnmur
-*Definisjon:* bygningens ytteravgrensning langs grunnmur
-Merknad: Høydereferanse  angis med høydereferanse. Grunnrissreferanse er ytterkant av grunnmur.
-Merknad: Kan benyttes for bygning under oppføring eller for bygning som er revet/nedbrent
+*Definisjon:* bygningens ytteravgrensning langs grunnmur  Merknad: Høydereferanse  angis med høydereferanse. Grunnrissreferanse er ytterkant av grunnmur.  Merknad: Kan benyttes for bygning under oppføring eller for bygning som er revet/nedbrent
  
+ 
+'''
 .Illustrasjon av objekttype Grunnmur
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png[alt="Illustrasjon av objekttype: Grunnmur"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png, Alt="Bilde av et eksempel på objekttypen Grunnmur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1563,12 +1512,12 @@ SOSI_navn: HREF +
  
 [[takkant]]
 ==== «featureType» Takkant
-*Definisjon:* bygningens ytre takflateavgrensing
-Merknad: Høydereferansen er de målte punktene på taket. 
-Merknad: Dersom deler av takkanten ikke er synlig kodes den synlige delen som takkant- og den ikke synlige som fiktiv bygningsavgrensning.
+*Definisjon:* bygningens ytre takflateavgrensing  Merknad: Høydereferansen er de målte punktene på taket.   Merknad: Dersom deler av takkanten ikke er synlig kodes den synlige delen som takkant- og den ikke synlige som fiktiv bygningsavgrensning.
  
+ 
+'''
 .Illustrasjon av objekttype Takkant
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takkant.png[alt="Illustrasjon av objekttype: Takkant"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takkant.png, Alt="Bilde av et eksempel på objekttypen Takkant, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1641,17 +1590,25 @@ SOSI_navn: TAKSKJEGG +
 === Pakke: BeskrivendeBygningslinjer
 *Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, BeskrivendeBygningslinjer
  
+'''
+ 
 .Oversiktsdiagram BeskrivendeBygningslinjer 
-image::diagrammer/Oversiktsdiagram BeskrivendeBygningslinjer.png[link=diagrammer/Oversiktsdiagram BeskrivendeBygningslinjer.png, window=_blank, alt="Diagramm: Oversiktsdiagram BeskrivendeBygningslinjer"]
+image::diagrammer/Oversiktsdiagram BeskrivendeBygningslinjer.png[link=diagrammer/Oversiktsdiagram BeskrivendeBygningslinjer.png, Alt="Diagram med navn Oversiktsdiagram BeskrivendeBygningslinjer som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer 
-image::diagrammer/Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer.png[link=diagrammer/Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer.png, window=_blank, alt="Diagramm: Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer"]
+image::diagrammer/Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer.png[link=diagrammer/Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer.png, Alt="Diagram med navn Realisering fra Bygg 4.5 - BeskrivendeBygningslinjer som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram BeskrivendeBygningslinjer - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner 
-image::diagrammer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png[link=diagrammer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png, window=_blank, alt="Diagramm: Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner"]
+image::diagrammer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png[link=diagrammer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png, Alt="Diagram med navn Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -1708,8 +1665,10 @@ SOSI_navn: TRE_D_NIVÅ +
 ==== «featureType» Arkade
 *Definisjon:* avgrensing av en tunnel gjennom en bygning
  
+ 
+'''
 .Illustrasjon av objekttype Arkade
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_arkade.png[alt="Illustrasjon av objekttype: Arkade"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_arkade.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_arkade.png, Alt="Bilde av et eksempel på objekttypen Arkade, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1757,11 +1716,12 @@ SOSI_navn: HREF +
  
 [[bygningslinje]]
 ==== «featureType» Bygningslinje
-*Definisjon:* linje som beskriver bygningsdetalj innenfor en takflate  og som ikke kan beskrives av andre objekttyper
-Eksempel: Valming på tak
+*Definisjon:* linje som beskriver bygningsdetalj innenfor en takflate  og som ikke kan beskrives av andre objekttyper  Eksempel: Valming på tak  
  
+ 
+'''
 .Illustrasjon av objekttype Bygningslinje
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningslinje.png[alt="Illustrasjon av objekttype: Bygningslinje"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningslinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningslinje.png, Alt="Bilde av et eksempel på objekttypen Bygningslinje, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1791,8 +1751,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» Hjelpelinje3D
 *Definisjon:* linje for å kunne danne gode 3D modeller av bygninger
  
+ 
+'''
 .Illustrasjon av objekttype Hjelpelinje3D
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpelinje3d.png[alt="Illustrasjon av objekttype: Hjelpelinje3D"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpelinje3d.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpelinje3d.png, Alt="Bilde av et eksempel på objekttypen Hjelpelinje3D, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1822,8 +1784,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» Hjelpepunkt3D
 *Definisjon:* punkt for å kunne danne gode 3-D modeller av oppstikkende detaljer som for eksempel spir
  
+ 
+'''
 .Illustrasjon av objekttype Hjelpepunkt3D
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpepunkt3d.png[alt="Illustrasjon av objekttype: Hjelpepunkt3D"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpepunkt3d.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpepunkt3d.png, Alt="Bilde av et eksempel på objekttypen Hjelpepunkt3D, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1853,8 +1817,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» Mønelinje
 *Definisjon:* linje som beskriver den horisontale knekklinje på toppen av taket (høyeste topp)
  
+ 
+'''
 .Illustrasjon av objekttype Mønelinje
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_monelinje.png[alt="Illustrasjon av objekttype: Mønelinje"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_monelinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_monelinje.png, Alt="Bilde av et eksempel på objekttypen Mønelinje, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1884,8 +1850,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» Portrom
 *Definisjon:* avgrensing av en tunnel gjennom en bygning
  
+ 
+'''
 .Illustrasjon av objekttype Portrom
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_portrom.png[alt="Illustrasjon av objekttype: Portrom"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_portrom.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_portrom.png, Alt="Bilde av et eksempel på objekttypen Portrom, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1933,11 +1901,12 @@ SOSI_navn: HREF +
  
 [[takmur]]
 ==== «featureType» TakMur
-*Definisjon:* opphøyde kanter ved takkant
-Merknad: Eksempel på kanter der TakMur skal benyttes er gavlvegger og brannvegger som stikker opp over takflaten
+*Definisjon:* opphøyde kanter ved takkant  Merknad: Eksempel på kanter der TakMur skal benyttes er gavlvegger og brannvegger som stikker opp over takflaten
  
+ 
+'''
 .Illustrasjon av objekttype TakMur
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takmur.png[alt="Illustrasjon av objekttype: TakMur"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takmur.png, Alt="Bilde av et eksempel på objekttypen TakMur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1965,11 +1934,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[takplatå]]
 ==== «featureType» Takplatå
-*Definisjon:* innsøkk i form av laveste vannrette flate på hovedvolum på bygningskropp
-Eksempel: Arker som går inn i hovedtaket og "terrasse" inne i en bygård.
+*Definisjon:* innsøkk i form av laveste vannrette flate på hovedvolum på bygningskropp  Eksempel: Arker som går inn i hovedtaket og "terrasse" inne i en bygård.
  
+ 
+'''
 .Illustrasjon av objekttype Takplatå
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplata.png[alt="Illustrasjon av objekttype: Takplatå"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplata.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplata.png, Alt="Bilde av et eksempel på objekttypen Takplatå, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -1997,11 +1967,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[takplatåtopp]]
 ==== «featureType» TakplatåTopp
-*Definisjon:* takkant i indre rom i byg&#229;rder der det indre rommet ikke g&#229;r ned til terrengoverflaten
-MERKNAD: Objekttypen skal benyttes som en utfyllende linje for &#229; beskrive bygningsvolumet. Benyttes kun der Takplat&#229; er benyttet for &#229; beskrive tak inne i en bygning (for eksempel en byg&#229;rd).
+*Definisjon:* takkant i indre rom i bygårder der det indre rommet ikke går ned til terrengoverflaten  MERKNAD: Objekttypen skal benyttes som en utfyllende linje for å beskrive bygningsvolumet. Benyttes kun der Takplatå er benyttet for å beskrive tak inne i en bygning (for eksempel en bygård).
  
+ 
+'''
 .Illustrasjon av objekttype TakplatåTopp
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplatatopp.png[alt="Illustrasjon av objekttype: TakplatåTopp"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplatatopp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplatatopp.png, Alt="Bilde av et eksempel på objekttypen TakplatåTopp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2029,11 +2000,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[taksprang]]
 ==== «featureType» Taksprang
-*Definisjon:* topp av takkant inne på en bygningskropp
-Merknad: ikke ytterkant som registreres som takkant
+*Definisjon:* topp av takkant inne på en bygningskropp  Merknad: ikke ytterkant som registreres som takkant
  
+ 
+'''
 .Illustrasjon av objekttype Taksprang
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprang.png[alt="Illustrasjon av objekttype: Taksprang"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprang.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprang.png, Alt="Bilde av et eksempel på objekttypen Taksprang, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2061,11 +2033,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[taksprangbunn]]
 ==== «featureType» TaksprangBunn
-*Definisjon:* bunn av takkant inne på en bygningskropp 
-Merknad: Ikke ytterkant som er takkant
+*Definisjon:* bunn av takkant inne på en bygningskropp   Merknad: Ikke ytterkant som er takkant
  
+ 
+'''
 .Illustrasjon av objekttype TaksprangBunn
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprangbunn.png[alt="Illustrasjon av objekttype: TaksprangBunn"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprangbunn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprangbunn.png, Alt="Bilde av et eksempel på objekttypen TaksprangBunn, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2093,7 +2066,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[trednivå]]
 ==== «CodeList» TreDNivå
-*Definisjon:* hvilken 3D framstillingsmulighet (angitt i 6 niv&#229;er) bygningen kan framstilles i. Tilsvarer LOD i CityGML.
+*Definisjon:* hvilken 3D framstillingsmulighet (angitt i 6 nivåer) bygningen kan framstilles i. Tilsvarer LOD i CityGML.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2114,24 +2087,30 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |TRE_D_NIVÅ
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5
- 
 <<<
 '''
 === Pakke: Bygningsvedheng
 *Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningsvedheng
  
+'''
+ 
 .Oversiktsdiagram Bygningsvedheng 
-image::diagrammer/Oversiktsdiagram Bygningsvedheng.png[link=diagrammer/Oversiktsdiagram Bygningsvedheng.png, window=_blank, alt="Diagramm: Oversiktsdiagram Bygningsvedheng"]
+image::diagrammer/Oversiktsdiagram Bygningsvedheng.png[link=diagrammer/Oversiktsdiagram Bygningsvedheng.png, Alt="Diagram med navn Oversiktsdiagram Bygningsvedheng som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygg 4.5 - Bygningsvedheng 
-image::diagrammer/Realisering fra Bygg 4.5 - Bygningsvedheng.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningsvedheng.png, window=_blank, alt="Diagramm: Realisering fra Bygg 4.5 - Bygningsvedheng"]
+image::diagrammer/Realisering fra Bygg 4.5 - Bygningsvedheng.png[link=diagrammer/Realisering fra Bygg 4.5 - Bygningsvedheng.png, Alt="Diagram med navn Realisering fra Bygg 4.5 - Bygningsvedheng som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bygningsvedheng - objekttyper 
-image::diagrammer/Hoveddiagram Bygningsvedheng - objekttyper.png[link=diagrammer/Hoveddiagram Bygningsvedheng - objekttyper.png, window=_blank, alt="Diagramm: Hoveddiagram Bygningsvedheng - objekttyper"]
+image::diagrammer/Hoveddiagram Bygningsvedheng - objekttyper.png[link=diagrammer/Hoveddiagram Bygningsvedheng - objekttyper.png, Alt="Diagram med navn Hoveddiagram Bygningsvedheng - objekttyper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bygningsvedheng - assosiasjoner 
-image::diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[link=diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png, window=_blank, alt="Diagramm: Hoveddiagram Bygningsvedheng - assosiasjoner"]
+image::diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[link=diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png, Alt="Diagram med navn Hoveddiagram Bygningsvedheng - assosiasjoner som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -2174,11 +2153,12 @@ image::diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[link=diagramm
  
 [[bygningbru]]
 ==== «featureType» BygningBru
-*Definisjon:* bru tilknyttet bygning som brukes som adkomst til bygninger, og bruer mellom bygninger
-Merknad:  Brukes på bygninger som ikke er driftsbygninger i landbruket. I det siste tilfellet brukes låvebru
+*Definisjon:* bru tilknyttet bygning som brukes som adkomst til bygninger, og bruer mellom bygninger  Merknad:  Brukes på bygninger som ikke er driftsbygninger i landbruket. I det siste tilfellet brukes låvebru
  
+ 
+'''
 .Illustrasjon av objekttype BygningBru
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningbru.png[alt="Illustrasjon av objekttype: BygningBru"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningbru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningbru.png, Alt="Bilde av et eksempel på objekttypen BygningBru, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -2191,11 +2171,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[låvebru]]
 ==== «featureType» Låvebru
-*Definisjon:* kjørerampe til et landbruksbygg
-Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som Annet vegareal/avkjørsel og Brukonstruksjon
+*Definisjon:* kjørerampe til et landbruksbygg  Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som Annet vegareal/avkjørsel og Brukonstruksjon  
  
+ 
+'''
 .Illustrasjon av objekttype Låvebru
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_lavebru.png[alt="Illustrasjon av objekttype: Låvebru"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_lavebru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_lavebru.png, Alt="Bilde av et eksempel på objekttypen Låvebru, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -2210,8 +2191,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» TrappBygg
 *Definisjon:* omfatter trapper som danner adkomsten til hus og trapp inntil hus
  
+ 
+'''
 .Illustrasjon av objekttype TrappBygg
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_trappbygg.png[alt="Illustrasjon av objekttype: TrappBygg"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_trappbygg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_trappbygg.png, Alt="Bilde av et eksempel på objekttypen TrappBygg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
@@ -2224,11 +2207,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[veranda]]
 ==== «featureType» Veranda
-*Definisjon:* bygningsvedheng som omfatter veranda,  terrasse, altan, balkong og lasterampe
-Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den ligger til eller - hvis den er tildelt eget bygningsnummer - en bygning.
+*Definisjon:* bygningsvedheng som omfatter veranda,  terrasse, altan, balkong og lasterampe  Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den ligger til eller - hvis den er tildelt eget bygningsnummer - en bygning.  
  
+ 
+'''
 .Illustrasjon av objekttype Veranda
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veranda.png[alt="Illustrasjon av objekttype: Veranda"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veranda.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veranda.png, Alt="Bilde av et eksempel på objekttypen Veranda, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2256,10 +2240,7 @@ SOSI_navn: HREF +
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
-
-Eksempel:
-På bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+|objektets beliggenhet i forhold til jordoverflaten    Eksempel:  På bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |Multiplisitet: 
 |[1..1]
@@ -2287,8 +2268,10 @@ SOSI_navn: MEDIUM +
 ==== «featureType» VeggFrittstående
 *Definisjon:* vegg oppsatt for skjerming
  
+ 
+'''
 .Illustrasjon av objekttype VeggFrittstående
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veggfrittstaende.png[alt="Illustrasjon av objekttype: VeggFrittstående"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veggfrittstaende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veggfrittstaende.png, Alt="Bilde av et eksempel på objekttypen VeggFrittstående, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2344,27 +2327,36 @@ SOSI_navn: MEDIUM +
 === Pakke: Takoverbygg
 *Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Takoverbygg
  
+'''
+ 
 .Oversiktsdiagram Takoverbygg 
-image::diagrammer/Oversiktsdiagram Takoverbygg.png[link=diagrammer/Oversiktsdiagram Takoverbygg.png, window=_blank, alt="Diagramm: Oversiktsdiagram Takoverbygg"]
+image::diagrammer/Oversiktsdiagram Takoverbygg.png[link=diagrammer/Oversiktsdiagram Takoverbygg.png, Alt="Diagram med navn Oversiktsdiagram Takoverbygg som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygg 4.5 - Takoverbygg 
-image::diagrammer/Realisering fra Bygg 4.5 - Takoverbygg.png[link=diagrammer/Realisering fra Bygg 4.5 - Takoverbygg.png, window=_blank, alt="Diagramm: Realisering fra Bygg 4.5 - Takoverbygg"]
+image::diagrammer/Realisering fra Bygg 4.5 - Takoverbygg.png[link=diagrammer/Realisering fra Bygg 4.5 - Takoverbygg.png, Alt="Diagram med navn Realisering fra Bygg 4.5 - Takoverbygg som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Takoverbygg - objekttyper 
-image::diagrammer/Hoveddiagram Takoverbygg - objekttyper.png[link=diagrammer/Hoveddiagram Takoverbygg - objekttyper.png, window=_blank, alt="Diagramm: Hoveddiagram Takoverbygg - objekttyper"]
+image::diagrammer/Hoveddiagram Takoverbygg - objekttyper.png[link=diagrammer/Hoveddiagram Takoverbygg - objekttyper.png, Alt="Diagram med navn Hoveddiagram Takoverbygg - objekttyper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Takoverbygg - flateavgrensning 
-image::diagrammer/Hoveddiagram Takoverbygg - flateavgrensning.png[link=diagrammer/Hoveddiagram Takoverbygg - flateavgrensning.png, window=_blank, alt="Diagramm: Hoveddiagram Takoverbygg - flateavgrensning"]
+image::diagrammer/Hoveddiagram Takoverbygg - flateavgrensning.png[link=diagrammer/Hoveddiagram Takoverbygg - flateavgrensning.png, Alt="Diagram med navn Hoveddiagram Takoverbygg - flateavgrensning som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[takoverbygg]]
 ==== «featureType» Takoverbygg
-*Definisjon:* byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen
-Eksempel:  'carport' eller tak over bensinpumper
+*Definisjon:* byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen  Eksempel:  'carport' eller tak over bensinpumper
  
+ 
+'''
 .Illustrasjon av objekttype Takoverbygg
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png[alt="Illustrasjon av objekttype: Takoverbygg"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png, Alt="Bilde av et eksempel på objekttypen Takoverbygg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -2427,19 +2419,19 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Dersom det finnes posisjon-geometri skal dette punktet ligge innenfor område-geometrien*
+|*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+|*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -2458,8 +2450,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 ==== «featureType» TakoverbyggKant
 *Definisjon:* avgrensing av takoverbygg
  
+ 
+'''
 .Illustrasjon av objekttype TakoverbyggKant
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbyggkant.png[alt="Illustrasjon av objekttype: TakoverbyggKant"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbyggkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbyggkant.png, Alt="Bilde av et eksempel på objekttypen TakoverbyggKant, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 ===== Egenskaper
 [cols="20,80"]
 |===
