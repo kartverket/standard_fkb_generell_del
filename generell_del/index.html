@@ -494,7 +494,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truedatafangstdato">6.5.1. Datafangstdato</a></li>
 <li><a href="#trueverifiseringsdato">6.5.2. Verifiseringsdato</a></li>
 <li><a href="#trueoppdateringsdato">6.5.3. Oppdateringsdato</a></li>
-<li><a href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data">6.5.4. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</a></li>
+<li><a href="#truesluttdato">6.5.4. Sluttdato</a></li>
+<li><a href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data">6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</a></li>
 </ul>
 </li>
 <li><a href="#truekodelister">6.6. Kodelister</a></li>
@@ -621,6 +622,9 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <div class="paragraph">
 <p>Det meste av etableringen av FKB-data skjer også gjennom Geovekst-samarbeidet og rettighetshavere vil da være Geovekst-partene. For enkelte områder vil FKB-data være etablert utenfor Geovekst og har andre eier- og rettighetsforhold.</p>
 </div>
+<div class="paragraph">
+<p>Se mer om Geovekst-samarbeidet på <a href="https://www.kartverket.no/geodataarbeid/geovekst">Kartverkets hjemmesider</a>.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="truekriterier-for-fkb"><a class="anchor" href="#truekriterier-for-fkb"></a>1.5. Kriterier for FKB</h3>
@@ -728,6 +732,9 @@ Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og se
 <li>
 <p>Egenskapene <em>kopidata</em> og <em>prosesshistorie</em> er ikke lenger definert som del av fellesegenskapene som skal brukes ved forvaltning av FKB.</p>
 </li>
+<li>
+<p>Egenskapen <em>sluttdato</em> er lagt til som en del av fellesegenskapene. Denne er en egenskap som i likehet med <em>oppdateringsdato</em> styres av forvaltningssytemet og den er lagt til for å kunne støtte utveksling av data fra historiske spørringer. Egenskapen skal normalt ikke inngå i en leveranse av levende FKB-data (sluttdato vil da ikke ha noen verdi).</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -786,8 +793,17 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 <div id="G" class="paragraph">
 <p><strong>[G]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/geodatakvalitet-1.0-standarder-geografisk-informasjon.pdf">Geodatakvalitet, versjon 1.0 2015</a></p>
 </div>
+<div id="GEO-VEIL" class="paragraph">
+<p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
+</div>
+<div id="ISO-METADATA" class="paragraph">
+<p><strong>[ISO-METADATA]</strong> : 19115-1:2015 Geographic information - Metadata (Part 1: Fundamentals og Part 2: Extensions for acquisition and processing)</p>
+</div>
 <div id="PABG" class="paragraph">
 <p><strong>[PABG]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/produksjon-av-basis-geodata-1.0-standarder-geografisk-informasjon.pdf">Produksjon av basis geodata, versjon 1.0 2015</a></p>
+</div>
+<div id="PBL-KART" class="paragraph">
+<p><strong>[PBL-KART]</strong> : <a href="https://www.regjeringen.no/no/dokumenter/veiledning-til-forskrift-om-kart-stedfestet-informasjon-arealformal-og-digitalt-planregister/">Veiledning til forskrift om kart, stedfestet informasjon, arealformål og digitalt planregister</a></p>
 </div>
 <div id="SOSI-UML" class="paragraph">
 <p><strong>[SOSI-UML]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/regler-for-uml-modellering-5.1-sosi-generell-del.pdf">SOSI Regler for UML-modellering, versjon 5.1 2020</a></p>
@@ -800,12 +816,6 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 </div>
 <div id="SOSI-GML" class="paragraph">
 <p><strong>[SOSI-GML]</strong> : <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-gml-format-5.0-sosi-generell-del.pdf">SOSI Realisering i GML-format, versjon 5.0 2018</a></p>
-</div>
-<div id="GEO-VEIL" class="paragraph">
-<p><strong>[GEO-VEIL]</strong> : <a href="https://www.kartverket.no/geodataarbeid/geovekst/veiledningsmateriell">Geovekst veiledingsdokumentasjon</a></p>
-</div>
-<div id="PBL-KART" class="paragraph">
-<p><strong>[PBL-KART]</strong> : <a href="https://www.regjeringen.no/no/dokumenter/veiledning-til-forskrift-om-kart-stedfestet-informasjon-arealformal-og-digitalt-planregister/">Veiledning til forskrift om kart, stedfestet informasjon, arealformål og digitalt planregister</a></p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -820,15 +830,14 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 <p>korrigering av innholdet i geodataene slik at de fremstiller de faktiske forhold på et gitt tidspunkt, etter de retningslinjer som gjelder for innhold og kvalitet <a href="#PABG">[PABG]</a></p>
 </div>
 <div class="paragraph">
-<p><em>MERKNAD</em>: Det er en selvfølge at ”konsekvensrettelser” også blir utført. For eksempel når det bygges et nytt hus, blir ofte gjerder, arealbruksgrenser og veger omkring huset forandret. Ajourføring innebærer at alle disse forandringene blir gjort i de aktuelle databaser.
-Oppgradering til nyere og bedre standard defineres som noe annet enn ajourføring, selv om det kan gjøres på samme tidspunkt som periodisk ajourføring.</p>
-</div>
-<div class="paragraph">
 <div class="title">applikasjonsskjema</div>
 <p>informasjonsmodellene i SOSI-modellregister er modellert som UML-modeller. UML-modellen for et FKB-datasett benevnes som et UML-applikasjonsskjema. Fra UML-applikasjonsskjema kan det automatisk genereres et GML-applikasjonsskjema som beskriver hvordan dataene representeres som GML <a href="#SOSI-UML">[SOSI-UML]</a>.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: Se objektkatalog</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Se <a href="http://sosi.geonorge.no/veiledere/UML">veileder for å lese UML-diagrammer</a></p>
 </div>
 <div class="paragraph">
 <div class="title">avledet datasett</div>
@@ -864,8 +873,11 @@ Egenskapsverdi er verdien til egenskapen for det aktuelle objektet, for eksempel
 <p>uttrykk for hvor godt egenskapsdataene beskriver de aktuelle egenskapene <a href="#G">[G]</a></p>
 </div>
 <div class="paragraph">
-<div class="title">FKB</div>
-<p>FKB er en forkortelse for Felles Kartdatabase. Se <a href="#FKB">[FKB]</a>.</p>
+<div class="title">featuretype</div>
+<p>UML-modellelement for å modellere geografiske objekttyper <a href="#SOSI-UML">[SOSI-UML]</a>.</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Begrepet brukes i mange sammenhenger synonymt med objekttype. Se også <a href="http://sosi.geonorge.no/veiledere/UML">veileder for å lese UML-diagrammer</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">Fotogrammetrisk FKB</div>
@@ -944,15 +956,15 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 <div class="paragraph">
 <div class="title">objekt</div>
-<p>forekomst (instans) av en objekttype <a href="#SOSI">[SOSI]</a></p>
+<p>forekomst (instans) av en objekttype <a href="#SOSI-UML">[SOSI-UML]</a></p>
 </div>
 <div class="paragraph">
 <div class="title">objektkatalog</div>
-<p>definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet. <a href="#SOSI">[SOSI]</a></p>
+<p>definisjon og beskrivelse av objekttyper, objektegenskaper samt relasjoner mellom objekter, sammen med eventuelle funksjoner som er anvendt for objektet. <a href="#SOSI-UML">[SOSI-UML]</a></p>
 </div>
 <div class="paragraph">
 <div class="title">objekttype</div>
-<p>geografisk objekttype er en klasse av objekter med felles egenskaper, forholdet mot andre objekttyper og funksjoner <a href="#SOSI">[SOSI]</a></p>
+<p>geografisk objekttype er en klasse av objekter med felles egenskaper, forholdet mot andre objekttyper og funksjoner <a href="#SOSI-UML">[SOSI-UML]</a></p>
 </div>
 <div class="paragraph">
 <p><em>EKSEMPEL</em>: Eksempler på objekttyper er Takkant, Arealbruksgrense og Mønelinje.</p>
@@ -994,7 +1006,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 <div class="paragraph">
 <div class="title">produktspesifikasjon</div>
-<p>detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart) <a href="#SOSI">[SOSI]</a></p>
+<p>detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart) <a href="#SOSI-KRAV">[SOSI-KRAV]</a></p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: En dataproduktspesifikasjon kan lages for produksjon, salg, sluttbrukervirksomhet eller annet.</p>
@@ -1017,13 +1029,16 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <p><strong>AR5</strong>: Arealressurskart i målestokk 1:5000</p>
 </div>
 <div id="DOK" class="paragraph">
-<p><strong>DOK</strong>: Det offentlige kartgrunnlaget. DOK er offentlige geografiske data som er tilrettelagt for kommunenes plan- og byggesaksarbeid.</p>
+<p><strong>DOK</strong>: Det offentlige kartgrunnlaget. DOK er offentlige geografiske data som er tilrettelagt for kommunenes plan- og byggesaksarbeid. DOK er definert i <a href="#PBL-KART">[PBL-KART]</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>DTM</strong>: Digital TerrengModell.</p>
 </div>
 <div class="paragraph">
-<p><strong>Georef</strong>: Metadataregister for Geovekst-data.</p>
+<p><strong>ESRI fgdb</strong>: Leveranseformatet ESRI filgeodatabase (ESRI = Enviromental Systems Research Institute)</p>
+</div>
+<div class="paragraph">
+<p><strong>Georef</strong>: Metadataregister for Geovekst-data. Tilgjengelig som et datasett på Geonorge.</p>
 </div>
 <div class="paragraph">
 <p><strong>Geovekst</strong>: Geodatasamarbeid mellom de nasjonale partene KS (kommunesektorens organisasjon, omfatter både kommuner og fylkeskommuner), Energi Norge, Kartverket, Telenor, Statens vegvesen, Landbruksdepartementet og Norges vassdrags- og energidirektorat. Lokalt kan Geovekst-samarbeidet også ha andre parter.</p>
@@ -1035,7 +1050,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <p><strong>NRL</strong>: Nasjonalt register for luftfartshindre</p>
 </div>
 <div class="paragraph">
-<p><strong>NVDB</strong>: Nasjonal vegdatabank med vegnett og tilhørende informasjon.</p>
+<p><strong>NVDB</strong>: Nasjonal vegdatabank. Forvaltningsløsning for vegnettet og tilhørende informasjon eid av Statens vegvesen.</p>
 </div>
 <div class="paragraph">
 <p><strong>OCL</strong>: Object Constraint Language. Språk som brukes til å formulere krav/restriksjoner til modellelementene i UML.</p>
@@ -1427,7 +1442,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Uavhengige primærdatasett er nyttig fordi de ulike datasettene vedlikeholdes av ulike instanser, til ulik tid og med ulike verktøy. Dette gir en effektiv dataforvaltning, men gir også muligheter for inkonsistens mellom datasettene. Det er derfor viktig at det kjøres konsistenskontroller mellom FKB-datasettene (og ev. andre datakilder).</p>
 </div>
 <div class="paragraph">
-<p><strong>Merknad:</strong> Prinsippet om avhengige datasett blir ikke etterlevd fullt ut. Mange objekter forvaltes av praktiske/tekniske/organisatoriske årsaker i fleres systemer. Dette er likevel et godt prinsipp for å få til effektiv dataforvaltning og som det bør være et mål å etterstrebe ved modellering og forvaltning av FKB-data.</p>
+<p><strong>Merknad:</strong> Prinsippet om uavhengige datasett blir ikke etterlevd fullt ut. Mange objekter forvaltes av praktiske/tekniske/organisatoriske årsaker i fleres systemer. Dette er likevel et godt prinsipp for å få til effektiv dataforvaltning og som det bør være et mål å etterstrebe ved modellering og forvaltning av FKB-data.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1530,7 +1545,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Koblingsnøkler til andre data gir mulighet til å koble FKB-data til andre typer data og gir brukeren vesentlig større nytteverdi. Å etablere av koblingsnøkler slik som omtalt over kan være arbeidskrevende.</p>
 </div>
 <div class="paragraph">
-<p>Det gir også muligheter for å utføre automatisk feilsjekking av FKB-dataene mot det eksterne dataene. Når dette blir gjort, oppdages en god del feil som må rettes. Ved å ta belastningen ved å rette opp feil vil data imidlertid gi vesentlig sikrere bruk i den daglige forvaltning. Koblingsnøkler som skal opprettes i FKB, er spesifisert under det enkelte datasett.</p>
+<p>Koblingsnøkler gir også muligheter for å utføre automatisk feilsjekking av FKB-dataene mot det eksterne dataene. Når dette blir gjort, oppdages en god del feil som må rettes. Ved å ta belastningen ved å rette opp feil vil data imidlertid gi vesentlig sikrere bruk i den daglige forvaltning. Koblingsnøkler som skal opprettes i FKB, er spesifisert under det enkelte datasett.</p>
 </div>
 <div class="paragraph">
 <p>Eksempel på godt etablerte koblinger fra FKB til andre systemer/databaser er:</p>
@@ -1625,7 +1640,13 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect3">
-<h4 id="truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"><a class="anchor" href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"></a>6.5.4. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</h4>
+<h4 id="truesluttdato"><a class="anchor" href="#truesluttdato"></a>6.5.4. Sluttdato</h4>
+<div class="paragraph">
+<p>Sluttdato er tidspunkt for når versjonen av objektet ble erstattet eller opphørte å eksistere. Egenskapen styres av forvaltningssystemet. Sluttdato sendes bare med ut fra forvaltningssystemet ved historiske spørringer. For levende data vil ikke sluttdato ha noen verdi og egenskapen skal da heller ikke sendes med.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"><a class="anchor" href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"></a>6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</h4>
 <div class="paragraph">
 <p>Ved fotogrammetrisk ajourføring blir noen objekter registrert på nytt, noen får endret databeskrivelse, noen slettes, mens andre forblir uforandret. For påføring av de ulike datoegenskapene gjelder følgende ved en fullstendig fotogrammetrisk ajourføring:</p>
 </div>
@@ -1686,7 +1707,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <div class="ulist">
 <ul>
 <li>
-<p>Status <em>Gyldig</em>: Brukes for gyldige koder i FKB. Kun kodeverdier med status <em>Gyldig</em> kan brukes ved oppdateringer inn i FKB</p>
+<p>Status <em>Gyldig</em>: Brukes for gyldige koder i FKB. Kun kodeverdier med status <em>Gyldig</em> skal brukes ved oppdateringer inn i FKB</p>
 </li>
 <li>
 <p>Status <em>Utgått</em> og <em>Erstattet</em>: Brukes for koder som ikke lenger skal benyttes ved oppdateringer i FKB. Det kan likevel være mulig at eldre FKB-data har disse kodene.</p>
@@ -1712,7 +1733,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <div class="title">Figur 8. De 2 hovedprosessene for ajourføring av FKB-data.</div>
 </div>
 <div class="paragraph">
-<p>For mer informasjon om ajourføring av FKB-data henvises det til veilederen til standarden Produksjon av basis geodata <a href="#PABG">[PABG]</a> og Geovekst veiledningsdokumentasjon <a href="#GEO-VEIL">[GEO-VEIL]</a>. Det henvises også til spesifikasjonen av datasettet FKB-Tiltak som omhandler godkjente tiltak etter PBL.</p>
+<p>For mer informasjon om ajourføring av FKB-data henvises det til veilederen til standarden Produksjon av basis geodata <a href="#PABG">[PABG]</a> og Geovekst veiledningsdokumentasjon <a href="#GEO-VEIL">[GEO-VEIL]</a>. Det henvises også til spesifikasjonen av datasettet FKB-Tiltak som handler om å fange opp objekter i kontinuerlig ajourhold gjennom saksbehandling.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1721,7 +1742,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Med oppgradering menes forbedring av den datatekniske kvaliteten av eksisterende data.</p>
 </div>
 <div class="paragraph">
-<p>Ved utgivelse av nye versjoner av Produktspesifikasjon for FKB må det vurderes i det enkelte tilfelle hvordan eldre FKB-data skal oppgraderes. Dette vil ofte være et økonomisk spørsmål. Data skal som minimum oppgraderes slik at de er kodet i henhold til gjeldende versjon av FKB. Eventuelle mangler i forhold til gjeldende versjon av FKB skal lagres som metadata.</p>
+<p>Ved utgivelse av nye versjoner av Produktspesifikasjon for FKB må det vurderes i det enkelte tilfelle om og hvordan eldre FKB-data skal oppgraderes. Dette vil ofte være et økonomisk spørsmål. Data skal som minimum oppgraderes slik at de er kodet i henhold til gjeldende versjon av FKB. Eventuelle mangler i forhold til gjeldende versjon av FKB skal lagres som metadata.</p>
 </div>
 <div class="paragraph">
 <p>Oppgradering av eldre FKB-data kan deles inn i tre hovedgrupper.</p>
@@ -1774,7 +1795,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <h2 id="truemodellering-av-fkb-produktspesifikasjoner"><a class="anchor" href="#truemodellering-av-fkb-produktspesifikasjoner"></a>7. Modellering av FKB-Produktspesifikasjoner</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>FKB 5.0 skal generelt modelleres i henhold til reglene i SOSI Regler for UML-modellering versjon 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. I tillegg er det gjort noen presiseringer/innsnevringer for FKB som er beskrevet i dette kapittelet. Applikasjonsskjema for FKB Generell del inneholder felles modelleringselementer (kodelister, datatyper og fellesegenskaper) som realiseres i de enkelte FKB-produktspesifikasjonene.</p>
+<p>FKB 5.0 skal generelt modelleres i henhold til reglene i SOSI Regler for UML-modellering versjon 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. I tillegg er det gjort noen presiseringer/innsnevringer for FKB som er beskrevet i dette kapittelet. FKB Generell del inneholder felles modelleringselementer (kodelister, datatyper og fellesegenskaper) som realiseres i de enkelte FKB-produktspesifikasjonene.</p>
 </div>
 <div class="sect2">
 <h3 id="truegeometrimodell-i-fkb"><a class="anchor" href="#truegeometrimodell-i-fkb"></a>7.1. Geometrimodell i FKB</h3>
@@ -1788,22 +1809,22 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">SOSI Geometritype</th>
 <th class="tableblock halign-left valign-top">ISO Geometritype</th>
+<th class="tableblock halign-left valign-top">SOSI Geometritype</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
 </tr>
 </tbody>
 </table>
@@ -1972,7 +1993,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <p><strong>SOSI-format</strong></p>
 </div>
 <div class="paragraph">
-<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater av "Type 2" kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater av "Type 1" i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet.</p>
+<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater av "Type 2" kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater av "Type 1" i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet. Dersom "Type 1"-flaten inneholder øyer/hull må det etableres egne <em>Flateavgrensning</em> SOSI-grupper også for disse som referes som hull etter vanlige regler for SOSI-formatet.</p>
 </div>
 <div class="paragraph">
 <p><strong>GML-format</strong></p>
@@ -3952,7 +3973,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-28 14:01:30 +0100
+Last updated 2021-12-01 14:50:35 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
