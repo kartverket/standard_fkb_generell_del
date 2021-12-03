@@ -1,5 +1,5 @@
-=== Pakke «ApplicationSchema» FKB-Tiltak-5.0-Utkast
-*Definisjon:* Datamodell for produktspesifikasjon FKB-Tiltak. FKB-Tiltak inneholder objekter (=omr&#229;der der det skjer utbygging) som er oms&#248;kt/godkjent gjennom saksbehandling i kommunen eller andre offentlige myndigheter.
+=== Pakke «ApplicationSchema» FKB-Tiltak-5.0
+*Definisjon:* Datamodell for produktspesifikasjon FKB-Tiltakt. FKB-Tiltak inneholder objekter (=områder der det skjer utbygging) som er omsøkt/godkjent gjennom saksbehandling i kommunen eller andre offentlige myndigheter.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -17,13 +17,13 @@
 |no
  
 |SOSI_kortnavn
-|FKB-Tiltak
+|FKBTiltak
  
 |SOSI_langnavn
-|FKB Tiltak
+|FKB-Tiltak
  
 |SOSI_modellstatus
-|utkast
+|gyldig
  
 |SOSI_spesifikasjonstype
 |produktspesifikasjon
@@ -32,7 +32,7 @@
 |5.0
  
 |targetNamespace
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.0/
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Tiltak/5.0
  
 |version
 |5.0
@@ -41,49 +41,53 @@
 |app
  
 |xsdDocument
-|FKB-Tiltak50.xsd
+|FKBTiltak.xsd
  
 |xsdEncodingRule
 |sosi
  
 |===
  
+'''
+ 
 .Oversiktsdiagram 
-image::diagrammer/Oversiktsdiagram.png[link=diagrammer/Oversiktsdiagram.png, window=_blank, alt="Diagramm: Oversiktsdiagram"]
+image::diagrammer/Oversiktsdiagram.png[link=diagrammer/Oversiktsdiagram.png, Alt="Diagram med navn Oversiktsdiagram som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Pakkerealisering 
-image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, window=_blank, alt="Diagramm: Pakkerealisering"]
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, Alt="Diagram med navn Pakkerealisering som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Plan 4.5 
-image::diagrammer/Realisering fra Plan 4.5.png[link=diagrammer/Realisering fra Plan 4.5.png, window=_blank, alt="Diagramm: Realisering fra Plan 4.5"]
+image::diagrammer/Realisering fra Plan 4.5.png[link=diagrammer/Realisering fra Plan 4.5.png, Alt="Diagram med navn Realisering fra Plan 4.5 som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[tiltakgenerell]]
 ==== «FeatureType» TiltakGenerell (abstrakt)
-*Definisjon:* abstrakt supertype som inneholder generelle egenskaper som gjelder alle typer tiltak.
-
-Tiltak registreres generelt s&#229; tidlig som mulig i tiltaksbasen, gjerne allerede fra mottak av s&#248;knad. 
-
-N&#229;r tiltaket er ferdig utbygd skal dette medf&#248;re oppdatering av grunnkartet (&#248;vrige FKB-datasett). Tiltak som er registrert i grunnkartet merkes med kartregistrering "Innm&#229;lt i kartet" (KARTREG 2) i FKB-Tiltak. 
+*Definisjon:* abstrakt supertype som inneholder generelle egenskaper som gjelder alle typer tiltak.    Tiltak registreres generelt så tidlig som mulig i tiltaksbasen, gjerne allerede fra mottak av søknad.     Når tiltaket er ferdig utbygd skal dette medføre oppdatering av grunnkartet (øvrige FKB-datasett). Tiltak som er registrert i grunnkartet merkes med kartregistrering "Innmålt i kartet" (KARTREG 2) i FKB-Tiltak.   
  
 ===== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*omrade*
+|*område*
  
 |Definisjon: 
-|Omr&#229;det som tiltaket befinner seg innenfor.
+|Området som tiltaket befinner seg innenfor.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Flate[Flate]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -97,7 +101,7 @@ N&#229;r tiltaket er ferdig utbygd skal dette medf&#248;re oppdatering av grunnk
 |[0..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -182,7 +186,7 @@ SOSI_navn: BEHANDLINGSDATO +
 |*eksternpeker*
  
 |Definisjon: 
-|Peker til tiltaksobjektet i et annet system. Dette kan f.eks. v&#230;re prosjekteringssystemer e.l. i forbindelse med st&#248;rre samferdselsutbygginger.
+|Peker til tiltaksobjektet i et annet system. Dette kan f.eks. være prosjekteringssystemer e.l. i forbindelse med større samferdselsutbygginger.
  
 |Multiplisitet: 
 |[0..1]
@@ -199,10 +203,10 @@ SOSI_navn: EKSTERNPEKER +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Dersom det finns posisjon-geometri skal den ligge innenfor område-geometrien*
+|*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -216,26 +220,14 @@ SOSI_navn: EKSTERNPEKER +
 <<samferdseltiltak,«featureType» SamferdselTiltak>> +
 <<bygningtiltak,«featureType» BygningTiltak>> +
 |Realisering av: 
-|«ApplicationSchema» Plan 4.5/EnkeltSaker::«featureType» PblTiltak +
+|«ApplicationSchema» Plan 4.5.2/EnkeltSaker::«featureType» PblTiltak +
 |===
  
 '''
  
 [[bygningtiltak]]
 ==== «featureType» BygningTiltak
-*Definisjon:* Tiltak som gjelder Bygning etter plan- og bygningsloven. Kommunene er ansvarlige for saksbehandling etter Pbl og f&#248;ring av BygningTiltak i tiltaksbasen.
-
-Bygningsnummer (og ev. bygningsendringsnummer) fra Matrikkelen registreres p&#229; tiltaket s&#229; fort bygningen er etablert i Matrikkelen. 
-
-Omr&#229;de-geometrien til tiltaket angir omr&#229;det i grunnriss som bygningen skal bygges innenfor. Dette vil normalt samsvare med byggets planlagte yttervegger. 
-
-Dersom man &#248;nsker &#229; gi informasjon om bygningens planlagte h&#248;yde kan dette gj&#248;res ved &#229;:
-
-1. Angi h&#248;ydeverdier p&#229; omr&#229;degeometrien og sette h&#248;ydereferanse topp. Geometrien m&#229; inneholde m&#248;neh&#248;yde (h&#248;yeste niv&#229; p&#229; bygget). 
-
-2. Angi en verdi for maks h&#248;yde over gjennomsnittlig terrengh&#248;yde 
-
-3. Registrere objekter av typen BygningKnekklinje som beskriver planlagt form p&#229; bygget i 2.5D i mer detalj. 
+*Definisjon:* Tiltak som gjelder Bygning etter plan- og bygningsloven. Kommunene er ansvarlige for saksbehandling etter Pbl og føring av BygningTiltak i tiltaksbasen.    Bygningsnummer (og ev. bygningsendringsnummer) fra Matrikkelen registreres på tiltaket så fort bygningen er etablert i Matrikkelen.     Område-geometrien til tiltaket angir området i grunnriss som bygningen skal bygges innenfor. Dette vil normalt samsvare med byggets planlagte yttervegger.     Dersom man ønsker å gi informasjon om bygningens planlagte høyde kan dette gjøres ved å:    1. Angi høydeverdier på områdegeometrien og sette høydereferanse topp. Geometrien må inneholde mønehøyde (høyeste nivå på bygget).     2. Angi en verdi for maks høyde over gjennomsnittlig terrenghøyde     3. Registrere objekter av typen BygningKnekklinje som beskriver planlagt form på bygget i 2.5D i mer detalj.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -244,8 +236,7 @@ Dersom man &#248;nsker &#229; gi informasjon om bygningens planlagte h&#248;yde 
 |*bygningsnummer*
  
 |Definisjon: 
-|nummerering av bygninger fra Matrikkelen. Nummeret er unikt og landsdekkende.
-Merknad: For tiltak som omhandler bygninger (tiltakstype nybygg, tilbygg, påbygg, underbygg og ombygging) skal bygningsnummer overføres til tiltaket så fort bygningsnummeret er etablert i Matrikkelen.
+|nummerering av bygninger fra Matrikkelen. Nummeret er unikt og landsdekkende.  Merknad: For tiltak som omhandler bygninger (tiltakstype nybygg, tilbygg, påbygg, underbygg og ombygging) skal bygningsnummer overføres til tiltaket så fort bygningsnummeret er etablert i Matrikkelen.
  
 |Multiplisitet: 
 |[0..1]
@@ -264,9 +255,7 @@ SOSI_navn: BYGGNR +
 |*bygningsendringløpenummer*
  
 |Definisjon: 
-|løpende nummerering av tilbygg til et hovedbygg.
-Merknad:
-For tiltak som omhandler bygningsendringer (tiltakstype tilbygg, påbygg, underbygg og ombygging) skal bygningsendringløpenummer overføres til tiltaket så fort løpenummeret er etablert i Matrikkelen.
+|løpende nummerering av tilbygg til et hovedbygg.  Merknad:  For tiltak som omhandler bygningsendringer (tiltakstype tilbygg, påbygg, underbygg og ombygging) skal bygningsendringløpenummer overføres til tiltaket så fort løpenummeret er etablert i Matrikkelen.
  
 |Multiplisitet: 
 |[0..1]
@@ -282,29 +271,10 @@ SOSI_navn: BYGN_ENDR_LØPENR +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*høydeoverbakken*
- 
-|Definisjon: 
-|St&#248;rste h&#248;yde p&#229; tiltaket over gjennomsnittlig terrengh&#248;yde angitt i meter
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: D + 
-SOSI_lengde: 10 + 
-SOSI_navn: HOB + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
 |*høydereferanse*
  
 |Definisjon: 
-|koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+|koordinatregistering utført på topp eller bunn av et objekt
  
 |Multiplisitet: 
 |[1..1]
@@ -317,6 +287,44 @@ defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/
 SOSI_datatype: T + 
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*lavestegulv*
+ 
+|Definisjon: 
+|høydeverdi for laveste gulvhøyde på tiltaket.    Merknad:  Objektets geometri angir høyeste høydeverdi (Høydereferanse = top). Denne egenskapen gir mulighet til å i tillegg angi tiltakets laveste høyde slik at kan angi hvilket høydeintervall tiltaket skal holde seg innenfor. Egenskapen brukes primært for tiltak under bakken.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: D + 
+SOSI_lengde: 10 + 
+SOSI_navn: LAVESTEGULV + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydeoverbakken*
+ 
+|Definisjon: 
+|Største høyde på tiltaket over gjennomsnittlig terrenghøyde angitt i meter
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: D + 
+SOSI_lengde: 10 + 
+SOSI_navn: HOB + 
 |===
 ===== Roller
 [cols="20,80"]
@@ -345,9 +353,7 @@ SOSI_navn: HREF +
  
 [[samferdseltiltak]]
 ==== «featureType» SamferdselTiltak
-*Definisjon:* Tiltak som gjelder utbygging av infrastruktur for samferdsel. 
-
-Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.
+*Definisjon:* Tiltak som gjelder utbygging av infrastruktur for samferdsel.     Tiltaksansvarlig har ansvar for å oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt å oppdatere grunnkartet med nye data når utbyggingen er ferdigstilt.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -356,7 +362,7 @@ Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om
 |*tiltaksansvarlig*
  
 |Definisjon: 
-|hvilket forvaltningsniv&#229;/etat som er ansvarlig for oppf&#248;lging av tiltaket 
+|hvilket forvaltningsnivå/etat som er ansvarlig for oppfølging av tiltaket
  
 |Multiplisitet: 
 |[1..1]
@@ -382,9 +388,7 @@ SOSI_navn: TILTAKSANSVARLIG +
  
 [[andretiltak]]
 ==== «featureType» AndreTiltak
-*Definisjon:* andre typer tiltak enn tiltak for bygninger og samferdselsutbygging.
-
-Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt &#229; oppdatere grunnkartet med nye data n&#229;r utbyggingen er ferdigstilt.
+*Definisjon:* andre typer tiltak enn tiltak for bygninger og samferdselsutbygging.    Tiltaksansvarlig har ansvar for å oppdatere tiltaksbasen med informasjon om saksbehandling og framdrift samt å oppdatere grunnkartet med nye data når utbyggingen er ferdigstilt.  
  
 ===== Egenskaper
 [cols="20,80"]
@@ -393,7 +397,7 @@ Tiltaksansvarlig har ansvar for &#229; oppdatere tiltaksbasen med informasjon om
 |*tiltaksansvarlig*
  
 |Definisjon: 
-|hvilket forvaltningsniv&#229;/etat som er ansvarlig for oppf&#248;lging av tiltaket 
+|hvilket forvaltningsnivå/etat som er ansvarlig for oppfølging av tiltaket   
  
 |Multiplisitet: 
 |[1..1]
@@ -439,7 +443,7 @@ SOSI_navn: TILTAKTYPEANDRE +
  
 [[bygningknekklinje]]
 ==== «featureType» BygningKnekklinje
-*Definisjon:* Geometri som beskriver takformen til bygningen i 2.5D. Som minimum b&#248;r toppen av byggets avgrensninger registreres og gjerne ogs&#229; knekklinjer som beskriver takformen inne p&#229; taket (m&#248;nelinjer, taksprang osv.)
+*Definisjon:* Geometri som beskriver takformen til bygningen i 2.5D. Som minimum bør toppen av byggets avgrensninger registreres og gjerne også knekklinjer som beskriver takformen inne på taket (mønelinjer, taksprang osv.)
  
 ===== Egenskaper
 [cols="20,80"]
@@ -454,7 +458,7 @@ SOSI_navn: TILTAKTYPEANDRE +
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -529,8 +533,6 @@ SOSI_navn: KNEKKLINJETYPE +
 |BEHANDLINGSSTATUS
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/behandlingsstatus
- 
  
 '''
  
@@ -557,14 +559,12 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |KARTREG
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/kartregistrering
- 
  
 '''
  
 [[tiltaksansvarlig]]
 ==== «CodeList» Tiltaksansvarlig
-*Definisjon:* hvilket forvaltningsniv&#229;/etat som er ansvarlig for oppf&#248;lging av tiltaket 
+*Definisjon:* hvilket forvaltningsnivå/etat som er ansvarlig for oppfølging av tiltaket
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -585,14 +585,12 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |TILTAKSANSVARLIG
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltaksansvarlig
- 
  
 '''
  
 [[andretiltaktype]]
 ==== «CodeList» AndretiltakType
-*Definisjon:* forskjellige typer tiltak som fanges kan fanges opp gjennom s&#248;knader og saksbehandling hos en offentlig myndighet 
+*Definisjon:* forskjellige typer tiltak som fanges kan fanges opp gjennom søknader og saksbehandling hos en offentlig myndighet
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -613,8 +611,6 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |TILTAKTYPEANDRE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/tiltakstypeandre
- 
  
 '''
  
@@ -641,32 +637,31 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |KNEKKLINJETYPE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/tiltak/5.0/knekklinjetype
- 
 <<<
 '''
 === Pakke: Generelle elementer
-*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
-
-Merknad:
-Kopieres direkte inn i de enkelte FKB-datasettene
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0    Merknad:  Kopieres direkte inn i de enkelte FKB-datasettene
+ 
+'''
  
 .Oversiktsdiagram Fellesegenskaper 
-image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, window=_blank, alt="Diagramm: Oversiktsdiagram Fellesegenskaper"]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, Alt="Diagram med navn Oversiktsdiagram Fellesegenskaper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra SOSI generell del 
-image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, window=_blank, alt="Diagramm: Realisering fra SOSI generell del"]
+image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, Alt="Diagram med navn Realisering fra SOSI generell del som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Posisjonskvalitet 
-image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, window=_blank, alt="Diagramm: Hoveddiagram Posisjonskvalitet"]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, Alt="Diagram med navn Hoveddiagram Posisjonskvalitet som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[fellesegenskaper]]
 ==== «FeatureType» Fellesegenskaper (abstrakt)
-*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -675,14 +670,7 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |*identifikasjon*
  
 |Definisjon: 
-|unik identifikasjon av et objekt 
-
-Merknad FKB:
-Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
+|unik identifikasjon av et objekt     Merknad FKB:  Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.    Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.    For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -699,19 +687,7 @@ SOSI_navn: IDENT +
 |*oppdateringsdato*
  
 |Definisjon: 
-|tidspunkt for siste endring p&#229; objektet 
-
-Merknad FKB: 
-
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
-
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
-
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-
-iv. Oppdateringsdato skal endres hvis en egenskap endres.
+|tidspunkt for siste endring på objektet     Merknad FKB:     Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:    i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).    ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.    iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.    iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -727,10 +703,28 @@ SOSI_navn: OPPDATERINGSDATO +
 [cols="20,80"]
 |===
 |*Navn:* 
+|*sluttdato*
+ 
+|Definisjon: 
+|>Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.>  >  >>Merknad FKB:>  Egenskapen settes av forvaltningssystemet>. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.  >
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: DATOTID + 
+SOSI_navn: SLUTTDATO + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
 |*datafangstdato*
  
 |Definisjon: 
-|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
+|dato når objektet siste gang ble registrert/observert/målt i terrenget
  
 |Multiplisitet: 
 |[0..1]
@@ -748,7 +742,7 @@ SOSI_navn: DATAFANGSTDATO +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten p&#229; stedfestingen.
+|beskrivelse av kvaliteten på stedfestingen.
  
 |Multiplisitet: 
 |[0..1]
@@ -765,10 +759,7 @@ SOSI_navn: KVALITET +
 |*informasjon*
  
 |Definisjon: 
-|generell opplysning.
-
-Merknad FKB:
-Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
+|generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -808,20 +799,16 @@ SOSI_navn: MEDIUM +
 |<<tiltakgenerell,«FeatureType» TiltakGenerell>> +
 <<bygningknekklinje,«featureType» BygningKnekklinje>> +
 |Realisering av: 
-|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper +
-«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
- 
+|/SOSI Model/SOSI Generell objektkatalog/FKB Generell del/FKB Generell del-5.0/Generelle elementer::«FeatureType» Fellesegenskaper +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
 '''
  
 [[identifikasjon]]
 ==== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
-
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
-
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -837,9 +824,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
 |*lokalId*
  
 |Definisjon: 
-|lokal identifikator av et objekt
-
-Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+|lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
  
 |Multiplisitet: 
 |[1..1]
@@ -858,11 +843,7 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
-
-Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
-
-Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
+|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
  
 |Multiplisitet: 
 |[1..1]
@@ -905,10 +886,7 @@ SOSI_navn: VERSJONID +
  
 [[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
-
-Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
+*Definisjon:* beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -924,8 +902,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 |*datafangstmetode*
  
 |Definisjon: 
-|metode for datafangst. 
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.
+|metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -946,15 +923,7 @@ SOSI_navn: DATAFANGSTMETODE +
 |*nøyaktighet*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
-
-Merknad:
-
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+|standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
@@ -973,7 +942,7 @@ SOSI_navn: NØYAKTIGHET +
 |*synbarhet*
  
 |Definisjon: 
-|beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 |Multiplisitet: 
 |[0..1]
@@ -993,10 +962,7 @@ SOSI_navn: SYNBARHET +
 |*datafangstmetodeHøyde*
  
 |Definisjon: 
-|metoden brukt for h&#248;yderegistrering av posisjon.
-
-Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.
-
+|metoden brukt for høyderegistrering av posisjon.    Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.    
  
 |Multiplisitet: 
 |[0..1]
@@ -1016,15 +982,7 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |*nøyaktighetHøyde*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm
-
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
-
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
-
-Merknad:
-
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+|standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.  
  
 |Multiplisitet: 
 |[0..1]
@@ -1041,10 +999,10 @@ SOSI_navn: H-NØYAKTIGHET +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+|*ugyldige datafangstmetoder for høyde*
  
 |Beskrivelse: 
-|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
+|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'  --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde  
  
 |===
 ===== Arv og realiseringer
@@ -1058,7 +1016,7 @@ SOSI_navn: H-NØYAKTIGHET +
  
 [[synbarhet]]
 ==== «CodeList» Synbarhet
-*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+*Definisjon:* synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1079,16 +1037,12 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
- 
  
 '''
  
 [[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-*Definisjon:* metode for datafangst. 
-
-Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
+*Definisjon:* metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1109,14 +1063,12 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
- 
  
 '''
  
 [[høydereferanse]]
 ==== «CodeList» Høydereferanse
-*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+*Definisjon:* koordinatregistering utført på topp eller bunn av et objekt
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1137,17 +1089,12 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |HREF
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
- 
  
 '''
  
 [[medium]]
 ==== «CodeList» Medium
-*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
-
-Eksempel:
-Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten    Eksempel:  Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1168,6 +1115,4 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
- 
 // End of UML-model
