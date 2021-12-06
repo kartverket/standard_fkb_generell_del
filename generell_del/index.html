@@ -1054,11 +1054,14 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <div class="paragraph">
 <p><strong>Geovekst</strong>: Geodatasamarbeid mellom de nasjonale partene KS (kommunesektorens organisasjon, omfatter både kommuner og fylkeskommuner), Energi Norge, Kartverket, Telenor, Statens vegvesen, Landbruksdepartementet og Norges vassdrags- og energidirektorat. Lokalt kan Geovekst-samarbeidet også ha andre parter.</p>
 </div>
-<div class="paragraph">
-<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
+<div id="GML" class="paragraph">
+<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon (<a href="http://www.opengeospatial.org/standards/gml">OpenGIS® Geograph Markup Language (GML) Encoding Standard</a>)</p>
+</div>
+<div id="JSON" class="paragraph">
+<p><strong>JSON</strong>: JavaScript Object Notation. Generelt tekstbasert utvekslingsformat som er mye brukt på nett og som også kan brukes for geografiske data. GeoJSON er en praktisk rettet spesifikasjon for å uttrykke geografiske data med vha. JSON.</p>
 </div>
 <div id="NGIS" class="paragraph">
-<p><strong>NGIS</strong>: <a href="https://www.kartverket.no/geodataarbeid/ngis">Nasjonalt Geografisk informasjonssystem</a>. En generell modellbasert forvaltningsplattform for felles forvaltning av geografiske data i en sentral base gjennom åpne API-er som blant annet brukes i Sentral FKB.</p>
+<p><strong>NGIS</strong>: <a href="https://www.kartverket.no/geodataarbeid/ngis">Nasjonalt Geografisk informasjonssystem</a>. En generell modellbasert forvaltningsplattform for felles forvaltning av geografiske data i en sentral base gjennom åpne API-er som blant annet brukes i Sentral FKB. <a href="https://github.com/kartverket/SFKB-API">NGIS-OpenAPI</a> er det nye grensesnittet for oppdatering av NGIS.</p>
 </div>
 <div class="paragraph">
 <p><strong>NRL</strong>: Nasjonalt register for luftfartshindre</p>
@@ -1080,6 +1083,9 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 <div id="UUID" class="paragraph">
 <p><strong>UUID</strong>: Universally unique identifier. 128-bit globalt unik streng av tegn som kan genereres automatisk av en datamaskin.</p>
+</div>
+<div id="WFS" class="paragraph">
+<p><strong>WFS</strong>: Web Feature Service. Standard fra OGC (Open Geospatial Consortium) for å sende geografiske data over nett. WFS-T (T = Transaction) er en utvidelse for å sende endringer/transaksjonsdata.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -3507,7 +3513,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <p>FKB 5.0 er laget spesielt med tanke på utveksling på GML-format <a href="#SOSI-GML">[SOSI-GML]</a> og SOSI-format <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a>. Alle FKB 5.0-data kan konverteres fram og tilbake mellom SOSI-format og GML-format uten at man mister informasjon.</p>
 </div>
 <div class="paragraph">
-<p>I tillegg er <em>ESRI fgdb</em> et populært format for filbasert distribusjon gjennom geonorge og <em>JSON</em> er et populært format ved jobbing mot Sentral FKB med NGIS-OpenAPI <a href="#NGIS">[NGIS]</a>. For <em>ESRI fgdb</em> og <em>JSON</em>-formatene finnes det ikke standarder som beskriver krav til utvekslingsformatet i detalj.</p>
+<p>I tillegg er <em>ESRI fgdb</em> et populært format for filbasert distribusjon gjennom geonorge og <em>JSON</em> <a href="#JSON">[JSON]</a> er et populært format ved jobbing mot Sentral FKB med NGIS-OpenAPI <a href="#NGIS">[NGIS]</a>. For <em>ESRI fgdb</em> og <em>JSON</em>-formatene finnes det ikke standarder som beskriver krav til utvekslingsformatet i detalj.</p>
 </div>
 <div class="sect2">
 <h3 id="trueleveranseformater-ved-distribusjon-fra-geonorge"><a class="anchor" href="#trueleveranseformater-ved-distribusjon-fra-geonorge"></a>A.1. Leveranseformater ved distribusjon fra Geonorge</h3>
@@ -3564,10 +3570,13 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="sect2">
 <h3 id="trueformater-i-ngis-openapi"><a class="anchor" href="#trueformater-i-ngis-openapi"></a>A.2. Formater i NGIS-OpenAPI</h3>
 <div class="paragraph">
-<p>I NGIS-OpenAPI benyttes GML-format og JSON-format. GML-formatet er gitt av GML-Schema for produktspesifikasjonene og pakkes inn i WFS-T transaksjoner. Dette er samme type dataformat som også brukes i Geosynkronisering-API.</p>
+<p>NGIS-OpenAPI er det nye og fleksible API-et for oppdatering av (blant annet) FKB-data <a href="#NGIS">[NGIS]</a>.</p>
 </div>
 <div class="paragraph">
-<p>JSON-formatet som benyttes i NGIS-OpenAPI er basert på GeoJSON med utvidelser. En bibliotek som kan tolke GeoJSON vil også kunne lese dataene som utveksles med NGIS-OpenAPI, men vil ikke uten videre kunne tolke innholdet i utvidelsene. Utvidelsene brukes til f.eks. å utveksle informasjon om assosiasjoner, flatereferanser ved delt geometri og <em>action</em> ved oppdateringer (insert/replace/erase).</p>
+<p>I NGIS-OpenAPI benyttes enten GML-format eller JSON-format for dataoverføring. GML-formatet er på samme måte som GML-filer ved distribusjon gitt av GML-Schema for produktspesifikasjonene og pakkes inn i WFS-T transaksjoner <a href="#WFS">[WFS]</a>. Dette er samme type dataformat som også brukes i Geosynkronisering-API.</p>
+</div>
+<div class="paragraph">
+<p>Alternativt kan JSON-format benyttes i NGIS-OpenAPI. Dette formatet er basert på <a href="https://datatracker.ietf.org/doc/html/rfc7946">GeoJSON RFC 7946, august 2016</a> med utvidelser. En programbibliotek som kan tolke GeoJSON vil også kunne lese dataene som utveksles med NGIS-OpenAPI, men vil ikke uten videre kunne tolke innholdet i utvidelsene. Utvidelsene brukes til f.eks. å utveksle informasjon om assosiasjoner, flatereferanser ved delt geometri og <em>action</em> ved oppdateringer (insert/replace/erase). Se <a href="https://github.com/kartverket/SFKB-API">dokumentasjon av NGIS-OpenAPI</a> for eksempler på filformat ved bruk av API-et.</p>
 </div>
 </div>
 </div>
@@ -3914,9 +3923,6 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Det finnes <a href="#Eksempler på utveksling av flater med heleid geometri">[Eksempler på utveksling av flater med heleid geometri]</a> og <a href="#Eksempler på utveksling av flater med delt geometri">[Eksempler på utveksling av flater med delt geometri]</a> som vedlegg til dette dokumentet som kan hjelpe til å gi en bedre forståelse av hva disse beskrivelsene betyr.</p>
-</div>
 <div class="listingblock">
 <div class="title">Eksempel på heleid flate på GML-format. Geometrien ligger "inline" i objektet.</div>
 <div class="content">
@@ -4085,7 +4091,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-06 13:06:04 +0100
+Last updated 2021-12-06 15:27:19 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
