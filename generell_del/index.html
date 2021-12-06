@@ -510,23 +510,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#truegeometrityper">7.1.1. Geometrityper</a></li>
 <li><a href="#trueflere-geometrier">7.1.2. Flere geometrier</a></li>
-<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a>
-<ul class="sectlevel4">
-<li><a href="#truerealisering-av-assosiasjoner-i-sosi-og-gml">Realisering av assosiasjoner i SOSI og GML</a></li>
-</ul>
-</li>
+<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a></li>
 <li><a href="#trueflategeometri">7.1.4. Flategeometri</a>
 <ul class="sectlevel4">
 <li><a href="#trueto-typer-flateobjekter">To typer flateobjekter</a></li>
 <li><a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></li>
-<li><a href="#truerealisering-av-assosiasjoner-i-sosi-og-gml-2">Realisering av assosiasjoner i SOSI og GML</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#trueuml-felleselementer-til-bruk-i-applicationschema-for-fkb-datasett">7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</a>
 <ul class="sectlevel3">
-<li><a href="#truepakke-generelle-elementer">7.2.1. Pakke: Generelle elementer</a>
+<li><a href="#truepakke-fkb-generell-del-5-0">7.2.1. Pakke: FKB Generell del-5.0</a>
 <ul class="sectlevel4">
 <li><a href="#fellesegenskaper">«FeatureType» Fellesegenskaper (abstrakt)</a></li>
 <li><a href="#kvalitetpåkrevd">«FeatureType» KvalitetPåkrevd (abstrakt)</a></li>
@@ -558,14 +553,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truekrav-til-stedfestingsnøyaktighet-inndeling-i-klasser">8.3. Krav til stedfestingsnøyaktighet - inndeling i klasser</a></li>
 </ul>
 </li>
-<li><a href="#trueeksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format">Vedlegg A: Eksempler på assosiasjoner og flategeometri på SOSI- og GML-format</a>
+<li><a href="#trueutvekslingsformater-for-fkb-data">Vedlegg A: Utvekslingsformater for FKB-data</a>
 <ul class="sectlevel2">
-<li><a href="#trueeksempler-på-utveksling-av-assosiasjoner">Eksempler på utveksling av assosiasjoner</a></li>
-<li><a href="#trueeksempler-på-utveksling-av-flater-med-heleid-geometri">Eksempler på utveksling av flater med heleid geometri</a></li>
-<li><a href="#trueeksempler-på-utveksling-av-flater-med-delt-geometri">Eksempler på utveksling av flater med delt geometri</a></li>
+<li><a href="#trueleveranseformater-ved-distribusjon-fra-geonorge">A.1. Leveranseformater ved distribusjon fra Geonorge</a></li>
+<li><a href="#trueformater-i-ngis-openapi">A.2. Formater i NGIS-OpenAPI</a></li>
 </ul>
 </li>
-<li><a href="#truelisensvilkår">Lisensvilkår</a></li>
+<li><a href="#trueromlige-referansesystem">Vedlegg B: Romlige referansesystem</a></li>
+<li><a href="#truedetaljbeskrivelser-og-eksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format">Vedlegg C: Detaljbeskrivelser og eksempler på assosiasjoner og flategeometri på SOSI- og GML-format</a>
+<ul class="sectlevel2">
+<li><a href="#trueutveksling-av-assosiasjoner">C.1. Utveksling av assosiasjoner</a>
+<ul class="sectlevel3">
+<li><a href="#truesosi-format">C.1.1. SOSI-format</a></li>
+<li><a href="#truegml-format">C.1.2. GML-format</a></li>
+</ul>
+</li>
+<li><a href="#trueutveksling-av-flater">C.2. Utveksling av flater</a>
+<ul class="sectlevel3">
+<li><a href="#truesosi-format-2">C.2.1. SOSI-format</a></li>
+<li><a href="#truegml-format-2">C.2.2. GML-format</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#truelisensvilkår">9. Lisensvilkår</a></li>
 </ul>
 </div>
 </div>
@@ -1046,6 +1057,9 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <div class="paragraph">
 <p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
 </div>
+<div id="NGIS" class="paragraph">
+<p><strong>NGIS</strong>: <a href="https://www.kartverket.no/geodataarbeid/ngis">Nasjonalt Geografisk informasjonssystem</a>. En generell modellbasert forvaltningsplattform for felles forvaltning av geografiske data i en sentral base gjennom åpne API-er som blant annet brukes i Sentral FKB.</p>
+</div>
 <div class="paragraph">
 <p><strong>NRL</strong>: Nasjonalt register for luftfartshindre</p>
 </div>
@@ -1412,7 +1426,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Øvrige FKB-datasett</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lik C-standarden. Forskjellen ligger i at det er færre objekter å kartlegge i D-områder. Der det finnes menneskeskapte objekter av et visst omfang er det vanligvis definert som et FKB-C område.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lik C-standarden. Forskjellen ligger i at det er færre objekter å kartlegge i D-områder. Områder der det finnes menneskeskapte objekter av et visst omfang er i all hovedsak definert som FKB-C områder.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1420,7 +1434,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <div class="sect3">
 <h4 id="truehøydegrunnlag"><a class="anchor" href="#truehøydegrunnlag"></a>6.2.5. Høydegrunnlag</h4>
 <div class="paragraph">
-<p>Prosjektet Nasjonal Detaljert Høydemodell (NDH) vil etter planen dekke hele landet med detaljerte høydedata innen 2022. Det meste av landet blir i NDH kartlagt med laserskanning, mens det i områder med lite vegetasjon (høyfjellsområder) benyttes bildematching fra flybilder med oppløsning 25 cm (omløpsfoto). Det meste av Norge er nå dekket, men gamle høydekurver kan fremdeles finnes i enkelte områder.</p>
+<p>Prosjektet Nasjonal Detaljert Høydemodell (NDH) vil etter planen dekke hele landet med detaljerte høydedata innen 2022. Det meste av landet blir i NDH kartlagt med laserskanning, mens det i områder med lite vegetasjon (høyfjellsområder) benyttes bildematching fra flybilder med oppløsning 25 cm (omløpsfoto). Det aller meste av Norge er nå dekket, men gamle høydekurver kan fremdeles finnes i enkelte områder.</p>
 </div>
 <div class="paragraph">
 <p>Datasettet FKB-Høydekurve er hovedsakelig avledet/generert fra disse mest nøyaktige terrengmodellene. Ved laserskanning gjennom NDH-prosjektet og Geovekst er leveranse av genererte høydekurver med 1m ekvidistanse basert på terrengmodellene standard. For områder der terrengmodellen er basert på bildematching genereres høydekurver med 5m ekvidistanse. Disse kurvene forvaltes i FKB-Høydekurve.</p>
@@ -1802,35 +1816,37 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="sect3">
 <h4 id="truegeometrityper"><a class="anchor" href="#truegeometrityper"></a>7.1.1. Geometrityper</h4>
 <table id="tab-geometrityper" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 4. Tabell over hvilke geometrityper som kan benyttes i FKB 5.0</caption>
+<caption class="title">Tabell 4. Tabell over hvilke geometrityper som kan benyttes i FKB 5.0 i UML-modellene og forskjellige formater</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">ISO Geometritype</th>
-<th class="tableblock halign-left valign-top">SOSI Geometritype</th>
+<th class="tableblock halign-left valign-top">UML (ISO 19107)</th>
+<th class="tableblock halign-left valign-top">SOSI Geometri</th>
+<th class="tableblock halign-left valign-top">GML Geometri</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gml:Point</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gml:Curve</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Flate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gml:Surface</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>SOSI geometrityper benyttes i UML-modellene og SOSI-format. ISO geometritypene styrer hvilke geometrityper som er lovlige å benytte i GML.</p>
-</div>
 <div class="paragraph">
 <p>FKB-data skal ha en enklest mulig geometri. Andre geometrityper enn de som er angitt i tabellen over (som f.eks. multipoint, multicurve, multisurface etc.) skal ikke benyttes i FKB 5.0.</p>
 </div>
@@ -1903,12 +1919,6 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 <div class="paragraph">
 <p>Hvilke avgrensningskurver som brukes til å avgrense et flateobjekt er en spesialvariant av assosiasjoner med egne krav. Dette er beskrevet nærmere under <a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></p>
-</div>
-<div class="sect4">
-<h5 id="truerealisering-av-assosiasjoner-i-sosi-og-gml"><a class="anchor" href="#truerealisering-av-assosiasjoner-i-sosi-og-gml"></a>Realisering av assosiasjoner i SOSI og GML</h5>
-<div class="paragraph">
-<p>SOSI del 1 Realisering av GML-format 5.0 og Realisering av GML-format 5.0 <a href="#SOSI">[SOSI]</a> gjelder ved utveksling av data med assosiasjoner på SOSI eller GML-format. Dette innebærer at i GML-formatet utveksles assosiasjoner med mekanismen <em>xlink:href</em> på objektet det pekes fra til GML_Id på objektet det pekes til. GML_Id skal i FKB utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila. I SOSI-formatet utveksles assosiasjoner med referanser til SOSI-gruppenummer (altså kun unikt innenfor SOSI-fila). Se <a href="#trueeksempler-på-utveksling-av-assosiasjoner">Eksempler på utveksling av assosiasjoner</a> som er lagt til som vedlegg til denne spesifikasjonen.</p>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -1987,53 +1997,6 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="truerealisering-av-assosiasjoner-i-sosi-og-gml-2"><a class="anchor" href="#truerealisering-av-assosiasjoner-i-sosi-og-gml-2"></a>Realisering av assosiasjoner i SOSI og GML</h5>
-<div class="paragraph">
-<p><strong>SOSI-format</strong></p>
-</div>
-<div class="paragraph">
-<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater av "Type 2" kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater av "Type 1" i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet. Dersom "Type 1"-flaten inneholder øyer/hull må det etableres egne <em>Flateavgrensning</em> SOSI-grupper også for disse som referes som hull etter vanlige regler for SOSI-formatet.</p>
-</div>
-<div class="paragraph">
-<p><strong>GML-format</strong></p>
-</div>
-<div class="paragraph">
-<p>En "Type 1" flate vil i GML være rett fram å utveksle som en GM_Surface med heleid geometri. Om man skal utveksle en flate av "Type 2" i GML vil man også sende med flate-objektets komplette egengeometri som GM_Surface. I tillegg er det definert regler for hvordan referansene til de assosierte avgrensningsobjektene skal utveksles:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Referanse fra flateobjekt til avgrensningsobjekt legges som en <em>xlink:href</em> på flateobjektet som peker på GML_Id for avgrensningsobjektet. Dette er i tråd med krav til - og erfaringer med - hvordan assosiasjoner utveksles på GML-formatet.</p>
-</li>
-<li>
-<p>GML_Id utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila.</p>
-</li>
-<li>
-<p>Informasjon om rekkefølge og retning på de assosierte avgrensningsobjektene legges inn ved bruk av taggen <em>xlink:title</em>. I tilfellene der dette er interessant forutsettes det at <em>xlink:title</em> formateres med 4 kolonner:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Kolonne 1: sekvensnummer til flate – 0 er første flate (høyere tall ved multisurface/multipolygon)</p>
-</li>
-<li>
-<p>Kolonne 2: sekvensnummer til ring – ytre begrensing = 0, første hull = 1, osv.</p>
-</li>
-<li>
-<p>Kolonne 3: sekvensnummer til kurve - 0 er første</p>
-</li>
-<li>
-<p>Kolonne 4: retning + eller – (om avgrensningsobjektet skal nøstes med eller mot koordinatretningen)</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Det finnes <a href="#trueeksempler-på-utveksling-av-flater-med-heleid-geometri">Eksempler på utveksling av flater med heleid geometri</a> og <a href="#trueeksempler-på-utveksling-av-flater-med-delt-geometri">Eksempler på utveksling av flater med delt geometri</a> som vedlegg til dette dokumentet som kan hjelpe til å gi en bedre forståelse av hva disse beskrivelsene betyr.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -2041,26 +2004,35 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="paragraph">
 <p>Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i FKB produktspesifikasjoner.</p>
 </div>
+<div style="page-break-after: always;"></div>
+<hr>
 <div class="sect3">
-<h4 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>7.2.1. Pakke: Generelle elementer</h4>
+<h4 id="truepakke-fkb-generell-del-5-0"><a class="anchor" href="#truepakke-fkb-generell-del-5-0"></a>7.2.1. Pakke: FKB Generell del-5.0</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Pakke med modelleringselementer som benyttes i applikasjonsskjema for forvaltning av FKB</p>
+<p><strong>Definisjon:</strong> Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i FKB produktspesifikasjoner.
+&lt;&lt;&lt;
+'''
+=== Pakke: Generelle elementer
+<strong>Definisjon:</strong> Pakke med modelleringselementer som benyttes i applikasjonsskjema for forvaltning av FKB</p>
 </div>
+<hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering fra SOSI generelle typer.png" target="_blank" rel="noopener"><img src="diagrammer/Realisering%20fra%20SOSI%20generelle%20typer.png" alt="Diagramm: Realisering fra SOSI generelle typer"></a>
+<a class="image" href="diagrammer/Realisering fra SOSI generelle typer.png"><img src="diagrammer/Realisering%20fra%20SOSI%20generelle%20typer.png" alt="Realisering fra SOSI generelle typer"></a>
 </div>
 <div class="title">Figur 11. Realisering fra SOSI generelle typer</div>
 </div>
+<hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Oversiktsdiagram Fellesegenskaper.png" target="_blank" rel="noopener"><img src="diagrammer/Oversiktsdiagram%20Fellesegenskaper.png" alt="Diagramm: Oversiktsdiagram Fellesegenskaper"></a>
+<a class="image" href="diagrammer/Oversiktsdiagram Fellesegenskaper.png"><img src="diagrammer/Oversiktsdiagram%20Fellesegenskaper.png" alt="Oversiktsdiagram Fellesegenskaper"></a>
 </div>
 <div class="title">Figur 12. Oversiktsdiagram Fellesegenskaper</div>
 </div>
+<hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Posisjonskvalitet.png" target="_blank" rel="noopener"><img src="diagrammer/Hoveddiagram%20Posisjonskvalitet.png" alt="Diagramm: Hoveddiagram Posisjonskvalitet"></a>
+<a class="image" href="diagrammer/Hoveddiagram Posisjonskvalitet.png"><img src="diagrammer/Hoveddiagram%20Posisjonskvalitet.png" alt="Hoveddiagram Posisjonskvalitet"></a>
 </div>
 <div class="title">Figur 13. Hoveddiagram Posisjonskvalitet</div>
 </div>
@@ -2068,10 +2040,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <div class="sect4">
 <h5 id="fellesegenskaper"><a class="anchor" href="#fellesegenskaper"></a>«FeatureType» Fellesegenskaper (abstrakt)</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
-</div>
-<div class="paragraph">
-<p>Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
+<p><strong>Definisjon:</strong> abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
 </div>
 <div class="sect5">
 <h6 id="trueegenskaper"><a class="anchor" href="#trueegenskaper"></a>Egenskaper</h6>
@@ -2087,11 +2056,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt</p>
-<p class="tableblock">Merknad FKB:</p>
-<p class="tableblock">Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.</p>
-<p class="tableblock">Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.</p>
-<p class="tableblock">For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt     Merknad FKB:    Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.    Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.    For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2119,15 +2084,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring p&#229; objektet</p>
-<p class="tableblock">Merknad FKB:
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
-i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
-av klienten).
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en
-”kopibase”.
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
-iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet     Merknad FKB:   Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:    i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).    ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en  ”kopibase”.    iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.    iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2141,6 +2098,35 @@ iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATOTID<br>
 SOSI_navn: OPPDATERINGSDATO<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sluttdato</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.&gt;  &gt;  &gt;&gt;Merknad FKB:&gt;  Egenskapen settes av forvaltningssystemet&gt;. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.  &gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/DateTime">DateTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATOTID<br>
+SOSI_navn: SLUTTDATO<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -2185,9 +2171,7 @@ SOSI_navn: DATAFANGSTDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.</p>
-<p class="tableblock">Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.    Merknad FKB:  Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2247,9 +2231,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.</p>
-<p class="tableblock">Merknad FKB:
-Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2277,8 +2259,11 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Fellesegenskaper<br>
-«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Fellesegenskaper<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -2304,8 +2289,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
-<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2362,8 +2346,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
-<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2404,13 +2387,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 <div class="sect4">
 <h5 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>«dataType» Identifikasjon</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.</p>
-</div>
-<div class="paragraph">
-<p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
+<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values"><a class="anchor" href="#trueprofilparametre-i-tagged-values"></a>Profilparametre i tagged values</h6>
@@ -2441,8 +2418,7 @@ Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p>
-<p class="tableblock">Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2472,9 +2448,7 @@ SOSI_navn: LOKALID<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI</p>
-<p class="tableblock">Eksempel: <a href="http://data.geonorge.no/SentraltStedsnavnsregister/1.0" class="bare">http://data.geonorge.no/SentraltStedsnavnsregister/1.0</a></p>
-<p class="tableblock">Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: <a href="http://data.geonorge.no/SentraltStedsnavnsregister/1.0" class="bare">http://data.geonorge.no/SentraltStedsnavnsregister/1.0</a>    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2543,11 +2517,7 @@ SOSI_navn: VERSJONID<br></p></td>
 <div class="sect4">
 <h5 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>«dataType» Posisjonskvalitet</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> beskrivelse av kvaliteten p&#229; stedfestingen.</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
+<p><strong>Definisjon:</strong> beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-2"><a class="anchor" href="#trueprofilparametre-i-tagged-values-2"></a>Profilparametre i tagged values</h6>
@@ -2578,8 +2548,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metode for datafangst.
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2610,11 +2579,7 @@ SOSI_navn: DATAFANGSTMETODE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm</p>
-<p class="tableblock">I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.</p>
-<p class="tableblock">For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata.</p>
-<p class="tableblock">Merknad:</p>
-<p class="tableblock">Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2644,7 +2609,7 @@ SOSI_navn: NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2675,8 +2640,7 @@ SOSI_navn: SYNBARHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for h&#248;yderegistrering av posisjon.</p>
-<p class="tableblock">Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for høyderegistrering av posisjon.    Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2707,11 +2671,7 @@ SOSI_navn: DATAFANGSTMETODEHØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm</p>
-<p class="tableblock">I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.</p>
-<p class="tableblock">For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata.</p>
-<p class="tableblock">Merknad:</p>
-<p class="tableblock">Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2740,11 +2700,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ugyldige datafangstmetoder for høyde</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'  --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</p></td>
 </tr>
 </tbody>
 </table>
@@ -2769,7 +2729,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect4">
 <h5 id="synbarhet"><a class="anchor" href="#synbarhet"></a>«CodeList» Synbarhet</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
+<p><strong>Definisjon:</strong> synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-3"><a class="anchor" href="#trueprofilparametre-i-tagged-values-3"></a>Profilparametre i tagged values</h6>
@@ -2801,19 +2761,13 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet</a></p>
-</div>
 <hr>
 </div>
 </div>
 <div class="sect4">
 <h5 id="datafangstmetode"><a class="anchor" href="#datafangstmetode"></a>«CodeList» Datafangstmetode</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> metode for datafangst.</p>
-</div>
-<div class="paragraph">
-<p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.</p>
+<p><strong>Definisjon:</strong> metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-4"><a class="anchor" href="#trueprofilparametre-i-tagged-values-4"></a>Profilparametre i tagged values</h6>
@@ -2845,9 +2799,6 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</a></p>
-</div>
 <hr>
 </div>
 </div>
@@ -2886,16 +2837,13 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon</a></p>
-</div>
 <hr>
 </div>
 </div>
 <div class="sect4">
 <h5 id="høydereferanse"><a class="anchor" href="#høydereferanse"></a>«CodeList» Høydereferanse</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt</p>
+<p><strong>Definisjon:</strong> koordinatregistering utført på topp eller bunn av et objekt</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-6"><a class="anchor" href="#trueprofilparametre-i-tagged-values-6"></a>Profilparametre i tagged values</h6>
@@ -2927,20 +2875,13 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</a></p>
-</div>
 <hr>
 </div>
 </div>
 <div class="sect4">
 <h5 id="medium"><a class="anchor" href="#medium"></a>«CodeList» Medium</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten</p>
-</div>
-<div class="paragraph">
-<p>Eksempel:
-Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
+<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten    Eksempel:  Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-7"><a class="anchor" href="#trueprofilparametre-i-tagged-values-7"></a>Profilparametre i tagged values</h6>
@@ -2972,9 +2913,6 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Koder fra ekstern kodeliste kan hentes fra register: <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium" class="bare">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</a></p>
-</div>
 <div style="page-break-after: always;"></div>
 <hr>
 </div>
@@ -2985,15 +2923,17 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Pakke med elementer som kan benyttes i applikasjonsskjema for distribusjon av FKB-data/FKB-produkter</p>
 </div>
+<hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram Mekanismer til bruk i distribusjon.png" target="_blank" rel="noopener"><img src="diagrammer/Hoveddiagram%20Mekanismer%20til%20bruk%20i%20distribusjon.png" alt="Diagramm: Hoveddiagram Mekanismer til bruk i distribusjon"></a>
+<a class="image" href="diagrammer/Hoveddiagram Mekanismer til bruk i distribusjon.png"><img src="diagrammer/Hoveddiagram%20Mekanismer%20til%20bruk%20i%20distribusjon.png" alt="Hoveddiagram Mekanismer til bruk i distribusjon"></a>
 </div>
 <div class="title">Figur 14. Hoveddiagram Mekanismer til bruk i distribusjon</div>
 </div>
+<hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Realisering av elementer fra SOSI Generell del.png" target="_blank" rel="noopener"><img src="diagrammer/Realisering%20av%20elementer%20fra%20SOSI%20Generell%20del.png" alt="Diagramm: Realisering av elementer fra SOSI Generell del"></a>
+<a class="image" href="diagrammer/Realisering av elementer fra SOSI Generell del.png"><img src="diagrammer/Realisering%20av%20elementer%20fra%20SOSI%20Generell%20del.png" alt="Realisering av elementer fra SOSI Generell del"></a>
 </div>
 <div class="title">Figur 15. Realisering av elementer fra SOSI Generell del</div>
 </div>
@@ -3017,8 +2957,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av at objektet er hentet fra et kopidatasett og ikke fra originaldatasettet</p>
-<p class="tableblock">Merknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originaldatasettet og hvem som er originaldataansvarlig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">angivelse av at objektet er hentet fra et kopidatasett og ikke fra originaldatasettet    Merknad: Inneholder informasjon om når kopidatasettet ble kopiert fra originaldatasettet og hvem som er originaldataansvarlig</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3128,11 +3067,7 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <div class="sect4">
 <h5 id="kopidata"><a class="anchor" href="#kopidata"></a>«dataType» Kopidata</h5>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> angivelse av at objektet er hentet fra en kopi av originaldata</p>
-</div>
-<div class="paragraph">
-<p>Merknad:
-Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.</p>
+<p><strong>Definisjon:</strong> angivelse av at objektet er hentet fra en kopi av originaldata    Merknad:   Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.</p>
 </div>
 <div class="sect5">
 <h6 id="trueprofilparametre-i-tagged-values-8"><a class="anchor" href="#trueprofilparametre-i-tagged-values-8"></a>Profilparametre i tagged values</h6>
@@ -3163,8 +3098,7 @@ Kan benyttes dersom man gjør et uttak av en database som ikke inneholder origin
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av område som dataene dekker</p>
-<p class="tableblock">Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon av område som dataene dekker    Merknad: Kan angis med kommunenummer eller fylkesnummer. Disse bør spesifiseres nærmere.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3224,11 +3158,7 @@ SOSI_navn: ORIGINALDATAVERT<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato når objektet ble kopiert fra originaldatasettet</p>
-<p class="tableblock">Merknad:
-Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.
-Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.
-Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når objektet ble kopiert fra originaldatasettet      Merknad:  Er en del av egenskapen Kopidata. Brukes i de tilfeller hvor en kopidatabase brukes til distribusjon.  Å kopiere et datasett til en kopidatabase skal ikke føre til at Oppdateringsdato blir endret.  Eventuell redigering av data i et kopidatasett medfører ny Oppdateringsdato, Datafangstdato og/eller Verifiseringsdato.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3280,7 +3210,7 @@ innenfor et område. For å ha full kontroll på kvaliteten på FKB-dataene i en
 se på kvalitetskodingen (metadata) på det enkelte objekt. Kravene til kvalitet på FKB settes ved datafangst.</p>
 </div>
 <div class="paragraph">
-<p>Fotogrammetri er fortsatt den dominerende datakilden og ved fotogrammetrisk datafangst settes det klare krav til kvaliteten. Ambisjonen er at FKB-dataene skal ha en så god og homogen kvalitet som mulig og det jobbes for å sette tilsvarende krav til dataene også ved andre typer datafangst.</p>
+<p>Fotogrammetri er fortsatt den dominerende datakilden. For de fleste FKB-datasett har over 99% av kartobjektene fotogrammetri som datafangsmetode. Ved fotogrammetrisk datafangst settes det klare krav til kvaliteten og det utføres kontroll. Ambisjonen er at FKB-dataene skal ha en så god og homogen kvalitet som mulig og det jobbes for å sette tilsvarende krav til dataene også ved andre typer datafangst.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3566,16 +3496,224 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="paragraph">
 <p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet vil vanligvis være maksimalt 1 % grove feil, men kan variere for ulike objekttyper og angis i den enkelte FKB produktspesifikasjon.</p>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueeksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format"><a class="anchor" href="#trueeksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format"></a>Vedlegg A: Eksempler på assosiasjoner og flategeometri på SOSI- og GML-format</h2>
+<h2 id="trueutvekslingsformater-for-fkb-data"><a class="anchor" href="#trueutvekslingsformater-for-fkb-data"></a>Vedlegg A: Utvekslingsformater for FKB-data</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="trueeksempler-på-utveksling-av-assosiasjoner"><a class="anchor" href="#trueeksempler-på-utveksling-av-assosiasjoner"></a>Eksempler på utveksling av assosiasjoner</h3>
 <div class="paragraph">
-<p>Viser fiktive eksempler på hvordan en assosiasjon fra et Maste-objekt til et Bardun-objekt kan utveksles på GML og SOSI-format.</p>
+<p>FKB 5.0 er laget spesielt med tanke på utveksling på GML-format <a href="#SOSI-GML">[SOSI-GML]</a> og SOSI-format <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a>. Alle FKB 5.0-data kan konverteres fram og tilbake mellom SOSI-format og GML-format uten at man mister informasjon.</p>
+</div>
+<div class="paragraph">
+<p>I tillegg er <em>ESRI fgdb</em> et populært format for filbasert distribusjon gjennom geonorge og <em>JSON</em> er et populært format ved jobbing mot Sentral FKB med NGIS-OpenAPI <a href="#NGIS">[NGIS]</a>. For <em>ESRI fgdb</em> og <em>JSON</em>-formatene finnes det ikke standarder som beskriver krav til utvekslingsformatet i detalj.</p>
+</div>
+<div class="sect2">
+<h3 id="trueleveranseformater-ved-distribusjon-fra-geonorge"><a class="anchor" href="#trueleveranseformater-ved-distribusjon-fra-geonorge"></a>A.1. Leveranseformater ved distribusjon fra Geonorge</h3>
+<table id="tab-leveranseformat" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 12. Liste over tilgjengelige filformater for nedlasting av FKB-data fra Geonorge.no</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Format</th>
+<th class="tableblock halign-left valign-top">Inndeling</th>
+<th class="tableblock halign-left valign-top">Koordinatsystem</th>
+<th class="tableblock halign-left valign-top">Tegnsett</th>
+<th class="tableblock halign-left valign-top">Språk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GML 3.2.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI-format 5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ESRI fgdb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kommunevise filer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33 + lokal sone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ESRI fgdb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Landsdekkende + fylkesvise filer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Euref89 UTM33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UTF-8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nor</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="trueformater-i-ngis-openapi"><a class="anchor" href="#trueformater-i-ngis-openapi"></a>A.2. Formater i NGIS-OpenAPI</h3>
+<div class="paragraph">
+<p>I NGIS-OpenAPI benyttes GML-format og JSON-format. GML-formatet er gitt av GML-Schema for produktspesifikasjonene og pakkes inn i WFS-T transaksjoner. Dette er samme type dataformat som også brukes i Geosynkronisering-API.</p>
+</div>
+<div class="paragraph">
+<p>JSON-formatet som benyttes i NGIS-OpenAPI er basert på GeoJSON med utvidelser. En bibliotek som kan tolke GeoJSON vil også kunne lese dataene som utveksles med NGIS-OpenAPI, men vil ikke uten videre kunne tolke innholdet i utvidelsene. Utvidelsene brukes til f.eks. å utveksle informasjon om assosiasjoner, flatereferanser ved delt geometri og <em>action</em> ved oppdateringer (insert/replace/erase).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueromlige-referansesystem"><a class="anchor" href="#trueromlige-referansesystem"></a>Vedlegg B: Romlige referansesystem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>FKB-data er detaljerte data med høy presisjon. Dette betyr at man må være bevisst på ev. feil som kan innføres ved transformasjon av dataene mellom forskjellige romlige referansesystemer. I forvaltningen av FKB-data gjøres vanligvis oppdateringen direkte i den aktuelle kommunens koordinatsystem slik at man unngår transformasjon av data. Kommuner i tidligere Finnmark fylke har EUREF89 UTM35 som lokal sone. Kommuner i Nordland og tidligere Troms har EUREF89 UTM33 som lokal sone, mens kommuner fra Trøndelag og sørover bruker EUREF89 UTM32 som lokal sone.</p>
+</div>
+<div class="paragraph">
+<p>Dersom det skal tillates oppdatering med transformasjon inn i FKB-dataene må det benyttes en transformasjon som gir presisjon bedre enn oppløsningen i FKB-dataene (i praksis bedre en 5 mm).</p>
+</div>
+<table id="tab-referansesystem" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 13. Liste over romlige referansesystem som benyttes i forvaltningen av FKB</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Referansesystem</th>
+<th class="tableblock halign-left valign-top">EPSG-kode (GML/JSON-format)</th>
+<th class="tableblock halign-left valign-top">SOSI-kode (SOSI-format)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM32 (2d)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25832</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum ikke angitt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM33 (2d)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25833</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum ikke angitt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM35 (2d)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25835</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum ikke angitt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM32 + NN2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5972</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum NN2000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM33 + NN2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5973</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum NN2000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EUREF89 UTM35 + NN2000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5975</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum NN2000</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ved distribusjon kan dataene transformeres til en rekke andre referansesystemer ved help av standard transformasjonsbiblioteker.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truedetaljbeskrivelser-og-eksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format"><a class="anchor" href="#truedetaljbeskrivelser-og-eksempler-på-assosiasjoner-og-flategeometri-på-sosi-og-gml-format"></a>Vedlegg C: Detaljbeskrivelser og eksempler på assosiasjoner og flategeometri på SOSI- og GML-format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Generelt gjelder SOSI del 1 Realisering av GML-format 5.0 <a href="#SOSI-GML">[SOSI-GML]</a> og Realisering av SOSI-format 5.0 <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a> ved utveksling av FKB-data.
+I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer i håndtering av <a href="#trueflategeometri">Flategeometri</a>. Dette vedlegget inneholder detaljer om hvordan dette skal utveksles på SOSI- og GML-format inkludert korte eksempler.</p>
+</div>
+<div class="sect2">
+<h3 id="trueutveksling-av-assosiasjoner"><a class="anchor" href="#trueutveksling-av-assosiasjoner"></a>C.1. Utveksling av assosiasjoner</h3>
+<div class="sect3">
+<h4 id="truesosi-format"><a class="anchor" href="#truesosi-format"></a>C.1.1. SOSI-format</h4>
+<div class="paragraph">
+<p>I SOSI-formatet utveksles assosiasjoner med referanser til SOSI-gruppenummer (altså kun unikt innenfor SOSI-fila).</p>
+</div>
+<div class="listingblock">
+<div class="title">Eksempel på assosiasjon på SOSI-format. Referanse fra Maste-objekt til SOSI-gruppenummer for Bardun-objekt ("..BARDUN :1").</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
+  ..OBJTYPE Bardun
+  ..IDENT
+  ...LOKALID "5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"
+  ...NAVNEROM "http://data.geonorge.no/SFKB/50/FKB-Ledning/so"
+  ...VERSJONID "2021-09-24 11:51:54.015000"
+  ..OPPDATERINGSDATO 20210929133801
+  ..DATAFANGSTDATO 20210924
+  ..VERIFISERINGSDATO 20210924
+  ..REGISTRERINGSVERSJON 2022-01-01
+  ..INFORMASJON "Dette er fiktive eksempeldata"
+  ..HREF TOP
+  ..MEDIUM T
+  ..KVALITET
+  ...DATAFANGSTMETODE fot
+  ...NØYAKTIGHET 120
+  ...SYNBARHET 0
+  ...DATAFANGSTMETODEHØYDE fot
+  ...H-NØYAKTIGHET 200
+  ..DRIFTSMERKING "ABCD1234"
+  ..EIERORGNR "234567891"
+  ..EKSTERNPEKER https://enangitturl/geografiskobjekt/5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
+  ..LEDNINGSNETTVERKSTYPE ekom
+  ..NØH
+  7034142346 567181215 43670
+  7034142346 567189494 65130
+  .PUNKT 2:
+  ..OBJTYPE Mast
+  ..IDENT
+  ...LOKALID "81ffc802-3e9f-492b-95b6-bb15b645a7e8"
+  ...NAVNEROM "http://data.geonorge.no/SFKB/50/FKB-Ledning/so"
+  ...VERSJONID "2021-09-24 11:51:54.015000"
+  ..OPPDATERINGSDATO 20210929133801
+  ..DATAFANGSTDATO 20210924
+  ..VERIFISERINGSDATO 20210924
+  ..REGISTRERINGSVERSJON 2022-01-01
+  ..INFORMASJON "Dette er fiktive eksempeldata"
+  ..HREF TOP
+  ..MEDIUM T
+  ..KVALITET
+  ...DATAFANGSTMETODE fot
+  ...NØYAKTIGHET 30
+  ...SYNBARHET 0
+  ...DATAFANGSTMETODEHØYDE fot
+  ...H-NØYAKTIGHET 110
+  ..DRIFTSMERKING "ABCD1234"
+  ..EIERORGNR "234567891"
+  ..EKSTERNPEKER https://enangitturl/geografiskobjekt/81ffc802-3e9f-492b-95b6-bb15b645a7e8
+  ..LEDNINGSNETTVERKSTYPE lavspentnett
+  ..ANTALL_LASERPUNKT 55
+  ..BELYSNING JA
+  ..MASTEKONSTRUKSJON enkelStolpe
+  ..LINJEBREDDE 0.23
+  ..VERTIKALAVSTAND 8.23
+  ..BARDUN :1
+  ..NØH
+  7034127981 567190174 126900</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truegml-format"><a class="anchor" href="#truegml-format"></a>C.1.2. GML-format</h4>
+<div class="paragraph">
+<p>I GML-formatet utveksles assosiasjoner med mekanismen <em>xlink:href</em> på objektet det pekes fra til GML-Id på objektet det pekes til. GML-Id skal i FKB utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila.</p>
 </div>
 <div class="listingblock">
 <div class="title">Eksempel på assosiasjon på GML-format. Referanse fra Maste-objekt til GML-id for Bardun-objekt ("&lt;app:bardun xlink:href="Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d" /&gt;")</div>
@@ -3666,76 +3804,121 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 &lt;/gml:featureMembers&gt;</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Eksempel på assosiasjon på SOSI-format. Referanse fra Maste-objekt til SOSI-gruppenummer for Bardun-objekt ("..BARDUN :1").</div>
-<div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
-  ..OBJTYPE Bardun
-  ..IDENT
-  ...LOKALID "5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"
-  ...NAVNEROM "http://data.geonorge.no/SFKB/50/FKB-Ledning/so"
-  ...VERSJONID "2021-09-24 11:51:54.015000"
-  ..OPPDATERINGSDATO 20210929133801
-  ..DATAFANGSTDATO 20210924
-  ..VERIFISERINGSDATO 20210924
-  ..REGISTRERINGSVERSJON 2022-01-01
-  ..INFORMASJON "Dette er fiktive eksempeldata"
-  ..HREF TOP
-  ..MEDIUM T
-  ..KVALITET
-  ...DATAFANGSTMETODE fot
-  ...NØYAKTIGHET 120
-  ...SYNBARHET 0
-  ...DATAFANGSTMETODEHØYDE fot
-  ...H-NØYAKTIGHET 200
-  ..DRIFTSMERKING "ABCD1234"
-  ..EIERORGNR "234567891"
-  ..EKSTERNPEKER https://enangitturl/geografiskobjekt/5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
-  ..LEDNINGSNETTVERKSTYPE ekom
-  ..NØH
-  7034142346 567181215 43670
-  7034142346 567189494 65130
-  .PUNKT 2:
-  ..OBJTYPE Mast
-  ..IDENT
-  ...LOKALID "81ffc802-3e9f-492b-95b6-bb15b645a7e8"
-  ...NAVNEROM "http://data.geonorge.no/SFKB/50/FKB-Ledning/so"
-  ...VERSJONID "2021-09-24 11:51:54.015000"
-  ..OPPDATERINGSDATO 20210929133801
-  ..DATAFANGSTDATO 20210924
-  ..VERIFISERINGSDATO 20210924
-  ..REGISTRERINGSVERSJON 2022-01-01
-  ..INFORMASJON "Dette er fiktive eksempeldata"
-  ..HREF TOP
-  ..MEDIUM T
-  ..KVALITET
-  ...DATAFANGSTMETODE fot
-  ...NØYAKTIGHET 30
-  ...SYNBARHET 0
-  ...DATAFANGSTMETODEHØYDE fot
-  ...H-NØYAKTIGHET 110
-  ..DRIFTSMERKING "ABCD1234"
-  ..EIERORGNR "234567891"
-  ..EKSTERNPEKER https://enangitturl/geografiskobjekt/81ffc802-3e9f-492b-95b6-bb15b645a7e8
-  ..LEDNINGSNETTVERKSTYPE lavspentnett
-  ..ANTALL_LASERPUNKT 55
-  ..BELYSNING JA
-  ..MASTEKONSTRUKSJON enkelStolpe
-  ..LINJEBREDDE 0.23
-  ..VERTIKALAVSTAND 8.23
-  ..BARDUN :1
-  ..NØH
-  7034127981 567190174 126900</code></pre>
-</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueeksempler-på-utveksling-av-flater-med-heleid-geometri"><a class="anchor" href="#trueeksempler-på-utveksling-av-flater-med-heleid-geometri"></a>Eksempler på utveksling av flater med heleid geometri</h3>
+<h3 id="trueutveksling-av-flater"><a class="anchor" href="#trueutveksling-av-flater"></a>C.2. Utveksling av flater</h3>
+<div class="sect3">
+<h4 id="truesosi-format-2"><a class="anchor" href="#truesosi-format-2"></a>C.2.1. SOSI-format</h4>
 <div class="paragraph">
-<p>Viser fiktive eksempler på hvordan Anleggsområde med heleid flategeometri kan utveksles på GML og SOSI-format.</p>
+<p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater med delt geometri ("Type 2") kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater med heleid geometri ("Type 1") i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet. Dersom "Type 1"-flaten inneholder øyer/hull må det etableres egne <em>Flateavgrensning</em> SOSI-grupper også for disse som referes som hull etter vanlige regler for SOSI-formatet.</p>
 </div>
 <div class="listingblock">
-<div class="title">Eksempel på GML-format. Geometrien ligger "inline" i objektet.</div>
+<div class="title">Eksempel på heleid flate på SOSI-format. Avgrensningsgeometrien for flata ligger i et eget Flateavgrensning-objekt (uten identifikasjon) som refereres fra flate-objektet. Flateobjektet i eksempelet har representasjonspunkt.</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
+  ..OBJTYPE Flatevgrensning
+  ..NØH
+  6661981480 569544030 89200
+  6662009490 569606410 91200
+  6661998970 569625840 90800
+  6662001850 569629640 91000
+  6662054940 569635020 91500
+  6662067850 569576330 90500
+  6662054490 569566500 90500
+  6661981480 569544030 89200
+  .FLATE 2:
+  ..OBJTYPE Anleggsområde
+  ..IDENT
+  ...LOKALID 58c892c4-f615-4317-935f-038765687265
+  ...NAVNEROM "http://data.geonorge.no/SOSI/FKB-Arealbruk"
+  ..OPPDATERINGSDATO "2021-08-26T21:08:00Z"
+  ..DATAFANGSTDATO "2021-08-26"
+  ..KVALITET
+  ...DATAFANGSTMETODE "fot"
+  ...NØYAKTIGHET "42"
+  ...SYNBARHET "1"
+  ...DATAFANGSTMETODEHØYDE "fot"
+  ...H-NØYAKTIGHET "42"
+  ..REF :1
+  ..NØ
+  6662024665 568494636</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Eksempel på flate med delt geometri på SOSI-format. Flate-objektet inneholder kun representasjonspunkt og refereanse til avgrensningsobjektene ("..REF :2 :-3")</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .FLATE 1:
+  ..OBJTYPE Bygning
+  ..IDENT
+  ...LOKALID 5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
+  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
+  ..REF :2 :-3
+  ..NØH
+  56844403 666198148 8920
+  .KURVE 2:
+  ..OBJTYPE Bygningsavgrensning
+  ..IDENT
+  ...LOKALID 81ffc802-3e9f-492b-95b6-bb15b645a7e8
+  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
+  ..NØH
+  56852584 666199897 9080
+  56850641 666200949 9120
+  56844403 666198148 8920
+  .KURVE 3:
+  ..OBJTYPE Bygningsavgrensning
+  ..IDENT
+  ...LOKALID 32face7c-c0d8-4264-ac2d-1e47977cc976
+  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
+  ..NØH
+  56852584 666199897 9080
+  56852964 666200185 9100
+  56853502 666205494 9150
+  56847633 666206785 9050
+  56846650 666205449 9050
+  56844403 666198148 8920</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truegml-format-2"><a class="anchor" href="#truegml-format-2"></a>C.2.2. GML-format</h4>
+<div class="paragraph">
+<p>En "Type 1" flate vil i GML være rett fram å utveksle som en gml:Surface med heleid geometri. Om man skal utveksle en flate av "Type 2" i GML vil man også sende med flate-objektets komplette egengeometri som gml:Surface. I tillegg er det definert regler for hvordan referansene til de assosierte avgrensningsobjektene skal utveksles:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Referanse fra flateobjekt til avgrensningsobjekt legges som en <em>xlink:href</em> på flateobjektet som peker på GML-Id for avgrensningsobjektet. Dette er i tråd med krav til - og erfaringer med - hvordan assosiasjoner utveksles på GML-formatet.</p>
+</li>
+<li>
+<p>GML-Id utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila.</p>
+</li>
+<li>
+<p>Informasjon om rekkefølge og retning på de assosierte avgrensningsobjektene legges inn ved bruk av taggen <em>xlink:title</em>. I tilfellene der dette er interessant forutsettes det at <em>xlink:title</em> formateres med 4 kolonner:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kolonne 1: sekvensnummer til flate – 0 er første flate (høyere tall ved multisurface/multipolygon)</p>
+</li>
+<li>
+<p>Kolonne 2: sekvensnummer til ring – ytre begrensing = 0, første hull = 1, osv.</p>
+</li>
+<li>
+<p>Kolonne 3: sekvensnummer til kurve - 0 er første</p>
+</li>
+<li>
+<p>Kolonne 4: retning + eller – (om avgrensningsobjektet skal nøstes med eller mot koordinatretningen)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Det finnes <a href="#Eksempler på utveksling av flater med heleid geometri">[Eksempler på utveksling av flater med heleid geometri]</a> og <a href="#Eksempler på utveksling av flater med delt geometri">[Eksempler på utveksling av flater med delt geometri]</a> som vedlegg til dette dokumentet som kan hjelpe til å gi en bedre forståelse av hva disse beskrivelsene betyr.</p>
+</div>
+<div class="listingblock">
+<div class="title">Eksempel på heleid flate på GML-format. Geometrien ligger "inline" i objektet.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
   &lt;gml:featureMember&gt;
@@ -3772,45 +3955,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">Eksempel på SOSI-format. Avgrensningsgeometrien for flata ligger i et eget Flateavgrensning-objekt (uten identifikasjon) som refereres fra flate-objektet. Flateobjektet i eksempelet har representasjonspunkt.</div>
-<div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
-  ..OBJTYPE Flatevgrensning
-  ..NØH
-  6661981480 569544030 89200
-  6662009490 569606410 91200
-  6661998970 569625840 90800
-  6662001850 569629640 91000
-  6662054940 569635020 91500
-  6662067850 569576330 90500
-  6662054490 569566500 90500
-  6661981480 569544030 89200
-  .FLATE 2:
-  ..OBJTYPE Anleggsområde
-  ..IDENT
-  ...LOKALID 58c892c4-f615-4317-935f-038765687265
-  ...NAVNEROM "http://data.geonorge.no/SOSI/FKB-Arealbruk"
-  ..OPPDATERINGSDATO "2021-08-26T21:08:00Z"
-  ..DATAFANGSTDATO "2021-08-26"
-  ..KVALITET
-  ...DATAFANGSTMETODE "fot"
-  ...NØYAKTIGHET "42"
-  ...SYNBARHET "1"
-  ...DATAFANGSTMETODEHØYDE "fot"
-  ...H-NØYAKTIGHET "42"
-  ..REF :1
-  ..NØ
-  6662024665 568494636</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueeksempler-på-utveksling-av-flater-med-delt-geometri"><a class="anchor" href="#trueeksempler-på-utveksling-av-flater-med-delt-geometri"></a>Eksempler på utveksling av flater med delt geometri</h3>
-<div class="paragraph">
-<p>Viser fiktive eksempler på hvordan Bygning med delt flategeometri kan utveksles på GML og SOSI-format.</p>
-</div>
-<div class="listingblock">
-<div class="title">Eksempel på heleid geometri i på GML-format. Flate-geometrien ligger "inline" i objektet og i tillegg er ligger det inne referanser til egne avgrensningsobjekter som en assosiasjon med spesielle regler ("&lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"/&gt;"). Det er krav om samsvar mellom geometrien til flata og de refererte avgrensningsobjektene.</div>
+<div class="title">Eksempel på flate med delt geometri i på GML-format. Flate-geometrien ligger "inline" i objektet og i tillegg er ligger det inne referanser til egne avgrensningsobjekter som en assosiasjon med spesielle regler ("&lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"/&gt;"). Det er krav om samsvar mellom geometrien til flata og de refererte avgrensningsobjektene.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
    &lt;gml:featureMember&gt;
@@ -3875,45 +4020,12 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 &lt;/gml:featureMembers&gt;</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Eksempel på heleid geometri på SOSI-format. Flate-objektet inneholder kun representasjonspunkt og refereanse til avgrensningsobjektene ("..REF :2 :-3")</div>
-<div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .FLATE 1:
-  ..OBJTYPE Bygning
-  ..IDENT
-  ...LOKALID 5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
-  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
-  ..REF :2 :-3
-  ..NØH
-  56844403 666198148 8920
-  .KURVE 2:
-  ..OBJTYPE Bygningsavgrensning
-  ..IDENT
-  ...LOKALID 81ffc802-3e9f-492b-95b6-bb15b645a7e8
-  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
-  ..NØH
-  56852584 666199897 9080
-  56850641 666200949 9120
-  56844403 666198148 8920
-  .KURVE 3:
-  ..OBJTYPE Bygningsavgrensning
-  ..IDENT
-  ...LOKALID 32face7c-c0d8-4264-ac2d-1e47977cc976
-  ...NAVNEROM "http://data.geonorge.no/SFKB/FKB-Bygning/so"
-  ..NØH
-  56852584 666199897 9080
-  56852964 666200185 9100
-  56853502 666205494 9150
-  56847633 666206785 9050
-  56846650 666205449 9050
-  56844403 666198148 8920</code></pre>
-</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truelisensvilkår"><a class="anchor" href="#truelisensvilkår"></a>Lisensvilkår</h2>
+<h2 id="truelisensvilkår"><a class="anchor" href="#truelisensvilkår"></a>9. Lisensvilkår</h2>
 <div class="sectionbody">
 <h3 id="truelisens" class="discrete">Lisens</h3>
 <div class="paragraph">
@@ -3973,7 +4085,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-01 14:50:35 +0100
+Last updated 2021-12-06 13:06:04 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
