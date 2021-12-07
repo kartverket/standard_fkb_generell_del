@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<title>SOSI standardisert produktspesfikasjon: FKB-Vann 5.0</title>
+<title>SOSI-standardisert produktspesfikasjon: FKB-Vann 5.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -438,7 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>SOSI standardisert produktspesfikasjon: FKB-Vann 5.0</h1>
+<h1>SOSI-standardisert produktspesfikasjon: FKB-Vann 5.0</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
@@ -627,22 +627,39 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#trueleveranse">11. Leveranse</a>
 <ul class="sectlevel2">
-<li><a href="#trueleveransemetode-gml">11.1. Leveransemetode GML</a>
+<li><a href="#trueleveransemetode-gml-distribusjon">11.1. Leveransemetode GML distribusjon</a>
 <ul class="sectlevel3">
 <li><a href="#trueomfang-11">11.1.1. Omfang</a></li>
 <li><a href="#trueleveranseformat">11.1.2. Leveranseformat</a></li>
 <li><a href="#trueleveransemedium">11.1.3. Leveransemedium</a></li>
 </ul>
 </li>
-<li><a href="#trueleveransemetode-sosi-format">11.2. Leveransemetode SOSI-format</a>
+<li><a href="#trueleveransemetode-sosi-format-distribusjon">11.2. Leveransemetode SOSI-format distribusjon</a>
 <ul class="sectlevel3">
 <li><a href="#trueomfang-12">11.2.1. Omfang</a></li>
 <li><a href="#trueleveranseformat-2">11.2.2. Leveranseformat</a></li>
 <li><a href="#trueleveransemedium-2">11.2.3. Leveransemedium</a></li>
-<li><a href="#trueleveranseformat-3">11.2.4. Leveranseformat</a></li>
-<li><a href="#trueomfang-13">11.2.5. Omfang</a></li>
-<li><a href="#trueleveranseformat-4">11.2.6. Leveranseformat</a></li>
-<li><a href="#trueleveransemedium-3">11.2.7. Leveransemedium</a></li>
+</ul>
+</li>
+<li><a href="#trueleveransemetode-esri-fgdb-distribusjon">11.3. Leveransemetode ESRI fgdb distribusjon</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-13">11.3.1. Omfang</a></li>
+<li><a href="#trueleveranseformat-3">11.3.2. Leveranseformat</a></li>
+<li><a href="#trueleveransemedium-3">11.3.3. Leveransemedium</a></li>
+</ul>
+</li>
+<li><a href="#trueleveransemetode-gml-ngis-openapi">11.4. Leveransemetode GML NGIS-OpenAPI</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-14">11.4.1. Omfang</a></li>
+<li><a href="#trueleveranseformat-4">11.4.2. Leveranseformat</a></li>
+<li><a href="#trueleveransemedium-4">11.4.3. Leveransemedium</a></li>
+</ul>
+</li>
+<li><a href="#trueleveransemetode-json-ngis-openapi">11.5. Leveransemetode JSON NGIS-OpenAPI</a>
+<ul class="sectlevel3">
+<li><a href="#trueomfang-15">11.5.1. Omfang</a></li>
+<li><a href="#trueleveranseformat-5">11.5.2. Leveranseformat</a></li>
+<li><a href="#trueleveransemedium-5">11.5.3. Leveransemedium</a></li>
 </ul>
 </li>
 </ul>
@@ -650,7 +667,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truetilleggsinformasjon">12. Tilleggsinformasjon</a></li>
 <li><a href="#truemetadata">13. Metadata</a>
 <ul class="sectlevel2">
-<li><a href="#trueomfang-14">13.1. Omfang</a></li>
+<li><a href="#trueomfang-16">13.1. Omfang</a></li>
 <li><a href="#truemetadataspesifikasjon">13.2. Metadataspesifikasjon</a></li>
 </ul>
 </li>
@@ -704,9 +721,6 @@ Høringsversjon 1.oktober 2021
 <div class="sect2">
 <h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
 <div class="paragraph">
-<p>Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <a href="#SOSI-KRAV">[SOSI-KRAV]</a>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. Denne <a href="http://sosi.geonorge.no/veiledere/UML/">veilederen</a> gir hjelp til å lese UML-diagrammene.</p>
-</div>
-<div class="paragraph">
 <p>FKB-Vann er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del <a href="#FKB">[FKB]</a>.</p>
 </div>
 <div class="paragraph">
@@ -719,6 +733,9 @@ Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes 
 <div class="paragraph">
 <p>Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er nå samlet i egne fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Vann 5.0 finnes her:
 <a href="http://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-Vann/5.0/">Fotogrammetrisk registreringsinstruks FKB-Vann 5.0</a></p>
+</div>
+<div class="paragraph">
+<p>Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <a href="#SOSI-KRAV">[SOSI-KRAV]</a>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. <a href="http://sosi.geonorge.no/veiledere/UML">Denne veilederen</a> gir hjelp til å lese UML-diagrammene.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1047,8 +1064,14 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <div class="paragraph">
 <p><strong>Geovekst</strong>: Geodatasamarbeid mellom de nasjonale partene KS (kommunesektorens organisasjon, omfatter både kommuner og fylkeskommuner), Energi Norge, Kartverket, Telenor, Statens vegvesen, Landbruksdepartementet og Norges vassdrags- og energidirektorat. Lokalt kan Geovekst-samarbeidet også ha andre parter.</p>
 </div>
-<div class="paragraph">
-<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon</p>
+<div id="GML" class="paragraph">
+<p><strong>GML</strong>: Geography Markup Language – Internasjonalt standardformat for utveksling av geografisk informasjon (<a href="http://www.opengeospatial.org/standards/gml">OpenGIS® Geograph Markup Language (GML) Encoding Standard</a>)</p>
+</div>
+<div id="JSON" class="paragraph">
+<p><strong>JSON</strong>: JavaScript Object Notation. Generelt tekstbasert utvekslingsformat som er mye brukt på nett og som også kan brukes for geografiske data. GeoJSON er en praktisk rettet spesifikasjon for å uttrykke geografiske data med vha. JSON.</p>
+</div>
+<div id="NGIS" class="paragraph">
+<p><strong>NGIS</strong>: <a href="https://www.kartverket.no/geodataarbeid/ngis">Nasjonalt Geografisk informasjonssystem</a>. En generell modellbasert forvaltningsplattform for felles forvaltning av geografiske data i en sentral base gjennom åpne API-er som blant annet brukes i Sentral FKB. <a href="https://github.com/kartverket/SFKB-API">NGIS-OpenAPI</a> er det nye grensesnittet for oppdatering av NGIS.</p>
 </div>
 <div class="paragraph">
 <p><strong>NRL</strong>: Nasjonalt register for luftfartshindre</p>
@@ -1070,6 +1093,9 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 <div id="UUID" class="paragraph">
 <p><strong>UUID</strong>: Universally unique identifier. 128-bit globalt unik streng av tegn som kan genereres automatisk av en datamaskin.</p>
+</div>
+<div id="WFS" class="paragraph">
+<p><strong>WFS</strong>: Web Feature Service. Standard fra OGC (Open Geospatial Consortium) for å sende geografiske data over nett. WFS-T (T = Transaction) er en utvidelse for å sende endringer/transaksjonsdata.</p>
 </div>
 </div>
 </div>
@@ -1284,7 +1310,11 @@ Ikke angitt</p>
 <div class="sect2">
 <h3 id="truepakke-applicationschema-fkb-vann-5-0-utkast"><a class="anchor" href="#truepakke-applicationschema-fkb-vann-5-0-utkast"></a>5.2. Pakke «ApplicationSchema» FKB-Vann-5.0 Utkast</h3>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Spesifikasjonen beskriver geografisk beliggenhet, forløp og form for bekker, elver, kanaler, grøfter, innsjøer, isbreer og den topografiske delen av kyst og sjø.   Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Primærdata Kystkontur som en del av FKB-Vann.    FKB-Vann versjon 5.0 baserer seg på de generelle konseptene fra SOSI del 1 versjon 5 og SOSI del 3 Vann, Kyst og Sjø versjon 4.0.</p>
+<p><strong>Definisjon:</strong> Spesifikasjonen beskriver geografisk beliggenhet  forløp og form for bekker  elver  kanaler  grøfter  innsjøer  isbreer og den topografiske delen av kyst og sjø.
+Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Primærdata Kystkontur som en del av FKB-Vann.</p>
+</div>
+<div class="paragraph">
+<p>FKB-Vann versjon 5.0 baserer seg på de generelle konseptene fra SOSI del 1 versjon 5 og SOSI del 3 Vann  Kyst og Sjø versjon 4.0.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values"><a class="anchor" href="#trueprofilparametre-i-tagged-values"></a>Profilparametre i tagged values</h5>
@@ -1402,7 +1432,7 @@ Ikke angitt</p>
 <div class="sect3">
 <h4 id="kystkontur"><a class="anchor" href="#kystkontur"></a>5.2.2. «FeatureType» Kystkontur</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> grense mellom land og sjø, definert som midlere høyvannslinje.</p>
+<p><strong>Definisjon:</strong> grense mellom land og sjø  definert som midlere høyvannslinje.</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -1433,7 +1463,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1552,7 +1582,7 @@ SOSI_navn: MEDIUM<br></p></td>
 <div class="sect3">
 <h4 id="kystkonturtekniskeanlegg"><a class="anchor" href="#kystkonturtekniskeanlegg"></a>5.2.3. «FeatureType» KystkonturTekniskeAnlegg</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> angivelse av kystkontur der denne består av tekniske anlegg, definert som  midlere høyvann</p>
+<p><strong>Definisjon:</strong> angivelse av kystkontur der denne består av tekniske anlegg  definert som  midlere høyvann</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -1583,7 +1613,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
@@ -1767,7 +1797,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1826,7 +1856,7 @@ SOSI_navn: HØYDE<br></p></td>
 <div class="sect3">
 <h4 id="havflate"><a class="anchor" href="#havflate"></a>5.2.5. «FeatureType» Havflate</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> havområde som avgrenses av Kystkontur, VannFiktivGrense og KystkonturTekniskAnlegg</p>
+<p><strong>Definisjon:</strong> havområde som avgrenses av Kystkontur  VannFiktivGrense og KystkonturTekniskAnlegg</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -1857,7 +1887,7 @@ SOSI_navn: HØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#flate">Flate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Surface">GM_Surface</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1881,7 +1911,7 @@ SOSI_navn: HØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1978,7 +2008,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grense mellom land og sjø i henhold til angitt kystreferanse, normalt middel høyvannstand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">grense mellom land og sjø i henhold til angitt kystreferanse  normalt middel høyvannstand</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2005,7 +2035,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
 </tr>
 </tbody>
 </table>
@@ -2021,7 +2052,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
 </tr>
 </tbody>
 </table>
@@ -2081,7 +2113,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2171,7 +2203,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2195,7 +2227,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Flate">Flate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Surface">GM_Surface</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2325,7 +2357,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
 </tr>
 </tbody>
 </table>
@@ -2341,7 +2374,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
 </tr>
 </tbody>
 </table>
@@ -2370,7 +2404,7 @@ SOSI_navn: MEDIUM<br></p></td>
 <div class="sect3">
 <h4 id="kanalkant"><a class="anchor" href="#kanalkant"></a>5.2.8. «FeatureType» Kanalkant</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt står i kanalen</p>
+<p><strong>Definisjon:</strong> avgrensningslinje av kanal  dvs vannspeilet. Med vannspeil menes der vannet normalt står i kanalen</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -2401,7 +2435,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2491,7 +2525,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2515,7 +2549,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Flate">Flate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Surface">GM_Surface</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2594,7 +2628,7 @@ SOSI_navn: VANNBR<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">avgrensningslinje av kanal, dvs. der vannspeilet normalt står i kanalen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">avgrensningslinje av kanal  dvs. der vannspeilet normalt står i kanalen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -2645,7 +2679,8 @@ SOSI_navn: VANNBR<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
 </tr>
 </tbody>
 </table>
@@ -2661,7 +2696,8 @@ SOSI_navn: VANNBR<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
 </tr>
 </tbody>
 </table>
@@ -2690,7 +2726,11 @@ SOSI_navn: VANNBR<br></p></td>
 <div class="sect3">
 <h4 id="innsjøkant"><a class="anchor" href="#innsjøkant"></a>5.2.10. «FeatureType» Innsjøkant</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> konturlinje mellom land og innsjø    Merknad:  for innsjø som er oppdemt/regulert skal konturlinjen ligge i høydenivået for høyeste regulerte vannstand</p>
+<p><strong>Definisjon:</strong> konturlinje mellom land og innsjø</p>
+</div>
+<div class="paragraph">
+<p>Merknad:
+for innsjø som er oppdemt/regulert skal konturlinjen ligge i høydenivået for høyeste regulerte vannstand</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -2721,7 +2761,7 @@ SOSI_navn: VANNBR<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2841,7 +2881,7 @@ SOSI_navn: HØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#flate">Flate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Surface">GM_Surface</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2865,7 +2905,7 @@ SOSI_navn: HØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3054,7 +3094,8 @@ SOSI_navn: EKSTERNPEKER<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
 </tr>
 </tbody>
 </table>
@@ -3070,7 +3111,8 @@ SOSI_navn: EKSTERNPEKER<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
 </tr>
 </tbody>
 </table>
@@ -3130,7 +3172,7 @@ SOSI_navn: EKSTERNPEKER<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3250,7 +3292,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3370,7 +3412,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3430,7 +3472,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3490,7 +3532,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#flate">Flate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Surface">GM_Surface</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3514,7 +3556,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#punkt">Punkt</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Point">GM_Point</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3560,7 +3602,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene</p></td>
 </tr>
 </tbody>
 </table>
@@ -3576,7 +3619,8 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien</p></td>
 </tr>
 </tbody>
 </table>
@@ -3636,7 +3680,7 @@ SOSI_navn: MEDIUM<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3665,7 +3709,7 @@ SOSI_navn: MEDIUM<br></p></td>
 <div class="sect3">
 <h4 id="vannfiktivgrense"><a class="anchor" href="#vannfiktivgrense"></a>5.2.18. «FeatureType» VannFiktivGrense</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> fiktiv delelinje for vannflater, delelinjetype spesifiseres på egenskapsnivå</p>
+<p><strong>Definisjon:</strong> fiktiv delelinje for vannflater  delelinjetype spesifiseres på egenskapsnivå</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -3726,7 +3770,7 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3782,7 +3826,7 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/Kurve">Kurve</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/GM_Curve">GM_Curve</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3833,7 +3877,11 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 <div class="sect2">
 <h3 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>5.3. Pakke: Generelle elementer</h3>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0    Merknad:  Kopieres direkte inn i de enkelte FKB-datasettene</p>
+<p><strong>Definisjon:</strong> pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0</p>
+</div>
+<div class="paragraph">
+<p>Merknad:
+Kopieres direkte inn i de enkelte FKB-datasettene</p>
 </div>
 <hr>
 <div class="imageblock">
@@ -3860,7 +3908,10 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 <div class="sect3">
 <h4 id="fellesegenskaper"><a class="anchor" href="#fellesegenskaper"></a>5.3.1. «FeatureType» Fellesegenskaper (abstrakt)</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
+<p><strong>Definisjon:</strong> abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
+</div>
+<div class="paragraph">
+<p>Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</p>
 </div>
 <div class="sect4">
 <h5 id="trueegenskaper-19"><a class="anchor" href="#trueegenskaper-19"></a>Egenskaper</h5>
@@ -3876,7 +3927,11 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt     Merknad FKB:  Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.  Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.  For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unik identifikasjon av et objekt</p>
+<p class="tableblock">Merknad FKB:
+Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3904,7 +3959,15 @@ SOSI_navn: VANN_SPERRETYPE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet     Merknad FKB:   Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:  i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke  av klienten).  ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en  ”kopibase”.  iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.  iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidspunkt for siste endring på objektet</p>
+<p class="tableblock">Merknad FKB:
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
+iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
+iv. Oppdateringsdato skal endres hvis en egenskap endres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -3962,7 +4025,9 @@ SOSI_navn: DATAFANGSTDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.    Merknad FKB:  Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dato når dataene er fastslått å være i samsvar med virkeligheten.</p>
+<p class="tableblock">Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold  og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4019,7 +4084,9 @@ SOSI_navn: VERIFISERINGSDATO<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generell opplysning.</p>
+<p class="tableblock">Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4034,6 +4101,37 @@ SOSI_navn: VERIFISERINGSDATO<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: T<br>
 SOSI_lengde: 255<br>
 SOSI_navn: INFORMASJON<br></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navn:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>sluttdato</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.</p>
+<p class="tableblock">  Merknad FKB:
+Egenskapen settes av forvaltningssystemet . Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://skjema.geonorge.no/SOSI/basistype/DateTime">DateTime</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profilparametre i tagged values:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_datatype: DATOTID<br>
+SOSI_navn: SLUTTDATO<br></p></td>
 </tr>
 </tbody>
 </table>
@@ -4088,7 +4186,8 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
+<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4163,7 +4262,8 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av kvaliteten på stedfestingen</p>
+<p class="tableblock">Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4209,7 +4309,13 @@ SOSI_navn: INFORMASJON<br></p></td>
 <div class="sect3">
 <h4 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>5.3.4. «dataType» Identifikasjon</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
+<p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
+</div>
+<div class="paragraph">
+<p>Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer.</p>
+</div>
+<div class="paragraph">
+<p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values-2"><a class="anchor" href="#trueprofilparametre-i-tagged-values-2"></a>Profilparametre i tagged values</h5>
@@ -4240,7 +4346,8 @@ SOSI_navn: INFORMASJON<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lokal identifikator av et objekt</p>
+<p class="tableblock">Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4270,7 +4377,9 @@ SOSI_navn: LOKALID<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: <a href="http://data.geonorge.no/SentraltStedsnavnsregister/1.0" class="bare">http://data.geonorge.no/SentraltStedsnavnsregister/1.0</a>    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI</p>
+<p class="tableblock">Eksempel: <a href="http://data.geonorge.no/SentraltStedsnavnsregister/1.0" class="bare">http://data.geonorge.no/SentraltStedsnavnsregister/1.0</a></p>
+<p class="tableblock">Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4339,7 +4448,11 @@ SOSI_navn: VERSJONID<br></p></td>
 <div class="sect3">
 <h4 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>5.3.5. «dataType» Posisjonskvalitet</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
+<p><strong>Definisjon:</strong> beskrivelse av kvaliteten på stedfestingen.</p>
+</div>
+<div class="paragraph">
+<p>Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values-3"><a class="anchor" href="#trueprofilparametre-i-tagged-values-3"></a>Profilparametre i tagged values</h5>
@@ -4370,7 +4483,8 @@ SOSI_navn: VERSJONID<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metode for datafangst.
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x y)  eller for både grunnriss og høyde (x y z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4400,7 +4514,11 @@ SOSI_navn: DATAFANGSTMETODE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm.    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm.</p>
+<p class="tableblock">I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes.</p>
+<p class="tableblock">For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.</p>
+<p class="tableblock">Merknad:</p>
+<p class="tableblock">Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4458,7 +4576,8 @@ SOSI_navn: SYNBARHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for høyderegistrering av posisjon.    Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metoden brukt for høyderegistrering av posisjon.</p>
+<p class="tableblock">Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4488,7 +4607,11 @@ SOSI_navn: DATAFANGSTMETODEHØYDE<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm.    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standardavviket til posisjoneringa av objektet oppgitt i cm.</p>
+<p class="tableblock">I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes.</p>
+<p class="tableblock">For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.</p>
+<p class="tableblock">Merknad:</p>
+<p class="tableblock">Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multiplisitet:</p></td>
@@ -4520,7 +4643,8 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'  --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+--Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</p></td>
 </tr>
 </tbody>
 </table>
@@ -4583,7 +4707,10 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect3">
 <h4 id="datafangstmetode"><a class="anchor" href="#datafangstmetode"></a>5.3.7. «CodeList» Datafangstmetode</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.</p>
+<p><strong>Definisjon:</strong> metode for datafangst.</p>
+</div>
+<div class="paragraph">
+<p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values-5"><a class="anchor" href="#trueprofilparametre-i-tagged-values-5"></a>Profilparametre i tagged values</h5>
@@ -4697,7 +4824,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect3">
 <h4 id="medium"><a class="anchor" href="#medium"></a>5.3.10. «CodeList» Medium</h4>
 <div class="paragraph">
-<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten    Eksempel:  Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
+<p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten</p>
+</div>
+<div class="paragraph">
+<p>Eksempel:
+Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.</p>
 </div>
 <div class="sect4">
 <h5 id="trueprofilparametre-i-tagged-values-8"><a class="anchor" href="#trueprofilparametre-i-tagged-values-8"></a>Profilparametre i tagged values</h5>
@@ -4893,6 +5024,9 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect1">
 <h2 id="truereferansesystem"><a class="anchor" href="#truereferansesystem"></a>6. Referansesystem</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Referansesystemer for FKB 5.0 er også beskrevet i vedlegg B i <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB generell del</a>.</p>
+</div>
 <div class="sect2">
 <h3 id="trueromlig-referansesystem-utm-sone-32-basert-på-euref89-etrs89utm-2d-nn2000"><a class="anchor" href="#trueromlig-referansesystem-utm-sone-32-basert-på-euref89-etrs89utm-2d-nn2000"></a>6.1. Romlig referansesystem UTM sone 32 basert på EUREF89 (ETRS89/UTM), 2d + NN2000</h3>
 <div class="sect3">
@@ -5188,8 +5322,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect1">
 <h2 id="trueleveranse"><a class="anchor" href="#trueleveranse"></a>11. Leveranse</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Leveransemetoder og formater for FKB 5.0 er også beskrevet i vedlegg A i <a href="http://skjema.geonorge.no/SOSITEST/fagomr%c3%a5destandard/FKB_generell/5.0/">FKB generell del</a>.</p>
+</div>
 <div class="sect2">
-<h3 id="trueleveransemetode-gml"><a class="anchor" href="#trueleveransemetode-gml"></a>11.1. Leveransemetode GML</h3>
+<h3 id="trueleveransemetode-gml-distribusjon"><a class="anchor" href="#trueleveransemetode-gml-distribusjon"></a>11.1. Leveransemetode GML distribusjon</h3>
 <div class="sect3">
 <h4 id="trueomfang-11"><a class="anchor" href="#trueomfang-11"></a>11.1.1. Omfang</h4>
 <div class="paragraph">
@@ -5199,42 +5336,42 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect3">
 <h4 id="trueleveranseformat"><a class="anchor" href="#trueleveranseformat"></a>11.1.2. Leveranseformat</h4>
 <div class="paragraph">
-<p><strong>Formatnavn</strong> GML</p>
+<p><strong>Formatnavn</strong>: <a href="#GML">[GML]</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Formatversjon</strong> 3.2.1</p>
+<p><strong>Formatversjon</strong>: 3.2.1</p>
 </div>
 <div class="paragraph">
-<p><strong>Formatspesifikasjon</strong> <a href="http://www.opengeospatial.org/standards/gml" class="bare">http://www.opengeospatial.org/standards/gml</a></p>
+<p><strong>Formatspesifikasjon</strong>: <a href="http://www.opengeospatial.org/standards/gml">OpenGIS® Geograph Markup Language (GML) Encoding Standard</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Filstruktur</strong> Vanlig tekstfil (xml)</p>
+<p><strong>Filstruktur</strong>: Tekstfil (XML)</p>
 </div>
 <div class="paragraph">
-<p><strong>Språk</strong> nor</p>
+<p><strong>Språk</strong>: nor</p>
 </div>
 <div class="paragraph">
-<p><strong>Tegnsett</strong> utf8</p>
+<p><strong>Tegnsett</strong>: utf8</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="trueleveransemedium"><a class="anchor" href="#trueleveransemedium"></a>11.1.3. Leveransemedium</h4>
 <div class="paragraph">
-<p><strong>Leveranseenhet</strong> kommunevise filer</p>
+<p><strong>Leveranseenhet</strong>: kommunevise filer</p>
 </div>
 <div class="paragraph">
-<p><strong>Overføringsstørrelse</strong>  Varierer veldig ut fra kommunestørrelse</p>
+<p><strong>Overføringsstørrelse</strong>:  Varierer veldig ut fra kommunestørrelse</p>
 </div>
 <div class="paragraph">
-<p><strong>Navn på medium</strong> Datasettet lastes ned fra geonorge.no</p>
+<p><strong>Navn på medium</strong>: Datasettet lastes ned fra geonorge.no</p>
 </div>
 <div class="paragraph">
-<p><strong>Annen leveranseinformasjon</strong> Nedlastingsfilene vil være zippet</p>
+<p><strong>Annen leveranseinformasjon</strong>: Nedlastingsfilene vil være zippet</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueleveransemetode-sosi-format"><a class="anchor" href="#trueleveransemetode-sosi-format"></a>11.2. Leveransemetode SOSI-format</h3>
+<h3 id="trueleveransemetode-sosi-format-distribusjon"><a class="anchor" href="#trueleveransemetode-sosi-format-distribusjon"></a>11.2. Leveransemetode SOSI-format distribusjon</h3>
 <div class="sect3">
 <h4 id="trueomfang-12"><a class="anchor" href="#trueomfang-12"></a>11.2.1. Omfang</h4>
 <div class="paragraph">
@@ -5244,83 +5381,172 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <div class="sect3">
 <h4 id="trueleveranseformat-2"><a class="anchor" href="#trueleveranseformat-2"></a>11.2.2. Leveranseformat</h4>
 <div class="paragraph">
-<p><strong>Formatnavn</strong> SOSI-format</p>
+<p><strong>Formatnavn</strong>: SOSI</p>
 </div>
 <div class="paragraph">
-<p><strong>Formatversjon</strong> 5.0</p>
+<p><strong>Formatversjon</strong>: 5.0</p>
 </div>
 <div class="paragraph">
-<p><strong>Formatspesifikasjon</strong> <a href="#SOSI-format">[SOSI-format]</a> www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-sosi-format-5.0-sosi-generell-del.pdf</p>
+<p><strong>Formatspesifikasjon</strong>: <a href="https://www.kartverket.no/globalassets/geodataarbeid/standardisering/standarder/sosi-del-1-generell-del/realisering-i-sosi-format-5.0-sosi-generell-del.pdf">SOSI Realisering i SOSI-format, versjon 5.0 2018</a> <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Filstruktur</strong> Vanlig tekstfil</p>
+<p><strong>Filstruktur</strong>: Tekstfil</p>
 </div>
 <div class="paragraph">
-<p><strong>Språk</strong> nor</p>
+<p><strong>Språk</strong>: nor</p>
 </div>
 <div class="paragraph">
-<p><strong>Tegnsett</strong> utf8</p>
+<p><strong>Tegnsett</strong>: utf8</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="trueleveransemedium-2"><a class="anchor" href="#trueleveransemedium-2"></a>11.2.3. Leveransemedium</h4>
 <div class="paragraph">
-<p><strong>Leveranseenhet</strong> kommunevise filer</p>
+<p><strong>Leveranseenhet</strong>: kommunevise filer</p>
 </div>
 <div class="paragraph">
-<p><strong>Overføringsstørrelse</strong> Varierer veldig ut fra kommunestørrelse</p>
+<p><strong>Overføringsstørrelse</strong>: Varierer ut fra kommunestørrelse</p>
 </div>
 <div class="paragraph">
-<p><strong>Navn på medium</strong> Datasettet lastes ned fra geonorge.no</p>
+<p><strong>Navn på medium</strong>: Datasettet lastes ned fra geonorge.no</p>
 </div>
 <div class="paragraph">
-<p><strong>Annen leveranseinformasjon</strong> Nedlastingsfilene vil være zippet</p>
+<p><strong>Annen leveranseinformasjon</strong>: Nedlastingsfilene vil være zippet</p>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="trueleveransemetode-esri-fgdb-distribusjon"><a class="anchor" href="#trueleveransemetode-esri-fgdb-distribusjon"></a>11.3. Leveransemetode ESRI fgdb distribusjon</h3>
 <div class="sect3">
-<h4 id="trueleveranseformat-3"><a class="anchor" href="#trueleveranseformat-3"></a>11.2.4. Leveranseformat</h4>
-
-</div>
-<div class="sect3">
-<h4 id="trueomfang-13"><a class="anchor" href="#trueomfang-13"></a>11.2.5. Omfang</h4>
+<h4 id="trueomfang-13"><a class="anchor" href="#trueomfang-13"></a>11.3.1. Omfang</h4>
 <div class="paragraph">
 <p><a href="#HeleDatasettet">Hele datasettet</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueleveranseformat-4"><a class="anchor" href="#trueleveranseformat-4"></a>11.2.6. Leveranseformat</h4>
+<h4 id="trueleveranseformat-3"><a class="anchor" href="#trueleveranseformat-3"></a>11.3.2. Leveranseformat</h4>
 <div class="paragraph">
-<p><strong>Formatnavn</strong> ESRI fgdb</p>
+<p><strong>Formatnavn</strong>: <a href="#ESRI fgdb">[ESRI fgdb]</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Formatversjon</strong> 10.0</p>
+<p><strong>Formatversjon</strong>: 10.0</p>
 </div>
 <div class="paragraph">
-<p><strong>Formatspesifikasjon</strong> ESRI filgeodatabase</p>
+<p><strong>Formatspesifikasjon</strong>: ESRI filgeodatabase</p>
 </div>
 <div class="paragraph">
-<p><strong>Filstruktur</strong> Filer</p>
+<p><strong>Filstruktur</strong>: Filer</p>
 </div>
 <div class="paragraph">
-<p><strong>Språk</strong> nor</p>
+<p><strong>Språk</strong>: nor</p>
 </div>
 <div class="paragraph">
-<p><strong>Tegnsett</strong> utf8</p>
+<p><strong>Tegnsett</strong>: utf8</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueleveransemedium-3"><a class="anchor" href="#trueleveransemedium-3"></a>11.2.7. Leveransemedium</h4>
+<h4 id="trueleveransemedium-3"><a class="anchor" href="#trueleveransemedium-3"></a>11.3.3. Leveransemedium</h4>
 <div class="paragraph">
-<p><strong>Leveranseenhet</strong> kommunevise filer, fylkesvise filer og landsdekkende filer</p>
+<p><strong>Leveranseenhet</strong>: kommunevise filer, fylkesvise filer og landsdekkende filer</p>
 </div>
 <div class="paragraph">
-<p><strong>Overføringsstørrelse</strong> Varierer veldig ut fra kommunestørrelse</p>
+<p><strong>Overføringsstørrelse</strong>: Varierer områdestørrelse</p>
 </div>
 <div class="paragraph">
-<p><strong>Navn på medium</strong> Datasettet lastes ned fra geonorge.no</p>
+<p><strong>Navn på medium</strong>: Datasettet lastes ned fra geonorge.no</p>
 </div>
 <div class="paragraph">
-<p><strong>Annen leveranseinformasjon</strong> Nedlastingsfilene vil være zippet</p>
+<p><strong>Annen leveranseinformasjon</strong>: Nedlastingsfilene vil være zippet</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueleveransemetode-gml-ngis-openapi"><a class="anchor" href="#trueleveransemetode-gml-ngis-openapi"></a>11.4. Leveransemetode GML NGIS-OpenAPI</h3>
+<div class="sect3">
+<h4 id="trueomfang-14"><a class="anchor" href="#trueomfang-14"></a>11.4.1. Omfang</h4>
+<div class="paragraph">
+<p><a href="#HeleDatasettet">Hele datasettet</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueleveranseformat-4"><a class="anchor" href="#trueleveranseformat-4"></a>11.4.2. Leveranseformat</h4>
+<div class="paragraph">
+<p><strong>Formatnavn</strong>: <a href="#GML">[GML]</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Formatversjon</strong>: 3.2.1</p>
+</div>
+<div class="paragraph">
+<p><strong>Formatspesifikasjon</strong>: <a href="http://www.opengeospatial.org/standards/gml">OpenGIS® Geograph Markup Language (GML) Encoding Standard</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Filstruktur</strong>: Tekstfiler (XML) som inneholder GML-objekter pakket inn i WFS/WFS-T</p>
+</div>
+<div class="paragraph">
+<p><strong>Språk</strong>: nor</p>
+</div>
+<div class="paragraph">
+<p><strong>Tegnsett</strong>: utf8</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueleveransemedium-4"><a class="anchor" href="#trueleveransemedium-4"></a>11.4.3. Leveransemedium</h4>
+<div class="paragraph">
+<p><strong>Leveranseenhet</strong>: ikke angitt</p>
+</div>
+<div class="paragraph">
+<p><strong>Overføringsstørrelse</strong>:  ikke angitt</p>
+</div>
+<div class="paragraph">
+<p><strong>Navn på medium</strong>: NGIS-OpenAPI</p>
+</div>
+<div class="paragraph">
+<p><strong>Annen leveranseinformasjon</strong>: Se vedlegg A.2 til FKB generell del for mer informasjon.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueleveransemetode-json-ngis-openapi"><a class="anchor" href="#trueleveransemetode-json-ngis-openapi"></a>11.5. Leveransemetode JSON NGIS-OpenAPI</h3>
+<div class="sect3">
+<h4 id="trueomfang-15"><a class="anchor" href="#trueomfang-15"></a>11.5.1. Omfang</h4>
+<div class="paragraph">
+<p><a href="#HeleDatasettet">Hele datasettet</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueleveranseformat-5"><a class="anchor" href="#trueleveranseformat-5"></a>11.5.2. Leveranseformat</h4>
+<div class="paragraph">
+<p><strong>Formatnavn</strong>: <a href="#JSON">[JSON]</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Formatversjon</strong>: Basert på GeoJSON RFC 7946, august 2016</p>
+</div>
+<div class="paragraph">
+<p><strong>Formatspesifikasjon</strong>: Basert på <a href="https://datatracker.ietf.org/doc/html/rfc7946">GeoJSON RFC 7946, august 2016</a></p>
+</div>
+<div class="paragraph">
+<p><strong>Filstruktur</strong>: Tekstfiler som inneholder JSON-objekter</p>
+</div>
+<div class="paragraph">
+<p><strong>Språk</strong>: nor</p>
+</div>
+<div class="paragraph">
+<p><strong>Tegnsett</strong>: utf8</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueleveransemedium-5"><a class="anchor" href="#trueleveransemedium-5"></a>11.5.3. Leveransemedium</h4>
+<div class="paragraph">
+<p><strong>Leveranseenhet</strong>: ikke angitt</p>
+</div>
+<div class="paragraph">
+<p><strong>Overføringsstørrelse</strong>:  ikke angitt</p>
+</div>
+<div class="paragraph">
+<p><strong>Navn på medium</strong>: NGIS-OpenAPI</p>
+</div>
+<div class="paragraph">
+<p><strong>Annen leveranseinformasjon</strong>: Se vedlegg A.2 til FKB generell del for mer informasjon.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -5339,7 +5565,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <h2 id="truemetadata"><a class="anchor" href="#truemetadata"></a>13. Metadata</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueomfang-14"><a class="anchor" href="#trueomfang-14"></a>13.1. Omfang</h3>
+<h3 id="trueomfang-16"><a class="anchor" href="#trueomfang-16"></a>13.1. Omfang</h3>
 <div class="paragraph">
 <p>Gjelder hele spesifikasjonen</p>
 </div>
@@ -7585,7 +7811,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-02 16:13:14 +0100
+Last updated 2021-12-07 16:03:45 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
