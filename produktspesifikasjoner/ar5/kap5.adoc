@@ -1,5 +1,5 @@
 === Pakke «ApplicationSchema» FKB-AR5-5.0
-*Definisjon:* Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett som klassifiserer arealressuresene til alt areal ut fra arealtype (bebygd areal, dyrka mark, skog osv.), grunnforhold og bonitet.
+*Definisjon:* Datamodell for produktspesifikasjonen FKB-AR5. AR5 er et datasett som klassifiserer arealressuresene til alt areal ut fra arealtype (bebygd areal  dyrka mark  skog osv.)  grunnforhold og bonitet.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -109,7 +109,7 @@ image::diagrammer/Hoveddiagram AR5.png[link=diagrammer/Hoveddiagram AR5.png, Alt
 |*arealtype*
  
 |Definisjon: 
-|hovedinndeling etter kriterier for vegetasjon, naturlig drenering og kulturpåvirkning
+|hovedinndeling etter kriterier for vegetasjon  naturlig drenering og kulturpåvirkning
  
 |Multiplisitet: 
 |[1..1]
@@ -169,7 +169,7 @@ SOSI_navn: ARSKOGBON +
 |*grunnforhold*
  
 |Definisjon: 
-|inndeling etter tjukkelse, type og fordeling av jorddekket
+|inndeling etter tjukkelse  type og fordeling av jorddekket
  
 |Multiplisitet: 
 |[1..1]
@@ -207,7 +207,7 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*agrensesAvArealressursGrenseFiktiv*
+|*avgrensesAvArealressursGrenseFiktiv*
  
 |Definisjon:
 |Krav til delt flategeometri. Avgrensning av Arealressursflate ved hjelp av bygningsdelelinje
@@ -239,7 +239,8 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 ===== Arv og realiseringer
@@ -338,7 +339,7 @@ SOSI_navn: ARAVGRTYPE +
  
 [[arealressursarealtype]]
 ==== «CodeList» ArealressursArealtype
-*Definisjon:* hovedinndeling etter kriterier for vegetasjon, naturlig drenering og kulturpåvirkning
+*Definisjon:* hovedinndeling etter kriterier for vegetasjon  naturlig drenering og kulturpåvirkning
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -390,7 +391,7 @@ SOSI_navn: ARAVGRTYPE +
  
 [[arealressursgrunnforhold]]
 ==== «CodeList» ArealressursGrunnforhold
-*Definisjon:* inndeling etter tjukkelse, type og fordeling av jorddekket
+*Definisjon:* inndeling etter tjukkelse  type og fordeling av jorddekket
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -494,7 +495,7 @@ SOSI_navn: ARAVGRTYPE +
  
 [[opphav]]
 ==== «CodeList» Opphav
-*Definisjon:* referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde
+*Definisjon:* referanse til opphavsmaterialet  kildematerialet  organisasjons/publiseringskilde
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -518,7 +519,10 @@ SOSI_navn: ARAVGRTYPE +
 <<<
 '''
 === Pakke: Generelle elementer
-*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0    Merknad:  Kopieres direkte inn i de enkelte FKB-datasettene
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+
+Merknad:
+Kopieres direkte inn i de enkelte FKB-datasettene
  
 '''
  
@@ -548,7 +552,15 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagra
 |*identifikasjon*
  
 |Definisjon: 
-|unik identifikasjon av et objekt     Merknad FKB:  Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.  Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.  For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
+|unik identifikasjon av et objekt 
+
+Merknad FKB:
+
+Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -565,7 +577,21 @@ SOSI_navn: IDENT +
 |*oppdateringsdato*
  
 |Definisjon: 
-|tidspunkt for siste endring på objektet     Merknad FKB:     Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:    i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke  av klienten).    ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en  ”kopibase”.    iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.    iv. Oppdateringsdato skal endres hvis en egenskap endres.
+|tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
+
+iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
+
+iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -583,7 +609,10 @@ SOSI_navn: OPPDATERINGSDATO +
 |*sluttdato*
  
 |Definisjon: 
-|>Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.>  >  >>Merknad FKB:>  Egenskapen settes av forvaltningssystemet>. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.  >
+|Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.
  
 |Multiplisitet: 
 |[0..1]
@@ -601,7 +630,7 @@ SOSI_navn: SLUTTDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|dato når objektet siste gang ble registrert/observert/målt i terrenget    Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.  Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.  
+|dato når objektet siste gang ble registrert/observert/målt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -637,7 +666,10 @@ SOSI_navn: REGISTRERINGSVERSJON +
 |*informasjon*
  
 |Definisjon: 
-|generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
+|generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -656,7 +688,7 @@ SOSI_navn: INFORMASJON +
 |*opphav*
  
 |Definisjon: 
-|referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde  
+|referanse til opphavsmaterialet  kildematerialet  organisasjons/publiseringskilde
  
 |Multiplisitet: 
 |[1..1]
@@ -711,7 +743,9 @@ SOSI_navn: VERIFISERINGSDATO +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+|beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Multiplisitet: 
 |[1..1]
@@ -739,7 +773,11 @@ SOSI_navn: KVALITET +
  
 [[identifikasjon]]
 ==== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
+*Definisjon:* Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -755,7 +793,9 @@ SOSI_navn: KVALITET +
 |*lokalId*
  
 |Definisjon: 
-|lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+|lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
  
 |Multiplisitet: 
 |[1..1]
@@ -774,7 +814,11 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
+|navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
  
 |Multiplisitet: 
 |[1..1]
@@ -817,7 +861,10 @@ SOSI_navn: VERSJONID +
  
 [[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-*Definisjon:* beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
+*Definisjon:* beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -833,7 +880,7 @@ SOSI_navn: VERSJONID +
 |*datafangstmetode*
  
 |Definisjon: 
-|metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
+|metode for datafangst.
  
 |Multiplisitet: 
 |[1..1]
@@ -853,7 +900,15 @@ SOSI_navn: DATAFANGSTMETODE +
 |*nøyaktighet*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+|standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[1..1]
@@ -923,7 +978,9 @@ SOSI_navn: SYNBARHET +
  
 [[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-*Definisjon:* metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
+*Definisjon:* metode for datafangst. 
+
+Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]

@@ -5,7 +5,7 @@ Geovekst
 :sectnums:
 :toc: left
 :toc-title: Innholdsfortegnelse
-:toclevels: 3
+:toclevels: 4
 :figure-caption: Figur
 :table-caption: Tabell
 :section-refsig: Kapittel
@@ -16,7 +16,7 @@ Geovekst
 :appendix-caption: Vedlegg
 :pdf-page-size: A4
 :fkbdatasett: FKB-Ledning 5.0
-:publisert: Høringsversjon 1. oktober 2021
+:publisert: Godkjent XX. XXXXXX 202X
 :prodspek-url: https://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0
 :reginstr-url: https://skjema.geonorge.no/SOSITEST/registreringsinstuks/FKB-Ledning/5.0
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
@@ -25,7 +25,7 @@ Geovekst
 
 <<<
 
-CAUTION: {publisert}
+// CAUTION: {publisert}
 
 // Metadata om produktspesifikasjonen
 
@@ -41,6 +41,8 @@ Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er sam
 
 Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i 
 forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
+
+Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <<SOSI-KRAV>>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <<SOSI-UML>>. http://sosi.geonorge.no/veiledere/UML[Denne veilederen] gir hjelp til å lese UML-diagrammene.
 
 === Historikk
 
@@ -73,12 +75,13 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 ** Bardun
 ** Jordingsledning
 ** Kum 
-** Luftlinje
+** Luftledning
 * Følgende objekttyper har endret navn:
-** EL-Belysningspunkt -> Mast eller LysArmatur
+** EL-Belysningspunkt -> Mast eller LysArmatur <<ElBelysningspunkt,^1^>>
 ** EL-Flymarkør -> Flymarkør
 ** EL-Nettstasjon -> Nettverkstasjon
 ** EL-Vindturbun -> Vindturbin
+** Kanal -> Kabelkanal
 ** LednKum -> Kumlokk
 ** NettverkstasjonOmriss (EL_Vindturbin) -> VindturbinOmriss
 * Objekttypen NettverkstasjonAdkomst er tatt ut av produktspesifikasjonen.
@@ -96,10 +99,13 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 ** _høydereferanse_ har fått ny kodeliste, den generelle kodelisten for høydereferanse benyttes.
 ** _medium_ er gjort om til en påkrevd egenskap
 ** _eierOrgNr_ erstatter den tidligere egenskapen _eier_
-** _eksternPeker_ er lagt til som en opsjonell egenskap (mulighet for å legge inn peker - i form av en URI - til objektet i et annet system).
+** _eksternPeker_, _nrlpeker_ og _nvdbpeker_ er lagt til som en opsjonelle egenskap (mulighet for å legge inn peker - i form av en URI - til objektet i andre systemer).
 ** _hovedbruk_ (_ledningsnettverkstype_) er gjort påkrevd for alle objekttyper
 * Ytterligere egenskaper er endret eller lagt til på en eller flere objekttyper. <<Pakke: Objekttyper - instansierbare>> gir full oversikt over hvilke egenskaper som gjelder for den enkelte objekttype i {fkbdatasett}
 * Flere kodelister er endret. 
+
+[[ElBelysningspunkt]]
+^1^ EL_Belysningspunkt blir kodet om til Mast der hvor _plassering_ er "iMast". I tillegg blir det lagt på _belysning_ = True. Der hvor _plassering_ = "iVaier" blir EL_belysningspunkt kodet om til Lysarmatur.
 
 :xrefstyle: basic
 
@@ -142,10 +148,10 @@ Geovekst
 nor
 
 === Hovedtema
-basisData
+basisData, ledningInforasjon
 
 === Temakategori
-ledningInformasjon
+basisData, ledningInformasjon
 
 === Sammendrag
 Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger på eller over bakkenivå) som inngår i produktspesifikasjonen. 
@@ -153,6 +159,8 @@ Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommun
 === Formål
 // Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
 include::../../felles/kap38_formal.adoc[]
+
+FKB-Ledning bidrar med å gi et detaljert bilde av ledningsinfrastrukturen som er synlig over bakken eller i lufta.
 
 // Fellesdel som dekker kap 3.9 - 3.12 for alle FKB-produktspesifikasjoner
 include::../../felles/kap39-312_representasjon.adoc[]
@@ -174,7 +182,7 @@ include::../../felles/kap4_omfang.adoc[]
 <<HeleDatasettet,Hele datasettet>>
 
 // Inneholder adoc eksport fra Enterprise Architect
-include::eksport_EA.adoc[]
+include::eksport_EA_ny3.adoc[]
 
 <<<
 
@@ -272,12 +280,11 @@ include::sosi-realisering.adoc[]
 TIP: Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg
 ////
 
+[discrete]
 == Lisensvilkår
-
-// Inkl. lisensvilkår
-
 include::../../felles/lisensvilkaar.adoc[]
 
+////
 <<<
 [abstract]
 '''
@@ -291,3 +298,4 @@ Statens kartverk
 ISBN: 
 
 |=== 
+////
