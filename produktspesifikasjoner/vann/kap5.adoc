@@ -1,5 +1,8 @@
 === Pakke «ApplicationSchema» FKB-Vann-5.0 Utkast
-*Definisjon:* Spesifikasjonen beskriver geografisk beliggenhet, forløp og form for bekker, elver, kanaler, grøfter, innsjøer, isbreer og den topografiske delen av kyst og sjø.   Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Primærdata Kystkontur som en del av FKB-Vann.    FKB-Vann versjon 5.0 baserer seg på de generelle konseptene fra SOSI del 1 versjon 5 og SOSI del 3 Vann, Kyst og Sjø versjon 4.0.   
+*Definisjon:* Spesifikasjonen beskriver geografisk beliggenhet  forløp og form for bekker  elver  kanaler  grøfter  innsjøer  isbreer og den topografiske delen av kyst og sjø. 
+Kystkonturen er en del av FKB-Vann og fra og med FKB-Vann versjon 4.6 forvaltes Primærdata Kystkontur som en del av FKB-Vann.
+
+FKB-Vann versjon 5.0 baserer seg på de generelle konseptene fra SOSI del 1 versjon 5 og SOSI del 3 Vann  Kyst og Sjø versjon 4.0. 
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -84,7 +87,7 @@ image::diagrammer/Arv av fellesegenskaper.png[link=diagrammer/Arv av fellesegens
  
 [[kystkontur]]
 ==== «FeatureType» Kystkontur
-*Definisjon:* grense mellom land og sjø, definert som midlere høyvannslinje.
+*Definisjon:* grense mellom land og sjø  definert som midlere høyvannslinje.
  
  
 '''
@@ -103,7 +106,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -176,7 +179,7 @@ SOSI_navn: MEDIUM +
  
 [[kystkonturtekniskeanlegg]]
 ==== «FeatureType» KystkonturTekniskeAnlegg
-*Definisjon:* angivelse av kystkontur der denne består av tekniske anlegg, definert som  midlere høyvann
+*Definisjon:* angivelse av kystkontur der denne består av tekniske anlegg  definert som  midlere høyvann
  
  
 '''
@@ -195,7 +198,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |Profilparametre i tagged values: 
 |
 SOSI_navn: Kurve + 
@@ -309,7 +312,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -344,7 +347,7 @@ SOSI_navn: HØYDE +
  
 [[havflate]]
 ==== «FeatureType» Havflate
-*Definisjon:* havområde som avgrenses av Kystkontur, VannFiktivGrense og KystkonturTekniskAnlegg
+*Definisjon:* havområde som avgrenses av Kystkontur  VannFiktivGrense og KystkonturTekniskAnlegg
  
  
 '''
@@ -363,7 +366,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -377,7 +380,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -433,7 +436,7 @@ SOSI_navn: MEDIUM +
 |*avgrensesAvKystkontur*
  
 |Definisjon: 
-|grense mellom land og sjø i henhold til angitt kystreferanse, normalt middel høyvannstand
+|grense mellom land og sjø i henhold til angitt kystreferanse  normalt middel høyvannstand
  
 |Multiplisitet: 
 |[0..*]
@@ -448,7 +451,8 @@ SOSI_navn: MEDIUM +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
@@ -457,7 +461,8 @@ SOSI_navn: MEDIUM +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
+|--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -493,7 +498,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -528,7 +533,7 @@ SOSI_navn: MEDIUM +
  
 [[elv]]
 ==== «FeatureType» Elv
-*Definisjon:* større vannvei for rennende vann representert ved flate  
+*Definisjon:* større vannvei for rennende vann representert ved flate
  
  
 '''
@@ -541,13 +546,13 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*posisjon*
  
 |Definisjon: 
-|objektets plassering  
+|objektets plassering
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -561,7 +566,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Flate[Flate]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -637,7 +642,8 @@ SOSI_navn: MEDIUM +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
@@ -646,7 +652,8 @@ SOSI_navn: MEDIUM +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
+|--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -663,7 +670,7 @@ SOSI_navn: MEDIUM +
  
 [[kanalkant]]
 ==== «FeatureType» Kanalkant
-*Definisjon:* avgrensningslinje av kanal, dvs vannspeilet. Med vannspeil menes der vannet normalt står i kanalen
+*Definisjon:* avgrensningslinje av kanal  dvs vannspeilet. Med vannspeil menes der vannet normalt står i kanalen
  
  
 '''
@@ -682,7 +689,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -690,7 +697,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten  
+|objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
 |[1..1]
@@ -730,13 +737,13 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*posisjon*
  
 |Definisjon: 
-|objektets plassering  
+|objektets plassering
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -750,7 +757,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Flate[Flate]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -758,7 +765,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten  
+|objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
 |[1..1]
@@ -777,7 +784,8 @@ SOSI_navn: MEDIUM +
 |*vannBredde*
  
 |Definisjon: 
-|grov klassifisering av vassdrag etter gjennomsnittelig bredde over lengre strekninger    
+|grov klassifisering av vassdrag etter gjennomsnittelig bredde over lengre strekninger
+
  
 |Multiplisitet: 
 |[1..1]
@@ -797,7 +805,7 @@ SOSI_navn: VANNBR +
 |*avgrensesAvKanalkant*
  
 |Definisjon: 
-|avgrensningslinje av kanal, dvs. der vannspeilet normalt står i kanalen.
+|avgrensningslinje av kanal  dvs. der vannspeilet normalt står i kanalen.
  
 |Multiplisitet: 
 |[0..*]
@@ -826,7 +834,8 @@ SOSI_navn: VANNBR +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
@@ -835,7 +844,8 @@ SOSI_navn: VANNBR +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
+|--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -852,7 +862,10 @@ SOSI_navn: VANNBR +
  
 [[innsjøkant]]
 ==== «FeatureType» Innsjøkant
-*Definisjon:* konturlinje mellom land og innsjø    Merknad:  for innsjø som er oppdemt/regulert skal konturlinjen ligge i høydenivået for høyeste regulerte vannstand
+*Definisjon:* konturlinje mellom land og innsjø
+
+Merknad:
+for innsjø som er oppdemt/regulert skal konturlinjen ligge i høydenivået for høyeste regulerte vannstand
  
  
 '''
@@ -871,7 +884,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -944,7 +957,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -958,7 +971,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1071,7 +1084,8 @@ SOSI_navn: EKSTERNPEKER +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
@@ -1080,7 +1094,8 @@ SOSI_navn: EKSTERNPEKER +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
+|--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -1097,7 +1112,7 @@ SOSI_navn: EKSTERNPEKER +
  
 [[elvbekk]]
 ==== «FeatureType» ElvBekk
-*Definisjon:* mindre vannvei for rennende vann representert ved senterlinje  
+*Definisjon:* mindre vannvei for rennende vann representert ved senterlinje
  
  
 '''
@@ -1116,7 +1131,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -1124,7 +1139,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*vannBredde*
  
 |Definisjon: 
-|grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger  
+|grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
  
 |Multiplisitet: 
 |[1..1]
@@ -1143,7 +1158,7 @@ SOSI_navn: VANNBREDDE +
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten  
+|objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
 |[1..1]
@@ -1170,7 +1185,7 @@ SOSI_navn: MEDIUM +
  
 [[kanalgrøft]]
 ==== «FeatureType» KanalGrøft
-*Definisjon:* rennende vann der forløpet er menneskeskapt  
+*Definisjon:* rennende vann der forløpet er menneskeskapt
  
  
 '''
@@ -1189,7 +1204,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -1197,7 +1212,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*vannBredde*
  
 |Definisjon: 
-|grov klassifisering av grøft etter bredde   
+|grov klassifisering av grøft etter bredde 
  
 |Multiplisitet: 
 |[1..1]
@@ -1216,7 +1231,7 @@ SOSI_navn: VANNBR +
 |*medium*
  
 |Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten  
+|objektets beliggenhet i forhold til jordoverflaten
  
 |Multiplisitet: 
 |[1..1]
@@ -1262,7 +1277,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -1297,7 +1312,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -1332,7 +1347,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1346,7 +1361,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 ===== Roller
 [cols="20,80"]
@@ -1370,7 +1385,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
 [cols="20,80"]
@@ -1379,7 +1395,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt  --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
+|--ingen OCL  restriksjonen implementeres manuelt
+--Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
 ===== Arv og realiseringer
@@ -1415,7 +1432,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -1431,7 +1448,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
  
 [[vannfiktivgrense]]
 ==== «FeatureType» VannFiktivGrense
-*Definisjon:* fiktiv delelinje for vannflater, delelinjetype spesifiseres på egenskapsnivå  
+*Definisjon:* fiktiv delelinje for vannflater  delelinjetype spesifiseres på egenskapsnivå
  
  
 '''
@@ -1469,7 +1486,7 @@ SOSI_navn: VANN_SPERRETYPE +
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -1502,7 +1519,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Kurve[Kurve]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -1528,7 +1545,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Vann/5.0/figurer/
 <<<
 '''
 === Pakke: Generelle elementer
-*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0    Merknad:  Kopieres direkte inn i de enkelte FKB-datasettene
+*Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
+
+Merknad:
+Kopieres direkte inn i de enkelte FKB-datasettene
  
 '''
  
@@ -1549,7 +1569,9 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagra
  
 [[fellesegenskaper]]
 ==== «FeatureType» Fellesegenskaper (abstrakt)
-*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.    Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
+*Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+
+Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
 ===== Egenskaper
 [cols="20,80"]
@@ -1558,7 +1580,12 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagra
 |*identifikasjon*
  
 |Definisjon: 
-|unik identifikasjon av et objekt     Merknad FKB:  Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.  Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.  For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
+|unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -1575,7 +1602,16 @@ SOSI_navn: IDENT +
 |*oppdateringsdato*
  
 |Definisjon: 
-|tidspunkt for siste endring på objektet     Merknad FKB:   Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:  i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke  av klienten).  ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en  ”kopibase”.  iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.  iv. Oppdateringsdato skal endres hvis en egenskap endres.
+|tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
+iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
+iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
 |[1..1]
@@ -1593,7 +1629,7 @@ SOSI_navn: OPPDATERINGSDATO +
 |*datafangstdato*
  
 |Definisjon: 
-|dato når objektet siste gang ble registrert/observert/målt i terrenget  
+|dato når objektet siste gang ble registrert/observert/målt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -1611,7 +1647,10 @@ SOSI_navn: DATAFANGSTDATO +
 |*verifiseringsdato*
  
 |Definisjon: 
-|dato når dataene er fastslått å være i samsvar med virkeligheten.    Merknad FKB:  Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
+|dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold  og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -1646,7 +1685,10 @@ SOSI_navn: REGISTRERINGSVERSJON +
 |*informasjon*
  
 |Definisjon: 
-|generell opplysning.    Merknad FKB:  Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
+|generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -1658,6 +1700,27 @@ SOSI_navn: REGISTRERINGSVERSJON +
 SOSI_datatype: T + 
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*sluttdato*
+ 
+|Definisjon: 
+| Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere. 
+ 
+  Merknad FKB: 
+Egenskapen settes av forvaltningssystemet . Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.   
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: DATOTID + 
+SOSI_navn: SLUTTDATO + 
 |===
 ===== Arv og realiseringer
 [cols="20,80"]
@@ -1689,7 +1752,9 @@ SOSI_navn: INFORMASJON +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+|beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Multiplisitet: 
 |[1..1]
@@ -1737,7 +1802,9 @@ SOSI_navn: KVALITET +
 |*kvalitet*
  
 |Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen    Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
+|beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
  
 |Multiplisitet: 
 |[0..1]
@@ -1765,7 +1832,11 @@ SOSI_navn: KVALITET +
  
 [[identifikasjon]]
 ==== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.     Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer.     Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
+*Definisjon:* Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1781,7 +1852,9 @@ SOSI_navn: KVALITET +
 |*lokalId*
  
 |Definisjon: 
-|lokal identifikator av et objekt    Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+|lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
  
 |Multiplisitet: 
 |[1..1]
@@ -1800,7 +1873,11 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI    Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0    Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
+|navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no
  
 |Multiplisitet: 
 |[1..1]
@@ -1843,7 +1920,10 @@ SOSI_navn: VERSJONID +
  
 [[posisjonskvalitet]]
 ==== «dataType» Posisjonskvalitet
-*Definisjon:* beskrivelse av kvaliteten på stedfestingen.    Merknad:  Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
+*Definisjon:* beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -1859,7 +1939,8 @@ SOSI_navn: VERSJONID +
 |*datafangstmetode*
  
 |Definisjon: 
-|metode for datafangst.   Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
+|metode for datafangst. 
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x y)  eller for både grunnriss og høyde (x y z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -1878,7 +1959,17 @@ SOSI_navn: DATAFANGSTMETODE +
 |*nøyaktighet*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm.    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.      
+|standardavviket til posisjoneringa av objektet oppgitt i cm.
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+
+
  
 |Multiplisitet: 
 |[0..1]
@@ -1914,7 +2005,10 @@ SOSI_navn: SYNBARHET +
 |*datafangstmetodeHøyde*
  
 |Definisjon: 
-|metoden brukt for høyderegistrering av posisjon.    Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.    
+|metoden brukt for høyderegistrering av posisjon.
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.
+
  
 |Multiplisitet: 
 |[0..1]
@@ -1933,7 +2027,18 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |*nøyaktighetHøyde*
  
 |Definisjon: 
-|standardavviket til posisjoneringa av objektet oppgitt i cm.    I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes.     For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata.     Merknad:    Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.        
+|standardavviket til posisjoneringa av objektet oppgitt i cm.
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+
+
+
  
 |Multiplisitet: 
 |[0..1]
@@ -1952,7 +2057,8 @@ SOSI_navn: H-NØYAKTIGHET +
 |*ugyldige datafangstmetoder for høyde*
  
 |Beskrivelse: 
-|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'  --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
+|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+--Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
  
 |===
 ===== Arv og realiseringer
@@ -1992,7 +2098,9 @@ SOSI_navn: H-NØYAKTIGHET +
  
 [[datafangstmetode]]
 ==== «CodeList» Datafangstmetode
-*Definisjon:* metode for datafangst.     Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
+*Definisjon:* metode for datafangst. 
+
+Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2070,7 +2178,10 @@ SOSI_navn: H-NØYAKTIGHET +
  
 [[medium]]
 ==== «CodeList» Medium
-*Definisjon:* objektets beliggenhet i forhold til jordoverflaten    Eksempel:  Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+*Definisjon:* objektets beliggenhet i forhold til jordoverflaten
+
+Eksempel:
+Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2105,7 +2216,7 @@ image::diagrammer/Hoveddiagram for datatyper og kodelister.png[link=diagrammer/H
  
 [[kystkonstruksjonstype]]
 ==== «CodeList» Kystkonstruksjonstype
-*Definisjon:* angivelse av kystkonturens konstruksjon  
+*Definisjon:* angivelse av kystkonturens konstruksjon
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2128,7 +2239,7 @@ image::diagrammer/Hoveddiagram for datatyper og kodelister.png[link=diagrammer/H
  
 [[kystreferanse]]
 ==== «CodeList» Kystreferanse
-*Definisjon:* kystkonturens referansenivå  
+*Definisjon:* kystkonturens referansenivå
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
@@ -2151,7 +2262,7 @@ image::diagrammer/Hoveddiagram for datatyper og kodelister.png[link=diagrammer/H
  
 [[vannbredde]]
 ==== «CodeList» VannBredde
-*Definisjon:* grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger  
+*Definisjon:* grov klassifikasjon av vassdrag etter gjennomsnittelig bredde over lengre strekninger
  
 ===== Profilparametre i tagged values
 [cols="20,80"]
