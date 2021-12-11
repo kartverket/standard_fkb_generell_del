@@ -1,9 +1,10 @@
-=== Pakke: FKB-Bygning-5.0
+// Start of SOSI-format
  
-=== Pakke: Bygninger
+[discrete]
+==== Objekttype: Bygning
  
-==== «featureType» AnnenBygning
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -36,86 +37,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|beskriverAnnenBygning
-|«featureType» BeskrivendeBygningsdetalj
-|..BESKRIVERANNENBYGNING
-|[0..*]
-
-|vedhengTilAnnenBygning
-|«featureType» Bygningsvedheng
-|..VEDHENGTILANNENBYGNING
-|[0..*]
-
-|===
- 
-==== «featureType» Bygning
-===== Modellnavn og SOSI-formatnavn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -138,12 +63,12 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
@@ -176,17 +101,17 @@
 |«featureType» Bygningsvedheng
 |..VEDHENGTILBYGNING
 |[0..*]
-
 |beskriverBygning
 |«featureType» BeskrivendeBygningsdetalj
 |..BESKRIVERBYGNING
 |[0..*]
-
 |===
-=== Pakke: Bygningsavgrensning
  
-==== «featureType» Bygningsavgrensning
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: AnnenBygning
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -219,6 +144,11 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -239,45 +169,36 @@
 |..INFORMASJON
 |[0..1]
  
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
+|område
+|GM_Surface
+|.FLATE
 |[1..1]
  
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
+|posisjon
+|GM_Point
+|.PUNKT
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
 |[1..1]
  
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|grense
-|Kurve
-|.KURVE
-|[1..1]
- 
+|beskriverAnnenBygning
+|«featureType» BeskrivendeBygningsdetalj
+|..BESKRIVERANNENBYGNING
+|[0..*]
+|vedhengTilAnnenBygning
+|«featureType» Bygningsvedheng
+|..VEDHENGTILANNENBYGNING
+|[0..*]
 |===
  
-==== «featureType» BygningsavgrensningTiltak
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: BygningsavgrensningTiltak
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -310,6 +231,11 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -361,7 +287,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -375,10 +301,18 @@
 |..HREF
 |[1..1]
  
+|lavestegulv
+|Real
+|..LAVESTEGULV
+|[0..1]
+ 
 |===
  
-==== «featureType» Bygningsdelelinje
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Bygningsdelelinje
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -410,6 +344,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -432,7 +371,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -441,11 +380,13 @@
 |..TRE_D_NIVÅ
 |[1..1]
  
-
 |===
  
-==== «featureType» Fasadeliv
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Fasadeliv
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -477,6 +418,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -529,11 +475,10 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
-
 |medium
 |«CodeList» Medium
 |..MEDIUM
@@ -551,8 +496,11 @@
  
 |===
  
-==== «featureType» FiktivBygningsavgrensning
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: FiktivBygningsavgrensning
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -584,6 +532,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -636,19 +589,22 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |medium
 |«CodeList» Medium
-|..
+|..MEDIUM
 |[1..1]
  
 |===
  
-==== «featureType» Grunnmur
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Grunnmur
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -680,6 +636,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -732,7 +693,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -748,8 +709,11 @@
  
 |===
  
-==== «featureType» Takkant
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Takkant
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -781,6 +745,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -833,7 +802,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -853,10 +822,12 @@
 |[0..1]
  
 |===
-=== Pakke: BeskrivendeBygningslinjer
  
-==== «featureType» BeskrivendeBygningsdetalj
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Arkade
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -888,6 +859,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -944,95 +920,9 @@
 |..TRE_D_NIVÅ
 |[1..1]
  
-|===
- 
-==== «featureType» Arkade
-===== Modellnavn og SOSI-formatnavn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|treDNivå
-|«CodeList» TreDNivå
-|..TRE_D_NIVÅ
+|grense
+|GM_Curve
+|.KURVE
 |[1..1]
  
 |høydereferanse
@@ -1040,15 +930,13 @@
 |..HREF
 |[1..1]
  
-|grense
-|Kurve
-|.KURVE
-|[1..1]
- 
 |===
  
-==== «featureType» Bygningslinje
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Bygningslinje
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1080,6 +968,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1135,16 +1028,19 @@
 |«CodeList» TreDNivå
 |..TRE_D_NIVÅ
 |[1..1]
-
+ 
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Hjelpelinje3D
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Hjelpelinje3D
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1176,6 +1072,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1233,14 +1134,17 @@
 |[1..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Hjelpepunkt3D
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Hjelpepunkt3D
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1272,6 +1176,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1329,14 +1238,17 @@
 |[1..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
 |===
  
-==== «featureType» Mønelinje
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Mønelinje
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1368,6 +1280,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1425,14 +1342,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Portrom
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Portrom
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1464,6 +1384,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1521,7 +1446,7 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1532,8 +1457,11 @@
  
 |===
  
-==== «featureType» TakMur
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: TakMur
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1565,6 +1493,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1622,14 +1555,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Takplatå
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Takplatå
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1661,6 +1597,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1718,14 +1659,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» TakplatåTopp
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: TakplatåTopp
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1757,6 +1701,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1814,14 +1763,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Taksprang
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Taksprang
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1853,6 +1805,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1910,14 +1867,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» TaksprangBunn
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: TaksprangBunn
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -1949,6 +1909,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2006,15 +1971,17 @@
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
-=== Pakke: Bygningsvedheng
  
-==== «featureType» Bygningsvedheng
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: BygningBru
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2046,6 +2013,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2098,14 +2070,17 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» BygningBru
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Låvebru
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2137,6 +2112,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2189,14 +2169,17 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Låvebru
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: TrappBygg
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2228,6 +2211,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2280,14 +2268,17 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» TrappBygg
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Veranda
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2319,6 +2310,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2371,14 +2367,27 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
 |[1..1]
  
 |===
  
-==== «featureType» Veranda
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: VeggFrittstående
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2410,6 +2419,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2462,7 +2476,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2478,8 +2492,11 @@
  
 |===
  
-==== «featureType» VeggFrittstående
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: Takoverbygg
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2512,107 +2529,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|grense
-|Kurve
-|.KURVE
-|[1..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
-=== Pakke: Takoverbygg
- 
-==== «featureType» Takoverbygg
-===== Modellnavn og SOSI-formatnavn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2635,19 +2555,22 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[0..1]
  
 |===
  
-==== «featureType» TakoverbyggKant
-===== Modellnavn og SOSI-formatnavn
+[discrete]
+==== Objekttype: TakoverbyggKant
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -2679,6 +2602,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2731,8 +2659,9 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
+// End of SOSI-format
