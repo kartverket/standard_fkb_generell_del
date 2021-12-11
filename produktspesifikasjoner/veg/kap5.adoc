@@ -346,8 +346,8 @@ SOSI_navn: KVALITET +
 <<vegannenavgrensning,«FeatureType» VegAnnenAvgrensning>> +
 <<annetvegarealavgrensning,«FeatureType» AnnetVegarealAvgrensning>> +
 <<vegdekkekant,«FeatureType» Vegdekkekant>> +
-<<nvdbobjekter_kvalitetpåkrevd,«FeatureType» NVDBobjekter_KvalitetPåkrevd>> +
 <<kantstein,«FeatureType» Kantstein>> +
+<<nvdbobjekter_kvalitetpåkrevd,«FeatureType» NVDBobjekter_KvalitetPåkrevd>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
@@ -793,7 +793,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
  
 [[registreringsversjon]]
 ===== «CodeList» Registreringsversjon
-*Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
+*Definisjon:* FKB-versjon som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -1113,6 +1113,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 [[veggåendeogsyklende]]
 ===== «FeatureType» VegGåendeOgSyklende
 *Definisjon:* Ferdselsområde for gående og syklende. Her inngår fortau  gangveg  gang- og sykkelveg  sykkelveg  trapp og gågate.
+
+Merknad:
+Erstatter tidligere objekttype GangSykkelveg. Den nye objekttypen omfatter alle typer veger for gående og syklende definert i Elveg 2.0
  
  
 '''
@@ -1493,7 +1496,10 @@ image::diagrammer/VegKjørende flateavgrensning.png[link=diagrammer/VegKjørende
  
 [[vegannenavgrensning]]
 ===== «FeatureType» VegAnnenAvgrensning
-*Definisjon:* Reell eller fiktiv avgrensing som avgrenser veg mot privat avkjørsel  eller annet vegareal som ligger i tilknytning til veien. Eksempler på annet vegareal er åpne parkeringsplasser  industriområder og gårdsplasser.
+*Definisjon:* Reell eller fiktiv avgrensing som avgrenser veg mot privat avkjørsel  eller annet vegareal som ligger i tilknytning til vegen. 
+
+Merknad:
+Eksempler på annet vegareal er åpne parkeringsplasser  industriområder  bygninger og gårdsplasser. Her inngår også tildligere objekttype VegkantAnnetVegareal og VegkantAvkjørsel.
  
  
 '''
@@ -1529,7 +1535,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 [[vegdekkekant]]
 ===== «FeatureType» Vegdekkekant
-*Definisjon:* Avgrensning for alle typer flatedannede vegdekker. Her inngår også tidligere Trafikkøykant  GangSykkelvegkant  Gangvegkant og AnnetVegareal som avgrenser fortau.
+*Definisjon:* Avgrensning for alle typer flatedannede vegdekker. 
+
+Merknad: Her inngår også tidligere Trafikkøykant  GangSykkelvegkant  Gangvegkant og AnnetVegareal som avgrenser fortau.
  
  
 '''
@@ -1606,6 +1614,9 @@ SOSI_navn: HREF +
 [[vegfiktivgrense]]
 ===== «FeatureType» VegFiktivGrense
 *Definisjon:* Fiktiv avgrensningslinje (lukkelinje) for vegflater.
+
+Merknad:
+VegFiktivGrense brukes for fiktive avgrensninger av vegflater. Objektene skal derfor som hovedregel avgrense to flater.
  
  
 '''
@@ -2019,24 +2030,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
 |forløp som følger objektets sentrale del
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
  
 [discrete]
