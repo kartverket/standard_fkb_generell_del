@@ -1,5 +1,9 @@
+// Start of SOSI-format
  
-==== «FeatureType» Veglenke
+[discrete]
+==== Objekttype: Veglenke
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -32,6 +36,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -82,6 +91,11 @@
 |Integer
 |...H-NØYAKTIGHET
 |[0..1]
+ 
+|senterlinje
+|GM_Curve
+|.KURVE
+|[1..1]
  
 |typeVeg
 |«CodeList» Typeveg
@@ -173,11 +187,6 @@
 |..BELYSNING
 |[1..1]
  
-|senterlinje
-|Kurve
-|.KURVE
-|[1..1]
- 
 |barmarksløype
 |«» Boolean
 |..BARMARKSLØYPE
@@ -203,19 +212,22 @@
 |..BEREDSKAPSVEG
 |[1..1]
  
-|eksternPeker
+|eksternpeker
 |URI
 |..EKSTERNPEKER
 |[0..1]
  
-|turruterPeker
+|turruterpeker
 |URI
 |..TURRUTERPEKER
 |[0..1]
  
 |===
  
-==== «FeatureType» Vegsperring
+[discrete]
+==== Objekttype: Vegsperring
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -248,6 +260,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -298,6 +315,11 @@
 |Integer
 |...H-NØYAKTIGHET
 |[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
  
 |type
 |«CodeList» TypeVegsperring
@@ -363,11 +385,6 @@
 |«CodeList» EierVegsperring
 |..EIER
 |[0..1]
- 
-|posisjon
-|Punkt
-|.POSISJON
-|[1..1]
  
 |===
 // End of SOSI-format
