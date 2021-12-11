@@ -1,5 +1,9 @@
+// Start of SOSI-format
  
-==== «featureType» Bru
+[discrete]
+==== Objekttype: Bru
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -32,6 +36,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -89,7 +98,7 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -110,11 +119,14 @@
  
 |tilhørendeDetalj
 |«featureType» Brudetalj
-|..
+|..TILHØRENDEDETALJ
 |[0..*]
 |===
  
-==== «featureType» Brudetalj
+[discrete]
+==== Objekttype: Brudetalj
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -147,6 +159,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -199,13 +216,16 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Kulvert
+[discrete]
+==== Objekttype: Kulvert
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -238,6 +258,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -295,13 +320,16 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Stikkrenne
+[discrete]
+==== Objekttype: Stikkrenne
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -334,6 +362,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -391,13 +424,16 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Tunnelportal
+[discrete]
+==== Objekttype: Tunnelportal
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -430,6 +466,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -487,13 +528,16 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Brønn
+[discrete]
+==== Objekttype: Avfallsbeholder
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -527,106 +571,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|===
- 
-==== «featureType» Flaggstang
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -679,315 +627,12 @@
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
-|[1..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
- 
-==== «featureType» Fundament
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
- 
-==== «featureType» Pipe
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|nrlpeker
-|URI
-|..NRLPEKER
-|[0..1]
- 
-|posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[0..1]
  
 |område
-|Flate
-|.FLATE
-|[0..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|===
- 
-==== «featureType» Søppelbeholder
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
+|GM_Surface
 |.FLATE
 |[0..1]
  
@@ -1008,7 +653,10 @@
  
 |===
  
-==== «featureType» Tank
+[discrete]
+==== Objekttype: Brønn
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1041,6 +689,333 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Flaggstang
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Fundament
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Pipe
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1098,315 +1073,12 @@
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[0..1]
  
 |område
-|Flate
-|.FLATE
-|[0..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
- 
-==== «featureType» Trapp
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
- 
-==== «featureType» Tårn
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|nrlpeker
-|URI
-|..NRLPEKER
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[0..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[1..1]
- 
-|===
- 
-==== «featureType» Parkdetalj
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
+|GM_Surface
 |.FLATE
 |[0..1]
  
@@ -1415,19 +1087,12 @@
 |..HREF
 |[1..1]
  
-|parkdetaljtype
-|«CodeList» Parkdetaljtype
-|..PARKDETALJTYPE
-|[1..1]
- 
-|eksternpeker
-|URI
-|..EKSTERNPEKER
-|[0..1]
- 
 |===
  
-==== «featureType» Gjerde
+[discrete]
+==== Objekttype: Tank
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1460,6 +1125,343 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Trapp
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Tårn
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Gjerde
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1517,7 +1519,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1538,7 +1540,10 @@
  
 |===
  
-==== «featureType» MurFrittstående
+[discrete]
+==== Objekttype: MurFrittstående
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1571,6 +1576,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1623,7 +1633,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1639,7 +1649,10 @@
  
 |===
  
-==== «featureType» MurLoddrett
+[discrete]
+==== Objekttype: MurLoddrett
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1672,6 +1685,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1729,7 +1747,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1745,7 +1763,10 @@
  
 |===
  
-==== «featureType» Ruin
+[discrete]
+==== Objekttype: Portstolpe
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1778,6 +1799,115 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Ruin
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -1830,7 +1960,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1851,7 +1981,10 @@
  
 |===
  
-==== «featureType» Portstolpe
+[discrete]
+==== Objekttype: Skjerm
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -1885,101 +2018,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[1..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|===
- 
-==== «featureType» Skjerm
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2037,7 +2079,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2063,7 +2105,10 @@
  
 |===
  
-==== «featureType» SkråForstøtningsmur
+[discrete]
+==== Objekttype: SkråForstøtningsmur
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2096,6 +2141,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2153,7 +2203,7 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -2164,7 +2214,10 @@
  
 |===
  
-==== «featureType» Voll
+[discrete]
+==== Objekttype: Voll
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2197,6 +2250,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2254,7 +2312,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2275,7 +2333,10 @@
  
 |===
  
-==== «featureType» Hoppbakke
+[discrete]
+==== Objekttype: Hoppbakke
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2308,6 +2369,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2360,7 +2426,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2371,7 +2437,10 @@
  
 |===
  
-==== «featureType» Idrettsanlegg
+[discrete]
+==== Objekttype: Idrettsanlegg
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2404,6 +2473,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2456,7 +2530,7 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2467,7 +2541,10 @@
  
 |===
  
-==== «featureType» Skytebaneinnretning
+[discrete]
+==== Objekttype: Parkdetalj
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2500,6 +2577,135 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[0..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|parkdetaljtype
+|«CodeList» Parkdetaljtype
+|..PARKDETALJTYPE
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Skytebaneinnretning
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2552,7 +2758,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2563,7 +2769,10 @@
  
 |===
  
-==== «featureType» Svømmebasseng
+[discrete]
+==== Objekttype: Svømmebasseng
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2596,6 +2805,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2648,7 +2862,7 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -2659,7 +2873,10 @@
  
 |===
  
-==== «featureType» Taubane
+[discrete]
+==== Objekttype: Taubane
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2692,6 +2909,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2749,8 +2971,8 @@
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Surface
+|.FLATE
 |[1..1]
  
 |taubanetype
@@ -2763,13 +2985,21 @@
 |..HREF
 |[1..1]
  
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
 |tilhørendeMast
 |«FeatureType» Taubanemast
-|..
+|..TILHØRENDEMAST
 |[0..*]
 |===
  
-==== «FeatureType» Taubanemast
+[discrete]
+==== Objekttype: Taubanemast
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2802,6 +3032,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2859,7 +3094,7 @@
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
@@ -2870,7 +3105,10 @@
  
 |===
  
-==== «featureType» Tribune
+[discrete]
+==== Objekttype: Tribune
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2903,6 +3141,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -2955,13 +3198,16 @@
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
 |===
  
-==== «featureType» BeskrivendeHjelpelinjeAnlegg
+[discrete]
+==== Objekttype: BeskrivendeHjelpelinjeAnlegg
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -2994,6 +3240,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3046,7 +3297,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -3062,7 +3313,10 @@
  
 |===
  
-==== «featureType» FiktivAvgrensningForAnlegg
+[discrete]
+==== Objekttype: Demning
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3095,6 +3349,308 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Elveforbygning
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Elveterskel
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: FiktivAvgrensningForAnlegg
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3117,13 +3673,16 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
  
-==== «featureType» Kai
+[discrete]
+==== Objekttype: Fiskehjell
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3156,6 +3715,11 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3177,19 +3741,51 @@
 |..INFORMASJON
 |[0..1]
  
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
-|havnedatapeker
-|URI
-|..HAVNEDATAPEKER
-|[0..1]
- 
+|tilhørendeMøne
+|«featureType» FiskehjellMøne
+|..TILHØRENDEMØNE
+|[0..*]
 |===
  
-==== «featureType» KaiFront
+[discrete]
+==== Objekttype: FiskehjellMøne
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3222,6 +3818,316 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|senterlinje
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Fisketrapp
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|senterlinje
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Flytebrygge
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|tilhørendeLandgang
+|«featureType» FlytebryggeLandgang
+|..TILHØRENDELANGANG
+|[0..*]
+|tilhørendeUtligger
+|«featureType» FlytebryggeUtligger
+|..TILHØRENDEUTLIGGER
+|[0..*]
+|===
+ 
+[discrete]
+==== Objekttype: FlytebryggeLandgang
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3274,18 +4180,189 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: FlytebryggeUtligger
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|senterlinje
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: KaiBrygge
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
 |[1..1]
  
 |havnedatapeker
 |URI
 |..HAVNEDATAPEKER
-|[1..1]
+|[0..1]
  
 |===
  
-==== «featureType» Brygge
+[discrete]
+==== Objekttype: KaiBryggeKant
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3318,6 +4395,110 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Molo
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3370,98 +4551,7 @@
 |[0..1]
  
 |område
-|Flate
-|.FLATE
-|[1..1]
- 
-|===
- 
-==== «featureType» Molo
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -3472,7 +4562,10 @@
  
 |===
  
-==== «featureType» Flytebrygge
+[discrete]
+==== Objekttype: Oppdrettskar
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3506,100 +4599,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|tilhørendeLandgang
-|«featureType» FlytebryggeLandgang
-|..TILHØRENDELANDGANG
-|[0..*]
-|===
- 
-==== «featureType» FlytebryggeLandgang
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3652,13 +4655,21 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
 |[1..1]
  
 |===
  
-==== «featureType» Pælebunt
+[discrete]
+==== Objekttype: Oppdrettslokalitet
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3691,6 +4702,115 @@
 |DateTime
 |..OPPDATERINGSDATO
 |[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Pælebunt
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3743,7 +4863,7 @@
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
@@ -3754,7 +4874,10 @@
  
 |===
  
-==== «featureType» Oppdrettskar
+[discrete]
+==== Objekttype: Rørgate
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3788,101 +4911,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|grense
-|Kurve
-|.KURVE
-|[1..1]
- 
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
-|[1..1]
- 
-|===
- 
-==== «featureType» Rørgate
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -3935,7 +4967,7 @@
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -3951,7 +4983,10 @@
  
 |===
  
-==== «featureType» Demning
+[discrete]
+==== Objekttype: Slipp
+ 
+[discrete]
 ===== Modellelementnavn og SOSI_navn
 [cols="20,20,20,10"]
 |===
@@ -3985,555 +5020,10 @@
 |..OPPDATERINGSDATO
 |[1..1]
  
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|===
- 
-==== «featureType» Elveforbygning
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
+|sluttdato
 |DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
+|..SLUTTDATO
 |[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|===
- 
-==== «featureType» Elveterskel
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|===
- 
-==== «featureType» Fiskehjell
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|tilhørendeMøne
-|«featureType» FiskehjellMøne
-|..TILHØRENDEMØNE
-|[0..*]
-|===
- 
-==== «featureType» FiskehjellMøne
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|senterlinje
-|Kurve
-|.KURVE
-|[1..1]
- 
-|===
- 
-==== «featureType» Fisketrapp
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|senterlinje
-|Kurve
-|.KURVE
-|[1..1]
- 
-|===
- 
-==== «featureType» Sluse
-===== Modellelementnavn og SOSI_navn
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
  
 |datafangstdato
 |Date
@@ -4586,7 +5076,111 @@
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
+|.KURVE
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|===
+ 
+[discrete]
+==== Objekttype: Sluse
+ 
+[discrete]
+===== Modellelementnavn og SOSI_navn
+[cols="20,20,20,10"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+|«CodeList» Synbarhet
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+|«CodeList» Datafangstmetode
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|GM_Curve
 |.KURVE
 |[1..1]
  
