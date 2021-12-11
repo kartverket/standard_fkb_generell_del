@@ -1,7 +1,9 @@
-=== Pakke «ApplicationSchema» FKB-BygnAnlegg-5.0-Utkast
-*Definisjon:* Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer, gjerder, taubaner, kaier, moloer, tanker etc.
+// Start of UML-model
+=== Pakke: «ApplicationSchema» FKB-BygnAnlegg-5.0
+*Definisjon:* Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer  gjerder  taubaner  kaier  moloer  tanker etc.
  
-===== Profilparametre i tagged values
+[discrete]
+==== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |definition
@@ -17,19 +19,19 @@
 |no
  
 |SOSI_kortnavn
-|FKB-BygnAnlegg
+|FKBBygnAnlegg
  
 |SOSI_langnavn
-|FKB Bygningsmessige anlegg
+|FKB-BygnAnlegg
  
 |SOSI_modellstatus
-|utkast
+|gyldig
  
 |SOSI_versjon
 |5.0
  
 |targetNamespace
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/
+|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0
  
 |version
 |5.0
@@ -38,44 +40,55 @@
 |app
  
 |xsdDocument
-|FKB-BygnAnlegg50.xsd
+|FKBBygnAnlegg.xsd
  
 |xsdEncodingRule
 |sosi
  
 |===
  
+'''
+ 
 .Oversiktsdiagram FKB-BygnAnlegg 
-image::diagrammer/Oversiktsdiagram FKB-BygnAnlegg.png[link=diagrammer/Oversiktsdiagram FKB-BygnAnlegg.png, window=_blank, alt="Diagramm: Oversiktsdiagram FKB-BygnAnlegg"]
+image::diagrammer/Oversiktsdiagram FKB-BygnAnlegg.png[link=diagrammer/Oversiktsdiagram FKB-BygnAnlegg.png, Alt="Diagram med navn Oversiktsdiagram FKB-BygnAnlegg som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Pakkerealisering 
-image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, window=_blank, alt="Diagramm: Pakkerealisering"]
+image::diagrammer/Pakkerealisering.png[link=diagrammer/Pakkerealisering.png, Alt="Diagram med navn Pakkerealisering som viser UML-klasser beskrevet i teksten nedenfor."]
 <<<
 '''
-=== Pakke: Generelle elementer
+==== Pakke: Generelle elementer
 *Definisjon:* pakke med elementer som realiserer tilsvarende elementer i FKB Generell del 5.0
 
 Merknad:
 Kopieres direkte inn i de enkelte FKB-datasettene
  
+'''
+ 
 .Oversiktsdiagram Fellesegenskaper 
-image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, window=_blank, alt="Diagramm: Oversiktsdiagram Fellesegenskaper"]
+image::diagrammer/Oversiktsdiagram Fellesegenskaper.png[link=diagrammer/Oversiktsdiagram Fellesegenskaper.png, Alt="Diagram med navn Oversiktsdiagram Fellesegenskaper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra SOSI generell del 
-image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, window=_blank, alt="Diagramm: Realisering fra SOSI generell del"]
+image::diagrammer/Realisering fra SOSI generell del.png[link=diagrammer/Realisering fra SOSI generell del.png, Alt="Diagram med navn Realisering fra SOSI generell del som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Posisjonskvalitet 
-image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, window=_blank, alt="Diagramm: Hoveddiagram Posisjonskvalitet"]
+image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagram Posisjonskvalitet.png, Alt="Diagram med navn Hoveddiagram Posisjonskvalitet som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[fellesegenskaper]]
-==== «FeatureType» Fellesegenskaper (abstrakt)
+===== «FeatureType» Fellesegenskaper (abstrakt)
 *Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
 
 Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -85,9 +98,9 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |unik identifikasjon av et objekt 
 
 Merknad FKB:
-Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
-Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette m&#229; ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
-For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette inneb&#230;rer at lokalId alene alltid vil v&#230;re unik. Likevel skal alltid navnerom ogs&#229; angis. Navnerom angir FKB-datasettet.
+Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
 |Multiplisitet: 
 |[1..1]
@@ -104,17 +117,17 @@ SOSI_navn: IDENT +
 |*oppdateringsdato*
  
 |Definisjon: 
-|tidspunkt for siste endring p&#229; objektet 
+|tidspunkt for siste endring på objektet 
 
 Merknad FKB: 
 
-Denne datoen viser datasystemets siste endring p&#229; dataobjektet. Egenskapen settes av forvaltningssystemet etter f&#248;lgende regler:
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
 
 i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
 
-ii. Oppdateringsdato skal endres ogs&#229; hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
 
-iii. N&#229;r avgrensingslinjene til en flate endres, skal flateobjektet f&#229; ny oppdateringsdato.
+iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
 
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
@@ -131,10 +144,31 @@ SOSI_navn: OPPDATERINGSDATO +
 [cols="20,80"]
 |===
 |*Navn:* 
+|*sluttdato*
+ 
+|Definisjon: 
+|Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.    
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: DATOTID + 
+SOSI_navn: SLUTTDATO + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
 |*datafangstdato*
  
 |Definisjon: 
-|dato n&#229;r objektet siste gang ble registrert/observert/m&#229;lt i terrenget
+|dato når objektet siste gang ble registrert/observert/målt i terrenget
  
 |Multiplisitet: 
 |[1..1]
@@ -152,10 +186,10 @@ SOSI_navn: DATAFANGSTDATO +
 |*verifiseringsdato*
  
 |Definisjon: 
-|dato n&#229;r dataene er fastsl&#229;tt &#229; v&#230;re i samsvar med virkeligheten.
+|dato når dataene er fastslått å være i samsvar med virkeligheten.
 
 Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer p&#229; objektet (det virkelige objektet er i samsvar med dataobjektet)
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold  og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -196,7 +230,7 @@ SOSI_navn: REGISTRERINGSVERSJON +
 |generell opplysning.
 
 Merknad FKB:
-Mulighet til &#229; legge inn utfyllende informasjon om objektet. Egenskapen b&#248;r bare brukes til &#229; legge inn ekstra informasjon om enkeltobjekter. Egenskapen b&#248;r ikke brukes til &#229; systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.
  
 |Multiplisitet: 
 |[0..1]
@@ -209,26 +243,29 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: INFORMASJON + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Subtyper:
-|<<kai,«featureType» Kai>> +
+|<<kaibrygge,«featureType» KaiBrygge>> +
 <<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
 <<fiktivavgrensningforanlegg,«featureType» FiktivAvgrensningForAnlegg>> +
 |Realisering av: 
-|«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» Fellesegenskaper +
-«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
- 
+|/SOSI Model/SOSI Generell objektkatalog/FKB Generell del/FKB Generell del-5.0/Generelle elementer::«FeatureType» Fellesegenskaper +
+|Realisering av: 
+|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |===
  
 '''
  
 [[kvalitetpåkrevd]]
-==== «FeatureType» KvalitetPåkrevd (abstrakt)
-*Definisjon:* abstrakt objekttype med p&#229;krevet kvalitetsangivelse
+===== «FeatureType» KvalitetPåkrevd (abstrakt)
+*Definisjon:* abstrakt objekttype med påkrevet kvalitetsangivelse
  
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -248,14 +285,16 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
 |
 SOSI_navn: KVALITET + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
 |<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 |Subtyper:
-|<<kaifront,«featureType» KaiFront>> +
+|<<kaibryggekant,«featureType» KaiBryggeKant>> +
 <<elveterskel,«featureType» Elveterskel>> +
 <<elveforbygning,«featureType» Elveforbygning>> +
 <<tribune,«featureType» Tribune>> +
@@ -267,7 +306,7 @@ SOSI_navn: KVALITET +
 <<portstolpe,«featureType» Portstolpe>> +
 <<idrettsanlegg,«featureType» Idrettsanlegg>> +
 <<pælebunt,«featureType» Pælebunt>> +
-<<brygge,«featureType» Brygge>> +
+<<flytebryggeutligger,«featureType» FlytebryggeUtligger>> +
 <<flytebrygge,«featureType» Flytebrygge>> +
 <<fisketrapp,«featureType» Fisketrapp>> +
 <<fundament,«featureType» Fundament>> +
@@ -280,7 +319,7 @@ SOSI_navn: KVALITET +
 <<brønn,«featureType» Brønn>> +
 <<beskrivendehjelpelinjeanlegg,«featureType» BeskrivendeHjelpelinjeAnlegg>> +
 <<molo,«featureType» Molo>> +
-<<søppelbeholder,«featureType» Søppelbeholder>> +
+<<avfallsbeholder,«featureType» Avfallsbeholder>> +
 <<oppdrettskar,«featureType» Oppdrettskar>> +
 <<demning,«featureType» Demning>> +
 <<rørgate,«featureType» Rørgate>> +
@@ -288,19 +327,22 @@ SOSI_navn: KVALITET +
 <<flytebryggelandgang,«featureType» FlytebryggeLandgang>> +
 <<nrlobjekter,«FeatureType» NRLobjekter>> +
 <<nvdbobjekter,«FeatureType» NVDBobjekter>> +
+<<oppdrettslokalitet,«featureType» Oppdrettslokalitet>> +
+<<slipp,«featureType» Slipp>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
-«ApplicationSchema» FKB Generell del-5.0Utkast::«FeatureType» KvalitetPåkrevd +
- 
+|Realisering av: 
+|/SOSI Model/SOSI Generell objektkatalog/FKB Generell del/FKB Generell del-5.0/Generelle elementer::«FeatureType» KvalitetPåkrevd +
 |===
  
 '''
  
 [[nrlobjekter]]
-==== «FeatureType» NRLobjekter (abstrakt)
+===== «FeatureType» NRLobjekter (abstrakt)
 *Definisjon:* abstrakt objekttype som arves fra for objekter som har kobling til NRL
  
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -320,7 +362,9 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: NRLPEKER + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -337,10 +381,11 @@ SOSI_navn: NRLPEKER +
 '''
  
 [[nvdbobjekter]]
-==== «FeatureType» NVDBobjekter (abstrakt)
+===== «FeatureType» NVDBobjekter (abstrakt)
 *Definisjon:* abstrakt objekttype som arves fra for objekter som har kobling til NVDB
  
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -360,7 +405,9 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: NVDBPEKER + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -381,21 +428,23 @@ SOSI_navn: NVDBPEKER +
 '''
  
 [[identifikasjon]]
-==== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+===== «dataType» Identifikasjon
+*Definisjon:* Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer. 
 
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
 |IDENT
  
 |===
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -404,7 +453,7 @@ Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets lev
 |Definisjon: 
 |lokal identifikator av et objekt
 
-Merknad: Det er dataleverend&#248;rens ansvar &#229; s&#248;rge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.
  
 |Multiplisitet: 
 |[1..1]
@@ -423,7 +472,7 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+|navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI
 
 Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
 
@@ -459,7 +508,8 @@ SOSI_datatype: T +
 SOSI_lengde: 100 + 
 SOSI_navn: VERSJONID + 
 |===
-===== Arv og realiseringer
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Realisering av: 
@@ -469,20 +519,22 @@ SOSI_navn: VERSJONID +
 '''
  
 [[posisjonskvalitet]]
-==== «dataType» Posisjonskvalitet
-*Definisjon:* beskrivelse av kvaliteten p&#229; stedfestingen.
+===== «dataType» Posisjonskvalitet
+*Definisjon:* beskrivelse av kvaliteten på stedfestingen.
 
 Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videref&#248;ring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innf&#248;rer en egen variant av datatypen Posisjonskvalitet der kodeliste m&#229;lemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_navn
 |KVALITET
  
 |===
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -490,7 +542,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
  
 |Definisjon: 
 |metode for datafangst. 
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for b&#229;de grunnriss og h&#248;yde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeH&#248;yde.
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x y)  eller for både grunnriss og høyde (x y z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -512,12 +564,12 @@ SOSI_navn: DATAFANGSTMETODE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
 
-For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forst&#229;elsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og n&#230;rmeste punkt p&#229; overflata. 
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
 
 Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
 
  
 |Multiplisitet: 
@@ -537,7 +589,7 @@ SOSI_navn: NØYAKTIGHET +
 |*synbarhet*
  
 |Definisjon: 
-|beskrivelse av hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+|beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
 |Multiplisitet: 
 |[0..1]
@@ -557,9 +609,9 @@ SOSI_navn: SYNBARHET +
 |*datafangstmetodeHøyde*
  
 |Definisjon: 
-|metoden brukt for h&#248;yderegistrering av posisjon.
+|metoden brukt for høyderegistrering av posisjon.
 
-Det er bare n&#248;dvending &#229; angi en verdi for egenskapen dersom datafangstmetode for h&#248;yde avviker fra datafangstmetode for grunnriss.
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.
 
  
 |Multiplisitet: 
@@ -582,12 +634,12 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket  men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en ansl&#229;tt eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
 
 Merknad:
-Verdien er ment &#229; beskrive n&#248;yaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et m&#229;l p&#229; det tilfeldige avviket og det inneb&#230;rer at vi forutsetter at det systematiske avviket i liten grad p&#229;virker n&#248;yaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for n&#230;rmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
@@ -600,17 +652,21 @@ SOSI_datatype: H +
 SOSI_lengde: 6 + 
 SOSI_navn: H-NØYAKTIGHET + 
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+|*ugyldige datafangstmetoder for høyde*
  
 |Beskrivelse: 
-|inv: self.datafangstmetodeH&#248;yde &lt;&gt; 'dig'
+|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+--Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
  
 |===
-===== Arv og realiseringer
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Realisering av: 
@@ -620,10 +676,11 @@ SOSI_navn: H-NØYAKTIGHET +
 '''
  
 [[synbarhet]]
-==== «CodeList» Synbarhet
-*Definisjon:* synbarhet beskriver hvor godt objektene framg&#229;r i datagrunnlaget for posisjonering (f.eks. flybildene).
+===== «CodeList» Synbarhet
+*Definisjon:* synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -642,18 +699,17 @@ SOSI_navn: H-NØYAKTIGHET +
 |SYNBARHET
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet
- 
  
 '''
  
 [[datafangstmetode]]
-==== «CodeList» Datafangstmetode
+===== «CodeList» Datafangstmetode
 *Definisjon:* metode for datafangst. 
 
-Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landm&#229;lingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med &#229; innhente det bakenforliggende datagrunnlaget.
+Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -672,16 +728,15 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 |DATAFANGSTMETODE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode
- 
  
 '''
  
 [[registreringsversjon]]
-==== «CodeList» Registreringsversjon
+===== «CodeList» Registreringsversjon
 *Definisjon:* FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -700,16 +755,15 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |REGISTRERINGSVERSJON
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon
- 
  
 '''
  
 [[høydereferanse]]
-==== «CodeList» Høydereferanse
-*Definisjon:* koordinatregistering utf&#248;rt p&#229; topp eller bunn av et objekt
+===== «CodeList» Høydereferanse
+*Definisjon:* koordinatregistering utført på topp eller bunn av et objekt
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -728,19 +782,18 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |HREF
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse
- 
  
 '''
  
 [[medium]]
-==== «CodeList» Medium
+===== «CodeList» Medium
 *Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
-Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
+Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -759,32 +812,39 @@ Veg p&#229; bro, i tunnel, inne i et bygningsmessig anlegg, etc.
 |MEDIUM
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium
- 
 <<<
 '''
-=== Pakke: BruerOgTuneller
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, Bruer og tuneller
+==== Pakke: BruerOgTuneller
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  Bruer og tuneller
+ 
+'''
  
 .Oversiktsdiagram Bruer og tuneller 
-image::diagrammer/Oversiktsdiagram Bruer og tuneller.png[link=diagrammer/Oversiktsdiagram Bruer og tuneller.png, window=_blank, alt="Diagramm: Oversiktsdiagram Bruer og tuneller"]
+image::diagrammer/Oversiktsdiagram Bruer og tuneller.png[link=diagrammer/Oversiktsdiagram Bruer og tuneller.png, Alt="Diagram med navn Oversiktsdiagram Bruer og tuneller som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygnan 4.0 - Bruer og tuneller 
-image::diagrammer/Realisering fra Bygnan 4.0 - Bruer og tuneller.png[link=diagrammer/Realisering fra Bygnan 4.0 - Bruer og tuneller.png, window=_blank, alt="Diagramm: Realisering fra Bygnan 4.0 - Bruer og tuneller"]
+image::diagrammer/Realisering fra Bygnan 4.0 - Bruer og tuneller.png[link=diagrammer/Realisering fra Bygnan 4.0 - Bruer og tuneller.png, Alt="Diagram med navn Realisering fra Bygnan 4.0 - Bruer og tuneller som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Bruer og tuneller - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Bruer og tuneller - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Bruer og tuneller - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[bru]]
-==== «featureType» Bru
+===== «featureType» Bru
 *Definisjon:* konstruksjon for kryssing av vanskelig farbart område
-Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlige hindringer, samt kryssende infrastruktur.
+Merknad: Med vanskelig farbart område menes en elv  et juv eller andre naturlige hindringer  samt kryssende infrastruktur.
  
+ 
+'''
 .Illustrasjon av objekttype Bru
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bru.png[alt="Illustrasjon av objekttype: Bru"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bru.png, Alt="Bilde av et eksempel på objekttypen Bru, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -797,7 +857,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -843,7 +903,7 @@ SOSI_navn: BRUTRAFIKKTYPE +
 |*friseilingshøyde*
  
 |Definisjon: 
-|friseilingsh&#248;yde angitt i meter. Angis kun for bruer over vann der friseilingsh&#248;yde er relevant.
+|friseilingshøyde angitt i meter. Angis kun for bruer over vann der friseilingshøyde er relevant.
  
 |Multiplisitet: 
 |[0..1]
@@ -856,7 +916,9 @@ SOSI_datatype: D +
 SOSI_lengde: 10 + 
 SOSI_navn: FRISEILINGSHØYDE + 
 |===
-===== Roller
+ 
+[discrete]
+====== Roller
 [cols="20,80"]
 |===
 |*Rollenavn:* 
@@ -871,7 +933,9 @@ SOSI_navn: FRISEILINGSHØYDE +
 |Til klasse
 |<<brudetalj,«featureType» Brudetalj>>
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -884,15 +948,18 @@ SOSI_navn: FRISEILINGSHØYDE +
 '''
  
 [[brudetalj]]
-==== «featureType» Brudetalj
+===== «featureType» Brudetalj
 *Definisjon:* markante detaljer på bru som ikke registreres gjennom andre objekttyper
 Eksempler:
 -          Brutårn for hengebruer.
 -          Bæreelement for brukonstruksjon.
  
+ 
+'''
 .Illustrasjon av objekttype Brudetalj
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png[alt="Illustrasjon av objekttype: Brudetalj"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png, Alt="Bilde av et eksempel på objekttypen Brudetalj, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -905,9 +972,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -920,12 +989,15 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[kulvert]]
-==== «featureType» Kulvert
-*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &lt; lysåpning &lt; 2,5m
+===== «featureType» Kulvert
+*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og lysåpning mellom 1m og 2 5m
  
+ 
+'''
 .Illustrasjon av objekttype Kulvert
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kulvert.png[alt="Illustrasjon av objekttype: Kulvert"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kulvert.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kulvert.png, Alt="Bilde av et eksempel på objekttypen Kulvert, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -938,9 +1010,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -953,12 +1027,15 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[stikkrenne]]
-==== «featureType» Stikkrenne
-*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &gt; lysåpning
+===== «featureType» Stikkrenne
+*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og lysåpning mindre enn 1m
  
+ 
+'''
 .Illustrasjon av objekttype Stikkrenne
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_stikkrenne.png[alt="Illustrasjon av objekttype: Stikkrenne"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_stikkrenne.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_stikkrenne.png, Alt="Bilde av et eksempel på objekttypen Stikkrenne, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -971,9 +1048,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -986,12 +1065,15 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[tunnelportal]]
-==== «featureType» Tunnelportal
+===== «featureType» Tunnelportal
 *Definisjon:* spesielt byggverk som sammenbinder tunnel og åpen veg
  
+ 
+'''
 .Illustrasjon av objekttype Tunnelportal
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png[alt="Illustrasjon av objekttype: Tunnelportal"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tunnelportal.png, Alt="Bilde av et eksempel på objekttypen Tunnelportal, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1004,12 +1086,14 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |Profilparametre i tagged values: 
 |
 SOSI_melding: Fant ikke denne i SOSI_db + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1022,10 +1106,11 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 '''
  
 [[brutrafikktype]]
-==== «CodeList» Brutrafikktype
+===== «CodeList» Brutrafikktype
 *Definisjon:* ulike former for trafikk en bru er bygget for
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -1044,31 +1129,52 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 |BRUTRAFIKKTYPE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/brutrafikktype
- 
 <<<
 '''
-=== Pakke: BygningsmessigeAnlegg
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, BygningsmessigeAnlegg
- 
-.Oversiktsdiagram Bygningsmessige anlegg 
-image::diagrammer/Oversiktsdiagram Bygningsmessige anlegg.png[link=diagrammer/Oversiktsdiagram Bygningsmessige anlegg.png, window=_blank, alt="Diagramm: Oversiktsdiagram Bygningsmessige anlegg"]
- 
-.Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg 
-image::diagrammer/Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg.png[link=diagrammer/Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg.png, window=_blank, alt="Diagramm: Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg"]
- 
-.Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister"]
+==== Pakke: BygningsmessigeAnlegg
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  BygningsmessigeAnlegg
  
 '''
  
-[[brønn]]
-==== «featureType» Brønn
-*Definisjon:* lite bygningsmessig anlegg for uttak av ferskvann
+.Oversiktsdiagram Bygningsmessige anlegg 
+image::diagrammer/Oversiktsdiagram Bygningsmessige anlegg.png[link=diagrammer/Oversiktsdiagram Bygningsmessige anlegg.png, Alt="Diagram med navn Oversiktsdiagram Bygningsmessige anlegg som viser UML-klasser beskrevet i teksten nedenfor."]
  
-.Illustrasjon av objekttype Brønn
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bronn.png[alt="Illustrasjon av objekttype: Brønn"]
-===== Egenskaper
+'''
+ 
+.Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg 
+image::diagrammer/Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg.png[link=diagrammer/Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg.png, Alt="Diagram med navn Realisering fra Bygnan 4.0 - BygningsmessigeAnlegg som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister 
+image::diagrammer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Bygningsmessige anlegg - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+[[avfallsbeholder]]
+===== «featureType» Avfallsbeholder
+*Definisjon:* Større tank eller annen type beholder for avfall
+ 
+ 
+'''
+.Illustrasjon av objekttype Avfallsbeholder
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png, Alt="Bilde av et eksempel på objekttypen Avfallsbeholder, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|sted som objektet eksisterer på
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1081,7 +1187,114 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<medium,«CodeList» Medium>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium + 
+SOSI_datatype: T + 
+SOSI_lengde: 1 + 
+SOSI_navn: MEDIUM + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|angivelse av om registreringen er utført på topp eller bunn av et element
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*eksternpeker*
+ 
+|Definisjon: 
+|referanse til objektet i et eksternt system  f.eks. hos ansvarlig renovasjonsselskap.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
+|===
+ 
+[discrete]
+====== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha enten punkt- eller flategeometri*
+ 
+|Beskrivelse: 
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
+ 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|===
+ 
+'''
+ 
+[[brønn]]
+===== «featureType» Brønn
+*Definisjon:* lite bygningsmessig anlegg for uttak av ferskvann
+ 
+ 
+'''
+.Illustrasjon av objekttype Brønn
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bronn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bronn.png, Alt="Bilde av et eksempel på objekttypen Brønn, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1095,7 +1308,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1117,18 +1330,22 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
 |*Skal ha enten punkt- eller flategeometri*
  
 |Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
 
  
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1141,12 +1358,15 @@ SOSI_navn: HREF +
 '''
  
 [[flaggstang]]
-==== «featureType» Flaggstang
+===== «featureType» Flaggstang
 *Definisjon:* lang rett stang for heising av flagg
  
+ 
+'''
 .Illustrasjon av objekttype Flaggstang
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flaggstang.png[alt="Illustrasjon av objekttype: Flaggstang"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flaggstang.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flaggstang.png, Alt="Bilde av et eksempel på objekttypen Flaggstang, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1159,7 +1379,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1201,7 +1421,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1214,14 +1436,16 @@ SOSI_navn: MEDIUM +
 '''
  
 [[fundament]]
-==== «featureType» Fundament
+===== «featureType» Fundament
 *Definisjon:* støpt underlag for frittstående konstruksjoner 
-Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil eventuelt  være beskrevet som en node i nettverket den er en del av.
-Eksempel: Stolper og master
+Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil være kartlagt som egne objekter. For eksempel stolper  master  rørgater  brupilarer  vindturbiner  helikopterlandingsplasser mv.
  
+ 
+'''
 .Illustrasjon av objekttype Fundament
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fundament.png[alt="Illustrasjon av objekttype: Fundament"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fundament.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fundament.png, Alt="Bilde av et eksempel på objekttypen Fundament, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1234,7 +1458,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1256,7 +1480,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1269,12 +1495,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[pipe]]
-==== «featureType» Pipe
+===== «featureType» Pipe
 *Definisjon:* frittstående rørformete innretninger for transport av avgasser
  
+ 
+'''
 .Illustrasjon av objekttype Pipe
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png[alt="Illustrasjon av objekttype: Pipe"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png, Alt="Bilde av et eksempel på objekttypen Pipe, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1287,7 +1516,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1301,7 +1530,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1323,17 +1552,21 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
 |*Skal ha enten punkt- eller flategeometri*
  
 |Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
  
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1345,127 +1578,16 @@ SOSI_navn: HREF +
  
 '''
  
-[[søppelbeholder]]
-==== «featureType» Søppelbeholder
-*Definisjon:* St&#248;rre tank eller annen type beholder for s&#248;ppel
- 
-.Illustrasjon av objekttype Søppelbeholder
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png[alt="Illustrasjon av objekttype: Søppelbeholder"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<punkt,Punkt>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*medium*
- 
-|Definisjon: 
-|objektets beliggenhet i forhold til jordoverflaten
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<medium,«CodeList» Medium>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium + 
-SOSI_datatype: T + 
-SOSI_lengde: 1 + 
-SOSI_navn: MEDIUM + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|angivelse av om registreringen er utf&#248;rt p&#229; topp eller bunn av et element
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*eksternpeker*
- 
-|Definisjon: 
-|referanse til objektet i et eksternt system, f.eks. hos ansvarlig renovasjonsselskap.
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: EKSTERNPEKER + 
-|===
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Skal ha enten punkt- eller flategeometri*
- 
-|Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
- 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|===
- 
-'''
- 
 [[tank]]
-==== «featureType» Tank
+===== «featureType» Tank
 *Definisjon:* lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning
  
+ 
+'''
 .Illustrasjon av objekttype Tank
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tank.png[alt="Illustrasjon av objekttype: Tank"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tank.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tank.png, Alt="Bilde av et eksempel på objekttypen Tank, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1478,7 +1600,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1492,7 +1614,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1514,17 +1636,21 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
 |*Skal ha enten punkt- eller flategeometri*
  
 |Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
  
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1537,12 +1663,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[trapp]]
-==== «featureType» Trapp
-*Definisjon:* trapp som ikke st&#229;r i tilknytning til en bygning
+===== «featureType» Trapp
+*Definisjon:* trapp som ikke står i tilknytning til en bygning
  
+ 
+'''
 .Illustrasjon av objekttype Trapp
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png[alt="Illustrasjon av objekttype: Trapp"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png, Alt="Bilde av et eksempel på objekttypen Trapp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1555,7 +1684,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1577,7 +1706,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1590,14 +1721,17 @@ SOSI_navn: MEDIUM +
 '''
  
 [[tårn]]
-==== «featureType» Tårn
-*Definisjon:* h&#248;y bygningsmessig konstruksjon hvor h&#248;yden er stor i forhold til bygningens areal i grunnplanet
-Merknad: Omfatter alle t&#229;rn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse- som f.eks tank. 
-Eksempel: M&#229;let&#229;rn og stupet&#229;rn
+===== «featureType» Tårn
+*Definisjon:* høy bygningsmessig konstruksjon hvor høyden er stor i forhold til bygningens areal i grunnplanet
+Merknad: Omfatter alle tårn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse- som f.eks tank. 
+Eksempel: Måletårn og stupetårn
  
+ 
+'''
 .Illustrasjon av objekttype Tårn
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tarn.png[alt="Illustrasjon av objekttype: Tårn"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tarn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tarn.png, Alt="Bilde av et eksempel på objekttypen Tårn, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1610,7 +1744,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -1624,7 +1758,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -1646,17 +1780,21 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
 |*Skal ha enten punkt- eller flategeometri*
  
 |Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
  
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1665,176 +1803,38 @@ SOSI_navn: MEDIUM +
 |Realisering av: 
 |«ApplicationSchema» Bygnan-4.0/BygningsmessigeAnlegg/Pakke2::«featureType» Tårn +
 |===
- 
-'''
- 
-[[parkdetalj]]
-==== «featureType» Parkdetalj
-*Definisjon:* detalj i parkmessig omr&#229;de
-
-Merknad:
-Omfatter detaljer som f.eks. bauter, statuer, fontener, basseng, lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
- 
-.Illustrasjon av objekttype Parkdetalj
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png[alt="Illustrasjon av objekttype: Parkdetalj"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<punkt,Punkt>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*parkdetaljtype*
- 
-|Definisjon: 
-|angir type parkdetalj
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<parkdetaljtype,«CodeList» Parkdetaljtype>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype + 
-SOSI_datatype: T + 
-SOSI_lengde: 10 + 
-SOSI_navn: PARKDETALJTYPE + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*eksternpeker*
- 
-|Definisjon: 
-|referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: EKSTERNPEKER + 
-|===
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Skal ha enten punkt- eller flategeometri*
- 
-|Beskrivelse: 
-|inv: (self.omr&#229;de -&gt; size()) + (self.posisjon -&gt; size()) = 1
- 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/BygningsmessigeAnlegg/Pakke1::«featureType» BautaStatue +
-|===
- 
-'''
- 
-[[parkdetaljtype]]
-==== «CodeList» Parkdetaljtype
-*Definisjon:* angir type parkdetalj
- 
-===== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|asDictionary
-|true
- 
-|codeList
-|https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype
- 
-|SOSI_datatype
-|T
- 
-|SOSI_lengde
-|15
- 
-|SOSI_navn
-|PARKDETALJTYPE
- 
-|===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype
- 
 <<<
 '''
-=== Pakke: MurerOgGjerder
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, Murer og gjerder
+==== Pakke: MurerOgGjerder
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  Murer og gjerder
+ 
+'''
  
 .Oversiktsdiagram Murer og gjerder 
-image::diagrammer/Oversiktsdiagram Murer og gjerder.png[link=diagrammer/Oversiktsdiagram Murer og gjerder.png, window=_blank, alt="Diagramm: Oversiktsdiagram Murer og gjerder"]
+image::diagrammer/Oversiktsdiagram Murer og gjerder.png[link=diagrammer/Oversiktsdiagram Murer og gjerder.png, Alt="Diagram med navn Oversiktsdiagram Murer og gjerder som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygnan 4.0 - Murer og gjerder 
-image::diagrammer/Realisering fra Bygnan 4.0 - Murer og gjerder.png[link=diagrammer/Realisering fra Bygnan 4.0 - Murer og gjerder.png, window=_blank, alt="Diagramm: Realisering fra Bygnan 4.0 - Murer og gjerder"]
+image::diagrammer/Realisering fra Bygnan 4.0 - Murer og gjerder.png[link=diagrammer/Realisering fra Bygnan 4.0 - Murer og gjerder.png, Alt="Diagram med navn Realisering fra Bygnan 4.0 - Murer og gjerder som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Murer og gjerder - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Murer og gjerder - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Murer og gjerder - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Murer og gjerder - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram Murer og gjerder - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Murer og gjerder - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Murer og gjerder - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[gjerde]]
-==== «featureType» Gjerde
-*Definisjon:* oppsatt stengsel som hindrer passering. St&#229;r ofte i grensa mellom eiendommer
+===== «featureType» Gjerde
+*Definisjon:* oppsatt stengsel som hindrer passering. Står ofte i grensa mellom eiendommer
  
+ 
+'''
 .Illustrasjon av objekttype Gjerde
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png[alt="Illustrasjon av objekttype: Gjerde"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png, Alt="Bilde av et eksempel på objekttypen Gjerde, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1847,7 +1847,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -1909,7 +1909,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1922,12 +1924,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[murfrittstående]]
-==== «featureType» MurFrittstående
+===== «featureType» MurFrittstående
 *Definisjon:* mur hvor oppfyllingen på en side utgjør mindre enn halve høyden på den andre siden
  
+ 
+'''
 .Illustrasjon av objekttype MurFrittstående
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png[alt="Illustrasjon av objekttype: MurFrittstående"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png, Alt="Bilde av et eksempel på objekttypen MurFrittstående, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -1940,7 +1945,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -1982,7 +1987,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -1995,12 +2002,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[murloddrett]]
-==== «featureType» MurLoddrett
-*Definisjon:* forst&#248;tningsmur hvor topp og bunn er ubetydelig forskj&#248;vet i  forhold til hverandre
+===== «featureType» MurLoddrett
+*Definisjon:* forstøtningsmur hvor topp og bunn er ubetydelig forskjøvet i  forhold til hverandre
  
+ 
+'''
 .Illustrasjon av objekttype MurLoddrett
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png[alt="Illustrasjon av objekttype: MurLoddrett"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png, Alt="Bilde av et eksempel på objekttypen MurLoddrett, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2013,7 +2023,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2055,7 +2065,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2067,13 +2079,74 @@ SOSI_navn: MEDIUM +
  
 '''
  
+[[portstolpe]]
+===== «featureType» Portstolpe
+*Definisjon:* stolpe som en port kan være hengslet til
+ 
+ 
+'''
+.Illustrasjon av objekttype Portstolpe
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_portstolpe.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_portstolpe.png, Alt="Bilde av et eksempel på objekttypen Portstolpe, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|sted som objektet eksisterer på
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|koordinatregistering utført på topp eller bunn av et objekt
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» Portstolpe +
+|===
+ 
+'''
+ 
 [[ruin]]
-==== «featureType» Ruin
+===== «featureType» Ruin
 *Definisjon:* Synlig mur som er rester etter tidligere byggverk
  
+ 
+'''
 .Illustrasjon av objekttype Ruin
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png[alt="Illustrasjon av objekttype: Ruin"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png, Alt="Bilde av et eksempel på objekttypen Ruin, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2086,7 +2159,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2134,7 +2207,7 @@ SOSI_navn: MEDIUM +
 |*eksternpeker*
  
 |Definisjon: 
-|referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.
+|referanse til objektet i et eksternt system  f.eks. hos parkforvalter i kommunen.
  
 |Multiplisitet: 
 |[0..1]
@@ -2147,76 +2220,28 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: EKSTERNPEKER + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-|===
- 
-'''
- 
-[[portstolpe]]
-==== «featureType» Portstolpe
-*Definisjon:* stolpe som en port kan være hengslet til
- 
-.Illustrasjon av objekttype Portstolpe
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_portstolpe.png[alt="Illustrasjon av objekttype: Portstolpe"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*posisjon*
- 
-|Definisjon: 
-|sted som objektet eksisterer på
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<punkt,Punkt>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|koordinatregistering utført på topp eller bunn av et objekt
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/MurerOgGjerder::«featureType» Portstolpe +
 |===
  
 '''
  
 [[skjerm]]
-==== «featureType» Skjerm
-*Definisjon:* frittstående konstruksjon som skal være et hinder for eksempel til støyutbredelse eller snøfokk
+===== «featureType» Skjerm
+*Definisjon:* frittstående konstruksjon som skal være et hinder for eksempel til støyutbredelse eller snøfokk eller hindre/begrense ras og flom.
  
+ 
+'''
 .Illustrasjon av objekttype Skjerm
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png[alt="Illustrasjon av objekttype: Skjerm"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skjerm.png, Alt="Bilde av et eksempel på objekttypen Skjerm, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2229,7 +2254,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2297,7 +2322,7 @@ SOSI_navn: MEDIUM +
 |*høydeOverBakken*
  
 |Definisjon: 
-|h&#248;yde over bakken (angitt i meter)
+|høyde over bakken (angitt i meter)
  
 |Multiplisitet: 
 |[0..1]
@@ -2310,7 +2335,9 @@ SOSI_datatype: D +
 SOSI_lengde: 10 + 
 SOSI_navn: HOB + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2323,12 +2350,15 @@ SOSI_navn: HOB +
 '''
  
 [[skråforstøtningsmur]]
-==== «featureType» SkråForstøtningsmur
-*Definisjon:* forst&#248;tningsmur hvor topp og bunn er betydelig forskj&#248;vet i forhold til hverandre
+===== «featureType» SkråForstøtningsmur
+*Definisjon:* forstøtningsmur hvor topp og bunn er betydelig forskjøvet i forhold til hverandre
  
+ 
+'''
 .Illustrasjon av objekttype SkråForstøtningsmur
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skraforstotningsmur.png[alt="Illustrasjon av objekttype: SkråForstøtningsmur"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skraforstotningsmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skraforstotningsmur.png, Alt="Bilde av et eksempel på objekttypen SkråForstøtningsmur, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2341,7 +2371,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -2363,7 +2393,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2376,12 +2408,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[voll]]
-==== «featureType» Voll
-*Definisjon:* opphøyd terrengformasjon anlagt for å skjerme
+===== «featureType» Voll
+*Definisjon:* opphøyd terrengformasjon anlagt for å hindre støy  ukontrollert gjennomstrømming av vann  skade fra  prosjektiler på skytebane o.l.
  
+ 
+'''
 .Illustrasjon av objekttype Voll
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png[alt="Illustrasjon av objekttype: Voll"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_voll.png, Alt="Bilde av et eksempel på objekttypen Voll, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2394,7 +2429,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2455,7 +2490,9 @@ SOSI_datatype: D +
 SOSI_lengde: 10 + 
 SOSI_navn: HOB + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2468,10 +2505,11 @@ SOSI_navn: HOB +
 '''
  
 [[gjerdetype]]
-==== «CodeList» Gjerdetype
+===== «CodeList» Gjerdetype
 *Definisjon:* Type gjerde
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -2490,16 +2528,15 @@ SOSI_navn: HOB +
 |GJERDETYPE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/gjerdetype
- 
  
 '''
  
 [[skjermingsfunksjon]]
-==== «CodeList» SkjermingsFunksjon
+===== «CodeList» SkjermingsFunksjon
 *Definisjon:* ulike funksjoner en skjerm kan ha
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -2518,31 +2555,38 @@ Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.n
 |SKJERMINGFUNK
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/skjermingsfunksjon
- 
 <<<
 '''
-=== Pakke: TekniskeAnleggKulturLek
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggKulturLekMm
+==== Pakke: TekniskeAnleggKulturLek
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  TekniskeAnleggKulturLekMm
+ 
+'''
  
 .Oversiktsdiagram Kultur og lek 
-image::diagrammer/Oversiktsdiagram Kultur og lek.png[link=diagrammer/Oversiktsdiagram Kultur og lek.png, window=_blank, alt="Diagramm: Oversiktsdiagram Kultur og lek"]
+image::diagrammer/Oversiktsdiagram Kultur og lek.png[link=diagrammer/Oversiktsdiagram Kultur og lek.png, Alt="Diagram med navn Oversiktsdiagram Kultur og lek som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm 
-image::diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm.png[link=diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm.png, window=_blank, alt="Diagramm: Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm"]
+image::diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm.png[link=diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm.png, Alt="Diagram med navn Realisering fra Bygnan 4.0 - TekniskeAnleggKulturLekMm som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Kultur og lek - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Kultur og lek - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Kultur og lek - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Kultur og lek - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram Kultur og lek - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Kultur og lek - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Kultur og lek - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[hoppbakke]]
-==== «featureType» Hoppbakke
+===== «featureType» Hoppbakke
 *Definisjon:* anlegg for skihopping med kunstig eller naturlig tilløp
  
+ 
+'''
 .Illustrasjon av objekttype Hoppbakke
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_hoppbakke.png[alt="Illustrasjon av objekttype: Hoppbakke"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_hoppbakke.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_hoppbakke.png, Alt="Bilde av et eksempel på objekttypen Hoppbakke, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2555,7 +2599,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2577,7 +2621,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2590,13 +2636,17 @@ SOSI_navn: HREF +
 '''
  
 [[idrettsanlegg]]
-==== «featureType» Idrettsanlegg
-*Definisjon:* linje for avgrensning av anleggsmessige deler av et idrettsanlegg, som f.eks ytteravgrensning av en fotballbane
+===== «featureType» Idrettsanlegg
+*Definisjon:* linje for avgrensning av anleggsmessige deler av et idrettsanlegg  som f.eks ytteravgrensning av en fotballbane
+
 Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se kap. for arealbruk).
  
+ 
+'''
 .Illustrasjon av objekttype Idrettsanlegg
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_idrettsanlegg.png[alt="Illustrasjon av objekttype: Idrettsanlegg"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_idrettsanlegg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_idrettsanlegg.png, Alt="Bilde av et eksempel på objekttypen Idrettsanlegg, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2609,7 +2659,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2631,7 +2681,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2643,13 +2695,161 @@ SOSI_navn: HREF +
  
 '''
  
+[[parkdetalj]]
+===== «featureType» Parkdetalj
+*Definisjon:* detalj i parkmessig område
+
+Merknad:
+Omfatter detaljer som f.eks. bautaer  statuer  fontener  basseng  lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
+ 
+ 
+'''
+.Illustrasjon av objekttype Parkdetalj
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png, Alt="Bilde av et eksempel på objekttypen Parkdetalj, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|sted som objektet eksisterer på
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*parkdetaljtype*
+ 
+|Definisjon: 
+|angir type parkdetalj
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<parkdetaljtype,«CodeList» Parkdetaljtype>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype + 
+SOSI_datatype: T + 
+SOSI_lengde: 10 + 
+SOSI_navn: PARKDETALJTYPE + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*eksternpeker*
+ 
+|Definisjon: 
+|referanse til objektet i et eksternt system  f.eks. hos parkforvalter i kommunen.
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*medium*
+ 
+|Definisjon: 
+|objektets beliggenhet i forhold til jordoverflaten
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<medium,«CodeList» Medium>>
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 1 + 
+SOSI_navn: MEDIUM + 
+|===
+ 
+[discrete]
+====== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*Skal ha enten punkt- eller flategeometri*
+ 
+|Beskrivelse: 
+|inv: (self.område -&gt; size() ) + (self.posisjon -&gt; size() ) = 1
+ 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/BygningsmessigeAnlegg/Pakke1::«featureType» BautaStatue +
+|===
+ 
+'''
+ 
 [[skytebaneinnretning]]
-==== «featureType» Skytebaneinnretning
+===== «featureType» Skytebaneinnretning
 *Definisjon:* omriss av tekniske anlegg på skytebane - standplass og skiver som ikke blir registrert som f.eks bygninger og murer
  
+ 
+'''
 .Illustrasjon av objekttype Skytebaneinnretning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skytebaneinnretning.png[alt="Illustrasjon av objekttype: Skytebaneinnretning"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skytebaneinnretning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skytebaneinnretning.png, Alt="Bilde av et eksempel på objekttypen Skytebaneinnretning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2662,7 +2862,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -2684,7 +2884,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2697,12 +2899,15 @@ SOSI_navn: HREF +
 '''
  
 [[svømmebasseng]]
-==== «featureType» Svømmebasseng
+===== «featureType» Svømmebasseng
 *Definisjon:* basseng for svømming og vannlek
  
+ 
+'''
 .Illustrasjon av objekttype Svømmebasseng
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png[alt="Illustrasjon av objekttype: Svømmebasseng"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png, Alt="Bilde av et eksempel på objekttypen Svømmebasseng, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2715,7 +2920,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -2737,7 +2942,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2750,12 +2957,15 @@ SOSI_navn: MEDIUM +
 '''
  
 [[taubane]]
-==== «featureType» Taubane
+===== «featureType» Taubane
 *Definisjon:* innretning hvor tau eller vaiere bærer og eller trekker last over en strekning
  
+ 
+'''
 .Illustrasjon av objekttype Taubane
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png[alt="Illustrasjon av objekttype: Taubane"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png, Alt="Bilde av et eksempel på objekttypen Taubane, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2768,7 +2978,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -2796,7 +3006,7 @@ SOSI_navn: TAUBANETYPE +
 |*høydereferanse*
  
 |Definisjon: 
-|angivelse av om registreringen er utf&#248;rt p&#229; topp eller bunn av et element
+|angivelse av om registreringen er utført på topp eller bunn av et element
  
 |Multiplisitet: 
 |[1..1]
@@ -2810,7 +3020,28 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Roller
+[cols="20,80"]
+|===
+|*Navn:* 
+|*eksternpeker*
+ 
+|Definisjon: 
+|referanse til objektet i et eksternt system
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
+|===
+ 
+[discrete]
+====== Roller
 [cols="20,80"]
 |===
 |*Rollenavn:* 
@@ -2825,7 +3056,9 @@ SOSI_navn: HREF +
 |Til klasse
 |<<taubanemast,«FeatureType» Taubanemast>>
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2838,25 +3071,28 @@ SOSI_navn: HREF +
 '''
  
 [[taubanemast]]
-==== «FeatureType» Taubanemast
+===== «FeatureType» Taubanemast
 *Definisjon:* mast som taubanen er hengt opp i
  
+ 
+'''
 .Illustrasjon av objekttype Taubanemast
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubanemast.png[alt="Illustrasjon av objekttype: Taubanemast"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubanemast.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubanemast.png, Alt="Bilde av et eksempel på objekttypen Taubanemast, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
 |*posisjon*
  
 |Definisjon: 
-|sted som objektet eksisterer p&#229;
+|sted som objektet eksisterer på
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Punkt[Punkt]
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -2864,7 +3100,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |*høydereferanse*
  
 |Definisjon: 
-|angivelse av om registreringen av h&#248;ydeverdi er utf&#248;rt p&#229; topp eller bunn av et element
+|angivelse av om registreringen av høydeverdi er utført på topp eller bunn av et element
  
 |Multiplisitet: 
 |[1..1]
@@ -2878,7 +3114,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2889,13 +3127,16 @@ SOSI_navn: HREF +
 '''
  
 [[tribune]]
-==== «featureType» Tribune
-*Definisjon:* opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer, særlig idrettsanlegg
-Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.
+===== «featureType» Tribune
+*Definisjon:* opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer  særlig idrettsanlegg
+Merknad: Tribune som er innredet for bruk  f.eks. som kontor eller butikk  vil være en bygningsenhet.
  
+ 
+'''
 .Illustrasjon av objekttype Tribune
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png[alt="Illustrasjon av objekttype: Tribune"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png, Alt="Bilde av et eksempel på objekttypen Tribune, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2908,9 +3149,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -2923,10 +3166,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[taubanetype]]
-==== «CodeList» Taubanetype
+===== «CodeList» Taubanetype
 *Definisjon:* hva slags type taubane
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -2945,36 +3189,68 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |TAUBANETYPE
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/taubanetype
  
+'''
+ 
+[[parkdetaljtype]]
+===== «CodeList» Parkdetaljtype
+*Definisjon:* angir type parkdetalj
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|15
+ 
+|SOSI_navn
+|PARKDETALJTYPE
+ 
+|===
 <<<
 '''
-=== Pakke: TekniskeAnleggVannVassdragKyst
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggVannVassdragKyst
+==== Pakke: TekniskeAnleggVannVassdragKyst
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  TekniskeAnleggVannVassdragKyst
+ 
+'''
  
 .Oversiktsdiagram Vann 
-image::diagrammer/Oversiktsdiagram Vann.png[link=diagrammer/Oversiktsdiagram Vann.png, window=_blank, alt="Diagramm: Oversiktsdiagram Vann"]
+image::diagrammer/Oversiktsdiagram Vann.png[link=diagrammer/Oversiktsdiagram Vann.png, Alt="Diagram med navn Oversiktsdiagram Vann som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst 
-image::diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst.png[link=diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst.png, window=_blank, alt="Diagramm: Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst"]
+image::diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst.png[link=diagrammer/Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst.png, Alt="Diagram med navn Realisering fra Bygnan 4.0 - TekniskeAnleggVannVassdragKyst som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
  
 .Hoveddiagram Vann - objekttyper og kodelister 
-image::diagrammer/Hoveddiagram Vann - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Vann - objekttyper og kodelister.png, window=_blank, alt="Diagramm: Hoveddiagram Vann - objekttyper og kodelister"]
+image::diagrammer/Hoveddiagram Vann - objekttyper og kodelister.png[link=diagrammer/Hoveddiagram Vann - objekttyper og kodelister.png, Alt="Diagram med navn Hoveddiagram Vann - objekttyper og kodelister som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
 [[beskrivendehjelpelinjeanlegg]]
-==== «featureType» BeskrivendeHjelpelinjeAnlegg
-*Definisjon:* karakteristiske linjer p&#229; bygningsmessige- og tekniske anlegg
+===== «featureType» BeskrivendeHjelpelinjeAnlegg
+*Definisjon:* karakteristiske linjer på bygningsmessige- og tekniske anlegg
 
 Merknad:
-Kan ogs&#229; benyttes til &#229; registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB, men som det er naturlig &#229; registrere i et detaljert grunnkart.
+Kan også benyttes til å registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB  men som det er naturlig å registrere i et detaljert grunnkart.
 
 Eksempel: 
-Markerte linjer p&#229; en demning.
+Markerte linjer på en demning.
 Skilderhus
  
-===== Egenskaper
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -2987,7 +3263,7 @@ Skilderhus
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -3029,7 +3305,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3041,44 +3319,16 @@ SOSI_navn: MEDIUM +
  
 '''
  
-[[fiktivavgrensningforanlegg]]
-==== «featureType» FiktivAvgrensningForAnlegg
-*Definisjon:* fiktiv avgrensningslinje for anlegg
-Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anlegg og det mangler en eller flere avgrensingslinjer.
+[[demning]]
+===== «featureType» Demning
+*Definisjon:* konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin  samt regulere vannføringen
  
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*grense*
- 
-|Definisjon: 
-|forløp som følger overgang mellom ulike fenomener
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<kurve,Kurve>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
- 
-|===
  
 '''
- 
-[[kai]]
-==== «featureType» Kai
-*Definisjon:* brolignende platformkonstruksjon langs land eller fra land og ut i vannet, brukt som fort&#248;yningssted for st&#248;rre eller mindre fart&#248;yer. 
-Brygger er mindre konstruksjoner en kaier og er ofte bygget i treverk. Brygger kan v&#230;re bygget over vann slik at vannkonturen registeres under brygga. 
- 
-.Illustrasjon av objekttype Kai
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kai.png[alt="Illustrasjon av objekttype: Kai"]
-===== Egenskaper
+.Illustrasjon av objekttype Demning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png, Alt="Bilde av et eksempel på objekttypen Demning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3091,7 +3341,431 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Dam +
+|===
+ 
+'''
+ 
+[[elveforbygning]]
+===== «featureType» Elveforbygning
+*Definisjon:* konstruksjon i eller langs vassdrag for å sikre mot erosjon  flom eller som miljøtiltak
+ 
+ 
+'''
+.Illustrasjon av objekttype Elveforbygning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png, Alt="Bilde av et eksempel på objekttypen Elveforbygning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Elveforbygning +
+|===
+ 
+'''
+ 
+[[elveterskel]]
+===== «featureType» Elveterskel
+*Definisjon:* kunstig oppbygning i elver som brukes for å lage vannspeil i elveløpet
+ 
+ 
+'''
+.Illustrasjon av objekttype Elveterskel
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveterskel.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveterskel.png, Alt="Bilde av et eksempel på objekttypen Elveterskel, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Elveterskel +
+|===
+ 
+'''
+ 
+[[fiktivavgrensningforanlegg]]
+===== «featureType» FiktivAvgrensningForAnlegg
+*Definisjon:* fiktiv avgrensningslinje for anlegg
+Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anlegg og det mangler en eller flere avgrensingslinjer.
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*grense*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
+ 
+|===
+ 
+'''
+ 
+[[fiskehjell]]
+===== «featureType» Fiskehjell
+*Definisjon:* anordning bygd opp for tørking av fisk
+ 
+ 
+'''
+.Illustrasjon av objekttype Fiskehjell
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png, Alt="Bilde av et eksempel på objekttypen Fiskehjell, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilhørendeMøne*
+ 
+|Definisjon:
+|viser hvilke fiskehjellmøne som tilhører hvilke fiskehjell
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<fiskehjellmøne,«featureType» FiskehjellMøne>>
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Fiskehjell +
+|===
+ 
+'''
+ 
+[[fiskehjellmøne]]
+===== «featureType» FiskehjellMøne
+*Definisjon:* toppen av rammeverket for fiskehjell
+ 
+ 
+'''
+.Illustrasjon av objekttype FiskehjellMøne
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjellmone.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjellmone.png, Alt="Bilde av et eksempel på objekttypen FiskehjellMøne, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forløp som følger objektets sentrale del
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» FiskehjellMøne +
+|===
+ 
+'''
+ 
+[[fisketrapp]]
+===== «featureType» Fisketrapp
+*Definisjon:* innretning i elver for at fisken kan vandre oppover elven
+ 
+ 
+'''
+.Illustrasjon av objekttype Fisketrapp
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fisketrapp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fisketrapp.png, Alt="Bilde av et eksempel på objekttypen Fisketrapp, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Fisketrapp +
+|===
+ 
+'''
+ 
+[[flytebrygge]]
+===== «featureType» Flytebrygge
+*Definisjon:* flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
+ 
+ 
+'''
+.Illustrasjon av objekttype Flytebrygge
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png, Alt="Bilde av et eksempel på objekttypen Flytebrygge, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+ 
+[discrete]
+====== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilhørendeLandgang*
+ 
+|Definisjon:
+|viser hvilke landganger som tilhører hvilke flytebrygger
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<flytebryggelandgang,«featureType» FlytebryggeLandgang>>
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilhørendeUtligger*
+ 
+|Definisjon:
+|Viser hvilke utliggere som tilhører hvilke flytebrygger
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<flytebryggeutligger,«featureType» FlytebryggeUtligger>>
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Flytebrygge +
+|===
+ 
+'''
+ 
+[[flytebryggelandgang]]
+===== «featureType» FlytebryggeLandgang
+*Definisjon:* landgang for flytebrygger
+ 
+ 
+'''
+.Illustrasjon av objekttype FlytebryggeLandgang
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebryggelandgang.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebryggelandgang.png, Alt="Bilde av et eksempel på objekttypen FlytebryggeLandgang, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*grense*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» FiktivAvgrensningForAnlegg +
+|===
+ 
+'''
+ 
+[[flytebryggeutligger]]
+===== «featureType» FlytebryggeUtligger
+*Definisjon:* Utligger for fortøyning av mindre båter som er båter som er forankret i flytebrygge.
+ 
+ 
+'''
+.Illustrasjon av objekttype FlytebryggeUtligger
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png, Alt="Bilde av et eksempel på objekttypen FlytebryggeUtligger, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*senterlinje*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
+|Realisering av: 
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» KaiBrygge +
+|===
+ 
+'''
+ 
+[[kaibrygge]]
+===== «featureType» KaiBrygge
+*Definisjon:* platformkonstruksjon langs land eller fra land og ut i vannet  brukt som fortøyningssted for større eller mindre fartøyer. 
+Merknad: KaiBrygge kan være bygget over vann slik at vannkonturen registeres under konstruksjonen
+ 
+ 
+'''
+.Illustrasjon av objekttype KaiBrygge
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png, Alt="Bilde av et eksempel på objekttypen KaiBrygge, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -3112,20 +3786,22 @@ SOSI_datatype: T +
 SOSI_lengde: 255 + 
 SOSI_navn: HAVNEDATAPEKER + 
 |===
-===== Roller
+ 
+[discrete]
+====== Roller
 [cols="20,80"]
 |===
 |*Rollenavn:* 
-|*avgrensesAvKaiFront*
+|*avgrensesAvKaiBryggeKant*
  
 |Definisjon:
-|Krav til delt flategeometri. Avgrensning av Kai ved hjelp av fiktive geometriobjekter (mot vegareal, bygninger eller annet areal på land)
+|Krav til delt flategeometri. Avgrensning av Kai ved hjelp av fiktive geometriobjekter (mot vegareal  bygninger eller annet areal på land)
  
 |Multiplisitet: 
 |[0..*]
  
 |Til klasse
-|<<kaifront,«featureType» KaiFront>>
+|<<kaibryggekant,«featureType» KaiBryggeKant>>
 |===
 [cols="20,80"]
 |===
@@ -3141,17 +3817,22 @@ SOSI_navn: HAVNEDATAPEKER +
 |Til klasse
 |<<fiktivavgrensningforanlegg,«featureType» FiktivAvgrensningForAnlegg>>
 |===
-===== Restriksjoner
+ 
+[discrete]
+====== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
-|*Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene*
+|*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL, restriksjonen implementeres manuelt
+|--ingen OCL  restriksjonen implementeres manuelt
+--Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3163,13 +3844,16 @@ SOSI_navn: HAVNEDATAPEKER +
  
 '''
  
-[[kaifront]]
-==== «featureType» KaiFront
+[[kaibryggekant]]
+===== «featureType» KaiBryggeKant
 *Definisjon:* avgrensning av kai mot vann.
  
-.Illustrasjon av objekttype KaiFront
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaifront.png[alt="Illustrasjon av objekttype: KaiFront"]
-===== Egenskaper
+ 
+'''
+.Illustrasjon av objekttype KaiBryggeKant
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png, Alt="Bilde av et eksempel på objekttypen KaiBryggeKant, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3182,78 +3866,30 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*havnedatapeker*
  
-|Definisjon: 
-|referanse til KaiFront-objekt i Havnedata
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 255 + 
-SOSI_navn: HAVNEDATAPEKER + 
-|===
-===== Arv og realiseringer
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-|===
- 
-'''
- 
-[[brygge]]
-==== «featureType» Brygge
-*Definisjon:* angivelse av  innretninger som er satt opp for å betjene båter ved lasting- lossing og landligge
-Merknad: Kai er utvidet til også å kunne være bare et fortøyningsanlegg- f.eks. enkeltstående metallring for fastgjøring av skip.
- 
-.Illustrasjon av objekttype Brygge
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brygge.png[alt="Illustrasjon av objekttype: Brygge"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» KaiBrygge +
 |===
  
 '''
  
 [[molo]]
-==== «featureType» Molo
+===== «featureType» Molo
 *Definisjon:* kunstig eller naturlig oppbygning som demper eller tilintetgjør bølgebevegelser i sjøen
  
+ 
+'''
 .Illustrasjon av objekttype Molo
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png[alt="Illustrasjon av objekttype: Molo"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png, Alt="Bilde av et eksempel på objekttypen Molo, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3266,7 +3902,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<flate,Flate>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
@@ -3288,7 +3924,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3300,61 +3938,16 @@ SOSI_navn: MEDIUM +
  
 '''
  
-[[flytebrygge]]
-==== «featureType» Flytebrygge
-*Definisjon:* brygge som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
+[[oppdrettskar]]
+===== «featureType» Oppdrettskar
+*Definisjon:* kar for oppdrett av fisk
  
-.Illustrasjon av objekttype Flytebrygge
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png[alt="Illustrasjon av objekttype: Flytebrygge"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Roller
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*tilhørendeLandgang*
- 
-|Definisjon:
-|viser hvilke landganger som tilhører hvilke flytebrygger
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|<<flytebryggelandgang,«featureType» FlytebryggeLandgang>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Flytebrygge +
-|===
  
 '''
- 
-[[flytebryggelandgang]]
-==== «featureType» FlytebryggeLandgang
-*Definisjon:* landgang for flytebrygger
- 
-.Illustrasjon av objekttype FlytebryggeLandgang
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebryggelandgang.png[alt="Illustrasjon av objekttype: FlytebryggeLandgang"]
-===== Egenskaper
+.Illustrasjon av objekttype Oppdrettskar
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettskar.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettskar.png, Alt="Bilde av et eksempel på objekttypen Oppdrettskar, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3367,27 +3960,107 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
-===== Arv og realiseringer
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
+|
+defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 |Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» FiktivAvgrensningForAnlegg +
+|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettskar +
+|===
+ 
+'''
+ 
+[[oppdrettslokalitet]]
+===== «featureType» Oppdrettslokalitet
+*Definisjon:* fast anlegg for oppdrett av fisk i vann
+ 
+ 
+'''
+.Illustrasjon av objekttype Oppdrettslokalitet
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png, Alt="Bilde av et eksempel på objekttypen Oppdrettslokalitet, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*område*
+ 
+|Definisjon: 
+|objektets utstrekning
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*eksternpeker*
+ 
+|Definisjon: 
+|peker til forvaltning av det samme objektet i et eksternt system
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
 |===
  
 '''
  
 [[pælebunt]]
-==== «featureType» Pælebunt
-*Definisjon:* bunt av stokker som er drevet ned i sjøbunnen, vann eller elver for å lede trafikken eller tømmer
+===== «featureType» Pælebunt
+*Definisjon:* bunt av stokker som er drevet ned i sjøbunnen  vann eller elver for å lede trafikken eller tømmer
  
+ 
+'''
 .Illustrasjon av objekttype Pælebunt
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_palebunt.png[alt="Illustrasjon av objekttype: Pælebunt"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_palebunt.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_palebunt.png, Alt="Bilde av et eksempel på objekttypen Pælebunt, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3400,7 +4073,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<punkt,Punkt>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -3422,7 +4095,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3434,66 +4109,16 @@ SOSI_navn: HREF +
  
 '''
  
-[[oppdrettskar]]
-==== «featureType» Oppdrettskar
-*Definisjon:* kar i sjøen for oppdrett av fisk
+[[rørgate]]
+===== «featureType» Rørgate
+*Definisjon:* store rør som leder vann frem til foredlingsanlegg  kraftverk  fjernvarmeanlegg  annet vassdrag osv. 
  
-.Illustrasjon av objekttype Oppdrettskar
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettskar.png[alt="Illustrasjon av objekttype: Oppdrettskar"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*grense*
- 
-|Definisjon: 
-|forløp som følger overgang mellom ulike fenomener
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<kurve,Kurve>>
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*høydereferanse*
- 
-|Definisjon: 
-|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<høydereferanse,«CodeList» Høydereferanse>>
-|Profilparametre i tagged values: 
-|
-defaultCodeSpace: https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse + 
-SOSI_datatype: T + 
-SOSI_lengde: 6 + 
-SOSI_navn: HREF + 
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Oppdrettskar +
-|===
  
 '''
- 
-[[rørgate]]
-==== «featureType» Rørgate
-*Definisjon:* rør som leder vann frem til foredlingsanlegg
- 
 .Illustrasjon av objekttype Rørgate
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png[alt="Illustrasjon av objekttype: Rørgate"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png, Alt="Bilde av et eksempel på objekttypen Rørgate, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3506,7 +4131,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -3548,7 +4173,9 @@ SOSI_datatype: T +
 SOSI_lengde: 1 + 
 SOSI_navn: MEDIUM + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3560,197 +4187,24 @@ SOSI_navn: MEDIUM +
  
 '''
  
-[[demning]]
-==== «featureType» Demning
-*Definisjon:* konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen
+[[slipp]]
+===== «featureType» Slipp
+*Definisjon:* bane som mindre og middelstore fartøyer kan hales opp ved landsetting  bedding
  
-.Illustrasjon av objekttype Demning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png[alt="Illustrasjon av objekttype: Demning"]
-===== Egenskaper
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|SOSI_geometri
+|KURVE;
+ 
+|===
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Dam +
-|===
- 
-'''
- 
-[[elveforbygning]]
-==== «featureType» Elveforbygning
-*Definisjon:* konstruksjon i eller langs vassdrag for å sikre mot erosjon, flom eller som miljøtiltak
- 
-.Illustrasjon av objekttype Elveforbygning
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png[alt="Illustrasjon av objekttype: Elveforbygning"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Elveforbygning +
-|===
- 
-'''
- 
-[[elveterskel]]
-==== «featureType» Elveterskel
-*Definisjon:* kunstig oppbygning i elver som brukes for å lage vannspeil i elveløpet
- 
-.Illustrasjon av objekttype Elveterskel
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveterskel.png[alt="Illustrasjon av objekttype: Elveterskel"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Elveterskel +
-|===
- 
-'''
- 
-[[fiskehjell]]
-==== «featureType» Fiskehjell
-*Definisjon:* anordning bygd opp for tørking av fisk
- 
-.Illustrasjon av objekttype Fiskehjell
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png[alt="Illustrasjon av objekttype: Fiskehjell"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*område*
- 
-|Definisjon: 
-|objektets utstrekning
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<flate,Flate>>
-|===
-===== Roller
-[cols="20,80"]
-|===
-|*Rollenavn:* 
-|*tilhørendeMøne*
- 
-|Definisjon:
-|viser hvilke fiskehjellmøne som tilhører hvilke fiskehjell
- 
-|Multiplisitet: 
-|[0..*]
- 
-|Til klasse
-|<<fiskehjellmøne,«featureType» FiskehjellMøne>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Fiskehjell +
-|===
- 
-'''
- 
-[[fiskehjellmøne]]
-==== «featureType» FiskehjellMøne
-*Definisjon:* toppen av rammeverket for fiskehjell
- 
-.Illustrasjon av objekttype FiskehjellMøne
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjellmone.png[alt="Illustrasjon av objekttype: FiskehjellMøne"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
- 
-|Definisjon: 
-|forløp som følger objektets sentrale del
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<kurve,Kurve>>
-|===
-===== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» FiskehjellMøne +
-|===
- 
-'''
- 
-[[fisketrapp]]
-==== «featureType» Fisketrapp
-*Definisjon:* innretning i elver for at fisken kan vandre oppover elven
- 
-.Illustrasjon av objekttype Fisketrapp
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fisketrapp.png[alt="Illustrasjon av objekttype: Fisketrapp"]
-===== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*senterlinje*
+|*grense*
  
 |Definisjon: 
 |forløp som følger overgang mellom ulike fenomener
@@ -3759,27 +4213,53 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|Profilparametre i tagged values: 
+|
+SOSI_melding: Fant ikke denne i SOSI_db + 
+SOSI_navn: Kurve + 
 |===
-===== Arv og realiseringer
+[cols="20,80"]
+|===
+|*Navn:* 
+|*høydereferanse*
+ 
+|Definisjon: 
+|angivelse av om registreringen er utført på topp eller bunn av et element- f.eks. en skråning- mur osv.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<høydereferanse,«CodeList» Høydereferanse>>
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 6 + 
+SOSI_navn: HREF + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
-|Realisering av: 
-|«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 1 TekniskeAnleggVannVassdragKyst::«featureType» Fisketrapp +
 |===
  
 '''
  
 [[sluse]]
-==== «featureType» Sluse
+===== «featureType» Sluse
 *Definisjon:* byggverk i elv eller kanal med flere slusekamre som gjør det mulig å heve eller senke fartøy fra et vann-nivå til et annet
  
+ 
+'''
 .Illustrasjon av objekttype Sluse
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png[alt="Illustrasjon av objekttype: Sluse"]
-===== Egenskaper
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png, Alt="Bilde av et eksempel på objekttypen Sluse, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
@@ -3792,7 +4272,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[1..1]
  
 |Type: 
-|<<kurve,Kurve>>
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -3834,7 +4314,9 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
-===== Arv og realiseringer
+ 
+[discrete]
+====== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
@@ -3847,10 +4329,11 @@ SOSI_navn: HREF +
 '''
  
 [[slusetype]]
-==== «CodeList» SluseType
+===== «CodeList» SluseType
 *Definisjon:* beskrivelse av selve slusetypen
  
-===== Profilparametre i tagged values
+[discrete]
+====== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -3869,6 +4352,4 @@ SOSI_navn: HREF +
 |SLUSETYP
  
 |===
-Koder fra ekstern kodeliste kan hentes fra register: https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/slusetype
- 
 // End of UML-model
