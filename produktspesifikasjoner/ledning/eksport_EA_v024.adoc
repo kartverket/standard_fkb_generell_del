@@ -20,9 +20,6 @@ FKB-Ledning versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 
 |language
 |nor
  
-|language
-|nor
- 
 |SOSI_kortnavn
 |FKBLedning
  
@@ -39,7 +36,7 @@ FKB-Ledning versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 
 |5.0
  
 |targetNamespace
-|http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0
+|https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0
  
 |version
 |5.0
@@ -157,6 +154,8 @@ SOSI_navn: Kurve +
 |Subtyper:
 |<<bardun,«FeatureType» Bardun>> +
 <<åk,«FeatureType» Åk>> +
+|Realisering av: 
+|«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Kopling +
 |===
  
 '''
@@ -348,7 +347,6 @@ Vil kunne brukes til å knytte sammen informasjon om samme komponenten forvaltet
 SOSI_datatype: T + 
 SOSI_lengde: 50 + 
 SOSI_navn: DRIFTSMERKING + 
-SOSI_primærnøkkel: True + 
 |===
 [cols="20,80"]
 |===
@@ -400,7 +398,7 @@ SOSI_navn: LEDNINGSNETTVERKSTYPE +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*eksternPeker*
+|*eksternpeker*
  
 |Definisjon: 
 |peker til et eksternt system hvor det samme objektet er registrert
@@ -495,8 +493,8 @@ image::diagrammer/Jordingsledning - alle egenskaper og realisering.png[link=diag
  
 '''
  
-.Kanal - alle egenskaper og realisering 
-image::diagrammer/Kanal - alle egenskaper og realisering.png[link=diagrammer/Kanal - alle egenskaper og realisering.png, Alt="Diagram med navn Kanal - alle egenskaper og realisering som viser UML-klasser beskrevet i teksten nedenfor."]
+.Kabelkanal - alle egenskaper og realisering 
+image::diagrammer/Kabelkanal - alle egenskaper og realisering.png[link=diagrammer/Kabelkanal - alle egenskaper og realisering.png, Alt="Diagram med navn Kabelkanal - alle egenskaper og realisering som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -607,6 +605,10 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 *Definisjon:* ledning hvor formålet er å lede farlige overspenninger til jord. ledningen er under normale forhold ikke strømførende
  
  
+'''
+.Illustrasjon av objekttype Jordingsledning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Jordingsledning.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Jordingsledning.jpg, Alt="Bilde av et eksempel på objekttypen Jordingsledning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+ 
 [discrete]
 ====== Arv og realiseringer
 [cols="20,80"]
@@ -653,18 +655,6 @@ Ytterkant topp kumkonstruksjon der denne er synlig.
 '''
 .Illustrasjon av objekttype Kum
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Kum.jpg, Alt="Bilde av et eksempel på objekttypen Kum, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
- 
-[discrete]
-====== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*diagonal/diameter >= 1,5 meter*
- 
-|Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
- 
-|===
  
 [discrete]
 ====== Arv og realiseringer
@@ -747,6 +737,10 @@ SOSI_navn: KUMLOKKFORM +
 ===== «FeatureType» Luftledning
 *Definisjon:* vaier/kabel mellom to faste forankringspunkt  som er eller kan være strøm- eller signalførende
  
+ 
+'''
+.Illustrasjon av objekttype Luftledning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Luftledning.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Luftledning.jpg, Alt="Bilde av et eksempel på objekttypen Luftledning, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -755,7 +749,7 @@ SOSI_navn: KUMLOKKFORM +
 |*fase*
  
 |Definisjon: 
-|angivelse av intern plassering i grunnris for aktuell faseline
+|angivelse av intern plassering i grunnriss for aktuell faseline
  
 |Multiplisitet: 
 |[1..1]
@@ -886,7 +880,7 @@ SOSI_navn: ANTALL_LASERPUNKT +
 |*belysning*
  
 |Definisjon: 
-|angir om det er montert ett eller flere flere lysarmaturer i masta
+|angir om det er montert ett eller flere lysarmaturer i masta
  
 |Multiplisitet: 
 |[1..1]
@@ -1028,24 +1022,6 @@ SOSI_navn: VERTIKALAVSTAND +
 --hvis Mast har driftsmerking og har tilhørende Masteomriss  skal driftsmerking på Mast og Masteomriss være like
  
 |===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*linjebredde angis når avstanden mellom ytterfasene er >10 meter i grunnriss*
- 
-|Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
- 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vertikalAvstand angis når den er >15 meter*
- 
-|Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
- 
-|===
  
 [discrete]
 ====== Arv og realiseringer
@@ -1102,7 +1078,7 @@ SOSI_navn: MASTEKONSTRUKSJON +
  
 [[nettverkstasjon]]
 ===== «FeatureType» Nettverkstasjon
-*Definisjon:* et fysisk  gjerne bygningsmessig  objekt som inneholder komponenter som gjør en eller annen behandling av vann  elektrisk strøm  signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann  transformatorer for elektrisk strøm  forsterkere for signal osv.
+*Definisjon:* et fysisk  gjerne bygningsmessig  objekt som inneholder komponenter som gjør en eller annen behandling av vann  elektrisk strøm  signal eller annet som det nettverket den er en del av fører.
  
  
 '''
@@ -1160,6 +1136,7 @@ SOSI_navn: STASJONSPLASSERING +
  
 |Beskrivelse: 
 |inv: (self.driftsmerking -&gt; notEmpty() and self.omriss -&gt; notEmpty() ) implies (self.driftsmerking = self.omriss.driftsmerking)
+
 --hvis Nettverkstasjon har driftsmerking og har tilhørende Nettverkstasjonomriss  skal driftsmerking på Nettverkstasjon og Nettverkstasjonomriss være like
  
 |===
@@ -1258,7 +1235,7 @@ SOSI_navn: TRASENAVN +
 [cols="20,80"]
 |===
 |*Navn:* 
-|*skal kobles til Mast (lik koordinat)*
+|*samme posisjon for knekkpunkt i Trase som Mast*
  
 |Beskrivelse: 
 |--ingen OCL  restriksjonen implementeres manuelt
@@ -1282,14 +1259,6 @@ SOSI_navn: TRASENAVN +
 ===== «FeatureType» Vindturbin
 *Definisjon:* en kontainer som betegner en hel "vindmølle". En vindturbin har en generator
  
-[discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_geometri
-|PUNKT;
- 
-|===
  
 '''
 .Illustrasjon av objekttype Vindturbin
@@ -1302,7 +1271,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 |*rotorbladlengde*
  
 |Definisjon: 
-|lengde rotoblad
+|lengde rotorblad
 
 Enhet: meter
  
@@ -1368,6 +1337,7 @@ SOSI_navn: NAVHØYDE +
  
 |Beskrivelse: 
 |inv: (self.driftsmerking -&gt; notEmpty() and self.omriss -&gt; notEmpty() ) implies (self.driftsmerking = self.omriss.driftsmerking)
+
 --hvis Vindturbin har driftsmerking og har tilhørende Vindturbinomriss  skal driftsmerking på Vindturbin og Vindturbinomriss være like
  
 |===
@@ -1442,14 +1412,6 @@ image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[link=diagrammer/Fagspe
 *Definisjon:* ledningens høyde over/til terreng  vann eller sjø
  
 [discrete]
-====== Profilparametre i tagged values
-[cols="20,80"]
-|===
-|SOSI_kompaktifisering
-|Nei
- 
-|===
-[discrete]
 ====== Egenskaper
 [cols="20,80"]
 |===
@@ -1494,7 +1456,7 @@ Enhet: meter
 SOSI_datatype: 8.2 + 
 SOSI_datatype: D + 
 SOSI_lengde: 8.2 + 
-SOSI_navn: VERTIKALHØYDE + 
+SOSI_navn: VERTIKALAVSTAND + 
 |===
 <<<
 '''
@@ -1704,8 +1666,6 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagra
 [[fellesegenskaper]]
 ===== «FeatureType» Fellesegenskaper (abstrakt)
 *Definisjon:* abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
 [discrete]
 ====== Egenskaper
