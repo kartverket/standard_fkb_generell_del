@@ -20,7 +20,7 @@ Geovekst
 :publisert: Godkjent XX. XXXXXX 202X
 :prodspek-url: https://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0
 :reginstr-url: https://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-Ledning/5.0
-:reginstr-url_punktsky: https://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-LedningPunktsky/5.0/
+:reginstr-url-punktsky: https://skjema.geonorge.no/SOSITEST/registreringsinstruks/FKB-LedningPunktsky/5.0/
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 :fkbGenerellDel-url: https://skjema.geonorge.no/SOSITEST/fagomr%C3%A5destandard/FKB_generell/5.0
 :metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6
@@ -38,7 +38,7 @@ FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon
 
 FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del og SOSI del 2 Ledning versjon 4.6.
 
-Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0 finnes {reginstr-url}[her]. {reginstr-url_punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
+Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0 finnes {reginstr-url}[her]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
 
 Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i 
 forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
@@ -61,7 +61,7 @@ Tidligere versjoner:
 
 ==== Innhold i endringsloggen
 
-FKB 5.0 er en ny hovedversjon av FKB. Dette innebærer at det er gjort større endringer i standarden. Det vil ikke være tilstrekkelig å lese endringsloggen for å få et helhetlig bilde av FKB 5.0 produktspesifikasjonene. For å få et komplett bilde av produktspesifikasjonen må man lese dokumentasjonen som en helhet, inkludert de gjennomgående endringene som er beskrevet i FKB Generell del 5.0 <<FKB>>.
+FKB 5.0 er en ny hovedversjon av FKB. Dette innebærer at det er gjort større endringer i standarden. Det vil ikke være tilstrekkelig å kun lese endringsloggen for å få et helhetlig bilde av FKB 5.0 produktspesifikasjonene. For å få et komplett bilde av produktspesifikasjonen må man lese dokumentasjonen som en helhet, inkludert de gjennomgående endringene som er beskrevet i FKB Generell del 5.0 <<FKB>>.
 
 Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de viktigste endringene når det gjelder datainnhold (objekttyper) siden forrige versjon. Endringsloggen vil ikke inneholde alle detaljerte endringer på egenskapsnivå eller endringer når det gjelder utvekslingsformat,  datamodellering eller lignende. 
 
@@ -100,7 +100,7 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 ** _høydereferanse_ har fått ny kodeliste, den generelle kodelisten for høydereferanse benyttes.
 ** _medium_ er gjort om til en påkrevd egenskap
 ** _eierOrgNr_ erstatter den tidligere egenskapen _eier_
-** _eksternPeker_, _nrlpeker_ og _nvdbpeker_ er lagt til som en opsjonelle egenskap (mulighet for å legge inn peker - i form av en URI - til objektet i andre systemer).
+** _eksternPeker_, _nrlpeker_ og _nvdbpeker_ er lagt til som en opsjonelle egenskaper (mulighet for å legge inn peker - i form av en URI - til objektet i andre systemer).
 ** _hovedbruk_ (_ledningsnettverkstype_) er gjort påkrevd for alle objekttyper
 * Ytterligere egenskaper er endret eller lagt til på en eller flere objekttyper. <<Pakke: Objekttyper - instansierbare>> gir full oversikt over hvilke egenskaper som gjelder for den enkelte objekttype i {fkbdatasett}
 * Flere kodelister er endret. 
@@ -201,7 +201,11 @@ include::../../felles/kap7_kvalitet.adoc[]
 
 == Datafangst
 
-include::../../felles/kap8_datafangst.adoc[]
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Registeringsinstruks
+Fotogrammetrisk datafangst er den dominerende datafangstmetoden for {fkbdatasett}. Se {reginstr-url}[fotogrammetrisk registreringsinstruks for {fkbdatasett}]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
 
 Administrativ datafangst er en sentral del av datafangsten knyttet til ledning. Ved administrativ datafangst vil det i mange tilfeller ikke være hensiktsmessig å registrere objektene på samme måte som ved fotogrammetri. I slike tilfeller er det spesielt viktig å registrere kvalitet, datafangstdato og høydereferanse så korrekt som mulig.
 
@@ -248,7 +252,7 @@ include::../../felles/kap13_metadata.adoc[]
 [appendix]
 == GML-realisering
 
-GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI>>. Realiseringen defineres av følgende filer:
+GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
 
 * link:{prodspek-url}/FKBLedning50.xsd[GML-Skjema]
 * link:{prodspek-url}/FKBLedning50.sch[Schematron-regler til validering av tilleggskrav til datainnhold og -struktur utover det som defineres i GML-skjemafila]
@@ -259,7 +263,7 @@ GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI>>. Rea
 [appendix]
 == SOSI-format-realisering
 
-SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI>>. SOSI-filer som inneholder data i henhold til denne spesifikasjonen skal merkes i filhodet med ..OBJEKTKATALOG {fkbdatasett}. 
+SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. SOSI-filer som inneholder data i henhold til denne spesifikasjonen skal merkes i filhodet med ..OBJEKTKATALOG {fkbdatasett}. 
 En SOSI-eksempelfil er tilgjengelig link:{prodspek-url}eksempel/FKB-Ledning50.sos[her].
 
 Under en utlisting av SOSI-formatrealiseringen:
