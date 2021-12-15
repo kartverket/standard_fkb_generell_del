@@ -4,11 +4,15 @@
 '''
  
 [[jordingsledning]]
-==== «FeatureType» Jordingsledning
-*Definisjon fra FKB produktspesifikasjon*: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. Ledningen er under normale forhold ikke str&#248;mf&#248;rende
+==== Objekttype: Jordingsledning
+*Definisjon fra FKB produktspesifikasjon*: ledning hvor form&#229;let er &#229; lede farlige overspenninger til jord. ledningen er under normale forhold ikke str&#248;mf&#248;rende
  
  
-===== Tilleggsinformasjon for vektorisering fra laserdata
+.Illustrasjon fra produktspesifikasjon av Jordingsledning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Jordingsledning.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Jordingsledning.jpg, Alt="Illustrasjon fra produktspesifikasjon: Jordingsledning"]
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
 Dette er liner som benyttes som lynavledere og som benyttes for &#229; hindre at evt. overspenning skal sl&#229; i spenningsf&#248;rende deler. P&#229; traseer med stor spenning, typisk sentralnettet, ligger jordledningen over fasene og betegnes som toppliner. 
 
 Ved lavere spenning (regional- og distribusjonsnett) henger jordingsledningen normalt under fasene. Det er ikke alltid det finnes jordingsledninger i h&#248;yspenttraseene og det kan v&#230;re vanskelig &#229; skille disse linene fra andre kommunikasjonsliner som ogs&#229; kan henge p&#229; mastene. Jordingsledninger som henger under fasene kan v&#230;re sv&#230;rt vanskelig &#229; detektere dersom man ikke har h&#248;y punktetthet i laserdataene.
@@ -89,6 +93,11 @@ image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_topplin
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -159,17 +168,27 @@ image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_topplin
 |..EIERORGNR
 |[0..1]
  
-|eksternPeker
-|URI
-|..EKSTERNPEKER
-|[0..*]
- 
 |hovedbruk
 | «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|beliggenhet
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
+|nvdbpeker
+|URI
+|..NVDBPEKER
+|[0..1]
+ 
+|senterlinje
 |GM_Curve
 |.KURVE
 |[1..1]
@@ -184,14 +203,14 @@ image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_topplin
 |..MAKS_VERTIKALUTSTREKNING
 |[0..1]
  
-|maksVertikalAvstand.vertikalhøydeposisjon
+|maksVertikalAvstand.vertikalAvstandPosisjon
 |GM_Point
-|.NØHKOOR
+|..NØHKOOR
 |[1..1]
  
-|maksVertikalAvstand.vertikalhøyde
+|maksVertikalAvstand.vertikalAvstand
 |«dataType» Real
-|...VERTIKALHØYDE
+|...VERTIKALAVSTAND
 |[1..1]
  
 |minVertikalAvstand
@@ -199,14 +218,14 @@ image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_topplin
 |..MIN_VERTIKALUTSTREKNING
 |[0..1]
  
-|minVertikalAvstand.vertikalhøydeposisjon
+|minVertikalAvstand.vertikalAvstandPosisjon
 |GM_Point
-|.NØHKOOR
+|..NØHKOOR
 |[1..1]
  
-|minVertikalAvstand.vertikalhøyde
+|minVertikalAvstand.vertikalAvstand
 |«dataType» Real
-|...VERTIKALHØYDE
+|...VERTIKALAVSTAND
 |[1..1]
  
 |===
@@ -214,18 +233,22 @@ image::figurer\jordingsledning_toppline.png[link=figurer\jordingsledning_topplin
 <<<
 '''
  
-[[luftlinje]]
-==== «FeatureType» Luftlinje
-*Definisjon fra FKB produktspesifikasjon*: en enkelt vaier/kabel mellom to faste forankringspunkt
+[[luftledning]]
+==== Objekttype: Luftledning
+*Definisjon fra FKB produktspesifikasjon*: vaier/kabel mellom to faste forankringspunkt, som er eller kan v&#230;re str&#248;m- eller signalf&#248;rende
  
  
-===== Tilleggsinformasjon for vektorisering fra laserdata
-I denne spesifikasjonen benyttes objekttypen for faser i h&#248;yspentlinjer, men den kan ogs&#229; benyttes for andre typer luftlinjer.
+.Illustrasjon fra produktspesifikasjon av Luftledning
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Luftledning.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Luftledning.jpg, Alt="Illustrasjon fra produktspesifikasjon: Luftledning"]
+ 
+ 
+===== Tilleggsinformasjon for fotogrammetrisk registrering
+I denne spesifikasjonen benyttes objekttypen for faser i h&#248;yspentlinjer, men den kan ogs&#229; benyttes for andre typer luftledninger.
 
 Normalt er det tre str&#248;mf&#248;rende faser i en h&#248;yspenttrase. 
 I noen tilfeller kan det g&#229; to parallelle traseer i samme mastearrangement. Da vil det v&#230;re 6 faser. 
 
-Egenskapen _fase_ benyttes for &#229; angi om luftlinjen er ytterfase eller i midten. Verdien "ytre" benyttes for luftlinjene som er ytterst i grunnriss. &#216;vrige luftlinjer kodes med verdien "midtre".
+Egenskapen _fase_ benyttes for &#229; angi om luftledningen er ytterfase eller i midten. Verdien "ytre" benyttes for luftledningene som er ytterst i grunnriss. &#216;vrige luftledninger kodes med verdien "midtre".
 
 Kurven skal v&#230;re sammenhengende fra en mast til neste mast (splittes i hver mast). Det skal settes inn et punkt i kurven for minimum hver femte meter. Dette anses som tilstrekkelig punkttetthet for &#229; beskrive fasen i tre dimensjoner.
  
@@ -270,7 +293,7 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
  
 <<<
  
-===== Egenskapstabell for objekttype: Luftlinje
+===== Egenskapstabell for objekttype: Luftledning
 [cols="20,20,20,10"]
 |===
 |*Navn:* 
@@ -301,6 +324,11 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -373,17 +401,27 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
 |..EIERORGNR
 |[0..1]
  
-|eksternPeker
-|URI
-|..EKSTERNPEKER
-|[0..*]
- 
 |hovedbruk
 | «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|beliggenhet
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
+|nvdbpeker
+|URI
+|..NVDBPEKER
+|[0..1]
+ 
+|senterlinje
 |GM_Curve
 |.KURVE
 |[1..1]
@@ -398,14 +436,14 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
 |..MAKS_VERTIKALUTSTREKNING
 |[0..1]
  
-|maksVertikalAvstand.vertikalhøydeposisjon
+|maksVertikalAvstand.vertikalAvstandPosisjon
 |GM_Point
-|.NØHKOOR
+|..NØHKOOR
 |[1..1]
  
-|maksVertikalAvstand.vertikalhøyde
+|maksVertikalAvstand.vertikalAvstand
 |«dataType» Real
-|...VERTIKALHØYDE
+|...VERTIKALAVSTAND
 |[1..1]
  
 |minVertikalAvstand
@@ -413,14 +451,14 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
 |..MIN_VERTIKALUTSTREKNING
 |[0..1]
  
-|minVertikalAvstand.vertikalhøydeposisjon
+|minVertikalAvstand.vertikalAvstandPosisjon
 |GM_Point
-|.NØHKOOR
+|..NØHKOOR
 |[1..1]
  
-|minVertikalAvstand.vertikalhøyde
+|minVertikalAvstand.vertikalAvstand
 |«dataType» Real
-|...VERTIKALHØYDE
+|...VERTIKALAVSTAND
 |[1..1]
  
 |fase
@@ -434,7 +472,7 @@ image::figurer\luftlinje_sentralnett.png[link=figurer\luftlinje_sentralnett.png,
 '''
  
 [[mast]]
-==== «FeatureType» Mast
+==== Objekttype: Mast
 *Definisjon fra FKB produktspesifikasjon*: alle konstruksjoner som prim&#230;rt er laget for &#229; holde ledningsnett/komponent oppe fra bakken
 
 Merknad FKB:
@@ -442,10 +480,10 @@ En mast kan best&#229; av en eller flere stolper og beskriver mastens representa
  
  
 .Illustrasjon fra produktspesifikasjon av Mast
-image::http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSITEST/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, Alt="Illustrasjon fra produktspesifikasjon: Mast"]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figurer/Mast.jpg, Alt="Illustrasjon fra produktspesifikasjon: Mast"]
  
  
-===== Tilleggsinformasjon for vektorisering fra laserdata
+===== Tilleggsinformasjon for fotogrammetrisk registrering
 I denne spesifikasjonen benyttes objekttypen for mast i h&#248;yspenttrase, men den kan ogs&#229; benyttes for andre typer master.
  
  
@@ -517,6 +555,11 @@ image::figurer\mast.png[link=figurer\mast.png, Alt="Blå punkt er punkt fra lase
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -587,17 +630,27 @@ image::figurer\mast.png[link=figurer\mast.png, Alt="Blå punkt er punkt fra lase
 |..EIERORGNR
 |[0..1]
  
-|eksternPeker
-|URI
-|..EKSTERNPEKER
-|[0..*]
- 
 |hovedbruk
 | «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype[Ledningsnettverkstype, window = _blank]
 |..LEDNINGSNETTVERKSTYPE
 |[1..1]
  
-|posisjon
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
+|nvdbpeker
+|URI
+|..NVDBPEKER
+|[0..1]
+ 
+|punkt
 |GM_Point
 |.PUNKT
 |[1..1]
