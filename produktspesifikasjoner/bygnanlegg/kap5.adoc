@@ -1,6 +1,6 @@
 // Start of UML-model
 === Pakke: «ApplicationSchema» FKB-BygnAnlegg-5.0
-*Definisjon:* Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer  gjerder  taubaner  kaier  moloer  tanker etc.
+*Definisjon:* Datamodell for produktspesifikasjonen FKB-BygnAnelgg. FKB-BygnAnlegg beskriver bygningsmessige anlegg som ikke er knyttet til bygninger eller veger. Dette inkluderer objekter som murer, gjerder, taubaner, kaier, moloer, tanker etc.
  
 [discrete]
 ==== Profilparametre i tagged values
@@ -98,7 +98,7 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |unik identifikasjon av et objekt 
 
 Merknad FKB:
-Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
@@ -127,7 +127,7 @@ i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forva
 
 ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
 
-iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
 
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
@@ -189,7 +189,7 @@ SOSI_navn: DATAFANGSTDATO +
 |dato når dataene er fastslått å være i samsvar med virkeligheten.
 
 Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold  og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -313,6 +313,7 @@ SOSI_navn: KVALITET +
 <<trapp,«featureType» Trapp>> +
 <<hoppbakke,«featureType» Hoppbakke>> +
 <<sluse,«featureType» Sluse>> +
+<<navigasjonsinstallasjon,«featureType» Navigasjonsinstallasjon>> +
 <<brudetalj,«featureType» Brudetalj>> +
 <<fiskehjellmøne,«featureType» FiskehjellMøne>> +
 <<parkdetalj,«featureType» Parkdetalj>> +
@@ -322,13 +323,12 @@ SOSI_navn: KVALITET +
 <<avfallsbeholder,«featureType» Avfallsbeholder>> +
 <<oppdrettskar,«featureType» Oppdrettskar>> +
 <<demning,«featureType» Demning>> +
+<<slipp,«featureType» Slipp>> +
 <<rørgate,«featureType» Rørgate>> +
-<<flaggstang,«featureType» Flaggstang>> +
+<<oppdrettslokalitet,«featureType» Oppdrettslokalitet>> +
 <<flytebryggelandgang,«featureType» FlytebryggeLandgang>> +
 <<nrlobjekter,«FeatureType» NRLobjekter>> +
 <<nvdbobjekter,«FeatureType» NVDBobjekter>> +
-<<oppdrettslokalitet,«featureType» Oppdrettslokalitet>> +
-<<slipp,«featureType» Slipp>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
 |Realisering av: 
@@ -376,6 +376,7 @@ SOSI_navn: NRLPEKER +
 <<tårn,«featureType» Tårn>> +
 <<tank,«featureType» Tank>> +
 <<taubanemast,«FeatureType» Taubanemast>> +
+<<flaggstang,«featureType» Flaggstang>> +
 |===
  
 '''
@@ -429,11 +430,11 @@ SOSI_navn: NVDBPEKER +
  
 [[identifikasjon]]
 ===== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer. 
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -472,7 +473,7 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI
+|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
 
 Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
 
@@ -523,7 +524,7 @@ SOSI_navn: VERSJONID +
 *Definisjon:* beskrivelse av kvaliteten på stedfestingen.
 
 Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -542,7 +543,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
  
 |Definisjon: 
 |metode for datafangst. 
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x y)  eller for både grunnriss og høyde (x y z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -564,12 +565,12 @@ SOSI_navn: DATAFANGSTMETODE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
 
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
 
 Merknad:
-Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
 
  
 |Multiplisitet: 
@@ -634,12 +635,12 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket  men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
 
 Merknad:
-Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
@@ -662,6 +663,7 @@ SOSI_navn: H-NØYAKTIGHET +
  
 |Beskrivelse: 
 |inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+
 --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
  
 |===
@@ -706,7 +708,7 @@ SOSI_navn: H-NØYAKTIGHET +
 ===== «CodeList» Datafangstmetode
 *Definisjon:* metode for datafangst. 
 
-Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
+Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -790,7 +792,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 *Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
-Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
+Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -815,7 +817,7 @@ Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
 <<<
 '''
 ==== Pakke: BruerOgTuneller
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  Bruer og tuneller
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, Bruer og tuneller
  
 '''
  
@@ -837,7 +839,7 @@ image::diagrammer/Hoveddiagram Bruer og tuneller - objekttyper og kodelister.png
 [[bru]]
 ===== «featureType» Bru
 *Definisjon:* konstruksjon for kryssing av vanskelig farbart område
-Merknad: Med vanskelig farbart område menes en elv  et juv eller andre naturlige hindringer  samt kryssende infrastruktur.
+Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlige hindringer, samt kryssende infrastruktur.
  
  
 '''
@@ -900,10 +902,31 @@ SOSI_navn: BRUTRAFIKKTYPE +
 [cols="20,80"]
 |===
 |*Navn:* 
+|*eksternpeker*
+ 
+|Definisjon: 
+|referanse til objektet i et eksternt system (annet enn NVDB).
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/URI[URI]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: T + 
+SOSI_lengde: 255 + 
+SOSI_navn: EKSTERNPEKER + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
 |*friseilingshøyde*
  
 |Definisjon: 
 |friseilingshøyde angitt i meter. Angis kun for bruer over vann der friseilingshøyde er relevant.
+
+Merknad: Friseilingshøyde er en administrativ verdi som ikke kan avledes fra bruas geometri
  
 |Multiplisitet: 
 |[0..1]
@@ -990,7 +1013,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 [[kulvert]]
 ===== «featureType» Kulvert
-*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og lysåpning mellom 1m og 2 5m
+*Definisjon:* gjennomløp på tvers av veg-eller jernbane med overliggende fylling og lysåpning mellom 1m og 2,5m
  
  
 '''
@@ -1132,7 +1155,7 @@ SOSI_melding: Fant ikke denne i SOSI_db +
 <<<
 '''
 ==== Pakke: BygningsmessigeAnlegg
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  BygningsmessigeAnlegg
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, BygningsmessigeAnlegg
  
 '''
  
@@ -1158,7 +1181,7 @@ image::diagrammer/Hoveddiagram Bygningsmessige anlegg - objekttyper og kodeliste
  
 '''
 .Illustrasjon av objekttype Avfallsbeholder
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png, Alt="Bilde av et eksempel på objekttypen Avfallsbeholder, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png, Alt="Bilde av et eksempel på objekttypen Avfallsbeholder, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
 [discrete]
 ====== Egenskaper
 [cols="20,80"]
@@ -1235,7 +1258,7 @@ SOSI_navn: HREF +
 |*eksternpeker*
  
 |Definisjon: 
-|referanse til objektet i et eksternt system  f.eks. hos ansvarlig renovasjonsselskap.
+|referanse til objektet i et eksternt system, f.eks. hos ansvarlig renovasjonsselskap.
  
 |Multiplisitet: 
 |[1..1]
@@ -1427,7 +1450,7 @@ SOSI_navn: MEDIUM +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+|<<nrlobjekter,«FeatureType» NRLobjekter>>
  
 |Realisering av: 
 |«ApplicationSchema» Bygnan-4.0/BygningsmessigeAnlegg/Pakke1::«featureType» Flaggstang +
@@ -1438,7 +1461,7 @@ SOSI_navn: MEDIUM +
 [[fundament]]
 ===== «featureType» Fundament
 *Definisjon:* støpt underlag for frittstående konstruksjoner 
-Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil være kartlagt som egne objekter. For eksempel stolper  master  rørgater  brupilarer  vindturbiner  helikopterlandingsplasser mv.
+Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil være kartlagt som egne objekter. For eksempel stolper, master, rørgater, brupilarer, vindturbiner, helikopterlandingsplasser mv.
  
  
 '''
@@ -1497,6 +1520,8 @@ SOSI_navn: MEDIUM +
 [[pipe]]
 ===== «featureType» Pipe
 *Definisjon:* frittstående rørformete innretninger for transport av avgasser
+
+Merknad: Piper kan forskjellig tverrsnitt (må ikke være sirkulære)
  
  
 '''
@@ -1665,6 +1690,8 @@ SOSI_navn: MEDIUM +
 [[trapp]]
 ===== «featureType» Trapp
 *Definisjon:* trapp som ikke står i tilknytning til en bygning
+
+Merknad: Kan også brukes på rullestolramper etc.
  
  
 '''
@@ -1723,7 +1750,7 @@ SOSI_navn: MEDIUM +
 [[tårn]]
 ===== «featureType» Tårn
 *Definisjon:* høy bygningsmessig konstruksjon hvor høyden er stor i forhold til bygningens areal i grunnplanet
-Merknad: Omfatter alle tårn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse- som f.eks tank. 
+Merknad: Omfatter alle tårn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse, som f.eks. tank. 
 Eksempel: Måletårn og stupetårn
  
  
@@ -1806,7 +1833,7 @@ SOSI_navn: MEDIUM +
 <<<
 '''
 ==== Pakke: MurerOgGjerder
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  Murer og gjerder
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, Murer og gjerder
  
 '''
  
@@ -2207,7 +2234,7 @@ SOSI_navn: MEDIUM +
 |*eksternpeker*
  
 |Definisjon: 
-|referanse til objektet i et eksternt system  f.eks. hos parkforvalter i kommunen.
+|referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.
  
 |Multiplisitet: 
 |[0..1]
@@ -2234,7 +2261,7 @@ SOSI_navn: EKSTERNPEKER +
  
 [[skjerm]]
 ===== «featureType» Skjerm
-*Definisjon:* frittstående konstruksjon som skal være et hinder for eksempel til støyutbredelse eller snøfokk eller hindre/begrense ras og flom.
+*Definisjon:* frittstående konstruksjon laget for å skjerme mot støy eller snø, eller hindre/begrense ras og flom.
  
  
 '''
@@ -2409,7 +2436,7 @@ SOSI_navn: MEDIUM +
  
 [[voll]]
 ===== «featureType» Voll
-*Definisjon:* opphøyd terrengformasjon anlagt for å hindre støy  ukontrollert gjennomstrømming av vann  skade fra  prosjektiler på skytebane o.l.
+*Definisjon:* opphøyd terrengformasjon anlagt for å hindre støy, ukontrollert gjennomstrømming av vann, skade fra  prosjektiler på skytebane o.l.
  
  
 '''
@@ -2558,7 +2585,7 @@ SOSI_navn: HOB +
 <<<
 '''
 ==== Pakke: TekniskeAnleggKulturLek
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  TekniskeAnleggKulturLekMm
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggKulturLekMm
  
 '''
  
@@ -2637,7 +2664,7 @@ SOSI_navn: HREF +
  
 [[idrettsanlegg]]
 ===== «featureType» Idrettsanlegg
-*Definisjon:* linje for avgrensning av anleggsmessige deler av et idrettsanlegg  som f.eks ytteravgrensning av en fotballbane
+*Definisjon:* linje for avgrensning av anleggsmessige deler av et idrettsanlegg, som f.eks ytteravgrensning av en fotballbane
 
 Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se kap. for arealbruk).
  
@@ -2700,7 +2727,7 @@ SOSI_navn: HREF +
 *Definisjon:* detalj i parkmessig område
 
 Merknad:
-Omfatter detaljer som f.eks. bautaer  statuer  fontener  basseng  lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
+Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
  
  
 '''
@@ -2782,7 +2809,7 @@ SOSI_navn: PARKDETALJTYPE +
 |*eksternpeker*
  
 |Definisjon: 
-|referanse til objektet i et eksternt system  f.eks. hos parkforvalter i kommunen.
+|referanse til objektet i et eksternt system, f.eks. hos parkforvalter i kommunen.
  
 |Multiplisitet: 
 |[0..1]
@@ -3114,6 +3141,25 @@ SOSI_datatype: T +
 SOSI_lengde: 6 + 
 SOSI_navn: HREF + 
 |===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*linjebredde*
+ 
+|Definisjon: 
+|største avstand mellom vaierene som er hengt opp i ei mast
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: D + 
+SOSI_lengde: 6.2 + 
+SOSI_navn: LINJEBREDDE + 
+|===
  
 [discrete]
 ====== Arv og realiseringer
@@ -3128,8 +3174,8 @@ SOSI_navn: HREF +
  
 [[tribune]]
 ===== «featureType» Tribune
-*Definisjon:* opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer  særlig idrettsanlegg
-Merknad: Tribune som er innredet for bruk  f.eks. som kontor eller butikk  vil være en bygningsenhet.
+*Definisjon:* opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer, særlig idrettsanlegg
+Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.
  
  
 '''
@@ -3219,7 +3265,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 <<<
 '''
 ==== Pakke: TekniskeAnleggVannVassdragKyst
-*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0  TekniskeAnleggVannVassdragKyst
+*Definisjon:* Inneholder elementer fra SOSI Bygnan 4.0, TekniskeAnleggVannVassdragKyst
  
 '''
  
@@ -3243,11 +3289,10 @@ image::diagrammer/Hoveddiagram Vann - objekttyper og kodelister.png[link=diagram
 *Definisjon:* karakteristiske linjer på bygningsmessige- og tekniske anlegg
 
 Merknad:
-Kan også benyttes til å registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB  men som det er naturlig å registrere i et detaljert grunnkart.
+Kan også benyttes til å registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB, men som det er naturlig å registrere i et detaljert grunnkart. 
 
-Eksempel: 
-Markerte linjer på en demning.
-Skilderhus
+Eksempler: 
+Markerte linjer på en demning, molo, sluse, pipe, tårn, murloddrett og små frittstående anlegg som f.eks. skilderhus, kiosker etc.
  
 [discrete]
 ====== Egenskaper
@@ -3321,7 +3366,7 @@ SOSI_navn: MEDIUM +
  
 [[demning]]
 ===== «featureType» Demning
-*Definisjon:* konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin  samt regulere vannføringen
+*Definisjon:* konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen
  
  
 '''
@@ -3359,7 +3404,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 [[elveforbygning]]
 ===== «featureType» Elveforbygning
-*Definisjon:* konstruksjon i eller langs vassdrag for å sikre mot erosjon  flom eller som miljøtiltak
+*Definisjon:* konstruksjon i eller langs vassdrag for å sikre mot erosjon, flom eller som miljøtiltak
  
  
 '''
@@ -3744,7 +3789,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 [[kaibrygge]]
 ===== «featureType» KaiBrygge
-*Definisjon:* platformkonstruksjon langs land eller fra land og ut i vannet  brukt som fortøyningssted for større eller mindre fartøyer. 
+*Definisjon:* platformkonstruksjon langs land eller fra land og ut i vannet, brukt som fortøyningssted for større eller mindre fartøyer. 
 Merknad: KaiBrygge kan være bygget over vann slik at vannkonturen registeres under konstruksjonen
  
  
@@ -3795,7 +3840,7 @@ SOSI_navn: HAVNEDATAPEKER +
 |*avgrensesAvKaiBryggeKant*
  
 |Definisjon:
-|Krav til delt flategeometri. Avgrensning av Kai ved hjelp av fiktive geometriobjekter (mot vegareal  bygninger eller annet areal på land)
+|Krav til delt flategeometri. Avgrensning av Kai ved hjelp av fiktive geometriobjekter (mot vegareal, bygninger eller annet areal på land)
  
 |Multiplisitet: 
 |[0..*]
@@ -3826,7 +3871,9 @@ SOSI_navn: HAVNEDATAPEKER +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
@@ -3934,6 +3981,42 @@ SOSI_navn: MEDIUM +
  
 |Realisering av: 
 |«ApplicationSchema» Bygnan-4.0/TekniskeAnleggVannVassdragKyst/Del 2 TekniskeAnleggVannVassdragKyst::«featureType» Molo +
+|===
+ 
+'''
+ 
+[[navigasjonsinstallasjon]]
+===== «featureType» Navigasjonsinstallasjon
+*Definisjon:* objekt som hjelper sjøfarende å navigere på sjøen.
+ 
+ 
+'''
+.Illustrasjon av objekttype Navigasjonsinstallasjon
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_navigasjonsinstallasjon.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_navigasjonsinstallasjon.png, Alt="Bilde av et eksempel på objekttypen Navigasjonsinstallasjon, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*posisjon*
+ 
+|Definisjon: 
+|sted som objektet eksisterer på
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
 |===
  
 '''
@@ -4053,7 +4136,7 @@ SOSI_navn: EKSTERNPEKER +
  
 [[pælebunt]]
 ===== «featureType» Pælebunt
-*Definisjon:* bunt av stokker som er drevet ned i sjøbunnen  vann eller elver for å lede trafikken eller tømmer
+*Definisjon:* bunt av stokker som er drevet ned i sjøbunnen, vann eller elver for å lede trafikken eller tømmer
  
  
 '''
@@ -4111,7 +4194,7 @@ SOSI_navn: HREF +
  
 [[rørgate]]
 ===== «featureType» Rørgate
-*Definisjon:* store rør som leder vann frem til foredlingsanlegg  kraftverk  fjernvarmeanlegg  annet vassdrag osv. 
+*Definisjon:* store rør som leder vann frem til foredlingsanlegg, kraftverk, fjernvarmeanlegg, annet vassdrag osv. 
  
  
 '''
@@ -4189,7 +4272,7 @@ SOSI_navn: MEDIUM +
  
 [[slipp]]
 ===== «featureType» Slipp
-*Definisjon:* bane som mindre og middelstore fartøyer kan hales opp ved landsetting  bedding
+*Definisjon:* bane som mindre og middelstore fartøyer kan hales opp ved landsetting, bedding
  
 [discrete]
 ====== Profilparametre i tagged values

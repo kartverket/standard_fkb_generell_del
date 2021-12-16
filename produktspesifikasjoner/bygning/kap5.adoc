@@ -1,6 +1,6 @@
 // Start of UML-model
 === Pakke: «ApplicationSchema» FKB-Bygning-5.0
-*Definisjon:* Datamodell for produktspesfikasjonen FKB-Bygning. FKB-Bygning inneholder detaljert bygningsinformasjon. Datamodellen omfatter beskrivelse av alle typer bygninger  takoverbygg  beskrivende bygningslinjer (for eksempel mønelinje) samt bygningsvedheng (for eksempel veranda).
+*Definisjon:* Datamodell for produktspesfikasjonen FKB-Bygning. FKB-Bygning inneholder detaljert bygningsinformasjon. Datamodellen omfatter beskrivelse av alle typer bygninger, takoverbygg, beskrivende bygningslinjer (for eksempel mønelinje) samt bygningsvedheng (for eksempel veranda).
  
 [discrete]
 ==== Profilparametre i tagged values
@@ -96,7 +96,7 @@ image::diagrammer/Hoveddiagram Posisjonskvalitet.png[link=diagrammer/Hoveddiagra
 |unik identifikasjon av et objekt 
 
 Merknad FKB:
-Unik identifikasjon av et objekt  ivaretas av den ansvarlige produsent/forvalter  og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
 Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
 For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.
  
@@ -125,7 +125,7 @@ i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forva
 
 ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
 
-iii. Når avgrensingslinjene til en flate endres  skal flateobjektet få ny oppdateringsdato.
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
 
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
@@ -187,7 +187,7 @@ SOSI_navn: DATAFANGSTDATO +
 |dato når dataene er fastslått å være i samsvar med virkeligheten.
 
 Merknad FKB:
-Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold  og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)
  
 |Multiplisitet: 
 |[0..1]
@@ -351,11 +351,11 @@ SOSI_navn: KVALITET +
  
 [[identifikasjon]]
 ===== «dataType» Identifikasjon
-*Definisjon:* Unik identifikasjon av et objekt i et datasett  forvaltet av den ansvarlige produsent/forvalter  og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+*Definisjon:* Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
 
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon  slik som f.eks bygningsnummer. 
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
 
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid  og ikke gjenbrukes i andre objekt.
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -394,7 +394,7 @@ SOSI_navn: LOKALID +
 |*navnerom*
  
 |Definisjon: 
-|navnerom som unikt identifiserer datakilden til et objekt  anbefales å være en http-URI
+|navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
 
 Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
 
@@ -445,7 +445,7 @@ SOSI_navn: VERSJONID +
 *Definisjon:* beskrivelse av kvaliteten på stedfestingen.
 
 Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013  men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -464,7 +464,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
  
 |Definisjon: 
 |metode for datafangst. 
-Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x y)  eller for både grunnriss og høyde (x y z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.
  
 |Multiplisitet: 
 |[1..1]
@@ -486,12 +486,12 @@ SOSI_navn: DATAFANGSTMETODE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
 
 For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
 
 Merknad:
-Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
  
 |Multiplisitet: 
 |[0..1]
@@ -555,12 +555,12 @@ SOSI_navn: DATAFANGSTMETODEHØYDE +
 |Definisjon: 
 |standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket  men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
 
-I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik  men dersom man har en beregnet verdi skal denne benyttes. 
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
 
 Merknad:
-Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres  beregnes og kontrolleres.
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.
 
  
 |Multiplisitet: 
@@ -584,6 +584,7 @@ SOSI_navn: H-NØYAKTIGHET +
  
 |Beskrivelse: 
 |inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+
 --Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde
  
 |===
@@ -628,7 +629,7 @@ SOSI_navn: H-NØYAKTIGHET +
 ===== «CodeList» Datafangstmetode
 *Definisjon:* metode for datafangst. 
 
-Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr  fotogrammetrisk stereomodell  digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
+Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -712,7 +713,7 @@ Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et da
 *Definisjon:* objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
-Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
+Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 [discrete]
 ====== Profilparametre i tagged values
@@ -737,7 +738,7 @@ Veg på bro  i tunnel  inne i et bygningsmessig anlegg  etc.
 <<<
 '''
 ==== Pakke: Bygninger
-*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5  Bygningspunkt
+*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningspunkt
  
 '''
  
@@ -824,7 +825,7 @@ SOSI_navn: BYGGNR +
 |*bygningstype*
  
 |Definisjon: 
-|beskrivelse av hva bygningen faktisk er brukt til  eventuelt hva bygningen er godkjent til.
+|beskrivelse av hva bygningen faktisk er brukt til, eventuelt hva bygningen er godkjent til.
  
 |Multiplisitet: 
 |[1..1]
@@ -994,7 +995,9 @@ SOSI_navn: MEDIUM +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
@@ -1004,7 +1007,9 @@ SOSI_navn: MEDIUM +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
@@ -1162,7 +1167,9 @@ SOSI_navn: MEDIUM +
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
@@ -1172,7 +1179,9 @@ SOSI_navn: MEDIUM +
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Dersom det finns område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
@@ -1271,7 +1280,7 @@ SOSI_navn: MEDIUM +
 <<<
 '''
 ==== Pakke: Bygningsavgrensning
-*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5  Bygningsavgrensning
+*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningsavgrensning
  
 '''
  
@@ -1541,7 +1550,7 @@ SOSI_navn: HREF +
 |*skalAvgrenseBygning*
  
 |Definisjon: 
-|angivelse av om fasadeliv skal benyttes til å danne bygningsflate. Defaultverdi er Nei  dvs. at fasadeliv kun benyttes til flateavgrensning dersom skalAvgrenseBygning = Ja.
+|angivelse av om fasadeliv skal benyttes til å danne bygningsflate. Defaultverdi er Nei, dvs. at fasadeliv kun benyttes til flateavgrensning dersom skalAvgrenseBygning = Ja.
 
 Merknad:
 Fasadeliv (hele eller deler av fasaden) vil i mange tilfeller eksistere i tillegg til Takkant. Egenskapen kan da benyttes til å angi at enten takriss eller fasadelivriss skal danne Bygningsavgrensning for bygningsflaten (normalt benyttes Takkant til riss hvis begge eksisterer).
@@ -1571,7 +1580,7 @@ SOSI_navn: SKAL_AVGR_BYGN +
 [[fiktivbygningsavgrensning]]
 ===== «featureType» FiktivBygningsavgrensning
 *Definisjon:* fiktiv avgrensing av bygning
-Merknad: Brukes når deler av takkant  fasadeliv  grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig å danne en flate.  Fiktiv bygningsavgrensing benyttes også for å lage flater for underjordiske bygninger og som fiktiv linje på takoverbygg der takoverbyggkant mangler.
+Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig å danne en flate.  Fiktiv bygningsavgrensing benyttes også for å lage flater for underjordiske bygninger og som fiktiv linje på takoverbygg der takoverbyggkant mangler.
  
  
 '''
@@ -1774,7 +1783,7 @@ SOSI_navn: TAKSKJEGG +
 <<<
 '''
 ==== Pakke: BeskrivendeBygningslinjer
-*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5  BeskrivendeBygningslinjer
+*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, BeskrivendeBygningslinjer
  
 '''
  
@@ -1800,7 +1809,7 @@ image::diagrammer/Hoveddiagram BeskrivendeBygningslinjer - Assosiasjoner.png[lin
  
 [[beskrivendebygningsdetalj]]
 ===== «featureType» BeskrivendeBygningsdetalj (abstrakt)
-*Definisjon:* bygningsdetalj som ligger innenfor bygningsavgrensning  og som ikke er knyttet til bygningens avgrensning
+*Definisjon:* bygningsdetalj som ligger innenfor bygningsavgrensning, og som ikke er knyttet til bygningens avgrensning
  
 [discrete]
 ====== Egenskaper
@@ -2319,7 +2328,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 <<<
 '''
 ==== Pakke: Bygningsvedheng
-*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5  Bygningsvedheng
+*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Bygningsvedheng
  
 '''
  
@@ -2345,7 +2354,7 @@ image::diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[link=diagramm
  
 [[bygningsvedheng]]
 ===== «featureType» Bygningsvedheng (abstrakt)
-*Definisjon:* bygningsdetaljer som ligger i tilknytning til  bygningen  og som ikke er knyttet til bygningens avgrensning
+*Definisjon:* bygningsdetaljer som ligger i tilknytning til  bygningen, og som ikke er knyttet til bygningens avgrensning
  
 [discrete]
 ====== Egenskaper
@@ -2385,7 +2394,7 @@ image::diagrammer/Hoveddiagram Bygningsvedheng - assosiasjoner.png[link=diagramm
  
 [[bygningbru]]
 ===== «featureType» BygningBru
-*Definisjon:* bru tilknyttet bygning som brukes som adkomst til bygninger  og bruer mellom bygninger
+*Definisjon:* bru tilknyttet bygning som brukes som adkomst til bygninger, og bruer mellom bygninger
 Merknad:  Brukes på bygninger som ikke er driftsbygninger i landbruket. I det siste tilfellet brukes låvebru
  
  
@@ -2447,7 +2456,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 [[veranda]]
 ===== «featureType» Veranda
-*Definisjon:* bygningsvedheng som omfatter veranda   terrasse  altan  balkong og lasterampe
+*Definisjon:* bygningsvedheng som omfatter veranda,  terrasse, altan, balkong og lasterampe
 Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den ligger til eller - hvis den er tildelt eget bygningsnummer - en bygning.
  
  
@@ -2485,7 +2494,7 @@ SOSI_navn: HREF +
 |objektets beliggenhet i forhold til jordoverflaten
 
 Eksempel:
-På bro  i tunnel  inne i et bygningsmessig anlegg  etc.
+På bro, i tunnel, inne i et bygningsmessig anlegg, etc.
  
 |Multiplisitet: 
 |[1..1]
@@ -2575,7 +2584,7 @@ SOSI_navn: MEDIUM +
 <<<
 '''
 ==== Pakke: Takoverbygg
-*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5  Takoverbygg
+*Definisjon:* Inneholder elementer fra SOSI Bygg 4.5, Takoverbygg
  
 '''
  
@@ -2601,7 +2610,7 @@ image::diagrammer/Hoveddiagram Takoverbygg - flateavgrensning.png[link=diagramme
  
 [[takoverbygg]]
 ===== «featureType» Takoverbygg
-*Definisjon:* byggverk med ingen eller få vegger  og som ikke er registrert som bygning i matrikkelen
+*Definisjon:* byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen
 Eksempel:  'carport' eller tak over bensinpumper
  
  
@@ -2678,7 +2687,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |*avgrensningsobjekter i samsvar med områdegeometri*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Område-geometrien skal være lik summen av geometriene til de assosierte avgrensningsobjektene
  
 |===
@@ -2688,7 +2699,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |*posisjon innenfor område*
  
 |Beskrivelse: 
-|--ingen OCL  restriksjonen implementeres manuelt
+|
+--ingen OCL, restriksjonen implementeres manuelt
+ + 
 --Dersom det finnes område-geometri skal posisjon-geometrien ligge innenfor område-geometrien
  
 |===
