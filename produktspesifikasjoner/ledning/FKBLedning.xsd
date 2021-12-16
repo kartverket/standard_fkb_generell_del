@@ -7,7 +7,7 @@ FKB-Ledning versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 
   <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
   <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
   <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
-  <element name="Bardun" substitutionGroup="app:KoplingKurve" type="app:BardunType">
+  <element name="Bardun" substitutionGroup="app:KoplingSenterlinje" type="app:BardunType">
     <annotation>
       <documentation>tau, vaier eller liknende som støtter eller stabiliserer høye gjenstander
 
@@ -17,7 +17,7 @@ Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen
   </element>
   <complexType name="BardunType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingSenterlinjeType">
         <sequence/>
       </extension>
     </complexContent>
@@ -31,9 +31,7 @@ Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen
   </complexType>
   <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
     <annotation>
-      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</documentation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</documentation>
     </annotation>
   </element>
   <complexType abstract="true" name="FellesegenskaperType">
@@ -70,6 +68,17 @@ ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret elle
 iii. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
               <appinfo>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluttdato" type="dateTime">
+            <annotation>
+              <documentation>tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUTTDATO</taggedValue>
               </appinfo>
             </annotation>
           </element>
@@ -193,7 +202,7 @@ Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifika
 
 Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
 
-Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
           <appinfo>
             <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
           </appinfo>
@@ -233,35 +242,35 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Kanal" substitutionGroup="app:Ledning" type="app:KanalType">
+  <element name="Kabelkanal" substitutionGroup="app:Ledning" type="app:KabelkanalType">
     <annotation>
       <documentation>Duct: brukes som fremføringsvei for ledning</documentation>
     </annotation>
   </element>
-  <complexType name="KanalType">
+  <complexType name="KabelkanalType">
     <complexContent>
       <extension base="app:LedningType">
         <sequence/>
       </extension>
     </complexContent>
   </complexType>
-  <complexType name="KanalPropertyType">
+  <complexType name="KabelkanalPropertyType">
     <sequence minOccurs="0">
-      <element ref="app:Kanal"/>
+      <element ref="app:Kabelkanal"/>
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element abstract="true" name="KoplingKurve" substitutionGroup="app:Nettverkskomponent" type="app:KoplingKurveType">
+  <element abstract="true" name="KoplingGrense" substitutionGroup="app:Nettverkskomponent" type="app:KoplingGrenseType">
     <annotation>
-      <documentation>generell betegnelse på objekt som er node (punkt) i et ledningsnettverk</documentation>
+      <documentation>generell betegnelse på objekt som er avgrensningslinjer for et nodepunkt i et ledningsnettverk</documentation>
     </annotation>
   </element>
-  <complexType abstract="true" name="KoplingKurveType">
+  <complexType abstract="true" name="KoplingGrenseType">
     <complexContent>
       <extension base="app:NettverkskomponentType">
         <sequence>
-          <element name="beliggenhet" type="gml:CurvePropertyType">
+          <element name="grense" type="gml:CurvePropertyType">
             <annotation>
               <documentation>beskriver koplingens geografiske beliggenhet i form av en kurve med koordinater</documentation>
               <appinfo>
@@ -273,9 +282,9 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
       </extension>
     </complexContent>
   </complexType>
-  <complexType name="KoplingKurvePropertyType">
+  <complexType name="KoplingGrensePropertyType">
     <sequence minOccurs="0">
-      <element ref="app:KoplingKurve"/>
+      <element ref="app:KoplingGrense"/>
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -289,7 +298,7 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
     <complexContent>
       <extension base="app:NettverkskomponentType">
         <sequence>
-          <element name="posisjon" type="gml:PointPropertyType">
+          <element name="punkt" type="gml:PointPropertyType">
             <annotation>
               <documentation>beskriver koplingens geografiske beliggenhet i form av koordinatene til et punkt</documentation>
               <appinfo>
@@ -308,7 +317,35 @@ Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for 
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Kum" substitutionGroup="app:KoplingKurve" type="app:KumType">
+  <element abstract="true" name="KoplingSenterlinje" substitutionGroup="app:Nettverkskomponent" type="app:KoplingSenterlinjeType">
+    <annotation>
+      <documentation>generell betegnelse for langsgående konstruksjoner i et ledningsnettverk</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KoplingSenterlinjeType">
+    <complexContent>
+      <extension base="app:NettverkskomponentType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>beskriver koplingens geografiske beliggenhet i form av en kurve med koordinater</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KoplingSenterlinjePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KoplingSenterlinje"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kum" substitutionGroup="app:KoplingGrense" type="app:KumType">
     <annotation>
       <documentation>et fysisk objekt som regel av stål, plast eller betong som er gravd ned i bakken, og som lager et rom
 
@@ -318,7 +355,7 @@ Ytterkant topp kumkonstruksjon der denne er synlig.</documentation>
   </element>
   <complexType name="KumType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingGrenseType">
         <sequence/>
       </extension>
     </complexContent>
@@ -406,7 +443,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
     <complexContent>
       <extension base="app:NettverkskomponentType">
         <sequence>
-          <element name="beliggenhet" type="gml:CurvePropertyType">
+          <element name="senterlinje" type="gml:CurvePropertyType">
             <annotation>
               <documentation>beskriver ledningens geografiske beliggenhet i form av en kurve med koordinater</documentation>
               <appinfo>
@@ -427,7 +464,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
   </complexType>
   <element abstract="true" name="LidarMetadata" substitutionGroup="app:Ledning" type="app:LidarMetadataType">
     <annotation>
-      <documentation>informasjon om punkskyen som ligger til grunn for klassifisering og vektorisering</documentation>
+      <documentation>informasjon om punktskyen som ligger til grunn for klassifisering og vektorisering</documentation>
     </annotation>
   </element>
   <complexType abstract="true" name="LidarMetadataType">
@@ -444,7 +481,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
           </element>
           <element minOccurs="0" name="maksVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
             <annotation>
-              <documentation>luftspennets maksimale vertikalutstrekning over terrenget (bakke, vann, sjø, mv.)</documentation>
+              <documentation>maksimal avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
               <appinfo>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MAKS_VERTIKALUTSTREKNING</taggedValue>
               </appinfo>
@@ -452,7 +489,7 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
           </element>
           <element minOccurs="0" name="minVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
             <annotation>
-              <documentation>luftspennets laveste vertikalutstrekning over terrenget (bakke, vann, sjø, mv.)</documentation>
+              <documentation>minste avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
               <appinfo>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MIN_VERTIKALUTSTREKNING</taggedValue>
               </appinfo>
@@ -469,18 +506,18 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Luftlinje" substitutionGroup="app:LidarMetadata" type="app:LuftlinjeType">
+  <element name="Luftledning" substitutionGroup="app:LidarMetadata" type="app:LuftledningType">
     <annotation>
-      <documentation>en enkelt vaier/kabel mellom to faste forankringspunkt</documentation>
+      <documentation>vaier/kabel mellom to faste forankringspunkt, som er eller kan være strøm- eller signalførende</documentation>
     </annotation>
   </element>
-  <complexType name="LuftlinjeType">
+  <complexType name="LuftledningType">
     <complexContent>
       <extension base="app:LidarMetadataType">
         <sequence>
           <element name="fase" type="gml:CodeType">
             <annotation>
-              <documentation>angivelse av intern plassering i grunnris for aktuell faseline</documentation>
+              <documentation>angivelse av intern plassering i grunnriss for aktuell faseline</documentation>
               <appinfo>
                 <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase</defaultCodeSpace>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">FASE</taggedValue>
@@ -491,9 +528,9 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
       </extension>
     </complexContent>
   </complexType>
-  <complexType name="LuftlinjePropertyType">
+  <complexType name="LuftledningPropertyType">
     <sequence minOccurs="0">
-      <element ref="app:Luftlinje"/>
+      <element ref="app:Luftledning"/>
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
@@ -561,7 +598,7 @@ Angis kun dersom mastens geometri har laser som datafangstmetode.</documentation
           </element>
           <element name="belysning" type="boolean">
             <annotation>
-              <documentation>angir om det er montert ett eller flere flere lysarmaturer i masta</documentation>
+              <documentation>angir om det er montert ett eller flere lysarmaturer i masta</documentation>
               <appinfo>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BELYSNING</taggedValue>
               </appinfo>
@@ -632,14 +669,14 @@ Enhet: meter</documentation>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Masteomriss" substitutionGroup="app:KoplingKurve" type="app:MasteomrissType">
+  <element name="Masteomriss" substitutionGroup="app:KoplingGrense" type="app:MasteomrissType">
     <annotation>
       <documentation>ytre avgrensning av mastens fotavtrykk på bakken</documentation>
     </annotation>
   </element>
   <complexType name="MasteomrissType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingGrenseType">
         <sequence>
           <element minOccurs="0" name="type" type="gml:CodeType">
             <annotation>
@@ -663,7 +700,7 @@ Enhet: meter</documentation>
   </complexType>
   <element abstract="true" name="Nettverkskomponent" substitutionGroup="app:KvalitetPåkrevd" type="app:NettverkskomponentType">
     <annotation>
-      <documentation>konteiner objekt med fellesegenskaper for alle ledningsobjekter</documentation>
+      <documentation>konteinerobjekt med fellesegenskaper for alle ledningsobjekter</documentation>
     </annotation>
   </element>
   <complexType abstract="true" name="NettverkskomponentType">
@@ -694,14 +731,6 @@ I noen få tilfeller kan det være delt eierskap av et objekt i marka, typisk en
               </appinfo>
             </annotation>
           </element>
-          <element maxOccurs="unbounded" minOccurs="0" name="eksternPeker" type="anyURI">
-            <annotation>
-              <documentation>peker til et eksternt system hvor det samme objektet er registrert</documentation>
-              <appinfo>
-                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
-              </appinfo>
-            </annotation>
-          </element>
           <element name="hovedbruk" type="gml:CodeType">
             <annotation>
               <documentation>hovedbruken for objektet
@@ -711,6 +740,33 @@ Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde.</
               <appinfo>
                 <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype</defaultCodeSpace>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LEDNINGSNETTVERKSTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til et eksternt system hvor det samme objektet er registrert
+
+Merknad:
+Ved peker til NRL eller NVDB registreres dette under sine respektive peker</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="nrlpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NRL</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NRLPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="nvdbpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NVDB</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NVDBPEKER</taggedValue>
               </appinfo>
             </annotation>
           </element>
@@ -727,7 +783,7 @@ Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde.</
   </complexType>
   <element name="Nettverkstasjon" substitutionGroup="app:KoplingPunkt" type="app:NettverkstasjonType">
     <annotation>
-      <documentation>et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører. Komponenter som gjør behandlingen kan for eksempel være pumper for vann, transformatorer for elektrisk strøm, forsterkere for signal osv.</documentation>
+      <documentation>et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører.</documentation>
     </annotation>
   </element>
   <complexType name="NettverkstasjonType">
@@ -762,14 +818,14 @@ Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde.</
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Nettverkstasjonomriss" substitutionGroup="app:KoplingKurve" type="app:NettverkstasjonomrissType">
+  <element name="Nettverkstasjonomriss" substitutionGroup="app:KoplingGrense" type="app:NettverkstasjonomrissType">
     <annotation>
       <documentation>ytre avgrensning av nettverkstasjonen, i grunnriss</documentation>
     </annotation>
   </element>
   <complexType name="NettverkstasjonomrissType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingGrenseType">
         <sequence/>
       </extension>
     </complexContent>
@@ -786,7 +842,7 @@ Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde.</
       <documentation>beskrivelse av kvaliteten på stedfestingen.
 
 Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
       <appinfo>
         <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
       </appinfo>
@@ -923,25 +979,26 @@ Dette er gjerne en tekstlig beskrivelse av traséens plassering, for eksempel "f
   </element>
   <complexType name="VertikalAvstandLedningType">
     <sequence>
-      <element name="vertikalhøydeposisjon" type="gml:PointPropertyType">
+      <element name="vertikalAvstandPosisjon" type="gml:PointPropertyType">
         <annotation>
-          <documentation>posisjonen til stedet på objektets hvor vertikalhøyden er angitt. Z-koordinaten angis i forhold til referansepunktet på objektet
+          <documentation>posisjonen til det punktet på objektet hvor vertikal avstand er angitt
 
 Merknad FKB:
-Ved SOSI-realisering skal vertikalhøydeposisjonen angis på følgende måte: ...NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;" 
+Ved SOSI-format realisering skal vertikalhøydeposisjonen angis på følgende måte: ...NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;" 
+
 Eksempel: ...NØHKOOR "22 7175399.09 395657.11 219.82"</documentation>
           <appinfo>
             <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØHKOOR</taggedValue>
           </appinfo>
         </annotation>
       </element>
-      <element name="vertikalhøyde" type="double">
+      <element name="vertikalAvstand" type="double">
         <annotation>
-          <documentation>objektets høyde over terreng (bakke/vann/sjø)
+          <documentation>avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
 
 Enhet: meter</documentation>
           <appinfo>
-            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALHØYDE</taggedValue>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTAND</taggedValue>
           </appinfo>
         </annotation>
       </element>
@@ -963,7 +1020,7 @@ Enhet: meter</documentation>
         <sequence>
           <element minOccurs="0" name="rotorbladlengde" type="double">
             <annotation>
-              <documentation>lengde rotoblad
+              <documentation>lengde rotorblad
 
 Enhet: meter</documentation>
               <appinfo>
@@ -1000,14 +1057,14 @@ Enhet: meter</documentation>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Vindturbinomriss" substitutionGroup="app:KoplingKurve" type="app:VindturbinomrissType">
+  <element name="Vindturbinomriss" substitutionGroup="app:KoplingGrense" type="app:VindturbinomrissType">
     <annotation>
       <documentation>ytre avgrensning av vindturbinens fotavtrykk på bakken</documentation>
     </annotation>
   </element>
   <complexType name="VindturbinomrissType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingGrenseType">
         <sequence/>
       </extension>
     </complexContent>
@@ -1019,7 +1076,7 @@ Enhet: meter</documentation>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Åk" substitutionGroup="app:KoplingKurve" type="app:ÅkType">
+  <element name="Åk" substitutionGroup="app:KoplingSenterlinje" type="app:ÅkType">
     <annotation>
       <documentation>en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei på hver side av bane
 
@@ -1029,7 +1086,7 @@ Merknad FKB:
   </element>
   <complexType name="ÅkType">
     <complexContent>
-      <extension base="app:KoplingKurveType">
+      <extension base="app:KoplingSenterlinjeType">
         <sequence/>
       </extension>
     </complexContent>
