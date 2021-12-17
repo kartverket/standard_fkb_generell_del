@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0" version="5.0">
+  <annotation>
+    <documentation>Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avløpsanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.
+
+FKB-Ledning versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 4.5 og SOSI del 2 Ledning versjon 4.6.</documentation>
+  </annotation>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="Bardun" substitutionGroup="app:KoplingSenterlinje" type="app:BardunType">
+    <annotation>
+      <documentation>tau, vaier eller liknende som støtter eller stabiliserer høye gjenstander
+
+Merknad FKB:
+Dersom flere barduner går i samme retning skal den høyeste og lengste bardunen registreres.</documentation>
+    </annotation>
+  </element>
+  <complexType name="BardunType">
+    <complexContent>
+      <extension base="app:KoplingSenterlinjeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BardunPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Bardun"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
+    <annotation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="identifikasjon" type="app:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="oppdateringsdato" type="dateTime">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
+iii. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluttdato" type="dateTime">
+            <annotation>
+              <documentation>tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUTTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="datafangstdato" type="date">
+            <annotation>
+              <documentation>dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.
+Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="verifiseringsdato" type="date">
+            <annotation>
+              <documentation>dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERIFISERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="registreringsversjon" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REGISTRERINGSVERSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="informasjon" type="string">
+            <annotation>
+              <documentation>generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">INFORMASJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>angir hvilken del av objektet høydeverdien refererer til</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fellesegenskaper"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Flymarkør" substitutionGroup="app:KoplingPunkt" type="app:FlymarkørType">
+    <annotation>
+      <documentation>Mangler i SOSI Ledning 4.5: markering av store luftspenn over daler og fjorder</documentation>
+    </annotation>
+  </element>
+  <complexType name="FlymarkørType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FlymarkørPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Flymarkør"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="app:IdentifikasjonType">
+    <annotation>
+      <documentation>Identification: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>localId: lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LOKALID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>namespace: navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>versionId: identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERSJONID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="app:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="Jordingsledning" substitutionGroup="app:LidarMetadata" type="app:JordingsledningType">
+    <annotation>
+      <documentation>ledning hvor formålet er å lede farlige overspenninger til jord. ledningen er under normale forhold ikke strømførende</documentation>
+    </annotation>
+  </element>
+  <complexType name="JordingsledningType">
+    <complexContent>
+      <extension base="app:LidarMetadataType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="JordingsledningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Jordingsledning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kabelkanal" substitutionGroup="app:Ledning" type="app:KabelkanalType">
+    <annotation>
+      <documentation>Duct: brukes som fremføringsvei for ledning</documentation>
+    </annotation>
+  </element>
+  <complexType name="KabelkanalType">
+    <complexContent>
+      <extension base="app:LedningType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KabelkanalPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kabelkanal"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KoplingGrense" substitutionGroup="app:Nettverkskomponent" type="app:KoplingGrenseType">
+    <annotation>
+      <documentation>generell betegnelse på objekt som er avgrensningslinjer for et nodepunkt i et ledningsnettverk</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KoplingGrenseType">
+    <complexContent>
+      <extension base="app:NettverkskomponentType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>beskriver koplingens geografiske beliggenhet i form av en kurve med koordinater</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KoplingGrensePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KoplingGrense"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KoplingPunkt" substitutionGroup="app:Nettverkskomponent" type="app:KoplingPunktType">
+    <annotation>
+      <documentation>generell betegnelse på objekt som er node (punkt) i et ledningsnettverk</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KoplingPunktType">
+    <complexContent>
+      <extension base="app:NettverkskomponentType">
+        <sequence>
+          <element name="punkt" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>beskriver koplingens geografiske beliggenhet i form av koordinatene til et punkt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Punkt</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KoplingPunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KoplingPunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KoplingSenterlinje" substitutionGroup="app:Nettverkskomponent" type="app:KoplingSenterlinjeType">
+    <annotation>
+      <documentation>generell betegnelse for langsgående konstruksjoner i et ledningsnettverk</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KoplingSenterlinjeType">
+    <complexContent>
+      <extension base="app:NettverkskomponentType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>beskriver koplingens geografiske beliggenhet i form av en kurve med koordinater</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KoplingSenterlinjePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KoplingSenterlinje"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kum" substitutionGroup="app:KoplingGrense" type="app:KumType">
+    <annotation>
+      <documentation>et fysisk objekt som regel av stål, plast eller betong som er gravd ned i bakken, og som lager et rom
+
+Merknad FKB:
+Ytterkant topp kumkonstruksjon der denne er synlig.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KumType">
+    <complexContent>
+      <extension base="app:KoplingGrenseType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KumPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kum"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Kumlokk" substitutionGroup="app:KoplingPunkt" type="app:KumlokkType">
+    <annotation>
+      <documentation>et deksel over en kum eller annet hulrom under bakkenivå</documentation>
+    </annotation>
+  </element>
+  <complexType name="KumlokkType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence>
+          <element name="kumlokkform" type="gml:CodeType">
+            <annotation>
+              <documentation>kumlokkets geometriske utforming</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/kumlokkform</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KUMLOKKFORM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="kum" type="app:KumPropertyType">
+            <annotation>
+              <documentation>kum til kumlokk</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KumlokkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kumlokk"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KvalitetPåkrevd" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype med påkrevet kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="Ledning" substitutionGroup="app:Nettverkskomponent" type="app:LedningType">
+    <annotation>
+      <documentation>generell betegnelse for langsgående objekt i et ledningsnettverk</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="LedningType">
+    <complexContent>
+      <extension base="app:NettverkskomponentType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>beskriver ledningens geografiske beliggenhet i form av en kurve med koordinater</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LedningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Ledning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="LidarMetadata" substitutionGroup="app:Ledning" type="app:LidarMetadataType">
+    <annotation>
+      <documentation>informasjon om punktskyen som ligger til grunn for klassifisering og vektorisering</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="LidarMetadataType">
+    <complexContent>
+      <extension base="app:LedningType">
+        <sequence>
+          <element minOccurs="0" name="antallLaserPunkt" type="integer">
+            <annotation>
+              <documentation>antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">ANTALL_LASERPUNKT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="maksVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
+            <annotation>
+              <documentation>maksimal avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MAKS_VERTIKALUTSTREKNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="minVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
+            <annotation>
+              <documentation>minste avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MIN_VERTIKALUTSTREKNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LidarMetadataPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:LidarMetadata"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Luftledning" substitutionGroup="app:LidarMetadata" type="app:LuftledningType">
+    <annotation>
+      <documentation>vaier/kabel mellom to faste forankringspunkt, som er eller kan være strøm- eller signalførende</documentation>
+    </annotation>
+  </element>
+  <complexType name="LuftledningType">
+    <complexContent>
+      <extension base="app:LidarMetadataType">
+        <sequence>
+          <element name="fase" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av intern plassering i grunnriss for aktuell faseline</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/fase</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">FASE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LuftledningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Luftledning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Lysarmatur" substitutionGroup="app:KoplingPunkt" type="app:LysarmaturType">
+    <annotation>
+      <documentation>selve det elektriske punktet som gir lys</documentation>
+    </annotation>
+  </element>
+  <complexType name="LysarmaturType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence>
+          <element name="plassering" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvor lysarmaturet er plassert</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BELYSNINGSPLASSERING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="iMast" type="app:MastPropertyType">
+            <annotation>
+              <documentation>referanse til masten hvor armaturet evt. er montert</documentation>
+              <appinfo>
+                <reversePropertyName xmlns="http://www.opengis.net/gml/3.2">app:harArmatur</reversePropertyName>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IMAST</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="LysarmaturPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Lysarmatur"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Mast" substitutionGroup="app:KoplingPunkt" type="app:MastType">
+    <annotation>
+      <documentation>Tower: alle konstruksjoner som primært er laget for å holde ledningsnett/komponent oppe fra bakken
+
+Merknad FKB:
+En mast kan bestå av en eller flere stolper og beskriver mastens representasjonspunkt (senterpunkt grunnriss / mastepunkt).</documentation>
+    </annotation>
+  </element>
+  <complexType name="MastType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence>
+          <element minOccurs="0" name="antallLaserPunkt" type="integer">
+            <annotation>
+              <documentation>antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt
+
+Merknad FKB:
+Angis kun dersom mastens geometri har laser som datafangstmetode.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">ANTALL_LASERPUNKT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="belysning" type="boolean">
+            <annotation>
+              <documentation>angir om det er montert ett eller flere lysarmaturer i masta</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BELYSNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="konstruksjon" type="gml:CodeType">
+            <annotation>
+              <documentation>hvordan masta er utformet</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MASTEKONSTRUKSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="linjebredde" type="double">
+            <annotation>
+              <documentation>største avstanden mellom ytterfasene (ledningene) i ei mast
+
+Enhet: meter</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LINJEBREDDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="vertikalAvstand" type="double">
+            <annotation>
+              <documentation>mastens maksimale vertikale høyde over under-/omkringliggende terreng eller vannoverflate
+
+Enhet: meter</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTAND</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="omriss" type="app:MasteomrissPropertyType">
+            <annotation>
+              <documentation>omrisset til mast</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="bardun" type="app:BardunPropertyType">
+            <annotation>
+              <documentation>bardun til mast</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BARDUN</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="harArmatur" type="app:LysarmaturPropertyType">
+            <annotation>
+              <documentation>referanse til de armaturer som evt. er montert i masta</documentation>
+              <appinfo>
+                <reversePropertyName xmlns="http://www.opengis.net/gml/3.2">app:iMast</reversePropertyName>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HARARMATUR</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MastPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Mast"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Masteomriss" substitutionGroup="app:KoplingGrense" type="app:MasteomrissType">
+    <annotation>
+      <documentation>ytre avgrensning av mastens fotavtrykk på bakken</documentation>
+    </annotation>
+  </element>
+  <complexType name="MasteomrissType">
+    <complexContent>
+      <extension base="app:KoplingGrenseType">
+        <sequence>
+          <element minOccurs="0" name="type" type="gml:CodeType">
+            <annotation>
+              <documentation>type mast</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/mastekonstruksjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MASTEKONSTRUKSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="MasteomrissPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Masteomriss"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="Nettverkskomponent" substitutionGroup="app:KvalitetPåkrevd" type="app:NettverkskomponentType">
+    <annotation>
+      <documentation>konteinerobjekt med fellesegenskaper for alle ledningsobjekter</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="NettverkskomponentType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="driftsmerking" type="string">
+            <annotation>
+              <documentation>unik ID for den fysiske nettverkskomponenten
+
+Merknad: 
+Vil kunne brukes til å knytte sammen informasjon om samme komponenten forvaltet i ulike databaser.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DRIFTSMERKING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eierOrgNr" type="string">
+            <annotation>
+              <documentation>organisasjonsnummer (9 siffer uten mellomrom) til eier av objektet. Organisasjonsnummeret skal være registrert i Brønnøysundregisteret
+
+Eksempel: 971032081
+
+Merknad FKB:
+I noen få tilfeller kan det være delt eierskap av et objekt i marka, typisk en mast. I disse tilfellene registreres det ett objekt pr. eier. Dette medfører at ett fysisk objekt i marka, med delt eierskap, representeres flere ganger. Hvert enkelt objekt kan kun registreres med en eier.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EIERORGNR</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="hovedbruk" type="gml:CodeType">
+            <annotation>
+              <documentation>hovedbruken for objektet
+
+Merknad FKB:
+Hovedregelen er at eieres hovedbruk av objektet bestemmer angitt bruksområde.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/ledningsnettverkstype</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LEDNINGSNETTVERKSTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til et eksternt system hvor det samme objektet er registrert
+
+Merknad:
+Ved peker til NRL eller NVDB registreres dette under sine respektive peker</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="nrlpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NRL</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NRLPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="nvdbpeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NVDB</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NVDBPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NettverkskomponentPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Nettverkskomponent"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Nettverkstasjon" substitutionGroup="app:KoplingPunkt" type="app:NettverkstasjonType">
+    <annotation>
+      <documentation>et fysisk, gjerne bygningsmessig, objekt som inneholder komponenter som gjør en eller annen behandling av vann, elektrisk strøm, signal eller annet som det nettverket den er en del av fører.</documentation>
+    </annotation>
+  </element>
+  <complexType name="NettverkstasjonType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence>
+          <element name="plassering" type="gml:CodeType">
+            <annotation>
+              <documentation>angir hvor nettverksstasjonen er plassert</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/stasjonsplassering</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">STASJONSPLASSERING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="omriss" type="app:NettverkstasjonomrissPropertyType">
+            <annotation>
+              <documentation>omrisset til nettverkstasjon</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NettverkstasjonPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Nettverkstasjon"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Nettverkstasjonomriss" substitutionGroup="app:KoplingGrense" type="app:NettverkstasjonomrissType">
+    <annotation>
+      <documentation>ytre avgrensning av nettverkstasjonen, i grunnriss</documentation>
+    </annotation>
+  </element>
+  <complexType name="NettverkstasjonomrissType">
+    <complexContent>
+      <extension base="app:KoplingGrenseType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NettverkstasjonomrissPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Nettverkstasjonomriss"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="app:PosisjonskvalitetType">
+    <annotation>
+      <documentation>beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="datafangstmetode" type="gml:CodeType">
+        <annotation>
+          <documentation>metode for datafangst
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="synbarhet" type="gml:CodeType">
+        <annotation>
+          <documentation>beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene)</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SYNBARHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="datafangstmetodeHøyde" type="gml:CodeType">
+        <annotation>
+          <documentation>metoden brukt for høyderegistrering av posisjon
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODEHØYDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighetHøyde" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H-NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="app:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <element name="Skap" substitutionGroup="app:KoplingPunkt" type="app:SkapType">
+    <annotation>
+      <documentation>Cabinet: beskyttelseskasse plassert vanligvis på bakken, som inneholder koblinger for elektrisk strøm, signal eller annet
+
+Merknad:
+Kan også være på størrelse med kiosk.</documentation>
+    </annotation>
+  </element>
+  <complexType name="SkapType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SkapPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Skap"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Trase" substitutionGroup="app:LidarMetadata" type="app:TraseType">
+    <annotation>
+      <documentation>den mest mulig geografisk riktige posisjonen for en framføring av ledning(er)</documentation>
+    </annotation>
+  </element>
+  <complexType name="TraseType">
+    <complexContent>
+      <extension base="app:LidarMetadataType">
+        <sequence>
+          <element minOccurs="0" name="trasenavn" type="string">
+            <annotation>
+              <documentation>navn på trasen 
+
+Merknad FKB:
+Dette er gjerne en tekstlig beskrivelse av traséens plassering, for eksempel "fra stasjon til stasjon"</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TRASENAVN</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrasePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Trase"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VertikalAvstandLedning" substitutionGroup="gml:AbstractObject" type="app:VertikalAvstandLedningType">
+    <annotation>
+      <documentation>ledningens høyde over/til terreng, vann eller sjø</documentation>
+    </annotation>
+  </element>
+  <complexType name="VertikalAvstandLedningType">
+    <sequence>
+      <element name="vertikalAvstandPosisjon" type="gml:PointPropertyType">
+        <annotation>
+          <documentation>posisjonen til det punktet på objektet hvor vertikal avstand er angitt
+
+Merknad FKB:
+Ved SOSI-format realisering skal vertikalhøydeposisjonen angis på følgende måte: ...NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;" 
+
+Eksempel: ...NØHKOOR "22 7175399.09 395657.11 219.82"</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØHKOOR</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="vertikalAvstand" type="double">
+        <annotation>
+          <documentation>avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
+
+Enhet: meter</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTAND</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="VertikalAvstandLedningPropertyType">
+    <sequence>
+      <element ref="app:VertikalAvstandLedning"/>
+    </sequence>
+  </complexType>
+  <element name="Vindturbin" substitutionGroup="app:KoplingPunkt" type="app:VindturbinType">
+    <annotation>
+      <documentation>en kontainer som betegner en hel "vindmølle". En vindturbin har en generator</documentation>
+    </annotation>
+  </element>
+  <complexType name="VindturbinType">
+    <complexContent>
+      <extension base="app:KoplingPunktType">
+        <sequence>
+          <element minOccurs="0" name="rotorbladlengde" type="double">
+            <annotation>
+              <documentation>lengde rotorblad
+
+Enhet: meter</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">ROTORBLADLENGDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="navhøyde" type="double">
+            <annotation>
+              <documentation>vertikal avstand fra omkringliggende terreng eller vann og til topp vindturbintårn
+
+Enhet: meter</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVHØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="omriss" type="app:VindturbinomrissPropertyType">
+            <annotation>
+              <documentation>omrisset til vindturbinen</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VindturbinPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vindturbin"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vindturbinomriss" substitutionGroup="app:KoplingGrense" type="app:VindturbinomrissType">
+    <annotation>
+      <documentation>ytre avgrensning av vindturbinens fotavtrykk på bakken</documentation>
+    </annotation>
+  </element>
+  <complexType name="VindturbinomrissType">
+    <complexContent>
+      <extension base="app:KoplingGrenseType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VindturbinomrissPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vindturbinomriss"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Åk" substitutionGroup="app:KoplingSenterlinje" type="app:ÅkType">
+    <annotation>
+      <documentation>en hovedsaklig liggende konstruksjon festet i (vanligvis) to master, ei på hver side av bane
+
+Merknad FKB:
+"Beina" er egne objekter (objekttype Mast), og ikke del av objektet av objekttypen Åk.</documentation>
+    </annotation>
+  </element>
+  <complexType name="ÅkType">
+    <complexContent>
+      <extension base="app:KoplingSenterlinjeType">
+        <sequence/>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ÅkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Åk"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

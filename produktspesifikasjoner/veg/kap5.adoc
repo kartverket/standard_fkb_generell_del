@@ -142,7 +142,7 @@ iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppd
 iv. Oppdateringsdato skal endres hvis en egenskap endres.
  
 |Multiplisitet: 
-|[0..1]
+|[1..1]
  
 |Type: 
 |http://skjema.geonorge.no/SOSI/basistype/DateTime[DateTime]
@@ -346,7 +346,7 @@ SOSI_navn: KVALITET +
 <<vegannenavgrensning,«FeatureType» VegAnnenAvgrensning>> +
 <<annetvegarealavgrensning,«FeatureType» AnnetVegarealAvgrensning>> +
 <<vegdekkekant,«FeatureType» Vegdekkekant>> +
-<<kantstein ,«FeatureType» Kantstein >> +
+<<kantstein,«FeatureType» Kantstein>> +
 <<nvdbobjekter_kvalitetpåkrevd,«FeatureType» NVDBobjekter_KvalitetPåkrevd>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
@@ -1659,61 +1659,6 @@ image::diagrammer/Hoveddiagram - Andre objekter.png[link=diagrammer/Hoveddiagram
  
 '''
  
-[[kantstein ]]
-===== «FeatureType» Kantstein 
-*Definisjon:* Kantstein som avgrenser vegdekke (oftest bilveg) mot fortau eller lignende
- 
- 
-'''
-.Illustrasjon av objekttype Kantstein 
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kantstein.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kantstein.png, Alt="Bilde av et eksempel på objekttypen Kantstein , eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*grense*
- 
-|Definisjon: 
-|forløp som følger overgang mellom ulike fenomener 
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*nedsenketKantstein*
- 
-|Definisjon: 
-|Egenskap for å angi om fortauskant er nedsenket eller ikke.
-Dersom egenskapen ikke er angitt betyr dette det samme som  nedsenketKantstein Nei. 
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: BOOLSK + 
-SOSI_navn: NEDSENKETKANTSTEIN + 
-|===
- 
-[discrete]
-====== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
- 
-|===
- 
-'''
- 
 [[annetvegarealavgrensning]]
 ===== «FeatureType» AnnetVegarealAvgrensning
 *Definisjon:* avgrensning av privat avkjørsel, ytterkant av åpne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke hører til hovedvegnettet (for eksempel småveger mellom bebyggelse). 
@@ -1864,6 +1809,61 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/o
  
 |Realisering av: 
 |«ApplicationSchema» Vegsituasjon-4.5::«featureType» GangfeltAvgrensning +
+|===
+ 
+'''
+ 
+[[kantstein]]
+===== «FeatureType» Kantstein
+*Definisjon:* Kantstein som avgrenser vegdekke (oftest bilveg) mot fortau eller lignende
+ 
+ 
+'''
+.Illustrasjon av objekttype Kantstein
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kantstein.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Veg/5.0/figurer/objtype_kantstein.png, Alt="Bilde av et eksempel på objekttypen Kantstein, eventuelt med påtegning av streker som viser hvor geometrien til objektet skal måles fra."]
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*grense*
+ 
+|Definisjon: 
+|forløp som følger overgang mellom ulike fenomener 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*nedsenketKantstein*
+ 
+|Definisjon: 
+|Egenskap for å angi om kantstein er nedsenket eller ikke.
+Dersom egenskapen ikke er angitt betyr dette det samme som  nedsenketKantstein Nei. 
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Boolean[Boolean]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: BOOLSK + 
+SOSI_navn: NEDSENKETKANTSTEIN + 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+ 
 |===
  
 '''
