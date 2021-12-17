@@ -1,0 +1,290 @@
+:datasett: FKB-Ledning
+:versjon: 5.0
+:publisert: 2022-01-17
+:metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6
+:prodspek-forrige: Produktspesifikasjon_FKB-Ledning_4.6.pdf
+:versjon-forrige: 4.6 – 2016-06-01
+:geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
+:reginstr-url-punktsky: https://sosi.geonorge.no/registreringsinstrukser/FKB-LedningPunktsky/5.0
+// All informasjon i hode over denne linja må fylles ut for hvert datasett. Linjene under settes av de gitte variablene over og i adoc_parametere.adoc
+include::../../felles/adoc_parametere.adoc[]
+= SOSI-standardisert produktspesfikasjon: {fkbdatasett}
+Geovekst
+{versjon}, 2022-01-01
+
+include::../../felles/dokument_metadata.adoc[]
+
+<<<
+
+// Metadata om produktspesifikasjonen
+
+== Innledning, historikk og endringslogg
+=== Innledning
+FKB-Ledning er en del av Felles Kartdatabase (FKB). FKB-spesifikasjonen er en serie produktspesifikasjoner for detaljerte basis geodata som samles inn og forvaltes gjennom Geovekst. Kommuner som ikke er medlem av Geovekst legger også produktspesifikasjonene til grunn for sin innsamling og forvalting av basis geodata. Generelle beskrivelser for alle FKB-spesifikasjonene er samlet i FKB-Generell del <<#FKB>>.
+
+FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger på eller over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter og som et grunnlag for distribusjon av FKB-data.
+
+FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del og SOSI del 2 Ledning versjon 4.6.
+
+Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for FKB-Ledning 5.0 finnes {reginstr-url}[her]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
+
+Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i 
+forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
+
+Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <<SOSI-KRAV>>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <<SOSI-UML>>. https://sosi.geonorge.no/veiledere/UML[Denne veilederen] gir hjelp til å lese UML-diagrammene.
+
+=== Historikk
+
+Tidligere versjoner:
+
+* FKB versjon 3.3 oktober 2001
+* FKB versjon 3.4 august 2002
+* FKB-LedningElTele versjon 4.0 – 2007-01-01
+* FKB-LedningElTele versjon 4.01 - 2009-03-10
+* FKB-LedningElTele versjon 4.02 - 2011-12-01
+* FKB-Ledning versjon 4.5 - 2014-03-01
+* FKB-Ledning versjon 4.6 - 2016-06-01
+
+=== Endringslogg
+
+==== Innhold i endringsloggen
+
+FKB 5.0 er en ny hovedversjon av FKB. Dette innebærer at det er gjort større endringer i standarden. Det vil ikke være tilstrekkelig å kun lese endringsloggen for å få et helhetlig bilde av FKB 5.0 produktspesifikasjonene. For å få et komplett bilde av produktspesifikasjonen må man lese dokumentasjonen som en helhet, inkludert de gjennomgående endringene som er beskrevet i FKB Generell del 5.0 <<FKB>>.
+
+Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de viktigste endringene når det gjelder datainnhold (objekttyper) siden forrige versjon. Endringsloggen vil ikke inneholde alle detaljerte endringer på egenskapsnivå eller endringer når det gjelder utvekslingsformat,  datamodellering eller lignende. 
+
+
+==== Endringer siden FKB-Ledning versjon 4.6 - 2016-06-01
+:xrefstyle: short
+
+* Oppdatert generelle konsepter fra FKB 5.0 generell del.
+* Alle Kodelister er gjort om til eksterne kodelister som forvaltes i {geonorgeKodelister-url}[Geonorge].
+* Datamodellen er mer frikoblet fra SOSI-Ledning 4.6 enn i forrige versjon.
+* Følgende nye objekttyper er lagt til
+** Bardun
+** Jordingsledning
+** Kum 
+** Luftledning
+* Følgende objekttyper har endret navn:
+** EL-Belysningspunkt -> Mast eller LysArmatur <<ElBelysningspunkt,^1^>>
+** EL-Flymarkør -> Flymarkør
+** EL-Nettstasjon -> Nettverkstasjon
+** EL-Vindturbun -> Vindturbin
+** Kanal -> Kabelkanal
+** LednKum -> Kumlokk
+** NettverkstasjonOmriss (EL_Vindturbin) -> VindturbinOmriss
+* Objekttypen NettverkstasjonAdkomst er tatt ut av produktspesifikasjonen. Slike objekter kan registreres som BeskrivendeHjelpelinjeAnlegg i FKB-BygnAnlegg.
+* Etablert assosiasjoner mellom følgende objekttyper:
+** Lysarmatur -> Mast
+** Mast -> Lysarmatur
+** Mast -> Masteomriss
+** Mast -> Bardun
+** Nettverkstasjon -> NettverkstasjonOmriss
+** Vindturbin -> VindturbinOmriss
+** Kumlokk -> Kum
+* Siden objekttypen EL_Belysningspunkt med plassering iMast er erstattet av objekttypen Mast, er egenskapen _belysning_ innført som en boolsk egenskap for Mast.
+* Kumlokk i vann- og avløpsnettet, tidligere FKB-LedningVA, er tatt inn i produktspesifikasjonen sammen med sluk og hydrant. 
+* Endring av egenskaper som omfatter alle instansierbare objekttyper:
+** _høydereferanse_ har fått ny kodeliste, den generelle kodelisten for høydereferanse benyttes.
+** _medium_ er gjort om til en påkrevd egenskap
+** _eierOrgNr_ erstatter den tidligere egenskapen _eier_
+** _eksternpeker_, _nrlpeker_ og _nvdbpeker_ er lagt til som en opsjonelle egenskaper (mulighet for å legge inn peker - i form av en URI - til objektet i andre systemer).
+** _hovedbruk_ (_ledningsnettverkstype_) er gjort påkrevd for alle objekttyper
+* Ytterligere egenskaper er endret eller lagt til på en eller flere objekttyper. <<Pakke: Objekttyper - instansierbare>> gir full oversikt over hvilke egenskaper som gjelder for den enkelte objekttype i {fkbdatasett}
+* Flere kodelister er endret. 
+
+[[ElBelysningspunkt]]
+^1^ EL_Belysningspunkt blir kodet om til Mast der hvor _plassering_ er "iMast". I tillegg blir det lagt på _belysning_ = True. Der hvor _plassering_ = "iVaier" blir EL_belysningspunkt kodet om til Lysarmatur.
+
+:xrefstyle: basic
+
+=== Normative referanser
+include::../../felles/kap14_normativ_ref.adoc[]
+
+<<<
+
+== Definisjoner og forkortelser
+=== Definisjoner
+
+include::../../felles/kap21_definisjoner.adoc[]
+
+=== Forkortelser
+
+include::../../felles/kap22_forkortelser.adoc[]
+
+<<<
+
+== Generelt om spesifikasjonen
+
+=== Unik identifisering
+
+==== Kortnavn
+FKB-Ledning
+
+==== Fullstendig navn
+FKB-Ledning
+
+==== Versjon
+5.0
+
+=== Referansedato
+2022-01-01
+
+=== Ansvarlig organisasjon
+Geovekst
+
+=== Språk
+nor
+
+=== Hovedtema
+basisData, ledningInforasjon
+
+=== Temakategori
+basisData, ledningInformasjon
+
+=== Sammendrag
+Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og VA. Det er kun objekter som er synlig i terrenget (ligger på eller over bakkenivå) som inngår i produktspesifikasjonen. 
+
+=== Formål
+// Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
+include::../../felles/kap38_formal.adoc[]
+
+FKB-Ledning bidrar med å gi et detaljert bilde av ledningsinfrastrukturen som er synlig over bakken eller i lufta.
+
+// Fellesdel som dekker kap 3.9 - 3.12 for alle FKB-produktspesifikasjoner
+include::../../felles/kap39-312_representasjon.adoc[]
+
+=== Supplerende beskrivelse
+Data ikke angitt
+
+<<< 
+
+== Spesifikasjonsomfang
+// Fellesdel som dekker kap 4 for alle FKB-produktspesifikasjoner
+include::../../felles/kap4_omfang.adoc[]
+
+<<<
+
+== Innhold og struktur
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+// Inneholder adoc eksport fra Enterprise Architect
+include::kap5.adoc[]
+
+<<<
+
+== Referansesystem
+
+include::../../felles/kap6_referansesystem.adoc[]
+
+<<<
+
+== Kvalitet
+
+include::../../felles/kap7_kvalitet.adoc[]
+
+<<<
+
+== Datafangst
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Registeringsinstruks
+Fotogrammetrisk datafangst er den dominerende datafangstmetoden for {fkbdatasett}. Se {reginstr-url}[fotogrammetrisk registreringsinstruks for {fkbdatasett}]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
+
+Administrativ datafangst er en sentral del av datafangsten knyttet til ledning. Ved administrativ datafangst vil det i mange tilfeller ikke være hensiktsmessig å registrere objektene på samme måte som ved fotogrammetri. I slike tilfeller er det spesielt viktig å registrere kvalitet, datafangstdato og høydereferanse så korrekt som mulig.
+
+<<<
+
+== Datavedlikehold
+
+include::../../felles/kap9_vedlikehold.adoc[]
+
+<<<
+
+== Presentasjon
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Referanse til presentasjonskatalog
+Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: https://register.geonorge.no/register/versjoner/tegneregler/geovekst/fkb-skjermkartografi 
+
+<<<
+
+== Leveranse
+
+include::../../felles/kap11_leveranse.adoc[]
+
+<<<
+
+== Tilleggsinformasjon
+Ingen angitt informasjon
+
+<<<
+
+== Metadata
+
+=== Omfang
+<<HeleDatasettet,Hele datasettet>>
+
+=== Metadataspesifikasjon
+
+include::../../felles/kap13_metadata.adoc[]
+
+<<<
+
+[appendix]
+== GML-realisering
+
+GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
+
+* link:{skjema-url}/FKBLedning50.xsd[GML-Skjema]
+* link:{skjema-url}/FKBLedning50.sch[Schematron-regler til validering av tilleggskrav til datainnhold og -struktur utover det som defineres i GML-skjemafila]
+* link:{skjema-url}/eksempel[GML-eksempelfil]
+
+<<<
+
+[appendix]
+== SOSI-format-realisering
+
+SOSI-realiseringen følger kravene i "Realisering i SOSI-format 5.0" <<SOSI-FORMAT>>. SOSI-filer som inneholder data i henhold til denne spesifikasjonen skal merkes i filhodet med ..OBJEKTKATALOG {fkbdatasett}. 
+En SOSI-eksempelfil er tilgjengelig link:{skjema-url}/eksempel[her].
+
+Under en utlisting av SOSI-formatrealiseringen:
+
+
+include::sosi-realisering.adoc[]
+
+<<<
+
+////
+[appendix]
+== Annen nyttig informasjon til brukere
+TIP: Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg
+////
+
+:sectnums!:
+
+[discrete]
+== Lisensvilkår
+include::../../felles/lisensvilkaar.adoc[]
+
+////
+<<<
+[abstract]
+'''
+
+[[tab-isbn]]
+[cols="1", width=50%, role=center]
+|===
+|Utgitt av: +
+Statens kartverk 
+
+ISBN: 
+
+|=== 
+////
