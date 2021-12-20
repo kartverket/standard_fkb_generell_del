@@ -468,10 +468,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#trueobjekttyper-og-egenskaper">3. Objekttyper og egenskaper</a>
 <ul class="sectlevel2">
-<li><a href="#helikopterlandingsplass">3.1. Objekttype: Helikopterlandingsplass</a></li>
-<li><a href="#lufthavnlys">3.2. Objekttype: Lufthavnlys</a></li>
-<li><a href="#rullebane">3.3. Objekttype: Rullebane</a></li>
-<li><a href="#taksebanegrense">3.4. Objekttype: Taksebanegrense</a></li>
+<li><a href="#hekk">3.1. Objekttype: Hekk</a></li>
+<li><a href="#innmålttre">3.2. Objekttype: InnmåltTre</a></li>
+<li><a href="#stein">3.3. Objekttype: Stein</a></li>
 </ul>
 </li>
 <li><a href="#truedatakvalitet">4. Datakvalitet</a>
@@ -644,7 +643,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">top (toppen av objektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">topp (toppen av objektet)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
@@ -674,7 +673,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <div class="ulist">
 <ul>
 <li>
-<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn. Dvs. at splitting innebærer ett endret objekt (<em>lokalid</em> beholdes) og et nytt objekt (uten <em>lokalid</em>), mens sammenføying innebærer ett endret objekt (<em>lokalid</em> beholdes) og et slettet objekt slettes.</p>
+<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn.</p>
 </li>
 </ul>
 </div>
@@ -716,7 +715,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
 </li>
 <li>
-<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
+<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF fot til HREF topp)</p>
 </li>
 <li>
 <p>Påføring av egenskaper på alle objekter av en objekttype</p>
@@ -771,11 +770,11 @@ bygninger som deles av avgrensningspolygonet</p>
 </div>
 </li>
 <li>
-<p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+<p>Flate-objekter som verifiseres i forbindelse med ajourføring skal ikke splittes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Særlig store sammenhengende flateobjekter (vannflater, vegflater etc.) kan splittes i nærheten av avgrensningspolygon dersom dette er hensiktsmessig.</p>
+<p>Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet.</p>
 </li>
 </ul>
 </div>
@@ -785,7 +784,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter enten i eller like innenfor avgrensningspolygonet</p>
+<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter i siste punkt som ligger innenfor avgrensningspolygonet</p>
 </li>
 </ul>
 </div>
@@ -810,26 +809,15 @@ bygninger som deles av avgrensningspolygonet</p>
 <div style="page-break-after: always;"></div>
 <hr>
 <div class="sect2">
-<h3 id="helikopterlandingsplass"><a class="anchor" href="#helikopterlandingsplass"></a>3.1. Objekttype: Helikopterlandingsplass</h3>
+<h3 id="hekk"><a class="anchor" href="#hekk"></a>3.1. Objekttype: Hekk</h3>
 <div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>:</p>
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: plantede busker som utgjør en hekk</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_helikopterlandingsplass.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_helikopterlandingsplass.png" alt="objtype helikopterlandingsplass"></a>
+<a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_hekk.png" alt="objtype hekk"></a>
 </div>
-<div class="title">Figur 1. Illustrasjon fra produktspesifikasjon av Helikopterlandingsplass</div>
-</div>
-<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
-<div class="paragraph">
-<p>Landingsplassen er merket med kryss og eventuelt "H".
-Sirkelen rundt landingsplassen skal registreres.</p>
-</div>
-<div class="paragraph">
-<p>Landingsplassene finnes ofte i forbindelse med sykehus, legevakter eller andre typer bygninger i forbindelse med beredskap og redning.</p>
-</div>
-<div class="paragraph">
-<p>Landingsplassen kan ligge p&#229; bakken, p&#229; bygning (medium B) eller i luft (medium L).</p>
+<div class="title">Figur 1. Illustrasjon fra produktspesifikasjon av Hekk</div>
 </div>
 <h4 id="trueføringer" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -840,11 +828,19 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oppmerket sirkel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Midten av hekken</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dekke landingsplass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toppen av hekken</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle synlige hekker lengre enn 3m registreres</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle synlige hekker lengre enn 3m registreres</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
@@ -856,16 +852,16 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<h4 id="trueegenskapstabell-for-objekttype-helikopterlandingsplass" class="discrete">Egenskapstabell for objekttype: Helikopterlandingsplass</h4>
+<h4 id="trueegenskapstabell-for-objekttype-hekk" class="discrete">Egenskapstabell for objekttype: Hekk</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -932,7 +928,7 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon" target="_blank" rel="noopener">Registreringsversjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
@@ -979,16 +975,28 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">treType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» TreType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TRE_TYP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse" target="_blank" rel="noopener">Høydereferanse</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium" target="_blank" rel="noopener">Medium</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
 </table>
@@ -996,29 +1004,19 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="lufthavnlys"><a class="anchor" href="#lufthavnlys"></a>3.2. Objekttype: Lufthavnlys</h3>
+<h3 id="innmålttre"><a class="anchor" href="#innmålttre"></a>3.2. Objekttype: InnmåltTre</h3>
 <div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket</p>
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: markerte enkeltrær</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png" alt="objtype lufthavnlys"></a>
+<a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_innmalttre.png" alt="objtype innmalttre"></a>
 </div>
-<div class="title">Figur 2. Illustrasjon fra produktspesifikasjon av Lufthavnlys</div>
+<div class="title">Figur 2. Illustrasjon fra produktspesifikasjon av InnmåltTre</div>
 </div>
-<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-2" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
+<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
-<p>Alle lufthavnlys klassifiseres som Annen lufthavnbelysning (..LHLYSTYPE 99) ved registrering etter denne instruksen.</p>
-</div>
-<div class="paragraph">
-<p>I kartleggingsprosjekter der Avinor (lufthavneier) ikke deltar som oppdragsgiver skal det, hvis annet ikke avtales, kun registreres lufthavnlys utenfor lufthavnen.</p>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/lufthavnlys.png"><img src="figurer/lufthavnlys.png" alt="lufthavnlys"></a>
-</div>
-<div class="title">Figur 3. Eksempel på Lufthavnlys. Røde punkter markerer hvert lufthavnlys utenfor lufthavnen.</div>
+<p>Ved fotogrammetrisk datafangst er det vanskelig &#229; vurdere hvilke tr&#230;r som skal registreres. Det forutsettes derfor at det utarbeides manus/instruks med n&#230;rmere angivelse av hvilke tr&#230;r som skal registreres, for eksempel langs utvalgte veger.</p>
 </div>
 <h4 id="trueføringer-2" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1029,19 +1027,19 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Senter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Midten av treet (der stammen møter bakken om dette er synlig)</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Topp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toppen av trekrona</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
@@ -1054,7 +1052,7 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<h4 id="trueegenskapstabell-for-objekttype-lufthavnlys" class="discrete">Egenskapstabell for objekttype: Lufthavnlys</h4>
+<h4 id="trueegenskapstabell-for-objekttype-innmålttre" class="discrete">Egenskapstabell for objekttype: InnmåltTre</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -1121,7 +1119,7 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon" target="_blank" rel="noopener">Registreringsversjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
@@ -1174,16 +1172,52 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">treType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» TreType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TRE_TYP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">høydereferanse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse" target="_blank" rel="noopener">Høydereferanse</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..HREF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">medium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium" target="_blank" rel="noopener">Medium</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..MEDIUM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lufthavnlystype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Lufthavnlystype</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..LHLYSTYPE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nvbdpeker</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..NVDBPEKER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stammediameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..STAMMEDIAMETER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kronediameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..KRONEDIAMETER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trehøyde</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Real</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">..TREHØYDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 </tbody>
 </table>
@@ -1191,33 +1225,26 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="rullebane"><a class="anchor" href="#rullebane"></a>3.3. Objekttype: Rullebane</h3>
+<h3 id="stein"><a class="anchor" href="#stein"></a>3.3. Objekttype: Stein</h3>
 <div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer</p>
+<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: markert stein</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png" alt="objtype rullebane"></a>
+<a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Naturinfo/5.0/figurer/objtype_stein.png" alt="objtype stein"></a>
 </div>
-<div class="title">Figur 4. Illustrasjon fra produktspesifikasjon av Rullebane</div>
+<div class="title">Figur 3. Illustrasjon fra produktspesifikasjon av Stein</div>
 </div>
-<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-3" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
+<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-2" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
-<p>Skal registreres som lukket areal, og slik sett overstyrer dette objektet andre objekter som for eksempel Taksebanegrense</p>
+<p>Ved fotogrammetrisk registrering anbefales det at oppdragsgiver og oppdragstaker f&#248;r prosjektstart, blir enige om hvor store steiner som skal tas med. Eventuelt i hvilke deler av prosjektet det skal registreres steiner.</p>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer/rullebane.png"><img src="figurer/rullebane.png" alt="rullebane"></a>
+<a class="image" href="figurer/registrering_storstein.png"><img src="figurer/registrering_storstein.png" alt="registrering storstein"></a>
 </div>
-<div class="title">Figur 5. Rullebane. Lukket polygon skal registreres (grønt) rundt hele rullebanen med avgrensning mot ytterkant oppmerking (gult) på langsiden og gjennom terskel på kortsidene.</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/rullebane2.png"><img src="figurer/rullebane2.png" alt="rullebane2"></a>
-</div>
-<div class="title">Figur 6. Eksempel på registrering av rullebane (rød strek).</div>
+<div class="title">Figur 4. Eksempel på registrering av stor stein.</div>
 </div>
 <h4 id="trueføringer-3" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1228,11 +1255,19 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Langside: Ytterkant oppmerking kantstripe, Kortside: Gjennom Terskelpunktet (LufthavnFastmerke) evt. midten oppmerking terskelbar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ytterkant av stein</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Terreng/dekke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp ytterkant av stein</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steiner større enn 10m3 registreres</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steiner større enn 10m3 registreres</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
@@ -1244,16 +1279,16 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<h4 id="trueegenskapstabell-for-objekttype-rullebane" class="discrete">Egenskapstabell for objekttype: Rullebane</h4>
+<h4 id="trueegenskapstabell-for-objekttype-stein" class="discrete">Egenskapstabell for objekttype: Stein</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 28.5714%;">
@@ -1320,7 +1355,7 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon" target="_blank" rel="noopener">Registreringsversjon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList» Registreringsversjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
@@ -1371,211 +1406,6 @@ Sirkelen rundt landingsplassen skal registreres.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<hr>
-</div>
-<div class="sect2">
-<h3 id="taksebanegrense"><a class="anchor" href="#taksebanegrense"></a>3.4. Objekttype: Taksebanegrense</h3>
-<div class="paragraph">
-<p><strong>Definisjon fra FKB produktspesifikasjon</strong>: avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_taksebanegrense.png"><img src="https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_taksebanegrense.png" alt="objtype taksebanegrense"></a>
-</div>
-<div class="title">Figur 7. Illustrasjon fra produktspesifikasjon av Taksebanegrense</div>
-</div>
-<h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-4" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
-<div class="paragraph">
-<p>Registreres fortrinnsvis langs ytterkant oppmerking eller dersom oppmerking mangler langs dekkekant. Starter ved rullebanen og g&#229;r frem og konnekteres til annen vegsituasjonsobjekter (i FKB-Veg).</p>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/taksebanegrense.png"><img src="figurer/taksebanegrense.png" alt="taksebanegrense"></a>
-</div>
-<div class="title">Figur 8. Eksempel på taksebanegrense er markert med blått i bildet. Taksebanegrense skal registreres etter markering alternativt dekkekant hvis markering mangler. Rullebane er markert i rødt i bildet. Annen vegsituasjon (gult i bildet) på lufthavnen som ikke beskrives av andre objekttyper skal registreres som AnnetVegarealAvgrensning. Se mer om dette i registreringsinstruksen for FKB-Veg.</div>
-</div>
-<hr>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="figurer/taksebanegrense2.png"><img src="figurer/taksebanegrense2.png" alt="taksebanegrense2"></a>
-</div>
-<div class="title">Figur 9. Eksempel på taksebanegrense er markert med blått i bildet. Taksebanegrense skal registreres etter markering alternativt dekkekant hvis markering mangler. Rullebane er markert i rødt i bildet. Annen vegsituasjon (gult i bildet) på lufthavnen som ikke beskrives av andre objekttyper skal registreres som AnnetVegarealAvgrensning. Se mer om dette i registreringsinstruksen for FKB-Veg.</div>
-</div>
-<h4 id="trueføringer-4" class="discrete">Føringer</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oppmerking, dekkekant</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Terreng/dekke</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
-</tr>
-<tr>
-<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
-</tr>
-</tbody>
-</table>
-<div style="page-break-after: always;"></div>
-<h4 id="trueegenskapstabell-for-objekttype-taksebanegrense" class="discrete">Egenskapstabell for objekttype: Taksebanegrense</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Navn:</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Type:</strong></th>
-<th class="tableblock halign-left valign-top"><strong>SOSI_navn:</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Mult.:</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Identifikasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..IDENT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.lokalId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;LOKALID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.navnerom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NAVNEROM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">identifikasjon.versjonId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;VERSJONID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oppdateringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..OPPDATERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sluttdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..SLUTTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">datafangstdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..DATAFANGSTDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">verifiseringsdato</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..VERIFISERINGSDATO</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">registreringsversjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon" target="_blank" rel="noopener">Registreringsversjon</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..REGISTRERINGSVERSJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">informasjon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CharacterString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..INFORMASJON</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«dataType» Posisjonskvalitet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..KVALITET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode" target="_blank" rel="noopener">Datafangstmetode</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.synbarhet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet" target="_blank" rel="noopener">Synbarhet</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;SYNBARHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.datafangstmetodeHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode" target="_blank" rel="noopener">Datafangstmetode</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;DATAFANGSTMETODEHØYDE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">kvalitet.nøyaktighetHøyde</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;H-NØYAKTIGHET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eksternpeker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">..EKSTERNPEKER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 </tbody>
 </table>
@@ -1997,7 +1827,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-20 22:32:21 +0100
+Last updated 2021-12-20 23:06:29 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

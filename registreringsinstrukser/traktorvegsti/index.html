@@ -487,19 +487,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a>
 <ul class="sectlevel2">
 <li><a href="#trueprinsipp-for-registrering-av-konnekteringslenke">5.1. Prinsipp for registrering av <em>konnekteringslenke</em></a></li>
-</ul>
-</li>
-<li><a href="#trueajourføring">6. Ajourføring</a>
-<ul class="sectlevel2">
-<li><a href="#truefotogrammetrisk-datafangst">6.1. Fotogrammetrisk datafangst</a></li>
-<li><a href="#trueajourføring-gjennom-nasjonal-database-turruter">6.2. Ajourføring gjennom Nasjonal database Turruter</a></li>
-<li><a href="#trueadministrativ-datafangst">6.3. Administrativ datafangst</a></li>
-</ul>
-</li>
-<li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
-<ul class="sectlevel2">
-<li><a href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser">A.1. UML-modell for Fotogrammetriske registreringsinsrukser</a></li>
-<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">A.2. Informasjon som angis om alle objekttyper</a></li>
+<li><a href="#trueajourføring">5.2. Ajourføring</a></li>
+<li><a href="#truefotogrammetrisk-datafangst">5.3. Fotogrammetrisk datafangst</a></li>
+<li><a href="#trueajourføring-gjennom-nasjonal-database-turruter">5.4. Ajourføring gjennom Nasjonal database Turruter</a></li>
+<li><a href="#trueadministrativ-datafangst">5.5. Administrativ datafangst</a></li>
+<li><a href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser">5.6. UML-modell for Fotogrammetriske registreringsinsrukser</a></li>
+<li><a href="#trueinformasjon-som-angis-om-alle-objekttyper">5.7. Informasjon som angis om alle objekttyper</a></li>
 </ul>
 </li>
 </ul>
@@ -574,6 +567,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 </li>
 </ul>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -683,7 +677,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">top (toppen av objektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">topp (toppen av objektet)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
@@ -713,7 +707,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <div class="ulist">
 <ul>
 <li>
-<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn. Dvs. at splitting innebærer ett endret objekt (<em>lokalid</em> beholdes) og et nytt objekt (uten <em>lokalid</em>), mens sammenføying innebærer ett endret objekt (<em>lokalid</em> beholdes) og et slettet objekt slettes.</p>
+<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn.</p>
 </li>
 </ul>
 </div>
@@ -755,7 +749,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
 </li>
 <li>
-<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
+<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF fot til HREF topp)</p>
 </li>
 <li>
 <p>Påføring av egenskaper på alle objekter av en objekttype</p>
@@ -810,11 +804,11 @@ bygninger som deles av avgrensningspolygonet</p>
 </div>
 </li>
 <li>
-<p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+<p>Flate-objekter som verifiseres i forbindelse med ajourføring skal ikke splittes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Særlig store sammenhengende flateobjekter (vannflater, vegflater etc.) kan splittes i nærheten av avgrensningspolygon dersom dette er hensiktsmessig.</p>
+<p>Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet.</p>
 </li>
 </ul>
 </div>
@@ -824,7 +818,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter enten i eller like innenfor avgrensningspolygonet</p>
+<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter i siste punkt som ligger innenfor avgrensningspolygonet</p>
 </li>
 </ul>
 </div>
@@ -834,6 +828,7 @@ bygninger som deles av avgrensningspolygonet</p>
 </li>
 </ul>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -1019,7 +1014,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -1116,7 +1111,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kommunenummer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">«CodeList»  <a href="https://register.geonorge.no/sosi-kodelister/kommunenummer-alle" target="_blank" rel="noopener">Kommunenummer</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">..KOMM</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">klasselandbruksveg</p></td>
@@ -1209,7 +1204,7 @@ bygninger som deles av avgrensningspolygonet</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">serviceveg</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eksisterende data beholdes. Nye data p&#229;f&#248;res verdien False/Nei.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">veglenkeadresse</p></td>
@@ -1271,6 +1266,7 @@ bygninger som deles av avgrensningspolygonet</p>
 </div>
 <div class="title">Figur 4. Eksempel på registrering av typeveg "stitrapp" i forbindelse med typeveg "sti" og andre samferdselsobjekter.</div>
 </div>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -1533,6 +1529,7 @@ Nedenfor følger en oversikt over hvilken klasse objektypen Veglenke med tilhør
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
@@ -1568,11 +1565,8 @@ Konnekteringslenker skal registreres og ajourføres fotogrammetrisk.</p>
 <div class="title">Figur 7. Eksempel på bruk av konnekteringslenke over tun i FKB-TraktorvegSti. Konnekteringslenker skal registreres fotogrammetrisk.</div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueajourføring"><a class="anchor" href="#trueajourføring"></a>6. Ajourføring</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueajourføring"><a class="anchor" href="#trueajourføring"></a>5.2. Ajourføring</h3>
 <div class="paragraph">
 <p>En første versjon av FKB-TraktorvegSti ble etablert første halvår 2014. All videre datainnsamling vil dreie seg om ajourhold av dette datagrunnlaget. Dersom man ønsker å etablere bedre nettverkstopologi vil dette være å anse som en oppgradering av datasettet og må avtales spesielt.</p>
 </div>
@@ -1585,8 +1579,9 @@ Konnekteringslenker skal registreres og ajourføres fotogrammetrisk.</p>
 <div class="paragraph">
 <p>I ajourholdet vil objektene som inngår i FKB-TraktorvegSti normalt bli etablert ved hjelp av fotogrammetri (kartkonstruksjon eller digitalisering fra ortofoto). I noen tilfeller kan objektene også være etablert ved hjelp av GNSS-måling. Dette er spesielt aktuelt for innmåling av stier og vegsperringer som er vanskelig å se tydelig på flybilder.</p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="truefotogrammetrisk-datafangst"><a class="anchor" href="#truefotogrammetrisk-datafangst"></a>6.1. Fotogrammetrisk datafangst</h3>
+<h3 id="truefotogrammetrisk-datafangst"><a class="anchor" href="#truefotogrammetrisk-datafangst"></a>5.3. Fotogrammetrisk datafangst</h3>
 <div class="paragraph">
 <p>Fotogrammetrisk ajourhold av FKB-TraktorvegSti er en standard del av FKB-prosjekter. Ved slik datafangst sammenlignes datainnholdet i FKB-TraktorvegSti med flybilder og ny/endret geometri registreres.</p>
 </div>
@@ -1645,7 +1640,7 @@ Konnekteringslenker skal registreres og ajourføres fotogrammetrisk.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueajourføring-gjennom-nasjonal-database-turruter"><a class="anchor" href="#trueajourføring-gjennom-nasjonal-database-turruter"></a>6.2. Ajourføring gjennom Nasjonal database Turruter</h3>
+<h3 id="trueajourføring-gjennom-nasjonal-database-turruter"><a class="anchor" href="#trueajourføring-gjennom-nasjonal-database-turruter"></a>5.4. Ajourføring gjennom Nasjonal database Turruter</h3>
 <div class="paragraph">
 <p>Fra 2014 er det satt igang forvaltning av turruter i Turrutebasen (Nasjonal database for turruter). Gjennom dette får Kartverket inn data fra friluftorganisasjoner, kommuner og privatpersoner som er ute i terrenget og kartlegger friluftsruter med GPS/GNSS.
 <a href="https://register.geonorge.no/register/versjoner/produktspesifikasjoner/kartverket/tur-og-friluftsruter" class="bare">https://register.geonorge.no/register/versjoner/produktspesifikasjoner/kartverket/tur-og-friluftsruter</a>.</p>
@@ -1655,7 +1650,7 @@ Konnekteringslenker skal registreres og ajourføres fotogrammetrisk.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueadministrativ-datafangst"><a class="anchor" href="#trueadministrativ-datafangst"></a>6.3. Administrativ datafangst</h3>
+<h3 id="trueadministrativ-datafangst"><a class="anchor" href="#trueadministrativ-datafangst"></a>5.5. Administrativ datafangst</h3>
 <div class="paragraph">
 <p>Alle objekttyper innenfor datasettet FKB-TraktorvegSti skal ajourføres kontinuerlig dersom de kan fanges opp gjennom saksbehandling og/eller i det daglige forvaltningsarbeidet.</p>
 </div>
@@ -1665,14 +1660,14 @@ Konnekteringslenker skal registreres og ajourføres fotogrammetrisk.</p>
 <div class="paragraph">
 <p>Når det gjelder klassifisering av Typeveg er kommunen den etaten som har det helhetlige ansvaret for vegforvaltningen i sitt område og som kjenner området best gjennom lokalkunnskap. Spesifikasjonen definerer og gir retningslinjer for de ulike typene veglenker. Kommunen utøver skjønn basert på disse retningslinjene og bestemmer hvilken vegtype veglenka har.</p>
 </div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>[[appendix]
+== Forklaring til registreringsinstrukser for fotogrammetrisk registrering</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"><a class="anchor" href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering"></a>Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="trueuml-modell-for-fotogrammetriske-registreringsinsrukser"><a class="anchor" href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser"></a>A.1. UML-modell for Fotogrammetriske registreringsinsrukser</h3>
+<h3 id="trueuml-modell-for-fotogrammetriske-registreringsinsrukser"><a class="anchor" href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser"></a>5.6. UML-modell for Fotogrammetriske registreringsinsrukser</h3>
 <div class="paragraph">
 <p>For å sørge for at det er fullt samsvar mellom FKB produktspesifikasjonene og registreringsinstruksene for datafangst er det utarbeida et opplegg
 med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette ut på at det tas en kopi av UML datamodellen for FKB produktspesifikasjonene der det legges inn justeringer og ekstrainformasjonen med tanke på datafangst. Disse UML-modellene følger ikke noen SOSI-standard, men er utarbeide med tanke på å kunne generere ut godt lesbar dokumentasjon og maskinlesbare filer for validering (SOSI-kontroll, GML-skjema etc.). UML datamodellene finnes i SOSI modellregister.</p>
@@ -1682,7 +1677,7 @@ med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>A.2. Informasjon som angis om alle objekttyper</h3>
+<h3 id="trueinformasjon-som-angis-om-alle-objekttyper"><a class="anchor" href="#trueinformasjon-som-angis-om-alle-objekttyper"></a>5.7. Informasjon som angis om alle objekttyper</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1786,13 +1781,68 @@ med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette
 <div class="paragraph">
 <p><strong>Merknad:</strong> Føring for minstestørrelser gjelder automatisk for en mindre detaljert FKB-standard. Dersom det bare er angitt krav til minstestørrelser i FKB-A gjelder denne automatisk også for de mindre detaljerte FKB-standardene om ikke annet er spesielt angitt.</p>
 </div>
+<div style="page-break-after: always;"></div>
+<h2 id="truelisensvilkår" class="discrete">Lisensvilkår</h2>
+<h3 id="truelisens" class="discrete">Lisens</h3>
+<div class="paragraph">
+<p>Denne standarden er gitt ut under
+<a href="https://data.norge.no/nlod/no/">norsk lisens for offentlige data (NLOD)</a>.</p>
+</div>
+<div class="paragraph">
+<p>Du har lov til:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>å kopiere og tilgjengeliggjøre</p>
+</li>
+<li>
+<p>å endre og/eller sette sammen med andre datasett</p>
+</li>
+<li>
+<p>å kopiere og tilgjengeliggjøre en endret eller sammensatt versjon</p>
+</li>
+<li>
+<p>å benytte datasettet kommersielt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>På følgende vilkår:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at du navngir lisensgiver slik lisensgiver ber om, men ikke på en måte som
+indikerer at disse har godkjent eller anbefaler deg eller din bruk av datasettet</p>
+</li>
+<li>
+<p>at du ikke bruker dataene på en måte som fremstår som villedende, og heller ikke
+fordreier eller uriktig fremstiller dataene</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Med den forståelse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>at data som inneholder personopplysninger og er taushetsbelagt ikke er omfattet
+av denne lisensen og ikke kan viderebrukes</p>
+</li>
+<li>
+<p>at lisensgiver fraskriver seg ethvert ansvar for informasjonens kvalitet og hva informasjonen brukes til</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-20 14:36:51 +0100
+Last updated 2021-12-20 23:01:58 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
