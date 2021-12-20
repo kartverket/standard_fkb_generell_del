@@ -3,7 +3,7 @@
 '''
  
 [[alpinbakke]]
-==== «FeatureType» Alpinbakke
+=== Objekttype: Alpinbakke
 *Definisjon fra FKB produktspesifikasjon*: nedfart for ski med permanent karakter
  
  
@@ -11,7 +11,8 @@
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_alpinbakke.png, Alt="Illustrasjon fra produktspesifikasjon: Alpinbakke"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; sikre korrekt avgrensing ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus. Spesielt kan det v&#230;re vanskelig &#229; 
 tolke avgrensingen av alpinbakke i snaufjellsomr&#229;der. 
 
@@ -29,8 +30,9 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -49,8 +51,9 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
  
 <<<
  
-===== Egenskapstabell for objekttype: Alpinbakke
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Alpinbakke
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -82,6 +85,11 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -108,7 +116,7 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -118,12 +126,12 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -134,11 +142,11 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -148,7 +156,7 @@ image::figurer/alpinbakke2.png[link=figurer/alpinbakke2.png, Alt="Eksempel på u
 '''
  
 [[anleggsområde]]
-==== «FeatureType» Anleggsområde
+=== Objekttype: Anleggsområde
 *Definisjon fra FKB produktspesifikasjon*: omr&#229;de der det p&#229;g&#229;r anleggsarbeid
 
 I FKB er det en m&#229;lsetting om at mest mulig av byggeaktivitet n&#229;r det gjelder f.eks. bygninger eller veganlegg fanges opp gjennom saksbehandling og legges inn i tiltaksbasen (FKB-Tiltak). Anleggsomr&#229;der som ligger i tiltaksbasen skal ikke inng&#229; i FKB-Arealbruk.
@@ -158,12 +166,16 @@ I FKB er det en m&#229;lsetting om at mest mulig av byggeaktivitet n&#229;r det 
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_anleggsomrade.png, Alt="Illustrasjon fra produktspesifikasjon: Anleggsområde"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Som anleggsomr&#229;de regnes omr&#229;der der det p&#229;g&#229;r midlertidig anleggsarbeid som for eksempel utbygging, inkludert fyllplasser. Benyttes for st&#248;rre anlegg  (st&#248;rre enn 1000m2), typisk vegprosjekter eller boligfelt. 
 
 Grustak regnes ikke som anleggsomr&#229;de. 
 
 Innenfor et anleggsomr&#229;de skal kun objekter av permanent karakter registreres (for eksempel bygninger og ferdig opparbeide veger). Objekter av midlertidig karakter, som antas &#229; bli endret/fjernet n&#229;r anleggsarbeidet er ferdig skal ikke registreres (for eksempel anleggsveger, fyllinger, gr&#248;fter og gjerder). 
+
+Merknad:
+Utbyggingsomr&#229;der kan/b&#248;r ogs&#229; i stor grad registreres i FKB-Tiltak. I utgangspunktet registreres anleggsomr&#229;der i FKB-Arealbruk uavhengig av innholdet i FKB-Tiltak, men unntak fra dette kan avtales det enkelte kartleggingsprosjekt. F.eks. at store utbyggingsprosjekter knyttet til samferdsel som ligger i FKB-Tiltak ikke registreres i FKB-Arealbruk.
  
  
 '''
@@ -177,8 +189,9 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A minstestørrelse
 |Areal > 1000m2
@@ -203,8 +216,9 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
  
 <<<
  
-===== Egenskapstabell for objekttype: Anleggsområde
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Anleggsområde
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -236,6 +250,11 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -262,7 +281,7 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -272,12 +291,12 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -288,11 +307,11 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -302,15 +321,16 @@ image::figurer/anlegg2.png[link=figurer/anlegg2.png, Alt="Eksempel på registrer
 '''
  
 [[campingplass]]
-==== «FeatureType» Campingplass
-*Definisjon fra FKB produktspesifikasjon*: faste anlegg med vaskerom, campinghytter o.l.
+=== Objekttype: Campingplass
+*Definisjon fra FKB produktspesifikasjon*: faste anlegg med serviceanlegg, campinghytter o.l.
  
  
 .Illustrasjon fra produktspesifikasjon av Campingplass
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_campingplass.png, Alt="Illustrasjon fra produktspesifikasjon: Campingplass"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; sikre korrekt avgrensing ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus. Spesielt kan det v&#230;re vanskelig &#229; tolke avgrensingen av campingplasser som ikke er inngjerdet eller avgrenset av andre objekttyper. 
 
 Campingplassen skal registreres fullstendig. Interne veger og fellesarealer skal inng&#229; i arealbruksflaten.
@@ -322,8 +342,9 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -342,8 +363,9 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
  
 <<<
  
-===== Egenskapstabell for objekttype: Campingplass
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Campingplass
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -375,6 +397,11 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -401,7 +428,7 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -411,12 +438,12 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -427,11 +454,11 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -441,7 +468,7 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
 '''
  
 [[golfbane]]
-==== «FeatureType» Golfbane
+=== Objekttype: Golfbane
 *Definisjon fra FKB produktspesifikasjon*: område for golfspilling
  
  
@@ -449,7 +476,8 @@ image::figurer/campingplass.png[link=figurer/campingplass.png, Alt="Eksempel på
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_golfbane.png, Alt="Illustrasjon fra produktspesifikasjon: Golfbane"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; sikre korrekt avgrensing ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus. 
 
 Golfbanen skal registreres fullstendig. Interne veger og tilh&#248;rende areal skal inng&#229; i arealbruksflaten, ikke bare spilleflaten p&#229; de forskjellige hullene
@@ -466,8 +494,9 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -486,8 +515,9 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
  
 <<<
  
-===== Egenskapstabell for objekttype: Golfbane
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Golfbane
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -519,6 +549,11 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -545,7 +580,7 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -555,12 +590,12 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -571,11 +606,11 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -585,7 +620,7 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
 '''
  
 [[gravplass]]
-==== «FeatureType» Gravplass
+=== Objekttype: Gravplass
 *Definisjon fra FKB produktspesifikasjon*: område for gravstøtter, begravelsesplass og kirkegård
  
  
@@ -593,7 +628,8 @@ image::figurer/golfbane2.png[link=figurer/golfbane2.png, Alt="Eksempel på regis
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_gravplass.png, Alt="Illustrasjon fra produktspesifikasjon: Gravplass"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Avgrensingen kan v&#230;re diffus, spesielt for nyere omr&#229;der og gravplasser uten inngjerding. For &#229; sikre god fullstendighet og 
 korrekt tolking ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus. 
 
@@ -606,8 +642,9 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -626,8 +663,9 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
  
 <<<
  
-===== Egenskapstabell for objekttype: Gravplass
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Gravplass
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -659,6 +697,11 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -685,7 +728,7 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -695,12 +738,12 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -711,11 +754,11 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -725,7 +768,7 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
 '''
  
 [[grustak]]
-==== «FeatureType» Grustak
+=== Objekttype: Grustak
 *Definisjon fra FKB produktspesifikasjon*: uttaksplass, område, drevet i dagen for malm eller sand, grus, pukk, skifer
  
  
@@ -733,7 +776,8 @@ image::figurer/gravplass.png[link=figurer/gravplass.png, Alt="Eksempler på regi
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_grustak.png, Alt="Illustrasjon fra produktspesifikasjon: Grustak"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Leirtak og Steinbrudd er utg&#229;tt som egne objekttyper og skal registreres som Grustak. 
  
  
@@ -748,8 +792,9 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -768,8 +813,9 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
  
 <<<
  
-===== Egenskapstabell for objekttype: Grustak
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Grustak
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -801,6 +847,11 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -827,7 +878,7 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -837,12 +888,12 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -853,11 +904,11 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -867,7 +918,7 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
 '''
  
 [[industriområde]]
-==== «FeatureType» Industriområde
+=== Objekttype: Industriområde
 *Definisjon fra FKB produktspesifikasjon*: område, bebygd eller ubebygd, benyttet til industriformål
  
  
@@ -875,7 +926,8 @@ image::figurer/grustak2.png[link=figurer/grustak2.png, Alt="Eksempel på registr
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_industriomrade.png, Alt="Illustrasjon fra produktspesifikasjon: Industriområde"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Avgrensingen kan v&#230;re diffus. For &#229; sikre god fullstendighet og korrekt tolking ved fotogrammetrisk registrering, anbefales det &#229; 
 utarbeide manus.
  
@@ -891,8 +943,9 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -911,8 +964,9 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
  
 <<<
  
-===== Egenskapstabell for objekttype: Industriområde
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Industriområde
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -944,6 +998,11 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -970,7 +1029,7 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -980,12 +1039,12 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -996,11 +1055,11 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -1010,7 +1069,7 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
 '''
  
 [[lekeplass]]
-==== «FeatureType» Lekeplass
+=== Objekttype: Lekeplass
 *Definisjon fra FKB produktspesifikasjon*: område for lekeplass
  
  
@@ -1018,10 +1077,11 @@ image::figurer/industri2.png[link=figurer/industri2.png, Alt="Eksempler på regi
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_lekeplass.png, Alt="Illustrasjon fra produktspesifikasjon: Lekeplass"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; sikre god fullstendighet og korrekt tolking ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus. 
 
-Lekeomr&#229;der i skoleg&#229;rder/barnehager skal som hovedregel registreres som en sammenhengende lekeplass. 
+Lekeomr&#229;der i skoleg&#229;rder/barnehager skal registreres som en sammenhengende lekeplass med mindre lekeomr&#229;der ligger fysisk adskilt. I s&#229; fall registreres lekeplass for hvert enkelt omr&#229;de.
 
 Lekeplasser i &#229;pne fellesareal (blokkbebyggelse) og innenfor andre arealbruksflater (for eksempel park) skal registreres. 
 
@@ -1049,8 +1109,9 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -1069,8 +1130,9 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
  
 <<<
  
-===== Egenskapstabell for objekttype: Lekeplass
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Lekeplass
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1102,6 +1164,11 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1128,7 +1195,7 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1138,12 +1205,12 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1154,11 +1221,11 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -1168,7 +1235,7 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
 '''
  
 [[park]]
-==== «FeatureType» Park
+=== Objekttype: Park
 *Definisjon fra FKB produktspesifikasjon*: grøntområde i by- eller tettbygd område, opparbeidet og vedlikeholdt med plenareal, beplantninger, vannpartier og lignende
  
  
@@ -1176,7 +1243,8 @@ image::figurer/lekeplass2.png[link=figurer/lekeplass2.png, Alt="Eksempel på reg
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_park.png, Alt="Illustrasjon fra produktspesifikasjon: Park"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Avgrensingen kan v&#230;re diffus. For &#229; sikre god fullstendighet og korrekt tolking ved fotogrammetrisk registrering, anbefales det &#229; utarbeide manus
  
  
@@ -1191,8 +1259,9 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -1211,8 +1280,9 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
  
 <<<
  
-===== Egenskapstabell for objekttype: Park
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Park
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1244,6 +1314,11 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1270,7 +1345,7 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1280,12 +1355,12 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1296,11 +1371,11 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -1310,7 +1385,7 @@ image::figurer/park2.png[link=figurer/park2.png, Alt="Eksempel på registrering 
 '''
  
 [[skytebane]]
-==== «FeatureType» Skytebane
+=== Objekttype: Skytebane
 *Definisjon fra FKB produktspesifikasjon*: avgrenset område hvor det skytes
  
  
@@ -1325,8 +1400,9 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -1345,8 +1421,9 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
  
 <<<
  
-===== Egenskapstabell for objekttype: Skytebane
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Skytebane
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1378,6 +1455,11 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1404,7 +1486,7 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1414,12 +1496,12 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1430,11 +1512,11 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -1444,7 +1526,7 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
 '''
  
 [[sportidrettplass]]
-==== «FeatureType» SportIdrettPlass
+=== Objekttype: SportIdrettPlass
 *Definisjon fra FKB produktspesifikasjon*: område hvor det utøves sport og idrett
  
  
@@ -1452,7 +1534,8 @@ image::figurer/skytebane.png[link=figurer/skytebane.png, Alt="Eksempel på regis
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_sportidrettsplass.png, Alt="Illustrasjon fra produktspesifikasjon: SportIdrettPlass"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; sikre god fullstendighet og korrekt tolking ved 
 fotogrammetrisk registrering, anbefales det &#229; utarbeide manus.
  
@@ -1470,8 +1553,9 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A
 |Påkrevd registrering
@@ -1490,8 +1574,9 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
  
 <<<
  
-===== Egenskapstabell for objekttype: SportIdrettPlass
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: SportIdrettPlass
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1523,6 +1608,11 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1549,7 +1639,7 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1559,12 +1649,12 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1575,11 +1665,11 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
@@ -1589,7 +1679,7 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
 '''
  
 [[steintipp]]
-==== «FeatureType» Steintipp
+=== Objekttype: Steintipp
 *Definisjon fra FKB produktspesifikasjon*: område for steintipp
  
  
@@ -1597,7 +1687,8 @@ image::figurer/idrettsplass1.png[link=figurer/idrettsplass1.png, Alt="Eksempel p
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_steintipp.png, Alt="Illustrasjon fra produktspesifikasjon: Steintipp"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Benyttes for permanente steintipper (st&#248;rre enn 1000m2) i forbindelse med damanlegg og gruvedrift. 
  
  
@@ -1607,8 +1698,9 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB-A minstestørrelse
 |Areal > 1000m2
@@ -1630,8 +1722,9 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
  
 <<<
  
-===== Egenskapstabell for objekttype: Steintipp
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Steintipp
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1663,6 +1756,11 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1689,7 +1787,7 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1699,12 +1797,12 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1715,11 +1813,152 @@ image::figurer/steintipp.png[link=figurer/steintipp.png, Alt="Eksempel på regis
  
 |eksternpeker
 |URI
-|..EKSTERNPEKER
-|[0..1]
+|..
+|[1..1]
  
 |område
-|Flate
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[transformatorstasjon]]
+=== Objekttype: Transformatorstasjon
+*Definisjon fra FKB produktspesifikasjon*: omr&#229;de for omforming og fordeling av elektrisk energi.
+
+Oftest et tydelig avgrenset/inngjerdet omr&#229;de med mange kabler inn og ut. 
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Transformatorstasjon
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_transformatorstasjon.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Arealbruk/5.0/figurer/objtype_transformatorstasjon.png, Alt="Illustrasjon fra produktspesifikasjon: Transformatorstasjon"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Merknad: Inngikk fram til FKB 4.61 som en del av Industriomr&#229;de, men b&#248;r v&#230;re grei &#229; klassifisere som transformatorstasjon fra flybilder. 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Transformatorstasjon
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|eksternpeker
+|URI
+|..
+|[1..1]
+ 
+|område
+|GM_Surface
 |.FLATE
 |[1..1]
  
