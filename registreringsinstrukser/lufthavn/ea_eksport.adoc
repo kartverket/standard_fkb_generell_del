@@ -2,8 +2,158 @@
 <<<
 '''
  
+[[helikopterlandingsplass]]
+=== Objekttype: Helikopterlandingsplass
+*Definisjon fra FKB produktspesifikasjon*: 
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Helikopterlandingsplass
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_helikopterlandingsplass.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_helikopterlandingsplass.png, Alt="Illustrasjon fra produktspesifikasjon: Helikopterlandingsplass"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Landingsplassen er merket med kryss og eventuelt "H". 
+Sirkelen rundt landingsplassen skal registreres. 
+
+Landingsplassene finnes ofte i forbindelse med sykehus, legevakter eller andre typer bygninger i forbindelse med beredskap og redning.
+
+Landingsplassen kan ligge p&#229; bakken, p&#229; bygning (medium B) eller i luft (medium L).
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB grunnrissreferanse
+|Oppmerket sirkel
+ 
+|FKB høydereferanse
+|Dekke landingsplass
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Opsjonell registrering
+ 
+|FKB-D
+|Opsjonell registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Helikopterlandingsplass
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[0..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.GM_SURFACE
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|===
+ 
+<<<
+'''
+ 
 [[lufthavnlys]]
-==== «FeatureType» Lufthavnlys
+=== Objekttype: Lufthavnlys
 *Definisjon fra FKB produktspesifikasjon*: spesielle lys for en lufthavn tiltenkt navigasjon og visualisering av oppmerking i mørket
  
  
@@ -11,7 +161,8 @@
 image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_lufthavnlys.png, Alt="Illustrasjon fra produktspesifikasjon: Lufthavnlys"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Alle lufthavnlys klassifiseres som Annen lufthavnbelysning (..LHLYSTYPE 99) ved registrering etter denne instruksen.
 
 I kartleggingsprosjekter der Avinor (lufthavneier) ikke deltar som oppdragsgiver skal det, hvis annet ikke avtales, kun registreres lufthavnlys utenfor lufthavnen.
@@ -23,8 +174,9 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter
@@ -49,8 +201,9 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
  
 <<<
  
-===== Egenskapstabell for objekttype: Lufthavnlys
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Lufthavnlys
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -82,6 +235,11 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -93,7 +251,7 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -108,7 +266,7 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -118,12 +276,12 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -133,8 +291,8 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[1..1]
  
 |eksternpeker
@@ -153,7 +311,7 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 '''
  
 [[rullebane]]
-==== «FeatureType» Rullebane
+=== Objekttype: Rullebane
 *Definisjon fra FKB produktspesifikasjon*: avgrenset, rektangulært område på en flyplass på land innrettet for landing og avgang med luftfartøyer
  
  
@@ -161,7 +319,8 @@ image::figurer/lufthavnlys.png[link=figurer/lufthavnlys.png, Alt="Eksempel på L
 image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_rullebane.png, Alt="Illustrasjon fra produktspesifikasjon: Rullebane"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Skal registreres som lukket areal, og slik sett overstyrer dette objektet andre objekter som for eksempel Taksebanegrense
  
  
@@ -176,8 +335,9 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Langside: Ytterkant oppmerking kantstripe, Kortside: Gjennom Terskelpunktet (LufthavnFastmerke) evt. midten oppmerking terskelbar
@@ -202,8 +362,9 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
  
 <<<
  
-===== Egenskapstabell for objekttype: Rullebane
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Rullebane
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -235,6 +396,11 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -246,7 +412,7 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -261,7 +427,7 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -271,12 +437,12 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -286,8 +452,8 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |posisjon
@@ -306,15 +472,16 @@ image::figurer/rullebane2.png[link=figurer/rullebane2.png, Alt="Eksempel på reg
 '''
  
 [[taksebanegrense]]
-==== «FeatureType» Taksebanegrense
+=== Objekttype: Taksebanegrense
 *Definisjon fra FKB produktspesifikasjon*: avgrensning av bane eller rute på en flyplass opprettet til bruk for taksende luftfartøyer i den hensikt å virke som en forbindelse mellom ulike deler av flyplassen
  
  
 .Illustrasjon fra produktspesifikasjon av Taksebanegrense
-image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/taksebanegrense.png, Alt="Illustrasjon fra produktspesifikasjon: Taksebanegrense"]
+image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_taksebanegrense.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Lufthavn/5.0/figurer/objtype_taksebanegrense.png, Alt="Illustrasjon fra produktspesifikasjon: Taksebanegrense"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Registreres fortrinnsvis langs ytterkant oppmerking eller dersom oppmerking mangler langs dekkekant. Starter ved rullebanen og g&#229;r frem og konnekteres til annen vegsituasjonsobjekter (i FKB-Veg).
  
  
@@ -329,8 +496,9 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Oppmerking, dekkekant
@@ -355,8 +523,9 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
  
 <<<
  
-===== Egenskapstabell for objekttype: Taksebanegrense
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Taksebanegrense
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -388,6 +557,11 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -399,7 +573,7 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -414,7 +588,7 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -424,12 +598,12 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -439,8 +613,8 @@ image::figurer/taksebanegrense2.png[link=figurer/taksebanegrense2.png, Alt="Ekse
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |eksternpeker

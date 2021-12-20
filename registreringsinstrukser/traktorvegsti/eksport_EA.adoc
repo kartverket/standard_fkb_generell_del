@@ -3,7 +3,7 @@
 '''
  
 [[veglenke]]
-==== «FeatureType» Veglenke
+=== Objekttype: Veglenke
 *Definisjon fra FKB produktspesifikasjon*: Objekttype som representerer alle senterlinjelenker i FKB-TraktorvegSti.
  
  
@@ -11,16 +11,18 @@
 image::https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png[link=https://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-TraktorvegSti/5.0/figurer/objtype_veglenke.png, Alt="Illustrasjon fra produktspesifikasjon: Veglenke"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Veglenke er en felles objekttype for alle veglenker (senterlinjer) i et vegnett. Egenskapen typeveg beskriver hva slags veglenke det er. I FKB-TraktorvegSti er aktuelle verdier for typeveg Traktorveg, Sti og stitrapp.  Se n&#230;rmere beskrivelse av _typeVeg_ under.
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Veglenke er en felles objekttype for alle veglenker (senterlinjer) i et vegnett. Egenskapen typeveg beskriver hva slags veglenke det er. I FKB-TraktorvegSti er aktuelle verdier for typeveg Traktorveg, Sti og stitrapp.  Se n&#230;rmere beskrivelse av av _typeVeg_ under.
 
 Senterlinjeobjekter i dette datasettet skal ikke ligge n&#230;rmere hverandre enn 2 m uten at de henger sammen, eventuelt med konnekteringslenke.
 
 Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senterlinje
@@ -45,8 +47,9 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
  
 <<<
  
-===== Egenskapstabell for objekttype: Veglenke
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Veglenke
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -78,6 +81,11 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -89,7 +97,7 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -104,7 +112,7 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -114,12 +122,12 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -128,13 +136,18 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |...H-NØYAKTIGHET
 |[0..1]
  
-|typeVeg
-|«CodeList» Typeveg
+|senterlinje
+|GM_Curve
+|.GM_CURVE
+|[1..1]
+ 
+|typeveg
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/typeveg[Typeveg, window = _blank]
 |..TYPEVEG
 |[1..1]
  
 |konnekteringslenke
-|Boolean
+|«» Boolean
 |..KONNEKTERINGSLENKE
 |[1..1]
  
@@ -144,7 +157,7 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[0..1]
  
 |veglenkeadresse.kommunenummer
-|«CodeList» Kommunenummer
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/kommunenummer-alle[Kommunenummer, window = _blank]
 |...KOMM
 |[1..1]
  
@@ -159,7 +172,7 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[1..1]
  
 |veglenkeadresse.sideveg
-|Boolean
+|«» Boolean
 |...SIDEVEG
 |[1..1]
  
@@ -174,12 +187,12 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[1..1]
  
 |vegsystemreferanse.vegsystem.vegkategori
-|«CodeList» Vegkategori
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegkategori[Vegkategori, window = _blank]
 |....VEGKATEGORI
 |[1..1]
  
 |vegsystemreferanse.vegsystem.vegfase
-|«CodeList» Vegfase
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/vegfase[Vegfase, window = _blank]
 |....VEGFASE
 |[1..1]
  
@@ -204,69 +217,68 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |[0..1]
  
 |kommunenummer
-|«CodeList» Kommunenummer
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/kommunenummer-alle[Kommunenummer, window = _blank]
 |..KOMM
-|[0..1]
+|[1..1]
  
-|landbruksvegklasse
-|«CodeList» Landbruksvegklasse
+|klasselandbruksveg
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/klasselandbruksveg[KlasseLandbruksveg, window = _blank]
 |..KLASSELANDBRUKSVEG
 |[0..1]
  
 |belysning
-|Boolean
+|«» Boolean
 |..BELYSNING
 |[1..1]
  
-|senterlinje
-|Kurve
-|.KURVE
+|barmarksløype
+|«» Boolean
+|..BARMARKSLØYPE
 |[1..1]
  
-|barmarksløype
-|Boolean
-|..BARMARKSLØYPE
-|[0..1]
- 
 |rutemerking
-|«CodeList» Rutemerking
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/traktorvegsti/5.0/rutemerking[Rutemerking, window = _blank]
 |..RUTEMERKING
 |[0..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |serviceveg
-|Boolean
+|«» Boolean
 |..SERVICEVEG
-|[0..1]
+|[1..1]
  
 |beredskapsveg
-|Boolean
+|«» Boolean
 |..BEREDSKAPSVEG
-|[0..1]
+|[1..1]
  
-|eksternPeker
+|eksternpeker
 |URI
 |..EKSTERNPEKER
 |[0..1]
  
-|turruterPeker
+|turruterpeker
 |URI
 |..TURRUTERPEKER
 |[0..1]
  
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
 |*Beskrivelse:* 
  
 |barmarksløype
+|Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
+ 
+|beredskapsveg
 |Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
  
 |kommunenummer
@@ -278,16 +290,13 @@ Merknad: Veglenker skal knyttes sammen i nodepunkter (knutepunkter).
 |rutemerking
 |Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
  
+|serviceveg
+|Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
+ 
 |veglenkeadresse
 |Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
  
 |vegsystemreferanse
-|Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
- 
-|serviceveg
-|Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
- 
-|beredskapsveg
 |Eksisterende data beholdes, men p&#229;f&#248;res ikke nye objekter
  
 |===
