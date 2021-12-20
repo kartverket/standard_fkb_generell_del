@@ -1,10 +1,9 @@
-=== Bruer og tuneller
  
 <<<
 '''
  
 [[bru]]
-==== «FeatureType» Bru
+=== Objekttype: Bru
 *Definisjon fra FKB produktspesifikasjon*: konstruksjon for kryssing av vanskelig farbart område
 Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlige hindringer, samt kryssende infrastruktur.
  
@@ -13,7 +12,8 @@ Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlig
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bru.png, Alt="Illustrasjon fra produktspesifikasjon: Bru"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Det er selve brukonstruksjonens utstrekning som skal registreres. Med dette menes spennvidde i luft (kant brukar til kant brukar).
 
 Man skal s&#229; langt som mulig registrere objekter som ligger under bruer. Spesielt gjelder dette veger, traktorveger, bane, gang- og sykkelveger og murer. 
@@ -32,8 +32,9 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant brukonstruksjon
@@ -58,8 +59,9 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
  
 <<<
  
-===== Egenskapstabell for objekttype: Bru
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Bru
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -69,7 +71,7 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -89,6 +91,11 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -147,8 +154,8 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |bruOverBru
@@ -161,6 +168,11 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 |..BRUTRAFIKKTYPE
 |[0..1]
  
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
 |friseilingshøyde
 |Real
 |..FRISEILINGSHØYDE
@@ -171,8 +183,9 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 |..TILHØRENDEDETALJ
 |[0..*]
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
@@ -187,26 +200,25 @@ image::figurer/bru_skisse.png[link=figurer/bru_skisse.png, Alt="Figuren viser hv
 '''
  
 [[brudetalj]]
-==== «FeatureType» Brudetalj
-*Definisjon fra FKB produktspesifikasjon*: markante detaljer p&#229; bru som ikke registreres gjennom andre objekttyper
-
+=== Objekttype: Brudetalj
+*Definisjon fra FKB produktspesifikasjon*: markante detaljer på bru som ikke registreres gjennom andre objekttyper
 Eksempler:
-
-- Brut&#229;rn for hengebruer.
-
-- B&#230;reelement for brukonstruksjon.
+-          Brutårn for hengebruer.
+-          Bæreelement for brukonstruksjon.
  
  
 .Illustrasjon fra produktspesifikasjon av Brudetalj
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brudetalj.png, Alt="Illustrasjon fra produktspesifikasjon: Brudetalj"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registreres.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant/senterlinje for brutårn. Senterlinje eller avgrensning av bæreelement.
@@ -231,8 +243,9 @@ Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registrer
  
 <<<
  
-===== Egenskapstabell for objekttype: Brudetalj
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Brudetalj
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -242,7 +255,7 @@ Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registrer
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -262,6 +275,11 @@ Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registrer
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -315,8 +333,8 @@ Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registrer
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -325,15 +343,16 @@ Det er kun &#248;verste detaljer som f.eks. brut&#229;rn og vaiere som registrer
 '''
  
 [[kulvert]]
-==== «FeatureType» Kulvert
-*Definisjon fra FKB produktspesifikasjon*: gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &lt; lysåpning &lt; 2,5m
+=== Objekttype: Kulvert
+*Definisjon fra FKB produktspesifikasjon*: gjennoml&#248;p p&#229; tvers av veg-eller jernbane med overliggende fylling og lys&#229;pning mellom 1m og 2,5m
  
  
 .Illustrasjon fra produktspesifikasjon av Kulvert
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kulvert.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kulvert.png, Alt="Illustrasjon fra produktspesifikasjon: Kulvert"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Skal etableres som lukket polygon.
 
 Eksempel p&#229; kulvert er jordbruksundergang for dyr.
@@ -353,8 +372,9 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ende/hjørne av gjennomløp
@@ -379,8 +399,9 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
  
 <<<
  
-===== Egenskapstabell for objekttype: Kulvert
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Kulvert
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -390,7 +411,7 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -410,6 +431,11 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -468,8 +494,8 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -478,15 +504,16 @@ image::figurer/kulvert.png[link=figurer/kulvert.png, Alt="Eksempel på registrer
 '''
  
 [[stikkrenne]]
-==== «FeatureType» Stikkrenne
-*Definisjon fra FKB produktspesifikasjon*: gjennomløp på tvers av veg-eller jernbane med overliggende fylling og 1m &gt; lysåpning
+=== Objekttype: Stikkrenne
+*Definisjon fra FKB produktspesifikasjon*: gjennoml&#248;p p&#229; tvers av veg-eller jernbane med overliggende fylling og lys&#229;pning mindre enn 1m
  
  
 .Illustrasjon fra produktspesifikasjon av Stikkrenne
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_stikkrenne.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_stikkrenne.png, Alt="Illustrasjon fra produktspesifikasjon: Stikkrenne"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Skal registreres som en linje mellom to punkter; ett i hver ende av 
 stikkrenna. 
 
@@ -504,8 +531,9 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Midt ende av innløp og utløp
@@ -530,8 +558,9 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
  
 <<<
  
-===== Egenskapstabell for objekttype: Stikkrenne
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Stikkrenne
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -541,7 +570,7 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -561,6 +590,11 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -619,8 +653,8 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -629,7 +663,7 @@ image::figurer/stikkrenne.png[link=figurer/stikkrenne.png, Alt="Eksempel på reg
 '''
  
 [[tunnelportal]]
-==== «FeatureType» Tunnelportal
+=== Objekttype: Tunnelportal
 *Definisjon fra FKB produktspesifikasjon*: spesielt byggverk som sammenbinder tunnel og åpen veg
  
  
@@ -644,8 +678,9 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant tunnelportal
@@ -670,8 +705,9 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
  
 <<<
  
-===== Egenskapstabell for objekttype: Tunnelportal
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Tunnelportal
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -681,7 +717,7 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -701,6 +737,11 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -759,18 +800,177 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
-=== Bygningsmessige anlegg
+ 
+<<<
+'''
+ 
+[[avfallslbeholder]]
+=== Objekttype: Avfallslbeholder
+*Definisjon fra FKB produktspesifikasjon*: St&#248;rre tank eller annen type beholder for avfall
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Avfallslbeholder
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png, Alt="Illustrasjon fra produktspesifikasjon: Avfallslbeholder"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Registreres som punktobjekter ved fotogrammetrisk registrering dersom ikke annet er avtalt.
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB grunnrissreferanse
+|Senter beholder
+ 
+|FKB høydereferanse
+|Topp beholder
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Avfallslbeholder
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.GM_POINT
+|[0..1]
+ 
+|område
+|GM_Surface
+|.GM_SURFACE
+|[0..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|===
  
 <<<
 '''
  
 [[brønn]]
-==== «FeatureType» Brønn
+=== Objekttype: Brønn
 *Definisjon fra FKB produktspesifikasjon*: lite bygningsmessig anlegg for uttak av ferskvann
  
  
@@ -778,12 +978,14 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bronn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_bronn.png, Alt="Illustrasjon fra produktspesifikasjon: Brønn"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avtalt.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter
@@ -808,8 +1010,9 @@ Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avta
  
 <<<
  
-===== Egenskapstabell for objekttype: Brønn
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Brønn
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -819,7 +1022,7 @@ Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avta
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -839,6 +1042,11 @@ Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avta
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -892,13 +1100,13 @@ Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avta
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[0..1]
  
 |høydereferanse
@@ -912,7 +1120,7 @@ Registreres som punkt ved fotogrammetrisk registrering dersom ikke annet er avta
 '''
  
 [[flaggstang]]
-==== «FeatureType» Flaggstang
+=== Objekttype: Flaggstang
 *Definisjon fra FKB produktspesifikasjon*: lang rett stang for heising av flagg
  
  
@@ -921,8 +1129,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter
@@ -947,8 +1156,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Flaggstang
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Flaggstang
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -958,7 +1168,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -978,6 +1188,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -1030,9 +1245,14 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |...H-NØYAKTIGHET
 |[0..1]
  
+|nrlpeker
+|URI
+|..NRLPEKER
+|[0..1]
+ 
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[1..1]
  
 |høydereferanse
@@ -1051,24 +1271,31 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[fundament]]
-==== «FeatureType» Fundament
-*Definisjon fra FKB produktspesifikasjon*: støpt underlag for frittstående konstruksjoner 
-Merknad: Selve konstruksjonen oppå fundamentet og dens funksjon vil eventuelt  være beskrevet som en node i nettverket den er en del av.
-Eksempel: Stolper og master
+=== Objekttype: Fundament
+*Definisjon fra FKB produktspesifikasjon*: st&#248;pt underlag for frittst&#229;ende konstruksjoner 
+Merknad: Selve konstruksjonen opp&#229; fundamentet og dens funksjon vil v&#230;re kartlagt som egne objekter. For eksempel stolper, master, r&#248;rgater, brupilarer, vindturbiner, helikopterlandingsplasser mv.
  
  
 .Illustrasjon fra produktspesifikasjon av Fundament
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fundament.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fundament.png, Alt="Illustrasjon fra produktspesifikasjon: Fundament"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Omfatter det st&#248;pte underlaget for frittst&#229;ende konstruksjoner. For eksempel fundamenter for Bru.
 
 Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&#229; objektet.
  
  
-===== Føringer
-[cols="25,75"]
+'''
+.Eksempel på registrering av Fundament ved rørgater.
+image::figurer/fundament.png[link=figurer/fundament.png, Alt="Eksempel på registrering av Fundament ved rørgater."]
+ 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant fundament
@@ -1105,8 +1332,9 @@ Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&
  
 <<<
  
-===== Egenskapstabell for objekttype: Fundament
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Fundament
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1116,7 +1344,7 @@ Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -1136,6 +1364,11 @@ Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -1189,8 +1422,8 @@ Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |medium
@@ -1203,201 +1436,19 @@ Dersom deler av kanten har d&#229;rlig innsyn angis dette ved kvalitetskoding p&
 <<<
 '''
  
-[[parkdetalj]]
-==== «FeatureType» Parkdetalj
-*Definisjon fra FKB produktspesifikasjon*: detalj i parkmessig omr&#229;de
-
-Merknad:
-Omfatter detaljer som f.eks. bauter, statuer, fontener, basseng, lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
- 
- 
-.Illustrasjon fra produktspesifikasjon av Parkdetalj
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png, Alt="Illustrasjon fra produktspesifikasjon: Parkdetalj"]
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Parkdetalj kan registreres b&#229;de som flate (omriss av objekt med HREF FOT) eller punkt (HREF TOP). Ved registrering av parkdetalj skal alltid parkdetaljtype klassifiseres.
-
-Parkdetaljer kan/b&#248;r ofte kompletteres med andre objekttyper som gjerder, murer, BeskrivendeHjelplinjeAnlegg etc.
-
- 
- 
-===== Føringer
-[cols="25,75"]
-|===
-|FKB grunnrissreferanse
-|Ytterkant objekt eller ev. senter objekt
- 
-|FKB høydereferanse
-|Topp objekt (HREF TOP) registreres som hovedregel
- 
-|FKB-A
-|Opsjonell registrering
- 
-|FKB-B
-|Opsjonell registrering
- 
-|FKB-C
-|Registreres ikke
- 
-|FKB-D
-|Registreres ikke
- 
-|===
- 
- 
-<<<
- 
-===== Egenskapstabell for objekttype: Parkdetalj
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[0..1]
- 
-|høydereferanse
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
-|..HREF
-|[1..1]
- 
-|parkdetaljtype
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype[Parkdetaljtype, window = _blank]
-|..PARKDETALJTYPE
-|[1..1]
- 
-|eksternpeker
-|URI
-|..EKSTERNPEKER
-|[0..1]
- 
-|===
-===== Presiseringer til beskrivelsen av kodelistekoder
-Figurer og skisser knyttet til bruk av bestemte kodelister og koder.
- 
-===== Parkdetaljtype - Kodenavn: Basseng
-*Definisjon:* Basseng, fontene eller annen type vannanlegg i parken.    Registreres som flateobjekt. Avgrensning av basseng f&#248;lger bassengkant/vannkant i grunnriss og h&#248;yde.  
- 
-.Eksempel på basseng/fontene som kan registeres som parkdetalj
-image::figurer/basseng.png[link=figurer/basseng.png, Alt="Eksempel på basseng/fontene som kan registeres som parkdetalj"]
- 
-===== Parkdetaljtype - Kodenavn: Bauta
-*Definisjon:* bauta, statue, skulptur eller annen type monoment. Registreres som punkt-geometri.    Hvis fundament er betydelig kan omriss med href Fot registreres som objekttype Fundament.
- 
-.Eksempel på statue registreres som punkt med HREF TOP
-image::figurer/bauta.png[link=figurer/bauta.png, Alt="Eksempel på statue registreres som punkt med HREF TOP"]
- 
-===== Parkdetaljtype - Kodenavn: Lekeapparat
-*Definisjon:* St&#248;rre lekeapparater registreres som flate med HREF FOT for omrisset av konstruksjonen.    Et litt st&#248;rre omr&#229;de rundt lekeapparatene kan registreres som Lekeplass i FKB-Arealbruk
- 
-.Ekspempel på stort lekeapparat i park
-image::figurer/lekeapparat.png[link=figurer/lekeapparat.png, Alt="Ekspempel på stort lekeapparat i park"]
- 
-===== Parkdetaljtype - Kodenavn: Sandkasse
-*Definisjon:* Registreres som flateobjekt.    Mindre lekeapparater inne i sandkasser registreres ikke
- 
-.Eksempel på registrering av sandkasser
-image::figurer/sandkasse.png[link=figurer/sandkasse.png, Alt="Eksempel på registrering av sandkasser"]
- 
- 
-<<<
-'''
- 
 [[pipe]]
-==== «FeatureType» Pipe
-*Definisjon fra FKB produktspesifikasjon*: frittstående rørformete innretninger for transport av avgasser
+=== Objekttype: Pipe
+*Definisjon fra FKB produktspesifikasjon*: frittst&#229;ende r&#248;rformete innretninger for transport av avgasser
+
+Merknad: Piper kan forskjellig tverrsnitt (m&#229; ikke v&#230;re sirkul&#230;re)
  
  
 .Illustrasjon fra produktspesifikasjon av Pipe
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_pipe.png, Alt="Illustrasjon fra produktspesifikasjon: Pipe"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Omfatter frittst&#229;ende r&#248;rformede innretninger for transport av 
 avgasser. 
 
@@ -1410,8 +1461,9 @@ plottes.
 For piper med skr&#229; vegger, registreres "Kant ved bakken" som BeskrivendeHjelpelinjeAnlegg.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp ytterkant pipe (senter pipe ved punktgeometri)
@@ -1448,8 +1500,9 @@ For piper med skr&#229; vegger, registreres "Kant ved bakken" som BeskrivendeHje
  
 <<<
  
-===== Egenskapstabell for objekttype: Pipe
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Pipe
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1459,7 +1512,7 @@ For piper med skr&#229; vegger, registreres "Kant ved bakken" som BeskrivendeHje
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -1479,6 +1532,11 @@ For piper med skr&#229; vegger, registreres "Kant ved bakken" som BeskrivendeHje
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -1537,170 +1595,18 @@ For piper med skr&#229; vegger, registreres "Kant ved bakken" som BeskrivendeHje
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[0..1]
  
 |høydereferanse
 | «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
-|[1..1]
- 
-|===
- 
-<<<
-'''
- 
-[[søppelbeholder]]
-==== «FeatureType» Søppelbeholder
-*Definisjon fra FKB produktspesifikasjon*: St&#248;rre tank eller annen type beholder for s&#248;ppel
- 
- 
-.Illustrasjon fra produktspesifikasjon av Søppelbeholder
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_soppelbeholder.png, Alt="Illustrasjon fra produktspesifikasjon: Søppelbeholder"]
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Registreres som punktobjekter ved fotogrammetrisk registrering dersom ikke annet er avtalt.
- 
- 
-===== Føringer
-[cols="25,75"]
-|===
-|FKB grunnrissreferanse
-|Senter søppelbeholder
- 
-|FKB høydereferanse
-|Topp søppelbeholder
- 
-|FKB-A
-|Opsjonell registrering
- 
-|FKB-B
-|Opsjonell registrering
- 
-|FKB-C
-|Registreres ikke
- 
-|FKB-D
-|Registreres ikke
- 
-|===
- 
- 
-<<<
- 
-===== Egenskapstabell for objekttype: Søppelbeholder
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[0..1]
- 
-|medium
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
-|..MEDIUM
-|[1..1]
- 
-|høydereferanse
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
-|..HREF
-|[1..1]
- 
-|eksternpeker
-|URI
-|..EKSTERNPEKER
 |[1..1]
  
 |===
@@ -1709,7 +1615,7 @@ Registreres som punktobjekter ved fotogrammetrisk registrering dersom ikke annet
 '''
  
 [[tank]]
-==== «FeatureType» Tank
+=== Objekttype: Tank
 *Definisjon fra FKB produktspesifikasjon*: lukkede kar for oppbevaring av gass eller væsker som ikke er registrert som bygning
  
  
@@ -1717,7 +1623,8 @@ Registreres som punktobjekter ved fotogrammetrisk registrering dersom ikke annet
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tank.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tank.png, Alt="Illustrasjon fra produktspesifikasjon: Tank"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Tank registreres med flategeometri ved fotogrammetrisk registrering.
 
 Brukes for &#229; beskrive omriss av lukkede kar for oppbevaring av gass eller v&#230;ske n&#229;r tanken ikke er registrert som "Bygning". Inkluderer ogs&#229; vannt&#229;rn og lagringsrom for f&#244;r og korn (tidligere objekttype Silo).
@@ -1742,8 +1649,9 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av tank (største omkrets)
@@ -1771,8 +1679,9 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
  
 <<<
  
-===== Egenskapstabell for objekttype: Tank
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Tank
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1782,7 +1691,7 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -1802,6 +1711,11 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -1860,13 +1774,13 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[0..1]
  
 |medium
@@ -1880,9 +1794,9 @@ image::figurer/tank_flere.png[link=figurer/tank_flere.png, Alt="Når det er fler
 '''
  
 [[tårn]]
-==== «FeatureType» Tårn
+=== Objekttype: Tårn
 *Definisjon fra FKB produktspesifikasjon*: h&#248;y bygningsmessig konstruksjon hvor h&#248;yden er stor i forhold til bygningens areal i grunnplanet
-Merknad: Omfatter alle t&#229;rn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse- som f.eks tank. 
+Merknad: Omfatter alle t&#229;rn med unntak av de som er registrert i matrikkelen og de som har en mer spesifisert beskrivelse, som f.eks. tank. 
 Eksempel: M&#229;let&#229;rn og stupet&#229;rn
  
  
@@ -1890,7 +1804,8 @@ Eksempel: M&#229;let&#229;rn og stupet&#229;rn
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tarn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tarn.png, Alt="Illustrasjon fra produktspesifikasjon: Tårn"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Omfatter alle t&#229;rn med unntak av de t&#229;rn som har en mer spesifisert beskrivelse, som f.eks. Tank. Eksempel p&#229; t&#229;rn er m&#229;let&#229;rn, stupet&#229;rn og t&#229;rn for telekommunikasjon. Vannt&#229;rn kodes som Tank.
 
 For t&#229;rn med loddrette vegger, registreres "Ytterkant av t&#229;rn/Topp ytterkant t&#229;rn". For t&#229;rn med skr&#229; vegger, registreres i tillegg registreres "Kant ved bakken" som BeskrivendeHjelpelinjeAnlegg.  
@@ -1898,8 +1813,9 @@ For t&#229;rn med loddrette vegger, registreres "Ytterkant av t&#229;rn/Topp ytt
 Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fundament.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp ytterkant tårn
@@ -1936,8 +1852,9 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
  
 <<<
  
-===== Egenskapstabell for objekttype: Tårn
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Tårn
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1947,7 +1864,7 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -1967,6 +1884,11 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2025,13 +1947,13 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[0..1]
  
 |medium
@@ -2045,22 +1967,24 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
 '''
  
 [[trapp]]
-==== «FeatureType» Trapp
-*Definisjon fra FKB produktspesifikasjon*: trapp som ikke st&#229;r i tilknytning til en bygning
+=== Objekttype: Trapp
  
- 
-.Illustrasjon fra produktspesifikasjon av Trapp
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png, Alt="Illustrasjon fra produktspesifikasjon: Trapp"]
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Benyttes for trapper som ikke st&#229;r i tilknytning til en bygning eller veranda tilknyttet bygning. TrappBygg er spesifisert i datasettet Bygning.
 
 Avsatser og reposer regnes som del av trappa. Amfier og lignende anlegg skal registreres som Tribune.
  
  
-===== Føringer
-[cols="25,75"]
+'''
+.Eksempel på trapp som er delt inn i ulike nivåer. Rød helstrek viser de delene som er skrå/vertikale, rød stiplet viser horisontale deler av trappen.
+image::figurer/trapp.png[link=figurer/trapp.png, Alt="Eksempel på trapp som er delt inn i ulike nivåer. Rød helstrek viser de delene som er skrå/vertikale, rød stiplet viser horisontale deler av trappen."]
+ 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av trapp
@@ -2090,108 +2014,10 @@ Avsatser og reposer regnes som del av trappa. Amfier og lignende anlegg skal reg
  
  
 <<<
- 
-===== Egenskapstabell for objekttype: Trapp
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|medium
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
-|..MEDIUM
-|[1..1]
- 
-|===
-=== Murer og gjerder
- 
-<<<
 '''
  
 [[gjerde]]
-==== «FeatureType» Gjerde
+=== Objekttype: Gjerde
 *Definisjon fra FKB produktspesifikasjon*: oppsatt stengsel som hindrer passering. St&#229;r ofte i grensa mellom eiendommer
  
  
@@ -2199,14 +2025,16 @@ Avsatser og reposer regnes som del av trappa. Amfier og lignende anlegg skal reg
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_gjerde.png, Alt="Illustrasjon fra produktspesifikasjon: Gjerde"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Gjerder i forbindelse med anleggsomr&#229;der skal ikke registreres.
 
 Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248;yde for gjerdet registreres ved terrengniv&#229; (HREF FOT). 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter gjerde
@@ -2243,8 +2071,9 @@ Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248
  
 <<<
  
-===== Egenskapstabell for objekttype: Gjerde
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Gjerde
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2254,7 +2083,7 @@ Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -2274,6 +2103,11 @@ Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2332,8 +2166,8 @@ Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |gjerdetype
@@ -2352,12 +2186,16 @@ Fortrinnsvis skal topp gjerde registreres, men der dette er vanskelig kan h&#248
 |[1..1]
  
 |===
-===== Presiseringer til beskrivelsen av kodelistekoder
-Figurer og skisser knyttet til bruk av bestemte kodelister og koder.
+[discrete]
+==== Presiseringer til beskrivelsen av kodelistekoder
  
+ 
+[discrete]
 ===== Gjerdetype - Kodenavn: Annet gjerde
 *Definisjon:* Oppsatt stengsel som hindrer passering.    Standardverdi for fotogrammetrisk registrering. Brukes for alle andre typer gjerder enn steingjerder.  
-
+ 
+ 
+[discrete]
 ===== Gjerdetype - Kodenavn: Steingjerde
 *Definisjon:* frittst&#229;ende mur oppf&#248;rt av naturstein uten bindemiddel
  
@@ -2365,11 +2203,12 @@ Figurer og skisser knyttet til bruk av bestemte kodelister og koder.
 image::figurer/steingjerde.png[link=figurer/steingjerde.png, Alt="Eksempel på steingjerde"]
  
  
+ 
 <<<
 '''
  
 [[murfrittstående]]
-==== «FeatureType» MurFrittstående
+=== Objekttype: MurFrittstående
 *Definisjon fra FKB produktspesifikasjon*: mur hvor oppfyllingen på en side utgjør mindre enn halve høyden på den andre siden
  
  
@@ -2377,7 +2216,8 @@ image::figurer/steingjerde.png[link=figurer/steingjerde.png, Alt="Eksempel på s
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murfrittstaende.png, Alt="Illustrasjon fra produktspesifikasjon: MurFrittstående"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Kan v&#230;re mur som er murt oppe p&#229; forst&#248;tningsmur.
 
 Brukes p&#229; gj&#248;dselkummer i landbruket (med eller uten tak). Tak p&#229; 
@@ -2408,9 +2248,15 @@ image::figurer/mur_gjodsel3.png[link=figurer/mur_gjodsel3.png, Alt="Eksempel på
 image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfrittstående registreres der mur hvor oppfyllingen på en side utgjør mindre enn halve høyden på den andre siden  "]
  
  
+'''
+.Eksempel på registrering av mur (rødt) rundt tank (gult)
+image::figurer/murfrittstaende_tank.png[link=figurer/murfrittstaende_tank.png, Alt="Eksempel på registrering av mur (rødt) rundt tank (gult)"]
  
-===== Føringer
-[cols="25,75"]
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter mur
@@ -2447,8 +2293,9 @@ image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfri
  
 <<<
  
-===== Egenskapstabell for objekttype: MurFrittstående
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: MurFrittstående
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2458,7 +2305,7 @@ image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfri
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -2478,6 +2325,11 @@ image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfri
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2531,8 +2383,141 @@ image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfri
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
+|[1..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[murloddrett]]
+=== Objekttype: Murloddrett
+*Definisjon fra FKB produktspesifikasjon*: forst&#248;tningsmur hvor topp og bunn er ubetydelig forskj&#248;vet i  forhold til hverandre
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Murloddrett
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png, Alt="Illustrasjon fra produktspesifikasjon: Murloddrett"]
+ 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Murloddrett
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|nvdbpeker
+|URI
+|..NVDBPEKER
+|[0..1]
+ 
+|grense
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -2551,7 +2536,7 @@ image::figurer/murfrittstaende.png[link=figurer/murfrittstaende.png, Alt="Murfri
 '''
  
 [[portstolpe]]
-==== «FeatureType» Portstolpe
+=== Objekttype: Portstolpe
 *Definisjon fra FKB produktspesifikasjon*: stolpe som en port kan være hengslet til
  
  
@@ -2560,8 +2545,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter stolpe
@@ -2586,8 +2572,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Portstolpe
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Portstolpe
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2597,7 +2584,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -2617,6 +2604,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2670,8 +2662,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[1..1]
  
 |høydereferanse
@@ -2685,7 +2677,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[ruin]]
-==== «FeatureType» Ruin
+=== Objekttype: Ruin
 *Definisjon fra FKB produktspesifikasjon*: Synlig mur som er rester etter tidligere byggverk
  
  
@@ -2693,14 +2685,16 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_ruin.png, Alt="Illustrasjon fra produktspesifikasjon: Ruin"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Ruin brukes kun om gamle, forfalne murer. For nye/vedlikeholdte murer/byggverk brukes andre objekttyper i FKB.
 
 Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av mur.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant ruin
@@ -2725,8 +2719,9 @@ Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av m
  
 <<<
  
-===== Egenskapstabell for objekttype: Ruin
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Ruin
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2736,7 +2731,7 @@ Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av m
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -2756,6 +2751,11 @@ Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av m
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2809,8 +2809,8 @@ Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av m
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -2834,8 +2834,8 @@ Hvis ruinen har brede murer kan det ogs&#229; registreres indre avgrensning av m
 '''
  
 [[skjerm]]
-==== «FeatureType» Skjerm
-*Definisjon fra FKB produktspesifikasjon*: frittstående konstruksjon som skal være et hinder for eksempel til støyutbredelse eller snøfokk
+=== Objekttype: Skjerm
+*Definisjon fra FKB produktspesifikasjon*: frittst&#229;ende konstruksjon laget for &#229; skjerme mot st&#248;y eller sn&#248;, eller hindre/begrense ras og flom.
  
  
 .Illustrasjon fra produktspesifikasjon av Skjerm
@@ -2854,8 +2854,9 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter skjerm
@@ -2880,8 +2881,9 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
  
 <<<
  
-===== Egenskapstabell for objekttype: Skjerm
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Skjerm
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2891,7 +2893,7 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -2911,6 +2913,11 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -2969,8 +2976,8 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |skjermingsfunksjon
@@ -2994,8 +3001,9 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 |[0..1]
  
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
@@ -3013,7 +3021,7 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 '''
  
 [[skråforstøtningsmur]]
-==== «FeatureType» SkråForstøtningsmur
+=== Objekttype: SkråForstøtningsmur
 *Definisjon fra FKB produktspesifikasjon*: forst&#248;tningsmur hvor topp og bunn er betydelig forskj&#248;vet i forhold til hverandre
  
  
@@ -3021,7 +3029,8 @@ image::figurer/skjerm_hoydesprang.png[link=figurer/skjerm_hoydesprang.png, Alt="
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skraforstotningsmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_skraforstotningsmur.png, Alt="Illustrasjon fra produktspesifikasjon: SkråForstøtningsmur"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Registreres som flategeometri. Skal benyttes for murer der grunnrissforskjellen mellom topp og bunn (se figur) er st&#248;rre enn 1/3 av h&#248;yden p&#229; muren. 
 
 Murer skal s&#229; langt som mulig registreres sammenhengende. Man skal pr&#248;ve &#229; registrere murer under bruer. Usikker stedfesting av deler av avgrensningen angis med kvalitetskoding. 
@@ -3033,8 +3042,9 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Omriss av murens skråflate
@@ -3071,8 +3081,9 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
  
 <<<
  
-===== Egenskapstabell for objekttype: SkråForstøtningsmur
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: SkråForstøtningsmur
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3082,7 +3093,7 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3102,6 +3113,11 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3160,8 +3176,8 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |medium
@@ -3175,8 +3191,8 @@ image::figurer/skraamur.png[link=figurer/skraamur.png, Alt="Skråforstøtningsmu
 '''
  
 [[voll]]
-==== «FeatureType» Voll
-*Definisjon fra FKB produktspesifikasjon*: opphøyd terrengformasjon anlagt for å skjerme
+=== Objekttype: Voll
+*Definisjon fra FKB produktspesifikasjon*: opph&#248;yd terrengformasjon anlagt for &#229; hindre st&#248;y, ukontrollert gjennomstr&#248;mming av vann, skade fra  prosjektiler p&#229; skytebane o.l.
  
  
 .Illustrasjon fra produktspesifikasjon av Voll
@@ -3190,8 +3206,9 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter voll
@@ -3216,8 +3233,9 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
  
 <<<
  
-===== Egenskapstabell for objekttype: Voll
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Voll
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3227,7 +3245,7 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3247,6 +3265,11 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3305,8 +3328,8 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |skjermingsfunksjon
@@ -3325,8 +3348,9 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 |[0..1]
  
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
@@ -3339,13 +3363,12 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 |Skjermingstype St&#248;yskjerm brukes som standardverdi ved fotogrammetrisk registrering. Denne verdien benyttes dersom det ikke er &#229;penbart at vollen er laget for en annen type skjerming eller at det ev. finnes et manus til hjelp ved klassifisering.
  
 |===
-=== Tekniske anlegg for kultur og lek
  
 <<<
 '''
  
 [[hoppbakke]]
-==== «FeatureType» Hoppbakke
+=== Objekttype: Hoppbakke
 *Definisjon fra FKB produktspesifikasjon*: anlegg for skihopping med kunstig eller naturlig tilløp
  
  
@@ -3353,14 +3376,16 @@ image::figurer/voll.png[link=figurer/voll.png, Alt="Eksempel på registrering av
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_hoppbakke.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_hoppbakke.png, Alt="Illustrasjon fra produktspesifikasjon: Hoppbakke"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Dette er en beskrivelse av det bygningsmessige ved en hoppbakke slik som omriss av stillas og hopp, samt karakteristiske linjer som kant underrenn, kant slette, kant overrenn (hvis det ikke er stillas) og lignende. 
 
 I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplasser, mindre parkeringsplasser, boder, o.l. beskrives som SportIdrettPlass i FKB-Arealbruk.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant
@@ -3385,8 +3410,9 @@ I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplass
  
 <<<
  
-===== Egenskapstabell for objekttype: Hoppbakke
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Hoppbakke
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3396,7 +3422,7 @@ I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplass
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3416,6 +3442,11 @@ I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplass
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3469,8 +3500,8 @@ I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplass
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -3484,16 +3515,18 @@ I tillegg kan hele omr&#229;det rundt hoppbakken med selve bakken, tilskuerplass
 '''
  
 [[idrettsanlegg]]
-==== «FeatureType» Idrettsanlegg
+=== Objekttype: Idrettsanlegg
 *Definisjon fra FKB produktspesifikasjon*: linje for avgrensning av anleggsmessige deler av et idrettsanlegg, som f.eks ytteravgrensning av en fotballbane
-Merknad: Området rundt idrettsanlegget kan beskrives som arealbruksobjekt (se kap. for arealbruk).
+
+Merknad: Omr&#229;det rundt idrettsanlegget kan beskrives som arealbruksobjekt (se kap. for arealbruk).
  
  
 .Illustrasjon fra produktspesifikasjon av Idrettsanlegg
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_idrettsanlegg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_idrettsanlegg.png, Alt="Illustrasjon fra produktspesifikasjon: Idrettsanlegg"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Ytterkant (gresskant, gruskant, asfaltkant) av banene registreres som Idrettsanlegg. Selve oppmerkingen av banene skal ikke registreres.
 
 
@@ -3506,8 +3539,9 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant
@@ -3532,8 +3566,9 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
  
 <<<
  
-===== Egenskapstabell for objekttype: Idrettsanlegg
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Idrettsanlegg
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3543,7 +3578,7 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3563,6 +3598,11 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3616,8 +3656,8 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -3630,8 +3670,218 @@ image::figurer/idrettsanlegg.png[link=figurer/idrettsanlegg.png, Alt="Eksempel p
 <<<
 '''
  
+[[parkdetalj]]
+=== Objekttype: Parkdetalj
+*Definisjon fra FKB produktspesifikasjon*: detalj i parkmessig omr&#229;de
+
+Merknad:
+Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater og sandkasser. Registreres som punkt- eller flategeometri.
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Parkdetalj
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_parkdetalj.png, Alt="Illustrasjon fra produktspesifikasjon: Parkdetalj"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Parkdetalj kan registreres b&#229;de som flate (omriss av objekt med HREF FOT) eller punkt (HREF TOP). Ved registrering av parkdetalj skal alltid parkdetaljtype klassifiseres.
+
+Parkdetaljer kan/b&#248;r ofte kompletteres med andre objekttyper som gjerder, murer, BeskrivendeHjelplinjeAnlegg etc.
+
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB grunnrissreferanse
+|Ytterkant objekt eller ev. senter objekt
+ 
+|FKB høydereferanse
+|Topp objekt (HREF TOP) registreres som hovedregel
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Registreres ikke
+ 
+|FKB-D
+|Registreres ikke
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Parkdetalj
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.GM_POINT
+|[0..1]
+ 
+|område
+|GM_Surface
+|.GM_SURFACE
+|[0..1]
+ 
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
+|[1..1]
+ 
+|parkdetaljtype
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygnanlegg/5.0/parkdetaljtype[Parkdetaljtype, window = _blank]
+|..PARKDETALJTYPE
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[1..1]
+ 
+|===
+[discrete]
+==== Presiseringer til beskrivelsen av kodelistekoder
+ 
+ 
+[discrete]
+===== Parkdetaljtype - Kodenavn: Basseng
+*Definisjon:* Basseng, fontene eller annen type vannanlegg i parken.    Registreres som flateobjekt. Avgrensning av basseng f&#248;lger bassengkant/vannkant i grunnriss og h&#248;yde.  
+ 
+.Eksempel på basseng/fontene som kan registeres som parkdetalj
+image::figurer/basseng.png[link=figurer/basseng.png, Alt="Eksempel på basseng/fontene som kan registeres som parkdetalj"]
+ 
+ 
+ 
+[discrete]
+===== Parkdetaljtype - Kodenavn: Bauta
+*Definisjon:* bauta, statue, skulptur eller annen type monoment. Registreres som punkt-geometri.    Hvis fundament er betydelig kan omriss med href Fot registreres som objekttype Fundament.
+ 
+.Eksempel på statue registreres som punkt med HREF TOP
+image::figurer/bauta.png[link=figurer/bauta.png, Alt="Eksempel på statue registreres som punkt med HREF TOP"]
+ 
+ 
+ 
+[discrete]
+===== Parkdetaljtype - Kodenavn: Lekeapparat
+*Definisjon:* St&#248;rre lekeapparater registreres som flate med HREF FOT for omrisset av konstruksjonen.    Et litt st&#248;rre omr&#229;de rundt lekeapparatene kan registreres som Lekeplass i FKB-Arealbruk
+ 
+.Ekspempel på stort lekeapparat i park
+image::figurer/lekeapparat.png[link=figurer/lekeapparat.png, Alt="Ekspempel på stort lekeapparat i park"]
+ 
+ 
+ 
+[discrete]
+===== Parkdetaljtype - Kodenavn: Sandkasse
+*Definisjon:* Registreres som flateobjekt.    Mindre lekeapparater inne i sandkasser registreres ikke
+ 
+.Eksempel på registrering av sandkasser
+image::figurer/sandkasse.png[link=figurer/sandkasse.png, Alt="Eksempel på registrering av sandkasser"]
+ 
+ 
+ 
+<<<
+'''
+ 
 [[skytebaneinnretning]]
-==== «FeatureType» Skytebaneinnretning
+=== Objekttype: Skytebaneinnretning
 *Definisjon fra FKB produktspesifikasjon*: omriss av tekniske anlegg på skytebane - standplass og skiver som ikke blir registrert som f.eks bygninger og murer
  
  
@@ -3640,8 +3890,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant/senter
@@ -3666,8 +3917,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Skytebaneinnretning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Skytebaneinnretning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3677,7 +3929,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3697,6 +3949,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3750,8 +4007,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -3765,7 +4022,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[svømmebasseng]]
-==== «FeatureType» Svømmebasseng
+=== Objekttype: Svømmebasseng
 *Definisjon fra FKB produktspesifikasjon*: basseng for svømming og vannlek
  
  
@@ -3773,7 +4030,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_svommebasseng.png, Alt="Illustrasjon fra produktspesifikasjon: Svømmebasseng"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Som sv&#248;mmebasseng regnes ikke fuglebad og fontener. Slike objekter kan registreres som Parkdetalj.
  
  
@@ -3783,8 +4041,9 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant mot vannflaten
@@ -3812,8 +4071,9 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
  
 <<<
  
-===== Egenskapstabell for objekttype: Svømmebasseng
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Svømmebasseng
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3823,7 +4083,7 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3843,6 +4103,11 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -3896,8 +4161,8 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |medium
@@ -3911,7 +4176,7 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
 '''
  
 [[taubane]]
-==== «FeatureType» Taubane
+=== Objekttype: Taubane
 *Definisjon fra FKB produktspesifikasjon*: innretning hvor tau eller vaiere bærer og eller trekker last over en strekning
  
  
@@ -3919,14 +4184,18 @@ image::figurer/svommebasseng.png[link=figurer/svommebasseng.png, Alt="Eksempel p
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubane.png, Alt="Illustrasjon fra produktspesifikasjon: Taubane"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte mast/opphengspunkt for taubana.
 
+Merknad: Taubanen registreres helt til forankringspunkt i bakken/bygning etc. 
+
 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter mast
@@ -3936,9 +4205,6 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
  
 |FKB-A minstestørrelse
 |Taubaner med lengde over 50m registreres
- 
-|FKB registreringsmetode
-|enkeltpunkt
  
 |FKB-A
 |Påkrevd registrering
@@ -3957,8 +4223,9 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
  
 <<<
  
-===== Egenskapstabell for objekttype: Taubane
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Taubane
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3968,7 +4235,7 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -3988,6 +4255,11 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4046,8 +4318,8 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |taubanetype
@@ -4060,13 +4332,19 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
 |..HREF
 |[1..1]
  
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
 |tilhørendeMast
 |«FeatureType» Taubanemast
 |..TILHØRENDEMAST
 |[0..*]
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
@@ -4076,33 +4354,48 @@ Taubane registreres som en kurve der hvert punkt utgj&#248;res av den enkelte ma
 |Taubanetype skal klassifiseres ved fotogrammetrisk registrering. Se egen beskrivelse/skisser av kodeverdier til hjelp ved klassifisering 
  
 |===
-===== Presiseringer til beskrivelsen av kodelistekoder
-Figurer og skisser knyttet til bruk av bestemte kodelister og koder.
+[discrete]
+==== Presiseringer til beskrivelsen av kodelistekoder
  
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Annen taubane
 *Definisjon:* Benyttes ved fotogrammetrisk registrering kun der det ikke er mulig &#229; klassifisere taubana til en av de andre taubanetypene.
-
+ 
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Gondolbane
 *Definisjon:* Taubaner hvor lasten er plassert i lukkete kabiner. Oftest kun 2 gondoler som er festet til vaieren der den ene g&#229;r opp n&#229;r den andre g&#229;r ned.     En del skianlegg har taubaner med mange lukkende kabiner. Disse registreres ogs&#229; som Gondolbane.
  
 .Eksempel på gondol
 image::figurer/gondol.png[link=figurer/gondol.png, Alt="Eksempel på gondol"]
  
+ 
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Løypestreng
 *Definisjon:* Vaier spent mellom to punkter i terrenget for transport av last. Kan ha ekstra vaier/tau festet til sveiv eller motor slik at transporten ikke er avhengig av fall.    Mindre vanlig type taubane som sjelden forekommer  i forbindelse med skianlegg/turisme etc.
-
+ 
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Skitrekk
 *Definisjon:* Taubane til &#229; dra skil&#248;per opp bratte bakker (T-krok, sk&#229;lheiser etc.)
  
 .Eksempel på registrering av taubanemast i skitrekk
 image::figurer/skitrekk.png[link=figurer/skitrekk.png, Alt="Eksempel på registrering av taubanemast i skitrekk"]
  
+ 
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Stolheis
 *Definisjon:* Taubane med stoler til persontransport. Aktuelt &#229; registrere i forbindelse med skianlegg.
  
 .Eksempel på registrering av mast for stolheis
 image::figurer/stolheis.png[link=figurer/stolheis.png, Alt="Eksempel på registrering av mast for stolheis"]
  
+ 
+ 
+[discrete]
 ===== Taubanetype - Kodenavn: Zipline
 *Definisjon:* Fastspent vaier for &#229; sende personer eller last nedover.    Vanlig i forbindelse med klatreparker etc. Zipline er vanligvis bare hengt opp i to punkter/master (ett i hver ende)
  
@@ -4110,11 +4403,12 @@ image::figurer/stolheis.png[link=figurer/stolheis.png, Alt="Eksempel på registr
 image::figurer/zipline.png[link=figurer/zipline.png, Alt="Eksempel på zipline"]
  
  
+ 
 <<<
 '''
  
 [[taubanemast]]
-==== «FeatureType» Taubanemast
+=== Objekttype: Taubanemast
 *Definisjon fra FKB produktspesifikasjon*: mast som taubanen er hengt opp i
  
  
@@ -4122,12 +4416,14 @@ image::figurer/zipline.png[link=figurer/zipline.png, Alt="Eksempel på zipline"]
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubanemast.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_taubanemast.png, Alt="Illustrasjon fra produktspesifikasjon: Taubanemast"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien til Taubane
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter mast
@@ -4152,8 +4448,9 @@ Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien 
  
 <<<
  
-===== Egenskapstabell for objekttype: Taubanemast
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Taubanemast
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -4163,7 +4460,7 @@ Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien 
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -4183,6 +4480,11 @@ Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien 
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4241,8 +4543,8 @@ Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien 
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[1..1]
  
 |høydereferanse
@@ -4250,13 +4552,18 @@ Registreres som enkeltpunkter med samme geometri som punktene i kurvegeometrien 
 |..HREF
 |[1..1]
  
+|linjebredde
+|Real
+|..LINJEBREDDE
+|[0..1]
+ 
 |===
  
 <<<
 '''
  
 [[tribune]]
-==== «FeatureType» Tribune
+=== Objekttype: Tribune
 *Definisjon fra FKB produktspesifikasjon*: opparbeidet anlegg av metall- stein- mur eller tre for betjening av publikum på kulturarenaer, særlig idrettsanlegg
 Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil være en bygningsenhet.
  
@@ -4265,7 +4572,8 @@ Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil v
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_tribune.png, Alt="Illustrasjon fra produktspesifikasjon: Tribune"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Tribune omfatter opparbeidede anlegg av metall, stein, betong, mur eller tre for betjening av publikum p&#229; kulturarenaer, s&#230;rlig idrettsanlegg. 
 
 Tak over tribunen skal registreres som Takoverbygg.
@@ -4277,8 +4585,9 @@ image::figurer/tribune.png[link=figurer/tribune.png, Alt="Eksempel på amfi skal
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av tribune
@@ -4303,8 +4612,9 @@ image::figurer/tribune.png[link=figurer/tribune.png, Alt="Eksempel på amfi skal
  
 <<<
  
-===== Egenskapstabell for objekttype: Tribune
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Tribune
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -4314,7 +4624,7 @@ image::figurer/tribune.png[link=figurer/tribune.png, Alt="Eksempel på amfi skal
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -4334,6 +4644,11 @@ image::figurer/tribune.png[link=figurer/tribune.png, Alt="Eksempel på amfi skal
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4387,36 +4702,36 @@ image::figurer/tribune.png[link=figurer/tribune.png, Alt="Eksempel på amfi skal
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |===
-=== Tekniske anlegg for vann, vassdrag og kyst
  
 <<<
 '''
  
 [[beskrivendehjelpelinjeanlegg]]
-==== «FeatureType» BeskrivendeHjelpelinjeAnlegg
+=== Objekttype: BeskrivendeHjelpelinjeAnlegg
 *Definisjon fra FKB produktspesifikasjon*: karakteristiske linjer p&#229; bygningsmessige- og tekniske anlegg
 
 Merknad:
-Kan ogs&#229; benyttes til &#229; registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB, men som det er naturlig &#229; registrere i et detaljert grunnkart.
+Kan ogs&#229; benyttes til &#229; registrere mindre selvstendige bygningsmessige anlegg som ikke omfattes av andre objekttyper i FKB, men som det er naturlig &#229; registrere i et detaljert grunnkart. 
 
-Eksempel: 
-Markerte linjer p&#229; en demning.
-Skilderhus
+Eksempler: 
+Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og sm&#229; frittst&#229;ende anlegg som f.eks. skilderhus, kiosker etc.
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Benyttes kun for tilleggsbeskrivelse av &#248;vrige objekttyper i FKB-BygnAnlegg. Eksempel p&#229; bruk er markerte linjer p&#229; en demning og tak over gj&#248;dselkum.
 
 Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#229; for BeskrivendehjelpelinjeAnlegg
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant/senter
@@ -4441,8 +4756,9 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
  
 <<<
  
-===== Egenskapstabell for objekttype: BeskrivendeHjelpelinjeAnlegg
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: BeskrivendeHjelpelinjeAnlegg
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -4452,7 +4768,7 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -4472,6 +4788,11 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4525,8 +4846,8 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -4540,8 +4861,9 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
 |[1..1]
  
 |===
-===== Restriksjoner
-[cols="20,80"]
+[discrete]
+==== Restriksjoner
+[cols="20,80", options="header"]
  
 |===
 |*Navn:* 
@@ -4555,159 +4877,8 @@ Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#2
 <<<
 '''
  
-[[brygge]]
-==== «FeatureType» Brygge
-*Definisjon fra FKB produktspesifikasjon*: brolignende platformkonstruksjon langs land eller fra land og ut i vannet, brukt som fort&#248;yningssted for st&#248;rre eller mindre fart&#248;yer. 
-
-Brygger er mindre konstruksjoner en kaier og er ofte bygget i treverk. Brygger kan v&#230;re bygget over vann slik at vannkonturen registeres under brygga. 
- 
- 
-.Illustrasjon fra produktspesifikasjon av Brygge
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brygge.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_brygge.png, Alt="Illustrasjon fra produktspesifikasjon: Brygge"]
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Brygge registreres med flategeometri. Ved diffus/uklar avgrensning mot andre fenomener p&#229; land gjenspeiles dette i kvalitetskoding for objektet.
-
-Kriterier for klassifisering av Brygge vs. Kai:
-
-- Brygger er mindre konstruksjoner
-
-- Brygger er oftest bygget i tre (med vannspeil under)
-
-- Brygger benyttes prim&#230;rt til fritid/rekreasjon 
- 
- 
-'''
-.Eksempel på opparbeidet gangparti langs vann som skal registreres som Brygge.  
-image::figurer/brygge.png[link=figurer/brygge.png, Alt="Eksempel på opparbeidet gangparti langs vann som skal registreres som Brygge.  "]
- 
- 
- 
-===== Føringer
-[cols="25,75"]
-|===
-|FKB grunnrissreferanse
-|Ytterkant brygge
- 
-|FKB høydereferanse
-|Topp bryggekant. Knekklinjer og sprang større enn 0,5m registreres.
- 
-|FKB-A minstestørrelse
-|Areal større enn 6 m2
- 
-|FKB-A
-|Påkrevd registrering
- 
-|FKB-B
-|Påkrevd registrering
- 
-|FKB-C
-|Påkrevd registrering
- 
-|FKB-D
-|Påkrevd registrering
- 
-|===
- 
- 
-<<<
- 
-===== Egenskapstabell for objekttype: Brygge
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[0..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[0..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..INFORMASJON
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|område
-|Flate
-|.FLATE
-|[1..1]
- 
-|===
- 
-<<<
-'''
- 
 [[demning]]
-==== «FeatureType» Demning
+=== Objekttype: Demning
 *Definisjon fra FKB produktspesifikasjon*: konstruksjon for å heve vannspeilet og danne et kunstig vannmagasin, samt regulere vannføringen
  
  
@@ -4715,7 +4886,8 @@ image::figurer/brygge.png[link=figurer/brygge.png, Alt="Eksempel på opparbeidet
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png, Alt="Illustrasjon fra produktspesifikasjon: Demning"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Demning omfatter oppbygde hindringer som skal sikre jevn vannf&#248;ring til vannforsyningsanlegg eller kraftverk, eller som skal skape grunnlag for fiskeoppdrett. 
 
 Beskrivende linjer inne p&#229; damanlegget skal registreres som BeskrivendeHjelpelinjeAnlegg. Topp av dam registreres som BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rste h&#248;yde p&#229; dammen med tanke p&#229; vannstanden ved flom.
@@ -4732,8 +4904,9 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant dam. Følger terrenget og høyeste tillatte reguleringsvannstand
@@ -4758,8 +4931,9 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
  
 <<<
  
-===== Egenskapstabell for objekttype: Demning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Demning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -4769,7 +4943,7 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -4789,6 +4963,11 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4842,8 +5021,8 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |===
@@ -4852,7 +5031,7 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
 '''
  
 [[elveforbygning]]
-==== «FeatureType» Elveforbygning
+=== Objekttype: Elveforbygning
 *Definisjon fra FKB produktspesifikasjon*: konstruksjon i eller langs vassdrag for å sikre mot erosjon, flom eller som miljøtiltak
  
  
@@ -4860,7 +5039,8 @@ image::figurer/demning2.png[link=figurer/demning2.png, Alt="Eksempel på registr
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png, Alt="Illustrasjon fra produktspesifikasjon: Elveforbygning"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Omfatter oppbygde hindringer som skal hindre elven i &#229; flomme ut over sine bredder.
 
 Topp av elveforbygning registreres som 
@@ -4868,8 +5048,9 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant elveforbygning mot terreng
@@ -4897,8 +5078,9 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
  
 <<<
  
-===== Egenskapstabell for objekttype: Elveforbygning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Elveforbygning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -4908,7 +5090,7 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -4928,6 +5110,11 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -4981,8 +5168,8 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |===
@@ -4991,7 +5178,7 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 '''
  
 [[elveterskel]]
-==== «FeatureType» Elveterskel
+=== Objekttype: Elveterskel
 *Definisjon fra FKB produktspesifikasjon*: kunstig oppbygning i elver som brukes for å lage vannspeil i elveløpet
  
  
@@ -5000,8 +5187,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av elveterskel
@@ -5026,8 +5214,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Elveterskel
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Elveterskel
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5037,7 +5226,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5057,6 +5246,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5110,8 +5304,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |===
@@ -5120,17 +5314,19 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[fiktivavgrensningsforanlegg]]
-==== «FeatureType» FiktivAvgrensningsForAnlegg
+=== Objekttype: FiktivAvgrensningsForAnlegg
 *Definisjon fra FKB produktspesifikasjon*: fiktiv avgrensningslinje for anlegg
 Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anlegg og det mangler en eller flere avgrensingslinjer.
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai. 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Der man kan anta at Kai går over til noe annet (terreng/veg/bygning etc.)
@@ -5155,8 +5351,9 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
  
 <<<
  
-===== Egenskapstabell for objekttype: FiktivAvgrensningsForAnlegg
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: FiktivAvgrensningsForAnlegg
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5166,7 +5363,7 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5186,6 +5383,11 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5209,8 +5411,8 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -5219,7 +5421,7 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
 '''
  
 [[fiskehjell]]
-==== «FeatureType» Fiskehjell
+=== Objekttype: Fiskehjell
 *Definisjon fra FKB produktspesifikasjon*: anordning bygd opp for tørking av fisk
  
  
@@ -5239,8 +5441,9 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av fiskehjell
@@ -5265,8 +5468,9 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
  
 <<<
  
-===== Egenskapstabell for objekttype: Fiskehjell
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Fiskehjell
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5276,7 +5480,7 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5296,6 +5500,11 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5349,8 +5558,8 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |tilhørendeMøne
@@ -5363,7 +5572,7 @@ image::figurer/fiskehjell2.png[link=figurer/fiskehjell2.png, Alt="Registrering a
 '''
  
 [[fiskehjellmøne]]
-==== «FeatureType» FiskehjellMøne
+=== Objekttype: FiskehjellMøne
 *Definisjon fra FKB produktspesifikasjon*: toppen av rammeverket for fiskehjell
  
  
@@ -5372,8 +5581,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp møne
@@ -5398,8 +5608,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: FiskehjellMøne
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: FiskehjellMøne
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5409,7 +5620,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5429,6 +5640,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5482,8 +5698,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -5492,7 +5708,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[fisketrapp]]
-==== «FeatureType» Fisketrapp
+=== Objekttype: Fisketrapp
 *Definisjon fra FKB produktspesifikasjon*: innretning i elver for at fisken kan vandre oppover elven
  
  
@@ -5501,8 +5717,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant fisketrapp
@@ -5527,8 +5744,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Fisketrapp
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Fisketrapp
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5538,7 +5756,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5558,6 +5776,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5611,8 +5834,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -5621,15 +5844,16 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[flytebrygge]]
-==== «FeatureType» Flytebrygge
-*Definisjon fra FKB produktspesifikasjon*: brygge som er forankret til bunn og hvor plasseringen kan avhenge av vind og strømretning
+=== Objekttype: Flytebrygge
+*Definisjon fra FKB produktspesifikasjon*: flytende plattform som er forankret til bunn og hvor plasseringen kan avhenge av vind og str&#248;mretning
  
  
 .Illustrasjon fra produktspesifikasjon av Flytebrygge
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png, Alt="Illustrasjon fra produktspesifikasjon: Flytebrygge"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Flytebrygger (i havet) ligger normalt helt ute i sj&#248;en, og skal ikke krysse eller tangere kystkonturen.
  
  
@@ -5639,8 +5863,9 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant flytebrygge
@@ -5668,8 +5893,9 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
  
 <<<
  
-===== Egenskapstabell for objekttype: Flytebrygge
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Flytebrygge
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5679,7 +5905,7 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5699,6 +5925,11 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5752,13 +5983,17 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
+|tilhørendeUtligger
+|«featureType» FlytebryggeUtligger
+|..TILHØRENDEUTLIGGER
+|[0..*]
 |tilhørendeLandgang
 |«featureType» FlytebryggeLandgang
-|..TILHØRENDELANDGANG
+|..TILHØRENDELANGANG
 |[0..*]
 |===
  
@@ -5766,7 +6001,7 @@ image::figurer/flytebrygge_landgang.png[link=figurer/flytebrygge_landgang.png, A
 '''
  
 [[flytebryggelandgang]]
-==== «FeatureType» FlytebryggeLandgang
+=== Objekttype: FlytebryggeLandgang
 *Definisjon fra FKB produktspesifikasjon*: landgang for flytebrygger
  
  
@@ -5775,8 +6010,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant landgang
@@ -5804,8 +6040,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: FlytebryggeLandgang
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: FlytebryggeLandgang
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5815,7 +6052,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5835,6 +6072,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -5888,8 +6130,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -5897,40 +6139,152 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 <<<
 '''
  
-[[kai]]
-==== «FeatureType» Kai
-*Definisjon fra FKB produktspesifikasjon*: angivelse av  innretninger som er satt opp for &#229; betjene b&#229;ter ved lasting- lossing og landligge.
-
-Merknad: Kai er utvidet til ogs&#229; &#229; kunne v&#230;re bare et fort&#248;yningsanlegg- f.eks. enkeltst&#229;ende metallring for fastgj&#248;ring av skip.
+[[flytebryggeutligger]]
+=== Objekttype: FlytebryggeUtligger
+*Definisjon fra FKB produktspesifikasjon*: Utligger for fort&#248;yning av mindre b&#229;ter som er b&#229;ter som er forankret i flytebrygge.
  
  
-.Illustrasjon fra produktspesifikasjon av Kai
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kai.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kai.png, Alt="Illustrasjon fra produktspesifikasjon: Kai"]
+.Illustrasjon fra produktspesifikasjon av FlytebryggeUtligger
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png, Alt="Illustrasjon fra produktspesifikasjon: FlytebryggeUtligger"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Kai registreres som flate med delt geometri og avgrenses av KaiFront og FiktivavgrensningsForAnlegg
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: FlytebryggeUtligger
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|senterlinje
+|GM_Curve
+|.GM_CURVE
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[kaibrygge]]
+=== Objekttype: KaiBrygge
+*Definisjon fra FKB produktspesifikasjon*: platformkonstruksjon langs land eller fra land og ut i vannet, brukt som fort&#248;yningssted for st&#248;rre eller mindre fart&#248;yer. 
+Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registeres under konstruksjonen
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av KaiBrygge
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png, Alt="Illustrasjon fra produktspesifikasjon: KaiBrygge"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+KaiBrygge registreres som flate med delt geometri og avgrenses av KaiBryggeKant og FiktivavgrensningsForAnlegg.
 
-Kriterier for klassifisering av Kai vs. Brygge:
+For tekniske konstruksjoner langs vann som ikke er beregnet for &#229; legge til med b&#229;t registreres ikke KaiBrygge. Andre typer objekter (molo, mur, trapp, vegkant etc.) i FKB benyttes i stedet dersom objektet omfattes av definisjonen for disse. 
 
-- Kaier er st&#248;rre
-
-- Kaier er oftest bygget i betong/stein
-
-- Kaier er knyttet til n&#230;ringsvirksomhet 
-
-
-Kaianlegg blir ogs&#229; registrert i Havnedata. Det kan v&#230;re aktuelt &#229; levere manus for fotogrammetrisk konstruksjon/ajourhold av Kai/Kaifront i FKB-BygnAnlegg basert p&#229; datainnholdet i Havnedata. 
+Kaier blir ogs&#229; registrert i Havnedata. Det kan v&#230;re aktuelt &#229; levere manus for fotogrammetrisk konstruksjon/ajourhold av Kai/Kaifront i FKB-BygnAnlegg basert p&#229; datainnholdet i Havnedata. 
  
  
 '''
-.Eksempele på registrering av Kai. Avgrenset av KaiFront (rød strek) og FiktivAvgrensningsForAnlegg (blå strek)
-image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av Kai. Avgrenset av KaiFront (rød strek) og FiktivAvgrensningsForAnlegg (blå strek)"]
+.Eksempel på registrering av KaiBryggekant (rød helstrek), FiktivAvgrensningForAnlegg (rød stiplet), MurLoddrett (blått), AnnetGjerde (gult), Trapp (grønt).
+image::figurer/kaibryggei.png[link=figurer/kaibryggei.png, Alt="Eksempel på registrering av KaiBryggekant (rød helstrek), FiktivAvgrensningForAnlegg (rød stiplet), MurLoddrett (blått), AnnetGjerde (gult), Trapp (grønt)."]
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Se avgrensningsobjekter
@@ -5958,8 +6312,9 @@ image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av 
  
 <<<
  
-===== Egenskapstabell for objekttype: Kai
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: KaiBrygge
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -5969,7 +6324,7 @@ image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av 
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -5989,6 +6344,11 @@ image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av 
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6012,8 +6372,8 @@ image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av 
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |havnedatapeker
@@ -6026,23 +6386,25 @@ image::figurer/Kai.png[link=figurer/Kai.png, Alt="Eksempele på registrering av 
 <<<
 '''
  
-[[kaifront]]
-==== «FeatureType» KaiFront
+[[kaibryggekant]]
+=== Objekttype: KaiBryggeKant
 *Definisjon fra FKB produktspesifikasjon*: avgrensning av kai mot vann.
  
  
-.Illustrasjon fra produktspesifikasjon av KaiFront
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaifront.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaifront.png, Alt="Illustrasjon fra produktspesifikasjon: KaiFront"]
+.Illustrasjon fra produktspesifikasjon av KaiBryggeKant
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png, Alt="Illustrasjon fra produktspesifikasjon: KaiBryggeKant"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Kaifront registreres for der Kai grenser mot vann.
 
 Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objekt kun skal omfatte en "b&#229;tplass". Dersom dette kravet skal gjelde ogs&#229; ved konstruksjon av FKB-BygnAnlegg m&#229; det leveres manus for oppdeling da dette ikke n&#248;dvendigvis er lett &#229; tolke fra flybilder.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant Kai (sammenfallende med KystkonturTekniskeAnlegg)
@@ -6067,8 +6429,9 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
  
 <<<
  
-===== Egenskapstabell for objekttype: KaiFront
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: KaiBryggeKant
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6078,7 +6441,7 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6098,6 +6461,11 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6151,13 +6519,8 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
-|[1..1]
- 
-|havnedatapeker
-|URI
-|..HAVNEDATAPEKER
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |===
@@ -6166,7 +6529,7 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
 '''
  
 [[molo]]
-==== «FeatureType» Molo
+=== Objekttype: Molo
 *Definisjon fra FKB produktspesifikasjon*: kunstig eller naturlig oppbygning som demper eller tilintetgjør bølgebevegelser i sjøen
  
  
@@ -6174,7 +6537,8 @@ Kaifront registreres ogs&#229; i Havnedata. Der er det et krav om at hvert objek
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png, Alt="Illustrasjon fra produktspesifikasjon: Molo"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Toppen av Molo registreres med BeskrivendeHjelpelinjeAnlegg
  
  
@@ -6184,8 +6548,9 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant molo ved vannets referansenivå (middelhøyvannstand)
@@ -6213,8 +6578,9 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
  
 <<<
  
-===== Egenskapstabell for objekttype: Molo
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Molo
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6224,7 +6590,7 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6244,6 +6610,11 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6297,8 +6668,8 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
 |[0..1]
  
 |område
-|Flate
-|.FLATE
+|GM_Surface
+|.GM_SURFACE
 |[1..1]
  
 |medium
@@ -6312,8 +6683,8 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
 '''
  
 [[oppdrettskar]]
-==== «FeatureType» Oppdrettskar
-*Definisjon fra FKB produktspesifikasjon*: kar i sjøen for oppdrett av fisk
+=== Objekttype: Oppdrettskar
+*Definisjon fra FKB produktspesifikasjon*: kar for oppdrett av fisk
  
  
 .Illustrasjon fra produktspesifikasjon av Oppdrettskar
@@ -6321,8 +6692,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant kar
@@ -6347,8 +6719,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Oppdrettskar
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Oppdrettskar
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6358,7 +6731,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6378,6 +6751,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6431,8 +6809,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |grense
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -6445,8 +6823,131 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 <<<
 '''
  
+[[oppdrettslokalitet]]
+=== Objekttype: Oppdrettslokalitet
+*Definisjon fra FKB produktspesifikasjon*: fast anlegg for oppdrett av fisk i vann
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Oppdrettslokalitet
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png, Alt="Illustrasjon fra produktspesifikasjon: Oppdrettslokalitet"]
+ 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Oppdrettslokalitet
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.GM_SURFACE
+|[1..1]
+ 
+|eksternpeker
+|URI
+|..EKSTERNPEKER
+|[0..1]
+ 
+|===
+ 
+<<<
+'''
+ 
 [[pælebunt]]
-==== «FeatureType» Pælebunt
+=== Objekttype: Pælebunt
 *Definisjon fra FKB produktspesifikasjon*: bunt av stokker som er drevet ned i sjøbunnen, vann eller elver for å lede trafikken eller tømmer
  
  
@@ -6455,8 +6956,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter pælebunt
@@ -6481,8 +6983,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
  
 <<<
  
-===== Egenskapstabell for objekttype: Pælebunt
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Pælebunt
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6492,7 +6995,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6512,6 +7015,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6565,8 +7073,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 |[0..1]
  
 |posisjon
-|Punkt
-|.PUNKT
+|GM_Point
+|.GM_POINT
 |[1..1]
  
 |høydereferanse
@@ -6580,20 +7088,22 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 '''
  
 [[rørgate]]
-==== «FeatureType» Rørgate
-*Definisjon fra FKB produktspesifikasjon*: rør som leder vann frem til foredlingsanlegg
+=== Objekttype: Rørgate
+*Definisjon fra FKB produktspesifikasjon*: store r&#248;r som leder vann frem til foredlingsanlegg, kraftverk, fjernvarmeanlegg, annet vassdrag osv. 
  
  
 .Illustrasjon fra produktspesifikasjon av Rørgate
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png, Alt="Illustrasjon fra produktspesifikasjon: Rørgate"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registreres som fundament.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter rørgate
@@ -6618,8 +7128,9 @@ Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registr
  
 <<<
  
-===== Egenskapstabell for objekttype: Rørgate
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Rørgate
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6629,7 +7140,7 @@ Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registr
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6649,6 +7160,11 @@ Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registr
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6702,8 +7218,8 @@ Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registr
 |[0..1]
  
 |senterlinje
-|Kurve
-|.KURVE
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |høydereferanse
@@ -6721,47 +7237,28 @@ Alle r&#248;r i r&#248;rgaten registreres. Fundamentene, ofte av betong, registr
 <<<
 '''
  
-[[sluse]]
-==== «FeatureType» Sluse
-*Definisjon fra FKB produktspesifikasjon*: byggverk i elv eller kanal med flere slusekamre som gjør det mulig å heve eller senke fartøy fra et vann-nivå til et annet
+[[slipp]]
+=== Objekttype: Slipp
+*Definisjon fra FKB produktspesifikasjon*: bane som mindre og middelstore fartøyer kan hales opp ved landsetting, bedding
  
  
-.Illustrasjon fra produktspesifikasjon av Sluse
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png, Alt="Illustrasjon fra produktspesifikasjon: Sluse"]
+.Illustrasjon fra produktspesifikasjon av Slipp
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png, Alt="Illustrasjon fra produktspesifikasjon: Slipp"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Beskrivende linjer inne p&#229; sluseanlegget kan registreres som BeskrivendeHjelpelinjeAnlegg
  
- 
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
-|FKB grunnrissreferanse
-|Ytterkant sluseanlegg, langs terrenget.
- 
-|FKB høydereferanse
-|Topp i ytterkant av anlegget. Knekklinjer og sprang over 0,5m registreres
- 
-|FKB-A
-|Påkrevd registrering
- 
-|FKB-B
-|Påkrevd registrering
- 
-|FKB-C
-|Påkrevd registrering
- 
-|FKB-D
-|Påkrevd registrering
- 
 |===
  
  
 <<<
  
-===== Egenskapstabell for objekttype: Sluse
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Slipp
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -6771,7 +7268,7 @@ Beskrivende linjer inne p&#229; sluseanlegget kan registreres som BeskrivendeHje
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[0..1]
+|[1..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -6791,6 +7288,11 @@ Beskrivende linjer inne p&#229; sluseanlegget kan registreres som BeskrivendeHje
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
 |[0..1]
  
 |datafangstdato
@@ -6844,8 +7346,153 @@ Beskrivende linjer inne p&#229; sluseanlegget kan registreres som BeskrivendeHje
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
+|[1..1]
+ 
+|høydereferanse
+|«CodeList» Høydereferanse
+|..HREF
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
+[[sluse]]
+=== Objekttype: Sluse
+*Definisjon fra FKB produktspesifikasjon*: byggverk i elv eller kanal med flere slusekamre som gjør det mulig å heve eller senke fartøy fra et vann-nivå til et annet
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Sluse
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png, Alt="Illustrasjon fra produktspesifikasjon: Sluse"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Beskrivende linjer inne p&#229; sluseanlegget kan registreres som BeskrivendeHjelpelinjeAnlegg
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB grunnrissreferanse
+|Ytterkant sluseanlegg, langs terrenget.
+ 
+|FKB høydereferanse
+|Topp i ytterkant av anlegget. Knekklinjer og sprang over 0,5m registreres
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Sluse
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|grense
+|GM_Curve
+|.GM_CURVE
 |[1..1]
  
 |sluseType
