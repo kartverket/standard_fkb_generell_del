@@ -525,7 +525,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truekvalitetsklasser">4.2. Kvalitetsklasser</a></li>
 </ul>
 </li>
-<li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a></li>
+<li><a href="#truetilleggsinformasjon">5. Tilleggsinformasjon</a>
+<ul class="sectlevel2">
+<li><a href="#truegenerelle-prinsipper-for-registrering-av-høydeverdier">5.1. Generelle prinsipper for registrering av høydeverdier</a>
+<ul class="sectlevel3">
+<li><a href="#truekrav-til-registrering-av-høydesprang">5.1.1. Krav til registrering av høydesprang</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#trueforklaring-til-registreringsinstrukser-for-fotogrammetrisk-registrering">Vedlegg A: Forklaring til registreringsinstrukser for fotogrammetrisk registrering</a>
 <ul class="sectlevel2">
 <li><a href="#trueuml-modell-for-fotogrammetriske-registreringsinsrukser">A.1. UML-modell for Fotogrammetriske registreringsinsrukser</a></li>
@@ -712,7 +720,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">top (toppen av objektet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">topp (toppen av objektet)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardverdi ved fotogrammetrisk registrering. For de fleste objekttyper er dette også presisert på objekttypen</p></td>
 </tr>
 <tr>
@@ -742,7 +750,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <div class="ulist">
 <ul>
 <li>
-<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn. Dvs. at splitting innebærer ett endret objekt (<em>lokalid</em> beholdes) og et nytt objekt (uten <em>lokalid</em>), mens sammenføying innebærer ett endret objekt (<em>lokalid</em> beholdes) og et slettet objekt slettes.</p>
+<p>I en del situasjoner må eksisterende objekter splittes eller sammenføyes i forbindelse med fotogrammetrisk registrering. De generelle reglene for <a href="https://sosi.geonorge.no/Standarder/FKB_generell/5.0#trueunik-identifikasjon-av-kartobjektene-i-fkb">id-håndtering i FKB</a> skal da legges til grunn.</p>
 </li>
 </ul>
 </div>
@@ -784,7 +792,7 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/registre
 <p>Omklassifisering av angitte objekttyper i tråd med nye regler/krav i FKB-produktspesifikasjon</p>
 </li>
 <li>
-<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF FOT til HREF TOP)</p>
+<p>Oppgradering av angitte objekttypers geometrirepresentasjon (f.eks. hvis det bestemmes at en objekttype skal endres fra HREF fot til HREF topp)</p>
 </li>
 <li>
 <p>Påføring av egenskaper på alle objekter av en objekttype</p>
@@ -839,11 +847,11 @@ bygninger som deles av avgrensningspolygonet</p>
 </div>
 </li>
 <li>
-<p>Flate-objekter som skal verifiseres i forbindelse med ajourføring bør ikke splittes. Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet</p>
+<p>Flate-objekter som verifiseres i forbindelse med ajourføring skal ikke splittes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Særlig store sammenhengende flateobjekter (vannflater, vegflater etc.) kan splittes i nærheten av avgrensningspolygon dersom dette er hensiktsmessig.</p>
+<p>Dersom det ikke kan verifiseres fotogrammetrisk at hele objektet fortsatt finnes så skal objektet ikke endres (merkes med VERIFISERINGSDATO) selv om store deler av objektet er innenfor prosjektområdet.</p>
 </li>
 </ul>
 </div>
@@ -853,7 +861,7 @@ bygninger som deles av avgrensningspolygonet</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter enten i eller like innenfor avgrensningspolygonet</p>
+<p>Eksisterende data utenfor prosjektområdet som naturlig skal knyttes sammen med nye kurve-objekter splittes og knyttes til nye objekter i siste punkt som ligger innenfor avgrensningspolygonet</p>
 </li>
 </ul>
 </div>
@@ -894,6 +902,9 @@ bygninger som deles av avgrensningspolygonet</p>
 </div>
 <div class="paragraph">
 <p>Mange av objekttypene i FKB-BygnAnlegg inneholder mulighet for kobling av objektene i FKB mot andre systemer/databaser (<em>nvdbpeker</em>, <em>nrlpeker</em>, <em>eksternpeker</em> etc.). Dette er ikke informasjon som egner seg for fotogrammetrisk kartlegging, men dersom slike pekere er etablert i dataene er det naturlig at de bevares gjennom fotogrammetrisk ajourhold. Håndtering av slik informasjon avtales nærmere i det enkelte kartleggingsprosjekt dersom det er aktuelt.</p>
+</div>
+<div class="paragraph">
+<p>Se også <a href="#truegenerelle-prinsipper-for-registrering-av-høydeverdier">Generelle prinsipper for registrering av høydeverdier</a> under kapittel 5.</p>
 </div>
 <div style="page-break-after: always;"></div>
 <hr>
@@ -1089,7 +1100,7 @@ Merknad: Med vanskelig farbart område menes en elv, et juv eller andre naturlig
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -1314,7 +1325,7 @@ Eksempler:
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -1513,7 +1524,7 @@ veg/jernbane, skal disse objektene kodes med MEDIUM U og kulvert sl&#248;yfes.</
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -1709,7 +1720,7 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -1891,7 +1902,7 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -2064,13 +2075,13 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -2128,11 +2139,11 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
@@ -2261,13 +2272,13 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -2308,6 +2319,22 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <td class="tableblock halign-left valign-top"><p class="tableblock">Topp flaggstang</p></td>
 </tr>
 <tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle synlige flaggstenger</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle synlige flaggstenger</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flaggstenger høyere enn 15m</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D minstestørrelse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flaggstenger høyere enn 15m</p></td>
+</tr>
+<tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
 </tr>
@@ -2317,11 +2344,11 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
 </tr>
 </tbody>
 </table>
@@ -2448,7 +2475,7 @@ synlige. Forl&#248;pet under vegen/jernbanen er ukjent. H&#248;ydereferansen kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -2519,11 +2546,11 @@ Merknad: Selve konstruksjonen opp&#229; fundamentet og dens funksjon vil v&#230;
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C minstestørrelse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fundamenter med areal større enn 40m2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fundamenter med areal større enn 20m2</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D minstestørrelse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fundamenter med areal større enn 40m2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fundamenter med areal større enn 20m2</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
@@ -2660,7 +2687,7 @@ Merknad: Selve konstruksjonen opp&#229; fundamentet og dens funksjon vil v&#230;
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -2876,13 +2903,13 @@ plottes.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -3098,13 +3125,13 @@ minstem&#229;l.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -3313,13 +3340,13 @@ Eksempel: M&#229;let&#229;rn og stupet&#229;rn</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -3583,7 +3610,7 @@ Eksempel: M&#229;let&#229;rn og stupet&#229;rn</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -3849,7 +3876,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -4006,7 +4033,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -4187,7 +4214,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -4369,7 +4396,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -4576,7 +4603,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -4828,7 +4855,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -5016,7 +5043,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -5233,7 +5260,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -5425,7 +5452,7 @@ med KVALITET.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -5611,13 +5638,13 @@ Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[0..1]</p></td>
 </tr>
 <tr>
@@ -5851,7 +5878,7 @@ Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -6041,7 +6068,7 @@ Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -6233,7 +6260,7 @@ Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -6504,7 +6531,7 @@ Omfatter detaljer som f.eks. bautaer, statuer, fontener, basseng, lekeapparater 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -6700,7 +6727,7 @@ Merknad: Tribune som er innredet for bruk, f.eks. som kontor eller butikk, vil v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -6727,6 +6754,13 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 </div>
 <div class="paragraph">
 <p>Prinsipp for registrering av h&#248;ydesprang angitt under Skjerm gjelder ogs&#229; for BeskrivendehjelpelinjeAnlegg</p>
+</div>
+<hr>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="figurer/beskrivendehjelpelinjeanlegg.png"><img src="figurer/beskrivendehjelpelinjeanlegg.png" alt="beskrivendehjelpelinjeanlegg"></a>
+</div>
+<div class="title">Figur 59. Viser eksempel på bruk av BeskrivendeHjelpelinjeAnlegg (røde streker) til registrering av fortøyningsanlegg. Konstruksjonen vist med oransje strek skal også registreres i FKB-BygnAnlegg, f.eks. ved bruk av objekttype Fundament eller alternativt Murloddrett.</div>
 </div>
 <h4 id="trueføringer-30" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -6878,7 +6912,7 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -6926,7 +6960,7 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_demning.png" alt="objtype demning"></a>
 </div>
-<div class="title">Figur 59. Illustrasjon fra produktspesifikasjon av Demning</div>
+<div class="title">Figur 60. Illustrasjon fra produktspesifikasjon av Demning</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-24" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -6940,14 +6974,14 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 <div class="content">
 <a class="image" href="figurer/demning.png"><img src="figurer/demning.png" alt="demning"></a>
 </div>
-<div class="title">Figur 60. Skisse som viser høydereferanse for registrering av demning. Demningens avgrensning registreres som de røde objektene. Toppen av Demning registreres med BeskrivendeHjelpelinjeAnlegg</div>
+<div class="title">Figur 61. Skisse som viser høydereferanse for registrering av demning. Demningens avgrensning registreres som de røde objektene. Toppen av Demning registreres med BeskrivendeHjelpelinjeAnlegg</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/demning2.png"><img src="figurer/demning2.png" alt="demning2"></a>
 </div>
-<div class="title">Figur 61. Eksempel på registrering av Demning. Rød linje angir avgrensning av Demning, mens grønn linje angir BeskrivendeHjelpelinjeAnlegg.</div>
+<div class="title">Figur 62. Eksempel på registrering av Demning. Rød linje angir avgrensning av Demning, mens grønn linje angir BeskrivendeHjelpelinjeAnlegg.</div>
 </div>
 <h4 id="trueføringer-31" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -7099,7 +7133,7 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -7116,7 +7150,7 @@ Markerte linjer p&#229; en demning, molo, sluse, pipe, t&#229;rn, murloddrett og
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveforbygning.png" alt="objtype elveforbygning"></a>
 </div>
-<div class="title">Figur 62. Illustrasjon fra produktspesifikasjon av Elveforbygning</div>
+<div class="title">Figur 63. Illustrasjon fra produktspesifikasjon av Elveforbygning</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-25" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -7280,7 +7314,7 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -7297,7 +7331,7 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveterskel.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_elveterskel.png" alt="objtype elveterskel"></a>
 </div>
-<div class="title">Figur 63. Illustrasjon fra produktspesifikasjon av Elveterskel</div>
+<div class="title">Figur 64. Illustrasjon fra produktspesifikasjon av Elveterskel</div>
 </div>
 <h4 id="trueføringer-33" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -7449,7 +7483,7 @@ BeskrivendeHjelpelinjeAnlegg. Det er viktig &#229; f&#229; registrert st&#248;rs
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -7581,7 +7615,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -7598,21 +7632,21 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjell.png" alt="objtype fiskehjell"></a>
 </div>
-<div class="title">Figur 64. Illustrasjon fra produktspesifikasjon av Fiskehjell</div>
+<div class="title">Figur 65. Illustrasjon fra produktspesifikasjon av Fiskehjell</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/fiskehjell1.png"><img src="figurer/fiskehjell1.png" alt="fiskehjell1"></a>
 </div>
-<div class="title">Figur 65. Registrering av ytterkant av Fiskehjell med møne (HREF = FOT)</div>
+<div class="title">Figur 66. Registrering av ytterkant av Fiskehjell med møne (HREF = FOT)</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="figurer/fiskehjell2.png"><img src="figurer/fiskehjell2.png" alt="fiskehjell2"></a>
 </div>
-<div class="title">Figur 66. Registrering av ytterkant av Fiskehjell uten møne (HREF = TOP)</div>
+<div class="title">Figur 67. Registrering av ytterkant av Fiskehjell uten møne (HREF = TOP)</div>
 </div>
 <h4 id="trueføringer-35" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -7764,7 +7798,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -7787,7 +7821,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjellmone.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fiskehjellmone.png" alt="objtype fiskehjellmone"></a>
 </div>
-<div class="title">Figur 67. Illustrasjon fra produktspesifikasjon av FiskehjellMøne</div>
+<div class="title">Figur 68. Illustrasjon fra produktspesifikasjon av FiskehjellMøne</div>
 </div>
 <h4 id="trueføringer-36" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -7939,7 +7973,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -7956,7 +7990,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fisketrapp.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_fisketrapp.png" alt="objtype fisketrapp"></a>
 </div>
-<div class="title">Figur 68. Illustrasjon fra produktspesifikasjon av Fisketrapp</div>
+<div class="title">Figur 69. Illustrasjon fra produktspesifikasjon av Fisketrapp</div>
 </div>
 <h4 id="trueføringer-37" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -8108,7 +8142,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -8125,7 +8159,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge.png" alt="objtype flytebrygge"></a>
 </div>
-<div class="title">Figur 69. Illustrasjon fra produktspesifikasjon av Flytebrygge</div>
+<div class="title">Figur 70. Illustrasjon fra produktspesifikasjon av Flytebrygge</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-27" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -8136,7 +8170,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="figurer/flytebrygge_landgang.png"><img src="figurer/flytebrygge_landgang.png" alt="flytebrygge landgang"></a>
 </div>
-<div class="title">Figur 70. Skisse som viser registrering av Flytebrygge og FlytebryggeLandgang</div>
+<div class="title">Figur 71. Skisse som viser registrering av Flytebrygge og FlytebryggeLandgang</div>
 </div>
 <h4 id="trueføringer-38" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -8292,7 +8326,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -8321,7 +8355,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebryggelandgang.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebryggelandgang.png" alt="objtype flytebryggelandgang"></a>
 </div>
-<div class="title">Figur 71. Illustrasjon fra produktspesifikasjon av FlytebryggeLandgang</div>
+<div class="title">Figur 72. Illustrasjon fra produktspesifikasjon av FlytebryggeLandgang</div>
 </div>
 <h4 id="trueføringer-39" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -8344,19 +8378,19 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Påkrevd registrering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
 </tr>
 </tbody>
 </table>
@@ -8477,7 +8511,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -8494,10 +8528,40 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_flytebrygge_utligger.png" alt="objtype flytebrygge utligger"></a>
 </div>
-<div class="title">Figur 72. Illustrasjon fra produktspesifikasjon av FlytebryggeUtligger</div>
+<div class="title">Figur 73. Illustrasjon fra produktspesifikasjon av FlytebryggeUtligger</div>
 </div>
 <h4 id="trueføringer-40" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB grunnrissreferanse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Senter utligger</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB høydereferanse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Topp utligger</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-A</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-B</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opsjonell registrering</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-C</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registreres ikke</p></td>
+</tr>
+</tbody>
 </table>
 <div style="page-break-after: always;"></div>
 <h4 id="trueegenskapstabell-for-objekttype-flytebryggeutligger" class="discrete">Egenskapstabell for objekttype: FlytebryggeUtligger</h4>
@@ -8616,7 +8680,7 @@ Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anle
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -8634,7 +8698,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibrygge.png" alt="objtype kaibrygge"></a>
 </div>
-<div class="title">Figur 73. Illustrasjon fra produktspesifikasjon av KaiBrygge</div>
+<div class="title">Figur 74. Illustrasjon fra produktspesifikasjon av KaiBrygge</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-28" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -8649,9 +8713,9 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="figurer/kaibryggei.png"><img src="figurer/kaibryggei.png" alt="kaibryggei"></a>
+<a class="image" href="figurer/kaibrygge.png"><img src="figurer/kaibrygge.png" alt="kaibrygge"></a>
 </div>
-<div class="title">Figur 74. Eksempel på registrering av KaiBryggekant (rød helstrek), FiktivAvgrensningForAnlegg (rød stiplet), MurLoddrett (blått), AnnetGjerde (gult), Trapp (grønt).</div>
+<div class="title">Figur 75. Eksempel på registrering av KaiBryggekant (rød helstrek), FiktivAvgrensningForAnlegg (rød stiplet), MurLoddrett (blått), AnnetGjerde (gult), Trapp (grønt).</div>
 </div>
 <h4 id="trueføringer-41" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -8771,7 +8835,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -8794,7 +8858,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_kaibryggekant.png" alt="objtype kaibryggekant"></a>
 </div>
-<div class="title">Figur 75. Illustrasjon fra produktspesifikasjon av KaiBryggeKant</div>
+<div class="title">Figur 76. Illustrasjon fra produktspesifikasjon av KaiBryggeKant</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-29" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -8953,7 +9017,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 </tbody>
@@ -8970,7 +9034,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_molo.png" alt="objtype molo"></a>
 </div>
-<div class="title">Figur 76. Illustrasjon fra produktspesifikasjon av Molo</div>
+<div class="title">Figur 77. Illustrasjon fra produktspesifikasjon av Molo</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-30" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -8981,7 +9045,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="figurer/molo_kai.png"><img src="figurer/molo_kai.png" alt="molo kai"></a>
 </div>
-<div class="title">Figur 77. Eksempel på registering av situasjon der Molo ligger inntil Kai</div>
+<div class="title">Figur 78. Eksempel på registering av situasjon der Molo ligger inntil Kai</div>
 </div>
 <h4 id="trueføringer-43" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -9137,7 +9201,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -9160,7 +9224,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettskar.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettskar.png" alt="objtype oppdrettskar"></a>
 </div>
-<div class="title">Figur 78. Illustrasjon fra produktspesifikasjon av Oppdrettskar</div>
+<div class="title">Figur 79. Illustrasjon fra produktspesifikasjon av Oppdrettskar</div>
 </div>
 <h4 id="trueføringer-44" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -9312,7 +9376,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -9335,7 +9399,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png" alt="objtype oppdrettslokalitet"></a>
 </div>
-<div class="title">Figur 79. Illustrasjon fra produktspesifikasjon av Oppdrettslokalitet</div>
+<div class="title">Figur 80. Illustrasjon fra produktspesifikasjon av Oppdrettslokalitet</div>
 </div>
 <h4 id="trueføringer-45" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -9457,7 +9521,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">område</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Surface</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_SURFACE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.FLATE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -9480,7 +9544,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_palebunt.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_palebunt.png" alt="objtype palebunt"></a>
 </div>
-<div class="title">Figur 80. Illustrasjon fra produktspesifikasjon av Pælebunt</div>
+<div class="title">Figur 81. Illustrasjon fra produktspesifikasjon av Pælebunt</div>
 </div>
 <h4 id="trueføringer-46" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -9632,7 +9696,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">posisjon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_POINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.PUNKT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -9655,7 +9719,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_rorgate.png" alt="objtype rorgate"></a>
 </div>
-<div class="title">Figur 81. Illustrasjon fra produktspesifikasjon av Rørgate</div>
+<div class="title">Figur 82. Illustrasjon fra produktspesifikasjon av Rørgate</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-31" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -9811,7 +9875,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">senterlinje</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -9840,7 +9904,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_slipp.png" alt="objtype slipp"></a>
 </div>
-<div class="title">Figur 82. Illustrasjon fra produktspesifikasjon av Slipp</div>
+<div class="title">Figur 83. Illustrasjon fra produktspesifikasjon av Slipp</div>
 </div>
 <h4 id="trueføringer-48" class="discrete">Føringer</h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -9985,7 +10049,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <div class="content">
 <a class="image" href="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png"><img src="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_sluse.png" alt="objtype sluse"></a>
 </div>
-<div class="title">Figur 83. Illustrasjon fra produktspesifikasjon av Sluse</div>
+<div class="title">Figur 84. Illustrasjon fra produktspesifikasjon av Sluse</div>
 </div>
 <h4 id="truetilleggsinformasjon-for-fotogrammetrisk-registrering-32" class="discrete">Tilleggsinformasjon for fotogrammetrisk registrering</h4>
 <div class="paragraph">
@@ -10141,7 +10205,7 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">grense</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GM_Curve</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.GM_CURVE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.KURVE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">[1..1]</p></td>
 </tr>
 <tr>
@@ -10640,16 +10704,52 @@ Merknad: KaiBrygge kan v&#230;re bygget over vann slik at vannkonturen registere
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="truegenerelle-prinsipper-for-registrering-av-høydeverdier"><a class="anchor" href="#truegenerelle-prinsipper-for-registrering-av-høydeverdier"></a>5.1. Generelle prinsipper for registrering av høydeverdier</h3>
 <div class="paragraph">
-<p>Informasjon ikke angitt</p>
+<p>Det generelle prinsippet for FKB er at dataene registreres i 2.5D med krav til stedfestingsnøyaktighet i både grunnriss og høyde. Kravet til stedfestingsnøyaktighet på høydeverdiene setter krav til registreringen av den enkelte koordinat.</p>
 </div>
+<div class="paragraph">
+<p>Utover dette kravet presiseres det i tillegg at koordinatene bør registreres i naturlige "knekklinjer" på objektene. Altså slik at geometrien fanger opp repoer i trapper, avsatser på tribuner etc. og gir en best mulig gjengivelse av objektet i 3 dimensjoner.</p>
+</div>
+<div class="sect3">
+<h4 id="truekrav-til-registrering-av-høydesprang"><a class="anchor" href="#truekrav-til-registrering-av-høydesprang"></a>5.1.1. Krav til registrering av høydesprang</h4>
+<div class="paragraph">
+<p>Mange objekttyper i FKB kan ha høydesprang. Se f.eks. skisse og beskrivelse under objektttype Skjerm. Dette kan i mange tilfeller også omfatte avgrensningen av flateobjekter som f.eks. Bru. Dersom høydesprangene er større enn verdiene angitt i tabellen under skal det registreres høydesprang. Dvs. at geometrien til objektet registreres 2 punkter med (mer eller mindre) lik koordinat i grunnriss, men ulik høydekoordinat.</p>
+</div>
+<table id="tab-hoydesprang" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabell 8. Høydesprang større enn angitt i tabellen under skal registreres i FKB</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">FKB-Standard</th>
+<th class="tableblock halign-left valign-top">Høydesprang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-A / FKB-B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0,5 m</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-C / FKB-D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 m</p></td>
+</tr>
+</tbody>
+</table>
 <div style="page-break-after: always;"></div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -10696,7 +10796,7 @@ med egne UML-datamodeller for registreringsinstruksene. I korte trekk går dette
 </ul>
 </div>
 <table id="tab-foringer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 8. Føringer for registrering som er angitt i registreringsinstruksene</caption>
+<caption class="title">Tabell 9. Føringer for registrering som er angitt i registreringsinstruksene</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -10831,7 +10931,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-12-20 15:25:00 +0100
+Last updated 2021-12-21 11:38:34 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
