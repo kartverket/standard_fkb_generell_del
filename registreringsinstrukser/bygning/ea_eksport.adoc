@@ -1,11 +1,10 @@
-=== Bygninger
 *Pakkens definisjon:* Pakke som inneholder Bygning og AnnenBygning (flate-objektene)
  
 <<<
 '''
  
 [[annenbygning]]
-==== «FeatureType» AnnenBygning
+=== Objekttype: AnnenBygning
 *Definisjon fra FKB produktspesifikasjon*: bygning som ikke er registrert  i matrikkelen
  
  
@@ -13,7 +12,8 @@
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_annenbygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_annenbygning.png, Alt="Illustrasjon fra produktspesifikasjon: AnnenBygning"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Alle bygninger over minstem&#229;l som ikke har et bygningspunkt fra matrikkelen innenfor bygningsomriss (takkant) registreres som AnnenBygning (flategeometri). 
 Busskur skal registreres som AnnenBygning dersom de er st&#248;rre minstem&#229;let.
 Campingvogner skal ikke registreres. Spikertelt (permanent fortelt til campingvogn som typisk er laget av treverk) i tilknytning til campingvogn skal registreres dersom de er st&#248;rre en minstem&#229;let.
@@ -27,8 +27,9 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Se avgrensningsobjekttyper
@@ -65,8 +66,9 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
  
 <<<
  
-===== Egenskapstabell for objekttype: AnnenBygning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: AnnenBygning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -98,6 +100,11 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -109,7 +116,7 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -119,27 +126,27 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[0..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |vedhengTilAnnenBygning
 |«featureType» Bygningsvedheng
-|..
+|..VEDHENGTILANNENBYGNING
 |[0..*]
 |beskriverAnnenBygning
 |«featureType» BeskrivendeBygningsdetalj
-|..
+|..BESKRIVERANNENBYGNING
 |[0..*]
 |===
  
@@ -147,7 +154,7 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
 '''
  
 [[bygning]]
-==== «FeatureType» Bygning
+=== Objekttype: Bygning
 *Definisjon fra FKB produktspesifikasjon*: bygning som er registrert i matrikkelen
  
  
@@ -155,14 +162,16 @@ image::figurer/annenbygning_minstehoyde.png[link=figurer/annenbygning_minstehoyd
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygning.png, Alt="Illustrasjon fra produktspesifikasjon: Bygning"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Alle bygninger som har et bygningspunkt fra matrikkelen innenfor bygningsomriss (takkant) registreres som Bygning (flategeometri) i forbindelse med fotogrammetrisk registrering. Bygningspunktet fra matrikkelen beholdes som en punktgeometri (representasjonspunkt) p&#229; det samme objektet.
 
 Bygning registreres med delt flategeometri. 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Se avgrensningsobjekttyper
@@ -187,8 +196,9 @@ Bygning registreres med delt flategeometri.
  
 <<<
  
-===== Egenskapstabell for objekttype: Bygning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Bygning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -220,6 +230,11 @@ Bygning registreres med delt flategeometri.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -231,7 +246,7 @@ Bygning registreres med delt flategeometri.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -241,12 +256,12 @@ Bygning registreres med delt flategeometri.
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
@@ -256,42 +271,41 @@ Bygning registreres med delt flategeometri.
 |[1..1]
  
 |bygningstype
-|«CodeList» Bygningstype
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningstype[Bygningstype, window = _blank]
 |..BYGGTYP_NBR
 |[1..1]
  
 |bygningsstatus
-|«CodeList» Bygningsstatus
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/bygningsstatus[Bygningsstatus, window = _blank]
 |..BYGGSTAT
 |[1..1]
  
 |kommunenummer
-|«CodeList» Kommunenummer
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/kommunenummer-alle[Kommunenummer, window = _blank]
 |..KOMM
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |vedhengTilBygning
 |«featureType» Bygningsvedheng
-|..
+|..VEDHENGTILBYGNING
 |[0..*]
 |beskriverBygning
 |«featureType» BeskrivendeBygningsdetalj
-|..
+|..BESKRIVERBYGNING
 |[0..*]
 |===
-=== Bygningsavgrensning
 *Pakkens definisjon:* Pakke som inneholder alle bygningsavgrensende objekter
  
 <<<
 '''
  
 [[takkant]]
-==== «FeatureType» Takkant
+=== Objekttype: Takkant
 *Definisjon fra FKB produktspesifikasjon*: bygningens ytre takflateavgrensing
 Merknad: Høydereferansen er de målte punktene på taket. 
 Merknad: Dersom deler av takkanten ikke er synlig kodes den synlige delen som takkant- og den ikke synlige som fiktiv bygningsavgrensning.
@@ -301,7 +315,8 @@ Merknad: Dersom deler av takkanten ikke er synlig kodes den synlige delen som ta
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takkant.png, Alt="Illustrasjon fra produktspesifikasjon: Takkant"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Der det er sprang i taket som er mindre enn toleransen for 
 stedfestingsn&#248;yaktigheten, registreres skr&#229;linjen fra h&#248;yeste punkt i takkanten til den laveste uten &#229; registrere et punkt i takkanten. 
 
@@ -353,8 +368,9 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterst på tak/takrenne/vindskie
@@ -379,8 +395,9 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
  
 <<<
  
-===== Egenskapstabell for objekttype: Takkant
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Takkant
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -412,6 +429,11 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -423,7 +445,7 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -438,7 +460,7 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -448,12 +470,12 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -463,17 +485,17 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
@@ -488,7 +510,7 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 '''
  
 [[fasadeliv]]
-==== «FeatureType» Fasadeliv
+=== Objekttype: Fasadeliv
 *Definisjon fra FKB produktspesifikasjon*: bygningens ytre avgrensing i fasaderiss
  
  
@@ -496,7 +518,8 @@ image::figurer/takkant_taksprang_nodepunkt.png[link=figurer/takkant_taksprang_no
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fasadeliv.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fasadeliv.png, Alt="Illustrasjon fra produktspesifikasjon: Fasadeliv"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Egner seg ikke for normal fotogrammetrisk registrering, med unntak for bygninger der ingen av veggene har takskjegg.
 
 Fasadeliv kan brukes for bygningsavgrensning under bakken/bergrom o.l og skal da kodes med MEDIUM U.
@@ -514,8 +537,9 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Grunnrissreferanse er hovedfasade/hovedbygg
@@ -540,8 +564,9 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
  
 <<<
  
-===== Egenskapstabell for objekttype: Fasadeliv
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Fasadeliv
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -573,6 +598,11 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -584,7 +614,7 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -599,7 +629,7 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -609,12 +639,12 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -624,17 +654,17 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |høydereferanse
-|«CodeList» Høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
 |[1..1]
  
@@ -649,17 +679,18 @@ image::figurer/fasadeliv_takkant_grunnmur.png[link=figurer/fasadeliv_takkant_gru
 '''
  
 [[grunnmur]]
-==== «FeatureType» Grunnmur
+=== Objekttype: Grunnmur
 *Definisjon fra FKB produktspesifikasjon*: bygningens ytteravgrensning langs grunnmur
-Merknad: Høydereferanse  angis med høydereferanse. Grunnrissreferanse er ytterkant av grunnmur.
-Merknad: Kan benyttes for bygning under oppføring eller for bygning som er revet/nedbrent
+Merknad: H&#248;ydereferanse  angis med h&#248;ydereferanse. Grunnrissreferanse er ytterkant av grunnmur.
+Merknad: Benyttes hovedsaklig for bygning under oppf&#248;ring. For bygninger som revet/nedbrent benyttes objekttyper ruin og mur i FKB-BygnAnlegg
  
  
 .Illustrasjon fra produktspesifikasjon av Grunnmur
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_grunnmur.png, Alt="Illustrasjon fra produktspesifikasjon: Grunnmur"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Grunnmur skal kun brukes for bygning under oppf&#248;ring. Revede bygg/ruiner skal ikke registreres som grunnmur men kan registreres som Ruin i FKB-BygnAnlegg.
 
 Grunnmur kan sammen med Bygningsdelelinje og FiktivBygningsavgrensning danne bygningsavgrensning til AnnenBygning/Bygning. Dersom Takkant finnes, skal denne benyttes til &#229; danne bygningsavgrensning.
@@ -674,8 +705,9 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av grunnmur
@@ -700,8 +732,9 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
  
 <<<
  
-===== Egenskapstabell for objekttype: Grunnmur
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Grunnmur
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -733,6 +766,11 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -744,7 +782,7 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -759,7 +797,7 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -769,12 +807,12 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -784,17 +822,17 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |høydereferanse
-|«CodeList» Høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
 |[1..1]
  
@@ -804,7 +842,7 @@ image::figurer/grunnmur.png[link=figurer/grunnmur.png, Alt="Grunnmur (se også f
 '''
  
 [[bygningsdelelinje]]
-==== «FeatureType» Bygningsdelelinje
+=== Objekttype: Bygningsdelelinje
 *Definisjon fra FKB produktspesifikasjon*: linje mellom to bygninger (bygninger registrert i Matrikkelen) som står inntil hverandre
 Merknad: Det kan ofte være vanskelig å registrere bygningsdelelinjer nøyaktig. Usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50).
  
@@ -813,7 +851,10 @@ Merknad: Det kan ofte være vanskelig å registrere bygningsdelelinjer nøyaktig
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsdelelinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningsdelelinje.png, Alt="Illustrasjon fra produktspesifikasjon: Bygningsdelelinje"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Bygningsdelelinje benyttes til &#229; dele bygningskropper med flere bygningspunkter fra matrikkelen inni, som f.eks. rekkehus.
+
 Bygningsdelelinje kan v&#230;re vanskelig &#229; registrere eksakt ved hjelp av fotogrammetri. Linjen skal imidlertid registreres s&#229; langt det lar seg gj&#248;re. Situasjonsdetaljer som hekk/gjerde kan brukes som grunnlag for &#229; vurdere hvor bygningsdelelinjen g&#229;r.
 
 Der Bygningsdelelinje faller sammen med Taksprang, Bygningslinje eller M&#248;nelinje registreres alltid to objekter.
@@ -834,8 +875,9 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Grunnrissreferanse er linjene den støter til (takkant, eller ev. grunnmur eller fasadeliv).
@@ -860,8 +902,9 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
  
 <<<
  
-===== Egenskapstabell for objekttype: Bygningsdelelinje
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Bygningsdelelinje
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -893,6 +936,11 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -904,7 +952,7 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -914,12 +962,12 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
@@ -929,7 +977,7 @@ image::figurer/bygningsdelelinje_eksempel2.png[link=figurer/bygningsdelelinje_ek
 '''
  
 [[fiktivbygningsavgrensning]]
-==== «FeatureType» FiktivBygningsavgrensning
+=== Objekttype: FiktivBygningsavgrensning
 *Definisjon fra FKB produktspesifikasjon*: fiktiv avgrensing av bygning
 Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig å danne en flate.  Fiktiv bygningsavgrensing benyttes også for å lage flater for underjordiske bygninger og som fiktiv linje på takoverbygg der takoverbyggkant mangler.
  
@@ -938,7 +986,8 @@ Merknad: Brukes når deler av takkant, fasadeliv, grunnmur eller bygningsdelelin
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fiktivbygningsavgrensning.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_fiktivbygningsavgrensning.png, Alt="Illustrasjon fra produktspesifikasjon: FiktivBygningsavgrensning"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Brukes n&#229;r deler av takkant, fasadeliv, grunnmur eller bygningsdelelinje er ukjent for at det skal bli mulig &#229; danne en flate. Fiktiv bygningsavgrensing benyttes ogs&#229; for &#229; lage flater for underjordiske bygninger.
 
 MEDIUM U benyttes for del av bygningsavgrensning som ligger under terreng.
@@ -953,8 +1002,9 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Tilsvarende som objekttypen den er ment å erstatte
@@ -979,8 +1029,9 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
  
 <<<
  
-===== Egenskapstabell for objekttype: FiktivBygningsavgrensning
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: FiktivBygningsavgrensning
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1012,6 +1063,11 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1023,7 +1079,7 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1038,7 +1094,7 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 |[0..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1048,12 +1104,12 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1063,24 +1119,23 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |medium
-|«CodeList» Medium
-|..
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
 |[1..1]
  
 |===
-=== BeskrivendeBygningslinjer
 *Pakkens definisjon:* Pakke som inneholder alle beskrivende bygningslinjer
  
 <<<
 '''
  
 [[arkade]]
-==== «FeatureType» Arkade
+=== Objekttype: Arkade
 *Definisjon fra FKB produktspesifikasjon*: avgrensing av en tunnel gjennom en bygning
  
  
@@ -1088,14 +1143,16 @@ image::figurer/fiktivbygningsavgrensning.png[link=figurer/fiktivbygningsavgrensn
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_arkade.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_arkade.png, Alt="Illustrasjon fra produktspesifikasjon: Arkade"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Kan registreres fotogrammetrisk ved innsyn. Dette avtales s&#230;rskilt. En arkade som best&#229;r av flatt tak regnes ogs&#229; som en arkade.
 
 Registreres som lukket polygon.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant arkade
@@ -1120,8 +1177,9 @@ Registreres som lukket polygon.
  
 <<<
  
-===== Egenskapstabell for objekttype: Arkade
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Arkade
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1153,6 +1211,11 @@ Registreres som lukket polygon.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1164,7 +1227,7 @@ Registreres som lukket polygon.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1179,7 +1242,7 @@ Registreres som lukket polygon.
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1189,12 +1252,12 @@ Registreres som lukket polygon.
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1204,18 +1267,18 @@ Registreres som lukket polygon.
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
-|høydereferanse
-|«CodeList» Høydereferanse
-|..HREF
+|grense
+|GM_Curve
+|.KURVE
 |[1..1]
  
-|grense
-|Kurve
-|.KURVE
+|høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
+|..HREF
 |[1..1]
  
 |===
@@ -1224,7 +1287,7 @@ Registreres som lukket polygon.
 '''
  
 [[bygningslinje]]
-==== «FeatureType» Bygningslinje
+=== Objekttype: Bygningslinje
 *Definisjon fra FKB produktspesifikasjon*: linje som beskriver bygningsdetalj innenfor en takflate  og som ikke kan beskrives av andre objekttyper
 Eksempel: Valming på tak
  
@@ -1233,7 +1296,8 @@ Eksempel: Valming på tak
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningslinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningslinje.png, Alt="Illustrasjon fra produktspesifikasjon: Bygningslinje"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Der Bygningslinje m&#248;ter andre beskrivende bygningslinjer, og har lik koordinat i grunnriss og h&#248;yde og samme TRE_D_NIV&#197;, skal det dannes et 3D nodepunkt. Nodepunkt mellom objekter med ulike TRE_D_NIV&#197;-ene er ikke n&#248;dvendig.
 
 Der Bygningslinje m&#248;ter Taksprang p&#229; et h&#248;yere takplan eller Bygningslinje med et h&#248;yere TRE_D_NIV&#197; og p&#229; et h&#248;yere takplan, skal det lages et konnekteringspunkt.
@@ -1241,12 +1305,14 @@ Der Bygningslinje m&#248;ter Taksprang p&#229; et h&#248;yere takplan eller Bygn
 Bygningslinje og Bygningsdelelinje kan v&#230;re sammenfallende. Da registreres to frittst&#229;ende objekter. Bygningslinje og M&#248;nelinje kan v&#230;re sammenfallende. Da registreres to frittst&#229;ende objekter. 
 
 Ventilasjonsr&#248;r p&#229; tak skal ikke registreres som bygningsdetalj.
+
 For takoppbrett som g&#229;r opp til m&#248;nelinje, skal det registreres b&#229;de M&#248;nelinje (TRE_D_NIV&#197; 2) og Bygningslinje (TRE_D_NIV&#197; 3). 
 
 Dersom det er takoppbrett med lik utstrekning p&#229; begge sider av m&#248;nelinje, skal det registreres en felles bygningslinje (TRE_D_NIV&#197; 3) p&#229; toppen av m&#248;nelinje (TRE_D_NIV&#197; 2 ). 
 
-Bygningslinje registreres ikke som un&#248;yaktig, dvs. enten er 
-bygningslinja OK eller s&#229; registreres den ikke i det hele tatt.
+Bygningslinje registreres ikke som un&#248;yaktig, dvs. enten er bygningslinja OK eller s&#229; registreres den ikke i det hele tatt.
+
+Knekklinjer inne p&#229; "flate" tak der avstanden mellom h&#248;yeste og laveste takniv&#229; er mindre enn n&#248;yaktighetskravet registreres ikke.
  
  
 '''
@@ -1260,8 +1326,9 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp/bunn/ytterkant av knekklinjer (knekkpunkter) i taket
@@ -1298,8 +1365,9 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
  
 <<<
  
-===== Egenskapstabell for objekttype: Bygningslinje
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Bygningslinje
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1331,6 +1399,11 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1342,7 +1415,7 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1357,7 +1430,7 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1367,12 +1440,12 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1382,12 +1455,12 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1397,7 +1470,7 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 '''
  
 [[hjelpelinje3d]]
-==== «FeatureType» Hjelpelinje3D
+=== Objekttype: Hjelpelinje3D
 *Definisjon fra FKB produktspesifikasjon*: linje for å kunne danne gode 3D modeller av bygninger
  
  
@@ -1405,7 +1478,8 @@ image::figurer/bygningslinje_eksempel2.png[link=figurer/bygningslinje_eksempel2.
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpelinje3d.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_hjelpelinje3d.png, Alt="Illustrasjon fra produktspesifikasjon: Hjelpelinje3D"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Hjelpelinjer inne p&#229; tak som skal benyttes for volumdanning av 
 bygningen. Disse skal ikke presenteres p&#229; kart.
 
@@ -1428,8 +1502,9 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |knekklinje i takoverflaten
@@ -1437,11 +1512,11 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |FKB høydereferanse
 |Takplanet
  
-|FKB minstestørrelse
-|krav til maksimal pilhøyde 50 cm
- 
 |FKB-A minstestørrelse
 |krav til maksimal pilhøyde 20 cm
+ 
+|FKB-B minstestørrelse
+|krav til maksimal pilhøyde 50 cm
  
 |FKB-C minstestørrelse
 |krav til maksimal pilhøyde 100 cm
@@ -1458,9 +1533,6 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |FKB-C
 |Påkrevd registrering
  
-|FKB-C
-|Påkrevd registrering
- 
 |FKB-D
 |Påkrevd registrering
  
@@ -1469,8 +1541,9 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
  
 <<<
  
-===== Egenskapstabell for objekttype: Hjelpelinje3D
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Hjelpelinje3D
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1502,6 +1575,11 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1513,7 +1591,7 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1528,7 +1606,7 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1538,12 +1616,12 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1553,12 +1631,12 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1568,7 +1646,7 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 '''
  
 [[mønelinje]]
-==== «FeatureType» Mønelinje
+=== Objekttype: Mønelinje
 *Definisjon fra FKB produktspesifikasjon*: linje som beskriver den horisontale knekklinje på toppen av taket (høyeste topp)
  
  
@@ -1576,7 +1654,8 @@ image::figurer/hjelpelinje3d_tredniva.png[link=figurer/hjelpelinje3d_tredniva.pn
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_monelinje.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_monelinje.png, Alt="Illustrasjon fra produktspesifikasjon: Mønelinje"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Det skal registreres m&#248;nelinjer p&#229; alle bygninger, arker, tilbygg og takoverbygg. Registreres kun der hvor knekklinjer er definerbare.
 
 Der M&#248;nelinje m&#248;ter andre beskrivende bygningslinjer, og har lik koordinat i grunnriss og h&#248;yde og samme TRE_D_NIV&#197;, skal det dannes et 3D nodepunkt. Der M&#248;nelinje m&#248;ter Taksprang p&#229; et h&#248;yere takplan eller Bygningslinje med et h&#248;yere TRE_D_NIV&#197; og p&#229; et h&#248;yere takplan, skal det lages et konnekteringspunkt.
@@ -1592,8 +1671,9 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp møne ved skrå takflater
@@ -1618,8 +1698,9 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
  
 <<<
  
-===== Egenskapstabell for objekttype: Mønelinje
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Mønelinje
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1651,6 +1732,11 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1662,7 +1748,7 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1677,7 +1763,7 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1687,12 +1773,12 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1702,12 +1788,12 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -1717,7 +1803,7 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 '''
  
 [[portrom]]
-==== «FeatureType» Portrom
+=== Objekttype: Portrom
 *Definisjon fra FKB produktspesifikasjon*: avgrensing av en tunnel gjennom en bygning
  
  
@@ -1725,15 +1811,17 @@ image::figurer/monelinje_eksempel.png[link=figurer/monelinje_eksempel.png, Alt="
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_portrom.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_portrom.png, Alt="Illustrasjon fra produktspesifikasjon: Portrom"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Kan registreres fotogrammetrisk ved innsyn. Dette avtales s&#230;rskilt. 
 
 Registreres som lukket polygon.
 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant portrom
@@ -1758,8 +1846,9 @@ Registreres som lukket polygon.
  
 <<<
  
-===== Egenskapstabell for objekttype: Portrom
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Portrom
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1791,6 +1880,11 @@ Registreres som lukket polygon.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1802,7 +1896,7 @@ Registreres som lukket polygon.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1817,7 +1911,7 @@ Registreres som lukket polygon.
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1827,12 +1921,12 @@ Registreres som lukket polygon.
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1842,17 +1936,17 @@ Registreres som lukket polygon.
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |høydereferanse
-|«CodeList» Høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
 |[1..1]
  
@@ -1862,7 +1956,7 @@ Registreres som lukket polygon.
 '''
  
 [[takmur]]
-==== «FeatureType» Takmur
+=== Objekttype: Takmur
 *Definisjon fra FKB produktspesifikasjon*: opphøyde kanter ved takkant
 Merknad: Eksempel på kanter der TakMur skal benyttes er gavlvegger og brannvegger som stikker opp over takflaten
  
@@ -1872,8 +1966,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter TakMur
@@ -1901,8 +1996,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
  
 <<<
  
-===== Egenskapstabell for objekttype: Takmur
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Takmur
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -1934,6 +2030,11 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -1945,7 +2046,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -1960,7 +2061,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -1970,12 +2071,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -1985,12 +2086,12 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2000,7 +2101,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figur
 '''
  
 [[takplatå]]
-==== «FeatureType» Takplatå
+=== Objekttype: Takplatå
 *Definisjon fra FKB produktspesifikasjon*: innsøkk i form av laveste vannrette flate på hovedvolum på bygningskropp
 Eksempel: Arker som går inn i hovedtaket og "terrasse" inne i en bygård.
  
@@ -2009,7 +2110,8 @@ Eksempel: Arker som går inn i hovedtaket og "terrasse" inne i en bygård.
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplata.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplata.png, Alt="Illustrasjon fra produktspesifikasjon: Takplatå"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Pga. manglende innsyn kan det v&#230;re vanskelig med fotogrammetrisk registrering av innerste kant p&#229; takplat&#229;.
 
 Selv om det er oppf&#248;rt entydige krav til minstem&#229;l, vil det alltid v&#230;r et tolkingssp&#248;rsm&#229;l om hvilke objekter som skal registreres. Minstem&#229;lene m&#229; derfor oppfattes som veiledende
@@ -2030,8 +2132,9 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Omriss i gulvnivå (som ved takterrasse innfelt i hovedtakflate)
@@ -2062,8 +2165,9 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
  
 <<<
  
-===== Egenskapstabell for objekttype: Takplatå
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Takplatå
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2095,6 +2199,11 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2106,7 +2215,7 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2121,7 +2230,7 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2131,12 +2240,12 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2146,12 +2255,12 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2161,7 +2270,7 @@ image::figurer/takplata_eksempel2.png[link=figurer/takplata_eksempel2.png, Alt="
 '''
  
 [[takplatåtopp]]
-==== «FeatureType» TakplatåTopp
+=== Objekttype: TakplatåTopp
 *Definisjon fra FKB produktspesifikasjon*: takkant i indre rom i byg&#229;rder der det indre rommet ikke g&#229;r ned til terrengoverflaten
 MERKNAD: Objekttypen skal benyttes som en utfyllende linje for &#229; beskrive bygningsvolumet. Benyttes kun der Takplat&#229; er benyttet for &#229; beskrive tak inne i en bygning (for eksempel en byg&#229;rd).
  
@@ -2170,7 +2279,8 @@ MERKNAD: Objekttypen skal benyttes som en utfyllende linje for &#229; beskrive b
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplatatopp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takplatatopp.png, Alt="Illustrasjon fra produktspesifikasjon: TakplatåTopp"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 For &#229; kunne danne virkelighetstro volumobjekter av FKB-dataene er det &#248;nskelig &#229; ha registrert s&#229; mange beskrivende linjer som mulig. For byg&#229;rder kan det v&#230;re en fordel &#229; registrere Takplat&#229;Topp i tillegg til andre beskrivende bygningslinjer. Dette gjelder spesielt i byomr&#229;der (FKB-A). 
 
 Der Takplat&#229;Topp m&#248;ter andre beskrivende bygningslinjer, og har lik koordinat i grunnriss og h&#248;yde og samme TRE_D_NIV&#197;, skal det dannes et 3D nodepunkt. Der Takplat&#229;Topp m&#248;ter Taksprang p&#229; et h&#248;yere takplan eller Bygningslinje med et h&#248;yere TRE_D_NIV&#197; og p&#229; et h&#248;yere takplan, skal det lages et konnekteringspunkt.
@@ -2184,8 +2294,9 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Topp takrenne eller topp ytterkant tak. Dersom det er registrert en   opphøyet kant på taket (TakMur), skal fremdeles takhøyden   registreres.  
@@ -2210,8 +2321,9 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
  
 <<<
  
-===== Egenskapstabell for objekttype: TakplatåTopp
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: TakplatåTopp
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2243,6 +2355,11 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2254,7 +2371,7 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2269,7 +2386,7 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2279,12 +2396,12 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2294,12 +2411,12 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2309,7 +2426,7 @@ image::figurer/takplatatopp_eksempel.png[link=figurer/takplatatopp_eksempel.png,
 '''
  
 [[taksprang]]
-==== «FeatureType» Taksprang
+=== Objekttype: Taksprang
 *Definisjon fra FKB produktspesifikasjon*: topp av takkant inne på en bygningskropp
 Merknad: ikke ytterkant som registreres som takkant
  
@@ -2318,7 +2435,8 @@ Merknad: ikke ytterkant som registreres som takkant
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprang.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprang.png, Alt="Illustrasjon fra produktspesifikasjon: Taksprang"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Taksprang f&#248;lger reelle kanter p&#229; tak. Dvs. en linje som viser kantene langs takniv&#229;er, p&#229; h&#248;yeste takflate av de to der det er h&#248;ydeforskjell.
 Taksprang skal registreres der h&#248;ydeforskjellen mellom to takplan (hele eller deler av takspranget) er st&#248;rre enn kravet til stedfestingsn&#248;yaktighet i h&#248;yde.
 Der Taksprang m&#248;ter andre beskrivende bygningslinjer, og har lik koordinat i grunnriss og h&#248;yde og samme TRE_D_NIV&#197;, skal det dannes et 3D nodepunkt. Der Taksprang m&#248;ter Taksprang p&#229; et h&#248;yere takplan eller Bygningslinje med et h&#248;yere TRE_D_NIV&#197; og p&#229; et h&#248;yere takplan, skal det lages et konnekteringspunkt.
@@ -2334,8 +2452,9 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterst på tak/takrenne/vindskie. For flate tak registreres ytterkant   vegg.
@@ -2360,8 +2479,9 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
  
 <<<
  
-===== Egenskapstabell for objekttype: Taksprang
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Taksprang
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2393,6 +2513,11 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2404,7 +2529,7 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2419,7 +2544,7 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2429,12 +2554,12 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2444,12 +2569,12 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2459,7 +2584,7 @@ image::figurer/taksprang_eksempel.png[link=figurer/taksprang_eksempel.png, Alt="
 '''
  
 [[taksprangbunn]]
-==== «FeatureType» TaksprangBunn
+=== Objekttype: TaksprangBunn
 *Definisjon fra FKB produktspesifikasjon*: bunn av takkant inne på en bygningskropp 
 Merknad: Ikke ytterkant som er takkant
  
@@ -2468,7 +2593,8 @@ Merknad: Ikke ytterkant som er takkant
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprangbunn.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_taksprangbunn.png, Alt="Illustrasjon fra produktspesifikasjon: TaksprangBunn"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 TaksprangBunn skal om mulig v&#230;re sammenfallende i grunnriss  som det tilh&#248;rende Taksprang-objektet. 
 TaksprangBunn f&#248;lger alltid takplanet, g&#229;r ikke gjennom luft eller bygning. 
 Det er tillatt &#229; generere TaksprangBunn ut fra andre registrerte objekter.
@@ -2480,14 +2606,10 @@ Der TaksprangBunn m&#248;ter andre beskrivende bygningslinjer, og har lik koordi
 image::figurer/taksprangbunn_eksempel1.png[link=figurer/taksprangbunn_eksempel1.png, Alt="Eksempel på registrering av TaksprangBunn (blå linje) og Takkant (rød linje)"]
  
  
-'''
-.Eksempel på registrering av Taksprang og TaksprangBunn i en bygård med indre rom.  
-image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.png, Alt="Eksempel på registrering av Taksprang og TaksprangBunn i en bygård med indre rom.  "]
  
- 
- 
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Der øvre takkant blir projisert ned på nedre tak
@@ -2512,8 +2634,9 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
  
 <<<
  
-===== Egenskapstabell for objekttype: TaksprangBunn
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: TaksprangBunn
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2545,6 +2668,11 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2556,7 +2684,7 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2571,7 +2699,7 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2581,12 +2709,12 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2596,24 +2724,23 @@ image::figurer/taksprangbunn_eksempel2.png[link=figurer/taksprangbunn_eksempel2.
 |[0..1]
  
 |treDNivå
-|«CodeList» TreDNivå
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/bygning/5.0/tredniv%c3%a5[TreDNivå, window = _blank]
 |..TRE_D_NIVÅ
 |[1..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |===
-=== Bygningsvedheng
 *Pakkens definisjon:* Pakke som inneholder alle bygningsvedheng
  
 <<<
 '''
  
 [[bygningbru]]
-==== «FeatureType» BygningBru
+=== Objekttype: BygningBru
 *Definisjon fra FKB produktspesifikasjon*: bru tilknyttet bygning som brukes som adkomst til bygninger, og bruer mellom bygninger
 Merknad:  Brukes på bygninger som ikke er driftsbygninger i landbruket. I det siste tilfellet brukes låvebru
  
@@ -2622,7 +2749,8 @@ Merknad:  Brukes på bygninger som ikke er driftsbygninger i landbruket. I det s
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningbru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_bygningbru.png, Alt="Illustrasjon fra produktspesifikasjon: BygningBru"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 BygningBru brukes ogs&#229; for ramper til bygg, f.eks. for tilgang for rullestol og varelevering.
 
 BygningBru kan v&#230;re sammenfallende med takkant, men skal 
@@ -2630,8 +2758,9 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av bru. Registreres som sammenhengende polygon
@@ -2656,8 +2785,9 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
  
 <<<
  
-===== Egenskapstabell for objekttype: BygningBru
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: BygningBru
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2689,6 +2819,11 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2700,7 +2835,7 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2715,7 +2850,7 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2725,12 +2860,12 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2740,7 +2875,7 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2750,7 +2885,7 @@ alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og BygningBru
 '''
  
 [[låvebru]]
-==== «FeatureType» Låvebru
+=== Objekttype: Låvebru
 *Definisjon fra FKB produktspesifikasjon*: kjørerampe til et landbruksbygg
 Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som Annet vegareal/avkjørsel og Brukonstruksjon
  
@@ -2759,7 +2894,8 @@ Merknad: Kjørerampe i tilknytning til et industri og lagerbygg beskrives som An
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_lavebru.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_lavebru.png, Alt="Illustrasjon fra produktspesifikasjon: Låvebru"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 L&#229;vebru registreres som sammenhengende polygon.
 
 L&#229;vebru kan v&#230;re sammenfallende med Takkant, men skal alltid v&#230;re fullstendig og sammenhengende registrert. Takkant og L&#229;vebru registreres som to frittst&#229;ende objekt.
@@ -2772,8 +2908,9 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av låvebru
@@ -2798,8 +2935,9 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
  
 <<<
  
-===== Egenskapstabell for objekttype: Låvebru
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Låvebru
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2831,6 +2969,11 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2842,7 +2985,7 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -2857,7 +3000,7 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -2867,12 +3010,12 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -2882,7 +3025,7 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -2892,7 +3035,7 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 '''
  
 [[trappbygg]]
-==== «FeatureType» TrappBygg
+=== Objekttype: TrappBygg
 *Definisjon fra FKB produktspesifikasjon*: omfatter trapper som danner adkomsten til hus og trapp inntil hus
  
  
@@ -2900,7 +3043,8 @@ image::figurer/lavebru_skisse.png[link=figurer/lavebru_skisse.png, Alt="Skisse s
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_trappbygg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_trappbygg.png, Alt="Illustrasjon fra produktspesifikasjon: TrappBygg"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 TrappBygg skal benyttes n&#229;r trappa st&#229;r inntil takkanten og/eller veranda tilknyttet bygning. Trapper som ikke st&#229;r i tilknytning til en bygning registreres i datasettet bygningsmessige anlegg.
 
 TrappBygg kan v&#230;re sammenfallende med Takkant og/eller Veranda, men skal alltid v&#230;re fullstendig og sammenhengende registrert. TrappBygg og Takkant/Veranda registreres som to frittst&#229;ende objekt
@@ -2919,8 +3063,9 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant av trapp
@@ -2951,8 +3096,9 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
  
 <<<
  
-===== Egenskapstabell for objekttype: TrappBygg
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: TrappBygg
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -2984,6 +3130,11 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -2995,7 +3146,7 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -3010,7 +3161,7 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -3020,12 +3171,12 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -3035,7 +3186,7 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -3045,7 +3196,7 @@ image::figurer/trappbygg_skisse.png[link=figurer/trappbygg_skisse.png, Alt="Skis
 '''
  
 [[veranda]]
-==== «FeatureType» Veranda
+=== Objekttype: Veranda
 *Definisjon fra FKB produktspesifikasjon*: bygningsvedheng som omfatter veranda,  terrasse, altan, balkong og lasterampe
 Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den ligger til eller - hvis den er tildelt eget bygningsnummer - en bygning.
  
@@ -3054,7 +3205,8 @@ Merknad: Garasje med veranda på taket er enten en del av bygningsenheten den li
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veranda.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veranda.png, Alt="Illustrasjon fra produktspesifikasjon: Veranda"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Veranda registreres som sammenhengende polygon. 
 
 Det skal skilles p&#229; om veranda ligger p&#229; tak (takterrasse), p&#229; vegg (veranda, balkong, altan) og p&#229; terreng (terrasse). Dette gj&#248;res for &#229; kunne lage gode 3D-modeller. Egenskapen MEDIUM (med verdiene T for objekter p&#229; terrenget, L for objekter p&#229; vegg og B for objekter p&#229; tak) benyttes for &#229; gj&#248;re dette skillet. Dersom en veranda ligger for eksempel b&#229;de p&#229; tak og p&#229; terreng, skal veranda splittes slik at MEDIUM viser faktisk situasjon. 
@@ -3094,8 +3246,9 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant veranda
@@ -3126,8 +3279,9 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
  
 <<<
  
-===== Egenskapstabell for objekttype: Veranda
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Veranda
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3159,6 +3313,11 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -3170,7 +3329,7 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -3185,7 +3344,7 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -3195,12 +3354,12 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -3210,17 +3369,17 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |høydereferanse
-|«CodeList» Høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
@@ -3230,7 +3389,7 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 '''
  
 [[veggfrittstående]]
-==== «FeatureType» Veggfrittstående
+=== Objekttype: Veggfrittstående
 *Definisjon fra FKB produktspesifikasjon*: vegg oppsatt for skjerming
  
  
@@ -3238,7 +3397,8 @@ image::figurer/veranda_takoverbygg.png[link=figurer/veranda_takoverbygg.png, Alt
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veggfrittstaende.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_veggfrittstaende.png, Alt="Illustrasjon fra produktspesifikasjon: Veggfrittstående"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Ved registrering av topp vegg skal alle knekklinjer registreres. Dersom det er h&#248;ydesprang st&#248;rre enn 0,5 meter, skal disse registreres som sprang.
 
 Det skal lages nodepunkt til eventuelle tilst&#248;tende situasjonsdetaljer. Avhengig av situasjon dannes nodepunktet i 2D eller 3D. Konnekteres til bygninger og lignende der veggen g&#229;r inn til slike.
@@ -3250,8 +3410,9 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Senter vegg  
@@ -3282,8 +3443,9 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
  
 <<<
  
-===== Egenskapstabell for objekttype: Veggfrittstående
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Veggfrittstående
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3315,6 +3477,11 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -3326,7 +3493,7 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -3341,7 +3508,7 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -3351,12 +3518,12 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -3366,29 +3533,28 @@ image::figurer/veggfrittstaende_skisse.png[link=figurer/veggfrittstaende_skisse.
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |høydereferanse
-|«CodeList» Høydereferanse
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/hoydereferanse[Høydereferanse, window = _blank]
 |..HREF
 |[1..1]
  
 |medium
-|«CodeList» Medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
 |..MEDIUM
 |[1..1]
  
 |===
-=== Takoverbygg
 *Pakkens definisjon:* Pakke for takoverbygg
  
 <<<
 '''
  
 [[takoverbygg]]
-==== «FeatureType» Takoverbygg
+=== Objekttype: Takoverbygg
 *Definisjon fra FKB produktspesifikasjon*: byggverk med ingen eller få vegger, og som ikke er registrert som bygning i matrikkelen
 Eksempel:  'carport' eller tak over bensinpumper
  
@@ -3397,7 +3563,8 @@ Eksempel:  'carport' eller tak over bensinpumper
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbygg.png, Alt="Illustrasjon fra produktspesifikasjon: Takoverbygg"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 Takoverbygg avgrenses av TakoverbyggKant og/eller FiktivBygningsavgrensning.
 
 Takoverbygg skal registreres p&#229; samme m&#229;te som et tak p&#229; et bygg ved at den f&#248;lger takkanten opp til evt. m&#248;ne osv. Takoverbygget kan ogs&#229; inneholde m&#248;nelinje og bygningslinje for &#229; bedre beskrive formen, dvs. alle knekklinjer p&#229; takoverflaten skal registreres.
@@ -3421,8 +3588,9 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
  
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Se avgrensningsobjekttyper
@@ -3453,8 +3621,9 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
  
 <<<
  
-===== Egenskapstabell for objekttype: Takoverbygg
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Takoverbygg
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3486,6 +3655,11 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -3497,7 +3671,7 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -3507,12 +3681,12 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
 |[0..1]
  
 |område
-|Flate
+|GM_Surface
 |.FLATE
 |[1..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[0..1]
  
@@ -3522,7 +3696,7 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
 '''
  
 [[takoverbyggkant]]
-==== «FeatureType» Takoverbyggkant
+=== Objekttype: Takoverbyggkant
 *Definisjon fra FKB produktspesifikasjon*: avgrensing av takoverbygg
  
  
@@ -3530,7 +3704,8 @@ image::figurer/takoverbygg_skisser.png[link=figurer/takoverbygg_skisser.png, Alt
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbyggkant.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Bygning/5.0/figurer/objtype_takoverbyggkant.png, Alt="Illustrasjon fra produktspesifikasjon: Takoverbyggkant"]
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
 TakoverbyggKant benyttes kun for avgrensing av Takoverbygg som ikke er registrert som bygning i matrikkelen. Dersom deler av en bygningsavgrensning har ingen eller f&#229; vegger benyttes Takkant for 
 hele bygningsavgrensningen.
 
@@ -3540,8 +3715,9 @@ TakoverbyggKant benyttes for avgrensing av Takoverbygg som henger p&#229; bygnin
 Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to frittst&#229;ende objekter. Takoverbygg og Takkant kan ha overlappende flater.
  
  
-===== Føringer
-[cols="25,75"]
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
 |FKB grunnrissreferanse
 |Ytterkant tak
@@ -3566,8 +3742,9 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
  
 <<<
  
-===== Egenskapstabell for objekttype: Takoverbyggkant
-[cols="20,20,20,10"]
+[discrete]
+==== Egenskapstabell for objekttype: Takoverbyggkant
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -3599,6 +3776,11 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
 |..OPPDATERINGSDATO
 |[0..1]
  
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
 |datafangstdato
 |Date
 |..DATAFANGSTDATO
@@ -3610,7 +3792,7 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
 |[0..1]
  
 |registreringsversjon
-|«CodeList» Registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
 |..REGISTRERINGSVERSJON
 |[0..1]
  
@@ -3625,7 +3807,7 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
 |[1..1]
  
 |kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODE
 |[1..1]
  
@@ -3635,12 +3817,12 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
 |kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
 |...DATAFANGSTMETODEHØYDE
 |[0..1]
  
@@ -3650,7 +3832,7 @@ Takkant og TakoverbyggKant kan v&#230;re sammenfallende. Da registreres to fritt
 |[0..1]
  
 |grense
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
