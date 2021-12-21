@@ -809,13 +809,13 @@ image::figurer/tunnelportal.png[link=figurer/tunnelportal.png, Alt="Eksempl på 
 <<<
 '''
  
-[[avfallslbeholder]]
-=== Objekttype: Avfallslbeholder
+[[avfallsbeholder]]
+=== Objekttype: Avfallsbeholder
 *Definisjon fra FKB produktspesifikasjon*: St&#248;rre tank eller annen type beholder for avfall
  
  
-.Illustrasjon fra produktspesifikasjon av Avfallslbeholder
-image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png, Alt="Illustrasjon fra produktspesifikasjon: Avfallslbeholder"]
+.Illustrasjon fra produktspesifikasjon av Avfallsbeholder
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_avfallsbeholder.png, Alt="Illustrasjon fra produktspesifikasjon: Avfallsbeholder"]
  
  
 [discrete]
@@ -851,7 +851,7 @@ Registreres som punktobjekter ved fotogrammetrisk registrering dersom ikke annet
 <<<
  
 [discrete]
-==== Egenskapstabell for objekttype: Avfallslbeholder
+==== Egenskapstabell for objekttype: Avfallsbeholder
 [cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
@@ -1980,6 +1980,14 @@ Dersom t&#229;rnet st&#229;r p&#229; markerte bein, kan disse registreres som fu
  
 [[trapp]]
 === Objekttype: Trapp
+*Definisjon fra FKB produktspesifikasjon*: trapp som ikke st&#229;r i tilknytning til en bygning
+
+Merknad: Kan ogs&#229; brukes p&#229; rullestolramper etc.
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Trapp
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_trapp.png, Alt="Illustrasjon fra produktspesifikasjon: Trapp"]
+ 
  
 [discrete]
 ==== Tilleggsinformasjon for fotogrammetrisk registrering
@@ -2024,6 +2032,109 @@ image::figurer/trapp.png[link=figurer/trapp.png, Alt="Eksempel på trapp som er 
  
 |===
  
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Trapp
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|område
+|GM_Surface
+|.FLATE
+|[1..1]
+ 
+|medium
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/medium[Medium, window = _blank]
+|..MEDIUM
+|[1..1]
+ 
+|===
  
 <<<
 '''
@@ -2423,11 +2534,50 @@ image::figurer/murfrittstaende_tank.png[link=figurer/murfrittstaende_tank.png, A
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_murloddrett.png, Alt="Illustrasjon fra produktspesifikasjon: Murloddrett"]
  
  
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Murer skal s&#229; langt som mulig registreres sammenhengende. Man 
+skal pr&#248;ve &#229; registrere murer under bruer. Usikker stedfesting kodes 
+med KVALITET.
+
+Det skal lages nodepunkt til eventuelle tilst&#248;tende 
+situasjonsdetaljer som bygninger og lignende.
+ 
  
 [discrete]
 ==== Føringer
 [cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Ytterkant topp av mur
+ 
+|FKB høydereferanse
+|Ytterkant topp av mur. Høydesprang registreres
+ 
+|FKB-A minstestørrelse
+|Høyere enn 0,5 m
+ 
+|FKB-B minstestørrelse
+|Høyere enn 0,5 m
+ 
+|FKB-C minstestørrelse
+|Høyere enn 2,5 m
+ 
+|FKB-D minstestørrelse
+|Høyere enn 2,5 m
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
 |===
  
  
@@ -5331,8 +5481,8 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 <<<
 '''
  
-[[fiktivavgrensningsforanlegg]]
-=== Objekttype: FiktivAvgrensningsForAnlegg
+[[fiktivavgrensningforanlegg]]
+=== Objekttype: FiktivAvgrensningForAnlegg
 *Definisjon fra FKB produktspesifikasjon*: fiktiv avgrensningslinje for anlegg
 Merknad: Brukes når det skal dannes flater av bygningsmessige- og tekniske anlegg og det mangler en eller flere avgrensingslinjer.
  
@@ -5370,7 +5520,7 @@ FiktivAvgrensningForAnlegg er med p&#229; &#229; danne flate for Kai.
 <<<
  
 [discrete]
-==== Egenskapstabell for objekttype: FiktivAvgrensningsForAnlegg
+==== Egenskapstabell for objekttype: FiktivAvgrensningForAnlegg
 [cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
@@ -6718,6 +6868,147 @@ image::figurer/molo_kai.png[link=figurer/molo_kai.png, Alt="Eksempel på registe
 <<<
 '''
  
+[[navigasjonsinstallasjon]]
+=== Objekttype: Navigasjonsinstallasjon
+*Definisjon fra FKB produktspesifikasjon*: objekt som hjelper sjøfarende å navigere på sjøen.
+ 
+ 
+.Illustrasjon fra produktspesifikasjon av Navigasjonsinstallasjon
+image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_navigasjonsinstallasjon.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_navigasjonsinstallasjon.png, Alt="Illustrasjon fra produktspesifikasjon: Navigasjonsinstallasjon"]
+ 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Marine fyr. Kun frittst&#229;ende fyrlykter registreres. St&#248;rre fyr 
+registreres som bygning, med bygningstype fyr
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
+|===
+|FKB grunnrissreferanse
+|Senter fyrlykt/tak
+ 
+|FKB høydereferanse
+|Topp lyskilde
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
+|===
+ 
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Navigasjonsinstallasjon
+[cols="20,20,20,10", options="header"]
+|===
+|*Navn:* 
+|*Type:* 
+|*SOSI_navn:* 
+|*Mult.:* 
+ 
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
+|[1..1]
+ 
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
+ 
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
+ 
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[1..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
+ 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon[Registreringsversjon, window = _blank]
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
+|[1..1]
+ 
+|kvalitet.nøyaktighet
+|Integer
+|...NØYAKTIGHET
+|[0..1]
+ 
+|kvalitet.synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
+|...SYNBARHET
+|[0..1]
+ 
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
+|[0..1]
+ 
+|kvalitet.nøyaktighetHøyde
+|Integer
+|...H-NØYAKTIGHET
+|[0..1]
+ 
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|===
+ 
+<<<
+'''
+ 
 [[oppdrettskar]]
 === Objekttype: Oppdrettskar
 *Definisjon fra FKB produktspesifikasjon*: kar for oppdrett av fisk
@@ -6868,11 +7159,33 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png[link=http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/figurer/objtype_oppdrettslokalitet.png, Alt="Illustrasjon fra produktspesifikasjon: Oppdrettslokalitet"]
  
  
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Det anbefales bruk av manus ved fotogrammetrisk registrering av oppdrettslokaliteter
+ 
  
 [discrete]
 ==== Føringer
 [cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Ytterkant av de faste forankringene for oppdrettsanlegget
+ 
+|FKB høydereferanse
+|Midlere høyvannstand
+ 
+|FKB-A
+|Opsjonell registrering
+ 
+|FKB-B
+|Opsjonell registrering
+ 
+|FKB-C
+|Opsjonell registrering
+ 
+|FKB-D
+|Opsjonell registrering
+ 
 |===
  
  
@@ -7287,6 +7600,27 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/fi
 ==== Føringer
 [cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Ytterkant slipp
+ 
+|FKB høydereferanse
+|Topp ytterkant. Høydesprang registreres.
+ 
+|FKB-A minstestørrelse
+|Slipper lengre enn 8 m registreres
+ 
+|FKB-A
+|Påkrevd registrering
+ 
+|FKB-B
+|Påkrevd registrering
+ 
+|FKB-C
+|Påkrevd registrering
+ 
+|FKB-D
+|Påkrevd registrering
+ 
 |===
  
  
