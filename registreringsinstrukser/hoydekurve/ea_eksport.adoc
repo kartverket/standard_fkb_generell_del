@@ -2,153 +2,62 @@
 <<<
 '''
  
-[[høydekurve]]
-==== «featureType» Høydekurve
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden
- 
-===== Føringer
-[cols="25,75"]
-|===
-|===
- 
-===== Egenskapstabell
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[0..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|senterlinje
-|Kurve
-|.KURVE
-|[1..1]
- 
-|høyde
-|Real
-|..HØYDE
-|[1..1]
- 
-|opphav
-|«dataType» Opphav
-|..
-|[1..1]
- 
-|opphav.sikkerTerrenggjengivelse
-|Boolean
-|...
-|[1..1]
- 
-|opphav.datakilde
-|«CodeList» DatafangsmetodeUtvidet
-|...
-|[1..1]
- 
-|===
- 
-<<<
-'''
- 
 [[forsenkningskurve]]
-==== «featureType» Forsenkningskurve
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+=== Objekttype: Forsenkningskurve
+*Definisjon fra FKB produktspesifikasjon*: linje i terrenget med fast h&#248;ydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+
 Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.
  
-===== Føringer
-[cols="25,75"]
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Forsenkningskurver avledes fra digital terrengmodell etablert fra punktsky.
+
+Forsenkningskurve har retningsavhengighet mot urviseren.
+
+Forsenkningskurver skal brukes i f&#248;lgende tilfeller:
+
+* Naturlige depresjoner (spesielt: moreneflater med d&#248;disgroper, fordypninger i omr&#229;der med kalkrikt fjell).
+
+* Hull og groper som skyldes bergverk/steinbrudd/grustak
+
+* (Vei)gr&#248;fter hvor vannet renner mot en stikkrenne eller drensr&#248;r.
+
+Forsenkningskurver skal ikke brukes i f&#248;lgende tilfeller:
+
+* St&#248;rre omr&#229;der (for eksempel innsj&#248;er p&#229; flere km2) som renner/drenerer ut gjennom/under store veg- eller jernbanefyllinger.
+
+* Omr&#229;der mellom HRV og LRV i regulerte elver og innsj&#248;er.
+
+Forsenkningskurver generert fra punktsky, skal ha p&#229;f&#248;rt datafangstmetode Generert. I tillegg skal egenskapen Opphav benyttes for &#229; skille p&#229; om punktskyen som ligger til grunn for kurvegenereringen er etablert ved hjelp av laserskanning eller bildematching og om objektet sikkert gjengir terrenget eller ikke.
+
+Ved generering av forsenkningskurver fra punktsky skal forsenkningskurvene v&#230;re gjennomg&#229;ende ved forst&#248;tningsmur, massive brygger og lignende.
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Der terrenget har gitt høyde
+ 
+|FKB høydereferanse
+|Gitt høyde
+ 
+|FKB-H1
+|Påkrevd registrering
+ 
+|FKB-H5
+|Påkrevd registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Forsenkningskurve
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -158,7 +67,7 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -178,7 +87,12 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
-|[1..1]
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -202,7 +116,7 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
  
 |informasjon
 |CharacterString
-|..
+|..INFORMASJON
 |[0..1]
  
 |kvalitet
@@ -236,7 +150,7 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
@@ -247,17 +161,17 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
  
 |opphav
 |«dataType» Opphav
-|..
+|..OPPHAV
 |[1..1]
  
 |opphav.sikkerTerrenggjengivelse
 |Boolean
-|...
+|...SIKKERTERRENGGJENGIVELSE
 |[1..1]
  
 |opphav.datakilde
 |«CodeList» DatafangsmetodeUtvidet
-|...
+|...DATAKILDE
 |[1..1]
  
 |===
@@ -265,21 +179,48 @@ Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskur
 <<<
 '''
  
-[[toppunkt]]
-==== «featureType» Toppunkt
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
+[[høydekurve]]
+=== Objekttype: Høydekurve
+*Definisjon fra FKB produktspesifikasjon*: linje i terrenget med fast h&#248;ydeverdi (z-verdi) over referanseh&#248;yden
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+H&#248;ydekurver avledes fra digital terrengmodell etablert fra punktsky.
+
+H&#248;ydekurver skal ikke krysse hverandre, bortsett fra der dette er tilfelle (overheng).
+
+H&#248;ydekurver skal ikke brytes n&#229;r de g&#229;r gjennom bygninger, steinbrudd, sandtak, ur etc.; over veier, over bekker/elver, passerer bruer o.l. Alle kurver skal v&#230;re lukket og merket med knutepunkt. Dersom det er knyttet usikkerhet til n&#248;yaktigheten til h&#248;ydekurver som g&#229;r gjennom store bygninger, skal dette angis med kvalitetskoding.
+
+H&#248;ydekurver generert fra punktsky, skal ha p&#229;f&#248;rt datafangstmetode Generert. I tillegg skal egenskapen Opphav benyttes for &#229; skille p&#229; om punktskyen som ligger til grunn for kurvegenereringen er etablert ved hjelp av laserskanning eller bildematching og om objektet sikkert gjengir terrenget eller ikke.
+
+Ved generering av h&#248;ydekurver fra punktsky skal h&#248;ydekurvene v&#230;re gjennomg&#229;ende ved forst&#248;tningsmur, massive brygger og lignende.
  
-===== Føringer
-[cols="25,75"]
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Der terrenget har gitt høyde
+ 
+|FKB høydereferanse
+|Gitt høyde
+ 
+|FKB-H1
+|Påkrevd registrering
+ 
+|FKB-H5
+|Påkrevd registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Høydekurve
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -289,7 +230,7 @@ punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i t
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -309,7 +250,12 @@ punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i t
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
-|[1..1]
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -333,7 +279,7 @@ punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i t
  
 |informasjon
 |CharacterString
-|..
+|..INFORMASJON
 |[0..1]
  
 |kvalitet
@@ -366,9 +312,9 @@ punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i t
 |...H-NØYAKTIGHET
 |[0..1]
  
-|posisjon
-|Punkt
-|.PUNKT
+|senterlinje
+|GM_Curve
+|.KURVE
 |[1..1]
  
 |høyde
@@ -378,148 +324,17 @@ punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i t
  
 |opphav
 |«dataType» Opphav
-|..
+|..OPPHAV
 |[1..1]
  
 |opphav.sikkerTerrenggjengivelse
 |Boolean
-|...
+|...SIKKERTERRENGGJENGIVELSE
 |[1..1]
  
 |opphav.datakilde
 |«CodeList» DatafangsmetodeUtvidet
-|...
-|[1..1]
- 
-|===
- 
-<<<
-'''
- 
-[[forsenkningspunkt]]
-==== «featureType» Forsenkningspunkt
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget
- 
-===== Føringer
-[cols="25,75"]
-|===
-|===
- 
-===== Egenskapstabell
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[0..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..
-|[0..1]
- 
-|kvalitet
-|«dataType» Posisjonskvalitet
-|..KVALITET
-|[1..1]
- 
-|kvalitet.datafangstmetode
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODE
-|[1..1]
- 
-|kvalitet.nøyaktighet
-|Integer
-|...NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.synbarhet
-|«CodeList» Synbarhet
-|...SYNBARHET
-|[0..1]
- 
-|kvalitet.datafangstmetodeHøyde
-|«CodeList» Datafangstmetode
-|...DATAFANGSTMETODEHØYDE
-|[0..1]
- 
-|kvalitet.nøyaktighetHøyde
-|Integer
-|...H-NØYAKTIGHET
-|[0..1]
- 
-|posisjon
-|Punkt
-|.PUNKT
-|[1..1]
- 
-|høyde
-|Real
-|..HØYDE
-|[1..1]
- 
-|opphav
-|«dataType» Opphav
-|..
-|[1..1]
- 
-|opphav.sikkerTerrenggjengivelse
-|Boolean
-|...
-|[1..1]
- 
-|opphav.datakilde
-|«CodeList» DatafangsmetodeUtvidet
-|...
+|...DATAKILDE
 |[1..1]
  
 |===
@@ -528,20 +343,61 @@ punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget
 '''
  
 [[terrenglinje]]
-==== «featureType» Terrenglinje
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
+=== Objekttype: Terrenglinje
+*Definisjon fra FKB produktspesifikasjon*: linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Benyttes normalt som et supplement utover annen h&#248;ydeb&#230;rende informasjon slik at de til sammen gir nok h&#248;ydeb&#230;rende informasjon til &#229; beskrive terrengets form og h&#248;yde innenfor de kvalitetskrav som er satt. Det er ikke krav om at terrenglinjen skal v&#230;re lukket eller sammenhengende med andre linjeelementer.
+
+I omr&#229;der hvor h&#248;ydegrunnlaget er etablert ved laserskanning vil det som regel kun v&#230;re aktuelt &#229; registrere terrenglinjer i forbindelse med tekniske anlegg langs veg og i bebygde omr&#229;der.
+
+
+I omr&#229;der med d&#229;rlig terrengmodell kan det i tillegg v&#230;re aktuelt &#229; bestille ytterligere registrering av terrenglinjer:
+
+* p&#229; markerte terrengformasjoner ved bygningsmessige og tekniske anlegg
+
+* p&#229; begge sider av st&#248;yskjerm
+
+* p&#229; kant av st&#248;rre gr&#248;fter og bekker der h&#248;yden fra vannkant til topp kant er st&#248;rre enn 1,5 meter
+
+* p&#229; knekklinjer og p&#229; topp kant langs elv der andre objekttyper ikke beskriver terrengformen. Benyttes for elver som i snitt er bredere enn ca. 10 meter, samt for mindre elver i flate omr&#229;der der det er fare for flom. Dersom det er elveforbygninger langs elva skal disse registreres spesielt. Det er viktig med nok terrenglinjer langs elv. Dette med tanke p&#229; flomanalyse.
+
+
+Objekttypen er opsjonell og det m&#229; avklares i hvert enkelt oppdrag n&#229;r og hvordan den eventuelt skal benyttes.
  
-===== Føringer
-[cols="25,75"]
+ 
+'''
+.Eksempel på registrering av terrenglinje langs fot av MurLoddrett i FKB-H1
+image::figurer/Figur_TerrenglinjeMur.png[link=figurer/Figur_TerrenglinjeMur.png, Alt="Eksempel på registrering av terrenglinje langs fot av MurLoddrett i FKB-H1"]
+ 
+ 
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|På markerte knekklinjer i terrenget
+ 
+|FKB høydereferanse
+|På terrenget
+ 
+|FKB-H1
+|Opsjonell registrering
+ 
+|FKB-H5
+|Opsjonell registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Terrenglinje
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -551,7 +407,7 @@ linje som benyttes der hvor terrenget markert forandrer helning og/eller retning
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -571,7 +427,12 @@ linje som benyttes der hvor terrenget markert forandrer helning og/eller retning
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
-|[1..1]
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -595,7 +456,7 @@ linje som benyttes der hvor terrenget markert forandrer helning og/eller retning
  
 |informasjon
 |CharacterString
-|..
+|..INFORMASJON
 |[0..1]
  
 |kvalitet
@@ -629,23 +490,23 @@ linje som benyttes der hvor terrenget markert forandrer helning og/eller retning
 |[0..1]
  
 |senterlinje
-|Kurve
+|GM_Curve
 |.KURVE
 |[1..1]
  
 |opphav
 |«dataType» Opphav
-|..
+|..OPPHAV
 |[1..1]
  
 |opphav.sikkerTerrenggjengivelse
 |Boolean
-|...
+|...SIKKERTERRENGGJENGIVELSE
 |[1..1]
  
 |opphav.datakilde
 |«CodeList» DatafangsmetodeUtvidet
-|...
+|...DATAKILDE
 |[1..1]
  
 |===
@@ -653,21 +514,42 @@ linje som benyttes der hvor terrenget markert forandrer helning og/eller retning
 <<<
 '''
  
-[[terrengpunkt]]
-==== «featureType» Terrengpunkt
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype med påkrevet kvalitetsangivelse
+[[forsenkningspunkt]]
+=== Objekttype: Forsenkningspunkt
+*Definisjon fra FKB produktspesifikasjon*: punkt med m&#229;lt h&#248;ydeverdi som ligger i en markert forsenkning i terrenget
  
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Forsenkningspunkt avledes fra digital terrengmodell etablert fra punktsky.
+
+Objekttypen skal i FKB-H1 registreres for forsenkninger dypere enn 7 meter under omkringliggende terreng. Det tillates skj&#248;nnsmessig justering av minstem&#229;let i terrengtyper hvor dette gir uhensiktsmessig f&#229; eller mange forsenkningspunkt
  
-===== Føringer
-[cols="25,75"]
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Laveste punkt i forsenkning
+ 
+|FKB høydereferanse
+|Terrengnivå
+ 
+|FKB-H1
+|Påkrevd registrering
+ 
+|FKB-H5
+|Opsjonell registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Forsenkningspunkt
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -677,7 +559,7 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -697,7 +579,12 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
-|[1..1]
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -721,7 +608,7 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
  
 |informasjon
 |CharacterString
-|..
+|..INFORMASJON
 |[0..1]
  
 |kvalitet
@@ -755,7 +642,7 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
 |[0..1]
  
 |posisjon
-|Punkt
+|GM_Point
 |.PUNKT
 |[1..1]
  
@@ -766,17 +653,17 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
  
 |opphav
 |«dataType» Opphav
-|..
+|..OPPHAV
 |[1..1]
  
 |opphav.sikkerTerrenggjengivelse
 |Boolean
-|...
+|...SIKKERTERRENGGJENGIVELSE
 |[1..1]
  
 |opphav.datakilde
 |«CodeList» DatafangsmetodeUtvidet
-|...
+|...DATAKILDE
 |[1..1]
  
 |===
@@ -784,68 +671,43 @@ punkt i terrenget med målt høydeverdi som brukes for å angi høyde på marker
 <<<
 '''
  
-[[opphav]]
-==== «dataType» Opphav
+[[toppunkt]]
+=== Objekttype: Toppunkt
+*Definisjon fra FKB produktspesifikasjon*: punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget
  
-===== Føringer
-[cols="25,75"]
-|===
-|===
- 
-===== Egenskapstabell
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|sikkerTerrenggjengivelse
-|Boolean
-|..
-|[1..1]
- 
-|datakilde
-|«CodeList» DatafangsmetodeUtvidet
-|..
-|[1..1]
- 
-|===
-=== Generelle elementer
-*Pakkens definisjon:* Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i produktspesifikasjoner.
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
-[caption="Figur  ",title=Hoveddiagram Fellesegenskaper]
-image::Hoveddiagram Fellesegenskaper.png[Hoveddiagram Fellesegenskaper, Alt="Diagramm: Hoveddiagram Fellesegenskaper"]
-[caption="Figur  ",title=Realisering av fellesegenskaper fra SOSI generell del]
-image::Realisering av fellesegenskaper fra SOSI generell del.png[Realisering av fellesegenskaper fra SOSI generell del, Alt="Diagramm: Realisering av fellesegenskaper fra SOSI generell del"]
-[caption="Figur  ",title=Posisjonskvalitet]
-image::Posisjonskvalitet.png[Posisjonskvalitet, Alt="Diagramm: Posisjonskvalitet"]
- 
-<<<
-'''
- 
-[[fellesegenskaper]]
-==== «FeatureType» Fellesegenskaper
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Toppunkt avledes fra digital terrengmodell etablert fra punktsky.
 
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
+Objekttypen skal i FKB-H1 registreres for h&#248;yder som er h&#248;yere enn 10 meter over omkringliggende terreng. For mindre &#248;yer som stikker opp mindre enn 10 meter over havflaten, skal det normalt alltid registreres toppunkt. Unntaket er n&#229;r &#248;vrig terrenginformasjon gir en god nok beskrivelse av terrengoverflaten. Det tillates skj&#248;nnsmessig justering av minstem&#229;let i terrengtyper hvor dette gir uhensiktsmessig f&#229; eller mange toppunkt.
+
  
-===== Føringer
-[cols="25,75"]
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Høyeste punkt
+ 
+|FKB høydereferanse
+|Terrenghøyde
+ 
+|FKB-H1
+|Påkrevd registrering
+ 
+|FKB-H5
+|Opsjonell registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Toppunkt
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
@@ -855,7 +717,7 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -875,7 +737,12 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
 |oppdateringsdato
 |DateTime
 |..OPPDATERINGSDATO
-|[1..1]
+|[0..1]
+ 
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
 |datafangstdato
 |Date
@@ -899,91 +766,7 @@ Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
  
 |informasjon
 |CharacterString
-|..
-|[0..1]
- 
-|===
-===== Roller
-[cols="20,80"]
-|===
-|Generalisering av:
-|«FeatureType» KvalitetPåkrevd
-|===
- 
-<<<
-'''
- 
-[[kvalitetpåkrevd]]
-==== «FeatureType» KvalitetPåkrevd
-*Definisjon fra FKB produktspesifikasjon*: abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
-
-Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.
- 
- 
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-abstrakt objekttype med påkrevet kvalitetsangivelse
- 
-===== Føringer
-[cols="25,75"]
-|===
-|===
- 
-===== Egenskapstabell
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
- 
-|identifikasjon
-|«dataType» Identifikasjon
-|..IDENT
-|[1..1]
- 
-|identifikasjon.lokalId
-|CharacterString
-|...LOKALID
-|[1..1]
- 
-|identifikasjon.navnerom
-|CharacterString
-|...NAVNEROM
-|[1..1]
- 
-|identifikasjon.versjonId
-|CharacterString
-|...VERSJONID
-|[0..1]
- 
-|oppdateringsdato
-|DateTime
-|..OPPDATERINGSDATO
-|[1..1]
- 
-|datafangstdato
-|Date
-|..DATAFANGSTDATO
-|[1..1]
- 
-|medium
-|«CodeList» Medium
-|..MEDIUM
-|[0..1]
- 
-|verifiseringsdato
-|Date
-|..VERIFISERINGSDATO
-|[0..1]
- 
-|registreringsversjon
-|«CodeList» Registreringsversjon
-|..REGISTRERINGSVERSJON
-|[0..1]
- 
-|informasjon
-|CharacterString
-|..
+|..INFORMASJON
 |[0..1]
  
 |kvalitet
@@ -1016,121 +799,189 @@ abstrakt objekttype med påkrevet kvalitetsangivelse
 |...H-NØYAKTIGHET
 |[0..1]
  
-|===
-===== Roller
-[cols="20,80"]
-|===
-|Generalisering av:
-|«featureType» Toppunkt +
-«featureType» Terrenglinje +
-«featureType» Høydekurve +
-«featureType» Terrengpunkt +
-«featureType» Forsenkningskurve +
-«featureType» Forsenkningspunkt
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
+ 
+|høyde
+|Real
+|..HØYDE
+|[1..1]
+ 
+|opphav
+|«dataType» Opphav
+|..OPPHAV
+|[1..1]
+ 
+|opphav.sikkerTerrenggjengivelse
+|Boolean
+|...SIKKERTERRENGGJENGIVELSE
+|[1..1]
+ 
+|opphav.datakilde
+|«CodeList» DatafangsmetodeUtvidet
+|...DATAKILDE
+|[1..1]
+ 
 |===
  
 <<<
 '''
  
-[[identifikasjon]]
-==== «dataType» Identifikasjon
+[[terrengpunkt]]
+=== Objekttype: Terrengpunkt
+*Definisjon fra FKB produktspesifikasjon*: punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+ 
+[discrete]
+==== Tilleggsinformasjon for fotogrammetrisk registrering
+Terrengpunkt avledes fra digital terrengmodell etablert fra punktsky.
 
-Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+Terrengpunkt kan benyttes der h&#248;ydekurvene alene, eventuelt sammen med terrenglinjer, ikke gir detaljert nok informasjon om terrengformene.
 
-Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt. 
+Objekttyper er opsjonell og det m&#229; avklares i hvert enkelt oppdrag n&#229;r og hvordan den eventuelt skal benyttes.
  
-===== Føringer
-[cols="25,75"]
+ 
+[discrete]
+==== Føringer
+[cols="h,2"]
 |===
+|FKB grunnrissreferanse
+|Markert punkt i terrenget
+ 
+|FKB høydereferanse
+|På terrenget
+ 
+|FKB-H1
+|Opsjonell registrering
+ 
+|FKB-H5
+|Opsjonell registrering
+ 
 |===
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
+ 
+<<<
+ 
+[discrete]
+==== Egenskapstabell for objekttype: Terrengpunkt
+[cols="20,20,20,10", options="header"]
 |===
 |*Navn:* 
 |*Type:* 
 |*SOSI_navn:* 
 |*Mult.:* 
  
-|lokalId
-|CharacterString
-|..LOKALID
-|[1..1]
- 
-|navnerom
-|CharacterString
-|..NAVNEROM
-|[1..1]
- 
-|versjonId
-|CharacterString
-|..VERSJONID
+|identifikasjon
+|«dataType» Identifikasjon
+|..IDENT
 |[0..1]
  
-|===
+|identifikasjon.lokalId
+|CharacterString
+|...LOKALID
+|[1..1]
  
-<<<
-'''
+|identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[1..1]
  
-[[posisjonskvalitet]]
-==== «dataType» Posisjonskvalitet
+|identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
  
-===== Tilleggsinformasjon for fotogrammetrisk registrering
-beskrivelse av kvaliteten på stedfestingen.
-
-Merknad:
-Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode. 
+|oppdateringsdato
+|DateTime
+|..OPPDATERINGSDATO
+|[0..1]
  
-===== Føringer
-[cols="25,75"]
-|===
-|===
+|sluttdato
+|DateTime
+|..SLUTTDATO
+|[0..1]
  
-===== Egenskapstabell
-[cols="20,20,20,10"]
-|===
-|*Navn:* 
-|*Type:* 
-|*SOSI_navn:* 
-|*Mult.:* 
+|datafangstdato
+|Date
+|..DATAFANGSTDATO
+|[1..1]
  
-|datafangstmetode
+|medium
+|«CodeList» Medium
+|..MEDIUM
+|[0..1]
+ 
+|verifiseringsdato
+|Date
+|..VERIFISERINGSDATO
+|[0..1]
+ 
+|registreringsversjon
+|«CodeList» Registreringsversjon
+|..REGISTRERINGSVERSJON
+|[0..1]
+ 
+|informasjon
+|CharacterString
+|..INFORMASJON
+|[0..1]
+ 
+|kvalitet
+|«dataType» Posisjonskvalitet
+|..KVALITET
+|[1..1]
+ 
+|kvalitet.datafangstmetode
 |«CodeList» Datafangstmetode
-|..DATAFANGSTMETODE
+|...DATAFANGSTMETODE
 |[1..1]
  
-|nøyaktighet
+|kvalitet.nøyaktighet
 |Integer
-|..NØYAKTIGHET
+|...NØYAKTIGHET
 |[0..1]
  
-|synbarhet
+|kvalitet.synbarhet
 |«CodeList» Synbarhet
-|..SYNBARHET
+|...SYNBARHET
 |[0..1]
  
-|datafangstmetodeHøyde
+|kvalitet.datafangstmetodeHøyde
 |«CodeList» Datafangstmetode
-|..DATAFANGSTMETODEHØYDE
+|...DATAFANGSTMETODEHØYDE
 |[0..1]
  
-|nøyaktighetHøyde
+|kvalitet.nøyaktighetHøyde
 |Integer
-|..H-NØYAKTIGHET
+|...H-NØYAKTIGHET
 |[0..1]
  
-|===
-===== Restriksjoner
-[cols="20,80"]
-|===
-|*Navn:* 
-|*Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde*
+|posisjon
+|GM_Point
+|.PUNKT
+|[1..1]
  
-|Beskrivelse: 
-|inv: self.datafangstmetodeHøyde &lt;&gt; 'dig'
+|høyde
+|Real
+|..HØYDE
+|[1..1]
+ 
+|opphav
+|«dataType» Opphav
+|..OPPHAV
+|[1..1]
+ 
+|opphav.sikkerTerrenggjengivelse
+|Boolean
+|...SIKKERTERRENGGJENGIVELSE
+|[1..1]
+ 
+|opphav.datakilde
+|«CodeList» DatafangsmetodeUtvidet
+|...DATAKILDE
+|[1..1]
  
 |===
 // End of Registreringsinstruks UML-model
