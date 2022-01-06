@@ -1,5 +1,5 @@
 == Innhold og struktur
-Produktspesifikasjonen er bygget opp over en matrise med tre forskjellige datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortyper er lagt til radene i matrisen. 
+Produktspesifikasjonen er bygget opp over en matrise med datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortype er lagt til radene i matrisen. 
 
 Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekst-prosjekt. 
 
@@ -11,7 +11,7 @@ Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer 
 Spesifikasjonen omhandler krav til følgende sensortyper og datakilder: 
 
  * Luftbåren Topografisk LiDAR
- * Luftbåren Bathymetrisk LiDAR
+ * Luftbåren Batymetrisk LiDAR
  * Terrestrisk Topografisk LiDAR
  * Multistråle Ekkolodd
  * Bildematching
@@ -31,7 +31,7 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 [width="100%",options="header"]
 |====================
 |Kategorier |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|Beskrivelse |Detaljkartlegging|Prosjektering|NDH|Klasse for FvL
+|Beskrivelse |Detaljkartlegging|Prosjektering|NDH|Diverse
 |ID|A|B|C|E
 |Minimum Tetthet|10+|5|2|Egendefinert
 |Kartbladinndeling|1 : 500|1 : 1000|1 : 1000|-
@@ -42,7 +42,7 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 |====================
 <<<
 ****
-*ID* er en unik identifikasjon av hver klasse. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.
+*ID* er en unik identifikasjon av hver kategori. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.
 
 *Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet. Høyere tetthet kan spesifiseres per prosjekt. 
 
@@ -68,7 +68,7 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 [width="100%",options="header"]
 |====================
 |Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_ALS_A|Psky_1_ALS_B|Psky_1_ALS_C|Psky_1_ALS_E
+|Kategori ID||Psky_1_ALS_A|Psky_1_ALS_B|Psky_1_ALS_C|Psky_1_ALS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|0,04|0,04|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|0,10|0,10|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|0,10|0,20|Egendefinert
@@ -101,19 +101,19 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 ****
 
 <<<
-=== Luftbåren Bathymetrisk LiDAR
+=== Luftbåren Batymetrisk LiDAR
 
-Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
+Punktsky etablert med en flybåren batymetrisk LiDAR sensor. Batymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
 
 For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning"
 
 Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2010/12/LAS_Domain_Profile_Description_Topo-Bathy_Lidar.pdf[ASPRS LAS Domain Profile Description: Topo-Bathy Lidar (July 17, 2013)]
 
-.Luftbåren Bathymetrisk LiDAR
+.Luftbåren Batymetrisk LiDAR
 [width="100%",options="header"]
 |====================
 |Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_ALB_A|Psky_1_ALB_B|Psky_1_ALB_C|Psky_1_ALB_E
+|Kategori ID||Psky_1_ALB_A|Psky_1_ALB_B|Psky_1_ALB_C|Psky_1_ALB_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
@@ -124,11 +124,11 @@ Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2
 |====================
 
 ****
-Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topologikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
+Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topografikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
 
 Krav til *Skannevinkel* er veiledende og vil ikke gjelde for alle type ALB sensorer. 
 
-For både bathymetrisk og topologisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Bathymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
+For både batymetrisk og topografisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Batymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
 
 ****
 
@@ -143,7 +143,7 @@ Krav til datafangst må spesifiseres per prosjekt.
 [width="100%",options="header"]
 |====================
 |Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
-|KlasseID||Psky_1_TLS_A|Psky_1_TLS_B|Psky_1_TLS_C|Psky_1_TLS_E
+|Kategori ID||Psky_1_TLS_A|Psky_1_TLS_B|Psky_1_TLS_C|Psky_1_TLS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|x|x|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|x|x|Egendefinert
@@ -159,7 +159,7 @@ For presiseringer av nøyaktighet og skannevinkel se tabell for Luftbåren Topog
 <<<
 === Multistråle Ekkolodd
 
-Punktsky etablert med høyfrekvent gruntvanns ekkolodd. 
+Punktsky etablert med høyfrekvent gruntvannsekkolodd. 
 
 For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf[Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00]. Hvert enkelt prosjekt må spesifisere hvilke deler i standarddokumentet som er gjeldende for kartleggingsoppgaven.
 
@@ -167,7 +167,7 @@ For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjo
 [width="100%",options="header"]
 |====================
 |Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_MBES_A|Psky_1_MBES_B|Psky_1_MBES_C|Psky_1_MBES_E
+|Kategori ID||Psky_1_MBES_A|Psky_1_MBES_B|Psky_1_MBES_C|Psky_1_MBES_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.05 + 0.001*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10 + 0.002*dybde|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|-|x|Egendefinert
@@ -192,7 +192,7 @@ Punktsky generert fra bildemateriale. Minimumskategorien beskriver punktsky gene
 [width="100%",options="header"]
 |====================
 |Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_DIM_A|Psky_1_DIM_B|Psky_1_DIM_C|Psky_1_DIM_E
+|Kategori ID||Psky_1_DIM_A|Psky_1_DIM_B|Psky_1_DIM_C|Psky_1_DIM_E
 |Grunnlagsfoto / AT||x |GSD4-10 |GSD25|Egendefinert
 |Oppløsning DSM||x |0,2|0,5|Egendefinert
 |Avledet Punkttetthet||x |25|4|Egendefinert
