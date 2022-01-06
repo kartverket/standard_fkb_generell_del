@@ -25,7 +25,7 @@
 |FKB-AR5
  
 |SOSI_modellstatus
-|gyldig
+|utkast
  
 |SOSI_spesifikasjonstype
 |produktspesifikasjon
@@ -206,6 +206,24 @@ SOSI_datatype: T +
 SOSI_lengde: 10 + 
 SOSI_navn: KLASSIFISERINGSMETODE + 
 |===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*verifiseringsdato*
+ 
+|Definisjon: 
+|dato når dataene er fastslått å være i samsvar med virkeligheten.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: DATO + 
+SOSI_navn: VERIFISERINGSDATO + 
+|===
  
 [discrete]
 ===== Roller
@@ -258,7 +276,7 @@ SOSI_navn: KLASSIFISERINGSMETODE +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 |Realisering av: 
 |«ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursFlate +
@@ -306,13 +324,49 @@ SOSI_datatype: H +
 SOSI_lengde: 4 + 
 SOSI_navn: ARAVGRTYPE + 
 |===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*verifiseringsdato*
+ 
+|Definisjon: 
+|dato når dataene er fastslått å være i samsvar med virkeligheten.
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: DATO + 
+SOSI_navn: VERIFISERINGSDATO + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kvalitet*
+ 
+|Definisjon: 
+|	
+beskrivelse av kvaliteten på stedfestingen
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: KVALITET + 
+|===
  
 [discrete]
 ===== Arv og realiseringer
 [cols="20,80"]
 |===
 |Supertype: 
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
+|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
  
 |Realisering av: 
 |«ApplicationSchema» Arealressurs-4.0::«featureType» ArealressursGrense +
@@ -733,67 +787,8 @@ SOSI_navn: OPPHAV +
 [cols="20,80"]
 |===
 |Subtyper:
-|<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>> +
-<<arealressursgrensefiktiv,«featureType» ArealressursGrenseFiktiv>> +
-|Realisering av: 
-|«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
-|===
- 
-'''
- 
-[[kvalitetpåkrevd]]
-===== «FeatureType» KvalitetPåkrevd (abstrakt)
-*Definisjon:* abstrakt objekttype med påkrevet kvalitetsangivelse
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*verifiseringsdato*
- 
-|Definisjon: 
-|dato når dataene er fastslått å være i samsvar med virkeligheten.
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Date[Date]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: DATO + 
-SOSI_navn: VERIFISERINGSDATO + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*kvalitet*
- 
-|Definisjon: 
-|beskrivelse av kvaliteten på stedfestingen
-
-Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<posisjonskvalitet,«dataType» Posisjonskvalitet>>
-|Profilparametre i tagged values: 
-|
-SOSI_navn: KVALITET + 
-|===
- 
-[discrete]
-====== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<fellesegenskaper,«FeatureType» Fellesegenskaper>>
- 
-|Subtyper:
 |<<arealressursflate,«featureType» ArealressursFlate>> +
+<<arealressursgrensefiktiv,«featureType» ArealressursGrenseFiktiv>> +
 <<arealressursgrense,«featureType» ArealressursGrense>> +
 |Realisering av: 
 |«ApplicationSchema» Generelle typer 5.1/SOSI_Fellesegenskaper og SOSI_Objekt::«FeatureType» SOSI_Objekt +
