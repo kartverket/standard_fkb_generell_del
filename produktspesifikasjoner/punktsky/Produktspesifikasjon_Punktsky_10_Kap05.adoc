@@ -44,7 +44,7 @@ For de fire kategoriene (Høy, Middels, Minimum og Egendefinert) er det et sett 
 ****
 *ID* er en unik identifikasjon av hver kategori. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.
 
-*Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet. Høyere tetthet kan spesifiseres per prosjekt. 
+*Minimum Tetthet* er den minste tillatte punkttetthet per kvadratmeter i prosjektet. Høyere tetthet kan spesifiseres per prosjekt. 
 
 *Kartbladinndeling* beskriver ønsket kartbladindeks. Kartbladindeksene er definert i  https://kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/kart-og-geodata-2.0-standarder-geografisk-informasjon.pdf[Kart og Geodata - Tillegg D (side 108 og utover)]
 
@@ -103,7 +103,7 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 <<<
 === Luftbåren Batymetrisk LiDAR
 
-Punktsky etablert med en flybåren batymetrisk LiDAR sensor. Batymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
+Punktsky etablert med en flybåren batymetrisk LiDAR sensor. Batymetrisk LiDAR er også kjent som 'Grønnlaser'. Faktisk rekkevidde ned i vannkolonne avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. Ikke alle områder er derfor egnet for kartlegging med ALB system. 
 
 For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning"
 
@@ -124,11 +124,13 @@ Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2
 |====================
 
 ****
-Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topografikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
+Vertikal og Horisontal *Nøyaktighet* for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topografikomponenten. 
 
 Krav til *Skannevinkel* er veiledende og vil ikke gjelde for alle type ALB sensorer. 
 
-For både batymetrisk og topografisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Batymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
+For kombinert batymetrisk og topografisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Batymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
+
+Krav til *Tetthet* gjelder for 2m under vannstand ved måletidspunkt og faktisk tetthet vil reduseres ved økene måledyp. Et systems evne til å levere på gitt tetthet forutsetter gitte turbiditetsverdier og bunnrefleksjon. 
 
 ****
 
@@ -153,7 +155,7 @@ Krav til datafangst må spesifiseres per prosjekt.
 |====================
 
 ****
-For presiseringer av nøyaktighet og skannevinkel se tabell for Luftbåren Topografisk LiDAR.
+Nøyaktighetverdier gjelder for punkt nærmere enn 20m fra sensor (skråavstand). For punkt som faller lengere ute enn 20m garanteres ikke vertikal og horisontal nøyaktighet.
 ****
 
 <<<

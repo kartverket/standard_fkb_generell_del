@@ -18,7 +18,7 @@ Alle punkt, uavhengig sensortype og kategori, skal klassifiseries i henhold til 
 |6|Building|Bygning|Punkt på bygningskropp.
 |7|Low Point (Noise)|Støy|Støypunkt forårsaket av skyer, fugler, "multipath". Klassen omfatter unormalt høye og lave punkt (spikere).
 |8|Model Key-Point (mass point)||Skal ikke leveres.
-|9|Water|Vann|Punkt på vannflater.
+|41|Watersurface Bathy|Vannoverflate |Punkter på vannoverflate. Vannflater større enn 100m^2^ og elver bredere enn 3m skal registreres (FKB-C)
 |10|Rail|Jernbane|Punkt på jernbanespor.
 |11|Road Surface|Vegbane|Punkt innenfor vegbane.
 |12|Overlap Points|Overlappunkt|Skal ikke leveres.
@@ -26,7 +26,7 @@ Alle punkt, uavhengig sensortype og kategori, skal klassifiseries i henhold til 
 |14|Wire Conductor|Ledning|Luftledning (Fargelegges `#FDAE61`, ref figur).
 |15|Transmission Tower|Mast|Mast (Fargelegges `#ABD9E9`, ref figur).
 |16|Wire-Structure|Ledning - Kobling (isolasjon)|Skal ikke leveres.
-|17|Bridge-Deck|Bro|Minstemål for klassifisering er 10 m^2^. Alle punkter på selve brudekket skal klassifiseres til Bru (Klasse 17). Alle andre punkter på bro skal klassifiseres til Uklassifisert (1) eller korrekt klasse i eventuell opsjon.
+|17|Bridge-Deck|Brodekke|Minstemål for klassifisering er 10 m^2^. Alle punkter på selve brodekket skal klassifiseres til bro (Klasse 17). Alle andre punkter på bro skal klassifiseres til uklassifisert (1) eller korrekt klasse i eventuell opsjon.
 |18|High Noise|Støy Høy|Skal ikke leveres.
 |19|Overhead Structure||Markør Luftspenn (Fargelegges `#2C7BB6`).
 |20|Ignored Ground||Skal ikke leveres.
@@ -72,3 +72,10 @@ For klassifisering av ledningstema skal følgende tolkning ligge til grunn:
 [#LAS_EL]
 //[caption="Figure 1:"]
 image::figurer/Kap14_Klassifisering_Presisering_Ledning.png[Presisering Klasse 13-14-15 - Ledningsklasser,align="center"]
+
+=== Presisering Klassifisering av Damkonstruksjoner
+For damkonstruksjoner skal følgende klassifiseringsregime benyttes: 
+
+* Punkt som faller på damkonstruksjoner som aktivt holder vann tilbake skal legges til klasse 2 (bakke).
+* Punkt punkt som faller på infrastruktur (lukehus, rekkverk, master) legges til uklassifisert (1) eller korrekt klasse i eventuell opsjon.
+* Punkt som faller på brodekke over demningselement skal legges til klasse 17 (brodekke).
