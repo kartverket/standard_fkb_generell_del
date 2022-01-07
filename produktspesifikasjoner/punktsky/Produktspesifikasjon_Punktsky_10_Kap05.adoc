@@ -1,19 +1,19 @@
 == Innhold og struktur
-Produktspesifikasjonen er bygget opp over en matrise med tre forskjellige datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortyper er lagt til radene i matrisen. 
+Produktspesifikasjonen er bygget opp over en matrise med datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortype er lagt til radene i matrisen. 
 
-Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekst-prosjekt. 
+Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekst-prosjekt. Forskjell mellom kategorier bestemmes primært av krav til nøyaktighet. Punktettheten for hver kategori er et minimumskrav.
 
- * Høy Tetthet
- * Middels Tetthet
- * Lav Tetthet
+ * Høy
+ * Middels
+ * Minimum
  * Egendefinert
  
 Spesifikasjonen omhandler krav til følgende sensortyper og datakilder: 
 
- * Luftbåren Topografisk LiDAR
- * Luftbåren Bathymetrisk LiDAR
- * Terrestrisk Topografisk LiDAR
- * Multistråle Ekkolodd
+ * Luftbåren topografisk LiDAR
+ * Luftbåren batymetrisk LiDAR
+ * Terrestrisk topografisk LiDAR
+ * Multistråle ekkolodd
  * Bildematching
 
 Ikke alle sensortyper er egnet for bestilling i alle kategorier. Der hvor det ikke anbefales å benytte gitt sensor, er det satt en 'x' i tabellen. 
@@ -21,7 +21,7 @@ Ikke alle sensortyper er egnet for bestilling i alle kategorier. Der hvor det ik
 <<<
 === Felleskomponenter
 
-For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egendefinert) er det et sett med krav som er uavhengige av sensor. 
+For de fire kategoriene (Høy, Middels, Minimum og Egendefinert) er det et sett med krav som er uavhengige av sensor. 
 
 
 //Originaldatasett i XLSX på Teams
@@ -30,10 +30,10 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 .Punktsky Kategorier og generelle krav
 [width="100%",options="header"]
 |====================
-|Kategorier |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|Beskrivelse |Detaljkartlegging|Prosjektering|NDH|Klasse for FvL
+|Kategorier |Høy|Middels|Minimum|Egendefinert
+|Beskrivelse |Detaljkartlegging|Prosjektering|NDH|Diverse
 |ID|A|B|C|E
-|Minimum Tetthet|10+|5|2|Egendefinert
+|Minimum Tetthet|Høyere enn 10|5 til 10|2 til 5|Egendefinert
 |Kartbladinndeling|1 : 500|1 : 1000|1 : 1000|-
 |Fullstendighet |80% (2x2 innenfor 10x10)|95% (10x10) innenfor prosjekt|95% (10x10) innenfor prosjekt|-
 |Feilklassifisering|2%|2%|2%|-
@@ -42,19 +42,19 @@ For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egend
 |====================
 <<<
 ****
-*ID* er en unik identifikasjon av hver klasse. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.
+*ID* er en unik identifikasjon av hver kategori. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.
 
 *Minimum Tetthet* er den minste tillatte punkttetthet i prosjektet. Høyere tetthet kan spesifiseres per prosjekt. 
 
 *Kartbladinndeling* beskriver ønsket kartbladindeks. Kartbladindeksene er definert i  https://kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/kart-og-geodata-2.0-standarder-geografisk-informasjon.pdf[Kart og Geodata - Tillegg D (side 108 og utover)]
 
-*Fullstendighet* setter kravene til forventet punkttetthet. Beregningen er definert i kapittel 7.
+*Fullstendighet* setter kravene til forventet punkttetthet per kvadratmeter. Beregningen er definert i kapittel 7.
 
 *Feilklassifisering* definerer antall punkt innenfor en gitt klasse som tillattes feilklassifisert. Innen enhver 1 km x1 km rute, skal ikke mer enn 2 prosent av punktene være feilklassifisert. 
 
 *Feilklassifisering - Objekt* definerer antall objekt som tillates feilklassifisert. Eksempel Bygning: Kun 2% av bygg innenfor prosjektområdet tillates feilklassifisert. Objekttelling gjøres for følgende klasser: [Bygning(6),Ledning(13,14,15,16),Bru(17),Hengende Struktur(19)]
 
-*Antall bakkepunkt referanseflater* refererer seg til prosentandel klassifiserte bakkepunkter beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Kontrollflatene skal ha minimum størrelse 20*20 meter og ligge på harde, veldefinerte horisontale flater (maks helling 10%), for eksempel veg eller parkeringsplass. Krav til kontrollflater er definert i PaBG. 
+*Antall bakkepunkt referanseflater* refererer seg til prosentandel klassifiserte bakkepunkter beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Krav til kontrollflater er definert i PaBG. 
 ****
 
 <<<
@@ -67,8 +67,8 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 .Luftbåren Topografisk LiDAR
 [width="100%",options="header"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_ALS_A|Psky_1_ALS_B|Psky_1_ALS_C|Psky_1_ALS_E
+|Kategorier ||Høy|Middels|Minimum|Egendefinert
+|Kategori ID||Psky_1_ALS_A|Psky_1_ALS_B|Psky_1_ALS_C|Psky_1_ALS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|0,04|0,04|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|0,10|0,10|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|0,10|0,20|Egendefinert
@@ -76,7 +76,7 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 |Maksimum Punktavstand| |0,32|0,45|0,70|Egendefinert
 |Maksimum Fotavtrykk||0,20|0,50|2,00|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|20|20|20|Egendefinert
-|Obligatoriske Klasser||1+2+7+9+17+21|1+2+7+9+17+21|1+2+7+9+17+21|1+7
+|Obligatoriske Klasser||1+2+7+17+21|1+2+7+17+21|1+2+7+17+21|1+7
 |NHM Oppdateres||Ja|Ja|Ja|Nei
 |====================
 
@@ -91,7 +91,7 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 
 *Maksimum Punktavstand* er en funksjon av punkttetthet [SQRT(1/tetthet)] og sikrer en homogen punktdistribusjon. 
 
-*Maksimum Fotavtrykk* definerer maksimum tillatte fotavtrykk. 
+*Maksimum Fotavtrykk* definerer maksimum tillatte fotavtrykk og skal beregnes ved hjelp av 1/e^2^.    
 
 *Maksimum Skannevinkel* beregnes som pluss og minusverdi fra nadir. Kravet legger premisser for selve flyplanleggingen og høyere åpningsvinkel for leveransen kan spesifiseres per prosjekt. 
 
@@ -101,19 +101,19 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 ****
 
 <<<
-=== Luftbåren Bathymetrisk LiDAR
+=== Luftbåren Batymetrisk LiDAR
 
-Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
+Punktsky etablert med en flybåren batymetrisk LiDAR sensor. Batymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. 
 
 For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning"
 
 Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2010/12/LAS_Domain_Profile_Description_Topo-Bathy_Lidar.pdf[ASPRS LAS Domain Profile Description: Topo-Bathy Lidar (July 17, 2013)]
 
-.Luftbåren Bathymetrisk LiDAR
+.Luftbåren Batymetrisk LiDAR
 [width="100%",options="header"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_ALB_A|Psky_1_ALB_B|Psky_1_ALB_C|Psky_1_ALB_E
+|Kategorier ||Høy|Middels|Minimum|Egendefinert
+|Kategori ID||Psky_1_ALB_A|Psky_1_ALB_B|Psky_1_ALB_C|Psky_1_ALB_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
@@ -124,11 +124,11 @@ Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2
 |====================
 
 ****
-Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topologikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
+Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topografikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon. 
 
 Krav til *Skannevinkel* er veiledende og vil ikke gjelde for alle type ALB sensorer. 
 
-For både bathymetrisk og topologisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Bathymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
+For både batymetrisk og topografisk datafangst må de *Obligatoriske klassene* utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Batymetrisk LiDAR skal vannflate [underline]#alltid# klassifiseres til klasse 42.
 
 ****
 
@@ -142,13 +142,13 @@ Krav til datafangst må spesifiseres per prosjekt.
 .Terrestrisk Topografisk LiDAR
 [width="100%",options="header"]
 |====================
-|Kategorier| |"Høy tetthet"|"Middels Tetthet"|"Minimum Tetthet"|Egendefinert
-|KlasseID||Psky_1_TLS_A|Psky_1_TLS_B|Psky_1_TLS_C|Psky_1_TLS_E
+|Kategorier ||Høy|Middels|Minimum|Egendefinert
+|Kategori ID||Psky_1_TLS_A|Psky_1_TLS_B|Psky_1_TLS_C|Psky_1_TLS_E
 |Vertikal Nøyaktighet|Standardavvik|0,03|x|x|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|0,15|x|x|Egendefinert
-|Obligatoriske Klasser||1+2+7+9+17+21|x|x|1+7
+|Obligatoriske Klasser||1+2+7+17+21|x|x|1+7
 |NHM Oppdateres||Nei|x|x|Nei
 |====================
 
@@ -159,15 +159,15 @@ For presiseringer av nøyaktighet og skannevinkel se tabell for Luftbåren Topog
 <<<
 === Multistråle Ekkolodd
 
-Punktsky etablert med høyfrekvent gruntvanns ekkolodd. 
+Punktsky etablert med høyfrekvent gruntvannsekkolodd. 
 
 For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf[Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00]. Hvert enkelt prosjekt må spesifisere hvilke deler i standarddokumentet som er gjeldende for kartleggingsoppgaven.
 
 .Multistråle Ekkolodd
 [width="100%",options="header"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_MBES_A|Psky_1_MBES_B|Psky_1_MBES_C|Psky_1_MBES_E
+|Kategorier ||Høy|Middels|Minimum|Egendefinert
+|Kategori ID||Psky_1_MBES_A|Psky_1_MBES_B|Psky_1_MBES_C|Psky_1_MBES_E
 |Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.05 + 0.001*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10 + 0.002*dybde|x|Egendefinert
 |Horisontal Nøyaktighet|Standardavvik|x|-|x|Egendefinert
@@ -191,8 +191,8 @@ Punktsky generert fra bildemateriale. Minimumskategorien beskriver punktsky gene
 .Bildematching
 [width="100%",options="header"]
 |====================
-|Kategorier| |Høy tetthet|Middels Tetthet|Minimum Tetthet|Egendefinert
-|KlasseID||Psky_1_DIM_A|Psky_1_DIM_B|Psky_1_DIM_C|Psky_1_DIM_E
+|Kategorier ||Høy|Middels|Minimum|Egendefinert
+|Kategori ID||Psky_1_DIM_A|Psky_1_DIM_B|Psky_1_DIM_C|Psky_1_DIM_E
 |Grunnlagsfoto / AT||x |GSD4-10 |GSD25|Egendefinert
 |Oppløsning DSM||x |0,2|0,5|Egendefinert
 |Avledet Punkttetthet||x |25|4|Egendefinert

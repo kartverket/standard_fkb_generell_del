@@ -449,7 +449,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#trueinnledning-historikk-og-endringslogg">1. Innledning, historikk og endringslogg</a>
 <ul class="sectlevel2">
-<li><a href="#trueinnledning">1.1. Innledning</a></li>
+<li><a href="#trueinnledning">1.1. Innledning</a>
+<ul class="sectlevel3">
+<li><a href="#truefotogrammetrisk-registrering-av-elveg">1.1.1. Fotogrammetrisk registrering av Elveg</a></li>
+</ul>
+</li>
 <li><a href="#trueendringslogg">1.2. Endringslogg</a></li>
 </ul>
 </li>
@@ -489,7 +493,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueregler-for-fotogrammetrisk-ajourhold-av-elveg">5.3. Regler for fotogrammetrisk ajourhold av Elveg</a>
 <ul class="sectlevel3">
 <li><a href="#truebruk-av-endringsflagg">5.3.1. Bruk av endringsflagg</a></li>
-<li><a href="#truekriterier-for-geometriforbedring">5.3.2. Kriterier for geometriforbedring</a></li>
+<li><a href="#truekriterier-for-fotogrammetrisk-ajourhold">5.3.2. Kriterier for fotogrammetrisk ajourhold</a></li>
 </ul>
 </li>
 </ul>
@@ -550,6 +554,18 @@ for type veg (se punkt 3.1) og avgjør om objektet skal kartlegges i FKB-Elveg e
 <div class="paragraph">
 <p>For full beskrivelse av FKB-Elveg 2.0 og detaljer rundt modellering og UML-modeller henvises det til
 SOSI Elveg 2.0.</p>
+</div>
+<div class="sect3">
+<h4 id="truefotogrammetrisk-registrering-av-elveg"><a class="anchor" href="#truefotogrammetrisk-registrering-av-elveg"></a>1.1.1. Fotogrammetrisk registrering av Elveg</h4>
+<div class="paragraph">
+<p>Elveg er ikke et rent FKB-datasett og forvaltes i NVDB. Elveg består av et komplett nettverk av veglenker og mye informasjon (egenskaper/objekter) knyttet til dette nettverket. Det er ikke mulig/hensiktsmessig å vedlikeholde all informasjonen i Elveg ved fotogrammetrisk registrering. Veldig mange egenskaper og en del av veglenkene krever administrativt vedlikehold.</p>
+</div>
+<div class="paragraph">
+<p>Det som er ønskelig å vedlikeholde ved fotogrammetrisk registrering er i første rekke nøyaktigheten og fullstendigheten til det eksisterende vegnettet. Denne spesifikasjonen forsøker å beskrive rammene for dette ved bruk av samme mal som øvrige FKB fotogrammetriske registreringsinstrukser. Det er imidlertid en del avvikende regler som er presisert i kapittel 3 og kapittel 5.</p>
+</div>
+<div class="paragraph">
+<p>Et godt ajourhold av Elveg krever god kjennskap/forståelse til datasettet/fagområdet. Dette dokumentet alene er ikke nok til å skape en slik forståelse, men det er lagt inn en god del skisser/bilder som bør kunne hjelpe til i forståelsen. Eksemplene er ment som eksempler og ikke nødvendigvis fasit på registrering på alle typer veglenker.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -878,22 +894,24 @@ bygninger som deles av avgrensningspolygonet</p>
 <h2 id="trueobjekttyper-og-egenskaper"><a class="anchor" href="#trueobjekttyper-og-egenskaper"></a>3. Objekttyper og egenskaper</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ved fotogrammetrisk registrering av Elveg er det kun senterlinjegeometri av objekttypen Veglenke som registreres.
-Veglenke forvaltes med mange egenskaper, men det er kun følgende egenskaper som skal oppdateres ved fotogrammetri:</p>
+<p>Ved fotogrammetrisk registrering av Elveg er det kun senterlinjegeometri av objekttypen Veglenke som skal registreres. Den sentrale oppgaven er å registrere ny senterlinjegeometri med noen sentrale egenskaper der vegnettsgeometrien mangler eller eksisterende geometri er slik at <a href="#truekriterier-for-fotogrammetrisk-ajourhold">Kriterier for fotogrammetrisk ajourhold</a> er oppfylt.</p>
+</div>
+<div class="paragraph">
+<p>Egenskapene som skal oppdateres fotogrammetrisk er:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Typeveg (se eget kapittel under)</p>
+<p><strong>Typeveg</strong> (Dette er den sentrale klassifiseringen av vegnettet. Se beskrivelser i kapittel 3.2)</p>
 </li>
 <li>
-<p>Medium</p>
+<p><strong>Medium</strong> (Registreres på alle objekter som ikke ligger på terrenget)</p>
 </li>
 <li>
-<p>Datafangstdato</p>
+<p><strong>Datafangstdato</strong></p>
 </li>
 <li>
-<p>Stedfestingskvalitet</p>
+<p><strong>Stedfestingskvalitet</strong></p>
 </li>
 </ul>
 </div>
@@ -1418,13 +1436,13 @@ I kanaliserte kryss og ved gangfelt hvor kjørebanene er fysisk adskilt med traf
 <div class="content">
 <img src="figurer/veglenke1.png" alt="veglenke1">
 </div>
-<div class="title">Figur 1. Figuren viser registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt</div>
+<div class="title">Figur 1. Figuren viser eksempel på registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="figurer/veglenke2.png" alt="veglenke2">
 </div>
-<div class="title">Figur 2. Figuren viser registrering av flere ulike typer veg i et fullkanalisert T-kryss med svingefelt</div>
+<div class="title">Figur 2. Figuren viser registrering av flere ulike typer veg i et fullkanalisert T-kryss med svingefelt. I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er tilstede.</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1733,6 +1751,9 @@ I kanaliserte kryss og ved gangfelt hvor kjørebanene er fysisk adskilt med traf
 <div class="sect1">
 <h2 id="truetilleggsinformasjon"><a class="anchor" href="#truetilleggsinformasjon"></a>5. Tilleggsinformasjon</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>De generelle retningslinjene for fotogrammetrisk registering av FKB er beskrevet i kapittel 2. Elveg skiller seg en del fra øvrige FKB-datasett og en del av innholdet i kapittel 2 gjelder derfor ikke Elveg. Disse avvikene er presisert i dette kapittelet. Der innholdet i kapittel 2 og i kapittel 5 ikke harmonerer er det beskrivelsene i kapittel 5 som gjelder.</p>
+</div>
 <div class="sect2">
 <h3 id="trueregistrering-av-nye-veglenker"><a class="anchor" href="#trueregistrering-av-nye-veglenker"></a>5.1. Registrering av nye veglenker</h3>
 <div class="paragraph">
@@ -1741,10 +1762,10 @@ I kanaliserte kryss og ved gangfelt hvor kjørebanene er fysisk adskilt med traf
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Veger lenger enn 50 meter.</p>
+<p>Veger lenger enn 50 meter</p>
 </li>
 <li>
-<p>Vegen er gjennomkjørbar (knytter vegnettet sammen)</p>
+<p>Vegen knytter vegnettet sammen</p>
 </li>
 </ol>
 </div>
@@ -1843,7 +1864,7 @@ I kanaliserte kryss og ved gangfelt hvor kjørebanene er fysisk adskilt med traf
 </div>
 </div>
 <div class="sect3">
-<h4 id="truekriterier-for-geometriforbedring"><a class="anchor" href="#truekriterier-for-geometriforbedring"></a>5.3.2. Kriterier for geometriforbedring</h4>
+<h4 id="truekriterier-for-fotogrammetrisk-ajourhold"><a class="anchor" href="#truekriterier-for-fotogrammetrisk-ajourhold"></a>5.3.2. Kriterier for fotogrammetrisk ajourhold</h4>
 <div class="paragraph">
 <p>Ved fotogrammetrisk ajourhold skal eksisterende geometri erstattes med ny når:</p>
 </div>
@@ -2058,7 +2079,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-03 18:55:08 +0100
+Last updated 2022-01-06 12:23:29 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
