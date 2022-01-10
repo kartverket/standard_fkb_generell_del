@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.8.dev">
-<meta name="author" content="Høringsversjon 15. November 2021">
+<meta name="author" content="Geovekst">
 <title>Produktspesfikasjon: Punktsky 1.0</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -441,7 +441,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Produktspesfikasjon: Punktsky 1.0</h1>
 <div class="details">
-<span id="author" class="author">Høringsversjon 15. November 2021</span><br>
+<span id="author" class="author">Geovekst</span><br>
+<span id="revnumber">versjon 1.0,</span>
+<span id="revdate">2022-01-01</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
@@ -503,7 +505,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#truefelleskomponenter">5.1. Felleskomponenter</a></li>
 <li><a href="#trueluftbåren-topografisk-lidar">5.2. Luftbåren Topografisk LiDAR</a></li>
-<li><a href="#trueluftbåren-bathymetrisk-lidar">5.3. Luftbåren Bathymetrisk LiDAR</a></li>
+<li><a href="#trueluftbåren-batymetrisk-lidar">5.3. Luftbåren Batymetrisk LiDAR</a></li>
 <li><a href="#trueterrestrisk-topografisk-lidar">5.4. Terrestrisk Topografisk LiDAR</a></li>
 <li><a href="#truemultistråle-ekkolodd">5.5. Multistråle Ekkolodd</a></li>
 <li><a href="#truebildematching">5.6. Bildematching</a></li>
@@ -562,25 +564,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truekrav-metadata-egendefinert">13.3. Krav Metadata "Egendefinert"</a></li>
 </ul>
 </li>
-<li><a href="#trueappendix-a-lidar-klasseinndeling">14. Appendix A: LiDAR Klasseinndeling</a>
+<li><a href="#trueappendix-a-punktsky-klasseinndeling">14. Appendix A: Punktsky Klasseinndeling</a>
 <ul class="sectlevel2">
 <li><a href="#truepresisering-klasse-17-bro">14.1. Presisering Klasse 17 - Bro</a></li>
 <li><a href="#truepresisering-klasse-13-14-15-ledningsklasser">14.2. Presisering Klasse 13, 14, 15 - Ledningsklasser</a></li>
+<li><a href="#truepresisering-klassifisering-av-damkonstruksjoner">14.3. Presisering Klassifisering av Damkonstruksjoner</a></li>
 </ul>
 </li>
 <li><a href="#trueappendix-b-høydedata-no">15. Appendix B - Høydedata.no</a></li>
-<li><a href="#trueappendix-c-lisensvilkår">16. Appendix C - Lisensvilkår</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/produktspesifikasjoner/Punktsky/1.0/Punktsky.pdf">som PDF</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Publisert</strong>: 2022-01-17<br>
+<strong>Denne versjonen finnes på</strong>: <a href="https://sosi.geonorge.no/produktspesifikasjoner/Punktsky/1.0" class="bare">https://sosi.geonorge.no/produktspesifikasjoner/Punktsky/1.0</a><br>
+<strong>Nyeste versjon finnes på</strong>: <a href="https://sosi.geonorge.no/produktspesifikasjoner/Punktsky" class="bare">https://sosi.geonorge.no/produktspesifikasjoner/Punktsky</a><br>
+<strong>Denne versjonen erstatter</strong>: <a href="https://register.geonorge.no/data/documents/Produktspesifikasjoner_fkb-laser_v9_fkb-laser-v30-2021-01-01_.pdf">FKB-Laser v3.0 2021-01-01</a><br>
+<strong>Faglig godkjent av</strong>: Geovekst<br>
+<strong>Formelt godkjent av</strong>: Kartverket</p>
+</div>
+</div>
+</div>
+<!-- toc disabled -->
+</div>
+</div>
 <div class="sect1">
 <h2 id="trueinnledning-historikk-og-endringslogg"><a class="anchor" href="#trueinnledning-historikk-og-endringslogg"></a>1. Innledning, historikk og endringslogg</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
 <div class="paragraph">
-<p>Denne spesifikasjonen detaljerer etablering og forvaltning av punktskyer fra forskjellige sensorer montert på forskjellige platformer. En punktsky består av en stor mengde enkeltstående punkt uten noen relasjon til hverandre. I tillegg til XYZ koordinater, har hvert punkt en rekke berikende atributter som gjør det mulig å sette punktet i sammenheng. Et eksempel på en slik atributt er klassifisering hvor punktet tilegnes en definert klasse slik som bakkepunkt, brudekke eller støy. Punktene kan også tilegnes fargeverdier fra foto for enklere tolking.</p>
+<p>Denne spesifikasjonen detaljerer etablering og forvaltning av punktskyer fra forskjellige sensorer montert på forskjellige platformer.</p>
+</div>
+<div class="paragraph">
+<p>En punktsky består av en stor mengde enkeltstående punkt uten noen relasjon til hverandre. I tillegg til XYZ koordinater, kan hvert punkt ha en rekke berikende atributter som gjør det mulig å sette punktet i sammenheng. Et eksempel på en slik atributt er klassifisering hvor punktet tilegnes en definert klasse slik som bakkepunkt, brudekke eller støy. Punktene kan også tilegnes fargeverdier fra foto for enklere tolking.</p>
+</div>
+<div class="paragraph">
+<p>Punktskyene produseres med forskjellige metoder som hver gir forskjellige egenskaper. Topografiske punktskyer etableres <span class="underline">enten</span> med et LiDAR system eller ved bruk av fotogrammetriske metoder (bildematching). Batymetriske punktskyer etableres <span class="underline">enten</span> med et LiDAR system eller med et multistråle ekkolodd. Selv om punktskyene fra de forskjellige sensorene utveksles over samme datamodell er det viktig på presisere at de er fundamentalt forskjellige og dekker opp forskjellige behov.</p>
 </div>
 <div class="paragraph">
 <p>Punktskyen ansees som et primærprodukt, og for praktisk bruk vil det være hensiktsmessig å avlede et uniformt grid eller en triangelmodell.</p>
@@ -611,7 +648,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Introdusert kategori: "Egendefinert"</p>
 </li>
 <li>
-<p>Introdusert metode: Bathymetrisk LiDAR</p>
+<p>Introdusert metode: Batymetrisk LiDAR</p>
 </li>
 <li>
 <p>Introdusert metode: Multistråle Ekkolodd</p>
@@ -656,53 +693,67 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="truedefinisjoner"><a class="anchor" href="#truedefinisjoner"></a>2.1. Definisjoner</h3>
 <div class="paragraph">
-<div class="title">Digital Høydemodell (DHM)</div>
+<div class="title">topografi</div>
+<p>Topografi betyr stedsbeskrivelse, et landområdes terrengforhold, bebyggelse, kommunikasjoner og lignende. Topografien beskjeftiger seg med oppmåling og beskrivelse av områder på jordoverflaten; både på landoverflaten, landtopografi, og havoverflaten, havtopografi. (topografi i Store norske leksikon på snl.no. Hentet 6. januar 2022 fra <a href="https://snl.no/topografi" class="bare">https://snl.no/topografi</a>)</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Sensorer som etablerer topografi betegnes som i standarden som topografiske sensorer. Eksempel Luftbåren Topografisk LiDAR.</p>
+</div>
+<div class="paragraph">
+<div class="title">batymetri</div>
+<p>Batymetri beskriver terreng- og høydeforhold for hav- og sjøbunn.</p>
+</div>
+<div class="paragraph">
+<p><em>MERKNAD</em>: Sensorer som etablerer batymetri betegnes som i standarden som batymetriske sensorer. Eksempel luftbåren batymetrisk liDAR og multistråle ekkolodd.</p>
+</div>
+<div class="paragraph">
+<div class="title">digital høydemodell (DHM)</div>
 <p>En digital representasjon av høydeverdier som varierer over en flate.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: En DHM er en samling av et stort antall høydepunkter på en flate. Punktene kan være organisert som et regelmessig rutenett eller i et mer uregelmessig mønster. Den siste metoden vil normalt gi den beste beskrivelsen av flaten. Alternativ engelsk betegnelse er ”Digital Elevation Model (DEM)”.</p>
 </div>
 <div class="paragraph">
-<div class="title">Digital Terrengmodell (DTM)</div>
+<div class="title">digital terrengmodell (DTM)</div>
 <p>En DHM som beskriver terrengoverflaten uten vegetasjon, bygninger og andre objekter.</p>
 </div>
 <div class="paragraph">
-<div class="title">Digital Overflatemodell (DOM)</div>
+<div class="title">digital overflatemodell (DOM)</div>
 <p>En DHM som beskriver overflaten av terrenget inkludert objekter som vegetasjon, bygninger etc.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: Alternativ engelsk betegnelse er «Digital Surface Model (DSM)».</p>
 </div>
 <div class="paragraph">
-<div class="title">Luftbåren Laserskanning</div>
+<div class="title">luftbåren laserskanning</div>
 <p>Måling av avstand mellom en lasersensor, i fly eller helikopter, og terrengoverflaten.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: Flybåren laserskanning kalles også laseraltimetri.</p>
 </div>
 <div class="paragraph">
-<div class="title">Fotogrammetrisk Punktsky</div>
+<div class="title">fotogrammetrisk punktsky</div>
 <p>Punktsky generert ved hjelp av fotogrammetriske metoder.</p>
 </div>
 <div class="paragraph">
-<p><em>MERKNAD</em> :	Kalles også bildematching eller med den engelske betegnelsen «Dense image matching»</p>
+<p><em>MERKNAD</em> :	Kalles også bildematching eller med den engelske betegnelsen «dense image matching»</p>
 </div>
 <div class="paragraph">
-<div class="title">Multistråle Ekkolodd</div>
+<div class="title">multistråle ekkolodd</div>
 <p>Måling av avstand ved hjelp av akkustikk under vann.</p>
 </div>
 <div class="paragraph">
-<p><em>MERKNAD</em>: Kalles også MBES fra den engelske betegnelsen «Multi Beam Eccho Sounding».</p>
+<p><em>MERKNAD</em>: Kalles også MBES fra den engelske betegnelsen «Multi Beam Echo Sounding».</p>
 </div>
 <div class="paragraph">
-<div class="title">Terrestrisk skanning</div>
+<div class="title">terrestrisk laserskanning</div>
 <p>Måling av avstand mellom en lasersensor plassert på «bakkenivå» og objekter rundt sensoren.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: Sensorer montert på kjøretøy, stativ eller håndholdte sensorer passer alle inn her.</p>
 </div>
 <div class="paragraph">
-<div class="title">Kvalitet</div>
+<div class="title">kvalitet</div>
 <p>Helheten av egenskaper en enhet har og som vedrører dens evne til å tilfredsstille uttalte og underforståtte behov [NS-ISO 8402 def. 2.1].</p>
 </div>
 <div class="paragraph">
@@ -732,39 +783,29 @@ I Geodatastandarden er det definert seks kvalitetselementer:</p>
 </ul>
 </div>
 <div class="paragraph">
-<div class="title">Laserskanning Fotavtrykk</div>
+<div class="title">laserskanning fotavtrykk</div>
 <p>Lasersensorens opptaksområde på overflaten.</p>
 </div>
 <div class="paragraph">
-<p><em>MERKNAD</em>: Alternativ engelsk betegnelse er ”footprint”.</p>
+<p><em>MERKNAD</em>: Størrelsen på fotavtrykket sier noe om hvor små detaljer man i praksis kan detektere. Alternativ engelsk betegnelse er ”footprint”.</p>
 </div>
 <div class="paragraph">
-<div class="title">Laserskanning Punkttetthet</div>
-<p>Antall laserpulser som treffer en flate pr. m2.</p>
+<div class="title">punkttetthet</div>
+<p>Antall punkter som treffer en flate pr. m2.</p>
 </div>
 <div class="paragraph">
-<div class="title">Teoretisk Punkttetthet</div>
-<p>Antall laserpulser (førstereturer) som treffer en flate pr. m2 i områder uten overlapp mellom stripene.</p>
+<div class="title">laserskanning skannevinkel</div>
+<p>Laserstrålens vinkel i forhold til sensorens referansesystem.</p>
 </div>
 <div class="paragraph">
-<p><em>MERKNAD</em>: Dette er en teoretisk verdi som beregnes ut fra flyhøyde, flyhastighet, parametere i laserskanneren etc. I praksis vil punktettheten variere innenfor et område pga. forskjeller i terrenghøyden, dødvinkler med mer.</p>
-</div>
-<div class="paragraph">
-<div class="title">Laserskanning Skannevinkel</div>
-<p>Laserstrålens vinkel i forhold til loddlinjen.</p>
-</div>
-<div class="paragraph">
-<p><em>MERKNAD</em>: På grunn av turbulens vil ikke instrumentets 0-retning (alltid) treffe bakken med 90 graders vinkel.</p>
-</div>
-<div class="paragraph">
-<div class="title">Metadata</div>
+<div class="title">metadata</div>
 <p>Informasjon som beskriver et datasett.</p>
 </div>
 <div class="paragraph">
 <p><em>MERKNAD</em>: Hvilke opplysninger som inngår i metadataene, kan variere avhengig av datasettets karakter. Vanlige opplysninger er innhold, kvalitet, tilstand, struktur, format, produsent og vedlikeholdsansvar.</p>
 </div>
 <div class="paragraph">
-<div class="title">Produktspesifikasjon</div>
+<div class="title">produktspesifikasjon</div>
 <p>Detaljert beskrivelse av ett datasett eller en serie med datasett med tilleggsinformasjon som gjør det mulig å produsere, distribuere og bruke datasettet av andre (tredjepart).</p>
 </div>
 <div class="paragraph">
@@ -864,7 +905,7 @@ I Geodatastandarden er det definert seks kvalitetselementer:</p>
 <div class="sect2">
 <h3 id="truetemakategori"><a class="anchor" href="#truetemakategori"></a>3.6. Temakategori</h3>
 <div class="paragraph">
-<p>punktsky, laser, fotogrammetrisk punktsky, bathymetri, høydedata, dybdedata, digital terrengmodell (DTM), digital overflatemodell (DOM).</p>
+<p>punktsky, laser, fotogrammetrisk punktsky, batymetri, høydedata, dybdedata, digital terrengmodell (DTM), digital overflatemodell (DOM).</p>
 </div>
 </div>
 <div class="sect2">
@@ -981,24 +1022,24 @@ Ikke angitt</p>
 <h2 id="trueinnhold-og-struktur"><a class="anchor" href="#trueinnhold-og-struktur"></a>5. Innhold og struktur</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Produktspesifikasjonen er bygget opp over en matrise med tre forskjellige datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortyper er lagt til radene i matrisen.</p>
+<p>Produktspesifikasjonen er bygget opp over en matrise hvor kolonnene representerer datasettkategorier og radene representerer felleskrav og krav per sensortype.</p>
 </div>
 <div class="paragraph">
-<p>Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekst-prosjekt.</p>
+<p>Datasettkategoriene er primært bestemt av krav til nøyaktighet. Punkttettheten for hver kategori er et minimumskrav og settes per prosjekt. ‘Egendefinert’ er en åpen kategori som muliggjør forvaltning av datasett som ikke følger standarden i høydedata.no. Følgende kategorier er benyttet:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Høy Tetthet</p>
+<p><span class="underline">Høy</span> nøyaktighet og tetthet</p>
 </li>
 <li>
-<p>Middels Tetthet</p>
+<p><span class="underline">Middels</span> nøyaktighet og tetthet</p>
 </li>
 <li>
-<p>Lav Tetthet</p>
+<p><span class="underline">Minimum</span> nøyaktighet og tetthet</p>
 </li>
 <li>
-<p>Egendefinert</p>
+<p><span class="underline">Egendefinert</span></p>
 </li>
 </ul>
 </div>
@@ -1008,19 +1049,19 @@ Ikke angitt</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Luftbåren Topografisk LiDAR</p>
+<p>Luftbåren topografisk LiDAR</p>
 </li>
 <li>
-<p>Luftbåren Bathymetrisk LiDAR</p>
+<p>Luftbåren batymetrisk LiDAR</p>
 </li>
 <li>
-<p>Terrestrisk Topografisk LiDAR</p>
+<p>Terrestrisk topografisk LiDAR</p>
 </li>
 <li>
-<p>Multistråle Ekkolodd</p>
+<p>Multistråle ekkolodd</p>
 </li>
 <li>
-<p>Bildematching</p>
+<p>Fotogrammetrisk Konstruerte Punktksyer (Bildematching)</p>
 </li>
 </ul>
 </div>
@@ -1031,7 +1072,7 @@ Ikke angitt</p>
 <div class="sect2">
 <h3 id="truefelleskomponenter"><a class="anchor" href="#truefelleskomponenter"></a>5.1. Felleskomponenter</h3>
 <div class="paragraph">
-<p>For de fire kategoriene (Høy Tetthet, Middels Tetthet, Minimum Tetthet og Egendefinert) er det et sett med krav som er uavhengige av sensor.</p>
+<p>For de fire kategoriene (Høy, Middels, Minimum og Egendefinert) er det et sett med krav som er uavhengige av sensor.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 1. Punktsky Kategorier og generelle krav</caption>
@@ -1045,9 +1086,9 @@ Ikke angitt</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
-<th class="tableblock halign-left valign-top">Høy tetthet</th>
-<th class="tableblock halign-left valign-top">Middels Tetthet</th>
-<th class="tableblock halign-left valign-top">Minimum Tetthet</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
@@ -1057,7 +1098,7 @@ Ikke angitt</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Detaljkartlegging</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prosjektering</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NDH</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Klasse for FvL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diverse</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
@@ -1068,9 +1109,9 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum Tetthet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10+</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Høyere enn 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 til 10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 til 5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Egendefinert</p></td>
 </tr>
 <tr>
@@ -1110,19 +1151,20 @@ Ikke angitt</p>
 </tr>
 </tbody>
 </table>
+<div style="page-break-after: always;"></div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p><strong>ID</strong> er en unik identifikasjon av hver klasse. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.</p>
+<p><strong>ID</strong> er en unik identifikasjon av hver kategori. Benyttes i metadata og er nødvendig for korrekt behandling i høydedata.no.</p>
 </div>
 <div class="paragraph">
-<p><strong>Minimum Tetthet</strong> er den minste tillatte punkttetthet i prosjektet. Høyere tetthet kan spesifiseres per prosjekt.</p>
+<p><strong>Minimum Tetthet</strong> er den minste tillatte punkttetthet per kvadratmeter i prosjektet. Høyere tetthet kan spesifiseres per prosjekt.</p>
 </div>
 <div class="paragraph">
 <p><strong>Kartbladinndeling</strong> beskriver ønsket kartbladindeks. Kartbladindeksene er definert i  <a href="https://kartverket.no/globalassets/geodataarbeid/standardisering/standarder/standarder-geografisk-informasjon/kart-og-geodata-2.0-standarder-geografisk-informasjon.pdf">Kart og Geodata - Tillegg D (side 108 og utover)</a></p>
 </div>
 <div class="paragraph">
-<p><strong>Fullstendighet</strong> setter kravene til forventet punkttetthet. Beregningen er definert i kapittel 7.</p>
+<p><strong>Fullstendighet</strong> setter kravene til forventet punkttetthet per kvadratmeter. Beregningen er definert i kapittel 7.</p>
 </div>
 <div class="paragraph">
 <p><strong>Feilklassifisering</strong> definerer antall punkt innenfor en gitt klasse som tillattes feilklassifisert. Innen enhver 1 km x1 km rute, skal ikke mer enn 2 prosent av punktene være feilklassifisert.</p>
@@ -1131,7 +1173,7 @@ Ikke angitt</p>
 <p><strong>Feilklassifisering - Objekt</strong> definerer antall objekt som tillates feilklassifisert. Eksempel Bygning: Kun 2% av bygg innenfor prosjektområdet tillates feilklassifisert. Objekttelling gjøres for følgende klasser: [Bygning(6),Ledning(13,14,15,16),Bru(17),Hengende Struktur(19)]</p>
 </div>
 <div class="paragraph">
-<p><strong>Antall bakkepunkt referanseflater</strong> refererer seg til prosentandel klassifiserte bakkepunkter beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Kontrollflatene skal ha minimum størrelse 20*20 meter og ligge på harde, veldefinerte horisontale flater (maks helling 10%), for eksempel veg eller parkeringsplass. Krav til kontrollflater er definert i PaBG.</p>
+<p><strong>Antall bakkepunkt referanseflater</strong> refererer seg til prosentandel klassifiserte bakkepunkter beregnet ut fra bestilt teoretisk punkttetthet. Eksempel: Dersom bestilt punkttetthet er 2 pkt/m2 er kravet minimum1,6 pkt/m2 klassifisert som bakke. Ved kontroll skal man benytte kontrollflater som ligger jevnt utover prosjektområdet. Krav til kontrollflater er definert i PaBG.</p>
 </div>
 </div>
 </div>
@@ -1159,15 +1201,15 @@ Ikke angitt</p>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Høy tetthet</th>
-<th class="tableblock halign-left valign-top">Middels Tetthet</th>
-<th class="tableblock halign-left valign-top">Minimum Tetthet</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KlasseID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategori ID</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_ALS_A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_ALS_B</p></td>
@@ -1176,7 +1218,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertikal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,03</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,04</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,04</p></td>
@@ -1192,7 +1234,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Horisontal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,05</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,10</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,20</p></td>
@@ -1216,7 +1258,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maksimum Fotavtrykk</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(1/e2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,20</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,50</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2,00</p></td>
@@ -1233,9 +1275,9 @@ Ikke angitt</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Obligatoriske Klasser</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+9+17+21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+9+17+21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+9+17+21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+17+21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+17+21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+17+21</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1+7</p></td>
 </tr>
 <tr>
@@ -1266,7 +1308,7 @@ Ikke angitt</p>
 <p><strong>Maksimum Punktavstand</strong> er en funksjon av punkttetthet [SQRT(1/tetthet)] og sikrer en homogen punktdistribusjon.</p>
 </div>
 <div class="paragraph">
-<p><strong>Maksimum Fotavtrykk</strong> definerer maksimum tillatte fotavtrykk.</p>
+<p><strong>Maksimum Fotavtrykk</strong> definerer maksimum tillatte fotavtrykk og skal beregnes ved hjelp av 1/e<sup>2</sup>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Maksimum Skannevinkel</strong> beregnes som pluss og minusverdi fra nadir. Kravet legger premisser for selve flyplanleggingen og høyere åpningsvinkel for leveransen kan spesifiseres per prosjekt.</p>
@@ -1282,9 +1324,9 @@ Ikke angitt</p>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="trueluftbåren-bathymetrisk-lidar"><a class="anchor" href="#trueluftbåren-bathymetrisk-lidar"></a>5.3. Luftbåren Bathymetrisk LiDAR</h3>
+<h3 id="trueluftbåren-batymetrisk-lidar"><a class="anchor" href="#trueluftbåren-batymetrisk-lidar"></a>5.3. Luftbåren Batymetrisk LiDAR</h3>
 <div class="paragraph">
-<p>Punktsky etablert med en flybåren bathymetrisk LiDAR sensor. Bathymetrisk LiDAR er også kjent som 'Grønnlaser'. Forventet dybdeområde avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien.</p>
+<p>Punktsky etablert med en flybåren batymetrisk LiDAR sensor. Batymetrisk LiDAR er også kjent som 'Grønnlaser'. Faktisk rekkevidde ned i vannkolonne avhenger av sensortype og en kombinasjon av siktforhold og bunnens evne til å reflektere laserenergien. Ikke alle områder er derfor egnet for kartlegging med ALB system.</p>
 </div>
 <div class="paragraph">
 <p>For krav til datafangst, prosessering og leveranse henvises det til PaBG Kap7 "Kartlegging med flybåren laserskanning"</p>
@@ -1293,7 +1335,7 @@ Ikke angitt</p>
 <p>Klasseinndelingen tar utgangspunkt i  <a href="https://www.asprs.org/wp-content/uploads/2010/12/LAS_Domain_Profile_Description_Topo-Bathy_Lidar.pdf">ASPRS LAS Domain Profile Description: Topo-Bathy Lidar (July 17, 2013)</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabell 3. Luftbåren Bathymetrisk LiDAR</caption>
+<caption class="title">Tabell 3. Luftbåren Batymetrisk LiDAR</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -1306,15 +1348,15 @@ Ikke angitt</p>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Høy tetthet</th>
-<th class="tableblock halign-left valign-top">Middels Tetthet</th>
-<th class="tableblock halign-left valign-top">Minimum Tetthet</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KlasseID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategori ID</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_ALB_A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_ALB_B</p></td>
@@ -1323,7 +1365,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertikal Nøyaktighet (Presisjon)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.15 + 0.005*dybde</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1339,7 +1381,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Horisontal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.70 + 0,05*dybde</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1382,13 +1424,16 @@ Ikke angitt</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Vertikal og Horisontal Presisjon for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topologikomponenten. Samlet absolutt nøyaktighet må sees i sammenheng med presisjon.</p>
+<p>Vertikal og Horisontal <strong>Nøyaktighet</strong> for ALB er en funksjon av dybde. Krav til absolutt nøyaktighet er arvet fra topografisk ALS og vil gjelde for topografikomponenten.</p>
 </div>
 <div class="paragraph">
 <p>Krav til <strong>Skannevinkel</strong> er veiledende og vil ikke gjelde for alle type ALB sensorer.</p>
 </div>
 <div class="paragraph">
-<p>For både bathymetrisk og topologisk datafangst må de <strong>Obligatoriske klassene</strong> utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Bathymetrisk LiDAR skal vannflate <span class="underline">alltid</span> klassifiseres til klasse 42.</p>
+<p>For kombinert batymetrisk og topografisk datafangst må de <strong>Obligatoriske klassene</strong> utvides til å inneholde klassene detaljert for topografisk LiDAR. Merk at for Luftbåren Batymetrisk LiDAR skal vannflate <span class="underline">alltid</span> klassifiseres til klasse 42.</p>
+</div>
+<div class="paragraph">
+<p>Krav til <strong>Tetthet</strong> gjelder for 2m under vannstand ved måletidspunkt og faktisk tetthet vil reduseres ved økene måledyp. Et systems evne til å levere på gitt tetthet forutsetter gitte turbiditetsverdier og bunnrefleksjon.</p>
 </div>
 </div>
 </div>
@@ -1416,15 +1461,15 @@ Ikke angitt</p>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">"Høy tetthet"</th>
-<th class="tableblock halign-left valign-top">"Middels Tetthet"</th>
-<th class="tableblock halign-left valign-top">"Minimum Tetthet"</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KlasseID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategori ID</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_TLS_A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_TLS_B</p></td>
@@ -1433,7 +1478,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertikal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,03</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1449,7 +1494,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Horisontal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0,05</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1466,7 +1511,7 @@ Ikke angitt</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Obligatoriske Klasser</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+9+17+21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1+2+7+17+21</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1+7</p></td>
@@ -1484,7 +1529,7 @@ Ikke angitt</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>For presiseringer av nøyaktighet og skannevinkel se tabell for Luftbåren Topografisk LiDAR.</p>
+<p>Nøyaktighetverdier gjelder for punkt nærmere enn 20m fra sensor (skråavstand). For punkt som faller lengere ute enn 20m garanteres ikke vertikal og horisontal nøyaktighet.</p>
 </div>
 </div>
 </div>
@@ -1493,7 +1538,7 @@ Ikke angitt</p>
 <div class="sect2">
 <h3 id="truemultistråle-ekkolodd"><a class="anchor" href="#truemultistråle-ekkolodd"></a>5.5. Multistråle Ekkolodd</h3>
 <div class="paragraph">
-<p>Punktsky etablert med høyfrekvent gruntvanns ekkolodd.</p>
+<p>Punktsky etablert med høyfrekvent gruntvannsekkolodd.</p>
 </div>
 <div class="paragraph">
 <p>For krav til datafangst benyttes  <a href="https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf">Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00</a>. Hvert enkelt prosjekt må spesifisere hvilke deler i standarddokumentet som er gjeldende for kartleggingsoppgaven.</p>
@@ -1512,15 +1557,15 @@ Ikke angitt</p>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Høy tetthet</th>
-<th class="tableblock halign-left valign-top">Middels Tetthet</th>
-<th class="tableblock halign-left valign-top">Minimum Tetthet</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KlasseID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategori ID</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_MBES_A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_MBES_B</p></td>
@@ -1529,7 +1574,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertikal Nøyaktighet (Presisjon)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.05 + 0.001*dybde</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1545,7 +1590,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Horisontal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
@@ -1608,15 +1653,15 @@ Ikke angitt</p>
 <tr>
 <th class="tableblock halign-left valign-top">Kategorier</th>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Høy tetthet</th>
-<th class="tableblock halign-left valign-top">Middels Tetthet</th>
-<th class="tableblock halign-left valign-top">Minimum Tetthet</th>
+<th class="tableblock halign-left valign-top">Høy</th>
+<th class="tableblock halign-left valign-top">Middels</th>
+<th class="tableblock halign-left valign-top">Minimum</th>
 <th class="tableblock halign-left valign-top">Egendefinert</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KlasseID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategori ID</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_DIM_A</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Psky_1_DIM_B</p></td>
@@ -1657,7 +1702,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vertikal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
@@ -1673,7 +1718,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Horisontal Nøyaktighet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardavvik (1 Ꝺ )</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
@@ -1848,10 +1893,10 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <div class="sect2">
 <h3 id="truekrav-til-punkttetthet"><a class="anchor" href="#truekrav-til-punkttetthet"></a>7.1. Krav til punkttetthet</h3>
 <div class="paragraph">
-<p>Det opereres med to metoder for beregning av punkttetthet og hvilken som skal benyttes avhengig av ønsket tetthet.</p>
+<p>Det opereres med to metoder for beregning av punkttetthet og hvilken som skal benyttes avhengig av bestillingskategori.</p>
 </div>
 <div class="paragraph">
-<p>For kategoriene A (Høy) skal 80% av alle 2mx2m celler innenfor 10mx10m innfri krav til punkttetthet. Se figur <a href="#imgTetthet2x2">Krav til Punkttetthet - Høy og Middels Tetthet</a> for eksempel. Tetthet skal beregnes på de klasser som er med å bygge terrengmodell. For Luftbåren Topografisk LiDAR skal klasse 2 bakke benyttes. For Luftbåren Bathymetrisk LiDAR og Multistråle Ekkolodd skal klasse 2 bakke og klasse 26 bunn inngå.</p>
+<p>For kategorien A (Høy) skal 80% av alle 2mx2m celler innenfor 10mx10m innfri krav til punkttetthet. Se figur <a href="#imgTetthet2x2">Krav til Punkttetthet - Høy og Middels Tetthet</a> for eksempel. Tetthet skal beregnes på de klasser som er med å bygge terrengmodell. For Luftbåren Topografisk LiDAR skal klasse 2 bakke benyttes. For Luftbåren Batymetrisk LiDAR og Multistråle Ekkolodd skal klasse 2 bakke og klasse 40 bunn inngå.</p>
 </div>
 <div id="imgTetthet2x2" class="imageblock text-center">
 <div class="content">
@@ -1894,7 +1939,7 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h2 id="truedatafangst"><a class="anchor" href="#truedatafangst"></a>8. Datafangst</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Det henvises til standarden Produksjon av Basis Geodata (gjeldende versjon), for hvordan laserskanning fra luftbåren sensor skal gjennomføres og rapporteres. Kravene gjelder for luftbåren LiDAR og i hovedtrekk for luftbåren Bathymetrisk LiDAR.</p>
+<p>Det henvises til standarden Produksjon av Basis Geodata (gjeldende versjon), for hvordan laserskanning fra luftbåren sensor skal gjennomføres og rapporteres. Kravene gjelder for luftbåren LiDAR og i hovedtrekk for luftbåren Batymetrisk LiDAR.</p>
 </div>
 <div class="paragraph">
 <p>For kartlegging med multistråle ekkolodd vises det til relevante føringer i <a href="https://www.kartverket.no/globalassets/til-sjos/standard-og-godkjenningsordning/teknisk-kravspesifikasjon-for-sjomaling.pdf">Kartverket Sjø Teknisk kravspesifikasjon for sjømåling ver 3.00</a>. Kravspesifikasjonen for hvert enkelt prosjekt detaljerer hvilken av delspesifikasjonene som er gjeldende.</p>
@@ -1930,6 +1975,9 @@ EPSG Geodetic Parameter Dataset, version 8.0, august 2012</p>
 <h3 id="trueleveranse-punktsky"><a class="anchor" href="#trueleveranse-punktsky"></a>11.1. Leveranse Punktsky</h3>
 <div class="paragraph">
 <p>Punktskyen skal leveres på LAS format som detaljert i  <a href="http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf">LAS Specification 1.4 - R15</a>. Filene skal komprimeres til <a href="https://laszip.org/">LAZ</a>.</p>
+</div>
+<div class="paragraph">
+<p>I henhold til LAS formatet skal standard GPS Time brukes istedenfor GPS Week Time. Tidspunktet er for utsendt puls og korrekt 'encoding tag' for GPS Time type må settes i 'LAS Header'.</p>
 </div>
 <div class="paragraph">
 <p>Det skal benyttes 'Point Data Record' 6 til 10 avhengig av faktisk innhold. Minimumskrav er 'Point Data Record' 6.</p>
@@ -2093,7 +2141,7 @@ Rapporten skal spesifisere hvilken realisasjon av høydereferansemodell som er b
 [Metadata]\&lt;Prosjektnavn&gt;_Prosjektrapport.pdf
 [Diverse]\&lt;Prosjektnavn&gt;_Homogenitet.zip
 [Diverse]\&lt;Prosjektnavn&gt;_Kontrollflater.sos
-[Diverse]\&lt;Prosjektnavn&gt;_Vedlegg.zip1</pre>
+[Diverse]\&lt;Prosjektnavn&gt;_Vedlegg.zip</pre>
 </div>
 </div>
 <div style="page-break-after: always;"></div>
@@ -2292,8 +2340,11 @@ VQ-1560i - L735"</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueappendix-a-lidar-klasseinndeling"><a class="anchor" href="#trueappendix-a-lidar-klasseinndeling"></a>14. Appendix A: LiDAR Klasseinndeling</h2>
+<h2 id="trueappendix-a-punktsky-klasseinndeling"><a class="anchor" href="#trueappendix-a-punktsky-klasseinndeling"></a>14. Appendix A: Punktsky Klasseinndeling</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Alle punkt, uavhengig sensortype og kategori, skal klassifiseries i henhold til følgende skjema som baserer seg på <a href="http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf">LAS Specification 1.4 - R15</a>. Benyttes andre klasser enn de som er omhandlet i tabellen skal disse legges mellom 64 og 256.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 9. ASPRS Standard Punktklasser</caption>
 <colgroup>
@@ -2366,10 +2417,10 @@ VQ-1560i - L735"</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Skal ikke leveres.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Water</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vann</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Punkt på vannflater.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Watersurface Bathy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vannoverflate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Punkter på vannoverflate. Vannflater større enn 100m<sup>2</sup> og elver bredere enn 3m skal registreres (FKB-C)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
@@ -2416,8 +2467,8 @@ VQ-1560i - L735"</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bridge-Deck</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bro</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minstemål for klassifisering er 10 m<sup>2</sup>. Alle punkter på selve brudekket skal klassifiseres til Bru (Klasse 17). Alle andre punkter på bro skal klassifiseres til Uklassifisert (1) eller korrekt klasse i eventuell opsjon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brodekke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minstemål for klassifisering er 10 m<sup>2</sup>. Alle punkter på selve brodekket skal klassifiseres til bro (Klasse 17). Alle andre punkter på bro skal klassifiseres til uklassifisert (1) eller korrekt klasse i eventuell opsjon.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
@@ -2578,7 +2629,7 @@ VQ-1560i - L735"</p>
 <p>A - Areal av brudekke må være mer enn 10m<sup>2</sup>.</p>
 </li>
 <li>
-<p>d - Avstand brudekke ned til topp underløp større enn 1m.</p>
+<p>d - Avstand brudekke ned til topp underløp mindre enn 1m.</p>
 </li>
 <li>
 <p>W - Bredde av underløp større enn 2m.</p>
@@ -2603,6 +2654,25 @@ VQ-1560i - L735"</p>
 </div>
 <div class="title">Figur 6. Presisering Klasse 13, 14, 15 - Ledningsklasser</div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="truepresisering-klassifisering-av-damkonstruksjoner"><a class="anchor" href="#truepresisering-klassifisering-av-damkonstruksjoner"></a>14.3. Presisering Klassifisering av Damkonstruksjoner</h3>
+<div class="paragraph">
+<p>For damkonstruksjoner skal følgende klassifiseringsregime benyttes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Punkt som faller på damkonstruksjoner som aktivt holder vann tilbake skal legges til klasse 2 (bakke).</p>
+</li>
+<li>
+<p>Punkt punkt som faller på infrastruktur (lukehus, rekkverk, master) legges til uklassifisert (1) eller korrekt klasse i eventuell opsjon.</p>
+</li>
+<li>
+<p>Punkt som faller på brodekke over demningselement skal legges til klasse 17 (brodekke).</p>
+</li>
+</ul>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -2622,16 +2692,17 @@ VQ-1560i - L735"</p>
 <div class="paragraph">
 <p>Prosesseringsflyten i FvL er:</p>
 </div>
-<div class="imageblock">
+<div id="hdataflyt" class="imageblock text-center">
 <div class="content">
-<img src="http://localhost:53094/afx/cache/3e95c8bfb628c61244ea00c5e5e152af.png" alt="3e95c8bfb628c61244ea00c5e5e152af">
+<img src="figurer/Kap15_hdata_flyt.png" alt="hdataflyt" width="400">
 </div>
-</div>
-<div class="paragraph">
-<p>Terrengmodellene (DTM) generes fra klassene 2 (bakke) og 21 (snø) for topologiprosjekt, og for bathymetri benyttes klassene 2 (bakke), 21 (snø) og 40 (havbunn). Terreng og bathymetrigrid blir generert med primærmetode "Triangulate with Natural Neighbor Interpolation", og sekundærmetode "Bin with Average Value" om primærmetode feiler grunnet for lange triangelsider. DTM punkttetthet blir generert med metoden "Point Count" på relevante klasser.</p>
+<div class="title">Figur 7. Prosesseringsflyt høydedata.no</div>
 </div>
 <div class="paragraph">
-<p>Overflatemodellene for topologigrid blir generert av alle klaser utenom [0, 7, 8, 12, 18]. For bathymetri benyttes alle klasser utenom [0, 7, 8, 9, 12, 18, 41 og 42]. Overflatemodellene genereres med metoden "Bin with Maximum Value" og hull fylles etterpå med "Natural Neighbour Interpolation". Tetthetsplottene generes med metoden "Pulse Count".</p>
+<p>Terrengmodellene (DTM) generes fra klassene 2 (bakke) og 21 (snø) for topografiprosjekt, og for batymetri benyttes klassene 2 (bakke), 21 (snø) og 40 (havbunn). Terreng og batymetrigrid blir generert med primærmetode "Triangulate with Natural Neighbor Interpolation", og sekundærmetode "Bin with Average Value" om primærmetode feiler grunnet for lange triangelsider. DTM punkttetthet blir generert med metoden "Point Count" på relevante klasser.</p>
+</div>
+<div class="paragraph">
+<p>Overflatemodellene for topografigrid blir generert av alle klaser utenom [0, 7, 8, 12, 18]. For batymetri benyttes alle klasser utenom [0, 7, 8, 9, 12, 18, 41 og 42]. Overflatemodellene genereres med metoden "Bin with Maximum Value" og hull fylles etterpå med "Natural Neighbour Interpolation". Tetthetsplottene generes med metoden "Pulse Count".</p>
 </div>
 <div class="paragraph">
 <p>Oppløsningen på prosjektgridene bestemmes av punkttetthet i henhold til følgende tabell:</p>
@@ -2680,11 +2751,7 @@ VQ-1560i - L735"</p>
 <div class="paragraph">
 <p>For gjeldende funksjonalitet refereres til hjelpetekst tilgjengelig på <a href="https://hoydedata.no/LaserInnsyn/">høydedata.no</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="trueappendix-c-lisensvilkår"><a class="anchor" href="#trueappendix-c-lisensvilkår"></a>16. Appendix C - Lisensvilkår</h2>
-<div class="sectionbody">
+<h2 id="truelisensvilkår" class="discrete">Lisensvilkår</h2>
 <h3 id="truelisens" class="discrete">Lisens</h3>
 <div class="paragraph">
 <p>Denne standarden er gitt ut under
@@ -2743,7 +2810,8 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-11-19 12:49:16 +0100
+Versjon 1.0<br>
+Last updated 2022-01-10 13:49:15 +0100
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
