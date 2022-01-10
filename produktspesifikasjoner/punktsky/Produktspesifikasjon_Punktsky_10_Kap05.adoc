@@ -1,12 +1,13 @@
 == Innhold og struktur
-Produktspesifikasjonen er bygget opp over en matrise med datasettkategorier som kolonner. Felleskrav og spesifike krav for hver sensortype er lagt til radene i matrisen. 
+Produktspesifikasjonen er bygget opp over en matrise hvor kolonnene representerer datasettkategorier og radene representerer felleskrav og krav per sensortype.
 
-Datasettkategoriene er som følger hvor alle bortsett fra Egendefinert fungerer som bestillingskategorier i Geovekst-prosjekt. Forskjell mellom kategorier bestemmes primært av krav til nøyaktighet. Punktettheten for hver kategori er et minimumskrav.
+Datasettkategoriene er primært bestemt av krav til nøyaktighet. Punkttettheten for hver kategori er et minimumskrav og settes per prosjekt. ‘Egendefinert’ er en åpen kategori som muliggjør forvaltning av datasett som ikke følger standarden i høydedata.no. Følgende kategorier er benyttet:
 
- * Høy
- * Middels
- * Minimum
- * Egendefinert
+
+ * [underline]#Høy# nøyaktighet og tetthet
+ * [underline]#Middels# nøyaktighet og tetthet
+ * [underline]#Minimum# nøyaktighet og tetthet
+ * [underline]#Egendefinert#
  
 Spesifikasjonen omhandler krav til følgende sensortyper og datakilder: 
 
@@ -14,7 +15,7 @@ Spesifikasjonen omhandler krav til følgende sensortyper og datakilder:
  * Luftbåren batymetrisk LiDAR
  * Terrestrisk topografisk LiDAR
  * Multistråle ekkolodd
- * Bildematching
+ * Fotogrammetrisk Konstruerte Punktksyer (Bildematching)
 
 Ikke alle sensortyper er egnet for bestilling i alle kategorier. Der hvor det ikke anbefales å benytte gitt sensor, er det satt en 'x' i tabellen. 
 
@@ -69,12 +70,12 @@ Krav til datafangst, prosessering og leveranse er utfyllende beskrevet i PaBG.
 |====================
 |Kategorier ||Høy|Middels|Minimum|Egendefinert
 |Kategori ID||Psky_1_ALS_A|Psky_1_ALS_B|Psky_1_ALS_C|Psky_1_ALS_E
-|Vertikal Nøyaktighet|Standardavvik|0,03|0,04|0,04|Egendefinert
+|Vertikal Nøyaktighet|Standardavvik (1 Ꝺ)|0,03|0,04|0,04|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|0,10|0,10|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|0,05|0,10|0,20|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik (1 Ꝺ)|0,05|0,10|0,20|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|0,15|0,30|0,30|Egendefinert
 |Maksimum Punktavstand| |0,32|0,45|0,70|Egendefinert
-|Maksimum Fotavtrykk||0,20|0,50|2,00|Egendefinert
+|Maksimum Fotavtrykk|(1/e2)|0,20|0,50|2,00|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|20|20|20|Egendefinert
 |Obligatoriske Klasser||1+2+7+17+21|1+2+7+17+21|1+2+7+17+21|1+7
 |NHM Oppdateres||Ja|Ja|Ja|Nei
@@ -114,9 +115,9 @@ Klasseinndelingen tar utgangspunkt i  https://www.asprs.org/wp-content/uploads/2
 |====================
 |Kategorier ||Høy|Middels|Minimum|Egendefinert
 |Kategori ID||Psky_1_ALB_A|Psky_1_ALB_B|Psky_1_ALB_C|Psky_1_ALB_E
-|Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.15 + 0.005*dybde|x|Egendefinert
+|Vertikal Nøyaktighet (Presisjon)|Standardavvik (1 Ꝺ)|x|0.15 + 0.005*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10|x|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|x|1.70 + 0,05*dybde|x|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik (1 Ꝺ)|x|1.70 + 0,05*dybde|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|x|0.30|x|Egendefinert
 |Maksimum Skannevinkel|pluss / minus|x|20|x|Egendefinert
 |Obligatoriske Klasser||x|40+41+42+45|x|40+41+42+45
@@ -146,9 +147,9 @@ Krav til datafangst må spesifiseres per prosjekt.
 |====================
 |Kategorier ||Høy|Middels|Minimum|Egendefinert
 |Kategori ID||Psky_1_TLS_A|Psky_1_TLS_B|Psky_1_TLS_C|Psky_1_TLS_E
-|Vertikal Nøyaktighet|Standardavvik|0,03|x|x|Egendefinert
+|Vertikal Nøyaktighet|Standardavvik (1 Ꝺ)|0,03|x|x|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|0,05|x|x|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|0,05|x|x|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik (1 Ꝺ)|0,05|x|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|0,15|x|x|Egendefinert
 |Obligatoriske Klasser||1+2+7+17+21|x|x|1+7
 |NHM Oppdateres||Nei|x|x|Nei
@@ -170,9 +171,9 @@ For krav til datafangst benyttes  https://www.kartverket.no/globalassets/til-sjo
 |====================
 |Kategorier ||Høy|Middels|Minimum|Egendefinert
 |Kategori ID||Psky_1_MBES_A|Psky_1_MBES_B|Psky_1_MBES_C|Psky_1_MBES_E
-|Vertikal Nøyaktighet (Presisjon)|Standardavvik|x|0.05 + 0.001*dybde|x|Egendefinert
+|Vertikal Nøyaktighet (Presisjon)|Standardavvik (1 Ꝺ)|x|0.05 + 0.001*dybde|x|Egendefinert
 |Vertikal Nøyaktighet (Absolutt)|Systematisk|x|0.10 + 0.002*dybde|x|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|x|-|x|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik (1 Ꝺ)|x|-|x|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|x|0.20 + 0.016*dybde|x|Egendefinert
 |Obligatoriske Klasser||x|40|x|40
 |NHM Oppdateres||x|Nei|x|Nei
@@ -199,9 +200,9 @@ Punktsky generert fra bildemateriale. Minimumskategorien beskriver punktsky gene
 |Oppløsning DSM||x |0,2|0,5|Egendefinert
 |Avledet Punkttetthet||x |25|4|Egendefinert
 |Overlapp||x  |L80% S(20% til 80%)|L80%+S20%|Egendefinert
-|Vertikal Nøyaktighet|Standardavvik|x |-|-|Egendefinert
+|Vertikal Nøyaktighet|Standardavvik (1 Ꝺ)|x |-|-|Egendefinert
 |Vertikal Nøyaktighet|Systematisk|x |0,12-0,18 |0,30-0,75|Egendefinert
-|Horisontal Nøyaktighet|Standardavvik|x |-|-|Egendefinert
+|Horisontal Nøyaktighet|Standardavvik (1 Ꝺ)|x |-|-|Egendefinert
 |Horisontal Nøyaktighet|Systematisk|x |0,08-0,12 |0,20-0,25|Egendefinert
 |Obligatoriske Klasser||x |1+7+9|1+7+9|1+7
 |NHM Oppdateres||x|Nei|Nei|Nei
