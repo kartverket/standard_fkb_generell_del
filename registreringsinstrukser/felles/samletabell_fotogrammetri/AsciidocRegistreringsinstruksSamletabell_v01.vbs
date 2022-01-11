@@ -11,7 +11,8 @@ Option Explicit
 '
 ' Version 0.1: 2021-01-11 Geir Myhr Øien: Første versjon av scriptet
 '
-' TBD: 
+' Kjøres i EA fra pakka "Fotogrammetrisk registreringsinstruks"
+' Pakka må ha følgende tagger: FKB-datasett (med verdi f.eks. FKB-Arealbruk), FKB-versjon (med verdi f.eks. 5.0) og FKB-underversjon (med verdi f.eks. 2022-01-01)
 '
 Dim imgfolder, imgparent, parentimg, files
 Dim diagCounter
