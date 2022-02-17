@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Høydekurve/5.0/Punktsky_2022-01-01" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Høydekurve/5.0/Punktsky_2022-01-01" version="5.0">
+  <annotation>
+    <documentation>Spesifikasjonen omfatter alle data som er nødvendig for å beskrive terrengets form og høyde over et gitt referansenivå som høydekurver, forsenkningskurver, toppunkt etc.
+
+Nye høydekurver genereres hovedsaklig fra en terrengmodell basert på punktskyer fra enten laserskanning eller bildematching. Høydekurvene blir da bare en visning av terrengmodellen. Best informasjon om terrenget fås ved direkte bruk av terrengmodellen.</documentation>
+  </annotation>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
+    <annotation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.
+
+Merknad: Disse egenskapene skal derfor ikke modelleres inn i fagområdemodeller.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="identifikasjon" type="app:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="oppdateringsdato" type="dateTime">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke
+av klienten).
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en
+”kopibase”.
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
+iv. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluttdato" type="dateTime">
+            <annotation>
+              <documentation>Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUTTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="datafangstdato" type="date">
+            <annotation>
+              <documentation>dato når objektet siste gang ble registrert/observert/målt i terrenget
+
+Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen.
+Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>medium: objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="verifiseringsdato" type="date">
+            <annotation>
+              <documentation>dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERIFISERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="registreringsversjon" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REGISTRERINGSVERSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="informasjon" type="string">
+            <annotation>
+              <documentation>generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">INFORMASJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fellesegenskaper"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Forsenkningskurve" substitutionGroup="app:KvalitetPåkrevd" type="app:ForsenkningskurveType">
+    <annotation>
+      <documentation>DepressionCurve: linje i terrenget med fast høydeverdi (z-verdi) som beskriver en forsenkning i terrenget
+
+Merknad: Alle kurver som beskriver en forsenkning skal kodes som forsenkningskurver- ikke bare den nederste kurven.</documentation>
+    </annotation>
+  </element>
+  <complexType name="ForsenkningskurveType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høyde" type="double">
+            <annotation>
+              <documentation>height: angir forsenkningskurvens  høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ForsenkningskurvePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Forsenkningskurve"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Forsenkningspunkt" substitutionGroup="app:KvalitetPåkrevd" type="app:ForsenkningspunktType">
+    <annotation>
+      <documentation>DepressionPoint: punkt med målt høydeverdi som ligger i en markert forsenkning i terrenget</documentation>
+    </annotation>
+  </element>
+  <complexType name="ForsenkningspunktType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høyde" type="double">
+            <annotation>
+              <documentation>height: angivelse av punktets høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ForsenkningspunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Forsenkningspunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Høydekurve" substitutionGroup="app:KvalitetPåkrevd" type="app:HøydekurveType">
+    <annotation>
+      <documentation>ContourLine/HeightContour ??: linje i terrenget med fast høydeverdi (z-verdi) over referansehøyden</documentation>
+    </annotation>
+  </element>
+  <complexType name="HøydekurveType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="høyde" type="double">
+            <annotation>
+              <documentation>height: angivelse av høydekurvens høyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="HøydekurvePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Høydekurve"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="app:IdentifikasjonType">
+    <annotation>
+      <documentation>Identification: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>localId: lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LOKALID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>namespace: navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>versionId: identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERSJONID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="app:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element abstract="true" name="KvalitetPåkrevd" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype med påkrevet kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Opphav" substitutionGroup="gml:AbstractObject" type="app:OpphavType">
+    <annotation>
+      <documentation>origin: beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="OpphavType">
+    <sequence>
+      <element name="sikkerTerrenggjengivelse" type="boolean">
+        <annotation>
+          <documentation>Boolsk verdi som forteller om objektet ansees som en sikker (1) eller usikker (0) representasjon av faktisk terreng.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SIKKERTERRENGGJENGIVELSE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="datakilde" type="gml:CodeType">
+        <annotation>
+          <documentation>referanse til datasettype som ligger til grunn for kurvegenereringen</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAKILDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="OpphavPropertyType">
+    <sequence>
+      <element ref="app:Opphav"/>
+    </sequence>
+  </complexType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="app:PosisjonskvalitetType">
+    <annotation>
+      <documentation>beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="datafangstmetode" type="gml:CodeType">
+        <annotation>
+          <documentation>metode for datafangst. 
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+Merknad:
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="synbarhet" type="gml:CodeType">
+        <annotation>
+          <documentation>beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SYNBARHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="datafangstmetodeHøyde" type="gml:CodeType">
+        <annotation>
+          <documentation>metoden brukt for høyderegistrering av posisjon.
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODEHØYDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighetHøyde" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavviket, men dersom man faktisk har standardavviket til posisjoneringa av objektet oppgitt i cm
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+Merknad:
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H-NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="app:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <element name="Terrenglinje" substitutionGroup="app:KvalitetPåkrevd" type="app:TerrenglinjeType">
+    <annotation>
+      <documentation>TerrainLine: linje som benyttes der hvor terrenget markert forandrer helning og/eller retning (på tvers av terrenglinja) Typisk skal terrenglinjer benyttes i søkk, på rygger, over topper, i bunnen av forsenkninger, i sadel eller på flate områder hvor det er lite annen høydeinformasjon</documentation>
+    </annotation>
+  </element>
+  <complexType name="TerrenglinjeType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TerrenglinjePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Terrenglinje"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Terrengpunkt" substitutionGroup="app:KvalitetPåkrevd" type="app:TerrengpunktType">
+    <annotation>
+      <documentation>TerrainPoint: punkt i terrenget med målt høydeverdi som brukes for å angi høyde på markerte flater i terrenget som for eksempel sadler og store flater, i veg- og gatekryss og andre kryss mellom samferdselslinjer, på gårdsplasser utenfor hovedinnganger og på parkeringsplasser</documentation>
+    </annotation>
+  </element>
+  <complexType name="TerrengpunktType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høyde" type="double">
+            <annotation>
+              <documentation>height: angivelse av punktets høyde, og oppgis som et desimalt tall hvis nødvendig</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TerrengpunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Terrengpunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Toppunkt" substitutionGroup="app:KvalitetPåkrevd" type="app:ToppunktType">
+    <annotation>
+      <documentation>TopPoint: punkt med målt høydeverdi som ligger på en markert forhøyning eller topp i terrenget</documentation>
+    </annotation>
+  </element>
+  <complexType name="ToppunktType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>position: sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element name="høyde" type="double">
+            <annotation>
+              <documentation>height: angivelse av topp punktets øyde over høydereferansen i meter- og oppgis som et desimalt tall hvis nødvendig.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HØYDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="opphav" type="app:OpphavPropertyType">
+            <annotation>
+              <documentation>beskriver objektets opphav og forteller om objektet sikkert gjengir terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPHAV</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ToppunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Toppunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

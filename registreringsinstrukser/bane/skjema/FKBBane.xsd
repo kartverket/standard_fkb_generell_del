@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Bane/5.0/Fotogrammetrisk_2022-01-01" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Bane/5.0/Fotogrammetrisk_2022-01-01" version="5.0">
+  <annotation>
+    <documentation>Datamodell for FKB-Bane.
+Spesifikasjonen omfatter jernbanens infrastruktur - i hovedsak banelegemet. 
+Elementer som naturlig inngår i jernbanens infrastruktur, men som beskrives i mer generell form i andre FKB-datasett, er ikke tatt med i denne produktspesifikasjonen. Dette gjelder for eksempel spesifikasjoner for Høydekurve, Bygning, Bygningsmessige anlegg, Veg og Ledning.</documentation>
+  </annotation>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
+    <annotation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="identifikasjon" type="app:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="oppdateringsdato" type="dateTime">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
+
+iv. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluttdato" type="dateTime">
+            <annotation>
+              <documentation>Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUTTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="datafangstdato" type="date">
+            <annotation>
+              <documentation>dato når objektet siste gang ble registrert/observert/målt i terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="verifiseringsdato" type="date">
+            <annotation>
+              <documentation>dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERIFISERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="registreringsversjon" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REGISTRERINGSVERSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="informasjon" type="string">
+            <annotation>
+              <documentation>generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">INFORMASJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fellesegenskaper"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="app:IdentifikasjonType">
+    <annotation>
+      <documentation>Identification: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>localId: lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LOKALID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>namespace: navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for nanverom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>versionId: identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERSJONID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="app:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="Jernbaneplattformkant" substitutionGroup="app:KvalitetPåkrevd" type="app:JernbaneplattformkantType">
+    <annotation>
+      <documentation>RailwayPlatformEdge: yttergrense av konstruksjon til bruk ved av-/påstigning for passasjerer eller ved av-/pålasting av gods</documentation>
+    </annotation>
+  </element>
+  <complexType name="JernbaneplattformkantType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>border: forløp som følger overgang mellom ulike fenomener
+
+-- Definition -- 
+course follwing the transition between different real world phenomena</documentation>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="JernbaneplattformkantPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Jernbaneplattformkant"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KvalitetPåkrevd" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype med påkrevet kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="app:PosisjonskvalitetType">
+    <annotation>
+      <documentation>beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tildligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="datafangstmetode" type="gml:CodeType">
+        <annotation>
+          <documentation>metode for datafangst. 
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="synbarhet" type="gml:CodeType">
+        <annotation>
+          <documentation>beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SYNBARHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="datafangstmetodeHøyde" type="gml:CodeType">
+        <annotation>
+          <documentation>metoden brukt for høyderegistrering av posisjon.
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODEHØYDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighetHøyde" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H-NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="app:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <element name="Spormidt" substitutionGroup="app:KvalitetPåkrevd" type="app:SpormidtType">
+    <annotation>
+      <documentation>TrackCentreLine: teoretisk linje midt mellom skinnestrengene</documentation>
+    </annotation>
+  </element>
+  <complexType name="SpormidtType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element name="jernbanetype" type="gml:CodeType">
+            <annotation>
+              <documentation>klassifisering av jernbaneanlegg i hht. konstruksjon/dimensjonering</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">JERNBANETYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternpeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SpormidtPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Spormidt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+</schema>

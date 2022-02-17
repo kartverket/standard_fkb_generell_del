@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+  <title>Schematron constraints for schema 'FKB-BygnAnlegg-5.0-Utkast'</title>
+  <ns prefix="sch" uri="http://purl.oclc.org/dsdl/schematron"/>
+  <ns prefix="app" uri="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-BygnAnlegg/5.0/"/>
+  <pattern>
+    <rule context="app:Brønn">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+    <rule context="app:Parkdetalj">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+    <rule context="app:Pipe">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+    <rule context="app:Posisjonskvalitet">
+      <assert test="app:datafangstmetodeHøyde/concat(@codeSpace,'/',text()) != 'dig'">Datafangstmetode Digitalisert skal ikke brukes på egenskapen datafangstmetodeHøyde</assert>
+    </rule>
+    <rule context="app:Søppelbeholder">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+    <rule context="app:Tank">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+    <rule context="app:Tårn">
+      <assert test="count(app:område) + count(app:posisjon) = 1">Skal ha enten punkt- eller flategeometri</assert>
+    </rule>
+  </pattern>
+</schema>
