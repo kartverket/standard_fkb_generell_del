@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/registreringsinstruks/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01" version="5.0">
+  <annotation>
+    <documentation>Datamodell for produktspesfikasjonen FKB-Veg. FKB-Veg inneholder detaljert informasjon om veganlegg og tilhørende objekter. Datamodellen omfatter beskrivelse av alle typer veger for kjørende, syklende og gående, i tillegg et utvalg av tilhørende objekter.</documentation>
+  </annotation>
+  <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+  <!--XML Schema document created by ShapeChange - http://shapechange.net/-->
+  <element name="AnnetVegarealAvgrensning" substitutionGroup="app:KvalitetPåkrevd" type="app:AnnetVegarealAvgrensningType">
+    <annotation>
+      <documentation>avgrensning av privat avkjørsel, ytterkant av åpne parkeringsplasser i tilknytning til veg, korte gang- og sykkelveger som ikke hører til hovedvegnettet (for eksempel småveger mellom bebyggelse). 
+
+Merknad: Objekttypen skal ikke brukes til å avgrense vegflate eller fortau</documentation>
+    </annotation>
+  </element>
+  <complexType name="AnnetVegarealAvgrensningType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="AnnetVegarealAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:AnnetVegarealAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FartsdemperAvgrensning" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:FartsdemperAvgrensningType">
+    <annotation>
+      <documentation>Avgrensning av forhøyning i veger og/eller gater for å begrense kjørehastigheten.</documentation>
+    </annotation>
+  </element>
+  <complexType name="FartsdemperAvgrensningType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FartsdemperAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:FartsdemperAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="Fellesegenskaper" substitutionGroup="gml:AbstractFeature" type="app:FellesegenskaperType">
+    <annotation>
+      <documentation>abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="FellesegenskaperType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element minOccurs="0" name="identifikasjon" type="app:IdentifikasjonPropertyType">
+            <annotation>
+              <documentation>unik identifikasjon av et objekt 
+
+Merknad FKB:
+Unik identifikasjon av et objekt, ivaretas av den ansvarlige produsent/forvalter, og som kan benyttes av eksterne applikasjoner som referanse til objektet.
+
+Den unike identifikatoren er unik for kartobjektet og skal ikke endres i kartobjektets levetid. Dette må ikke forveksles med en tematisk identifikator (for eksempel bygningsnummer) som unikt identifiserer et objekt i virkeligheten. En bygning med samme bygningsnummer vil kunne representeres i mange kartprodukter der det finnes en unik identifikasjon i hver av dem.
+
+For FKB benyttes UUID (Universally unique identifier) som lokalId. Dette innebærer at lokalId alene alltid vil være unik. Likevel skal alltid navnerom også angis. Navnerom angir FKB-datasettet.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="oppdateringsdato" type="dateTime">
+            <annotation>
+              <documentation>tidspunkt for siste endring på objektet 
+
+Merknad FKB: 
+
+Denne datoen viser datasystemets siste endring på dataobjektet. Egenskapen settes av forvaltningssystemet etter følgende regler:
+
+i. Oppdateringsdato er tidspunkt for oppdatering av databasen og settes av forvaltningsbasen (ikke av klienten).
+
+ii. Oppdateringsdato skal endres også hvis det er kopidata som blir endret eller importert i en ”kopibase”.
+
+iii. Når avgrensingslinjene til en flate endres, skal flateobjektet få ny oppdateringsdato.
+
+iv. Oppdateringsdato skal endres hvis en egenskap endres.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OPPDATERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="sluttdato" type="dateTime">
+            <annotation>
+              <documentation>Tid for når denne versjonen av objektet var erstattet eller opphørt å eksistere.
+
+Merknad FKB:
+Egenskapen settes av forvaltningssystemet. Sluttdato skal kun sendes med ut fra forvaltningssystemet i sammenhenger der objektenes historikk er interessant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SLUTTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="datafangstdato" type="date">
+            <annotation>
+              <documentation>dato når objektet siste gang ble registrert/observert/målt i terrenget</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="verifiseringsdato" type="date">
+            <annotation>
+              <documentation>dato når dataene er fastslått å være i samsvar med virkeligheten.
+
+Merknad FKB:
+Brukes for eksempel i de sammenhenger hvor det er foretatt fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet)</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERIFISERINGSDATO</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="registreringsversjon" type="gml:CodeType">
+            <annotation>
+              <documentation>angivelse av hvilken produktspesifikasjon som er utgangspunkt  for dataene</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/registreringsversjon</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REGISTRERINGSVERSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="informasjon" type="string">
+            <annotation>
+              <documentation>generell opplysning.
+
+Merknad FKB:
+Mulighet til å legge inn utfyllende informasjon om objektet. Egenskapen bør bare brukes til å legge inn ekstra informasjon om enkeltobjekter. Egenskapen bør ikke brukes til å systematisk angi ekstrainformasjon om mange/alle objekter i et datasett.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">INFORMASJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="medium" type="gml:CodeType">
+            <annotation>
+              <documentation>objektets beliggenhet i forhold til jordoverflaten</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MEDIUM</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="eksternPeker" type="anyURI">
+            <annotation>
+              <documentation>referanse til objektet i et eksternt system, som ikke er Nasjonal vegdatabank (NVDB).</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">EKSTERNPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FellesegenskaperPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Fellesegenskaper"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="FeristAvgrensning" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:FeristAvgrensningType">
+    <annotation>
+      <documentation>Rist eller gitter som er innbygd i vegbanen, og som hindrer dyr i å komme over.</documentation>
+    </annotation>
+  </element>
+  <complexType name="FeristAvgrensningType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="FeristAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:FeristAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="GangfeltAvgrensning" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:GangfeltAvgrensningType">
+    <annotation>
+      <documentation>Avgrensning av gangfelt.</documentation>
+    </annotation>
+  </element>
+  <complexType name="GangfeltAvgrensningType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="GangfeltAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:GangfeltAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Identifikasjon" substitutionGroup="gml:AbstractObject" type="app:IdentifikasjonType">
+    <annotation>
+      <documentation>Identification: Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet. 
+
+Merknad 1: Denne objektidentifikasjonen må ikke forveksles med en tematisk objektidentifikasjon, slik som f.eks bygningsnummer. 
+
+Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">IDENT</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="IdentifikasjonType">
+    <sequence>
+      <element name="lokalId" type="string">
+        <annotation>
+          <documentation>localId: lokal identifikator av et objekt
+
+Merknad: Det er dataleverendørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet. For FKB-data benyttes UUID som lokalId.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">LOKALID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="navnerom" type="string">
+        <annotation>
+          <documentation>namespace: navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI
+
+Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0
+
+Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NAVNEROM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="versjonId" type="string">
+        <annotation>
+          <documentation>versionId: identifikasjon av en spesiell versjon av et geografisk objekt (instans)</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERSJONID</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="IdentifikasjonPropertyType">
+    <sequence>
+      <element ref="app:Identifikasjon"/>
+    </sequence>
+  </complexType>
+  <element name="Kjørebanekant" substitutionGroup="app:KvalitetPåkrevd" type="app:KjørebanekantType">
+    <annotation>
+      <documentation>Avgrensing av kjørebanen, som ofte identifieres med hjelp av oppmerking på veien.</documentation>
+    </annotation>
+  </element>
+  <complexType name="KjørebanekantType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KjørebanekantPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Kjørebanekant"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KvalitetOpsjonell" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetOpsjonellType">
+    <annotation>
+      <documentation>abstrakt objekttype med valgfri kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetOpsjonellType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element minOccurs="0" name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetOpsjonellPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetOpsjonell"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="KvalitetPåkrevd" substitutionGroup="app:Fellesegenskaper" type="app:KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype med påkrevet kvalitetsangivelse</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="kvalitet" type="app:PosisjonskvalitetPropertyType">
+            <annotation>
+              <documentation>beskrivelse av kvaliteten på stedfestingen
+
+Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="NVDBobjekter" substitutionGroup="app:Fellesegenskaper" type="app:NVDBobjekterType">
+    <annotation>
+      <documentation>abstrakt objekttype som arves fra for flateobjekter som har kobling til NVDB.</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="NVDBobjekterType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element minOccurs="0" name="nvdbPeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NVDB</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NVDBPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NVDBobjekterPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:NVDBobjekter"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element abstract="true" name="NVDBobjekter_KvalitetPåkrevd" substitutionGroup="app:KvalitetPåkrevd" type="app:NVDBobjekter_KvalitetPåkrevdType">
+    <annotation>
+      <documentation>abstrakt objekttype som arves fra for objekter med kvalitet påkrevd som har kobling til NVDB</documentation>
+    </annotation>
+  </element>
+  <complexType abstract="true" name="NVDBobjekter_KvalitetPåkrevdType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element minOccurs="0" name="nvdbPeker" type="anyURI">
+            <annotation>
+              <documentation>peker til objekt i NVDB</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NVDBPEKER</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NVDBobjekter_KvalitetPåkrevdPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:NVDBobjekter_KvalitetPåkrevd"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="OverkjørbartArealAvgrensning" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:OverkjørbartArealAvgrensningType">
+    <annotation>
+      <documentation>Den indre eller ytre avgrensningen av et overkjørbart areal. 
+
+Tilleggsinformasjon:
+Opphøyd areal i små rundkjøringer og kryss, etablert for at lange og store kjøretøy skal kunne passere. Arealet er gjerne belagt med belegningsstein og avgrenset av kantstein.</documentation>
+    </annotation>
+  </element>
+  <complexType name="OverkjørbartArealAvgrensningType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistrering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OverkjørbartArealAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:OverkjørbartArealAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Parkeringsområde" substitutionGroup="app:NVDBobjekter" type="app:ParkeringsområdeType">
+    <annotation>
+      <documentation>Område for parkering av kjøretøy.</documentation>
+    </annotation>
+  </element>
+  <complexType name="ParkeringsområdeType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegdekkekant" type="app:VegdekkekantPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Parkeringsområde ved hjelp av Vegdekkekant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGDEKKEKANT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegAnnenAvgrensning" type="app:VegAnnenAvgrensningPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Parkeringsområde ved hjelp av VegAnnenAvgrensning.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGANNENAVGRENSNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegFiktivGrense" type="app:VegFiktivGrensePropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Parkeringsområde ved hjelp av VegFiktivGrense.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGFIKTIVGRENSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ParkeringsområdePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Parkeringsområde"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Posisjonskvalitet" substitutionGroup="gml:AbstractObject" type="app:PosisjonskvalitetType">
+    <annotation>
+      <documentation>beskrivelse av kvaliteten på stedfestingen.
+
+Merknad:
+Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KVALITET</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="PosisjonskvalitetType">
+    <sequence>
+      <element name="datafangstmetode" type="gml:CodeType">
+        <annotation>
+          <documentation>metode for datafangst. 
+Egenskapen beskriver datafangstmetode for grunnrisskoordinater (x,y), eller for både grunnriss og høyde (x,y,z) dersom det ikke er oppgitt noen verdi for datafangstmetodeHøyde.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighet" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="synbarhet" type="gml:CodeType">
+        <annotation>
+          <documentation>beskrivelse av hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">SYNBARHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="datafangstmetodeHøyde" type="gml:CodeType">
+        <annotation>
+          <documentation>metoden brukt for høyderegistrering av posisjon.
+
+Det er bare nødvending å angi en verdi for egenskapen dersom datafangstmetode for høyde avviker fra datafangstmetode for grunnriss.</documentation>
+          <appinfo>
+            <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode</defaultCodeSpace>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">DATAFANGSTMETODEHØYDE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="nøyaktighetHøyde" type="integer">
+        <annotation>
+          <documentation>standardavviket til posisjoneringa av objektet oppgitt i cm
+
+I de aller fleste sammenhenger benyttes en anslått eller forventet verdi for standardavvik, men dersom man har en beregnet verdi skal denne benyttes. 
+
+For objekter med punktgeometri benyttes verdi for punktstandardavvik. For objekter med kurvegeometri benyttes standardavviket for tverravviket fra kurva. For objekter med overflate- eller volumgeometri er forståelsen at standardavviket beregnes ut fra (3D) avvikene mellom sann posisjon og nærmeste punkt på overflata. 
+
+Merknad:
+
+Verdien er ment å beskrive nøyaktigheten til objektet sammenlignet med sann verdi. Standardavvik er i utgangspunktet et mål på det tilfeldige avviket og det innebærer at vi forutsetter at det systematiske avviket i liten grad påvirker nøyaktigheten til posisjoneringa. For fotogrammetriske data settes som hovedregel verdien lik kravet til standardavvik ved datafangst. Se standarden Geodatakvalitet for nærmere definisjon av standardavvik og hvordan dette defineres, beregnes og kontrolleres.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">H-NØYAKTIGHET</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="PosisjonskvalitetPropertyType">
+    <sequence>
+      <element ref="app:Posisjonskvalitet"/>
+    </sequence>
+  </complexType>
+  <element name="Skiltportal" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:SkiltportalType">
+    <annotation>
+      <documentation>Anordning for å henge opp skilt, teknisk utstyr etc. over kjørefeltene.</documentation>
+    </annotation>
+  </element>
+  <complexType name="SkiltportalType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SkiltportalPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Skiltportal"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Trafikksignalpunkt" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:TrafikksignalpunktType">
+    <annotation>
+      <documentation>Trafikksignal inkludert signalhoder og stolpe lokalisert i ett punkt.</documentation>
+    </annotation>
+  </element>
+  <complexType name="TrafikksignalpunktType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Punkt</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistrering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrafikksignalpunktPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Trafikksignalpunkt"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Trafikkøy" substitutionGroup="app:NVDBobjekter" type="app:TrafikkøyType">
+    <annotation>
+      <documentation>Område som er begrenset av kjørefelt på alle sider og som normalt ikke skal benyttes av kjøretøy.</documentation>
+    </annotation>
+  </element>
+  <complexType name="TrafikkøyType">
+    <complexContent>
+      <extension base="app:NVDBobjekterType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på</documentation>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegFiktivGrense" type="app:VegFiktivGrensePropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av trafikkøy ved hjelp av VegFiktivGrense.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGFIKTIVGRENSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegdekkekant" type="app:VegdekkekantPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av Trafikkøy ved hjelp av Vegdekkekant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGDEKKEKANT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="TrafikkøyPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Trafikkøy"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VegAnnenAvgrensning" substitutionGroup="app:KvalitetPåkrevd" type="app:VegAnnenAvgrensningType">
+    <annotation>
+      <documentation>Reell eller fiktiv avgrensing som avgrenser veg mot privat avkjørsel, eller annet vegareal som ligger i tilknytning til vegen. 
+
+Merknad:
+Eksempler på annet vegareal er åpne parkeringsplasser, industriområder, bygninger og gårdsplasser. Her inngår også tildligere objekttype VegkantAnnetVegareal og VegkantAvkjørsel.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegAnnenAvgrensningType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegAnnenAvgrensningPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:VegAnnenAvgrensning"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VegFiktivGrense" substitutionGroup="app:KvalitetOpsjonell" type="app:VegFiktivGrenseType">
+    <annotation>
+      <documentation>Fiktiv avgrensningslinje (lukkelinje) for vegflater.
+
+Merknad:
+VegFiktivGrense brukes for fiktive avgrensninger av vegflater. Objektene skal derfor som hovedregel avgrense to flater.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegFiktivGrenseType">
+    <complexContent>
+      <extension base="app:KvalitetOpsjonellType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegFiktivGrensePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:VegFiktivGrense"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VegGåendeOgSyklende" substitutionGroup="app:Fellesegenskaper" type="app:VegGåendeOgSyklendeType">
+    <annotation>
+      <documentation>Ferdselsområde for gående og syklende. Her inngår fortau, gangveg, gang- og sykkelveg, sykkelveg, trapp og gågate.
+
+Merknad:
+Erstatter tidligere objekttype GangSykkelveg. Den nye objekttypen omfatter alle typer veger for gående og syklende definert i Elveg 2.0</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegGåendeOgSyklendeType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på, representert som punkt</documentation>
+            </annotation>
+          </element>
+          <element name="typeveg" type="gml:CodeType">
+            <annotation>
+              <documentation>Typeveg er den sentrale egenskapen for å vise hvilken hva slags ferdsel som kan skje på veglenka.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typeveggaendeogsyklende</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TYPEVEG</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="vegsystemreferanse" type="app:VegsystemreferansePropertyType">
+            <annotation>
+              <documentation>sammensatt identifikator for vegsystemreferanse</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGSYSTEMREFERANSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="vegOverVeg" type="boolean">
+            <annotation>
+              <documentation>angivelse av om vegen ligger øverst av flere andre veger
+
+Merknad:                             
+egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGOVERVEG</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegdekkekant" type="app:VegdekkekantPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegGåendeOgSyklende ved hjelp av Vegdekkekant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGDEKKEKANT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegFiktivGrense" type="app:VegFiktivGrensePropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegGåendeOgSyklende ved hjelp av VegFiktivGrense.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGFIKTIVGRENSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegAnnenAvgrensning" type="app:VegAnnenAvgrensningPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegGåendeOgSyklende ved hjelp av VegAnnenAvgrensning.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGANNENAVGRENSNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegGåendeOgSyklendePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:VegGåendeOgSyklende"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="VegKjørende" substitutionGroup="app:Fellesegenskaper" type="app:VegKjørendeType">
+    <annotation>
+      <documentation>Ferdselsområde for motorisert trafikk. Her inngår gatetun, enkel bilveg, kanalisert bilveg, rundkjøring og rampe.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegKjørendeType">
+    <complexContent>
+      <extension base="app:FellesegenskaperType">
+        <sequence>
+          <element name="område" type="gml:SurfacePropertyType">
+            <annotation>
+              <documentation>objektets utstrekning</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="posisjon" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>sted som objektet eksisterer på, representert som punkt</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="typeveg" type="gml:CodeType">
+            <annotation>
+              <documentation>Typeveg er den sentrale egenskapen for å vise hvilken hva slags ferdsel som kan skje på veglenka.</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegkjorende</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TYPEVEG</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="vegsystemreferanse" type="app:VegsystemreferansePropertyType">
+            <annotation>
+              <documentation>sammensatt identifikator for vegsystemreferanse</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGSYSTEMREFERANSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="vegOverVeg" type="boolean">
+            <annotation>
+              <documentation>angivelse av om vegen ligger øverst av flere andre veger
+
+Merknad:                             
+egenskapen vegOverVeg benyttes der man har flere veger over hverandre (store trafikkmaskiner som Sinsen-krysset). Verdi JA benyttes for vegen som ligger øverst. Denne egenskapen benyttes for å styre hvilke flater som skal tegnes øverst (prioritet).  Ikke påkrevd å benytte ved en veg over annen veg, da styrer MEDIUM-mekanismen også uttegningen.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGOVERVEG</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegFiktivGrense" type="app:VegFiktivGrensePropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegKjørende ved hjelp av VegFiktivGrense.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGFIKTIVGRENSE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegdekkekant" type="app:VegdekkekantPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegKjørende ved hjelp av VegAvdekkekant.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGDEKKEKANT</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="avgrensesAvVegAnnenAvgrensning" type="app:VegAnnenAvgrensningPropertyType">
+            <annotation>
+              <documentation>Krav til delt flategeometri. Avgrensning av VegKjørende ved hjelp av VegAnnenAvgrensning.</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">AVGRENSESAVVEGANNENAVGRENSNING</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegKjørendePropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:VegKjørende"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegbom" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:VegbomType">
+    <annotation>
+      <documentation>Roadblock: Fysisk vegbom. Kan både være bommer som permanent sperrer for kjøring (vegsperringer) og bommer som kan passeres, f.eks. ved å betale avgift.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegbomType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>centerline: forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="funksjon" type="gml:CodeType">
+            <annotation>
+              <documentation>Vegbommens funksjon</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/funksjonvegsperring</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">FUNKSJON</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>heightReference: koordinatregistering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="vegbomtype" type="gml:CodeType">
+            <annotation>
+              <documentation>Angir hvilken type vegbommen er av</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegbom</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGBOMTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegbomPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vegbom"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegdekkekant" substitutionGroup="app:KvalitetPåkrevd" type="app:VegdekkekantType">
+    <annotation>
+      <documentation>avgrensning for alle typer flatedannede vegdekker. 
+
+Merknad: Her inngår også tidligere Trafikkøykant, GangSykkelvegkant, Gangvegkant og AnnetVegarealAvgrensning som avgrenser tidligere bakkant fortau eller parkeringsområdeavgrensning</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegdekkekantType">
+    <complexContent>
+      <extension base="app:KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistrering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegdekkekantPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vegdekkekant"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegoppmerking" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:VegoppmerkingType">
+    <annotation>
+      <documentation>Langs- og/eller tverrgående vegoppmerkingslinjer i vegen. Vegoppmerking nyttes for å lede, varsle eller regulere trafikken, og for å klargjøre andre bestemmelser gitt ved trafikkskilt eller trafikkregler.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegoppmerkingType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger objektets sentrale del</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="bruksområde" type="gml:CodeType">
+            <annotation>
+              <documentation>bruksområde for vegopmmerking
+(hentes fra NVDB))</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/bruksomradevegoppmerking</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BRUKSOMRÅDE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegoppmerkingPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vegoppmerking"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegrekkverk" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:VegrekkverkType">
+    <annotation>
+      <documentation>En anordning som skal hindre at kjøretøy forlater vegen.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegrekkverkType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="senterlinje" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger objektets sentrale del</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistrering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="rekkverkstype" type="gml:CodeType">
+            <annotation>
+              <documentation>type rekkverk</documentation>
+              <appinfo>
+                <defaultCodeSpace xmlns="http://www.opengis.net/gml/3.2">https://register.geonorge.no/sosi-kodelister/fkb/veg/5.0/typevegrekkverk</defaultCodeSpace>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">REKKVERKSTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegrekkverkPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vegrekkverk"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegskulderkant" substitutionGroup="app:NVDBobjekter_KvalitetPåkrevd" type="app:VegskulderkantType">
+    <annotation>
+      <documentation>Ytterkant av kjørbart felt som ligger inntil kjørebanen. Dette inkluderer rom for rekkverk.</documentation>
+    </annotation>
+  </element>
+  <complexType name="VegskulderkantType">
+    <complexContent>
+      <extension base="app:NVDBobjekter_KvalitetPåkrevdType">
+        <sequence>
+          <element name="grense" type="gml:CurvePropertyType">
+            <annotation>
+              <documentation>forløp som følger overgang mellom ulike fenomener</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">Kurve</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="høydereferanse" type="gml:CodeType">
+            <annotation>
+              <documentation>koordinatregistrering utført på topp eller bunn av et objekt</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HREF</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="VegskulderkantPropertyType">
+    <sequence minOccurs="0">
+      <element ref="app:Vegskulderkant"/>
+    </sequence>
+    <attributeGroup ref="gml:AssociationAttributeGroup"/>
+    <attributeGroup ref="gml:OwnershipAttributeGroup"/>
+  </complexType>
+  <element name="Vegsystem" substitutionGroup="gml:AbstractObject" type="app:VegsystemType">
+    <annotation>
+      <documentation>915: Definerer hvilke deler av vegnettet som forvaltningsmessig hører sammen.</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGSYSTEM</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="VegsystemType">
+    <sequence>
+      <element name="vegkategori" type="gml:CodeType">
+        <annotation>
+          <documentation>11276: Kategorisering som angir på hvilket nivå vegmyndigheten for strekningen ligger.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGKATEGORI</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element name="vegfase" type="gml:CodeType">
+        <annotation>
+          <documentation>11278: Angir vegens fase i livet.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGFASE</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="vegnummer" type="integer">
+        <annotation>
+          <documentation>11277: Angir hvilke deler av vegnettet som rutemessig hører sammen.</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGNUMMER</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="VegsystemPropertyType">
+    <sequence>
+      <element ref="app:Vegsystem"/>
+    </sequence>
+  </complexType>
+  <element name="Vegsystemreferanse" substitutionGroup="gml:AbstractObject" type="app:VegsystemreferanseType">
+    <annotation>
+      <documentation>sammensatt identifikator for vegsystemreferanse</documentation>
+      <appinfo>
+        <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGSYSTEMREFERANSE</taggedValue>
+      </appinfo>
+    </annotation>
+  </element>
+  <complexType name="VegsystemreferanseType">
+    <sequence>
+      <element name="vegsystem" type="app:VegsystemPropertyType">
+        <annotation>
+          <documentation>hvilke deler av vegnettet som forvaltningsmessig hører sammen</documentation>
+          <appinfo>
+            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VEGSYSTEM</taggedValue>
+          </appinfo>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="VegsystemreferansePropertyType">
+    <sequence>
+      <element ref="app:Vegsystemreferanse"/>
+    </sequence>
+  </complexType>
+</schema>
