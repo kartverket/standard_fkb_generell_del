@@ -1,25 +1,33 @@
-=== Kartkontroll 1.0 utkast
-Definisjon: Datamodell for tilbakemelding p&#229; avvik funnet ved kontroll av kartdata i Geovekst kartleggingsprosjekter
+// Start of UML-model
+=== Pakke: «ApplicationSchema» Kartkontroll 1.0 utkast
+*Definisjon:* Datamodell for tilbakemelding på avvik funnet ved kontroll av kartdata i Geovekst kartleggingsprosjekter
  
-===== Tagged Values
+[discrete]
+==== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |SOSI_modellstatus
 |utkastOgSkjult
  
 |===
-[caption="Figur 1: ",title=Hoveddiagram]
-image::figurer/Hoveddiagram.png[Hoveddiagram]
-[caption="Figur 2: ",title=Objekttyper]
-image::figurer/Objekttyper.png[Objekttyper]
  
-==== «FeatureType» KartkontrollGenerell
-Definisjon: 
+'''
  
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
+.Hoveddiagram 
+image::diagrammer/Hoveddiagram.png[link=diagrammer/Hoveddiagram.png, alt="Diagram med navn Hoveddiagram som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.Objekttyper 
+image::diagrammer/Objekttyper.png[link=diagrammer/Objekttyper.png, alt="Diagram med navn Objekttyper som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+[[kartkontrollgenerell]]
+==== «FeatureType» KartkontrollGenerell (abstrakt)
+*Definisjon:* 
+ 
+[discrete]
 ===== Egenskaper
 [cols="20,80"]
 |===
@@ -33,7 +41,7 @@ Definisjon:
 |[0..1]
  
 |Type: 
-|PUNKT
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
 |===
 [cols="20,80"]
 |===
@@ -47,7 +55,7 @@ Definisjon:
 |[0..1]
  
 |Type: 
-|KURVE
+|http://skjema.geonorge.no/SOSI/basistype/GM_Curve[GM_Curve]
 |===
 [cols="20,80"]
 |===
@@ -61,22 +69,22 @@ Definisjon:
 |[0..1]
  
 |Type: 
-|FLATE
+|http://skjema.geonorge.no/SOSI/basistype/GM_Surface[GM_Surface]
 |===
 [cols="20,80"]
 |===
 |*Navn:* 
-|*påvisning*
+|*sikkerPåvisning*
  
 |Definisjon: 
-|vurdering av hvor sikkert avviket er p&#229;vist
+|vurdering av om avviket er sikkert påvist
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Påvisning
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/boolean[boolean]
+|Profilparametre i tagged values: 
 |
 SOSI_navn: PÅVISNING + 
 |===
@@ -86,14 +94,14 @@ SOSI_navn: PÅVISNING +
 |*avvikshåndtering*
  
 |Definisjon: 
-|hvordan avviket skal h&#229;ndteres. Det vil i de fleste tilfeller si hvem som har ansvar for &#229; retter avviket.
+|hvordan avviket skal håndteres. Det vil i de fleste tilfeller si hvem som har ansvar for å retter avviket.
  
 |Multiplisitet: 
 |[1..1]
  
 |Type: 
-|Avvikshåndtering
-|Tagged Values: 
+|<<avvikshåndtering,«CodeList» Avvikshåndtering>>
+|Profilparametre i tagged values: 
 |
 SOSI_navn: AVVIKSHÅNDTERING + 
 |===
@@ -109,8 +117,8 @@ SOSI_navn: AVVIKSHÅNDTERING +
 |[1..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_navn: AVVIK_OBJEKTTYPE + 
 |===
@@ -126,8 +134,8 @@ SOSI_navn: AVVIK_OBJEKTTYPE +
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_navn: DATASETT + 
 |===
@@ -137,14 +145,14 @@ SOSI_navn: DATASETT +
 |*objektpeker*
  
 |Definisjon: 
-|referanse til hvilket objekt avviket gjelder der dette er mulig/hensiktsmessig &#229; angi. Bruk lokalid eller ev. annen identifikasjon som identifiserer objektet unikt.
+|referanse til hvilket objekt avviket gjelder der dette er mulig/hensiktsmessig å angi. Bruk lokalid eller ev. annen identifikasjon som identifiserer objektet unikt.
  
 |Multiplisitet: 
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_navn: OBJEKTPEKER + 
 |===
@@ -160,58 +168,47 @@ SOSI_navn: OBJEKTPEKER +
 |[0..1]
  
 |Type: 
-|CharacterString
-|Tagged Values: 
+|http://skjema.geonorge.no/SOSI/basistype/CharacterString[CharacterString]
+|Profilparametre i tagged values: 
 |
 SOSI_navn: INFORMASJON + 
 |===
-===== Roller
-[cols="20,80"]
-|===
-|Generalisering av:
-|«FeatureType» AvvikEgenskapsnøyaktighet +
-«FeatureType» AvvikFullstendighet
-|===
  
-==== «FeatureType» AvvikEgenskapsnøyaktighet
-Definisjon: 
- 
-*Supertype:* «FeatureType» KartkontrollGenerell
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
-===== Egenskaper
+[discrete]
+===== Restriksjoner
 [cols="20,80"]
 |===
 |*Navn:* 
-|*kvalitetselement*
+|*skal ha en av geometriene PUNKT, KURVE eller FLATE*
  
-|Definisjon: 
+|Beskrivelse: 
 |
  
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|KvalitetselementEgenskapsnøyaktighet
 |===
  
+[discrete]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Subtyper:
+|<<avvikegenskapsnøyaktighet,«FeatureType» AvvikEgenskapsnøyaktighet>> +
+<<avvikfullstendighet,«FeatureType» AvvikFullstendighet>> +
+<<avviklogiskkonsistens,«FeatureType» AvvikLogiskKonsistens>> +
+<<avvikstedfestingsnøyaktighet,«FeatureType» AvvikStedfestingsnøyaktighet>> +
+|===
+ 
+'''
+ 
+[[avvikfullstendighet]]
 ==== «FeatureType» AvvikFullstendighet
-Definisjon: 
+*Definisjon:* Avvik innenfor kvalitetskategorien Fullstendighet
  
-*Supertype:* «FeatureType» KartkontrollGenerell
- 
-===== Tagged Values
-[cols="20,80"]
-|===
-|===
+[discrete]
 ===== Egenskaper
 [cols="20,80"]
 |===
 |*Navn:* 
-|*kvalitetselement*
+|*kvalitetselementFullstendighet*
  
 |Definisjon: 
 |
@@ -220,13 +217,134 @@ Definisjon:
 |[1..1]
  
 |Type: 
-|KvalitetselementFullstendighet
+|<<kvalitetselementfullstendighet,«CodeList» KvalitetselementFullstendighet>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: FULLSTENDIGHET + 
 |===
  
-==== «CodeList» Avvikshåndtering
-Definisjon: 
+[discrete]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kartkontrollgenerell,«FeatureType» KartkontrollGenerell>>
  
-===== Tagged Values
+|===
+ 
+'''
+ 
+[[avvikegenskapsnøyaktighet]]
+==== «FeatureType» AvvikEgenskapsnøyaktighet
+*Definisjon:* Avvik innenfor kategorien Egenskapsnøyaktighet
+ 
+[discrete]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kvalitetselementEgenskapsnøyaktighet*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<kvalitetselementegenskapsnøyaktighet,«CodeList» KvalitetselementEgenskapsnøyaktighet>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: EGENSKAPSNØYAKTIGHET + 
+|===
+ 
+[discrete]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kartkontrollgenerell,«FeatureType» KartkontrollGenerell>>
+ 
+|===
+ 
+'''
+ 
+[[avviklogiskkonsistens]]
+==== «FeatureType» AvvikLogiskKonsistens
+*Definisjon:* Avvik innenfor kategorien Logisk konsistens
+ 
+[discrete]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kvalitetselementLogiskKonsistens*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<kvalitetselementlogiskkonsistens,«CodeList» KvalitetselementLogiskKonsistens>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: KONSISTENS + 
+|===
+ 
+[discrete]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kartkontrollgenerell,«FeatureType» KartkontrollGenerell>>
+ 
+|===
+ 
+'''
+ 
+[[avvikstedfestingsnøyaktighet]]
+==== «FeatureType» AvvikStedfestingsnøyaktighet
+*Definisjon:* Avvik innenfor kategorien Stedfestingsnøyaktighet
+ 
+[discrete]
+===== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*kvalitetselementStedfestingsnøyaktighet*
+ 
+|Definisjon: 
+|
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<kvalitetselementstedfestingsnøyaktighet,«CodeList» KvalitetselementStedfestingsnøyaktighet>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: STEDFESTING + 
+|===
+ 
+[discrete]
+===== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<kartkontrollgenerell,«FeatureType» KartkontrollGenerell>>
+ 
+|===
+ 
+'''
+ 
+[[avvikshåndtering]]
+==== «CodeList» Avvikshåndtering
+*Definisjon:* 
+ 
+[discrete]
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -243,30 +361,38 @@ Definisjon:
  
 |===
  
-==== «CodeList» Påvisning
-Definisjon: 
+'''
  
-===== Tagged Values
+[[kvalitetselementfullstendighet]]
+==== «CodeList» KvalitetselementFullstendighet
+*Definisjon:* 
+ 
+[discrete]
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.test.geonorge.no/sosi-kodelister/fkb/kartkontroll/p%C3%A5visning
+|https://register.test.geonorge.no/sosi-kodelister/fkb/kartkontroll/kvalitetselementfullstendighet
  
 |SOSI_datatype
 |T
  
 |SOSI_navn
-|PÅVISNING
+|FULLSTENDIGHET
  
 |===
  
-==== «CodeList» KvalitetselementEgenskapsnøyaktighet
-Definisjon: 
+'''
  
-===== Tagged Values
+[[kvalitetselementegenskapsnøyaktighet]]
+==== «CodeList» KvalitetselementEgenskapsnøyaktighet
+*Definisjon:* 
+ 
+[discrete]
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
@@ -283,22 +409,51 @@ Definisjon:
  
 |===
  
-==== «CodeList» KvalitetselementFullstendighet
-Definisjon: 
+'''
  
-===== Tagged Values
+[[kvalitetselementlogiskkonsistens]]
+==== «CodeList» KvalitetselementLogiskKonsistens
+*Definisjon:* 
+ 
+[discrete]
+===== Profilparametre i tagged values
 [cols="20,80"]
 |===
 |asDictionary
 |true
  
 |codeList
-|https://register.test.geonorge.no/sosi-kodelister/fkb/kartkontroll/kvalitetselementfullstendighet
+|https://register.test.geonorge.no/sosi-kodelister/fkb/kartkontroll/p%C3%A5visning
  
 |SOSI_datatype
 |T
  
 |SOSI_navn
-|FULLSTENDIGHET
+|KONSISTENS
  
 |===
+ 
+'''
+ 
+[[kvalitetselementstedfestingsnøyaktighet]]
+==== «CodeList» KvalitetselementStedfestingsnøyaktighet
+*Definisjon:* 
+ 
+[discrete]
+===== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|255
+ 
+|SOSI_navn
+|STEDFESTING
+ 
+|===
+// End of UML-model
