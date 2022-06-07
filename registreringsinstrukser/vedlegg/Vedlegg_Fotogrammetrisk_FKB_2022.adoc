@@ -10,7 +10,7 @@
 :lang: nb
 :URLrot: https://sosi.geonorge.no/registreringsinstrukser
 :fkb: http://sosi.geonorge.no/Standarder/FKB_generell_del
-:publisert: Oppdatert 2022-05-24
+:publisert: Oppdatert 2022-06-07
 
 CAUTION: {publisert} 
 
@@ -33,13 +33,29 @@ Linker:
 
 == FKB Fotogrammetriske registreringsinstrukser
 
+=== Generelle presiseringer
+
+==== Bruk av datafangstdato 
+I følge http://sosi.geonorge.no/Standarder/FKB_generell_del/#truedatafangstdato[definisjonen av datafangstdato] skal dette være datoen for når flybildene som ligger til grunn for kartkonstruksjonen ble tatt (flyfotodato). I en del kartleggingsprosjekter kan imidlertid bildene være tatt på ulike datoer og det kan da være ønskelig at alle data i prosjektet likevel får samme dato. Dersom man ønsker å gjøre det på denne måten skal dette avklares i det enkelte prosjekt. 
+
+==== Kompaktifisering av gruppeegenskaper i SOSI-formatet
+I FKB 5.0 skal ingen datatyper/gruppeegenskaper kompaktifiseres i SOSI-formatet. Dette gjelder også egenskapen ..KVALITET
+
+==== Egenskaper knyttet til geometrien på flater med heleid geometri
+For objekttyper som er modellert med heleid flategeometri (finnes i Arealbruk, BygnAnlegg og Naturinfo) må egenskaper knyttet til geometrien som datafangstdato og kvalitet representere hele flateobjektet. Man har ikke som tidligere muligheten av å splitte avgrensningen og sette ulik kvalitet/dato på ulike deler av avgrensningen. 
+
+Dersom deler av (avgrensningen til) en flate har redusert kvalitet bør dette gjenspeiles på flatas kvalitetskoding. Ved ajourføring av en flate settes ny datafangstdato på flateobjektet. 
+
 :ds: Elveg
 :spek: {URLrot}/{ds}/2.0/Fotogrammetrisk_2022-01-01/.
 === {ds}
 
 Fotogrammetrisk registreringsinstruks for {ds} 2.0 er tilgjengelig på {spek}
 
-Følgende presiseringer/justeringer av spesifikasjonen:
+==== Presisering om registrering av Veglenke med typeveg Gangfelt
+Referanse til beskrivelse av https://sosi.geonorge.no/registreringsinstrukser//Elveg/2.0/Fotogrammetrisk_2022-01-01/#truekodeliste-typeveg[typeveg] i registreringsinstruksen. Når det gjelder registrering av Gangfelt presiseres det at...
+
+Tilknytning mot andre veglenker – minstelengde? 1,8m? Samferdsel og SVV «bestemmer». Krever tilleggstekst og nye bilder der gangfelt er med i bilde. Presiseres bedre hvilke enkeltstående som ikke skal med.
 
 
 
@@ -70,7 +86,14 @@ Følgende presiseringer/justeringer av spesifikasjonen:
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-Følgende presiseringer/justeringer av spesifikasjonen:
+==== Avfallsbeholder 
+Bør presiseres hvilke avfallsbeholder som skal (og ikke skal) registreres. Mobile/med hjul. Flere bilder?
+
+==== Tank 
+Hvilke krav skal til for å registrere sammenhengende polygon (utover 6m2 totalareal)? Hvor tett, registreres høydeforskjell?
+
+==== Brudetalj 
+Kan det settes et minstemål (i meter oppstikk) på brudetaljene?
 
 
 
@@ -80,7 +103,11 @@ Følgende presiseringer/justeringer av spesifikasjonen:
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-Følgende presiseringer/justeringer av spesifikasjonen:
+==== Bygningsdelelinje 
+Oppdatere i registreringsinstruksen (definisjon: usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50). Kvalitet ikke skal legges på Byggningsdelelinje fra FKB 5.0. MÅ VENTE TIL NESTE REVISJON for prod.spek.
+
+==== FiktivBygningsAvgrensning 
+Bør det stå noe om størrelsen på bygninger under bakken? Hvilke skal med?
 
 
 
@@ -140,5 +167,21 @@ Følgende presiseringer/justeringer av spesifikasjonen:
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-Følgende presiseringer/justeringer av spesifikasjonen:
+==== Bruk av VegAnnenAvgrensning og VegFiktivGrense
+Spesielt VegFiktivGrense, om den er synlig og har et fysisk skille (for eksempel nedsenket kantstein). Ingen tydelige føringer for registrering nå, bildene ikke konsekvente? Bytte bilder, forklare i tekst.
+
+==== OverkjørbartArealAvgrensning
+Ingen beskrivelse for helt overkjørbart areal. Tilleggstekst og nytt bilde?
+
+==== SYNBARHET 
+Mangler vi beskrivelse av objekter med medium U?
+
+==== Fartsdempere 
+Smale blir ikke registrert. Nytt bilde med tekst.
+
+==== Gangveger og annen gangareal
+bør begrenses til hovedferdselsårer. Legge til tekst?
+
+==== Parkeringsområde
+Langs veg – skal den flatedannes eller ikke? Bør presiseres med bilde/bilder.
 
