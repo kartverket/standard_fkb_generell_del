@@ -1,0 +1,167 @@
+= Vedlegg til FKB Fotogrammetriske registreringsinstrukser - versjon 5.0
+:sectnums:
+:toc: left
+:toc-title: Innholdsfortegnelse
+:toclevels: 3
+:figure-caption: Figur
+:table-caption: Tabell
+:doctype: article
+:encoding: utf-8
+:lang: nb
+:URLrot: https://sosi.geonorge.no/registreringsinstrukser
+:fkb: http://sosi.geonorge.no/Standarder/FKB_generell_del
+:publisert: Oppdatert 2022-07-01
+
+CAUTION: {publisert} 
+
+== Vedlegg til FKB Fotogrammetriske registreringsinstrukser - versjon 5.0
+
+=== Innledning
+
+
+FKB Fotogrammetriske registreringsinstrukser - versjon 5.0 - ble tilgjengeliggjort i januar 2022 og lagt til grunn for FKB kartleggingsprosjekter gjennom Geovekst med datafangst i 2022. Disse dokumentene er grunnlaget for inngåtte avtaler og det er derfor lite hensiktsmessig å endre de fotogrammetriske registreringsinstruksene underveis i et pågående kartleggingsprosjekt.
+
+I løpet av våren 2022 er det gjennomført et FKB 5.0 testprosjekt der kartleggingsfirmaene i Norge har levert inn data basert på de nye spesifikasjonene for et lite område. Basert på erfaringene fra dette prosjektet er det behov for å presisere tolkning/håndtering av de FKB 5.0 registreringsinstruksene på en del områder. Dette dokumentet samler disse presiseringene for hvert datasett og bør derfor leses sammen med de fotogrammetriske registreringsinstruksene ved gjennomføring av FKB kartleggingsprosjekter 2022.
+
+Det vil være naturlig at justeringene/presiseringene som er beskrevet i dette dokumenten innarbeides i reviderte FKB registreringsinstrukser som vil bli benyttet i neste kartleggingssesong.
+
+Linker:
+
+* FKB 5.0 generell del: {fkb}
+* Geovekst produktspesifikasjoner og registreringsinstrukser: https://kartverket.no/geodataarbeid/geovekst/fkb-produktspesifikasjoner
+
+=== Endringslogg
+Vedlegget er oppdatert 01.07.2022 med et bildeeksempel på registrering av kanalisert veg (kap 2.4.2) og to bildeeksempler på registrering av gangveg og gangfelt (kap 2.4.1).
+
+== FKB Fotogrammetriske registreringsinstrukser
+
+=== Generelle presiseringer
+
+==== Bruk av datafangstdato 
+I følge http://sosi.geonorge.no/Standarder/FKB_generell_del/#truedatafangstdato[definisjonen av datafangstdato] skal dette være datoen for når flybildene som ligger til grunn for kartkonstruksjonen ble tatt (flyfotodato). I en del kartleggingsprosjekter kan imidlertid bildene være tatt på ulike datoer og det kan da være ønskelig at alle data i prosjektet likevel får samme dato. Dersom man ønsker å gjøre det på denne måten skal dette avklares i det enkelte prosjekt. 
+
+==== Kompaktifisering av gruppeegenskaper i SOSI-formatet
+I FKB 5.0 skal ingen datatyper/gruppeegenskaper kompaktifiseres i SOSI-formatet. Dette gjelder også egenskapen ..KVALITET
+
+==== Egenskaper knyttet til geometrien på flater med heleid geometri
+For objekttyper som er modellert med heleid flategeometri (finnes i Arealbruk, BygnAnlegg og Naturinfo) må egenskaper knyttet til geometrien som datafangstdato og kvalitet representere hele flateobjektet. Man har ikke som tidligere muligheten av å splitte avgrensningen og sette ulik kvalitet/dato på ulike deler av avgrensningen. 
+
+Dersom deler av (avgrensningen til) en flate har redusert kvalitet bør dette gjenspeiles på flatas kvalitetskoding. Ved ajourføring av en flate settes ny datafangstdato på flateobjektet.
+
+:ds: FKB-BygnAnlegg
+:spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+=== {ds}
+
+Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
+
+==== Avfallsbeholder 
+Det presiseres at mobile avfallsbeholdere/søppelkasser ikke skal registreres. Objekttypen er opsjonell og dersom det bestilles datafangst av avfallsbeholdere anbefales det at det avtales nærmere rammer for dette i det enkelte prosjekt. 
+
+==== Tank 
+I figur 19 i https://sosi.geonorge.no/registreringsinstrukser/FKB-BygnAnlegg/5.0/Fotogrammetrisk_2022-01-01/#tank[FKB-BygnAnlegg] presiseres det at flere tanker som står inntil hverandre skal de registreres som et sammenhengende polygon (så fremt de totalt utgjør 6m2 totalareal). 
+Denne regelen er laget for å fange opp datafangst av mange små tanker (der hver tank er mindre enn 6m2) som står inntil hverandre. 
+
+Det presiseres at hovedregelen er at tanker om mulig registreres som separate objekter pr. tank, selv om de står inntil andre tanker. 
+
+
+:ds: FKB-Bygning
+:spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+=== {ds}
+
+Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
+
+==== Bygningsdelelinje 
+I definisjon av https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0/Fotogrammetrisk_2022-01-01/#bygningsdelelinje[Bygningsdelelinje] står det at "usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50)". Imidlertid er ikke stedfestingskvalitet en lovlig egenskap på Bygningsdelelije i FKB-Bygning 5.0. Det presiseres derfor at setningen om kvalitet under definisjon sees bort fra og at Kvalitet ikke skal legges på Byggningsdelelinje fra FKB 5.0. 
+
+:ds: Elveg
+:spek: {URLrot}/{ds}/2.0/Fotogrammetrisk_2022-01-01/.
+=== {ds}
+
+Fotogrammetrisk registreringsinstruks for {ds} 2.0 er tilgjengelig på {spek}
+
+Det presiseres at veglenker under 2 meter ikke skal registreres i Elveg.
+
+==== Registrering av veglenker for gående/syklende
+Figur 1-3 i https://sosi.geonorge.no/registreringsinstrukser/Elveg/2.0/Fotogrammetrisk_2022-01-01/#trueeksempler-p%C3%A5-p%C3%A5-registrering-av-veglenke-med-forskjellig-typeveg[Elveg] erstattes med bildene under. I eksemplene vises de mest typiske situasjonene der veglenker under 2 meter (i forbindelse med Gangfelt) nå forlenges utover egen utstrekning og konnekteres mot nærmeste veglenke.
+
+.Figuren viser eksempel på registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt.
+image::figurer/Veglenker1.jpg[alt="Bilde av veglenker"]
+.Figuren viser registrering av flere ulike typer veg i et fullkanalisert T-kryss med svingefelt. I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er tilstede.
+image::figurer/Veglenker3.jpg[alt="Bilde av veglenker"]
+.Figuren viser registrering av flere ulike typer veg
+image::figurer/Veglenker2.jpg[alt="Bilde av veglenker"]
+
+Figur 16 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under. Det presiseres at ved parallelle lenker forlenges hver lenke (her sykkelveg og fortau) mot nærmest tilstøtende veglenke (her fortau).
+
+.Eksemplet viser hvordan veglenkene i Elveg skal henge sammen.
+image::figurer/veglenker.png[alt="Bilde av veglenker"]
+
+Se <<Oppdeling av VegGåendeOgSyklende-flater med forskjellig typeveg>> for inndeling i flater i FKB-Veg i det samme området.
+
+Under vises et eksempel på registrering av en utydelig typeveg mellom fortau (fra sør) og gangfelt (til venstre) – markert med rødt i figuren).
+Disse typevegene er meget vanskelige å skille på ved registrering, derfor skal typeveg kodes som gangveg ved fotogrammetrisk nyregistrering og ev. justeres administrativt.
+
+.Eksemplet viser registrering av typeveg gangveg.
+image::figurer/veglenke_gangveg.png[alt="Bilde av veglenker"]
+
+Under vises et eksempel på registrering på registrering av veglenke mellom to gangfelt (markert i rødt i figuren). Hvis lengde er under minstemål for registrering av veglenker (2m) registreres gangfeltet sammenhengende. Hvis lengde er over minstemål registreres veglenken mellom gangfeltene som gangveg fotogrammetrisk og justeres ev. administrativt.
+Ved eksisterende veglenke (gang- og sykkelveg) over gangfelt kan veglenke splittes opp og gis ny typeveg og endret type E, hvis eksiterende veglenke oppfyller kravene for nøyaktighet.
+
+.Eksemplet viser registrering av veglenke mellom to typeveg gangfelt.
+image::figurer/veglenke_gangfelt.png[alt="Bilde av veglenker"]
+
+==== Registrering av veglenker for kjørende
+Under vises et eksempel på registrering av et svingefelt (høyresvingefelt – markert med rødt i figuren). Svingefelt skal registreres med typeveg kanalisert veg. Ellers gjelder teksten fra figur 2 i produktspesifikasjonen for Elveg: "I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er til stede".
+
+.Eksemplet viser registrering av veglenke med typeveg kanalisert veg for svingefelt.
+image::figurer/veglenke_kanalisert_veg.png[alt="Bilde av veglenker"]
+
+
+
+:ds: FKB-Veg
+:spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+=== {ds}
+
+Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
+
+
+==== Oppdeling av VegGåendeOgSyklende-flater med forskjellig typeveg
+Figur 15 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under.Det presiseres at flate VegGåendeOgSyklende skal deles der det er foskjellig bruk av vegen. Både når de er skilt med kantstein/nivå og når de kun er skilt med oppmerking. Klassifisering av typeveg i Elveg er styrende for tolkningen. For typeveg-inndeling, se kap.2.2.1 i dette dokumentet.
+
+.Eksempel på registrering av sykkelveg og gangveg uten fysisk skille mellom seg (kun oppmerking).
+image::figurer/vegflater.png[alt="Bilde av vegflater"]
+
+Se <<Registrering av veglenker for gående/syklende>> for registrering av veglenker i det samme området.
+
+
+==== VegFiktivGrense
+Det presiseres at VegFiktivGrense også skal brukes i avgrensning mellom VegKjørende og VegGåendeOgSyklende (typeveg fortau) mot avkjørsler.
+
+.Eksempel på riktig registrering av VegFiktivGrense og VegAnnenAvgrensning i forbindelse med avkjørsel over fortau
+image::figurer/vegfiktivgrense.png[alt="Bilde av vegfiktivgrense"]
+
+Figur 10 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under.
+
+.Eksempel på registrering av fortau som går mot bygning/husvegg. Egenskap Typeveg tilhører Elveg.
+image::figurer/veggaendeogsyklende.png[alt="Bilde av veggaendeogsyklende"]
+
+Figur 32 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#vegdekkekant[FKB-Veg] erstattes med bildet under.
+
+.Eksempel på registrering av fortauskanter med Vegdekkekant
+image::figurer/fortauskant.png[alt="Bilde av fortauskant"]
+
+==== OverkjørbartArealAvgrensning
+Figur 54 i FKB-Veg utgår! Det presiseres at helt overkjøbart areal (i samme plan som vegbanen, men avgrenset med oppmerking eller annen type dekke) ikke skal registreres som overkjørbart areal. 
+
+.Eksempel på helt overkjørbart areal som ikke skal registreres med OverkjørbartArealAvgrensning. Dette gjelder også helt overkjørbare rundkjøringer
+image::figurer/ovekjorbartareal.png[alt="Bilde av overkjørbartareal"]
+
+==== Fartsdempere 
+Det presiseres at avgrensning til alle typer fartsdempere skal registreres så lenge de er synlige i bildene.
+
+.Eksempel på fartsdempere av "smal type" som skal registreres
+image::figurer/fartsdemperavgrensning.png[alt="Bilde av fartsdemperavgrensning"]
+
+
+
+

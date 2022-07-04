@@ -1,4 +1,6 @@
  
+<<<
+'''
  
 [[veglenke]]
 === Objekttype: Veglenke
@@ -49,7 +51,7 @@ Egenskapen typeveg er den viktigste egenskapen til veglenke og angir hvilken typ
 |identifikasjon
 |«dataType» Identifikasjon
 |..IDENT
-|[1..1]
+|[0..1]
  
 |identifikasjon.lokalId
 |CharacterString
@@ -71,6 +73,26 @@ Egenskapen typeveg er den viktigste egenskapen til veglenke og angir hvilken typ
 |..OPPDATERINGSDATO
 |[0..1]
  
+|NVDB_identifikasjon
+|«dataType» NVDB_Identifikasjon
+|..NVDB_IDENT
+|[0..1]
+ 
+|NVDB_identifikasjon.NVDB_Id
+|CharacterString
+|...NVDB_ID
+|[0..1]
+ 
+|NVDB_identifikasjon.navnerom
+|CharacterString
+|...NAVNEROM
+|[0..1]
+ 
+|NVDB_identifikasjon.versjonId
+|CharacterString
+|...VERSJONID
+|[0..1]
+ 
 |datafangstdato
 |«dataType» Date
 |..DATAFANGSTDATO
@@ -82,7 +104,7 @@ Egenskapen typeveg er den viktigste egenskapen til veglenke og angir hvilken typ
 |[0..1]
  
 |kommunenummer
-| «codeList»  http://skjema.geonorge.no/SOSI/kodeliste/AdmEnheter/Kommunenummer[Kommunenummer, window = _blank]
+| «CodeList»  http://skjema.geonorge.no/SOSI/kodeliste/AdmEnheter/Kommunenummer[Kommunenummer, window = _blank]
 |..KOMM
 |[1..1]
  
@@ -91,80 +113,35 @@ Egenskapen typeveg er den viktigste egenskapen til veglenke og angir hvilken typ
 |..KVALITET
 |[0..1]
  
-|kvalitet.målemetode
-| «CodeList»  http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/Målemetode[Målemetode, window = _blank]
-|...MÅLEMETODE
+|kvalitet.datafangstmetode
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODE
 |[1..1]
  
 |kvalitet.nøyaktighet
-|«dataType» Integer
+|Integer
 |...NØYAKTIGHET
 |[0..1]
  
 |kvalitet.synbarhet
-|«CodeList» Synbarhet
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/synbarhet[Synbarhet, window = _blank]
 |...SYNBARHET
 |[0..1]
  
-|kvalitet.målemetodeHøyde
-| «CodeList»  http://skjema.geonorge.no/SOSI/generelleKonsepter/generelleTyper/5.0/MålemetodeHøyde[MålemetodeHøyde, window = _blank]
-|...H-MÅLEMETODE
+|kvalitet.datafangstmetodeHøyde
+| «CodeList»  https://register.geonorge.no/sosi-kodelister/fkb/generell/5.0/datafangstmetode[Datafangstmetode, window = _blank]
+|...DATAFANGSTMETODEHØYDE
 |[0..1]
  
 |kvalitet.nøyaktighetHøyde
-|«dataType» Integer
+|Integer
 |...H-NØYAKTIGHET
-|[0..1]
- 
-|kvalitet.maksimaltAvvik
-|«dataType» Integer
-|...MAX-AVVIK
 |[0..1]
  
 |medium
 |«CodeList» Medium
 |..MEDIUM
 |[0..1]
- 
-|standardLRM
-|«codeList» LineærReferanseMetode
-|..LRLRM
-|[1..1]
- 
-|lenkesekvens
-|«dataType» Lenkesekvensreferanse
-|..LENKESEKVENS
-|[1..1]
- 
-|lenkesekvens.identifikasjon
-|«dataType» Identifikasjon
-|...IDENT
-|[1..1]
- 
-|lenkesekvens.identifikasjon.lokalId
-|CharacterString
-|....LOKALID
-|[1..1]
- 
-|lenkesekvens.identifikasjon.navnerom
-|CharacterString
-|....NAVNEROM
-|[1..1]
- 
-|lenkesekvens.identifikasjon.versjonId
-|CharacterString
-|....VERSJONID
-|[0..1]
- 
-|lenkesekvens.startposisjon
-|«dataType» Real
-|...LRSTARTVERDI
-|[1..1]
- 
-|lenkesekvens.sluttposisjon
-|«dataType» Real
-|...LRSLUTTVERDI
-|[1..1]
  
 |typeVeg
 |«codeList» TypeVeg
