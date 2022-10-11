@@ -5,6 +5,7 @@
 :toclevels: 3
 :figure-caption: Figur
 :table-caption: Tabell
+:section-refsig: kapittel
 :doctype: article
 :encoding: utf-8
 :lang: nb
@@ -31,10 +32,33 @@ Linker:
 * Geovekst produktspesifikasjoner og registreringsinstrukser: https://kartverket.no/geodataarbeid/geovekst/fkb-produktspesifikasjoner
 
 === Endringslogg
-Vedlegget er oppdatert 01.07.2022 med et bildeeksempel på registrering av kanalisert veg (kap 2.4.2) og to bildeeksempler på registrering av gangveg og gangfelt (kap 2.4.1).
 
+Tabellen under viser en oversikt over når vedlegget har blitt endret. 
+
+:xrefstyle: short
+
+[cols="1,4"]
+|===
+|Dato|Endringer
+
+| 2022-03-17
+| Første versjon av vedlegg
+
+| 2022-07-01
+| Oppdatert med et bildeeksempel på registrering av kanalisert veg (<<veglenkerKjørende>>) og to bildeeksempler på registrering av gangveg og gangfelt (<<veglenkerGåSykkel>>).
+
+| 2022-10-11
+a| * Justering av kapittel rekkefølgen under <<fkbreginstruks>>
+* Lagt inn to presiseringer knyttet til registreringsinstruksen for FKB-Ledning (<<FKBLedning>>)
+
+|===
+
+:xrefstyle: basic
+
+[[fkbreginstruks]]
 == FKB Fotogrammetriske registreringsinstrukser
 
+[[generellePresiseringer]]
 === Generelle presiseringer
 
 ==== Bruk av datafangstdato 
@@ -50,6 +74,7 @@ Dersom deler av (avgrensningen til) en flate har redusert kvalitet bør dette gj
 
 :ds: FKB-BygnAnlegg
 :spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+[[FKBBygnAnlegg]]
 === {ds}
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
@@ -66,6 +91,7 @@ Det presiseres at hovedregelen er at tanker om mulig registreres som separate ob
 
 :ds: FKB-Bygning
 :spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+[[FKBBygning]]
 === {ds}
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
@@ -73,53 +99,31 @@ Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 ==== Bygningsdelelinje 
 I definisjon av https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0/Fotogrammetrisk_2022-01-01/#bygningsdelelinje[Bygningsdelelinje] står det at "usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50)". Imidlertid er ikke stedfestingskvalitet en lovlig egenskap på Bygningsdelelije i FKB-Bygning 5.0. Det presiseres derfor at setningen om kvalitet under definisjon sees bort fra og at Kvalitet ikke skal legges på Byggningsdelelinje fra FKB 5.0. 
 
-:ds: Elveg
-:spek: {URLrot}/{ds}/2.0/Fotogrammetrisk_2022-01-01/.
+
+:ds: FKB-Ledning
+:spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+[[FKBLedning]]
 === {ds}
 
-Fotogrammetrisk registreringsinstruks for {ds} 2.0 er tilgjengelig på {spek}
+Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-Det presiseres at veglenker under 2 meter ikke skal registreres i Elveg.
+==== Registrering av linjebredde og vertikalAvstand
+Når egenskapene _linjebredde_ og _vertikalAvstand_ skal registreres kan fremstå noe uklart i endringsloggen.
 
-==== Registrering av veglenker for gående/syklende
-Figur 1-3 i https://sosi.geonorge.no/registreringsinstrukser/Elveg/2.0/Fotogrammetrisk_2022-01-01/#trueeksempler-p%C3%A5-p%C3%A5-registrering-av-veglenke-med-forskjellig-typeveg[Elveg] erstattes med bildene under. I eksemplene vises de mest typiske situasjonene der veglenker under 2 meter (i forbindelse med Gangfelt) nå forlenges utover egen utstrekning og konnekteres mot nærmeste veglenke.
+I FKB er følgende påkrevd å registrere fotogrammetrisk:
 
-.Figuren viser eksempel på registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt.
-image::figurer/Veglenker1.jpg[alt="Bilde av veglenker"]
-.Figuren viser registrering av flere ulike typer veg i et fullkanalisert T-kryss med svingefelt. I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er tilstede.
-image::figurer/Veglenker3.jpg[alt="Bilde av veglenker"]
-.Figuren viser registrering av flere ulike typer veg
-image::figurer/Veglenker2.jpg[alt="Bilde av veglenker"]
+* _linjebredde_ der hvor avstanden mellom ytterfasene er >10 meter i grunnriss
+* _vertikalAvstand_ der hvor en mast har vertikal avstand > 15 meter
 
-Figur 16 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under. Det presiseres at ved parallelle lenker forlenges hver lenke (her sykkelveg og fortau) mot nærmest tilstøtende veglenke (her fortau).
+Dersom avstanden mellom ytterfasene er >10 meter i grunnriss skal _linjebredde_ konstrueres, men det er ikke krav om i tillegg å registrere _vertikalAvstand_ med mindre masten har en vertikal avstand > 15 meter. Tilsvarende gjelder dersom mastens _vertikalavstand_ er >15 meter. 
 
-.Eksemplet viser hvordan veglenkene i Elveg skal henge sammen.
-image::figurer/veglenker.png[alt="Bilde av veglenker"]
+==== Trase, lavspent og ekom
 
-Se <<Oppdeling av VegGåendeOgSyklende-flater med forskjellig typeveg>> for inndeling i flater i FKB-Veg i det samme området.
-
-Under vises et eksempel på registrering av en utydelig typeveg mellom fortau (fra sør) og gangfelt (til venstre) – markert med rødt i figuren).
-Disse typevegene er meget vanskelige å skille på ved registrering, derfor skal typeveg kodes som gangveg ved fotogrammetrisk nyregistrering og ev. justeres administrativt.
-
-.Eksemplet viser registrering av typeveg gangveg.
-image::figurer/veglenke_gangveg.png[alt="Bilde av veglenker"]
-
-Under vises et eksempel på registrering på registrering av veglenke mellom to gangfelt (markert i rødt i figuren). Hvis lengde er under minstemål for registrering av veglenker (2m) registreres gangfeltet sammenhengende. Hvis lengde er over minstemål registreres veglenken mellom gangfeltene som gangveg fotogrammetrisk og justeres ev. administrativt.
-Ved eksisterende veglenke (gang- og sykkelveg) over gangfelt kan veglenke splittes opp og gis ny typeveg og endret type E, hvis eksiterende veglenke oppfyller kravene for nøyaktighet.
-
-.Eksemplet viser registrering av veglenke mellom to typeveg gangfelt.
-image::figurer/veglenke_gangfelt.png[alt="Bilde av veglenker"]
-
-==== Registrering av veglenker for kjørende
-Under vises et eksempel på registrering av et svingefelt (høyresvingefelt – markert med rødt i figuren). Svingefelt skal registreres med typeveg kanalisert veg. Ellers gjelder teksten fra figur 2 i produktspesifikasjonen for Elveg: "I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er til stede".
-
-.Eksemplet viser registrering av veglenke med typeveg kanalisert veg for svingefelt.
-image::figurer/veglenke_kanalisert_veg.png[alt="Bilde av veglenker"]
-
-
+Der hvor opsjonen for konstruksjon av lavspent og ekom er utløst skal disse traseene konstrueres helt frem til abonnent, typisk husvegg. For traseer som stopper i en bygning eller i en annen større konstruksjon skal det *ikke* konstrueres mast i dette trase endepunktet.
 
 :ds: FKB-Veg
 :spek: {URLrot}/{ds}/5.0/Fotogrammetrisk_2022-01-01/.
+[[FKBveg]]
 === {ds}
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
@@ -162,6 +166,52 @@ Det presiseres at avgrensning til alle typer fartsdempere skal registreres så l
 .Eksempel på fartsdempere av "smal type" som skal registreres
 image::figurer/fartsdemperavgrensning.png[alt="Bilde av fartsdemperavgrensning"]
 
+
+:ds: Elveg
+:spek: {URLrot}/{ds}/2.0/Fotogrammetrisk_2022-01-01/.
+[[Elveg]]
+=== {ds}
+
+Fotogrammetrisk registreringsinstruks for {ds} 2.0 er tilgjengelig på {spek}
+
+Det presiseres at veglenker under 2 meter ikke skal registreres i Elveg.
+
+[[veglenkerGåSykkel]]
+==== Registrering av veglenker for gående/syklende
+Figur 1-3 i https://sosi.geonorge.no/registreringsinstrukser/Elveg/2.0/Fotogrammetrisk_2022-01-01/#trueeksempler-p%C3%A5-p%C3%A5-registrering-av-veglenke-med-forskjellig-typeveg[Elveg] erstattes med bildene under. I eksemplene vises de mest typiske situasjonene der veglenker under 2 meter (i forbindelse med Gangfelt) nå forlenges utover egen utstrekning og konnekteres mot nærmeste veglenke.
+
+.Figuren viser eksempel på registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt.
+image::figurer/Veglenker1.jpg[alt="Bilde av veglenker"]
+.Figuren viser registrering av flere ulike typer veg i et fullkanalisert T-kryss med svingefelt. I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er tilstede.
+image::figurer/Veglenker3.jpg[alt="Bilde av veglenker"]
+.Figuren viser registrering av flere ulike typer veg
+image::figurer/Veglenker2.jpg[alt="Bilde av veglenker"]
+
+Figur 16 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under. Det presiseres at ved parallelle lenker forlenges hver lenke (her sykkelveg og fortau) mot nærmest tilstøtende veglenke (her fortau).
+
+.Eksemplet viser hvordan veglenkene i Elveg skal henge sammen.
+image::figurer/veglenker.png[alt="Bilde av veglenker"]
+
+Se <<Oppdeling av VegGåendeOgSyklende-flater med forskjellig typeveg>> for inndeling i flater i FKB-Veg i det samme området.
+
+Under vises et eksempel på registrering av en utydelig typeveg mellom fortau (fra sør) og gangfelt (til venstre) – markert med rødt i figuren).
+Disse typevegene er meget vanskelige å skille på ved registrering, derfor skal typeveg kodes som gangveg ved fotogrammetrisk nyregistrering og ev. justeres administrativt.
+
+.Eksemplet viser registrering av typeveg gangveg.
+image::figurer/veglenke_gangveg.png[alt="Bilde av veglenker"]
+
+Under vises et eksempel på registrering på registrering av veglenke mellom to gangfelt (markert i rødt i figuren). Hvis lengde er under minstemål for registrering av veglenker (2m) registreres gangfeltet sammenhengende. Hvis lengde er over minstemål registreres veglenken mellom gangfeltene som gangveg fotogrammetrisk og justeres ev. administrativt.
+Ved eksisterende veglenke (gang- og sykkelveg) over gangfelt kan veglenke splittes opp og gis ny typeveg og endret type E, hvis eksiterende veglenke oppfyller kravene for nøyaktighet.
+
+.Eksemplet viser registrering av veglenke mellom to typeveg gangfelt.
+image::figurer/veglenke_gangfelt.png[alt="Bilde av veglenker"]
+
+[[veglenkerKjørende]]
+==== Registrering av veglenker for kjørende
+Under vises et eksempel på registrering av et svingefelt (høyresvingefelt – markert med rødt i figuren). Svingefelt skal registreres med typeveg kanalisert veg. Ellers gjelder teksten fra figur 2 i produktspesifikasjonen for Elveg: "I de aller fleste tilfeller vil topologien i slike kryss være etablert og skal da ikke endres ved fotogrammetrisk registrering. Fotogrammetrisk registrering vil i hovedsak gå ut på forbedring av geometri der kriteriene for dette er til stede".
+
+.Eksemplet viser registrering av veglenke med typeveg kanalisert veg for svingefelt.
+image::figurer/veglenke_kanalisert_veg.png[alt="Bilde av veglenker"]
 
 
 
