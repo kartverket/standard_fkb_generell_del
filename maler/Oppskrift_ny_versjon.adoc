@@ -1,0 +1,45 @@
+== Dokumentasjon av arbeid i Asciidoc i forbindelse med ny verjson av dokumentene
+
+=== Lage "erstattet-av" dokumentasjon
+
+. Etabler en egen gren i repo for arbeid med «erstattet-av-dokumentasjon»
+. Endre dokument metadata i erstattet-av gren. +
+For FKB repoer innebærer dette at vi må innom i 3 filer: hoveddokument, adoc-parametere og dokument-metadata. +
+_WARNING: Denne standarden er erstattet av en nyere versjon!_ (eller noe slikt) +
+Eksempel: https://bitbucket.statkart.no/projects/PROF/repos/dokumentasjon_fkb_bygnanlegg/browse?at=refs%2Fheads%2FReginst2022-01-01erstattet +
+Dette kan imidlertid godt gjøres på andre måter. F.eks. samles i en fil. Det vesentlige er å få på et stempel på at dokumentet er erstattet samt en link til oppdatert/nyere dokument i dokument metadata i toppen av dokumentasjonen.
+. Generer ny HTML og pdf-dokumentasjon fra erstattet-av-gren i repo.  +
+HTML-dokumentasjon lages med AsciidocFX, PDF lages med asciidoctor-pdf (se https://bitbucket.statkart.no/projects/PROF/repos/dokumentasjon_fkb/browse/maler/asciidoctor/asciidoctor-pdf.txt for eksempel på kall i Ruby)
+. Kontrollere og laste ut erstattet-av-dokumentasjon på web +
+Utlasting til web inkl. teknisk sluttkontroll utføres av standardiseringsekretariatet.
+
+
+=== Lage dokumentasjon for ny versjon
+
+. Jobbe videre i master-gren i repo
+. Gjøre justeringer i UML-modell og generere ut ny adoc-eksport som lagres i repo
+. Gjøre manuelle oppdateringer i adoc der dette er nødvending (endre tekst/figurer etc.)
+. Oppdatere endringslogg i adoc
+. Oppdatere adoc-parametere og dokument-metadata. 
+. Generere ny HTML + PDF-dokumentasjon fra adoc
+. Kontrollere og laste ut ny dokumentasjon på web +
+Utlasting til web inkl. teknisk sluttkontroll utføres av standardiseringsekretariatet.
+. Lage en egen gren i repo for å ta vare på den versjonen av adoc-filer som ble brukt til generering av ny dokumentasjon (gjøres først når dokumentasjon er endelig godkjent og lastet ut). +
+Eks: https://bitbucket.statkart.no/projects/PROF/repos/dokumentasjon_fkb_bygnanlegg/browse?at=refs%2Fheads%2FVersjon5.0.1 
+
+=== Lager av ferdig generert dokumentasjon
+
+Adoc-filer med tilhørende figurer etc. forvaltes i git/Bitbucket. Ferdig generert HTML og PDF-dokumentasjon for FKB legges på 
+\\statkart.no\kartprod\Proff\Produktspesifikasjoner
+
+Området benyttes bl.a. for utveksling av ferdig generert dokumentasjon med standardiseringssekretariatet.
+
+HTML-dokument kan også ligge i Bitbucket, men PDF-dokument legges kun ut på filområde for ferdig dokumentasjon for å hindre at størrelsen på repo vokser for mye.
+
+=== Varsle om oppdatert dokumentasjon
+
+Oppdatering av standarder varsles av Standardiseringskomiteen for geomatikk (v/Magnus Karge). Bør i tillegg varsles direkte ut til samarbeidsparter (Geovekst, systemleverandører etc.)
+
+Oppdatering av andre typer spesifikasjoner (registreringsinstrukser etc.) må varsles direkte.
+
+Husk også alltid å varsle Geonorge (v/Tore Freddy Bækk) om behov for oppdatering av register.geonorge.no og oppdatering av web-artikler etc. med referanse til dokumentene.
