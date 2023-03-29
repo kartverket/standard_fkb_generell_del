@@ -54,7 +54,10 @@ Tabellen under viser en oversikt over når vedlegget har blitt endret.
 [[generellePresiseringer]]
 === Generelle presiseringer
 
-==== TRENGER EN PRESISERING OM DATASETT AREALBRUK OG NATURINFO (BYGNANLEGG = OK) Egenskaper knyttet til geometrien på flater med heleid geometri
+==== Egenskaper på heleid flategeometri
+
+Det presiseres at kapitel 2.1.3 i FKB-BygnAnlegg også gjelder for datasettene FKB-Arealbruk og FKB-Naturinfo. Kapitelet gjengis i sin helhet under.
+
 For objekttyper som er modellert med heleid flategeometri (finnes i Arealbruk, BygnAnlegg og Naturinfo) må egenskaper knyttet til geometrien som datafangstdato og kvalitet representere hele flateobjektet. Man har ikke som tidligere muligheten av å splitte avgrensningen og sette ulik kvalitet/dato på ulike deler av avgrensningen. 
 
 Dersom deler av (avgrensningen til) en flate har redusert kvalitet bør dette gjenspeiles på flatas kvalitetskoding. Ved ajourføring av en flate settes ny datafangstdato på flateobjektet.
@@ -77,8 +80,7 @@ Det presiseres at mobile avfallsbeholdere/søppelkasser ikke skal registreres. O
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-==== Bygningsdelelinje 
-I definisjon av https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0/Fotogrammetrisk_2022-01-01/#bygningsdelelinje[Bygningsdelelinje] står det at "usikkerhet i fastleggelsen av bygningsdelelinjen skal synliggjøres gjennom kvalitetskoding (f.eks posisjonskvalitet 81 50)". Imidlertid er ikke stedfestingskvalitet en lovlig egenskap på Bygningsdelelije i FKB-Bygning 5.0. Det presiseres derfor at setningen om kvalitet under definisjon sees bort fra og at Kvalitet ikke skal legges på Byggningsdelelinje fra FKB 5.0. 
+
 
 
 :ds: FKB-Ledning
@@ -88,13 +90,7 @@ I definisjon av https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0
 
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
-==== Registrering av linjebredde og vertikalAvstand
-Når egenskapene _linjebredde_ og _vertikalAvstand_ skal registreres kan fremstå noe uklart i endringsloggen.
 
-I FKB er følgende påkrevd å registrere fotogrammetrisk:
-
-* _linjebredde_ der hvor avstanden mellom ytterfasene er >10 meter i grunnriss
-* _vertikalAvstand_ der hvor en mast har vertikal avstand > 15 meter
 
 
 :ds: FKB-Veg
@@ -105,11 +101,16 @@ I FKB er følgende påkrevd å registrere fotogrammetrisk:
 Fotogrammetrisk registreringsinstruks for {ds} 5.0 er tilgjengelig på {spek}
 
 
-==== Oppdeling av VegGåendeOgSyklende-flater med forskjellig typeveg
-Figur 15 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#veggåendeogsyklende[FKB-Veg] erstattes med bildet under.Det presiseres at flate VegGåendeOgSyklende skal deles der det er foskjellig bruk av vegen. Både når de er skilt med kantstein/nivå og når de kun er skilt med oppmerking. Klassifisering av typeveg i Elveg er styrende for tolkningen. For typeveg-inndeling, se <<veglenkerGåSykkel>> i dette dokumentet.
+==== Figurer erstattes av nye figurer
+Figur 2 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#vegkjørende[FKB-Veg] erstattes med bildet under. Det har blitt lagt til VegFiktivGrense under rundkjøringen. For typeveg-inndeling, se <<veglenkerKjørende>> i dette dokumentet.
 
-.Eksempel på registrering av sykkelveg og gangveg uten fysisk skille mellom seg (kun oppmerking).
-image::figurer/vegflater.png[alt="Bilde av vegflater"]
+.Eksempel på flater og avgrensningslinjer.
+image::figurer_2023/Figur2_Veg.png[alt="Bilde av vegflater"]
+
+Figur 3 i https://sosi.geonorge.no/registreringsinstrukser/FKB-Veg/5.0/Fotogrammetrisk_2022-01-01/#vegkjørende[FKB-Veg] erstattes med bildet under. Det har blitt lagt til VegFiktivGrense under rundkjøringen. For typeveg-inndeling, se <<veglenkerKjørende>> i dette dokumentet.
+
+.Eksempel på flater og avgrensningslinjer.
+image::figurer_2023/Figur3_Veg.png[alt="Bilde av vegflater"]
 
 Se <<Registrering av veglenker for gående/syklende>> for registrering av veglenker i det samme området.
 
@@ -121,24 +122,7 @@ Se <<Registrering av veglenker for gående/syklende>> for registrering av veglen
 
 Fotogrammetrisk registreringsinstruks for {ds} 2.0 er tilgjengelig på {spek}
 
-Det presiseres at veglenker under 2 meter ikke skal registreres i Elveg.
 
-[[veglenkerGåSykkel]]
-==== Generelt angående registrering av veglenker og nettverkstopolpogi
-Målet er et sammenhengende nettverk for både gående og kjørende. Noen ganger er det også naturlig og nødvendig å binde veglenker for gående og syklende sammen mot veglenker for kjørende. Av og til må vi også akseptere løse ender i nettverket der det er fysisk "umulig" eller ulogisk (se eksempel i figur 8 i Registreringsinstruks: Fotogrammetrisk Elveg) å ta seg videre, enten som gående eller kjørende.
-
-På de leveranser som er kommet inn til mottakskontroll i høst ser vi at det er en del hull i nettverket, spesielt mellom nye veglenker eller mellom nye veglenker og eksisterende veglenker for gående.
-Registreringsinstruksen beskriver dessverre langt ifra alle disse situasjonene og følgende eksempler (til oppdatert vedlegg) prøver å presisere hva som skal gjøres ved enkelte situasjoner som vi har oppdaget i kontrollen til nå.
-
-Ved nyregistrertefootnote:[Geometriforbedring eller nyregistrering grunnet «ulovlig» datafangstmetode (se kravspesifikasjon) inngår i nyregistrerte.] veglenker skal også tilhørende avgrensingslinjer og flater (hvis dette fremkommer gjennom teknisk kravspesifikasjon – for eksempel med en bestilt oppgradering av flater på fortau og gangveg) konsekvensrettes i FKB-Veg. Dette utføres etter beste evne ved hjelp av eksisterende data eller naturlige avgrensninger/kontraster i bildene for å finne passende avgrensnings- og lukkelinjer for flatene.
-
-
-[[veglenkerGåSykkel]]
-==== Registrering av veglenker for gående/syklende
-Figur 1-3 i https://sosi.geonorge.no/registreringsinstrukser/Elveg/2.0/Fotogrammetrisk_2022-01-01/#trueeksempler-p%C3%A5-p%C3%A5-registrering-av-veglenke-med-forskjellig-typeveg[Elveg] erstattes med bildene under. I eksemplene vises de mest typiske situasjonene der veglenker under 2 meter (i forbindelse med Gangfelt) nå forlenges utover egen utstrekning og konnekteres mot nærmeste veglenke.
-
-.Figuren viser eksempel på registrering av flere ulike typer veg. Rundkjøring registreres i senter av sirkulasjonsarealet uavhengig av antall kjørefelt.
-image::figurer/Veglenker1.jpg[alt="Bilde av veglenker"]
 
 
 
