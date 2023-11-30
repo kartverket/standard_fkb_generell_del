@@ -4,26 +4,24 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8.dev">
+<meta name="generator" content="Asciidoctor 2.0.20">
 <meta name="author" content="Geovekst">
-<title>SOSI abstrakte spesifikasjoner: FKB generell del 5.0.1</title>
+<title>SOSI abstrakte spesifikasjoner: FKB generell del 5.1</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
-/* Uncomment @import statement to use as custom stylesheet */
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
-article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
-audio,video{display:inline-block}
-audio:not([controls]){display:none;height:0}
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
 a{background:none}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
 h1{font-size:2em;margin:.67em 0}
-abbr[title]{border-bottom:1px dotted}
 b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
 dfn{font-style:italic}
-hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+hr{height:0}
 mark{background:#ff0;color:#000}
 code,kbd,pre,samp{font-family:monospace;font-size:1em}
 pre{white-space:pre-wrap}
@@ -35,20 +33,22 @@ sub{bottom:-.25em}
 img{border:0}
 svg:not(:root){overflow:hidden}
 figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
 fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0}
 button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
 button,input{line-height:normal}
 button,select{text-transform:none}
-button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
 button[disabled],html input[disabled]{cursor:default}
-input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type=checkbox],input[type=radio]{padding:0}
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
-*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+*,::before,::after{box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -63,14 +63,12 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
 a{color:#2156a5;text-decoration:underline;line-height:inherit}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
-p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
 p aside{font-size:.875em;line-height:1.35;font-style:italic}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
 h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
@@ -79,46 +77,44 @@ h2{font-size:1.6875em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
 h4,h5{font-size:1.125em}
 h6{font-size:1em}
-hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
 em,i{font-style:italic;line-height:inherit}
 strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
-ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
-ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
-abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
-abbr{text-transform:none}
 blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
-blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
-blockquote cite::before{content:"\2014 \0020"}
-blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
 blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
 h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
 table thead,table tfoot{background:#f7f8f7}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
 .clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
 .clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
 pre>code{display:block}
@@ -126,7 +122,7 @@ pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
 em em{font-style:normal}
 strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
-kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
 .menuseq,.menuref{color:#000}
@@ -138,7 +134,7 @@ b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
 b.button::before{content:"[";padding:0 3px 0 2px}
 b.button::after{content:"]";padding:0 2px 0 3px}
 p a>code:hover{color:rgba(0,0,0,.9)}
-#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
 #header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
 #header::after,#content::after,#footnotes::after,#footer::after{clear:both}
 #content{margin-top:1.25em}
@@ -146,7 +142,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
 #header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
-#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
 #header .details br{display:none}
@@ -180,11 +176,11 @@ body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9
 #toc.toc2>ul{font-size:.95em}
 #toc.toc2 ul ul{padding-left:1.25em}
 body.toc2.toc-right{padding-left:0;padding-right:20em}}
-#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
-#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
 @media screen and (min-width:768px){#content{margin-bottom:1.25em}
@@ -197,29 +193,30 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
-details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
 .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
 table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
-.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
-table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
-.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
-.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
-.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
 .listingblock>.content{position:relative}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
@@ -227,7 +224,7 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
 .listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
 .listingblock pre.highlightjs{padding:0}
-.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
 .prettyprint{background:#f7f7f8}
 pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
@@ -237,18 +234,17 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
 .quoteblock blockquote{margin:0;padding:0;border:0}
 .quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
 .quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
 .quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
 .verseblock{margin:0 1em 1.25em}
-.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
 .verseblock pre strong{font-weight:400}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
@@ -258,25 +254,25 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
 .quoteblock.abstract{margin:0 1em 1.25em;display:block}
 .quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin:0 0 1.25em;padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
 .quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
 p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
 td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
 table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
 table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -284,7 +280,7 @@ th.valign-top,td.valign-top{vertical-align:top}
 th.valign-bottom,td.valign-bottom{vertical-align:bottom}
 th.valign-middle,td.valign-middle{vertical-align:middle}
 table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th{background:#f7f8f7}
 tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
@@ -292,14 +288,15 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
-ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
-ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
 ul.inline>li{margin-left:1.25em}
 .unstyled dl dt{font-weight:400;font-style:normal}
 ol.arabic{list-style-type:decimal}
@@ -313,11 +310,12 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
 .colist td:not([class]):last-child{padding:.25em 0}
-.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
 .imageblock.left{margin:.25em .625em 1.25em 0}
 .imageblock.right{margin:.25em 0 1.25em .625em}
 .imageblock>.title{margin-bottom:0}
@@ -337,8 +335,6 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
-.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -385,7 +381,7 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
 .conum[data-value] *{color:#fff!important}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
@@ -393,25 +389,27 @@ pre .conum[data-value]{position:relative;top:-.125em}
 b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
-h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
-.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
 .print-only{display:none!important}
 @page{margin:1.25cm .75cm}
-@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
 html{font-size:80%}
 a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
 a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
 abbr[title]::after{content:" (" attr(title) ")"}
 pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
@@ -428,111 +426,112 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .print-only{display:block!important}
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
-@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
 .sect1{padding:0!important}
 .sect1+.sect1{border:0}
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>SOSI abstrakte spesifikasjoner: FKB generell del 5.0.1</h1>
+<h1>SOSI abstrakte spesifikasjoner: FKB generell del 5.1</h1>
 <div class="details">
 <span id="author" class="author">Geovekst</span><br>
-<span id="revnumber">versjon 5.0.1,</span>
-<span id="revdate">2022-01-01</span>
+<span id="revnumber">versjon 5.1,</span>
+<span id="revdate">2024-02-01</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
-<li><a href="#trueorientering-og-introduksjon">1. Orientering og introduksjon</a>
+<li><a href="#_orientering_og_introduksjon">1. Orientering og introduksjon</a>
 <ul class="sectlevel2">
-<li><a href="#trueinnledning">1.1. Innledning</a></li>
-<li><a href="#truedefinisjon-av-felles-kartdatabase-fkb">1.2. Definisjon av Felles KartdataBase (FKB)</a></li>
-<li><a href="#trueformål-med-fkb">1.3. Formål med FKB</a></li>
-<li><a href="#trueansvar-for-fkb">1.4. Ansvar for FKB</a></li>
-<li><a href="#truekriterier-for-fkb">1.5. Kriterier for FKB</a></li>
+<li><a href="#_innledning">1.1. Innledning</a></li>
+<li><a href="#_definisjon_av_felles_kartdatabase_fkb">1.2. Definisjon av Felles KartdataBase (FKB)</a></li>
+<li><a href="#_formål_med_fkb">1.3. Formål med FKB</a></li>
+<li><a href="#_ansvar_for_fkb">1.4. Ansvar for FKB</a></li>
+<li><a href="#_kriterier_for_fkb">1.5. Kriterier for FKB</a></li>
+<li><a href="#_geovekst_data_fullstendighet_kvalitet_og_rettslig_gyldighet">1.6. Geovekst-data - fullstendighet, kvalitet og rettslig gyldighet</a></li>
 </ul>
 </li>
-<li><a href="#truehistorikk-og-status">2. Historikk og status</a>
+<li><a href="#_historikk_og_status">2. Historikk og status</a>
 <ul class="sectlevel2">
-<li><a href="#trueendringslogg">2.1. Endringslogg</a>
+<li><a href="#_endringslogg">2.1. Endringslogg</a>
 <ul class="sectlevel3">
-<li><a href="#trueendringer-fra-fkb-5-0-2022-01-01-til-fkb-5-0-1-2022-01-01">2.1.1. Endringer fra FKB 5.0 2022-01-01 til FKB 5.0.1 2022-01-01</a></li>
-<li><a href="#trueendringer-fra-fkb-4-6-2020-01-01-til-fkb-5-0-2022-01-01">2.1.2. Endringer fra FKB 4.6 2020-01-01 til FKB 5.0 2022-01-01</a></li>
+<li><a href="#_endringer_fra_fkb_5_0_1_2023_01_01_til_fkb_5_1_2024_02_01">2.1.1. Endringer fra FKB 5.0.1 2023-01-01 til FKB 5.1 2024-02-01</a></li>
+<li><a href="#_endringer_fra_fkb_5_0_2022_01_01_til_fkb_5_0_1_2023_01_01">2.1.2. Endringer fra FKB 5.0 2022-01-01 til FKB 5.0.1 2023-01-01</a></li>
+<li><a href="#_endringer_fra_fkb_4_6_2020_01_01_til_fkb_5_0_2022_01_01">2.1.3. Endringer fra FKB 4.6 2020-01-01 til FKB 5.0 2022-01-01</a></li>
 </ul>
 </li>
-<li><a href="#truerevisjon">2.2. Revisjon</a></li>
+<li><a href="#_revisjon">2.2. Revisjon</a></li>
 </ul>
 </li>
-<li><a href="#trueomfang">3. Omfang</a>
+<li><a href="#_omfang">3. Omfang</a>
 <ul class="sectlevel2">
-<li><a href="#truedokumentet-omfatter">3.1. Dokumentet omfatter</a></li>
-<li><a href="#truebruksområde-for-dokumentet">3.2. Bruksområde for dokumentet</a></li>
+<li><a href="#_dokumentet_omfatter">3.1. Dokumentet omfatter</a></li>
+<li><a href="#_bruksområde_for_dokumentet">3.2. Bruksområde for dokumentet</a></li>
 </ul>
 </li>
-<li><a href="#truenormative-referanser">4. Normative referanser</a></li>
-<li><a href="#truedefinisjoner-og-forkortelser">5. Definisjoner og forkortelser</a>
+<li><a href="#_normative_referanser">4. Normative referanser</a></li>
+<li><a href="#_definisjoner_og_forkortelser">5. Definisjoner og forkortelser</a>
 <ul class="sectlevel2">
-<li><a href="#truedefinisjoner">5.1. Definisjoner</a></li>
-<li><a href="#trueforkortelser">5.2. Forkortelser</a></li>
+<li><a href="#_definisjoner">5.1. Definisjoner</a></li>
+<li><a href="#_forkortelser">5.2. Forkortelser</a></li>
 </ul>
 </li>
-<li><a href="#truegenerelt-om-fkb">6. Generelt om FKB</a>
+<li><a href="#_generelt_om_fkb">6. Generelt om FKB</a>
 <ul class="sectlevel2">
-<li><a href="#truefkb-datasett">6.1. FKB-datasett</a></li>
-<li><a href="#truefkb-områdetyper">6.2. FKB-områdetyper</a>
+<li><a href="#_fkb_datasett">6.1. FKB-datasett</a></li>
+<li><a href="#_fkb_områdetyper">6.2. FKB-områdetyper</a>
 <ul class="sectlevel3">
-<li><a href="#truefkb-a-standard">6.2.1. FKB-A-standard</a></li>
-<li><a href="#truefkb-b-standard">6.2.2. FKB-B-standard</a></li>
-<li><a href="#truefkb-c-standard">6.2.3. FKB-C-Standard</a></li>
-<li><a href="#truefkb-d-standard">6.2.4. FKB-D-standard</a></li>
-<li><a href="#truehøydegrunnlag">6.2.5. Høydegrunnlag</a></li>
+<li><a href="#_fkb_a_standard">6.2.1. FKB-A-standard</a></li>
+<li><a href="#_fkb_b_standard">6.2.2. FKB-B-standard</a></li>
+<li><a href="#_fkb_c_standard">6.2.3. FKB-C-Standard</a></li>
+<li><a href="#_fkb_d_standard">6.2.4. FKB-D-standard</a></li>
+<li><a href="#_høydegrunnlag">6.2.5. Høydegrunnlag</a></li>
 </ul>
 </li>
-<li><a href="#trueuavhengige-primærdatasett">6.3. Uavhengige primærdatasett</a></li>
-<li><a href="#trueidentifikasjon-av-objekter-i-fkb">6.4. Identifikasjon av objekter i FKB</a>
+<li><a href="#_uavhengige_primærdatasett">6.3. Uavhengige primærdatasett</a></li>
+<li><a href="#_identifikasjon_av_objekter_i_fkb">6.4. Identifikasjon av objekter i FKB</a>
 <ul class="sectlevel3">
-<li><a href="#trueunik-identifikasjon-av-kartobjektene-i-fkb">6.4.1. Unik identifikasjon av kartobjektene i FKB</a></li>
-<li><a href="#truekoblingsnøkler-til-andre-data">6.4.2. Koblingsnøkler til andre data</a></li>
+<li><a href="#_unik_identifikasjon_av_kartobjektene_i_fkb">6.4.1. Unik identifikasjon av kartobjektene i FKB</a></li>
+<li><a href="#_koblingsnøkler_til_andre_data">6.4.2. Koblingsnøkler til andre data</a></li>
 </ul>
 </li>
-<li><a href="#truebruk-av-datoegenskaper">6.5. Bruk av datoegenskaper</a>
+<li><a href="#_bruk_av_datoegenskaper">6.5. Bruk av datoegenskaper</a>
 <ul class="sectlevel3">
-<li><a href="#truedatafangstdato">6.5.1. Datafangstdato</a></li>
-<li><a href="#trueverifiseringsdato">6.5.2. Verifiseringsdato</a></li>
-<li><a href="#trueoppdateringsdato">6.5.3. Oppdateringsdato</a></li>
-<li><a href="#truesluttdato">6.5.4. Sluttdato</a></li>
-<li><a href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data">6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</a></li>
+<li><a href="#_datafangstdato">6.5.1. Datafangstdato</a></li>
+<li><a href="#_verifiseringsdato">6.5.2. Verifiseringsdato</a></li>
+<li><a href="#_oppdateringsdato">6.5.3. Oppdateringsdato</a></li>
+<li><a href="#_sluttdato">6.5.4. Sluttdato</a></li>
+<li><a href="#_praktisk_bruk_av_datoegenskapene_i_forbindelse_med_ajourhold_av_fkb_data">6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</a></li>
 </ul>
 </li>
-<li><a href="#truekodelister">6.6. Kodelister</a></li>
-<li><a href="#truevedlikehold">6.7. Vedlikehold</a></li>
-<li><a href="#trueoppgradering">6.8. Oppgradering</a></li>
-<li><a href="#truesømløse-data">6.9. Sømløse data</a></li>
+<li><a href="#_kodelister">6.6. Kodelister</a></li>
+<li><a href="#_vedlikehold">6.7. Vedlikehold</a></li>
+<li><a href="#_oppgradering">6.8. Oppgradering</a></li>
+<li><a href="#_sømløse_data">6.9. Sømløse data</a></li>
 </ul>
 </li>
-<li><a href="#truemodellering-av-fkb-produktspesifikasjoner">7. Modellering av FKB produktspesifikasjoner</a>
+<li><a href="#_modellering_av_fkb_produktspesifikasjoner">7. Modellering av FKB produktspesifikasjoner</a>
 <ul class="sectlevel2">
-<li><a href="#truegeometrimodell-i-fkb">7.1. Geometrimodell i FKB</a>
+<li><a href="#_geometrimodell_i_fkb">7.1. Geometrimodell i FKB</a>
 <ul class="sectlevel3">
-<li><a href="#truegeometrityper">7.1.1. Geometrityper</a></li>
-<li><a href="#trueflere-geometrier">7.1.2. Flere geometrier</a></li>
-<li><a href="#trueassosiasjoner">7.1.3. Assosiasjoner</a></li>
-<li><a href="#trueflategeometri">7.1.4. Flategeometri</a>
+<li><a href="#_geometrityper">7.1.1. Geometrityper</a></li>
+<li><a href="#_flere_geometrier">7.1.2. Flere geometrier</a></li>
+<li><a href="#_assosiasjoner">7.1.3. Assosiasjoner</a></li>
+<li><a href="#_flategeometri">7.1.4. Flategeometri</a>
 <ul class="sectlevel4">
-<li><a href="#trueto-typer-flateobjekter">7.1.4.1. To typer flateobjekter</a></li>
-<li><a href="#truemodellering-av-flateobjekter">7.1.4.2. Modellering av flateobjekter</a></li>
+<li><a href="#_to_typer_flateobjekter">7.1.4.1. To typer flateobjekter</a></li>
+<li><a href="#_modellering_av_flateobjekter">7.1.4.2. Modellering av flateobjekter</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#trueuml-felleselementer-til-bruk-i-applicationschema-for-fkb-datasett">7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</a>
+<li><a href="#_uml_felleselementer_til_bruk_i_applicationschema_for_fkb_datasett">7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</a>
 <ul class="sectlevel3">
-<li><a href="#truepakke-generelle-elementer">7.2.1. Pakke: Generelle elementer</a>
+<li><a href="#_pakke_generelle_elementer">7.2.1. Pakke: Generelle elementer</a>
 <ul class="sectlevel4">
 <li><a href="#fellesegenskaper">7.2.1.1. «FeatureType» Fellesegenskaper (abstrakt)</a></li>
 <li><a href="#kvalitetpåkrevd">7.2.1.2. «FeatureType» KvalitetPåkrevd (abstrakt)</a></li>
@@ -546,7 +545,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#medium">7.2.1.10. «CodeList» Medium</a></li>
 </ul>
 </li>
-<li><a href="#truepakke-elementer-til-bruk-i-distribusjon">7.2.2. Pakke: Elementer til bruk i distribusjon</a>
+<li><a href="#_pakke_elementer_til_bruk_i_distribusjon">7.2.2. Pakke: Elementer til bruk i distribusjon</a>
 <ul class="sectlevel4">
 <li><a href="#ekstraegenskaperdistribusjon">7.2.2.1. «FeatureType» EkstraegenskaperDistribusjon (abstrakt)</a></li>
 <li><a href="#kantutsnitt">7.2.2.2. «featureType» KantUtsnitt</a></li>
@@ -557,32 +556,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#truekvalitet">8. Kvalitet</a>
+<li><a href="#_kvalitet">8. Kvalitet</a>
 <ul class="sectlevel2">
-<li><a href="#truekvalitet-på-fkb-data">8.1. Kvalitet på FKB-data</a></li>
-<li><a href="#truekvalitetselementer-som-benyttes-for-å-sette-krav-til-fkb-data">8.2. Kvalitetselementer som benyttes for å sette krav til FKB-data</a></li>
-<li><a href="#truekrav-til-stedfestingsnøyaktighet-inndeling-i-klasser">8.3. Krav til stedfestingsnøyaktighet - inndeling i klasser</a></li>
+<li><a href="#_kvalitet_på_fkb_data">8.1. Kvalitet på FKB-data</a></li>
+<li><a href="#_kvalitetselementer_som_benyttes_for_å_sette_krav_til_fkb_data">8.2. Kvalitetselementer som benyttes for å sette krav til FKB-data</a></li>
+<li><a href="#_krav_til_stedfestingsnøyaktighet_inndeling_i_klasser">8.3. Krav til stedfestingsnøyaktighet - inndeling i klasser</a></li>
+<li><a href="#_avvik_funnet_ved_kontroll_av_fkb_data">8.4. Avvik funnet ved kontroll av FKB-data</a></li>
 </ul>
 </li>
-<li><a href="#trueutvekslingsformater-for-fkb-data">Vedlegg A: Utvekslingsformater for FKB-data</a>
+<li><a href="#_utvekslingsformater_for_fkb_data">Vedlegg A: Utvekslingsformater for FKB-data</a>
 <ul class="sectlevel2">
-<li><a href="#trueleveranseformater-ved-distribusjon-fra-geonorge">A.1. Leveranseformater ved distribusjon fra Geonorge</a></li>
-<li><a href="#trueformater-i-ngis-openapi">A.2. Formater i NGIS-OpenAPI</a></li>
+<li><a href="#_leveranseformater_ved_distribusjon_fra_geonorge">A.1. Leveranseformater ved distribusjon fra Geonorge</a></li>
+<li><a href="#_formater_i_ngis_openapi">A.2. Formater i NGIS-OpenAPI</a></li>
 </ul>
 </li>
-<li><a href="#trueromlige-referansesystem">Vedlegg B: Romlige referansesystem</a></li>
-<li><a href="#trueassosiasjoner-og-flategeometri-på-sosi-og-gml-format">Vedlegg C: Assosiasjoner og flategeometri på SOSI- og GML-format</a>
+<li><a href="#_romlige_referansesystem">Vedlegg B: Romlige referansesystem</a></li>
+<li><a href="#_assosiasjoner_og_flategeometri_på_sosi_og_gml_format">Vedlegg C: Assosiasjoner og flategeometri på SOSI- og GML-format</a>
 <ul class="sectlevel2">
-<li><a href="#trueutveksling-av-assosiasjoner">C.1. Utveksling av assosiasjoner</a>
+<li><a href="#_utveksling_av_assosiasjoner">C.1. Utveksling av assosiasjoner</a>
 <ul class="sectlevel3">
-<li><a href="#truesosi-format">C.1.1. SOSI-format</a></li>
-<li><a href="#truegml-format">C.1.2. GML-format</a></li>
+<li><a href="#_sosi_format">C.1.1. SOSI-format</a></li>
+<li><a href="#_gml_format">C.1.2. GML-format</a></li>
 </ul>
 </li>
-<li><a href="#trueutveksling-av-flategeometri">C.2. Utveksling av flategeometri</a>
+<li><a href="#_utveksling_av_flategeometri">C.2. Utveksling av flategeometri</a>
 <ul class="sectlevel3">
-<li><a href="#truesosi-format-2">C.2.1. SOSI-format</a></li>
-<li><a href="#truegml-format-2">C.2.2. GML-format</a></li>
+<li><a href="#_sosi_format_2">C.2.1. SOSI-format</a></li>
+<li><a href="#_gml_format_2">C.2.2. GML-format</a></li>
 </ul>
 </li>
 </ul>
@@ -595,29 +595,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
-<div class="admonitionblock tip">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<div class="title">Warning</div>
 </td>
 <td class="content">
-Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.0.1/FKB_Generell_del_5.0.1.pdf">som PDF</a>.
+Arbeidsversjon!
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Publisert</strong>: 2022-12-20<br></p>
+<p><strong>Publisert</strong>: 2023-11-30<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Denne versjonen finnes på</strong>: <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.0.1" class="bare">https://sosi.geonorge.no/standarder/FKB_generell_del/5.0.1</a><br>
-- <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.0.1">HTML-dokument</a><br>
-- <a href="http://sosi.geonorge.no/uml-modeller/sosi-del-2-generell-objektkatalog/FKB_generell_del/5.0">HTML-visning av UML-modellen</a><br></p>
+<p><strong>Denne versjonen finnes på</strong>: <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.1" class="bare">https://sosi.geonorge.no/standarder/FKB_generell_del/5.1</a><br>
+- <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.1">HTML-dokument</a><br>
+- <a href="http://sosi.geonorge.no/uml-modeller/sosi-del-2-generell-objektkatalog/FKB_generell_del/5.1">HTML-visning av UML-modellen</a><br></p>
 </div>
 <div class="paragraph">
 <p><strong>Nyeste versjon finnes på</strong>: <a href="https://sosi.geonorge.no/standarder/FKB_generell_del" class="bare">https://sosi.geonorge.no/standarder/FKB_generell_del</a><br>
-<strong>Denne versjonen erstatter</strong>: <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.0">FKB 5.0 2022-01-01</a><br></p>
+<strong>Denne versjonen erstatter</strong>: <a href="https://sosi.geonorge.no/standarder/FKB_generell_del/5.0.1">FKB 5.0.1 2023-01-01</a><br></p>
 </div>
 <div class="paragraph">
 <p><strong>Faglig ansvarlig</strong>: Geovekst<br>
@@ -632,22 +632,22 @@ Dette dokumentet kan også lastes ned <a href="https://sosi.geonorge.no/standard
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueorientering-og-introduksjon"><a class="anchor" href="#trueorientering-og-introduksjon"></a>1. Orientering og introduksjon</h2>
+<h2 id="_orientering_og_introduksjon">1. Orientering og introduksjon</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="trueinnledning"><a class="anchor" href="#trueinnledning"></a>1.1. Innledning</h3>
+<h3 id="_innledning">1.1. Innledning</h3>
 <div class="paragraph">
 <p>Dette dokumentet er en generell overbygning over de enkelte FKB-produktspesifikasjonene og angir generelle mekanismer i FKB og hvordan de forskjellige delene av spesifikasjonen skal sees i sammenheng.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truedefinisjon-av-felles-kartdatabase-fkb"><a class="anchor" href="#truedefinisjon-av-felles-kartdatabase-fkb"></a>1.2. Definisjon av Felles KartdataBase (FKB)</h3>
+<h3 id="_definisjon_av_felles_kartdatabase_fkb">1.2. Definisjon av Felles KartdataBase (FKB)</h3>
 <div id="FKB" class="paragraph">
 <p>FKB er en samling datasett som utgjør en sentral del av grunnkartet</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueformål-med-fkb"><a class="anchor" href="#trueformål-med-fkb"></a>1.3. Formål med FKB</h3>
+<h3 id="_formål_med_fkb">1.3. Formål med FKB</h3>
 <div class="paragraph">
 <p>FKB er grunnleggende geografisk informasjon for å utøve lov- og forskriftsbelagte saker og ta gode beslutninger. FKB kan brukes til:</p>
 </div>
@@ -676,7 +676,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueansvar-for-fkb"><a class="anchor" href="#trueansvar-for-fkb"></a>1.4. Ansvar for FKB</h3>
+<h3 id="_ansvar_for_fkb">1.4. Ansvar for FKB</h3>
 <div class="paragraph">
 <p>FKB er spesifisert i FKB produktspesifikasjoner. Geovekst-samarbeidet har ansvar for utvikling av disse spesifikasjonene. Dette gjøres i nært samarbeid med kommunene utenfor Geovekst, andre brukere, produsenter og systemleverandører. Geovekst-forum har ansvar for å iverksette arbeid for å utarbeide nye eller revidere FKB-spesifikasjoner og vedtar FKB produktspesifikasjonene.</p>
 </div>
@@ -688,7 +688,7 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truekriterier-for-fkb"><a class="anchor" href="#truekriterier-for-fkb"></a>1.5. Kriterier for FKB</h3>
+<h3 id="_kriterier_for_fkb">1.5. Kriterier for FKB</h3>
 <div class="paragraph">
 <p>Ved vurdering av hvilke datasett/objekter som skal inngå i FKB er følgende kriterier viktige:</p>
 </div>
@@ -714,12 +714,27 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_geovekst_data_fullstendighet_kvalitet_og_rettslig_gyldighet">1.6. Geovekst-data - fullstendighet, kvalitet og rettslig gyldighet</h3>
+<div class="paragraph">
+<p>FKB-data, ortofoto og laserdata (Geovekst-data) som selges gjennom kommunen eller Kartverkets forhandlere er etablert og finansiert gjennom Geovekst-samarbeidet eller kommunene alene for kommuner utenfor Geovekst-samarbeidet. Disse er også rettighetshavere til dataene.</p>
+</div>
+<div class="paragraph">
+<p>Geovekst-dataene er de mest detaljerte og best oppdaterte geodataene som er tilgjengelig. Dataene skal gi en best mulig gjengivelse av terrenget og menneskeskapte objekter med varierende innhold, detaljering og nøyaktighet. Det skjer kontinuerlig endringer i terrenget (flom, ras, brann m.m.), objekter bygges og fjernes, så det kan ikke forventes at alle områder til enhver tid er 100% oppdaterte.</p>
+</div>
+<div class="paragraph">
+<p>Datasettene kan derfor ha varierende fullstendighet og kvalitet. Brukere som har spesielle krav til dette, <em>MÅ</em> undersøke fullstendighet og kvalitet før bruk.</p>
+</div>
+<div class="paragraph">
+<p>Geovekst-dataene er ikke rettslig gyldige.</p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truehistorikk-og-status"><a class="anchor" href="#truehistorikk-og-status"></a>2. Historikk og status</h2>
+<h2 id="_historikk_og_status">2. Historikk og status</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>De første versjonene av FKB produktspesfikasjon oppsto samtidig med Geovekst-samarbeidet tidlig på 1990-tallet. Datainnholdet ble i tidlig fase utformet slik at det skulle tilsvare datainnholdet i Teknisk kartverk 1:1000 (TK) og Økonomisk Kartverk 1:5000 (ØK). Senere har det kommet større og mindre revisjoner med jevne mellomrom. Her listes ut noen av de store oppdateringene:</p>
@@ -747,15 +762,37 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <p>For komplett oversikt over endringer mellom tidligere versjoner henvises det til endringslogg i de enkelte versjonene.</p>
 </div>
 <div class="sect2">
-<h3 id="trueendringslogg"><a class="anchor" href="#trueendringslogg"></a>2.1. Endringslogg</h3>
+<h3 id="_endringslogg">2.1. Endringslogg</h3>
 <div class="sect3">
-<h4 id="trueendringer-fra-fkb-5-0-2022-01-01-til-fkb-5-0-1-2022-01-01"><a class="anchor" href="#trueendringer-fra-fkb-5-0-2022-01-01-til-fkb-5-0-1-2022-01-01"></a>2.1.1. Endringer fra FKB 5.0 2022-01-01 til FKB 5.0.1 2022-01-01</h4>
+<h4 id="_endringer_fra_fkb_5_0_1_2023_01_01_til_fkb_5_1_2024_02_01">2.1.1. Endringer fra FKB 5.0.1 2023-01-01 til FKB 5.1 2024-02-01</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Nytt kapittel 1.6 om fullstendighet, kvalitet og rettslig gyldighet for Geovekst-data</p>
+</li>
+<li>
+<p>Oppdatert tabell 1 (kapittel 6.1) med referanser til oppdaterte FKB produktspesifikasjoner og fotogrammetriske registreringsinstrukser</p>
+</li>
+<li>
+<p>Oppdatert beskrivelse av høydegrunnlag i kap 6.2.5</p>
+</li>
+<li>
+<p>Oppdatert beskrivelse av modellering av assosiasjoner i FKB i kap 7.1.3</p>
+</li>
+<li>
+<p>Lagt inn referanse til produktspesifikasjon AvvikKartdata 1.0 i kapittel 8.4</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_endringer_fra_fkb_5_0_2022_01_01_til_fkb_5_0_1_2023_01_01">2.1.2. Endringer fra FKB 5.0 2022-01-01 til FKB 5.0.1 2023-01-01</h4>
 <div class="paragraph">
 <p>Oppdatert tabell 1 (kapittel 6.1) med referanser til oppdaterte FKB produktspesifikasjoner og fotogrammetriske registreringsinstrukser</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueendringer-fra-fkb-4-6-2020-01-01-til-fkb-5-0-2022-01-01"><a class="anchor" href="#trueendringer-fra-fkb-4-6-2020-01-01-til-fkb-5-0-2022-01-01"></a>2.1.2. Endringer fra FKB 4.6 2020-01-01 til FKB 5.0 2022-01-01</h4>
+<h4 id="_endringer_fra_fkb_4_6_2020_01_01_til_fkb_5_0_2022_01_01">2.1.3. Endringer fra FKB 4.6 2020-01-01 til FKB 5.0 2022-01-01</h4>
 <div class="paragraph">
 <p>Punktene under beskriver de største endringene i FKB 5.0 sammenlignet med FKB 4.6 2020-01-01.</p>
 </div>
@@ -763,26 +800,26 @@ FKB inngår i det offentlige kartgrunnlaget (<a href="#DOK">[DOK]</a>).</p>
 <p><strong>Håndtering av kodelister:</strong></p>
 </div>
 <div class="paragraph">
-<p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. Se mer om rammer for bruk av kodelister i FKB under <a href="#truekodelister">Kodelister</a>.</p>
+<p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. Se mer om rammer for bruk av kodelister i FKB under <a href="#_kodelister">Kodelister</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Assosiasjoner:</strong></p>
 </div>
 <div class="paragraph">
-<p>Det er åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre typer sammenhenger mellom objekter enn å beskrive flategeometri. F.eks. at et Bygning-objekt vet hvilke Veranda-objekter som "tilhører" bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering <a href="#SOSI-UML">[SOSI-UML]</a>. Se mer om rammer for bruk av assosiasjoner i FKB under <a href="#trueassosiasjoner">Assosiasjoner</a>.</p>
+<p>Det er åpnet for at vanlige assosiasjoner kan tas i bruk til å beskrive andre typer sammenhenger mellom objekter enn å beskrive flategeometri. F.eks. at et Bygning-objekt vet hvilke Veranda-objekter som "tilhører" bygget. Assosiasjonene modelleres i tråd med reglene i SOSI del 1 Regler for UML-modellering <a href="#SOSI-UML">[SOSI-UML]</a>. Se mer om rammer for bruk av assosiasjoner i FKB under <a href="#_assosiasjoner">Assosiasjoner</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Flategeometri:</strong></p>
 </div>
 <div class="paragraph">
 <p>Tidligere versjoner av FKB har basert seg på SOSI-formatets flategeometri som innebærer at alle flateobjekttyper må avgrenses av en eller flere avgrensningsobjekter og skal ha et representasjonspunkt. Dette er nå endret slik at flater som hovedregel modelleres med heleid geometri og uten representasjonspunkt.
-Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler. Se nærmere beskrivelse under <a href="#trueflategeometri">Flategeometri</a>.</p>
+Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og settes krav til sammenheng mellom flategeometrien og geometrien til egne avgrensningsobjekter. Dette modelleres som en assosiasjon etter gitte regler. Se nærmere beskrivelse under <a href="#_flategeometri">Flategeometri</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Id-håndtering; Identifikasjon av objektene i FKB og pekere til Id-er i eksterne systemer:</strong></p>
 </div>
 <div class="paragraph">
-<p>Regler for bruk av <em>identifikasjon</em> er presisert og pekere til eksterne systemer i form av URI-er <a href="#URI">[URI]</a> er lagt inn på en lang rekke nye objekttyper. Les mer under  <a href="#trueidentifikasjon-av-objekter-i-fkb">Identifikasjon av objekter i FKB</a>.</p>
+<p>Regler for bruk av <em>identifikasjon</em> er presisert og pekere til eksterne systemer i form av URI-er <a href="#URI">[URI]</a> er lagt inn på en lang rekke nye objekttyper. Les mer under  <a href="#_identifikasjon_av_objekter_i_fkb">Identifikasjon av objekter i FKB</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Endringer i fellesegenskaper:</strong></p>
@@ -810,7 +847,7 @@ Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og se
 <p><strong>Oppdatert kvalitetsmodell:</strong></p>
 </div>
 <div class="paragraph">
-<p>Modell for å beskrive krav til kvalitet og dokumentere kvalitet på FKB-data er oppdatert. Ny modell baserer seg mer direkte på standarden Geodatakvalitet <a href="#G">[G]</a>, noe som blant annet medfører at det i FKB 5.0 settes krav til både systematiske og tilfeldige avvik. Se mer under <a href="#truekvalitet">Kvalitet</a>.</p>
+<p>Modell for å beskrive krav til kvalitet og dokumentere kvalitet på FKB-data er oppdatert. Ny modell baserer seg mer direkte på standarden Geodatakvalitet <a href="#G">[G]</a>, noe som blant annet medfører at det i FKB 5.0 settes krav til både systematiske og tilfeldige avvik. Se mer under <a href="#_kvalitet">Kvalitet</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Endret dokumentasjon:</strong></p>
@@ -821,7 +858,7 @@ Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og se
 </div>
 </div>
 <div class="sect2">
-<h3 id="truerevisjon"><a class="anchor" href="#truerevisjon"></a>2.2. Revisjon</h3>
+<h3 id="_revisjon">2.2. Revisjon</h3>
 <div class="paragraph">
 <p>FKB produktspesifikasjonene oppdateres ved behov. Hver enkelt FKB produktspesifikasjon kan oppdateres uavhengig av de andre. De generelle retningslinjene for FKB (dette dokumentet) vil normalt oppdateres ved hver oppdatering av et underkapittel.</p>
 </div>
@@ -836,16 +873,16 @@ Der det er behov skal det likevel fortsatt modelleres representasjonspunkt og se
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueomfang"><a class="anchor" href="#trueomfang"></a>3. Omfang</h2>
+<h2 id="_omfang">3. Omfang</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truedokumentet-omfatter"><a class="anchor" href="#truedokumentet-omfatter"></a>3.1. Dokumentet omfatter</h3>
+<h3 id="_dokumentet_omfatter">3.1. Dokumentet omfatter</h3>
 <div class="paragraph">
 <p>Dette dokumentet beskriver generelle og prinsipielle forhold som er felles for alle FKB produktspesifikasjonene.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truebruksområde-for-dokumentet"><a class="anchor" href="#truebruksområde-for-dokumentet"></a>3.2. Bruksområde for dokumentet</h3>
+<h3 id="_bruksområde_for_dokumentet">3.2. Bruksområde for dokumentet</h3>
 <div class="paragraph">
 <p>Dette dokumentet er en viktig referanse for de enkelte FKB produktspesifikasjonene.
 Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</p>
@@ -855,7 +892,7 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="truenormative-referanser"><a class="anchor" href="#truenormative-referanser"></a>4. Normative referanser</h2>
+<h2 id="_normative_referanser">4. Normative referanser</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Det er nødvendig å ha kjennskap til dokumentene under for fullt ut å forstå denne produktspesifikasjonen.</p>
@@ -891,10 +928,10 @@ Mange av begrepene/konseptene som benyttes i FKB forklares i dette dokumentet.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="truedefinisjoner-og-forkortelser"><a class="anchor" href="#truedefinisjoner-og-forkortelser"></a>5. Definisjoner og forkortelser</h2>
+<h2 id="_definisjoner_og_forkortelser">5. Definisjoner og forkortelser</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truedefinisjoner"><a class="anchor" href="#truedefinisjoner"></a>5.1. Definisjoner</h3>
+<h3 id="_definisjoner">5.1. Definisjoner</h3>
 <div class="paragraph">
 <div class="title"><strong>ajourføring</strong></div>
 <p>korrigering av innholdet i geodataene slik at de fremstiller de faktiske forhold på et gitt tidspunkt, etter de retningslinjer som gjelder for innhold og kvalitet <a href="#PABG">[PABG]</a></p>
@@ -1087,7 +1124,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueforkortelser"><a class="anchor" href="#trueforkortelser"></a>5.2. Forkortelser</h3>
+<h3 id="_forkortelser">5.2. Forkortelser</h3>
 <div class="paragraph">
 <p><strong>AR5</strong>: Arealressurskart i målestokk 1:5000</p>
 </div>
@@ -1144,10 +1181,18 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 </div>
 <div class="sect1">
-<h2 id="truegenerelt-om-fkb"><a class="anchor" href="#truegenerelt-om-fkb"></a>6. Generelt om FKB</h2>
+<h2 id="_generelt_om_fkb">6. Generelt om FKB</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truefkb-datasett"><a class="anchor" href="#truefkb-datasett"></a>6.1. FKB-datasett</h3>
+<h3 id="_fkb_datasett">6.1. FKB-datasett</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Tabellen under må justeres ut fra prosessen i standardiseringsprosjekt FKB 5.1 med tanke på versjonering av de enkelte datasettene.
+Det er forskuttert nye versjonsnummer for fotogrammetriske registreringsinstrukser</p>
+</div>
+</div>
+</div>
 <table id="tab-fkb_datasett" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 1. Tabellen angir hvilke datasett som regnes som FKB-datasett i denne versjonen av FKB.</caption>
 <colgroup>
@@ -1175,7 +1220,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Arealbruk">FKB-Arealbruk</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Arealbruk/5.0/Fotogrammetrisk_2022-01-01">Fotogrammetrisk FKB-Arealbruk 5.0 2022-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Arealbruk/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Arealbruk 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Bane">FKB-Bane</a></p></td>
@@ -1185,15 +1230,15 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-BygnAnlegg">FKB-BygnAnlegg</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-BygnAnlegg/5.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk FKB-BygnAnlegg 5.0 2023-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-BygnAnlegg/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-BygnAnlegg 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Bygning">FKB-Bygning</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk FKB-Bygning 5.0 2023-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Bygning/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Bygning 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Høydekurve">FKB-Høydekurve</a></p></td>
@@ -1203,9 +1248,9 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Ledning/">FKB-Ledning</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk FKB-Ledning 5.0 2023-01-01</a></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Ledning 5.0 2024-01-01</a></p>
 <p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Punktsky_2022-01-01">Punktsky FKB-Ledning 5.0 2022-01-01</a></p></td>
 </tr>
 <tr>
@@ -1218,11 +1263,11 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Naturinfo">FKB-Naturinfo</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Naturinfo/5.0/Fotogrammetrisk_2022-01-01">Fotogrammetrisk FKB-Naturinfo 5.0 2022-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser/FKB-Naturinfo/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Naturinfo 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Tiltak">FKB-Tiltak</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ikke aktuelt</p></td>
 </tr>
@@ -1230,32 +1275,32 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-TraktorvegSti">FKB-TraktorvegSti</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-TraktorvegSti/5.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk FKB-TraktorvegSti 5.0 2023-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-TraktorvegSti/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-TraktorvegSti 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Vann">FKB-Vann</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-Vann/5.0/Fotogrammetrisk_2022-01-01">Fotogrammetrisk FKB-Vann 5.0 2022-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-Vann/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Vann 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/FKB-Veg">FKB-Veg</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sentral FKB</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-Veg/5.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk FKB-Veg 5.0 2023-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//FKB-Veg/5.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk FKB-Veg 5.0 2024-01-01</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Elveg (vegnett)</p>
 <p class="tableblock">(følger bare delvis reglene for resten av FKB)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/produktspesifikasjoner/SOSI_standardisert_produktspesifikasjon_Elveg_2.0.pdf">Produktspesifikasjon Elveg 2.0</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NVDB (med oppdatering fra kommunene gjennom Sentral FKB)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//Elveg/2.0/Fotogrammetrisk_2023-01-01">Fotogrammetrisk Elveg 2.0 2023-01-01</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NVDB (med oppdatering fra kommunene gjennom Sentral FKB. Det jobbes med å ferdigstille produktspesifikasjonen NVDB Vegnett Plus som skal ta over for ELveg 2.0 i denne sammenhengen)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://sosi.geonorge.no/registreringsinstrukser//Elveg/2.0/Fotogrammetrisk_2024-01-01">Fotogrammetrisk Elveg 2.0 2024-01-01</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="truefkb-områdetyper"><a class="anchor" href="#truefkb-områdetyper"></a>6.2. FKB-områdetyper</h3>
+<h3 id="_fkb_områdetyper">6.2. FKB-områdetyper</h3>
 <div class="paragraph">
 <p>Det viktigste prinsippet i FKB er at en søker å kartlegge det samme området kun en gang, og at en kan benytte etablerte data til ulike formål. Dette kan for eksempel være kartproduksjon eller mer intelligente analysefunksjoner.</p>
 </div>
@@ -1312,7 +1357,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FKB-D</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Områdetype 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Områdetype 4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Områder med liten eller ingen bebyggelse.</p>
 <p class="tableblock">Dette vil være den delen av kommunen som har en ekstensiv arealutnytting og lav grunnverdi: som regel fjellområder eller tilsvarende lite produktive arealer.</p></td>
 </tr>
@@ -1331,7 +1376,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 <div class="title">Figur 2. Viser eksempel på fordeling av FKB-standarder i et område i Rogaland. Se laget Georef-ABCD i WMS-tjenesten for Georef</div>
 </div>
 <div class="sect3">
-<h4 id="truefkb-a-standard"><a class="anchor" href="#truefkb-a-standard"></a>6.2.1. FKB-A-standard</h4>
+<h4 id="_fkb_a_standard">6.2.1. FKB-A-standard</h4>
 <div class="paragraph">
 <p><strong>Bruksområde:</strong></p>
 </div>
@@ -1364,7 +1409,7 @@ Fullstendighet kan angis i prosent i relasjon til spesifiserte krav. Informasjon
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefkb-b-standard"><a class="anchor" href="#truefkb-b-standard"></a>6.2.2. FKB-B-standard</h4>
+<h4 id="_fkb_b_standard">6.2.2. FKB-B-standard</h4>
 <div class="paragraph">
 <p><strong>Bruksområde:</strong></p>
 </div>
@@ -1395,7 +1440,7 @@ Forskjellen på B-standard og A-standard er i hovedsak at det er større minstem
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefkb-c-standard"><a class="anchor" href="#truefkb-c-standard"></a>6.2.3. FKB-C-Standard</h4>
+<h4 id="_fkb_c_standard">6.2.3. FKB-C-Standard</h4>
 <div class="paragraph">
 <p><strong>Bruksområde:</strong></p>
 </div>
@@ -1425,7 +1470,7 @@ Forskjellen på B-standard og A-standard er i hovedsak at det er større minstem
 </div>
 </div>
 <div class="sect3">
-<h4 id="truefkb-d-standard"><a class="anchor" href="#truefkb-d-standard"></a>6.2.4. FKB-D-standard</h4>
+<h4 id="_fkb_d_standard">6.2.4. FKB-D-standard</h4>
 <div class="paragraph">
 <p><strong>Bruksområde:</strong></p>
 </div>
@@ -1490,12 +1535,13 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </table>
 </div>
 <div class="sect3">
-<h4 id="truehøydegrunnlag"><a class="anchor" href="#truehøydegrunnlag"></a>6.2.5. Høydegrunnlag</h4>
+<h4 id="_høydegrunnlag">6.2.5. Høydegrunnlag</h4>
 <div class="paragraph">
-<p>Prosjektet Nasjonal Detaljert Høydemodell (NDH) vil etter planen dekke hele landet med detaljerte høydedata innen 2022. Det meste av landet blir i NDH kartlagt med laserskanning, mens det i områder med lite vegetasjon (høyfjellsområder) benyttes bildematching fra flybilder med oppløsning 25 cm (omløpsfoto). Det aller meste av Norge er nå dekket, men gamle høydekurver kan fremdeles finnes i enkelte områder.</p>
-</div>
-<div class="paragraph">
-<p>Datasettet FKB-Høydekurve er hovedsakelig avledet/generert fra disse mest nøyaktige terrengmodellene. Ved laserskanning gjennom NDH-prosjektet og Geovekst er leveranse av genererte høydekurver med 1m ekvidistanse basert på terrengmodellene standard. For områder der terrengmodellen er basert på bildematching genereres høydekurver med 5m ekvidistanse. Disse kurvene forvaltes i FKB-Høydekurve.</p>
+<p>Datasettet FKB-Høydekurve er hovedsakelig avledet/generert fra Nasjonal Detaljert Høydemodell (NDH).
+NDH inneholder punktskyer fra laserskanning i de fleste områder, men noen områder med lite vegetasjon (høyfjellsområder) har terrengmodeller basert på bildematching fra flybilder med oppløsning 25 cm (omløpsfoto).
+Ved laserskanning gjennom NDH-prosjektet og Geovekst er leveranse av genererte høydekurver med 1m ekvidistanse basert på terrengmodellene standard.
+For områder der terrengmodellen er basert på bildematching genereres høydekurver med 5m ekvidistanse. Disse kurvene forvaltes i FKB-Høydekurve.
+Gamle høydekurver basert på fotogrammetrisk datafangst kan fremdeles finnes i enkelte områder.</p>
 </div>
 <div class="paragraph">
 <p>Ved større terrenginngrep anbefales det at det gjøres ny laserskanning og at FKB-Høydekurve oppdateres med bakgrunn i oppdaterte sensordata. I påvente av nye høydekurver anbefales det at man fjerner høydekurvene i områder der man vet at terrenget er endret slik at FKB-Høydekurve ikke gir feilaktig informasjon.</p>
@@ -1506,7 +1552,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueuavhengige-primærdatasett"><a class="anchor" href="#trueuavhengige-primærdatasett"></a>6.3. Uavhengige primærdatasett</h3>
+<h3 id="_uavhengige_primærdatasett">6.3. Uavhengige primærdatasett</h3>
 <div class="paragraph">
 <p>FKB bygger i utgangspunktet på prinsippet om uavhengige primærdatasett. Med dette menes at primærdatasettene ikke er avledet fra andre datasett og ajourføres uavhengig av andre datasett. Hvert primærdatasett kan på denne måten leve atskilt fra andre datasett. Et objekt skal kun tilhøre ett primærdatasett.</p>
 </div>
@@ -1518,9 +1564,9 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueidentifikasjon-av-objekter-i-fkb"><a class="anchor" href="#trueidentifikasjon-av-objekter-i-fkb"></a>6.4. Identifikasjon av objekter i FKB</h3>
+<h3 id="_identifikasjon_av_objekter_i_fkb">6.4. Identifikasjon av objekter i FKB</h3>
 <div class="sect3">
-<h4 id="trueunik-identifikasjon-av-kartobjektene-i-fkb"><a class="anchor" href="#trueunik-identifikasjon-av-kartobjektene-i-fkb"></a>6.4.1. Unik identifikasjon av kartobjektene i FKB</h4>
+<h4 id="_unik_identifikasjon_av_kartobjektene_i_fkb">6.4.1. Unik identifikasjon av kartobjektene i FKB</h4>
 <div class="paragraph">
 <p>Alle kartobjekter i FKB har en unik identifikator i form av datatypen <em>Identifikasjon</em>. Identifikasjon er en datatype som består av <em>navnerom</em>, <em>lokalid</em> og <em>versjonid</em>. For FKB-data er <em>lokalid</em> på formen UUID <a href="#UUID">[UUID]</a>. Dette innebærer at <em>lokalid</em>-en alene alltid er globalt unik. Identifikasjon er modellert som en del av fellesegenskapene i FKB. Se detaljer om dette under kapittel 7.</p>
 </div>
@@ -1563,7 +1609,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </ul>
 </div>
 <div class="paragraph">
-<p>Dersom det finnes egenskaper på kartobjektene som er knyttet til det fysiske objektet (f.eks. bygningsnummer i FKB-Bygning) så må det lages rutiner som sikrer at denne informasjonen tas vare på gjennom av alle typer endringer i kartobjektene. Den generelle transaksjonslogikken i FKB vil ikke automatisk håndtere dette. Les mer om dette under <a href="#truekoblingsnøkler-til-andre-data">Koblingsnøkler til andre data</a>.</p>
+<p>Dersom det finnes egenskaper på kartobjektene som er knyttet til det fysiske objektet (f.eks. bygningsnummer i FKB-Bygning) så må det lages rutiner som sikrer at denne informasjonen tas vare på gjennom av alle typer endringer i kartobjektene. Den generelle transaksjonslogikken i FKB vil ikke automatisk håndtere dette. Les mer om dette under <a href="#_koblingsnøkler_til_andre_data">Koblingsnøkler til andre data</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Alternativ håndtering av lokalid:</em></strong></p>
@@ -1600,7 +1646,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 <p>Versjonid settes lik tidspunkt for oppdatering av objektet i forvaltningsbasen. Dette styres også automatisk av forvaltningssystmet. Versjonid er nøkkelen ved historiske spørringer mot FKB-data.</p>
 </li>
 <li>
-<p>I forvaltningsbasen vil versjonid ha lik verdi som oppdateringsdato. Les mer om dette under <a href="#trueoppdateringsdato">Oppdateringsdato</a></p>
+<p>I forvaltningsbasen vil versjonid ha lik verdi som oppdateringsdato. Les mer om dette under <a href="#_oppdateringsdato">Oppdateringsdato</a></p>
 </li>
 </ul>
 </div>
@@ -1609,7 +1655,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect3">
-<h4 id="truekoblingsnøkler-til-andre-data"><a class="anchor" href="#truekoblingsnøkler-til-andre-data"></a>6.4.2. Koblingsnøkler til andre data</h4>
+<h4 id="_koblingsnøkler_til_andre_data">6.4.2. Koblingsnøkler til andre data</h4>
 <div class="paragraph">
 <p>Datasettene i FKB inneholder noen koblingsnøkler til tilsvarende objekt i andre databaser. Dette gjøres ved at det legges en egenskapsverdi som unikt identifiserer det tilsvarende objektet i det eksterne systemet inn på kartobjektet i FKB.</p>
 </div>
@@ -1657,12 +1703,12 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="truebruk-av-datoegenskaper"><a class="anchor" href="#truebruk-av-datoegenskaper"></a>6.5. Bruk av datoegenskaper</h3>
+<h3 id="_bruk_av_datoegenskaper">6.5. Bruk av datoegenskaper</h3>
 <div class="paragraph">
 <p>Fellesegenskapene for FKB definerer hvilke datoegenskaper som skal benyttes i FKB. Se kapittel 7 for detaljer i hvordan det er modellert. Dette kapittelet beskriver  detaljer for den praktiske bruken av datoegenskapene.</p>
 </div>
 <div class="sect3">
-<h4 id="truedatafangstdato"><a class="anchor" href="#truedatafangstdato"></a>6.5.1. Datafangstdato</h4>
+<h4 id="_datafangstdato">6.5.1. Datafangstdato</h4>
 <div class="paragraph">
 <p>Datafangstdato angir dato for måling/observering/registrering av objektet (i terrenget).</p>
 </div>
@@ -1684,13 +1730,13 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueverifiseringsdato"><a class="anchor" href="#trueverifiseringsdato"></a>6.5.2. Verifiseringsdato</h4>
+<h4 id="_verifiseringsdato">6.5.2. Verifiseringsdato</h4>
 <div class="paragraph">
 <p>Verifiseringsdato angir dato for når det er fastslått at eksisterende dataobjekt fremdeles samsvarer med objektet i virkeligheten. Egenskapen brukes f.eks. i forbindelse med fotogrammetrisk ajourhold, og hvor det ikke er registrert endringer på objektet (det virkelige objektet er i samsvar med dataobjektet).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueoppdateringsdato"><a class="anchor" href="#trueoppdateringsdato"></a>6.5.3. Oppdateringsdato</h4>
+<h4 id="_oppdateringsdato">6.5.3. Oppdateringsdato</h4>
 <div class="paragraph">
 <p>Oppdateringsdato er tidspunkt for oppdatering i forvaltningssystemet. Dette er en verdi som styres automatisk av forvaltningssystemet etter følgende regler:</p>
 </div>
@@ -1712,13 +1758,13 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect3">
-<h4 id="truesluttdato"><a class="anchor" href="#truesluttdato"></a>6.5.4. Sluttdato</h4>
+<h4 id="_sluttdato">6.5.4. Sluttdato</h4>
 <div class="paragraph">
 <p>Sluttdato er tidspunkt for når versjonen av objektet ble erstattet eller opphørte å eksistere. Egenskapen styres av forvaltningssystemet. Sluttdato sendes bare med ut fra forvaltningssystemet ved historiske spørringer. For levende data vil ikke sluttdato ha noen verdi og egenskapen skal da heller ikke sendes med.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"><a class="anchor" href="#truepraktisk-bruk-av-datoegenskapene-i-forbindelse-med-ajourhold-av-fkb-data"></a>6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</h4>
+<h4 id="_praktisk_bruk_av_datoegenskapene_i_forbindelse_med_ajourhold_av_fkb_data">6.5.5. Praktisk bruk av datoegenskapene i forbindelse med ajourhold av FKB-data</h4>
 <div class="paragraph">
 <p>Ved fotogrammetrisk ajourføring blir noen objekter registrert på nytt, noen får endret databeskrivelse, noen slettes, mens andre forblir uforandret. For påføring av de ulike datoegenskapene gjelder følgende ved en fullstendig fotogrammetrisk ajourføring:</p>
 </div>
@@ -1747,7 +1793,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="truekodelister"><a class="anchor" href="#truekodelister"></a>6.6. Kodelister</h3>
+<h3 id="_kodelister">6.6. Kodelister</h3>
 <div class="paragraph">
 <p>Alle kodelister i FKB 5.0 forvaltes i <a href="https://register.geonorge.no/sosi-kodelister/fkb">Geonorge kodelisteregister</a>. I UML-modellene ligger tomme kodelister med referanse (URL) til kodelistene i Geonorge. Dette innebærer at kodelistene i FKB kan endres uten at versjonsnummer på produktspesifikasjonene oppdateres. Systemer som forholder seg til FKB datamodellene må også forholde seg til Geonorge kodelisteregister.</p>
 </div>
@@ -1791,7 +1837,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="truevedlikehold"><a class="anchor" href="#truevedlikehold"></a>6.7. Vedlikehold</h3>
+<h3 id="_vedlikehold">6.7. Vedlikehold</h3>
 <div class="paragraph">
 <p>Hovedprinsippet for ajourføring av FKB-data er at utvalgte objekter og datasett skal ajourføres kontinuerlig gjennom daglige administrative rutiner, for eksempel byggesaksbehandling, eller ved rapportering fra samarbeidspartene. Fullstendighet og hurtig oppdatering av de viktigste objektene skal prioriteres fremfor stedfestingsnøyaktighet. Dette betyr at stedfestingsnøyaktighet i enkelte tilfeller kan bli dårligere enn kravet til aktuell FKB-standard. Det er imidlertid et krav at alle aktuelle objekter skal være kodet med opplysninger om datafangstmetode og stedfestingsnøyaktighet (..KVALITET).</p>
 </div>
@@ -1809,7 +1855,7 @@ For å få heldekkende FKB-datasett for en kommune skal D-områdene fylles med d
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueoppgradering"><a class="anchor" href="#trueoppgradering"></a>6.8. Oppgradering</h3>
+<h3 id="_oppgradering">6.8. Oppgradering</h3>
 <div class="paragraph">
 <p>Med oppgradering menes forbedring av den datatekniske kvaliteten av eksisterende data.</p>
 </div>
@@ -1837,7 +1883,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesømløse-data"><a class="anchor" href="#truesømløse-data"></a>6.9. Sømløse data</h3>
+<h3 id="_sømløse_data">6.9. Sømløse data</h3>
 <div class="paragraph">
 <p><strong>Mellom kommuner eller fylker:</strong></p>
 </div>
@@ -1864,15 +1910,15 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 </div>
 <div class="sect1">
-<h2 id="truemodellering-av-fkb-produktspesifikasjoner"><a class="anchor" href="#truemodellering-av-fkb-produktspesifikasjoner"></a>7. Modellering av FKB produktspesifikasjoner</h2>
+<h2 id="_modellering_av_fkb_produktspesifikasjoner">7. Modellering av FKB produktspesifikasjoner</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>FKB 5.0 skal generelt modelleres i henhold til reglene i SOSI Regler for UML-modellering versjon 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. I tillegg er det gjort noen presiseringer/innsnevringer for FKB som er beskrevet i dette kapittelet. FKB Generell del inneholder felles modelleringselementer (kodelister, datatyper og fellesegenskaper) som realiseres i de enkelte FKB produktspesifikasjonene.</p>
 </div>
 <div class="sect2">
-<h3 id="truegeometrimodell-i-fkb"><a class="anchor" href="#truegeometrimodell-i-fkb"></a>7.1. Geometrimodell i FKB</h3>
+<h3 id="_geometrimodell_i_fkb">7.1. Geometrimodell i FKB</h3>
 <div class="sect3">
-<h4 id="truegeometrityper"><a class="anchor" href="#truegeometrityper"></a>7.1.1. Geometrityper</h4>
+<h4 id="_geometrityper">7.1.1. Geometrityper</h4>
 <table id="tab-geometrityper" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 4. Tabell over hvilke geometrityper som kan benyttes i FKB 5.0 i UML-modellene og forskjellige formater</caption>
 <colgroup>
@@ -1911,11 +1957,11 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </tbody>
 </table>
 <div class="paragraph">
-<p>FKB-data skal ha en enklest mulig geometri. Andre geometrityper enn de som er angitt i tabellen over (som f.eks. multipoint, multicurve, multisurface etc.) skal ikke benyttes i FKB 5.0.</p>
+<p>FKB-data skal ha en enklest mulig geometri. Andre geometrityper enn de som er angitt i tabellen over (som f.eks. multipoint, multicurve, multisurface etc.) skal ikke benyttes i FKB 5.1.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueflere-geometrier"><a class="anchor" href="#trueflere-geometrier"></a>7.1.2. Flere geometrier</h4>
+<h4 id="_flere_geometrier">7.1.2. Flere geometrier</h4>
 <div class="paragraph">
 <p>Hovedregel i FKB produktspesifikasjoner er at hver objekttype modelleres med <em>en</em> geometriegenskap. Det finnes imidlertid noen unntak fra denne hovedregelen. Se tabell under for mulige kombinasjoner av geometriegenskaper for objekttyper som er definert med mer enn <em>en</em> geometriegenskap i FKB:</p>
 </div>
@@ -1956,9 +2002,9 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueassosiasjoner"><a class="anchor" href="#trueassosiasjoner"></a>7.1.3. Assosiasjoner</h4>
+<h4 id="_assosiasjoner">7.1.3. Assosiasjoner</h4>
 <div class="paragraph">
-<p>Kartobjektene i FKB er alltid selvstendige objekter som kan eksistere uavhengig av andre objekter. Assosiasjoner uttrykker generelt en eller annen sammenheng mellom to objekttyper/objekter. Et eksempel på dette kan være å uttrykke hvilke Veranda-objekter som tilhører hvilke Bygning-objekter. FKB 5.0 åpner for å benytte assosiasjoner i datamodellene etter følgende rammer:</p>
+<p>Kartobjektene i FKB er alltid selvstendige objekter som kan eksistere uavhengig av andre objekter. Assosiasjoner uttrykker generelt en eller annen sammenheng mellom to objekttyper/objekter. Et eksempel på dette kan være å uttrykke hvilke Veranda-objekter som tilhører hvilke Bygning-objekter. FKB 5.1 åpner for å benytte assosiasjoner i datamodellene etter følgende rammer:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1966,31 +2012,33 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 <p>Assosiasjoner modelleres som vanlige assosiasjoner i tråd med reglene i SOSI Regler for UML-modellering 5.1 <a href="#SOSI-UML">[SOSI-UML]</a>. Andre varianter av assosiasjoner som <em>aggregering</em>, <em>komposisjon</em> etc. benyttes ikke i FKB.</p>
 </li>
 <li>
+<p>Assosiasjoner i FKB skal alltid modelleres mellom konkrete/instansierbare objekttyper (og altså ikke til/fra supertyper). Dette gjør det enklere å implementere assosiasjonene som koblingstabeller i geografiske databaser.</p>
+</li>
+<li>
 <p>Assosiasjoner i FKB modelleres som hovedregel som <em>enveis</em>. Det vil si at de bare er navigerbare i en retning. (Eks: Bygningen vet hvilke verandaer som hører til bygget, men verandaen vet ikke hvilken bygning den tilhører)</p>
 </li>
 <li>
 <p>Multiplisitet på den navigerbare enden skal alltid være 0..1 eller 0..*. (Dvs. at det at det finnes et objekt av en objekttype vil ikke medføre krav om at det må finnes et referert objekt av en annen type.)</p>
-<div class="ulist">
-<ul>
+</li>
+<li>
+<p>Assosiasjonene modelleres slik at det settes krav til at de assosierte objektene utveksles som refererte objekter i GML (dvs. ved bruk av taggen <em>inlineOrByReference=byReference</em> i UML)</p>
+</li>
 <li>
 <p>Dersom det benyttes assosiasjoner som er navigerbare i begge retninger så skal det ikke være multiplisitet 0..* i begge ender. (Dvs. at <em>mange-til_mange</em>-forhold unngås i FKB datamodeller)</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>Se eksempler på <a href="#_utveksling_av_assosiasjoner">Utveksling av assosiasjoner</a> på GML- og SOSI-format i Vedlegg C.</p>
 </div>
 <div class="paragraph">
-<p>Se eksempler på <a href="#trueutveksling-av-assosiasjoner">Utveksling av assosiasjoner</a> på GML- og SOSI-format i Vedlegg C.</p>
-</div>
-<div class="paragraph">
-<p>Hvilke avgrensningskurver som brukes til å avgrense et flateobjekt er en spesialvariant av assosiasjoner med egne krav. Dette er beskrevet nærmere under <a href="#truemodellering-av-flateobjekter">Modellering av flateobjekter</a></p>
+<p>Hvilke avgrensningskurver som brukes til å avgrense et flateobjekt er en spesialvariant av assosiasjoner med egne krav. Dette er beskrevet nærmere under <a href="#_modellering_av_flateobjekter">Modellering av flateobjekter</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueflategeometri"><a class="anchor" href="#trueflategeometri"></a>7.1.4. Flategeometri</h4>
+<h4 id="_flategeometri">7.1.4. Flategeometri</h4>
 <div class="sect4">
-<h5 id="trueto-typer-flateobjekter"><a class="anchor" href="#trueto-typer-flateobjekter"></a>7.1.4.1. To typer flateobjekter</h5>
+<h5 id="_to_typer_flateobjekter">7.1.4.1. To typer flateobjekter</h5>
 <div class="paragraph">
 <p>Objekttyper i FKB med flategeometri deles i 2 typer:</p>
 </div>
@@ -2027,7 +2075,7 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </table>
 </div>
 <div class="sect4">
-<h5 id="truemodellering-av-flateobjekter"><a class="anchor" href="#truemodellering-av-flateobjekter"></a>7.1.4.2. Modellering av flateobjekter</h5>
+<h5 id="_modellering_av_flateobjekter">7.1.4.2. Modellering av flateobjekter</h5>
 <div class="paragraph">
 <p>Hvilken av de 2 typene flater en objekttype er må man ta stilling til når man utarbeider FKB produktspesifikasjonen.</p>
 </div>
@@ -2063,19 +2111,19 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </ol>
 </div>
 <div class="paragraph">
-<p>Se eksempler på <a href="#trueutveksling-av-flategeometri">Utveksling av flategeometri</a> på GML- og SOSI-format i Vedlegg C.</p>
+<p>Se eksempler på <a href="#_utveksling_av_flategeometri">Utveksling av flategeometri</a> på GML- og SOSI-format i Vedlegg C.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueuml-felleselementer-til-bruk-i-applicationschema-for-fkb-datasett"><a class="anchor" href="#trueuml-felleselementer-til-bruk-i-applicationschema-for-fkb-datasett"></a>7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</h3>
+<h3 id="_uml_felleselementer_til_bruk_i_applicationschema_for_fkb_datasett">7.2. UML felleselementer til bruk i «ApplicationSchema» for FKB-datasett</h3>
 <div class="paragraph">
 <p>Generelle klasser med fellesegenskaper som kan kopieres inn og benyttes i FKB produktspesifikasjoner.</p>
 </div>
 <hr>
 <div class="sect3">
-<h4 id="truepakke-generelle-elementer"><a class="anchor" href="#truepakke-generelle-elementer"></a>7.2.1. Pakke: Generelle elementer</h4>
+<h4 id="_pakke_generelle_elementer">7.2.1. Pakke: Generelle elementer</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Pakke med modelleringselementer som benyttes i applikasjonsskjema for forvaltning av FKB</p>
 </div>
@@ -2102,11 +2150,11 @@ Enkelte FKB-data skal være koblet mot registerdatabaser. Forbedring av disse ko
 </div>
 <hr>
 <div class="sect4">
-<h5 id="fellesegenskaper"><a class="anchor" href="#fellesegenskaper"></a>7.2.1.1. «FeatureType» Fellesegenskaper (abstrakt)</h5>
+<h5 id="fellesegenskaper">7.2.1.1. «FeatureType» Fellesegenskaper (abstrakt)</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> abstrakt objekttype som bærer sentrale egenskaper som er anbefalt for bruk i produktspesifikasjoner.</p>
 </div>
-<h6 id="trueegenskaper" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2323,7 +2371,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2348,11 +2396,11 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="kvalitetpåkrevd"><a class="anchor" href="#kvalitetpåkrevd"></a>7.2.1.2. «FeatureType» KvalitetPåkrevd (abstrakt)</h5>
+<h5 id="kvalitetpåkrevd">7.2.1.2. «FeatureType» KvalitetPåkrevd (abstrakt)</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong></p>
 </div>
-<h6 id="trueegenskaper-2" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_2" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2382,7 +2430,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-2" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_2" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2402,11 +2450,11 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="kvalitetopsjonell"><a class="anchor" href="#kvalitetopsjonell"></a>7.2.1.3. «FeatureType» KvalitetOpsjonell (abstrakt)</h5>
+<h5 id="kvalitetopsjonell">7.2.1.3. «FeatureType» KvalitetOpsjonell (abstrakt)</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong></p>
 </div>
-<h6 id="trueegenskaper-3" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_3" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2436,7 +2484,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-3" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_3" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2456,7 +2504,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="identifikasjon"><a class="anchor" href="#identifikasjon"></a>7.2.1.4. «dataType» Identifikasjon</h5>
+<h5 id="identifikasjon">7.2.1.4. «dataType» Identifikasjon</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Unik identifikasjon av et objekt i et datasett, forvaltet av den ansvarlige produsent/forvalter, og kan benyttes av eksterne applikasjoner som stabil referanse til objektet.</p>
 </div>
@@ -2466,7 +2514,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 <div class="paragraph">
 <p>Merknad 2: Denne unike identifikatoren vil ikke endres i løpet av objektets levetid, og ikke gjenbrukes i andre objekt.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2479,7 +2527,7 @@ SOSI_navn: REGISTRERINGSVERSJON<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="trueegenskaper-4" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_4" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2573,7 +2621,7 @@ SOSI_navn: VERSJONID<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-4" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_4" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2589,7 +2637,7 @@ SOSI_navn: VERSJONID<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="posisjonskvalitet"><a class="anchor" href="#posisjonskvalitet"></a>7.2.1.5. «dataType» Posisjonskvalitet</h5>
+<h5 id="posisjonskvalitet">7.2.1.5. «dataType» Posisjonskvalitet</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> beskrivelse av kvaliteten på stedfestingen.</p>
 </div>
@@ -2597,7 +2645,7 @@ SOSI_navn: VERSJONID<br></p></td>
 <p>Merknad:
 Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defineret i ISO19157:2013, men er en videreføring av tidligere brukte kvalitetsegenskaper i SOSI. FKB 5.0 innfører en egen variant av datatypen Posisjonskvalitet der kodeliste målemetode er byttet ut med den mer generelle kodelista Datafangstmetode.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-2" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_2" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2610,7 +2658,7 @@ Posisjonskvalitet er ikke konform med  kvalitetsmodellen i ISO slik den er defin
 </tr>
 </tbody>
 </table>
-<h6 id="trueegenskaper-5" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_5" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2774,7 +2822,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truerestriksjoner" class="discrete">Restriksjoner</h6>
+<h6 id="_restriksjoner" class="discrete">Restriksjoner</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2792,7 +2840,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-5" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_5" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2808,11 +2856,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="synbarhet"><a class="anchor" href="#synbarhet"></a>7.2.1.6. «CodeList» Synbarhet</h5>
+<h5 id="synbarhet">7.2.1.6. «CodeList» Synbarhet</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> synbarhet beskriver hvor godt objektene framgår i datagrunnlaget for posisjonering (f.eks. flybildene).</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-3" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_3" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2844,14 +2892,14 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="datafangstmetode"><a class="anchor" href="#datafangstmetode"></a>7.2.1.7. «CodeList» Datafangstmetode</h5>
+<h5 id="datafangstmetode">7.2.1.7. «CodeList» Datafangstmetode</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> metode for datafangst.</p>
 </div>
 <div class="paragraph">
 <p>Datafangstmetoden beskriver hvordan selve vektordataene er posisjonert fra et datagrunnlag (observasjoner med landmålingsutstyr, fotogrammetrisk stereomodell, digital terrengmodell etc.) og ikke prosessen med å innhente det bakenforliggende datagrunnlaget.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-4" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_4" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2883,11 +2931,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="registreringsversjon"><a class="anchor" href="#registreringsversjon"></a>7.2.1.8. «CodeList» Registreringsversjon</h5>
+<h5 id="registreringsversjon">7.2.1.8. «CodeList» Registreringsversjon</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> FKB-verjson som ligger til grunn for registrering. Mest relevant for data som er fotogrammetrisk registrert.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-5" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_5" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2919,11 +2967,11 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="høydereferanse"><a class="anchor" href="#høydereferanse"></a>7.2.1.9. «CodeList» Høydereferanse</h5>
+<h5 id="høydereferanse">7.2.1.9. «CodeList» Høydereferanse</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> koordinatregistering utført på topp eller bunn av et objekt</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-6" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_6" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2955,7 +3003,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="medium"><a class="anchor" href="#medium"></a>7.2.1.10. «CodeList» Medium</h5>
+<h5 id="medium">7.2.1.10. «CodeList» Medium</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> objektets beliggenhet i forhold til jordoverflaten</p>
 </div>
@@ -2963,7 +3011,7 @@ SOSI_navn: H-NØYAKTIGHET<br></p></td>
 <p>Eksempel:
 Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-7" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_7" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -2997,7 +3045,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truepakke-elementer-til-bruk-i-distribusjon"><a class="anchor" href="#truepakke-elementer-til-bruk-i-distribusjon"></a>7.2.2. Pakke: Elementer til bruk i distribusjon</h4>
+<h4 id="_pakke_elementer_til_bruk_i_distribusjon">7.2.2. Pakke: Elementer til bruk i distribusjon</h4>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Pakke med elementer som kan benyttes i applikasjonsskjema for distribusjon av FKB-data/FKB-produkter</p>
 </div>
@@ -3017,11 +3065,11 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </div>
 <hr>
 <div class="sect4">
-<h5 id="ekstraegenskaperdistribusjon"><a class="anchor" href="#ekstraegenskaperdistribusjon"></a>7.2.2.1. «FeatureType» EkstraegenskaperDistribusjon (abstrakt)</h5>
+<h5 id="ekstraegenskaperdistribusjon">7.2.2.1. «FeatureType» EkstraegenskaperDistribusjon (abstrakt)</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> Inneholder ekstraegenskaper som er aktuelle i forbindelse med distribusjon</p>
 </div>
-<h6 id="trueegenskaper-6" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_6" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3051,7 +3099,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-6" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_6" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3067,11 +3115,11 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="kantutsnitt"><a class="anchor" href="#kantutsnitt"></a>7.2.2.2. «featureType» KantUtsnitt</h5>
+<h5 id="kantutsnitt">7.2.2.2. «featureType» KantUtsnitt</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> avgrensning av et utsnitt. KantUtsnitt lagres ikke i forvaltningsbasen men kan benyttes for å lage komplette flateavgrensninger ved klipping av et område ut fra forvaltningsbasen. KantUtsnitt kan finnes i fileksporter.</p>
 </div>
-<h6 id="trueegenskaper-7" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_7" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3120,7 +3168,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-7" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_7" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3136,7 +3184,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="kopidata"><a class="anchor" href="#kopidata"></a>7.2.2.3. «dataType» Kopidata</h5>
+<h5 id="kopidata">7.2.2.3. «dataType» Kopidata</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> angivelse av at objektet er hentet fra en kopi av originaldata</p>
 </div>
@@ -3144,7 +3192,7 @@ Veg på bro, i tunnel, inne i et bygningsmessig anlegg, etc.</p>
 <p>Merknad:
 Kan benyttes dersom man gjør et uttak av en database som ikke inneholder originaldataene.</p>
 </div>
-<h6 id="trueprofilparametre-i-tagged-values-8" class="discrete">Profilparametre i tagged values</h6>
+<h6 id="_profilparametre_i_tagged_values_8" class="discrete">Profilparametre i tagged values</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3157,7 +3205,7 @@ Kan benyttes dersom man gjør et uttak av en database som ikke inneholder origin
 </tr>
 </tbody>
 </table>
-<h6 id="trueegenskaper-8" class="discrete">Egenskaper</h6>
+<h6 id="_egenskaper_8" class="discrete">Egenskaper</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3252,7 +3300,7 @@ SOSI_navn: KOPIDATO<br></p></td>
 </tr>
 </tbody>
 </table>
-<h6 id="truearv-og-realiseringer-8" class="discrete">Arv og realiseringer</h6>
+<h6 id="_arv_og_realiseringer_8" class="discrete">Arv og realiseringer</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -3272,10 +3320,10 @@ SOSI_navn: KOPIDATO<br></p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="truekvalitet"><a class="anchor" href="#truekvalitet"></a>8. Kvalitet</h2>
+<h2 id="_kvalitet">8. Kvalitet</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="truekvalitet-på-fkb-data"><a class="anchor" href="#truekvalitet-på-fkb-data"></a>8.1. Kvalitet på FKB-data</h3>
+<h3 id="_kvalitet_på_fkb_data">8.1. Kvalitet på FKB-data</h3>
 <div class="paragraph">
 <p>FKB data oppdateres gjennom forskjellige prosesser og det er et overordnet prinsipp at fullstendighet
 prioriteres framfor homogen stedfestingsnøyaktighet. FKB-data er en blanding av data med ulike datakilder og
@@ -3288,7 +3336,7 @@ se på kvalitetskodingen (metadata) på det enkelte objekt. Kravene til kvalitet
 </div>
 </div>
 <div class="sect2">
-<h3 id="truekvalitetselementer-som-benyttes-for-å-sette-krav-til-fkb-data"><a class="anchor" href="#truekvalitetselementer-som-benyttes-for-å-sette-krav-til-fkb-data"></a>8.2. Kvalitetselementer som benyttes for å sette krav til FKB-data</h3>
+<h3 id="_kvalitetselementer_som_benyttes_for_å_sette_krav_til_fkb_data">8.2. Kvalitetselementer som benyttes for å sette krav til FKB-data</h3>
 <div class="paragraph">
 <p>I dette avsnittet er det angitt hvilke kvalitetselementer som skal benyttes i spesifikasjoner for
 datafangst av FKB-data. Kvalitetselementene er hentet fra Geodatakvalitet <a href="#G">[G]</a> og det henvises til
@@ -3482,7 +3530,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truekrav-til-stedfestingsnøyaktighet-inndeling-i-klasser"><a class="anchor" href="#truekrav-til-stedfestingsnøyaktighet-inndeling-i-klasser"></a>8.3. Krav til stedfestingsnøyaktighet - inndeling i klasser</h3>
+<h3 id="_krav_til_stedfestingsnøyaktighet_inndeling_i_klasser">8.3. Krav til stedfestingsnøyaktighet - inndeling i klasser</h3>
 <div class="paragraph">
 <p>For å angi krav til stedfestingsnøyaktighet er det definert fire klasser som objekttypene er inndelt i. Inndelingen i klasser bygger på hvor skarpt objekttypen er definert i terrenget. Denne inndelingen i nøyaktighetsklasser benyttes gjennomgående for alle datasett som inngår i fotogrammetrisk FKB og kan også anvendes som utgangspunkt for å sette krav til innsamling av FKB-data med andre metoder. For å få en oversikt over hvilke krav som gjelder for ulike objekttyper henvises det til spesifikasjonen av det enkelte FKB-datasett.</p>
 </div>
@@ -3570,12 +3618,18 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="paragraph">
 <p>Grove feil regnes som avvik større enn 3 ganger krav til standardavviket angitt i tabellen over. Kravet vil vanligvis være maksimalt 1 % grove feil, men kan variere for ulike objekttyper og angis i den enkelte FKB produktspesifikasjon.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_avvik_funnet_ved_kontroll_av_fkb_data">8.4. Avvik funnet ved kontroll av FKB-data</h3>
+<div class="paragraph">
+<p>Produktspesifikasjon <a href="https://skjema.geonorge.no/SOSI/produktspesifikasjon/AvvikKartdata/1.0/">AvvikKartdata 1.0</a> spesifiserer hvordan avvik på kartdata skal utveksles. I forbindelse med utveksling av avvik knyttet til FKB-data i FKB-Kartleggingsprosjekter eller andre sammenhenger skal denne produktspesifikasjonen legges til grunn.</p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueutvekslingsformater-for-fkb-data"><a class="anchor" href="#trueutvekslingsformater-for-fkb-data"></a>Vedlegg A: Utvekslingsformater for FKB-data</h2>
+<h2 id="_utvekslingsformater_for_fkb_data">Vedlegg A: Utvekslingsformater for FKB-data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>FKB 5.0 er laget spesielt med tanke på utveksling på GML-format <a href="#SOSI-GML">[SOSI-GML]</a> og SOSI-format <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a>. Alle FKB 5.0-data kan konverteres fram og tilbake mellom SOSI-format og GML-format uten at man mister informasjon.</p>
@@ -3584,7 +3638,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <p>I tillegg er <em>ESRI fgdb</em> et populært format for filbasert distribusjon gjennom geonorge og <em>JSON</em> <a href="#JSON">[JSON]</a> er et populært format ved jobbing mot Sentral FKB med NGIS-OpenAPI <a href="#NGIS">[NGIS]</a>. For <em>ESRI fgdb</em> og <em>JSON</em>-formatene finnes det ikke standarder som beskriver krav til utvekslingsformatet i detalj.</p>
 </div>
 <div class="sect2">
-<h3 id="trueleveranseformater-ved-distribusjon-fra-geonorge"><a class="anchor" href="#trueleveranseformater-ved-distribusjon-fra-geonorge"></a>A.1. Leveranseformater ved distribusjon fra Geonorge</h3>
+<h3 id="_leveranseformater_ved_distribusjon_fra_geonorge">A.1. Leveranseformater ved distribusjon fra Geonorge</h3>
 <table id="tab-leveranseformat" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 12. Liste over tilgjengelige filformater for nedlasting av FKB-data fra Geonorge.no</caption>
 <colgroup>
@@ -3636,7 +3690,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="trueformater-i-ngis-openapi"><a class="anchor" href="#trueformater-i-ngis-openapi"></a>A.2. Formater i NGIS-OpenAPI</h3>
+<h3 id="_formater_i_ngis_openapi">A.2. Formater i NGIS-OpenAPI</h3>
 <div class="paragraph">
 <p>NGIS-OpenAPI er det nye og fleksible API-et for oppdatering av (blant annet) FKB-data <a href="#NGIS">[NGIS]</a>.</p>
 </div>
@@ -3651,7 +3705,7 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueromlige-referansesystem"><a class="anchor" href="#trueromlige-referansesystem"></a>Vedlegg B: Romlige referansesystem</h2>
+<h2 id="_romlige_referansesystem">Vedlegg B: Romlige referansesystem</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>FKB-data er detaljerte data med høy presisjon. Dette betyr at man må være bevisst på ev. feil som kan innføres ved transformasjon av dataene mellom forskjellige romlige referansesystemer. I forvaltningen av FKB-data gjøres vanligvis oppdateringen direkte i den aktuelle kommunens koordinatsystem slik at man unngår transformasjon av data. Kommuner i tidligere Finnmark fylke har EUREF89 UTM35 som lokal sone. Kommuner i Nordland og tidligere Troms har EUREF89 UTM33 som lokal sone, mens kommuner fra Trøndelag og sørover bruker EUREF89 UTM32 som lokal sone.</p>
@@ -3713,23 +3767,23 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="trueassosiasjoner-og-flategeometri-på-sosi-og-gml-format"><a class="anchor" href="#trueassosiasjoner-og-flategeometri-på-sosi-og-gml-format"></a>Vedlegg C: Assosiasjoner og flategeometri på SOSI- og GML-format</h2>
+<h2 id="_assosiasjoner_og_flategeometri_på_sosi_og_gml_format">Vedlegg C: Assosiasjoner og flategeometri på SOSI- og GML-format</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Generelt gjelder SOSI del 1 Realisering av GML-format 5.0 <a href="#SOSI-GML">[SOSI-GML]</a> og Realisering av SOSI-format 5.0 <a href="#SOSI-FORMAT">[SOSI-FORMAT]</a> ved utveksling av FKB-data.
-I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer i håndtering av <a href="#trueflategeometri">Flategeometri</a>. Dette vedlegget inneholder detaljer om hvordan dette skal utveksles på SOSI- og GML-format inkludert korte eksempler.</p>
+I FKB 5.0 innføres <a href="#_assosiasjoner">Assosiasjoner</a> og endringer i håndtering av <a href="#_flategeometri">Flategeometri</a>. Dette vedlegget inneholder detaljer om hvordan dette skal utveksles på SOSI- og GML-format inkludert korte eksempler.</p>
 </div>
 <div class="sect2">
-<h3 id="trueutveksling-av-assosiasjoner"><a class="anchor" href="#trueutveksling-av-assosiasjoner"></a>C.1. Utveksling av assosiasjoner</h3>
+<h3 id="_utveksling_av_assosiasjoner">C.1. Utveksling av assosiasjoner</h3>
 <div class="sect3">
-<h4 id="truesosi-format"><a class="anchor" href="#truesosi-format"></a>C.1.1. SOSI-format</h4>
+<h4 id="_sosi_format">C.1.1. SOSI-format</h4>
 <div class="paragraph">
 <p>I SOSI-formatet utveksles assosiasjoner med referanser til SOSI-gruppenummer (altså kun unikt innenfor SOSI-fila).</p>
 </div>
 <div class="listingblock">
 <div class="title">Eksempel på assosiasjon på SOSI-format. Referanse fra Maste-objekt til SOSI-gruppenummer for Bardun-objekt ("..BARDUN :1").</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
+<pre class="highlight"><code class="language-sosi" data-lang="sosi">  .KURVE 1:
   ..OBJTYPE Bardun
   ..IDENT
   ...LOKALID "5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"
@@ -3790,14 +3844,14 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 </div>
 </div>
 <div class="sect3">
-<h4 id="truegml-format"><a class="anchor" href="#truegml-format"></a>C.1.2. GML-format</h4>
+<h4 id="_gml_format">C.1.2. GML-format</h4>
 <div class="paragraph">
 <p>I GML-formatet utveksles assosiasjoner med mekanismen <em>xlink:href</em> på objektet det pekes fra til GML-Id på objektet det pekes til. GML-Id skal i FKB utformes etter konvensjonen «objekttypenavn_lokalid» slik at denne er unik/meningsfull også på utsiden av GML-fila.</p>
 </div>
 <div class="listingblock">
 <div class="title">Eksempel på assosiasjon på GML-format. Referanse fra Maste-objekt til GML-id for Bardun-objekt ("&lt;app:bardun xlink:href="#Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d" /&gt;")</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;gml:featureMembers&gt;
 &lt;gml:featureMember&gt;
     &lt;app:Bardun gml:id="Bardun_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"&gt;
       &lt;app:identifikasjon&gt;
@@ -3884,16 +3938,16 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueutveksling-av-flategeometri"><a class="anchor" href="#trueutveksling-av-flategeometri"></a>C.2. Utveksling av flategeometri</h3>
+<h3 id="_utveksling_av_flategeometri">C.2. Utveksling av flategeometri</h3>
 <div class="sect3">
-<h4 id="truesosi-format-2"><a class="anchor" href="#truesosi-format-2"></a>C.2.1. SOSI-format</h4>
+<h4 id="_sosi_format_2">C.2.1. SOSI-format</h4>
 <div class="paragraph">
 <p>SOSI-formatet er bygget opp med referanser til avgrensningsobjektene i stedet for at flateobjektene inneholder selve geometrien. Flater med delt geometri ("Type 2") kan derfor utveksles som tradisjonelle SOSI .FLATE-objekter med flatereferanser (.REF). Om man ønsker å utveksle flater med heleid geometri ("Type 1") i SOSI så skal man etablere et "hjelpeobjekt" i form av en .KURVE-gruppe med objekttype <em>Flateavgrensning</em> (som ikke har noen identifikasjon/lokalid) som inneholder hele flateavgrensningen og refereres fra .FLATE-objektet. Dersom "Type 1"-flaten inneholder øyer/hull må det etableres egne <em>Flateavgrensning</em> SOSI-grupper også for disse som referes som hull etter vanlige regler for SOSI-formatet.</p>
 </div>
 <div class="listingblock">
 <div class="title">Eksempel på heleid flate på SOSI-format. Avgrensningsgeometrien for flata ligger i et eget Flateavgrensning-objekt (uten identifikasjon) som refereres fra flate-objektet. Flateobjektet i eksempelet har representasjonspunkt.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .KURVE 1:
+<pre class="highlight"><code class="language-sosi" data-lang="sosi">  .KURVE 1:
   ..OBJTYPE Flatevgrensning
   ..NØH
   6661981480 569544030 89200
@@ -3925,7 +3979,7 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 <div class="listingblock">
 <div class="title">Eksempel på flate med delt geometri på SOSI-format. Flate-objektet inneholder kun representasjonspunkt og referanse til avgrensningsobjektene ("..REF :2 :-3")</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="sosi" class="language-sosi hljs">  .FLATE 1:
+<pre class="highlight"><code class="language-sosi" data-lang="sosi">  .FLATE 1:
   ..OBJTYPE Bygning
   ..IDENT
   ...LOKALID 5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d
@@ -3958,7 +4012,7 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 </div>
 </div>
 <div class="sect3">
-<h4 id="truegml-format-2"><a class="anchor" href="#truegml-format-2"></a>C.2.2. GML-format</h4>
+<h4 id="_gml_format_2">C.2.2. GML-format</h4>
 <div class="paragraph">
 <p>En "Type 1" flate vil i GML være rett fram å utveksle som en gml:Surface med heleid geometri. Om man skal utveksle en flate av "Type 2" i GML vil man også sende med flate-objektets komplette egengeometri som gml:Surface. I tillegg er det definert regler for hvordan referansene til de assosierte avgrensningsobjektene skal utveksles:</p>
 </div>
@@ -3994,7 +4048,7 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 <div class="listingblock">
 <div class="title">Eksempel på heleid flate på GML-format. Geometrien ligger "inline" i objektet.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;gml:featureMembers&gt;
   &lt;gml:featureMember&gt;
     &lt;app:Anleggsområde gml:id="Anleggsområde_58c892c4-f615-4317-935f-038765687265"&gt;
       &lt;app:identifikasjon&gt;
@@ -4031,7 +4085,7 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 <div class="listingblock">
 <div class="title">Eksempel på flate med delt geometri i på GML-format. Flate-geometrien ligger "inline" i objektet og i tillegg ligger det inne referanser til egne avgrensningsobjekter som en assosiasjon med spesielle regler ("&lt;avgrensning xlink:title="0 0 0 -" xlink:href="#Bygningsavgrensning_81ffc802-3e9f-492b-95b6-bb15b645a7e8"/&gt;"). Det er krav om samsvar mellom geometrien til flata og de refererte avgrensningsobjektene.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;gml:featureMembers&gt;
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;gml:featureMembers&gt;
    &lt;gml:featureMember&gt;
       &lt;app:Bygning gml:id="Bygning_5e1d42bb-fd1c-4a58-92dc-aa0b3fadf57d"&gt;
          &lt;app:identifikasjon&gt;
@@ -4100,8 +4154,8 @@ I FKB 5.0 innføres <a href="#trueassosiasjoner">Assosiasjoner</a> og endringer 
 </div>
 </div>
 <div style="page-break-after: always;"></div>
-<h2 id="truelisensvilkår" class="discrete">Lisensvilkår</h2>
-<h3 id="truelisens" class="discrete">Lisens</h3>
+<h2 id="_lisensvilkår" class="discrete">Lisensvilkår</h2>
+<h3 id="_lisens" class="discrete">Lisens</h3>
 <div class="paragraph">
 <p>Denne standarden er gitt ut under
 <a href="https://data.norge.no/nlod/no/">norsk lisens for offentlige data (NLOD)</a>.</p>
@@ -4161,12 +4215,9 @@ av denne lisensen og ikke kan viderebrukes</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Versjon 5.0.1<br>
-Last updated 2023-01-10 15:07:52 +0100
+Versjon 5.1<br>
+Last updated 2023-11-30 10:30:14 +0100
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
 </body>
 </html>
