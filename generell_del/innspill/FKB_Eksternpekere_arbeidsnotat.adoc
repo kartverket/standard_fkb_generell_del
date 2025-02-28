@@ -1,0 +1,292 @@
+:toc: left
+:toc-title: Innholdsfortegnelse
+:toclevels: 4
+:sectnums:
+:sectnumlevels: 4
+:figure-caption: Figur
+:table-caption: Tabell
+:section-refsig: Kapittel
+:version-label: Versjon
+:doctype: book
+:encoding: utf-8
+:lang: nb
+
+:chapter-label! :
+toc::[]
+
+= Arbeidsnotat om eksterpekere i FKB
+
+== Bakgrunn
+
+Eksternpekere ble innført i FKB i forbindelse med FKB 5.0, men har foreløpig i liten grad blitt tatt i bruk. Dette notatet beskriver litt nærmere hvordan eksternpekere kan/bør tas i bruk. 
+
+Eksternpekere er en form for koblingsnøkler fra data i FKB til andre data. Det finnes eksempler på dette også tidligere. F.eks. bygningsnummer i FKB-Bygning som kobler bygninger i FKB mot bygninger i matrikkelen og vegreferanser på vegflater i FKB-Veg som kobler vegflatene mot vegnettet i NVDB. Se beskrivelse i https://sosi.geonorge.no/Standarder/FKB_generell_del/#_koblingsn%C3%B8kler_til_andre_data[FKB generell del].
+
+== Brukerbehov som dekkes ved innføring av eksternpekere
+
+=== Lettere å finne all informasjon om et objekt
+
+Brukerhistorie:
+
+****
+_Som en_ bruker av FKB-data +
+_Ønsker jeg_ at objekter som forvaltes både i FKB og andre fagsystemer er knyttet sammen +
+_Slik at_ jeg enkelt får tak i all informasjon om objektene
+****
+
+Eksempel:
+
+Stikkrenner forvaltes både i FKB og NVDB. Dataene i FKB har ofte bedre geometrisk nøyaktighet enn dataene i NVDB og finnes også for andre typer objekter enn veglenker i NVDB (eks: Jernbane). Dataene i NVDB har imidlertid mer egenskapsinformasjon. Når det ligger peker til NVDB-objektet på Stikkrenne-objektet i FKB kan brukeren enkelt finne all informasjon om objektet. 
+
+=== Lettere for dataeier/forvalter å jobbe med datakvalitet
+
+Brukerhistorie:
+
+****
+_Som en_ forvalter av FKB-data +
+_Ønsker jeg_ at objekter som forvaltes både i FKB og andre fagsystemer er knyttet sammen +
+_Slik at_ jeg enkelt kan kjøre konsistenskontroller og forbedre datakvaliteten 
+****
+
+Eksempel:
+
+Når det er etablert eksternpekere fra Stikkrenner i FKB til Stikkrenner i NVDB gir det mulighet til å enkelt kjøre konsistenskontroller mellom datasettene. Dette kan brukes til f.eks. å oppdatere egenskapsinformasjon i FKB fra NVDB, oppdatere geometri i NVDB fra FKB eller å finne stikkrenner som bare finnes i en av datakildene med tanke på bedre fullstendighet.
+
+
+== Hva er en eksternpeker
+
+
+=== Modellering
+
+Eksternpekere er i modelleringssammenheng en vanlig egenskap som har datatype https://en.wikipedia.org/wiki/Uniform_Resource_Identifier[URI]. 
+
+I FKB er det benyttet både et generelt egenskapsnavn _Eksternpeker_ for de sammenhengene der det ikke er gitt hvilket system det skal pekes mot og det er også modellert med egenskapsnavnene _NVDBpeker_, _NRLpeker_ (m.fl.) der det er gitt at det skal pekes mot objekter i et gitt eksternt register.
+
+I praksis innebærer datatypen URI at verdien må være en tekst som inneholder et kolon. 
+
+Altså av typen <system>:<unik_id> 
+
+At verdiene som legges inn for en URI er på denne formen valideres ved lagring i SFKB. URL-er som starter med "http:" er gyldige verdier.
+
+
+=== Hvilke verdier skal brukes i FKB
+
+Kartverket foreslår følgende retningslinjer for utforming av verdier for eksternpekere i FKB:
+
+1. Det lages regler for hvordan eksternpeker utformes mot de forskjellige systemene det kobles mot. Slik at alle pekere mot f.eks. NRL eller NVDB er på samme form.
+
+2. Nettadresser (http://osv.) bør bare brukes dersom man er sikker på at nettadressen er  stabil over tid (= i overskuelig framtid). 
+
+I utgangspunktet kan det virke fristende å legge inn nettadresser som verdier på eksternpekere. Dette kan gi en direkte kobling mot en visning av det eksterne objektet uten noen form for tolkning/bearbeidning. Kartverket er imidlertid skeptisk til dette av 2 grunner:
+
+1. Nettadresser for tjenester har en tendens til å endre seg over tid (ny programvare e.l. på tjenesten). Da vil referansene slutte å virke og alle verdiene i FKB-data må oppdateres før de virker igjen.
+
+2. Det kan i noen sammenhenger være ønskelig/nyttig å koble FKB-objektene med de eksterne systemene på andre måter enn ved å gå via tjenesten det pekes mot. Dette vil være vanskeligere dersom eksternpekerne inneholder en nettadresse til en visning av objektet enn om eksternpekeren inneholder en mer "ren" objektid. 
+
+
+Basert på disse vurderingene er forslaget at vi i forbindelse med testingen vi skal gjøre i nærmeste framtid går for enklest mulige verdier av typen:
+
+* NVDBPEKER “NVDB:12345678”
+* NRLPEKER “NRL:uuid”
+* EKSTERNPEKER “Banadata:12345678”
+
+
+=== Bruk av eksternpekere i FKB 5.0/5.1
+
+.Oversikt over objekttyper i FKB som kan ha eksternpekere
+[cols="4"]
+|===
+|**Datasett**
+|**Objekttype**
+|**Egenskap**
+|**Ekstern system**
+
+|**FKB-AR5**
+|Ingen
+| -
+| -
+ 
+|**FKB-Arealbruk**
+|Campingplass, Golfbane, Lekeplass, Skytebane, Alpinbakke, SportIdrettsplass, Transformatorstasjon, Anleggsområde, Grustak, Industriområde, Steintipp, Gravplass, Park
+|Eksternpeker
+|Kommunale registre e.l.?
+
+|**FKB-Bane**
+|Spormidt, Jernbaneplattformkant
+|Eksternpeker
+|Banedata?
+
+|**FKB-BygnAnlegg**
+|Bru, Kulvert, Tunnelportal, Stikkrenne, Gjerde, Voll, Skjerm, MurLoddrett, Skråforstøtningsmur
+|NVDBpeker
+|NVDB
+
+|
+|Tank, Tårn, Pipe, Flaggstang, Taubanemast
+|NRLpeker
+|NRL
+
+|
+|Taubane
+| NRLpeker + 
+Eksternpeker
+|NRL +
+Register for taubaner?
+
+
+|
+|Parkdetalj, Avfallsbeholder
+|Eksternpeker
+|Kommunalt system?
+
+|
+|Oppdrettslokalitet
+|Eksternpeker
+|Register for oppdrettsanlegg?
+
+|
+|KaiBrygge
+|Havnedatapeker
+|Peker til samme objekt i Havnedata
+
+|**FKB-Bygning**
+|(Bygning)
+|(Bygningsnummer)
+|(Matrikkelen)
+
+|**FKB-Høydekurve**
+|Ingen
+| -
+| -
+
+|**FKB-Ledning**
+|Alle (18 stk)
+|NVDBpeker +
+NRLpeker +
+Eksternpeker
+| NVDB +
+NRL +
+Ledningseiers register?
+
+|**FKB-Lufthavn**
+|Alle (5 stk)
+|Eksternpeker
+|Register hos Avinor?
+
+|**FKB-Naturinfo**
+|InnmåltTre
+|Eksternpeker
+|Kommunalt register?
+
+|**FKB-Tiltak**
+|AndreTiltak, SamferdselTiltak, BygningTiltak
+|Eksternpeker
+|?
+
+|**FKB-TraktorvegSti**
+|Veglenke
+|Turrutepeker +
+Eksternpeker
+|Turrutebasen +
+?
+
+|**FKB-Vann**
+|Innsjø
+|Eksternpeker
+|Register hos NVE?
+
+|**FKB-Veg**
+|Alle
+|Eksternpeker
+|Annet register enn NVDB?
+
+|
+|(VegGåendeOgSyklende, VegKjørende)
+|(Vegsystemreferanse)
+|(NVDB)
+
+|===
+
+
+== Etablering av eksternpekere
+
+=== Etablering av eksternpekere basert på geometriske analyser
+
+Der man har geometriske objekter som beskriver det samme i både FKB og et eksternt system er det mulig å etablere eksternpekere basert på geometriske analyser.
+Metodikken kan da være å etablere en passelig stor buffer rundt objektene i FKB og se om det havner et objekt i det eksterne systemet innenfor dette bufferet. 
+Der det havner et (1 stk) objekt innenfor buffer kan man etablere en kobling. 
+Ved liten buffer kan man miste relle koblinger og ved stor buffer kan man etablere falske koblinger. 
+Hvor stor en slik buffer skal være for at man skal være sikker på at det er samme objekt må derfor testes og vurderes for den enkelte objekttype/eksternpeker.
+
+For mange av objekter som finnes både i FKB og NVDB/NRL burde man kunne etablere eksternpekere på denne måten. 
+Resultatet av en slik maskinell kobling vil imidlertid aldri bli 100% og resultatet må kontrolleres.
+ 
+=== Annen etablering av eksternpekere
+
+Der det eksterne systemet det skal kobles mot ikke inneholder geometri (ev. geometrien ikke er av god nok nøyaktighet/kvalitet) vil det ikke være mulig å basere seg på geometriske analyser for å etablere eksternpekere.
+I slike tilfeller vil etablering av eksternpekere være en manuell og arbeidskrevende prosess.
+
+
+== Forvaltning av eksternpekere
+
+
+=== Eksternpekere i kartleggingsprosjekter
+
+Eksternpekere som er etablert i dataene må beholdes i forbindelse med FKB-Kartleggingsprosjekter (fotogrammetri). 
+
+FKB-kartleggingsprosjekter er enten av typen nykonstruksjon eller ajourføring. Se https://sosi.geonorge.no/Standarder/FKB_generell_del/#_generelle_retningslinjer_for_fotogrammetrisk_registrering_av_fkb_normativt[Vedlegg D i FKB Generell del] for beskrivelse.
+
+I forbindelse med Fotogrammetrisk ajourføring er det kun objekter som er endret i terrenget som skal kartlegges på nytt. Alle objekter som ikke er endra vil da beholde eksternpeker uten noen form for spesialhåndtering. Men for objekter som vurderes som endret og kartlegges på nytt vil det være behov for å håndtere eksternpekere spesielt. Her er det problemstillinger som må avklares:
+
+1. Når er det samme fysiske objekt som kartlegges slik at eksternpeker skal beholdes og når er det snakk om et nytt fysisk objekt slik at eksternpekeren ikke skal beholdes
+2. Hvem skal gjøre denne vurderingen? Skal hele eller deler av denne jobben utføres av kartleggingsfirma eller er det mer effektivt/hensiktsmessig at dette gjøres som en "etterprosessering" i forbindelse med mottakskontroll, bearbeiding og lagring av dataene i Kartverket? Dersom jobben skal utføres av kartleggingsfirma må det beskrives tydelig hva denne jobben går ut på slik at den kan prises inn i tilbudene og kontrolleres når dataene mottas.
+
+For fotogrammetrisk nykonstruksjon vil problemstillingen bli den samme som for de endra objektene i fotogrammetrisk ajourføring. Her er i prinsippet alle objekter kartlagt på nytt. Dersom det var lagt på eksternpekere i tidligere versjon av FKB-data kan antagelig disse dataene benyttes i en "reetablering" av eksternpekere etter samme modell som  ved etablering av eksternpekere basert på geometriske analyser (se over).
+
+=== Eksternpekere i administrativt vedlikehold
+
+Som et utgangspunkt må eksternpekere beholdes, vedlikeholdes og kvalitetsheves løpende i det kontinuerlige ajourholdet - på lik linje med det øvrige datainholdet i FKB. 
+
+Ofte vil det være en part som har et spesielt forhold til datainnholdet som det vil være naturlig at tar hovedansvar for å holde datainnholdet oppdatert. F.eks. at Bane NOR sørger for at pekere mot Banedata holdes oppdatert. Dersom det er et ønske om å heve kvaliteten (fullstendigheten) på eksternpekere i dataene må dette måtte skje ved administrativ innsats fra disse partene. 
+
+
+== Ansvarsfordeling
+
+=== Kartverkets ansvar
+
+Kartverket ser for seg å ha følgende rolle i forbindelse med innføring av eksternpekere i FKB.
+
+* Utarbeide veiledning for etablering og vedlikehold av eksternpekere (som dette notatet er en start på)
+* Utarbeide malverk for etablering av eksternpekere basert på geometriske analyser
+* Utarbeide rutiner/beskrivelser for håndtering av eksternpekere i FKB kartleggingsprosjekter
+
+=== Andre parters ansvar
+
+For at eksternpekere i FKB skal få en god kvalitet slik at de dekker brukerbehovene er det nødvendig at partene tar ansvar for å etablere og vedlikeholde datainnholdet for "sine" objekter.
+
+* Statens vegvesen og fylkeskommunene tar ansvar for eksternpekere mot NVDB og NRL for sine vegobjekter
+* Bane NOR tar ansvar for eksternpekere mot Banedata og NRL for objekter knyttet til jernbane
+* Kommunene tar ansvar for eksternpekere mot NVDB og NRL for sine objekter og ev. eksternpekere mot kommunale systemer/registre. 
+
+
+== Pilotprosjekt
+
+Teste etablering, vedlikehold (inkl. FKB kartleggingsprosjekt) og bruk av eksternpekere i et område i Østfold med både Kartverket, ØFK, SVV, Bane NOR og kanskje noen kommuner involvert?
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
