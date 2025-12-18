@@ -3740,54 +3740,75 @@ oppfylles dersom kvalitetsmålet skal benyttes.</p></td>
 <div class="sectionbody">
 <div class="paragraph">
 <p>FKB-data er detaljerte data med høy presisjon. Dette betyr at man må være bevisst på ev. feil som kan innføres ved transformasjon av dataene mellom forskjellige romlige referansesystemer.
-I forvaltningen av FKB-data gjøres vanligvis oppdateringen direkte i den aktuelle kommunens koordinatsystem slik at man unngår transformasjon av data.
-Kommuner i Finnmark fylke har EUREF89 UTM35 som lokal sone. Kommuner i Nordland og Troms har EUREF89 UTM33 som lokal sone, mens kommuner fra Trøndelag og sørover bruker EUREF89 UTM32 som lokal sone.</p>
+All forvaltning av FKB-data baserer seg på referanserammene ETRS89-NOR EUREF89 i grunnriss og NN2000 i høyde.</p>
+</div>
+<div class="paragraph">
+<p>I forvaltningen av FKB-data gjøres vanligvis oppdateringen direkte i den aktuelle kommunens koordinatsystem slik at man unngår transformasjon av data.
+Kommuner i Finnmark fylke har UTM35 som lokal sone. Kommuner i Nordland og Troms har UTM33 som lokal sone, mens kommuner fra Trøndelag og sørover bruker UTM32 som lokal sone.</p>
 </div>
 <div class="paragraph">
 <p>Dersom det skal tillates oppdatering med transformasjon inn i FKB-dataene må det benyttes en transformasjon som gir presisjon bedre enn oppløsningen i FKB-dataene (i praksis bedre en ca 5 mm).</p>
 </div>
+<div class="paragraph">
+<p><strong>Endringer i EPSG-koder:</strong></p>
+</div>
+<div class="paragraph">
+<p>I løpet av 2026 planlegges det innføring av nye EPSG-koder for ETRS89-NOR EUREF89 UTM32/33/35 som mer presist henviser til korrekt referanseramme. Dette innebærer er kun en mer presis angivelse av
+referanserammen koordinatene er angitt innenfor og vil ikke medføre transformasjon av dataene. De sammensatte EPSG-kodene for grunnriss og høyde vil ikke bli berørt så det er kun 2d-data som vil få nye EPSG-koder.</p>
+</div>
+<div class="paragraph">
+<p>Når og i hvilke sammenhenger de nye EPSG-kodene vil bli tatt i bruk i forbindelse med datafangst, forvaltning og distribusjon av FKB-data er pr. desember 2025 ikke klart, men tabellen under angir hvilke koder det er aktuelt å innføre.</p>
+</div>
 <table id="tab-referansesystem" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabell 13. Liste over romlige referansesystem som benyttes i forvaltningen av FKB</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Referansesystem</th>
 <th class="tableblock halign-left valign-top">EPSG-kode (GML/JSON-format)</th>
+<th class="tableblock halign-left valign-top">Ny EPSG-kode</th>
 <th class="tableblock halign-left valign-top">SOSI-kode (SOSI-format)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-32-2d">EUREF89 UTM32 (2d)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-32-2d">ETRS89-NOR EUREF89 UTM32 (2d)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25832</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11022</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum ikke angitt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-33-2d">EUREF89 UTM33 (2d)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-33-2d">ETRS89-NOR EUREF89 UTM33 (2d)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25833</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11023</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum ikke angitt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-35-2d">EUREF89 UTM35 (2d)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-35-2d">ETRS89-NOR EUREF89 UTM35 (2d)</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">25835</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11025</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum ikke angitt</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-32-2d-nn2000">EUREF89 UTM32 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-32-2d-nn2000">ETRS89-NOR EUREF89 UTM32 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5972</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5972</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 22, Vert-datum NN2000</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-33-2d-nn2000">EUREF89 UTM33 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-33-2d-nn2000">ETRS89-NOR EUREF89 UTM33 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5973</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5973</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 23, Vert-datum NN2000</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-35-2d-nn2000">EUREF89 UTM35 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://register.geonorge.no/epsg-koder/euref89-utm-sone-35-2d-nn2000">ETRS89-NOR EUREF89 UTM35 + NN2000</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5975</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5975</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Koordsys 25, Vert-datum NN2000</p></td>
 </tr>
@@ -4534,7 +4555,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 <div id="footer">
 <div id="footer-text">
 Versjon 5.1.1<br>
-Last updated 2025-11-28 13:53:59 +0100
+Last updated 2025-12-18 12:36:02 +0100
 </div>
 </div>
 </body>
