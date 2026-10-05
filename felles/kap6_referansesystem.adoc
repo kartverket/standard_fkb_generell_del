@@ -1,83 +1,105 @@
-Referansesystemer for FKB 5.0 er også beskrevet i vedlegg B i {fkbGenerellDel-url}[FKB generell del].
 
-=== Romlig referansesystem UTM sone 32 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
+=== Referansesystemer for forvaltning av FKB
 
-==== Omfang
-<<HeleDatasettet,Hele datasettet>>
+FKB-data er detaljerte data med høy presisjon. Dette betyr at man må være bevisst på mulige feil som kan innføres ved transformasjon av dataene mellom forskjellige romlige referansesystemer. 
+All forvaltning av FKB-data baserer seg på den norske realiseringen av referanserammene EUREF89 (ETRS89-NOR) i grunnriss og NN2000 med oppdatert høydereferansemodell i høyde.
 
-==== Navn på kilden til referansesystemet
-Norwegian Mapping Authority
+I forvaltningen av FKB-data gjøres vanligvis oppdateringen direkte i den aktuelle kommunens koordinatsystem slik at man unngår transformasjon av data. 
+Kommuner i Finnmark fylke har UTM35 som lokal sone. Kommuner i Nordland og Troms har UTM33 som lokal sone, mens kommuner fra Trøndelag og sørover bruker UTM32 som lokal sone. 
 
-==== Ansvarlig organisasjon for referansesystemet
-The international Association of Oil & Gas Producers
+Dersom det skal tillates oppdatering med transformasjon inn i FKB-dataene må det benyttes en transformasjon som gir presisjon bedre enn oppløsningen i FKB-dataene (i praksis bedre en ca 5 mm).
 
-==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5972
+**Endringer i referanserammer i 2027:**
 
-==== Koderom
-EPSG
+I løpet av 2027 gjøres 2 endringer som har med referanserammer å gjøre:
 
-==== Identifikasjonskode
-5972
+* Det innføres nye EPSG-koder som presiserer at EUREF89 i norsk sammenheng henviser til ETRS89-NOR i stedet for den generelle europeiske referanserramma. Dette er altså ikke en endring av referanseramma for dataene, men bare en endring i metadataene. Dataene endres ikke, men metadataene endres slik at de spesifiserer hvilken referanseramme som er brukt mer presist.
 
-==== Kodeversjon
-2020-03-30
+* Høydereferansemodellen oppdateres. Dette er en reell endring i referanserammen og medfører behov for omregning av koordinatverdier i enkelte områder. Tidligere har høydedatum kun blitt angitt som NN2000. Heretter innføres hvilken høydereferansemodell som er benyttet som et tillegg i betegnelsen. Tidligere NN2000 betegnes heretter som NN2000:2018 og NN2000:2025 brukes som ny betegnelse på data som forholder seg til NN2000 med høydereferansemodell fra 2025. 
 
-=== Romlig referansesystem UTM sone 33 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
+Alle systemer som håndterer FKB-data må håndtere både nye og gamle referansesystemer. Se tabeller under for oversikt over endringer.
 
-==== Omfang
-<<HeleDatasettet,Hele datasettet>>
+.Liste over romlige referansesystem som benyttes i forvaltningen av FKB-data i 2026
+[cols="3*", options="header"]
+|===
+|Referansesystem
+|SOSI-kode
+|EPSG-kode
 
-==== Navn på kilden til referansesystemet
-Norwegian Mapping Authority
+|ETRS89-NOR [EUREF89] / UTM zone 32N
+|Koordsys 22, Vert-datum ikke angitt
+|25832 (kode for europeisk EUREF89)
 
-==== Ansvarlig organisasjon for referansesystemet
-The international Association of Oil & Gas Producers
+|ETRS89-NOR [EUREF89] / UTM zone 33N
+|Koordsys 23, Vert-datum ikke angitt
+|25833 (kode for europeisk EUREF89)
 
-==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5973
+|ETRS89-NOR [EUREF89] / UTM zone 35N
+|Koordsys 25, Vert-datum ikke angitt
+|25835 (kode for europeisk EUREF89)
 
-==== Koderom
-EPSG
+|ETRS89-NOR [EUREF89] / UTM zone 32N + NN2000
+|Koordsys 22, Vert-datum NN2000
+|5972
 
-==== Identifikasjonskode
-5973
+|ETRS89-NOR [EUREF89] / UTM zone 33N + NN2000
+|Koordsys 23, Vert-datum NN2000
+|5973
 
-==== Kodeversjon
-2020-03-30
-
-=== Romlig referansesystem UTM sone 35 basert på EUREF89 (ETRS89/UTM), 2d + NN2000
-
-==== Omfang
-<<HeleDatasettet,Hele datasettet>>
-
-==== Navn på kilden til referansesystemet
-Norwegian Mapping Authority
-
-==== Ansvarlig organisasjon for referansesystemet
-The international Association of Oil & Gas Producers
-
-==== Link til mer informasjon om referansesystemet
-http://www.opengis.net/def/crs/EPSG/0/5975
-
-==== Koderom
-EPSG
-
-==== Identifikasjonskode
-5975
-
-==== Kodeversjon
-2020-03-30
+|ETRS89-NOR [EUREF89] / UTM zone 35N + NN2000
+|Koordsys 25, Vert-datum NN2000
+|5975
+|===
 
 
-=== Temporalt referansesystem
+.Liste over romlige referansesystem som benyttes i forvaltningen av FKB-data etter overgang i 2027
+[cols="3*", options="header"]
+|===
+|Referansesystem
+|SOSI-kode
+|EPSG-kode
 
-==== Omfang
-<<HeleDatasettet,Hele datasettet>>
+|ETRS89-NOR [EUREF89] / UTM zone 32N
+|Koordsys 22, Vert-datum ikke angitt
+|11022
 
-==== Navn på temporalt referansesystem
-UTC
+|ETRS89-NOR [EUREF89] / UTM zone 33N
+|Koordsys 23, Vert-datum ikke angitt
+|11023
 
-Dersom ikke tidssone er spesielt angitt ved angivelse av tidspunkt skal man anta at det er norsk tid som benyttes. Dvs. UTC+1 (normaltid) på vinteren og UTC+2 (sommertid) på sommeren.
+|ETRS89-NOR [EUREF89] / UTM zone 35N 
+|Koordsys 25, Vert-datum ikke angitt
+|11025
 
+|ETRS89-NOR [EUREF89] / UTM zone 32N + NN2000:2018 
+|Koordsys 22, Vert-datum NN2000:2018
+|5972
 
+|ETRS89-NOR [EUREF89] / UTM zone 33N + NN2000:2018 
+|Koordsys 23, Vert-datum NN2000:2018
+|5973
+
+|ETRS89-NOR [EUREF89] / UTM zone 35N + NN2000:2018 
+|Koordsys 25, Vert-datum NN2000:2018
+|5975
+
+|ETRS89-NOR [EUREF89] / UTM zone 32N + NN2000:2025 
+|Koordsys 22, Vert-datum NN2000:2025
+|11403
+
+|ETRS89-NOR [EUREF89] / UTM zone 33N + NN2000:2025 
+|Koordsys 23, Vert-datum NN2000:2025
+|11404
+
+|ETRS89-NOR [EUREF89] / UTM zone 35N + NN2000:2025 
+|Koordsys 25, Vert-datum NN2000:2025
+|11406
+|===
+
+=== Referansesystemer for distribusjon og bruk av FKB-data
+
+Kommunevise data distribueres i lokal UTM-sone. For landsdekkende data distribueres data i UTM33. Referanserammen vil alltid identifiseres presist av metadataene (EPSG- eller SOSI-kode) og det er viktig at denne informasjonen benyttes korrekt av klientsystemene som håndterer dataene.  
+
+FKB-data inngår i mange typer distribusjoner/tjenester. I mange sammenhenger vil det være behov for å transformere FKB-dataene til andre koordinatsystemer for bruk sammen med andre datakilder.  
+Det kan oppstå unøyaktigheter i disse transformasjonene så om man ønsker full nøyaktighet på dataene så anbefales det å forholde seg til referanserammene som brukes i forvaltningen. Om man har behov for å transfomere data så må man ha et bevisst forhold til hvilke transformasjoner som gjøres og med hvilke verktøy disse transformasjonene gjøres. 
+ 
